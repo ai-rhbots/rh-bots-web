@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block titulo %}Nuevo robot{% endblock %}
+{% block contenido %}
+<h1>Añadir robot</h1>
+<p class="guia"><a href="{{ url_for('productos') }}">← Todos los robots</a></p>
+
+<form method="post" class="formulario">
+  <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+
+  <label for="name">Nombre</label>
+  <input id="name" name="name" value="{{ name or '' }}" required autofocus>
+
+  <label for="family">Familia</label>
+  <select id="family" name="family">
+    {% for clave, nombre, _ in familias %}
+      <option value="{{ clave }}" {{ 'selected' if family == clave }}>{{ nombre }}</option>
+    {% endfor %}
+  </select>
+
+  <p class="pista">Con esto se crea la ficha. El resto de textos, imágenes y
+    especificaciones se rellenan justo después, en la propia ficha.</p>
+
+  <div class="acciones">
+    <button class="btn" type="submit">Crear y continuar</button>
+    <a class="btn btn--plano" href="{{ url_for('productos') }}">Cancelar</a>
+  </div>
+</form>
+{% endblock %}

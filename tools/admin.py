@@ -56,6 +56,7 @@ from werkzeug.security import check_password_hash, generate_password_hash  # noq
 import datos as D  # noqa: E402
 import medios as M  # noqa: E402
 from limpiar_html import limpiar, resumir  # noqa: E402
+from productos import FAMILIAS  # noqa: E402
 
 ARCHIVO_CLAVE = os.path.join(ROOT, 'datos', 'admin.json')
 USUARIO = os.environ.get('RHBOTS_USER', 'admin')
@@ -546,6 +547,37 @@ def crear_app():
         d = D.cargar('productos')
         return render_template('productos.html', productos=d['productos'],
                                estados=d['estados'])
+
+    @app.route('/productos/nuevo', methods=['GET', 'POST'])
+    @requiere_acceso
+    def producto_nuevo():
+        d = D.cargar('productos')
+        if request.method == 'POST':
+            f = request.form
+            nombre = f.get('name', '').strip()
+            familia = f.get('family', '')
+            familias_validas = {clave for clave, _, _ in FAMILIAS}
+            if not nombre:
+                flash('El nombre es obligatorio.', 'error')
+                return render_template('producto_nuevo.html', familias=FAMILIAS,
+                                       name=nombre, family=familia)
+            if familia not in familias_validas:
+                flash('Elige una familia válida.', 'error')
+                return render_template('producto_nuevo.html', familias=FAMILIAS,
+                                       name=nombre, family=familia)
+
+            slug = slug_unico(nombre, d['productos'])
+            d['productos'].append({
+                'slug': slug, 'name': nombre, 'base': '', 'family': familia,
+                'status': 'disponible', 'claim': '', 'tagline': '',
+                'hero': None, 'hero_alt': '', 'frames': [], 'gallery': [],
+                'intro': '', 'keyfacts': [], 'highlights': [],
+                'specs': [], 'applications': [], 'notes': [],
+            })
+            guardar_y_publicar('productos', d, f'Robot «{nombre}» creado.')
+            return redirect(url_for('producto', slug=slug))
+
+        return render_template('producto_nuevo.html', familias=FAMILIAS)
 
     @app.route('/productos/<slug>', methods=['GET', 'POST'])
     @requiere_acceso

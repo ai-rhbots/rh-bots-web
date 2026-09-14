@@ -140,7 +140,8 @@ svg .nostroke{ stroke:none; }
 .hero__robot{
   position:absolute; left:2%; bottom:0;
   width:clamp(300px, 42vw, 560px);
-  transform:translateY(38%);
+  transform:translateY(38%) rotate(6deg);
+  transform-origin:50% 100%;
   z-index:2;
   filter:drop-shadow(0 34px 40px rgba(0,0,0,.20));
 }
@@ -576,7 +577,8 @@ svg .nostroke{ stroke:none; }
   /* hero */
   .hero__stage{ height:clamp(230px, 44vw, 300px); }
   .hero__robot{
-    left:50%; transform:translate(-50%, 30%);
+    left:50%; transform:translate(-50%, 30%) rotate(6deg);
+    transform-origin:50% 100%;
     width:clamp(230px, 56vw, 340px);
   }
   .hero__stage-inner{ justify-content:center; align-items:flex-start; padding-top:22px; }
