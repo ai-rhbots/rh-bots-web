@@ -114,12 +114,7 @@
         "Consúltanos. Según el modelo y la duración del proyecto podemos plantear compra o alquiler, incluyendo la puesta en marcha y el soporte."
       ]
     ],
-    "gama_img": "assets/robots/gama.webp",
-    "video": {
-      "src": "assets/video/gama.mp4",
-      "poster": "assets/video/gama.jpg",
-      "titulo": "La gama RH·BOTS al completo"
-    }
+    "gama_img": "assets/robots/gama.webp"
   },
   "servicios": [
     [
