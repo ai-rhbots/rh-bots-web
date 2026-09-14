@@ -12,6 +12,8 @@
 !/.gitignore
 !/vercel.json
 !/README.md
+!/render.yaml
+!/requirements.txt
 
 # Nunca subir: contiene el hash de la contraseña del panel
 datos/admin.json

@@ -1,0 +1,10 @@
+# Vídeos e imágenes originales sin optimizar, no referenciados por la web
+# (varios cientos de MB / hasta ~1 GB cada uno). Sólo se sirve lo que hay
+# bajo assets/video/ y assets/robots/, que sí genera el build.
+assets/*.mp4
+assets/*.MP4
+assets/*.png
+!assets/logo-*.png
+!assets/robot-*.png
+assets/productos/C5/
+assets/productos/G2/

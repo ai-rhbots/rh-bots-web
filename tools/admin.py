@@ -22,7 +22,17 @@ Al subirlo a un servidor hay que definir estas variables de entorno:
     RHBOTS_PASSWORD_HASH=<lo que imprime «--clave»>
     RHBOTS_HTTPS=1          activa la cookie Secure (obligatorio con HTTPS)
 y servirlo con un servidor real, p. ej.:
-    waitress-serve --port 8000 --call tools.admin:crear_app
+    gunicorn "tools.admin:crear_app()"
+
+── Sincronización con GitHub (para hosting con disco efímero) ───────────────
+El disco de un servicio como Render no es persistente: en cada reinicio
+vuelve a como estaba en el último despliegue. Para que los cambios hechos
+desde el panel no se pierdan, y para que lleguen a Vercel, hay que activar
+la sincronización con git:
+    RHBOTS_GIT_PUSH=1
+    GITHUB_TOKEN=<token con permiso "repo" sobre este repositorio>
+Con esto, cada «Guardar» hace además `git add/commit/push`, y al arrancar
+el panel hace `git pull` para partir del último contenido publicado.
 """
 import io
 import json
@@ -149,8 +159,58 @@ def _publicar():
     return r.returncode == 0, (r.stdout or '') + (r.stderr or '')
 
 
+# ── sincronización con git (hosting con disco efímero) ───────────────────
+GIT_PUSH = os.environ.get('RHBOTS_GIT_PUSH') == '1'
+GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN', '')
+GIT_REMOTE = os.environ.get('RHBOTS_GIT_REMOTE', 'origin')
+GIT_BRANCH = os.environ.get('RHBOTS_GIT_BRANCH', 'master')
+GIT_IDENTIDAD = ['-c', 'user.name=RH-BOTS Panel', '-c', 'user.email=ai.rhbots@gmail.com']
+
+
+def _git(*args, timeout=60):
+    extra = []
+    if GITHUB_TOKEN:
+        # Inyecta el token sólo para esta llamada (no queda escrito en
+        # .git/config ni en la URL del remoto).
+        extra = ['-c', f'http.https://github.com/.extraheader=AUTHORIZATION: bearer {GITHUB_TOKEN}']
+    try:
+        r = subprocess.run(['git'] + extra + list(args), capture_output=True,
+                           text=True, cwd=ROOT, timeout=timeout)
+        return r.returncode == 0, (r.stdout or '') + (r.stderr or '')
+    except (subprocess.SubprocessError, OSError) as ex:
+        return False, str(ex)
+
+
+def _sincronizar_git(mensaje):
+    """Sube a GitHub lo que ha cambiado (datos/, web/) tras un guardado.
+
+    En local (RHBOTS_GIT_PUSH sin definir) no hace nada: seguimos usando el
+    flujo normal de git a mano. En el servidor del panel sí, por dos razones
+    a la vez: es como los cambios llegan a Vercel, y es cómo sobreviven a un
+    reinicio del servicio (su disco es efímero; git es el almacén real).
+    """
+    if not GIT_PUSH:
+        return True, ''
+    _git('add', '-A')
+    ok_commit, salida_commit = _git(*GIT_IDENTIDAD, 'commit', '-m', f'Panel: {mensaje}')
+    if not ok_commit and 'nothing to commit' not in salida_commit.lower():
+        return False, salida_commit
+    return _git('push', GIT_REMOTE, GIT_BRANCH)
+
+
+def _sincronizar_git_inicio():
+    """Al arrancar, parte del último contenido publicado en GitHub."""
+    if not GIT_PUSH:
+        return
+    ok, salida = _git('pull', '--ff-only', GIT_REMOTE, GIT_BRANCH)
+    if not ok:
+        print(f'AVISO: no se pudo sincronizar con git al arrancar: {salida[-300:]}')
+
+
 # ── aplicación ────────────────────────────────────────────────────────────
 def crear_app():
+    _sincronizar_git_inicio()
+
     app = Flask(__name__,
                 template_folder=os.path.join(HERE, 'admin_plantillas'),
                 static_folder=os.path.join(HERE, 'admin_estatico'),
@@ -186,14 +246,19 @@ def crear_app():
                 abort(400, 'Token de seguridad no válido. Recarga la página.')
 
     def guardar_y_publicar(nombre_datos, datos, mensaje_ok):
-        """Guarda un JSON y regenera la web en el mismo paso."""
+        """Guarda un JSON, regenera la web y (si toca) la sube a GitHub."""
         D.guardar(nombre_datos, datos)
         ok, salida = _publicar()
-        if ok:
+        if not ok:
+            flash(f'{mensaje_ok} Pero la web NO se pudo regenerar: {salida[-300:]}', 'error')
+            return ok
+        ok_git, salida_git = _sincronizar_git(mensaje_ok)
+        if ok_git:
             flash(mensaje_ok + ' Ya está en la web.')
         else:
-            flash(f'{mensaje_ok} Pero la web NO se pudo regenerar: {salida[-300:]}', 'error')
-        return ok
+            flash(f'{mensaje_ok} Se regeneró, pero NO se pudo subir a GitHub: '
+                 f'{salida_git[-300:]}', 'error')
+        return ok and ok_git
 
     def requiere_acceso(f):
         @wraps(f)
@@ -573,11 +638,15 @@ def crear_app():
     @requiere_acceso
     def publicar():
         ok, salida = _publicar()
-        if ok:
+        if not ok:
+            flash('Error al generar: ' + salida[-400:], 'error')
+            return redirect(request.referrer or url_for('panel'))
+        ok_git, salida_git = _sincronizar_git('Publicación manual.')
+        if ok_git:
             primera = (salida.strip().splitlines() or [''])[0]
             flash('Web regenerada. ' + primera)
         else:
-            flash('Error al generar: ' + salida[-400:], 'error')
+            flash('Se regeneró, pero NO se pudo subir a GitHub: ' + salida_git[-400:], 'error')
         return redirect(request.referrer or url_for('panel'))
 
     return app
