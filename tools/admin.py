@@ -208,6 +208,10 @@ def _sincronizar_git(mensaje):
     """
     if not GIT_PUSH:
         return True, ''
+    if not GITHUB_TOKEN:
+        return False, ('Falta la variable de entorno GITHUB_TOKEN en el servidor — '
+                       'sin ella no hay forma de autenticarse contra GitHub. '
+                       'Ponla en Render - el servicio - Environment.')
     _asegurar_remoto()
     _git('add', '-A')
     ok_commit, salida_commit = _git(*GIT_IDENTIDAD, 'commit', '-m', f'Panel: {mensaje}')
@@ -221,6 +225,10 @@ def _sincronizar_git(mensaje):
 def _sincronizar_git_inicio():
     """Al arrancar, parte del último contenido publicado en GitHub."""
     if not GIT_PUSH:
+        return
+    if not GITHUB_TOKEN:
+        print('AVISO: RHBOTS_GIT_PUSH=1 pero falta GITHUB_TOKEN — no se puede '
+             'sincronizar con GitHub. Ponla en Render - el servicio - Environment.')
         return
     _asegurar_remoto()
     ok, salida = _git('fetch', GIT_REMOTE, GIT_BRANCH)
