@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block titulo %}Biblioteca{% endblock %}
+{% block contenido %}
+<h1>Biblioteca de imágenes</h1>
+<p class="guia">Súbelas aquí una vez y reutilízalas donde haga falta: copia la ruta
+  y pégala en cualquier campo de imagen del panel. Se optimizan solas al subirlas
+  (se redimensionan y pasan a WebP).</p>
+
+<div class="dropzone" data-biblioteca-zona tabindex="0" role="button"
+     aria-label="Arrastra imágenes aquí o haz clic para elegirlas">
+  <p class="dropzone__texto">Arrastra imágenes aquí, o haz clic para elegirlas</p>
+  <p class="dropzone__estado" data-biblioteca-estado></p>
+  <input type="file" data-biblioteca-file accept="image/*" multiple hidden>
+</div>
+
+{% if imagenes %}
+<div class="medios-grid">
+  {% for img in imagenes %}
+  <div class="medio">
+    <img src="{{ url_for('vista_archivo', ruta=img.url) }}" alt="" loading="lazy">
+    <p class="medio__info">{{ img.medidas }} · {{ img.kb }} KB</p>
+    <div class="medio__acciones">
+      <button type="button" class="btn btn--mini" data-copiar-ruta="{{ img.url }}">Copiar ruta</button>
+      <form method="post" action="{{ url_for('medios_borrar') }}"
+            onsubmit="return confirm('¿Eliminar esta imagen? Si está en uso en alguna página, dejará de verse.')">
+        <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+        <input type="hidden" name="nombre" value="{{ img.nombre }}">
+        <button type="submit" class="btn btn--mini btn--peligro">Eliminar</button>
+      </form>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<p class="vacio">Todavía no has subido ninguna imagen.</p>
+{% endif %}
+{% endblock %}

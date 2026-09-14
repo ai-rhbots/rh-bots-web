@@ -1,0 +1,78 @@
+# RH·BOTS — configuración de Apache (cPanel / BanaHosting)
+
+# ── HTTPS y www ───────────────────────────────────────────────────────────
+RewriteEngine On
+
+# todo a https
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# sin www -> con www  (si prefieres lo contrario, comenta estas dos líneas
+# y descomenta las dos siguientes)
+RewriteCond %{HTTP_HOST} ^rh-bots\.com$ [NC]
+RewriteRule ^(.*)$ https://www.rh-bots.com/$1 [R=301,L]
+
+# RewriteCond %{HTTP_HOST} ^www\.rh-bots\.com$ [NC]
+# RewriteRule ^(.*)$ https://rh-bots.com/$1 [R=301,L]
+
+
+# ── URL limpias: /robots/rhc5 sirve robots/rhc5.html ──────────────────────
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+
+# ── Compresión ────────────────────────────────────────────────────────────
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+  # el vídeo y el WebP ya vienen comprimidos: recomprimir sólo gasta CPU
+</IfModule>
+
+
+# ── Caché ─────────────────────────────────────────────────────────────────
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html                 "access plus 10 minutes"
+  ExpiresByType text/css                  "access plus 7 days"
+  ExpiresByType application/javascript    "access plus 7 days"
+  ExpiresByType image/webp                "access plus 1 year"
+  ExpiresByType image/jpeg                "access plus 1 year"
+  ExpiresByType image/png                 "access plus 1 year"
+  ExpiresByType video/mp4                 "access plus 1 year"
+</IfModule>
+
+# el HTML corto para que los cambios de precio se vean pronto;
+# imágenes y vídeo largo porque nunca cambian sin cambiar de nombre
+<IfModule mod_headers.c>
+  <FilesMatch "\.(webp|jpg|jpeg|png|mp4|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=600, must-revalidate"
+  </FilesMatch>
+
+  # cabeceras de seguridad básicas
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+
+# ── Vídeo por rangos (para que se pueda avanzar sin descargarlo entero) ───
+<IfModule mod_headers.c>
+  <FilesMatch "\.mp4$">
+    Header set Accept-Ranges bytes
+  </FilesMatch>
+</IfModule>
+AddType video/mp4 .mp4
+AddType image/webp .webp
+
+
+# ── Nada de listar directorios ────────────────────────────────────────────
+Options -Indexes
+
+ErrorDocument 404 /404.html

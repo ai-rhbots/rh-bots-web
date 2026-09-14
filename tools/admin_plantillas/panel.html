@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block titulo %}Inicio{% endblock %}
+{% block contenido %}
+<h1>Panel</h1>
+<p class="guia">Edita el contenido y pulsa <strong>Publicar</strong> para regenerar la web.</p>
+
+<div class="publicar">
+  <form method="post" action="{{ url_for('publicar') }}">
+    <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+    <button class="btn btn--grande" type="submit">Publicar cambios</button>
+  </form>
+  <p class="guia">
+    {% if generado %}Última publicación: {{ generado }}{% else %}Todavía sin publicar{% endif %}
+    · <a href="http://localhost:5180/index.html" target="_blank" rel="noopener">ver la web</a>
+  </p>
+</div>
+
+<div class="rejilla">
+  <a class="tarjeta" href="{{ url_for('home') }}"><h2>Home</h2>
+    <p>Titular, entradilla, destacados, sectores, beneficios y preguntas frecuentes.</p></a>
+  <a class="tarjeta" href="{{ url_for('productos') }}"><h2>Robots</h2>
+    <p>{{ productos|length }} fichas: textos, datos rápidos, aplicaciones y especificaciones.</p></a>
+  <a class="tarjeta" href="{{ url_for('rhbots') }}"><h2>RH·BOTS</h2>
+    <p>Historia de la empresa y {{ sitio.rhbots.equipo|length if sitio.rhbots else 0 }} persona(s) en el equipo.</p></a>
+  <a class="tarjeta" href="{{ url_for('blog') }}"><h2>Blog</h2>
+    <p>{{ sitio.posts|length }} entrada(s) publicada(s).</p></a>
+  <a class="tarjeta" href="{{ url_for('medios') }}"><h2>Biblioteca</h2>
+    <p>Sube imágenes y reutilízalas en cualquier campo del panel.</p></a>
+  <a class="tarjeta" href="{{ url_for('contacto') }}"><h2>Contacto</h2>
+    <p>Dirección, personas de contacto y motivos del formulario.</p></a>
+  <a class="tarjeta" href="{{ url_for('menu') }}"><h2>Menú</h2>
+    <p>Entradas de navegación; se pueden ocultar sin borrarlas.</p></a>
+  <a class="tarjeta" href="{{ url_for('tienda') }}"><h2>Tienda</h2>
+    <p>Botón de compra con Shopify.
+      {% if sitio.tienda and sitio.tienda.activa %}Activada.
+      {% else %}<span class="apagado">Desactivada.</span>{% endif %}</p></a>
+  <a class="tarjeta" href="{{ url_for('seo') }}"><h2>SEO y analítica</h2>
+    <p>Dominio, imagen social y códigos de Google.
+      {% if sitio.analitica.ga4 or sitio.analitica.gtm %}Analítica activa.
+      {% else %}<span class="apagado">Analítica sin configurar.</span>{% endif %}</p></a>
+</div>
+{% endblock %}

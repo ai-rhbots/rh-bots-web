@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block titulo %}SEO y analítica{% endblock %}
+{% block contenido %}
+<h1>SEO y analítica</h1>
+<form method="post" class="formulario">
+  <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+
+  <h2>SEO</h2>
+  <label for="dominio">Dominio</label>
+  <input id="dominio" name="dominio" value="{{ seo.dominio }}" placeholder="https://www.rh-bots.com">
+  <p class="pista">Se usa para las URL canónicas, el sitemap y las tarjetas al compartir.</p>
+
+  <label for="nombre">Nombre del sitio</label>
+  <input id="nombre" name="nombre" value="{{ seo.nombre }}">
+
+  <label for="og_imagen">Imagen al compartir</label>
+  <input id="og_imagen" name="og_imagen" value="{{ seo.og_imagen }}">
+  <p class="pista">Ruta dentro de web/, por ejemplo assets/robots/rhc5/vista-0.webp</p>
+
+  <div class="dos">
+    <div><label for="twitter">Cuenta de X/Twitter</label>
+      <input id="twitter" name="twitter" value="{{ seo.twitter }}" placeholder="@rhbots"></div>
+    <div><label for="locale">Idioma</label>
+      <input id="locale" name="locale" value="{{ seo.locale }}"></div>
+  </div>
+
+  <h2>Google</h2>
+  <p class="pista">Si lo dejas vacío no se inserta ninguna etiqueta. Antes de activarlo
+    en producción necesitas un aviso de cookies conforme al RGPD.</p>
+
+  <label for="ga4">Google Analytics 4</label>
+  <input id="ga4" name="ga4" value="{{ an.ga4 }}" placeholder="G-XXXXXXXXXX">
+
+  <label for="gtm">Google Tag Manager</label>
+  <input id="gtm" name="gtm" value="{{ an.gtm }}" placeholder="GTM-XXXXXXX">
+
+  <label for="verificacion">Verificación de Search Console</label>
+  <input id="verificacion" name="verificacion" value="{{ an.google_site_verification }}">
+
+  <div class="acciones"><button class="btn" type="submit">Guardar</button></div>
+</form>
+{% endblock %}

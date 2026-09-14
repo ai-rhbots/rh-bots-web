@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block titulo %}Tienda{% endblock %}
+{% block contenido %}
+<h1>Tienda</h1>
+<p class="guia">Botón de compra enlazado con el checkout de Shopify.</p>
+
+{% if sin_precio %}
+<p class="aviso aviso--error">
+  <strong>Estos modelos tienen precio 0,00 y no mostrarán botón de compra</strong>
+  aunque actives la tienda: {{ sin_precio|join(', ') }}.<br>
+  Es una salvaguarda: un botón de compra a 0,00 permitiría pedir un robot gratis.
+  Pon los precios reales en Shopify y cópialos aquí.
+</p>
+{% endif %}
+
+<form method="post" class="formulario">
+  <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+
+  <label for="activa">Estado</label>
+  <select id="activa" name="activa">
+    <option value="no" {{ 'selected' if not t.activa }}>Desactivada — sin botones de compra</option>
+    <option value="si" {{ 'selected' if t.activa }}>Activada — mostrar botones de compra</option>
+  </select>
+
+  <div class="dos">
+    <div><label for="dominio">Dominio de Shopify</label>
+      <input id="dominio" name="dominio" value="{{ t.dominio }}"></div>
+    <div><label for="moneda">Moneda</label>
+      <input id="moneda" name="moneda" value="{{ t.moneda }}"></div>
+  </div>
+
+  <div class="dos">
+    <div><label for="texto_boton">Texto del botón</label>
+      <input id="texto_boton" name="texto_boton" value="{{ t.texto_boton }}"></div>
+    <div><label for="mostrar_precio">Mostrar el precio</label>
+      <select id="mostrar_precio" name="mostrar_precio">
+        <option value="si" {{ 'selected' if t.mostrar_precio }}>Sí</option>
+        <option value="no" {{ 'selected' if not t.mostrar_precio }}>No</option>
+      </select></div>
+  </div>
+
+  <h2>Productos</h2>
+  <p class="pista">El identificador de variante sale de Shopify. Déjalo vacío para
+    desenlazar el modelo. El precio debe coincidir con el de Shopify: aquí sólo se
+    muestra, quien cobra es Shopify.<br>
+    <strong>El stock debe coincidir con el de Shopify.</strong> Como la web es
+    estática, no lo consulta en vivo: si allí cambias la disponibilidad, cámbiala
+    también aquí. Marcar «Sin stock» sustituye el botón de compra por un aviso.</p>
+
+  <table class="tabla">
+    <thead><tr><th>Modelo</th><th>Variante de Shopify</th><th>Precio</th><th>Stock</th></tr></thead>
+    <tbody>
+    {% for p in productos %}
+      <tr>
+        <td><strong>{{ p.name }}</strong><br><span class="apagado">{{ p.slug }}</span></td>
+        <td><input name="var_{{ p.slug }}" value="{{ p.shopify.variante if p.shopify else '' }}"
+                   placeholder="sin enlazar"></td>
+        <td><input name="pre_{{ p.slug }}" value="{{ p.shopify.precio if p.shopify else '' }}"
+                   placeholder="0.00"></td>
+        <td><select name="dis_{{ p.slug }}">
+              <option value="no" {{ 'selected' if not (p.shopify and p.shopify.disponible) }}>Sin stock</option>
+              <option value="si" {{ 'selected' if p.shopify and p.shopify.disponible }}>Disponible</option>
+            </select></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+  <div class="acciones"><button class="btn" type="submit">Guardar</button></div>
+</form>
+{% endblock %}

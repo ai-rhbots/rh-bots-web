@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block titulo %}{{ p.name }}{% endblock %}
+{% block contenido %}
+<h1>{{ p.name }}</h1>
+<p class="guia"><a href="{{ url_for('productos') }}">← Todos los robots</a></p>
+
+<form method="post" class="formulario">
+  <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+
+  <div class="dos">
+    <div><label for="name">Nombre</label>
+      <input id="name" name="name" value="{{ p.name }}"></div>
+    <div><label for="status">Estado</label>
+      <select id="status" name="status">
+        {% for clave, v in estados.items() %}
+          <option value="{{ clave }}" {{ 'selected' if p.status == clave }}>{{ v[0] }}</option>
+        {% endfor %}
+      </select></div>
+  </div>
+
+  <label for="claim">Titular</label>
+  <input id="claim" name="claim" value="{{ p.claim }}">
+
+  <label for="tagline">Entradilla</label>
+  <textarea id="tagline" name="tagline" rows="3">{{ p.tagline }}</textarea>
+
+  <label for="intro">Descripción</label>
+  <textarea id="intro" name="intro" rows="4">{{ p.intro }}</textarea>
+
+  <label>Datos rápidos</label>
+  <div class="filas" data-filas data-target="keyfacts"
+       data-cols='[{"label":"Etiqueta","tipo":"texto"},{"label":"Valor","tipo":"texto"}]'>
+    <textarea id="keyfacts" name="keyfacts" hidden>{{ a_texto(p.keyfacts) }}</textarea>
+    <div class="filas__lista" data-filas-lista></div>
+    <button type="button" class="btn btn--plano" data-filas-add>+ Añadir dato</button>
+  </div>
+
+  <label>Puntos clave</label>
+  <div class="filas" data-filas data-target="highlights"
+       data-cols='[{"label":"Título","tipo":"texto"},{"label":"Texto","tipo":"textarea"}]'>
+    <textarea id="highlights" name="highlights" hidden>{{ a_texto(p.highlights) }}</textarea>
+    <div class="filas__lista" data-filas-lista></div>
+    <button type="button" class="btn btn--plano" data-filas-add>+ Añadir punto clave</button>
+  </div>
+
+  <label>Aplicaciones</label>
+  <div class="filas" data-filas data-target="applications"
+       data-cols='[{"label":"Nombre","tipo":"texto"},{"label":"Imagen (opcional)","tipo":"imagen"}]'>
+    <textarea id="applications" name="applications" hidden>{{ a_texto(p.applications) }}</textarea>
+    <div class="filas__lista" data-filas-lista></div>
+    <button type="button" class="btn btn--plano" data-filas-add>+ Añadir aplicación</button>
+  </div>
+
+  <label>Avisos de fiabilidad</label>
+  <div class="filas" data-filas data-target="notes"
+       data-cols='[{"label":"Tipo","tipo":"select","opciones":[{"valor":"info","texto":"Info"},{"valor":"warn","texto":"Aviso"},{"valor":"alert","texto":"Alerta"}]},{"label":"Título","tipo":"texto"},{"label":"Texto","tipo":"textarea"}]'>
+    <textarea id="notes" name="notes" hidden>{{ a_texto(p.notes) }}</textarea>
+    <div class="filas__lista" data-filas-lista></div>
+    <button type="button" class="btn btn--plano" data-filas-add>+ Añadir aviso</button>
+  </div>
+
+  <label for="specs">Especificaciones</label>
+  <textarea id="specs" name="specs" rows="18" class="codigo">{{ specs_txt }}</textarea>
+  <p class="pista">Formato JSON: una lista de <code>["Grupo", [["Etiqueta","Valor"], …]]</code>.
+    Si el JSON no es válido se avisa y no se guarda nada.</p>
+
+  <div class="acciones">
+    <button class="btn" type="submit">Guardar</button>
+    <a class="btn btn--plano" href="{{ url_for('productos') }}">Cancelar</a>
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block titulo %}Home{% endblock %}
+{% block contenido %}
+<h1>Home</h1>
+<form method="post" class="formulario">
+  <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+
+  <label for="kicker">Rótulo del hero</label>
+  <input id="kicker" name="kicker" value="{{ h.kicker }}">
+  <p class="pista">Admite &lt;br&gt; para partir la línea.</p>
+
+  <label for="h1">Titular</label>
+  <input id="h1" name="h1" value="{{ h.h1 }}">
+
+  <label for="lede">Entradilla</label>
+  <textarea id="lede" name="lede" rows="3">{{ h.lede }}</textarea>
+
+  <label>Modelos destacados</label>
+  <div class="filas" data-filas data-target="destacados"
+       data-cols='[{"label":"Modelo","tipo":"select","opciones":{{ opciones_modelo|tojson }}}]'>
+    <textarea id="destacados" name="destacados" hidden>{{ h.destacados|join("\n") }}</textarea>
+    <div class="filas__lista" data-filas-lista></div>
+    <button type="button" class="btn btn--plano" data-filas-add>+ Añadir modelo</button>
+  </div>
+
+  <label>Beneficios clave</label>
+  <div class="filas" data-filas data-target="beneficios"
+       data-cols='[{"label":"Texto (admite <br>)","tipo":"texto"}]'>
+    <textarea id="beneficios" name="beneficios" hidden>{{ h.beneficios|join("\n") }}</textarea>
+    <div class="filas__lista" data-filas-lista></div>
+    <button type="button" class="btn btn--plano" data-filas-add>+ Añadir beneficio</button>
+  </div>
+
+  <label>Sectores</label>
+  <div class="filas" data-filas data-target="sectores"
+       data-cols='[{"label":"Nombre","tipo":"texto"},{"label":"Imagen","tipo":"imagen"}]'>
+    <textarea id="sectores" name="sectores" hidden>{{ a_texto(h.sectores) }}</textarea>
+    <div class="filas__lista" data-filas-lista></div>
+    <button type="button" class="btn btn--plano" data-filas-add>+ Añadir sector</button>
+  </div>
+
+  <label>Preguntas frecuentes</label>
+  <div class="filas" data-filas data-target="faq"
+       data-cols='[{"label":"Pregunta","tipo":"texto"},{"label":"Respuesta","tipo":"textarea"}]'>
+    <textarea id="faq" name="faq" hidden>{{ a_texto(h.faq) }}</textarea>
+    <div class="filas__lista" data-filas-lista></div>
+    <button type="button" class="btn btn--plano" data-filas-add>+ Añadir pregunta</button>
+  </div>
+
+  <div class="acciones"><button class="btn" type="submit">Guardar</button></div>
+</form>
+{% endblock %}

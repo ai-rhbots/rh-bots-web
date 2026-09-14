@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block titulo %}Blog{% endblock %}
+{% block contenido %}
+<h1>Blog</h1>
+<p class="guia"><a class="btn" href="{{ url_for('post') }}">Nueva entrada</a></p>
+{% if posts %}
+<table class="tabla">
+  <thead><tr><th>Título</th><th>Fecha</th><th>Categoría</th><th></th></tr></thead>
+  <tbody>
+  {% for p in posts %}
+    <tr>
+      <td><a href="{{ url_for('post', i=loop.index0) }}"><strong>{{ p.titulo }}</strong></a></td>
+      <td>{{ p.fecha }}</td>
+      <td>{{ p.categoria }}</td>
+      <td><a href="{{ url_for('post', i=loop.index0) }}">Editar</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p class="vacio">Todavía no hay entradas. La página del blog muestra un mensaje de
+  «estamos preparando los primeros artículos» hasta que crees la primera.</p>
+{% endif %}
+{% endblock %}

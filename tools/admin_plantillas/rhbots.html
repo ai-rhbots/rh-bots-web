@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block titulo %}RH·BOTS{% endblock %}
+{% block contenido %}
+<h1>RH·BOTS — equipo e historia</h1>
+<form method="post" class="formulario">
+  <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+
+  <label for="kicker">Antetítulo</label>
+  <input id="kicker" name="kicker" value="{{ r.kicker }}">
+
+  <label for="h1">Título</label>
+  <input id="h1" name="h1" value="{{ r.h1 }}" required>
+
+  <label for="lede">Entradilla</label>
+  <textarea id="lede" name="lede" rows="3">{{ r.lede }}</textarea>
+
+  <label>Cifras destacadas (opcional)</label>
+  <div class="filas" data-filas data-target="cifras"
+       data-cols='[{"label":"Cifra","tipo":"texto"},{"label":"Etiqueta","tipo":"texto"}]'>
+    <textarea id="cifras" name="cifras" hidden>{{ cifras }}</textarea>
+    <div class="filas__lista" data-filas-lista></div>
+    <button type="button" class="btn btn--plano" data-filas-add>+ Añadir cifra</button>
+  </div>
+  <p class="pista">Déjalo vacío si no quieres mostrar cifras. No inventes datos: solo cifras reales y verificables.</p>
+
+  <label for="historia_subtitulo">Título de la historia</label>
+  <input id="historia_subtitulo" name="historia_subtitulo" value="{{ r.historia_subtitulo }}">
+
+  <label for="editor-historia_cuerpo">Nuestra historia</label>
+  <div class="editor" data-editor data-target="historia_cuerpo">
+    <div class="editor__barra" role="toolbar" aria-label="Formato del texto">
+      <button type="button" data-cmd="bold" title="Negrita (Ctrl+B)"><strong>N</strong></button>
+      <button type="button" data-cmd="italic" title="Cursiva (Ctrl+I)"><em>C</em></button>
+      <button type="button" data-cmd="underline" title="Subrayado"><u>S</u></button>
+      <span class="editor__sep"></span>
+      <button type="button" data-cmd="formatBlock" data-valor="H2" title="Título">H2</button>
+      <button type="button" data-cmd="formatBlock" data-valor="H3" title="Subtítulo">H3</button>
+      <button type="button" data-cmd="formatBlock" data-valor="P" title="Párrafo normal">¶</button>
+      <button type="button" data-cmd="formatBlock" data-valor="BLOCKQUOTE" title="Cita">“ ”</button>
+      <span class="editor__sep"></span>
+      <button type="button" data-cmd="insertUnorderedList" title="Lista">• Lista</button>
+      <button type="button" data-cmd="insertOrderedList" title="Lista numerada">1. Lista</button>
+      <span class="editor__sep"></span>
+      <button type="button" data-accion="enlace" title="Insertar enlace">🔗 Enlace</button>
+      <button type="button" data-accion="imagen" title="Insertar imagen">🖼 Imagen</button>
+      <button type="button" data-cmd="removeFormat" title="Quitar formato">Limpiar</button>
+    </div>
+    <div id="editor-historia_cuerpo" class="editor__lienzo" contenteditable="true"
+         data-editor-area aria-label="Historia de la empresa"></div>
+    <input type="file" data-editor-file accept="image/*" hidden>
+    <p class="editor__ayuda">También puedes arrastrar una imagen directamente sobre el texto.</p>
+  </div>
+  <textarea id="historia_cuerpo" name="historia_cuerpo" hidden>{{ r.historia_cuerpo }}</textarea>
+
+  <label>Equipo</label>
+  <div class="filas" data-filas data-target="equipo"
+       data-cols='[{"label":"Foto","tipo":"imagen"},{"label":"Nombre","tipo":"texto"},{"label":"Cargo","tipo":"texto"},{"label":"Bio","tipo":"textarea"}]'>
+    <textarea id="equipo" name="equipo" hidden>{{ equipo }}</textarea>
+    <div class="filas__lista" data-filas-lista></div>
+    <button type="button" class="btn btn--plano" data-filas-add>+ Añadir persona</button>
+  </div>
+  <p class="pista">Añade o quita personas del equipo. La foto es opcional: sin ella se muestra un icono genérico.</p>
+
+  <div class="acciones"><button class="btn" type="submit">Guardar</button></div>
+</form>
+{% endblock %}

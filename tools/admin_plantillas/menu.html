@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block titulo %}Menú{% endblock %}
+{% block contenido %}
+<h1>Menú</h1>
+<form method="post" class="formulario">
+  <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+
+  <label>Entradas</label>
+  <p class="pista">La clave marca la entrada activa (home, robots, blog, contacto).
+    Marca «Oculto» para retirarla del menú sin borrarla.</p>
+  <div class="filas" data-filas data-target="nav"
+       data-cols='[{"label":"Etiqueta","tipo":"texto"},{"label":"Destino","tipo":"texto"},{"label":"Clave","tipo":"texto"},{"label":"Oculto","tipo":"bool","valorSi":"oculto"}]'>
+    <textarea id="nav" name="nav" hidden>{{ nav }}</textarea>
+    <div class="filas__lista" data-filas-lista></div>
+    <button type="button" class="btn btn--plano" data-filas-add>+ Añadir entrada</button>
+  </div>
+
+  <div class="acciones"><button class="btn" type="submit">Guardar</button></div>
+</form>
+{% endblock %}

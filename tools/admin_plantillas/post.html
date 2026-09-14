@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block titulo %}Entrada{% endblock %}
+{% block contenido %}
+<h1>{{ 'Editar entrada' if i is not none else 'Nueva entrada' }}</h1>
+<form method="post" class="formulario">
+  <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+
+  <label for="titulo">Título</label>
+  <input id="titulo" name="titulo" value="{{ p.titulo }}" required autofocus>
+  {% if p.slug %}<p class="pista">Se publicará en <code>blog/{{ p.slug }}.html</code>.
+    Si cambias el título se genera una dirección nueva.</p>{% endif %}
+
+  <div class="dos">
+    <div><label for="fecha">Fecha</label>
+      <input id="fecha" name="fecha" type="date" value="{{ p.fecha }}"></div>
+    <div><label for="categoria">Categoría</label>
+      <input id="categoria" name="categoria" value="{{ p.categoria }}"></div>
+  </div>
+
+  <label>Imagen de portada</label>
+  <div class="imgpicker" data-imgpicker>
+    <div class="imgpicker__zona" data-imgpicker-zona tabindex="0" role="button"
+         aria-label="Subir imagen de portada">
+      <img class="imgpicker__preview" data-imgpicker-preview alt="" hidden>
+      <p class="imgpicker__texto" data-imgpicker-texto>Arrastra una imagen aquí o haz clic para elegirla</p>
+    </div>
+    <input type="file" data-imgpicker-file accept="image/*" hidden>
+    <div class="imgpicker__fila">
+      <input type="text" id="img" name="img" value="{{ p.img or '' }}" placeholder="Sin portada">
+      <button type="button" class="btn btn--mini btn--plano" data-imgpicker-quitar hidden>Quitar</button>
+    </div>
+  </div>
+
+  <label for="editor-cuerpo">Artículo</label>
+  <div class="editor" data-editor data-target="cuerpo">
+    <div class="editor__barra" role="toolbar" aria-label="Formato del texto">
+      <button type="button" data-cmd="bold" title="Negrita (Ctrl+B)"><strong>N</strong></button>
+      <button type="button" data-cmd="italic" title="Cursiva (Ctrl+I)"><em>C</em></button>
+      <button type="button" data-cmd="underline" title="Subrayado"><u>S</u></button>
+      <span class="editor__sep"></span>
+      <button type="button" data-cmd="formatBlock" data-valor="H2" title="Título">H2</button>
+      <button type="button" data-cmd="formatBlock" data-valor="H3" title="Subtítulo">H3</button>
+      <button type="button" data-cmd="formatBlock" data-valor="P" title="Párrafo normal">¶</button>
+      <button type="button" data-cmd="formatBlock" data-valor="BLOCKQUOTE" title="Cita">“ ”</button>
+      <span class="editor__sep"></span>
+      <button type="button" data-cmd="insertUnorderedList" title="Lista">• Lista</button>
+      <button type="button" data-cmd="insertOrderedList" title="Lista numerada">1. Lista</button>
+      <span class="editor__sep"></span>
+      <button type="button" data-accion="enlace" title="Insertar enlace">🔗 Enlace</button>
+      <button type="button" data-accion="imagen" title="Insertar imagen">🖼 Imagen</button>
+      <button type="button" data-cmd="removeFormat" title="Quitar formato">Limpiar</button>
+    </div>
+    <div id="editor-cuerpo" class="editor__lienzo" contenteditable="true"
+         data-editor-area aria-label="Contenido del artículo"></div>
+    <input type="file" data-editor-file accept="image/*" hidden>
+    <p class="editor__ayuda">También puedes arrastrar una imagen directamente sobre el texto.</p>
+  </div>
+  <textarea id="cuerpo" name="cuerpo" hidden>{{ p.cuerpo }}</textarea>
+
+  <label for="resumen">Resumen (opcional)</label>
+  <textarea id="resumen" name="resumen" rows="3">{{ p.resumen }}</textarea>
+  <p class="pista">Se usa en la tarjeta del blog y al compartir el enlace.
+    Si lo dejas vacío, se genera solo a partir del artículo.</p>
+
+  <div class="acciones">
+    <button class="btn" type="submit">Guardar</button>
+    {% if i is not none %}
+      <button class="btn btn--peligro" type="submit" name="accion" value="borrar"
+              onclick="return confirm('¿Eliminar esta entrada? La página publicada también se borrará.')">Eliminar</button>
+    {% endif %}
+    <a class="btn btn--plano" href="{{ url_for('blog') }}">Cancelar</a>
+  </div>
+</form>
+{% endblock %}

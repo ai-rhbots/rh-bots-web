@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block titulo %}Robots{% endblock %}
+{% block contenido %}
+<h1>Robots</h1>
+<table class="tabla">
+  <thead><tr><th>Modelo</th><th>Familia</th><th>Estado</th><th>Especificaciones</th></tr></thead>
+  <tbody>
+  {% for p in productos %}
+    <tr>
+      <td><a href="{{ url_for('producto', slug=p.slug) }}"><strong>{{ p.name }}</strong></a><br>
+        <span class="apagado">{{ p.claim }}</span></td>
+      <td>{{ p.family }}</td>
+      <td><span class="pastilla pastilla--{{ estados[p.status][1] }}">{{ estados[p.status][0] }}</span></td>
+      <td>{{ p.specs|map(attribute=1)|map("length")|sum }} filas</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

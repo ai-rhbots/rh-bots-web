@@ -1,0 +1,3391 @@
+{
+  "familias": [
+    [
+      "limpieza",
+      "Limpieza autónoma",
+      "Robots de limpieza profesional para grandes superficies interiores."
+    ],
+    [
+      "humanoides",
+      "Humanoides",
+      "Robots humanoides para atención al público, servicio, industria y desarrollo."
+    ],
+    [
+      "cuadrupedos",
+      "Cuadrúpedos",
+      "Plataformas de cuatro patas para inspección, patrullaje y terrenos complejos."
+    ]
+  ],
+  "estados": {
+    "disponible": [
+      "Disponible",
+      "ok"
+    ],
+    "parcial": [
+      "Datos parciales",
+      "warn"
+    ],
+    "provisional": [
+      "Ficha provisional",
+      "alert"
+    ]
+  },
+  "guia": [
+    [
+      "rhc5",
+      "Limpieza de grandes superficies interiores, fábricas, hospitales, centros comerciales y almacenes."
+    ],
+    [
+      "rha3",
+      "Recepción, promociones, exposiciones, presentaciones y entretenimiento."
+    ],
+    [
+      "rha3-ultra",
+      "Investigación, interacción avanzada, autonomía y aplicaciones que requieren mayor velocidad y computación."
+    ],
+    [
+      "rhx2",
+      "Actuaciones, eventos, educación inicial e interacción, con menor capacidad de desarrollo."
+    ],
+    [
+      "rhx2-ultra",
+      "Navegación, teleoperación, manipulación, integración con IA y desarrollo de casos de uso."
+    ],
+    [
+      "rhx2-edu",
+      "Investigación humanoide, docencia universitaria y competiciones."
+    ],
+    [
+      "rhg2",
+      "Manipulación, logística, alimentación de máquinas, inspección y automatización flexible."
+    ],
+    [
+      "rhd1-pro",
+      "Demostraciones, patrullaje ligero e inspección sin grandes necesidades de desarrollo."
+    ],
+    [
+      "rhd1-edu",
+      "Locomoción cuadrúpeda, navegación y aprendizaje por refuerzo en entornos formativos."
+    ],
+    [
+      "rhd1-ultra",
+      "Universidades, investigación, integración de LiDAR, navegación y aplicaciones personalizadas."
+    ],
+    [
+      "rhd1-max",
+      "Inspecciones largas, desplazamiento rápido y terrenos mixtos gracias a sus patas con ruedas."
+    ],
+    [
+      "rhd1-maxpro",
+      "Transporte de cargas, industria, emergencias y entornos exteriores exigentes."
+    ]
+  ],
+  "productos": [
+    {
+      "slug": "rhc5",
+      "name": "RHC5",
+      "base": "AGIBOT C5",
+      "family": "limpieza",
+      "status": "disponible",
+      "claim": "Limpieza profesional autónoma para grandes superficies",
+      "tagline": "Fregado, aspiración, recogida de residuos y mopa de polvo en una sola pasada, con navegación autónoma y gestión remota de tareas.",
+      "hero": "assets/robots/rhc5/vista-0.webp",
+      "hero_alt": "Robot de limpieza autónomo RHC5",
+      "frames": [
+        "assets/robots/rhc5/vista-0.webp",
+        "assets/robots/rhc5/vista-1.webp",
+        "assets/robots/rhc5/vista-2.webp",
+        "assets/robots/rhc5/vista-3.webp",
+        "assets/robots/rhc5/vista-4.webp",
+        "assets/robots/rhc5/vista-5.webp"
+      ],
+      "gallery": [
+        [
+          "El RHC5 con su estación de servicio",
+          "assets/robots/rhc5/robot-estacion.webp"
+        ],
+        [
+          "Estación — frontal",
+          "assets/robots/rhc5/estacion-frontal.webp"
+        ],
+        [
+          "Estación — perfil",
+          "assets/robots/rhc5/estacion-perfil.webp"
+        ],
+        [
+          "Estación — perspectiva",
+          "assets/robots/rhc5/estacion-perp.webp"
+        ]
+      ],
+      "intro": "El RHC5 es un robot autónomo de limpieza profesional diseñado para instalaciones comerciales e industriales de tamaño medio y grande. Integra fregado, aspiración, recogida de residuos, mopa de polvo y navegación autónoma en una sola máquina.",
+      "keyfacts": [
+        [
+          "Rendimiento",
+          "hasta 1.980 m²/h"
+        ],
+        [
+          "Autonomía",
+          "3 h fregando"
+        ],
+        [
+          "Depósitos",
+          "45 + 45 L"
+        ],
+        [
+          "Ancho de fregado",
+          "550 mm"
+        ]
+      ],
+      "highlights": [
+        [
+          "Limpieza en una sola pasada",
+          "Barrido, fregado y secado combinados, con cepillo lateral para bordes y rincones. Eliminación de residuos superior al 95 %."
+        ],
+        [
+          "Navegación autónoma",
+          "Fusión de LiDAR y visión, cámaras de profundidad y IMU. Planifica rutas, evita obstáculos y reanuda la tarea tras una interrupción."
+        ],
+        [
+          "Doble depósito de 45 litros",
+          "90 litros de capacidad total de líquidos más 1,8 litros de residuos sólidos, para cubrir turnos completos sin intervención."
+        ],
+        [
+          "Integración en el edificio",
+          "Wi-Fi, 4G y LoRa, con integración de ascensores y control de accesos para trabajar entre plantas y áreas distintas."
+        ]
+      ],
+      "specs": [
+        [
+          "Características físicas",
+          [
+            [
+              "Dimensiones",
+              "820 × 680 × 1.130 mm"
+            ],
+            [
+              "Peso bruto",
+              "aprox. 215 kg"
+            ],
+            [
+              "Anchura mínima de paso",
+              "800 mm"
+            ],
+            [
+              "Radio mínimo de giro",
+              "1.720 mm"
+            ],
+            [
+              "Velocidad máxima",
+              "1,0 m/s"
+            ],
+            [
+              "Superación de desnivel vertical",
+              "15 mm"
+            ],
+            [
+              "Pendiente máxima recomendada",
+              "2 %"
+            ],
+            [
+              "Nivel sonoro",
+              "≤ 70 dB(A)"
+            ],
+            [
+              "Protección",
+              "IPX3"
+            ],
+            [
+              "Uso recomendado",
+              "exclusivamente en interiores, sobre superficies firmes"
+            ]
+          ]
+        ],
+        [
+          "Sistema de limpieza",
+          [
+            [
+              "Anchura total con cepillo lateral",
+              "840 mm"
+            ],
+            [
+              "Anchura de fregado",
+              "550 mm"
+            ],
+            [
+              "Anchura de la boquilla de aspiración",
+              "730 mm"
+            ],
+            [
+              "Capacidad de agua limpia",
+              "45 litros"
+            ],
+            [
+              "Capacidad de agua residual",
+              "45 litros"
+            ],
+            [
+              "Capacidad total de líquidos",
+              "90 litros"
+            ],
+            [
+              "Depósito de residuos sólidos",
+              "1,8 litros"
+            ],
+            [
+              "Motores de cepillo",
+              "2 × 400 W"
+            ],
+            [
+              "Presión de contacto",
+              "16 kPa"
+            ],
+            [
+              "Carga vertical de fregado",
+              "hasta 25 kg"
+            ],
+            [
+              "Caudal máximo de agua",
+              "800 ml/min"
+            ],
+            [
+              "Depresión de aspiración",
+              "aprox. 18,18 kPa"
+            ],
+            [
+              "Eliminación de residuos",
+              "superior al 95 %"
+            ]
+          ]
+        ],
+        [
+          "Rendimiento",
+          [
+            [
+              "Rendimiento (manual técnico)",
+              "hasta 1.920 m²/h"
+            ],
+            [
+              "Rendimiento (documentación comercial)",
+              "hasta 1.980 m²/h"
+            ],
+            [
+              "Autonomía en modo fregado",
+              "aprox. 3 horas"
+            ],
+            [
+              "Autonomía en modo mopa de polvo",
+              "aprox. 8 horas"
+            ]
+          ]
+        ],
+        [
+          "Batería",
+          [
+            [
+              "Tipo",
+              "litio"
+            ],
+            [
+              "Tensión nominal",
+              "24 V"
+            ],
+            [
+              "Capacidad",
+              "80 Ah"
+            ],
+            [
+              "Tiempo de carga",
+              "aprox. 1,5 horas"
+            ]
+          ]
+        ],
+        [
+          "Navegación y seguridad",
+          [
+            [
+              "Navegación",
+              "fusión de LiDAR y visión"
+            ],
+            [
+              "Cámaras",
+              "de profundidad y de ojo de pez"
+            ],
+            [
+              "Inercial",
+              "unidad IMU"
+            ],
+            [
+              "Sensores",
+              "anticaída, de borde y detección de obstáculos"
+            ],
+            [
+              "Protección",
+              "frente a colisiones y movimientos descontrolados"
+            ],
+            [
+              "Rutas",
+              "planificación autónoma y reanudación tras interrupciones"
+            ],
+            [
+              "Cobertura",
+              "gestión de múltiples áreas y plantas"
+            ]
+          ]
+        ],
+        [
+          "Comunicaciones e integración",
+          [
+            [
+              "Conectividad",
+              "Wi-Fi · 4G · LoRa"
+            ],
+            [
+              "Edificio",
+              "integración con ascensores y sistemas de acceso"
+            ],
+            [
+              "Gestión",
+              "remota de tareas y mapas"
+            ],
+            [
+              "Estación opcional",
+              "carga, llenado de agua, vaciado y autolimpieza de depósitos"
+            ]
+          ]
+        ]
+      ],
+      "applications": [
+        [
+          "Supermercados",
+          "assets/escenarios/supermercados.jpg"
+        ],
+        [
+          "Edificios de oficinas",
+          "assets/escenarios/edificios-oficinas.jpg"
+        ],
+        [
+          "Estaciones y aeropuertos",
+          "assets/escenarios/estaciones-transporte.jpg"
+        ],
+        [
+          "Fábricas y almacenes",
+          "assets/escenarios/fabricas-almacenes.jpg"
+        ],
+        [
+          "Complejos comerciales",
+          "assets/escenarios/complejos-comerciales.jpg"
+        ],
+        [
+          "Hospitales",
+          "assets/escenarios/hospitales.jpg"
+        ]
+      ],
+      "notes": [
+        [
+          "info",
+          "Rendimiento: 1.920 vs 1.980 m²/h",
+          "El manual técnico indica hasta 1.920 m²/h y la documentación comercial más reciente hasta 1.980 m²/h. La diferencia parece corresponder a distintas revisiones del producto o del método de cálculo. Conviene confirmar la cifra aplicable a la revisión ofertada."
+        ]
+      ],
+      "shopify": {
+        "handle": "agibot-c5",
+        "variante": "50384849928429",
+        "sku": "AGIBOT-C5",
+        "precio": "30000.00",
+        "moneda": "EUR",
+        "disponible": true
+      }
+    },
+    {
+      "slug": "rha3",
+      "name": "RHA3",
+      "base": "AGIBOT A3",
+      "family": "humanoides",
+      "status": "disponible",
+      "claim": "Humanoide de tamaño adulto para atención al público",
+      "tagline": "Recepción, presentaciones, exposiciones y entretenimiento, con interacción multimodal y jornadas de trabajo prolongadas.",
+      "hero": "assets/robots/rha3/hero.webp",
+      "hero_alt": "Humanoide de tamaño adulto RHA3",
+      "intro": "El RHA3 es un humanoide bípedo de tamaño adulto orientado a recepción, atención al público, presentaciones, entretenimiento, exposiciones y servicios comerciales. Está pensado para trabajar durante periodos prolongados en espacios interiores y realizar interacción multimodal con personas.",
+      "keyfacts": [
+        [
+          "Altura",
+          "1,73 m"
+        ],
+        [
+          "Peso",
+          "55 kg"
+        ],
+        [
+          "Autonomía",
+          "hasta 10 h"
+        ],
+        [
+          "Carga por brazo",
+          "5 kg"
+        ]
+      ],
+      "highlights": [
+        [
+          "Autonomía de jornada completa",
+          "Doble batería intercambiable de 1.152 Wh y cambio en unos 10 segundos, para funcionamiento prolongado sin parar el servicio."
+        ],
+        [
+          "Interacción multimodal",
+          "Visión binocular, micrófonos, altavoces y pantalla frontal para atender e informar a las personas de forma natural."
+        ],
+        [
+          "Movilidad autónoma",
+          "Navegación autónoma con evitación dinámica de obstáculos y posicionamiento por visión y UWB con precisión inferior a ±10 cm."
+        ],
+        [
+          "Manipulación real",
+          "Brazos de 7 grados de libertad y 5 kg de carga nominal por brazo, compatibles con manos diestras y otros efectores."
+        ]
+      ],
+      "specs": [
+        [
+          "Dimensiones y estructura",
+          [
+            [
+              "Altura",
+              "aprox. 1,73 m"
+            ],
+            [
+              "Dimensiones",
+              "1.730 × 520 × 300 mm"
+            ],
+            [
+              "Peso",
+              "aprox. 55 kg"
+            ],
+            [
+              "Cuello",
+              "2 grados de libertad"
+            ],
+            [
+              "Cada brazo",
+              "7 grados de libertad"
+            ],
+            [
+              "Cintura",
+              "3 grados de libertad"
+            ],
+            [
+              "Cada pierna",
+              "6 grados de libertad"
+            ],
+            [
+              "Manos diestras",
+              "opcionales"
+            ]
+          ]
+        ],
+        [
+          "Movilidad",
+          [
+            [
+              "Velocidad máxima",
+              "1,2 m/s"
+            ],
+            [
+              "Pendiente máxima (omnidireccional)",
+              "15°"
+            ],
+            [
+              "Altura máxima de obstáculo",
+              "250 mm"
+            ],
+            [
+              "Anchura mínima frontal",
+              "aprox. 900 mm"
+            ],
+            [
+              "Anchura mínima lateral",
+              "aprox. 600 mm"
+            ],
+            [
+              "Navegación",
+              "autónoma con evitación dinámica de obstáculos"
+            ],
+            [
+              "Posicionamiento",
+              "visión y sistemas inalámbricos"
+            ]
+          ]
+        ],
+        [
+          "Brazos y manipulación",
+          [
+            [
+              "Carga nominal por brazo",
+              "5 kg"
+            ],
+            [
+              "Velocidad del efector con carga",
+              "hasta 1 m/s"
+            ],
+            [
+              "Velocidad sin carga",
+              "hasta 3 m/s"
+            ],
+            [
+              "Compatibilidad",
+              "manos diestras y otros efectores finales"
+            ]
+          ]
+        ],
+        [
+          "Batería y autonomía",
+          [
+            [
+              "Capacidad total",
+              "1.152 Wh"
+            ],
+            [
+              "Configuración",
+              "doble batería intercambiable"
+            ],
+            [
+              "Autonomía",
+              "hasta 10 horas según patrón de uso"
+            ],
+            [
+              "Tiempo de carga",
+              "≤ 2 horas"
+            ],
+            [
+              "Cambio de batería",
+              "aprox. 10 segundos"
+            ],
+            [
+              "Funcionamiento prolongado",
+              "por sustitución sucesiva de baterías"
+            ]
+          ]
+        ],
+        [
+          "Percepción",
+          [
+            [
+              "Visión",
+              "sistema binocular"
+            ],
+            [
+              "Resolución binocular",
+              "1.920 × 1.536 px a 30 fps"
+            ],
+            [
+              "Posicionamiento visual — posición",
+              "±10 cm"
+            ],
+            [
+              "Posicionamiento visual — orientación",
+              "±10°"
+            ],
+            [
+              "UWB",
+              "de serie, precisión inferior a ±10 cm"
+            ],
+            [
+              "Audio",
+              "micrófonos y altavoces para interacción por voz"
+            ],
+            [
+              "Pantalla",
+              "frontal de interacción"
+            ]
+          ]
+        ],
+        [
+          "Computación",
+          [
+            [
+              "Unidad principal MDU",
+              "Rockchip RK3588"
+            ],
+            [
+              "Memoria MDU",
+              "16 GB"
+            ],
+            [
+              "Almacenamiento MDU",
+              "256 GB"
+            ],
+            [
+              "Unidad HDU",
+              "RK3588S2"
+            ],
+            [
+              "Memoria HDU",
+              "16 GB"
+            ],
+            [
+              "Almacenamiento HDU",
+              "128 GB"
+            ]
+          ]
+        ],
+        [
+          "Comunicaciones",
+          [
+            [
+              "Conectividad",
+              "Wi-Fi · Bluetooth · 4G · 5G"
+            ],
+            [
+              "Móvil",
+              "doble conectividad/SIM según configuración"
+            ]
+          ]
+        ],
+        [
+          "Entorno operativo",
+          [
+            [
+              "Temperatura de funcionamiento",
+              "−10 a 45 °C"
+            ],
+            [
+              "Temperatura de almacenamiento",
+              "−20 a 70 °C"
+            ],
+            [
+              "Humedad relativa",
+              "10 a 90 %"
+            ],
+            [
+              "Protección de módulos articulares",
+              "IP5X"
+            ],
+            [
+              "Vida de diseño",
+              "3 años"
+            ]
+          ]
+        ]
+      ],
+      "applications": [
+        [
+          "Recepción de hoteles y oficinas",
+          null
+        ],
+        [
+          "Presentador de productos",
+          null
+        ],
+        [
+          "Guía de exposiciones",
+          null
+        ],
+        [
+          "Atención al cliente",
+          null
+        ],
+        [
+          "Actuaciones coordinadas",
+          null
+        ],
+        [
+          "Promoción y entretenimiento",
+          null
+        ],
+        [
+          "Gestión de flotas de más de 100 robots",
+          null
+        ]
+      ],
+      "notes": []
+    },
+    {
+      "slug": "rha3-ultra",
+      "name": "RHA3 Ultra \"Reboniko\"",
+      "base": "AGIBOT A3 Ultra",
+      "family": "humanoides",
+      "status": "disponible",
+      "claim": "Humanoide avanzado para investigación e inteligencia corporal",
+      "tagline": "La versión de mayores prestaciones del RHA3: más sensores, más potencia de cálculo y una arquitectura abierta al desarrollo avanzado.",
+      "hero": "assets/robots/rha3-ultra/hero.webp",
+      "intro": "El RHA3 Ultra es la versión de mayores prestaciones del RHA3. Añade una plataforma de computación más potente, más sensores, mayor velocidad y una arquitectura orientada al desarrollo avanzado, la autonomía y la investigación en inteligencia corporal. Fue presentado oficialmente en julio de 2026.",
+      "keyfacts": [
+        [
+          "Altura",
+          "1,74 m"
+        ],
+        [
+          "Grados de libertad",
+          "51"
+        ],
+        [
+          "Par de rodilla",
+          "320 Nm"
+        ],
+        [
+          "Autonomía",
+          "hasta 8 h"
+        ]
+      ],
+      "highlights": [
+        [
+          "51 grados de libertad activos",
+          "Cuello, brazos de 7 GDL, cintura y piernas, con manos diestras de 10 GDL y soporte para configuraciones de hasta 20 GDL por mano."
+        ],
+        [
+          "Computación de alto rendimiento",
+          "Dos Rockchip RK3588 junto a una plataforma NVIDIA Jetson Thor, preparada para ejecutar percepción, planificación y modelos de inteligencia corporal en local."
+        ],
+        [
+          "Movilidad dinámica",
+          "Par máximo de rodilla de 320 Nm, desplazamiento dinámico y recuperación del equilibrio."
+        ],
+        [
+          "Percepción completa",
+          "LiDAR 3D, cámaras RGB-D de manipulación y terreno, visión perimetral, GPS, RTK, UWB y sensores táctiles en los hombros."
+        ]
+      ],
+      "specs": [
+        [
+          "Dimensiones y peso",
+          [
+            [
+              "Altura",
+              "aprox. 1,74 m"
+            ],
+            [
+              "Dimensiones",
+              "1.740 × 520 × 300 mm"
+            ],
+            [
+              "Peso",
+              "aprox. 60 kg"
+            ],
+            [
+              "Grados de libertad activos",
+              "51"
+            ],
+            [
+              "Cuello",
+              "2"
+            ],
+            [
+              "Brazos",
+              "7 por brazo"
+            ],
+            [
+              "Cintura",
+              "3"
+            ],
+            [
+              "Piernas",
+              "6 por pierna"
+            ],
+            [
+              "Manos diestras",
+              "10 GDL por mano; admite configuraciones de hasta 20 GDL"
+            ]
+          ]
+        ],
+        [
+          "Movilidad",
+          [
+            [
+              "Velocidad habitual máxima",
+              "1,8 m/s"
+            ],
+            [
+              "Velocidad normal recomendada",
+              "< 1,2 m/s"
+            ],
+            [
+              "Velocidad máxima en laboratorio",
+              "2,5 m/s"
+            ],
+            [
+              "Velocidad máxima de carrera anunciada",
+              "5 m/s"
+            ],
+            [
+              "Par máximo de rodilla",
+              "320 Nm"
+            ],
+            [
+              "Capacidades",
+              "desplazamiento dinámico y recuperación del equilibrio"
+            ]
+          ]
+        ],
+        [
+          "Manipulación",
+          [
+            [
+              "Carga nominal por brazo",
+              "5 kg"
+            ],
+            [
+              "Brazos",
+              "7 grados de libertad"
+            ],
+            [
+              "Manos diestras",
+              "opcionales"
+            ],
+            [
+              "Percepción",
+              "RGB-D específica para manipulación"
+            ],
+            [
+              "Orientación",
+              "manipulación de objetos, interacción y servicios avanzados"
+            ]
+          ]
+        ],
+        [
+          "Sensores",
+          [
+            [
+              "LiDAR",
+              "3D"
+            ],
+            [
+              "Cámaras RGB-D",
+              "manipulación y reconocimiento del terreno"
+            ],
+            [
+              "Cámara binocular",
+              "RGB"
+            ],
+            [
+              "Visión perimetral",
+              "cámaras RGB"
+            ],
+            [
+              "Posicionamiento",
+              "GPS · RTK · UWB"
+            ],
+            [
+              "Táctil",
+              "sensores en los hombros"
+            ],
+            [
+              "Audio",
+              "matrices de 8 micrófonos delantera y trasera; altavoz"
+            ],
+            [
+              "Interfaz",
+              "pantalla curva e indicadores luminosos omnidireccionales"
+            ]
+          ]
+        ],
+        [
+          "Computación",
+          [
+            [
+              "Procesadores",
+              "2 × Rockchip RK3588"
+            ],
+            [
+              "Plataforma de IA",
+              "NVIDIA Jetson Thor"
+            ],
+            [
+              "Arquitectura",
+              "ejecución local de percepción, planificación e inteligencia corporal"
+            ]
+          ]
+        ],
+        [
+          "Batería",
+          [
+            [
+              "Capacidad",
+              "1.152 Wh"
+            ],
+            [
+              "Autonomía",
+              "hasta 8 horas"
+            ],
+            [
+              "Patrón de cálculo oficial",
+              "aprox. 50 % en movimiento y 50 % parado"
+            ],
+            [
+              "Tiempo de carga",
+              "≤ 2 horas"
+            ],
+            [
+              "Entrada",
+              "110–220 V"
+            ],
+            [
+              "Modos de recarga",
+              "carga directa, sustitución de batería y estación autónoma"
+            ]
+          ]
+        ],
+        [
+          "Comunicaciones y desarrollo",
+          [
+            [
+              "Conectividad",
+              "Wi-Fi · Bluetooth · 4G · 5G"
+            ],
+            [
+              "Desarrollo",
+              "soporte para desarrollo secundario"
+            ],
+            [
+              "Interfaces",
+              "sensores, algoritmos y aplicaciones externas"
+            ]
+          ]
+        ]
+      ],
+      "applications": [
+        [
+          "Investigación en inteligencia corporal",
+          null
+        ],
+        [
+          "Interacción avanzada con personas",
+          null
+        ],
+        [
+          "Navegación y autonomía",
+          null
+        ],
+        [
+          "Manipulación de objetos",
+          null
+        ],
+        [
+          "Servicios avanzados",
+          null
+        ]
+      ],
+      "notes": [
+        [
+          "info",
+          "Velocidades según contexto",
+          "La velocidad habitual máxima es de 1,8 m/s y la recomendada en uso normal inferior a 1,2 m/s. Las cifras de 2,5 m/s (laboratorio) y 5 m/s (carrera) corresponden a condiciones de ensayo y no deben interpretarse como velocidad de trabajo."
+        ]
+      ],
+      "shopify": {
+        "handle": "agibot-yuanzheng-a3-ultra",
+        "variante": "50384844456173",
+        "sku": "AGIBOT-A3-ULTRA",
+        "precio": "120000.00",
+        "moneda": "EUR",
+        "disponible": true
+      },
+      "hero_alt": "Humanoide avanzado RHA3 Ultra",
+      "videos": [
+        {
+          "src": "assets/video/a3-ultra-1.mp4",
+          "poster": "assets/video/a3-ultra-1.jpg",
+          "titulo": "El RHA3 Ultra en movimiento"
+        },
+        {
+          "src": "assets/video/a3-ultra-2.mp4",
+          "poster": "assets/video/a3-ultra-2.jpg",
+          "titulo": "Manipulación e interacción"
+        }
+      ]
+    },
+    {
+      "slug": "rhx2",
+      "name": "RHX2",
+      "base": "AGIBOT X2 (base / Youth Edition)",
+      "family": "humanoides",
+      "status": "disponible",
+      "claim": "Humanoide compacto para eventos, recepción y educación",
+      "tagline": "Ya preparado para tareas reales, no sólo demostraciones: interacción, movimiento ágil y presencia en espacios con público.",
+      "hero": "assets/robot-sentado.png",
+      "hero_alt": "Robot humanoide RHX2",
+      "intro": "Humanoide compacto pensado para entretenimiento, interacción, presentaciones, recepción ligera, educación básica y demostraciones.",
+      "keyfacts": [
+        [
+          "Altura",
+          "1,31 m"
+        ],
+        [
+          "Peso",
+          "35 kg"
+        ],
+        [
+          "Grados de libertad",
+          "27"
+        ],
+        [
+          "Autonomía",
+          "aprox. 2 h"
+        ]
+      ],
+      "highlights": [
+        [
+          "Presencia e interacción",
+          "Cámara RGB de interacción, matriz de micrófonos, micrófono inalámbrico, altavoz e iluminación interactiva para trabajar delante de público."
+        ],
+        [
+          "Movimiento expresivo",
+          "Camina, baila, gesticula y ejecuta movimientos coordinados, con 120 Nm de par máximo articular."
+        ],
+        [
+          "Formato manejable",
+          "1,31 m y 35 kg: fácil de transportar e instalar en eventos, ferias y espacios de recepción."
+        ],
+        [
+          "Listo para usar",
+          "Control por aplicación y mando, actualizaciones OTA y batería intercambiable con carga en menos de 1,5 horas."
+        ]
+      ],
+      "specs": [
+        [
+          "Dimensiones y estructura",
+          [
+            [
+              "Altura",
+              "aprox. 1,31 m"
+            ],
+            [
+              "Dimensiones",
+              "1.310 × 460 × 210 mm"
+            ],
+            [
+              "Peso",
+              "aprox. 35 kg"
+            ],
+            [
+              "Grados de libertad activos",
+              "27"
+            ],
+            [
+              "Cuello",
+              "2"
+            ],
+            [
+              "Cada brazo",
+              "5"
+            ],
+            [
+              "Cintura",
+              "3"
+            ],
+            [
+              "Cada pierna",
+              "6"
+            ]
+          ]
+        ],
+        [
+          "Movilidad",
+          [
+            [
+              "Velocidad máxima",
+              "1,5 m/s"
+            ],
+            [
+              "Velocidad diaria recomendada",
+              "≤ 0,8 m/s"
+            ],
+            [
+              "Par máximo articular",
+              "120 Nm"
+            ],
+            [
+              "Capacidades",
+              "caminar, bailar, gestos y movimientos coordinados"
+            ]
+          ]
+        ],
+        [
+          "Brazos",
+          [
+            [
+              "Alcance sin efector",
+              "aprox. 437 mm"
+            ],
+            [
+              "Carga máxima en postura específica",
+              "3 kg"
+            ],
+            [
+              "Carga recomendada en todo el espacio de trabajo",
+              "≤ 1 kg, sin contar el efector final"
+            ]
+          ]
+        ],
+        [
+          "Percepción",
+          [
+            [
+              "Cámara",
+              "RGB de interacción"
+            ],
+            [
+              "Táctil",
+              "sensor en la cabeza"
+            ],
+            [
+              "No incluye de serie",
+              "el conjunto completo de LiDAR 3D y cámaras RGB-D del RHX2 Ultra"
+            ]
+          ]
+        ],
+        [
+          "Interacción",
+          [
+            [
+              "Audio",
+              "matriz de micrófonos, micrófono inalámbrico y altavoz"
+            ],
+            [
+              "Interfaz",
+              "pantalla o interfaz frontal"
+            ],
+            [
+              "Iluminación",
+              "sistema de iluminación interactiva"
+            ]
+          ]
+        ],
+        [
+          "Batería",
+          [
+            [
+              "Capacidad comercial aproximada",
+              "500 Wh"
+            ],
+            [
+              "Autonomía",
+              "alrededor de 2 horas caminando a 0,5 m/s"
+            ],
+            [
+              "Tiempo de carga",
+              "≤ 1,5 horas"
+            ],
+            [
+              "Cargador",
+              "54,6 V · 10 A"
+            ],
+            [
+              "Modos de recarga",
+              "carga directa y batería intercambiable"
+            ],
+            [
+              "Estación de carga autónoma",
+              "no incluida de serie"
+            ]
+          ]
+        ],
+        [
+          "Computación y conexiones",
+          [
+            [
+              "Procesadores",
+              "2 × Rockchip RK3588"
+            ],
+            [
+              "Puertos",
+              "1 × USB-A · 1 × USB-C · 2 × RJ45"
+            ],
+            [
+              "Conectividad",
+              "Wi-Fi · Bluetooth"
+            ],
+            [
+              "Software",
+              "actualizaciones OTA; control por aplicación y mando"
+            ]
+          ]
+        ]
+      ],
+      "applications": [
+        [
+          "Actuaciones y entretenimiento",
+          null
+        ],
+        [
+          "Eventos y ferias",
+          null
+        ],
+        [
+          "Recepción ligera",
+          null
+        ],
+        [
+          "Educación inicial",
+          null
+        ],
+        [
+          "Demostraciones y presentaciones",
+          null
+        ]
+      ],
+      "notes": [
+        [
+          "info",
+          "Sobre la denominación «X2 Lite»",
+          "No existe actualmente un producto independiente llamado X2 Lite en el catálogo internacional. La denominación suele utilizarse para el X2 base, identificado en algunos mercados como Youth Edition. Conviene confirmar el SKU exacto ofertado por el distribuidor."
+        ],
+        [
+          "info",
+          "Grados de libertad según revisión",
+          "La tabla técnica actual indica 27 grados de libertad activos. Algunos materiales comerciales anteriores hablaban de 25 o más, por lo que debe comprobarse la revisión de hardware."
+        ],
+        [
+          "info",
+          "Desarrollo secundario",
+          "La versión base está orientada a utilizar las funciones suministradas por el fabricante. La documentación oficial no la presenta como plataforma completa de desarrollo secundario; para ese uso, el modelo indicado es el RHX2 Ultra."
+        ]
+      ],
+      "shopify": {
+        "handle": "agibot-lingxi-x2",
+        "variante": "50384848552173",
+        "sku": "AGIBOT-X2",
+        "precio": "35000.00",
+        "moneda": "EUR",
+        "disponible": true
+      },
+      "videos": [
+        {
+          "src": "assets/video/x2.mp4",
+          "poster": "assets/video/x2.jpg",
+          "titulo": "El RHX2 en acción"
+        }
+      ]
+    },
+    {
+      "slug": "rhx2-ultra",
+      "name": "RHX2 Ultra",
+      "base": "AGIBOT X2 Ultra",
+      "family": "humanoides",
+      "status": "disponible",
+      "claim": "Humanoide compacto y programable para desarrollo de aplicaciones",
+      "tagline": "Percepción 3D, computación NVIDIA y soporte de desarrollo secundario en el mismo formato compacto del RHX2.",
+      "hero": "assets/robot-frontal.png",
+      "hero_alt": "Robot humanoide RHX2 Ultra",
+      "intro": "El RHX2 Ultra es la versión avanzada y programable de la familia X2. Incorpora brazos con más grados de libertad, percepción 3D, conectividad móvil, computación NVIDIA y soporte para desarrollo secundario.",
+      "keyfacts": [
+        [
+          "Altura",
+          "1,31 m"
+        ],
+        [
+          "Peso",
+          "39 kg"
+        ],
+        [
+          "Potencia de IA",
+          "hasta 157 TOPS"
+        ],
+        [
+          "Grados de libertad",
+          "30"
+        ]
+      ],
+      "highlights": [
+        [
+          "Percepción 3D completa",
+          "LiDAR 3D, cámara RGB-D, binocular RGB frontal, cámara trasera y sensor táctil en la cabeza para navegación y manipulación."
+        ],
+        [
+          "Computación NVIDIA",
+          "RK3588S, RK3588 y NVIDIA Jetson Orin NX de 16 GB, con hasta 157 TOPS de potencia de inteligencia artificial."
+        ],
+        [
+          "Brazos de 7 grados de libertad",
+          "Alcance de 558 mm y compatibilidad con la mano diestra OmniHand, la pinza OmniPicker y otros efectores y herramientas."
+        ],
+        [
+          "Plataforma abierta",
+          "Desarrollo secundario con LinkCraft, teleoperación, actualizaciones OTA e integración de sensores y efectores."
+        ]
+      ],
+      "specs": [
+        [
+          "Dimensiones y estructura",
+          [
+            [
+              "Altura",
+              "aprox. 1,31 m"
+            ],
+            [
+              "Dimensiones",
+              "1.310 × 460 × 210 mm"
+            ],
+            [
+              "Peso",
+              "aprox. 39 kg"
+            ],
+            [
+              "Grados de libertad activos",
+              "30"
+            ],
+            [
+              "Cuello",
+              "1"
+            ],
+            [
+              "Brazos",
+              "7 por brazo"
+            ],
+            [
+              "Cintura",
+              "3"
+            ],
+            [
+              "Piernas",
+              "6 por pierna"
+            ]
+          ]
+        ],
+        [
+          "Movilidad",
+          [
+            [
+              "Velocidad máxima",
+              "1,5 – 1,8 m/s según revisión y entorno de prueba"
+            ],
+            [
+              "Velocidad diaria recomendada",
+              "≤ 0,8 m/s"
+            ],
+            [
+              "Par máximo articular",
+              "120 Nm"
+            ],
+            [
+              "Marcha",
+              "omnidireccional"
+            ],
+            [
+              "Navegación",
+              "autónoma con evitación de obstáculos"
+            ],
+            [
+              "Capacidades",
+              "movimientos expresivos y habilidades dinámicas"
+            ]
+          ]
+        ],
+        [
+          "Brazos y manipulación",
+          [
+            [
+              "Brazos",
+              "7 grados de libertad"
+            ],
+            [
+              "Alcance sin efector",
+              "aprox. 558 mm"
+            ],
+            [
+              "Carga máxima en postura específica",
+              "3 kg"
+            ],
+            [
+              "Carga recomendada en todo el espacio de trabajo",
+              "≤ 1 kg, excluyendo el efector"
+            ],
+            [
+              "Efectores compatibles",
+              "mano diestra OmniHand, pinza OmniPicker y otras herramientas"
+            ]
+          ]
+        ],
+        [
+          "Percepción",
+          [
+            [
+              "LiDAR",
+              "3D"
+            ],
+            [
+              "Cámaras",
+              "RGB-D, RGB de interacción, binocular RGB frontal y RGB trasera"
+            ],
+            [
+              "Táctil",
+              "sensor en la cabeza"
+            ],
+            [
+              "Uso",
+              "percepción visual para navegación y manipulación"
+            ]
+          ]
+        ],
+        [
+          "Computación",
+          [
+            [
+              "Procesadores",
+              "RK3588S · RK3588"
+            ],
+            [
+              "Plataforma de IA",
+              "NVIDIA Jetson Orin NX 16 GB"
+            ],
+            [
+              "Potencia de IA anunciada",
+              "hasta 157 TOPS"
+            ]
+          ]
+        ],
+        [
+          "Batería",
+          [
+            [
+              "Capacidad (documentación de desarrollo)",
+              "aprox. 421 Wh"
+            ],
+            [
+              "Capacidad (páginas comerciales)",
+              "aprox. 500 Wh"
+            ],
+            [
+              "Autonomía",
+              "alrededor de 2 horas a 0,5 m/s"
+            ],
+            [
+              "Tiempo de carga",
+              "≤ 1,5 horas"
+            ],
+            [
+              "Modos de recarga",
+              "carga directa y batería intercambiable"
+            ],
+            [
+              "Estación de carga autónoma",
+              "opcional"
+            ]
+          ]
+        ],
+        [
+          "Comunicaciones",
+          [
+            [
+              "Conectividad",
+              "Wi-Fi · Bluetooth · 4G · 5G"
+            ],
+            [
+              "Puertos",
+              "2 × USB-A · 2 × USB-C · 2 × RJ45"
+            ],
+            [
+              "Salidas de alimentación",
+              "12 V/3 A y 48 V/5 A"
+            ]
+          ]
+        ],
+        [
+          "Desarrollo",
+          [
+            [
+              "Desarrollo secundario",
+              "soportado"
+            ],
+            [
+              "Plataforma",
+              "LinkCraft"
+            ],
+            [
+              "Control",
+              "aplicación y teleoperación"
+            ],
+            [
+              "Software",
+              "actualizaciones OTA"
+            ],
+            [
+              "Integración",
+              "sensores y efectores"
+            ],
+            [
+              "Herramientas",
+              "percepción, movimiento y aplicaciones"
+            ]
+          ]
+        ]
+      ],
+      "applications": [
+        [
+          "Asistencia en entornos industriales ligeros",
+          null
+        ],
+        [
+          "Recepción y atención al visitante",
+          null
+        ],
+        [
+          "Guía en showrooms y eventos",
+          null
+        ],
+        [
+          "Logística interna y transporte ligero",
+          null
+        ],
+        [
+          "Formación e investigación",
+          null
+        ]
+      ],
+      "gallery": [
+        [
+          "Mano diestra OmniHand",
+          "assets/robots/accesorios/mano.webp"
+        ],
+        [
+          "Equipo de teleoperación",
+          "assets/robots/accesorios/vr.webp"
+        ]
+      ],
+      "notes": [
+        [
+          "info",
+          "Grados de libertad: 30 vs 31",
+          "La documentación de desarrollo actual indica 30 grados de libertad activos. Algunas presentaciones comerciales han indicado 31. La diferencia puede depender de la revisión y del criterio utilizado para contar determinados actuadores."
+        ],
+        [
+          "info",
+          "Capacidad de batería: 421 vs 500 Wh",
+          "La documentación de desarrollo indica aproximadamente 421 Wh; algunas páginas comerciales redondean a unos 500 Wh. Conviene confirmar la cifra de la revisión ofertada."
+        ]
+      ]
+    },
+    {
+      "slug": "rhx2-edu",
+      "name": "RHX2 EDU",
+      "base": "AGIBOT X2 EDU",
+      "family": "humanoides",
+      "status": "parcial",
+      "claim": "Plataforma humanoide para enseñanza e investigación",
+      "tagline": "Hardware modular, cadena cinemática reconfigurable e interfaces abiertas para universidades, competiciones y desarrollo de algoritmos.",
+      "hero": "assets/robots/rhx2-edu/hero.webp",
+      "intro": "El RHX2 EDU es una plataforma humanoide presentada en julio de 2026 para enseñanza, investigación científica, competiciones de robótica y desarrollo universitario.",
+      "keyfacts": [
+        [
+          "Altura",
+          "aprox. 1,3 m"
+        ],
+        [
+          "Grados de libertad",
+          "29"
+        ],
+        [
+          "GDL por brazo",
+          "7"
+        ],
+        [
+          "Carga del efector",
+          "hasta 3 kg"
+        ]
+      ],
+      "highlights": [
+        [
+          "Arquitectura modular",
+          "Hardware modular con cadena cinemática desmontable y reconfigurable para experimentar con distintas configuraciones."
+        ],
+        [
+          "Interfaces abiertas",
+          "Control de movimiento y hardware abiertos, pensados para investigación y docencia."
+        ],
+        [
+          "Ampliable",
+          "Admite efectores finales, sensores, unidades de computación y herramientas experimentales adicionales."
+        ],
+        [
+          "Orientado a investigación",
+          "Locomoción, manipulación, inteligencia corporal y aprendizaje por refuerzo."
+        ]
+      ],
+      "specs": [
+        [
+          "Datos oficialmente publicados",
+          [
+            [
+              "Altura",
+              "aprox. 1,3 m"
+            ],
+            [
+              "Grados de libertad",
+              "29"
+            ],
+            [
+              "Grados de libertad por brazo",
+              "7"
+            ],
+            [
+              "Carga máxima del efector",
+              "hasta 3 kg"
+            ],
+            [
+              "Arquitectura",
+              "hardware modular"
+            ],
+            [
+              "Cadena cinemática",
+              "desmontable y reconfigurable"
+            ],
+            [
+              "Interfaces de control de movimiento",
+              "abiertas"
+            ],
+            [
+              "Interfaces de hardware",
+              "abiertas"
+            ],
+            [
+              "Ampliaciones",
+              "efectores finales, sensores, unidades de computación y herramientas"
+            ]
+          ]
+        ],
+        [
+          "Pendiente de publicación oficial",
+          [
+            [
+              "Peso exacto",
+              "no divulgado"
+            ],
+            [
+              "Capacidad de batería",
+              "no divulgada"
+            ],
+            [
+              "Autonomía",
+              "no divulgada"
+            ],
+            [
+              "Velocidad máxima",
+              "no divulgada"
+            ],
+            [
+              "Configuración exacta de sensores",
+              "no divulgada"
+            ],
+            [
+              "Plataforma informática definitiva",
+              "no divulgada"
+            ],
+            [
+              "Grado de protección",
+              "no divulgado"
+            ],
+            [
+              "Precio y configuraciones comerciales",
+              "no divulgados"
+            ]
+          ]
+        ]
+      ],
+      "applications": [
+        [
+          "Formación profesional",
+          null
+        ],
+        [
+          "Universidades",
+          null
+        ],
+        [
+          "Investigación en locomoción",
+          null
+        ],
+        [
+          "Investigación en manipulación",
+          null
+        ],
+        [
+          "Competiciones de robótica",
+          null
+        ],
+        [
+          "Algoritmos de inteligencia corporal",
+          null
+        ],
+        [
+          "Experimentación con aprendizaje por refuerzo",
+          null
+        ]
+      ],
+      "notes": [
+        [
+          "warn",
+          "Ficha incompleta",
+          "El fabricante no ha publicado todavía de forma completa peso, batería, autonomía, velocidad máxima, configuración de sensores, plataforma informática, grado de protección ni precio. Solicitar estos datos antes de cerrar una oferta."
+        ]
+      ],
+      "shopify": {
+        "handle": "agibot-lingxi-x2-edu",
+        "variante": "50384849207533",
+        "sku": "AGIBOT-X2-EDU",
+        "precio": "40000.00",
+        "moneda": "EUR",
+        "disponible": true
+      },
+      "hero_alt": "Plataforma humanoide RHX2 EDU"
+    },
+    {
+      "slug": "rhx2-rec",
+      "name": "RHX2 REC",
+      "base": "AGIBOT X2 REC",
+      "family": "humanoides",
+      "status": "provisional",
+      "claim": "Variante anunciada, pendiente de ficha oficial",
+      "tagline": "Denominación presentada en Smart Tech Korea el 11 de junio de 2026. Sin ficha técnica oficial publicada.",
+      "hero": "assets/robots/rhx2-rec/hero.webp",
+      "intro": "El nombre X2 REC apareció públicamente en la presentación del fabricante durante Smart Tech Korea, celebrada el 11 de junio de 2026. No se ha localizado una ficha oficial de producto que permita confirmar de qué se trata.",
+      "keyfacts": [],
+      "highlights": [],
+      "specs": [
+        [
+          "Qué no está confirmado",
+          [
+            [
+              "Naturaleza del producto",
+              "no confirmada"
+            ],
+            [
+              "Dimensiones",
+              "pendiente de publicación"
+            ],
+            [
+              "Peso",
+              "pendiente de publicación"
+            ],
+            [
+              "Grados de libertad",
+              "pendiente de publicación"
+            ],
+            [
+              "Sensores y cámaras",
+              "pendiente de publicación"
+            ],
+            [
+              "Sistema de almacenamiento",
+              "pendiente de publicación"
+            ],
+            [
+              "Computación",
+              "pendiente de publicación"
+            ],
+            [
+              "Batería y autonomía",
+              "pendiente de publicación"
+            ],
+            [
+              "Compatibilidad con SDK",
+              "pendiente de publicación"
+            ],
+            [
+              "Formato de captura de datos",
+              "pendiente de publicación"
+            ],
+            [
+              "Interfaces de teleoperación",
+              "pendiente de publicación"
+            ]
+          ]
+        ]
+      ],
+      "applications": [],
+      "checklist": [
+        "Código SKU exacto.",
+        "Ficha técnica firmada o sellada.",
+        "Lista de sensores.",
+        "Revisión de hardware.",
+        "Interfaces disponibles.",
+        "Compatibilidad con LinkCraft o AimDK.",
+        "Condiciones de licencia del software.",
+        "Acceso a datos de cámaras, articulaciones y teleoperación.",
+        "Equipamiento incluido.",
+        "Garantía y soporte regional."
+      ],
+      "notes": [
+        [
+          "alert",
+          "No apta para oferta comercial",
+          "No se ha localizado ficha oficial que permita confirmar si se trata de una nueva variante de hardware, una configuración de captura de datos, una versión orientada a grabación o entrenamiento, un paquete comercial regional o una denominación usada sólo para demostraciones. No deben atribuirse a este modelo las especificaciones del RHX2 Ultra sin confirmación expresa del fabricante."
+        ]
+      ],
+      "hero_alt": "Humanoide compacto RHX2 REC"
+    },
+    {
+      "slug": "rhg2",
+      "name": "RHG2",
+      "base": "AGIBOT G2",
+      "family": "humanoides",
+      "status": "disponible",
+      "claim": "Humanoide industrial con base móvil y torso telescópico",
+      "tagline": "Dos brazos manipuladores sobre plataforma de ruedas, para fabricación, logística, montaje, manipulación de materiales e inspección.",
+      "hero": "assets/robots/rhg2/hero.webp",
+      "hero_alt": "Humanoide industrial RHG2",
+      "gallery": [
+        [
+          "Perfil",
+          "assets/robots/rhg2/perfil.webp"
+        ],
+        [
+          "Interacción",
+          "assets/robots/rhg2/saludando.webp"
+        ],
+        [
+          "Torso y pantalla",
+          "assets/robots/rhg2/display-frontal.webp"
+        ],
+        [
+          "Pantalla facial",
+          "assets/robots/rhg2/display.webp"
+        ]
+      ],
+      "intro": "El RHG2 es un humanoide industrial con base móvil, torso telescópico y dos brazos manipuladores. A diferencia de los humanoides bípedos, utiliza una plataforma de ruedas para maximizar estabilidad, autonomía y capacidad industrial.",
+      "keyfacts": [
+        [
+          "Altura regulable",
+          "1.225 – 1.795 mm"
+        ],
+        [
+          "Peso",
+          "185 kg"
+        ],
+        [
+          "Carga por brazo",
+          "5 kg"
+        ],
+        [
+          "Protección",
+          "IP42"
+        ]
+      ],
+      "highlights": [
+        [
+          "Torso telescópico",
+          "Altura regulable entre 1.225 y 1.795 mm para trabajar a distintas alturas de estación sin reconfigurar la célula."
+        ],
+        [
+          "Manipulación de precisión",
+          "Brazos de 7 GDL con sensores de par en las articulaciones y control de fuerza, con operaciones de precisión submilimétrica anunciadas por el fabricante."
+        ],
+        [
+          "Plataforma móvil autónoma",
+          "Dirección Ackermann, desplazamiento lateral, giro sobre su propio eje, percepción de 360° y estación de carga automática."
+        ],
+        [
+          "Computación de altas prestaciones",
+          "NVIDIA Jetson T5000 con 2.070 TFLOPS anunciados en precisión FP4, para percepción y aprendizaje de habilidades."
+        ]
+      ],
+      "specs": [
+        [
+          "Dimensiones y peso",
+          [
+            [
+              "Altura regulable",
+              "1.225 – 1.795 mm"
+            ],
+            [
+              "Anchura",
+              "640 mm"
+            ],
+            [
+              "Longitud",
+              "760 mm"
+            ],
+            [
+              "Peso",
+              "aprox. 185 kg"
+            ],
+            [
+              "Protección del robot completo",
+              "IP42"
+            ],
+            [
+              "Grados de libertad activos",
+              "26, sin contar los efectores finales"
+            ],
+            [
+              "Cuello",
+              "3"
+            ],
+            [
+              "Cada brazo",
+              "7"
+            ],
+            [
+              "Conjunto cintura y elevación",
+              "5"
+            ],
+            [
+              "Chasis",
+              "4"
+            ]
+          ]
+        ],
+        [
+          "Plataforma móvil",
+          [
+            [
+              "Velocidad máxima",
+              "1,5 m/s"
+            ],
+            [
+              "Dirección",
+              "tipo Ackermann"
+            ],
+            [
+              "Movimientos",
+              "desplazamiento lateral y giro sobre su propio eje"
+            ],
+            [
+              "Navegación",
+              "autónoma"
+            ],
+            [
+              "Percepción",
+              "360°"
+            ],
+            [
+              "Carga",
+              "estación de carga automática"
+            ]
+          ]
+        ],
+        [
+          "Brazos y manipulación",
+          [
+            [
+              "Carga nominal por brazo",
+              "5 kg"
+            ],
+            [
+              "Brazos",
+              "7 grados de libertad"
+            ],
+            [
+              "Sensores",
+              "de par en las articulaciones"
+            ],
+            [
+              "Control",
+              "de fuerza"
+            ],
+            [
+              "Manos diestras",
+              "opcionales, de 19 grados de libertad"
+            ],
+            [
+              "Precisión",
+              "operaciones submilimétricas anunciadas por el fabricante"
+            ],
+            [
+              "Habilidades",
+              "aprendizaje y despliegue mediante aprendizaje por refuerzo"
+            ]
+          ]
+        ],
+        [
+          "Sensores",
+          [
+            [
+              "LiDAR 3D",
+              "2 unidades"
+            ],
+            [
+              "Cámara estéreo",
+              "1 unidad"
+            ],
+            [
+              "Cámaras de ojo de pez",
+              "3 unidades"
+            ],
+            [
+              "Cámara RGB-D en la cabeza",
+              "1 unidad"
+            ],
+            [
+              "Cámaras RGB-D en las muñecas",
+              "2 unidades"
+            ],
+            [
+              "Inercial",
+              "unidad IMU"
+            ],
+            [
+              "Fuerza y par",
+              "sensores dedicados"
+            ],
+            [
+              "Percepción perimetral",
+              "para navegación y manipulación"
+            ]
+          ]
+        ],
+        [
+          "Interacción",
+          [
+            [
+              "Audio",
+              "matriz de micrófonos y altavoz"
+            ],
+            [
+              "Pantalla",
+              "facial"
+            ],
+            [
+              "Indicador",
+              "luminoso multicolor"
+            ],
+            [
+              "Identificación",
+              "NFC"
+            ]
+          ]
+        ],
+        [
+          "Computación",
+          [
+            [
+              "Plataforma",
+              "NVIDIA Jetson T5000"
+            ],
+            [
+              "Potencia anunciada",
+              "2.070 TFLOPS en precisión FP4"
+            ]
+          ]
+        ],
+        [
+          "Batería",
+          [
+            [
+              "Configuración",
+              "doble batería"
+            ],
+            [
+              "Capacidad total",
+              "aprox. 1.652 Wh"
+            ],
+            [
+              "Autonomía",
+              "aprox. 4 horas"
+            ],
+            [
+              "Tiempo de carga",
+              "≤ 2 horas"
+            ],
+            [
+              "Entrada",
+              "100–240 V"
+            ],
+            [
+              "Salida del cargador",
+              "54,75 V · 15 A"
+            ],
+            [
+              "Modos de recarga",
+              "carga directa, sustitución de batería, cambio en caliente y carga autónoma"
+            ]
+          ]
+        ],
+        [
+          "Comunicaciones",
+          [
+            [
+              "Conectividad",
+              "Wi-Fi · Bluetooth · 4G · 5G · NFC"
+            ]
+          ]
+        ],
+        [
+          "Desarrollo y control",
+          [
+            [
+              "Desarrollo secundario",
+              "soportado"
+            ],
+            [
+              "Software",
+              "actualizaciones OTA"
+            ],
+            [
+              "Control",
+              "encendido remoto y teleoperación"
+            ],
+            [
+              "Aprendizaje",
+              "por demostración"
+            ],
+            [
+              "Integración",
+              "aplicaciones industriales"
+            ]
+          ]
+        ]
+      ],
+      "applications": [
+        [
+          "Alimentación de máquinas",
+          null
+        ],
+        [
+          "Manipulación de componentes",
+          null
+        ],
+        [
+          "Preparación de pedidos",
+          null
+        ],
+        [
+          "Clasificación logística",
+          null
+        ],
+        [
+          "Montaje",
+          null
+        ],
+        [
+          "Inspección industrial",
+          null
+        ],
+        [
+          "Transporte interno",
+          null
+        ],
+        [
+          "Automatización flexible de estaciones de trabajo",
+          null
+        ]
+      ],
+      "notes": [],
+      "shopify": {
+        "handle": "agibot-genie-g2",
+        "variante": "50384849535213",
+        "sku": "AGIBOT-G2",
+        "precio": "150000.00",
+        "moneda": "EUR",
+        "disponible": true
+      }
+    },
+    {
+      "slug": "rhd1-pro",
+      "name": "RHD1 Pro",
+      "base": "AGIBOT D1 Pro",
+      "family": "cuadrupedos",
+      "status": "disponible",
+      "claim": "Cuadrúpedo compacto para inspección y demostraciones",
+      "tagline": "Movilidad todoterreno lista para usar, sin necesidad de desarrollar software propio sobre el robot.",
+      "hero": null,
+      "keyfacts": [
+        [
+          "Peso",
+          "15,5 kg"
+        ],
+        [
+          "Velocidad máx.",
+          "3,5 m/s"
+        ],
+        [
+          "Carga nominal",
+          "5 kg"
+        ],
+        [
+          "Pendiente máx.",
+          "40°"
+        ]
+      ],
+      "intro": "Cuadrúpedo compacto preparado para inspección, demostraciones, movilidad todoterreno y aplicaciones que no necesitan desarrollar software propio sobre el robot.",
+      "highlights": [
+        [
+          "Movilidad todoterreno",
+          "Pendientes de hasta 40°, escalón continuo de 160 mm y saltos de 350 mm de altura."
+        ],
+        [
+          "12 motores articulares",
+          "Actuadores de precisión con 48 Nm de par máximo y unidad de medición inercial."
+        ],
+        [
+          "Vídeo en tiempo real",
+          "Cámara frontal con 122° de campo de visión diagonal y transmisión en directo."
+        ],
+        [
+          "Listo para operar",
+          "Sin necesidad de desarrollo secundario: pensado para desplegarlo y usarlo."
+        ]
+      ],
+      "specs": [
+        [
+          "Dimensiones y peso",
+          [
+            [
+              "Dimensiones de pie",
+              "635 × 360 × 420 mm"
+            ],
+            [
+              "Dimensiones tumbado",
+              "675 × 435 × 145 mm"
+            ],
+            [
+              "Peso con batería",
+              "aprox. 15,5 kg"
+            ]
+          ]
+        ],
+        [
+          "Movilidad",
+          [
+            [
+              "Velocidad máxima (página técnica)",
+              "3,5 m/s"
+            ],
+            [
+              "Velocidad máxima (folletos 2026)",
+              "hasta 3,7 m/s"
+            ],
+            [
+              "Pendiente máxima",
+              "40°"
+            ],
+            [
+              "Escalón continuo",
+              "160 mm"
+            ],
+            [
+              "Altura de salto",
+              "350 mm"
+            ],
+            [
+              "Carga nominal",
+              "5 kg"
+            ],
+            [
+              "Distancia recorrida",
+              "aprox. 6 ±1 km"
+            ]
+          ]
+        ],
+        [
+          "Actuadores",
+          [
+            [
+              "Motores articulares",
+              "12 de precisión"
+            ],
+            [
+              "Par máximo",
+              "48 Nm"
+            ],
+            [
+              "Inercial",
+              "unidad IMU"
+            ]
+          ]
+        ],
+        [
+          "Percepción",
+          [
+            [
+              "Cámara",
+              "frontal"
+            ],
+            [
+              "Campo de visión diagonal",
+              "122°"
+            ],
+            [
+              "Campo horizontal",
+              "111°"
+            ],
+            [
+              "Campo vertical",
+              "70°"
+            ],
+            [
+              "Vídeo",
+              "transmisión en tiempo real"
+            ]
+          ]
+        ],
+        [
+          "Batería",
+          [
+            [
+              "Capacidad",
+              "4,6 Ah"
+            ],
+            [
+              "Tensión",
+              "43,2 V"
+            ],
+            [
+              "Autonomía",
+              "aprox. 1 a 2 horas"
+            ],
+            [
+              "Carga del 10 al 90 %",
+              "alrededor de 1 hora"
+            ]
+          ]
+        ],
+        [
+          "Computación",
+          [
+            [
+              "Procesador",
+              "8 núcleos"
+            ],
+            [
+              "Potencia máxima de salida del sistema",
+              "3.500 W"
+            ]
+          ]
+        ]
+      ],
+      "applications": [
+        [
+          "Inspección",
+          null
+        ],
+        [
+          "Demostraciones",
+          null
+        ],
+        [
+          "Patrullaje ligero",
+          null
+        ],
+        [
+          "Movilidad todoterreno",
+          null
+        ]
+      ],
+      "notes": [
+        [
+          "info",
+          "Diferencias entre revisiones",
+          "La página técnica detallada indica 3,5 m/s de velocidad máxima y algunos folletos de 2026 hasta 3,7 m/s. El peso aparece como 15,5 kg con batería, redondeado a 15 kg en folletos recientes."
+        ],
+        [
+          "info",
+          "Desarrollo secundario",
+          "El RHD1 Pro no está orientado a desarrollo secundario avanzado y dispone de menos opciones de expansión que el RHD1 Edu."
+        ]
+      ]
+    },
+    {
+      "slug": "rhd1-edu",
+      "name": "RHD1 Edu",
+      "base": "AGIBOT D1 Edu",
+      "family": "cuadrupedos",
+      "status": "disponible",
+      "claim": "Cuadrúpedo para docencia e investigación",
+      "tagline": "La plataforma mecánica del RHD1 Pro con interfaces, simuladores y SDK para universidades y centros de investigación.",
+      "hero": null,
+      "keyfacts": [
+        [
+          "Peso",
+          "15,5 kg"
+        ],
+        [
+          "Velocidad máx.",
+          "3,5 – 3,7 m/s"
+        ],
+        [
+          "Carga nominal",
+          "5 kg"
+        ],
+        [
+          "Simuladores",
+          "Isaac Sim · MuJoCo"
+        ]
+      ],
+      "intro": "El RHD1 Edu comparte la plataforma mecánica principal del RHD1 Pro, pero incorpora interfaces, simuladores y acceso de desarrollo para universidades, centros formativos e investigadores.",
+      "highlights": [
+        [
+          "Entorno de desarrollo completo",
+          "Modelo URDF, SDK y compatibilidad con NVIDIA Isaac Sim y MuJoCo para simular antes de desplegar en el robot real."
+        ],
+        [
+          "Interfaces de expansión",
+          "Ethernet, USB, salida de alimentación, SBUS y UART para integrar sensores y cargas externas."
+        ],
+        [
+          "Misma base mecánica",
+          "Velocidad de hasta 3,7 m/s, 40° de pendiente, salto de 350 mm y 5 kg de carga nominal."
+        ],
+        [
+          "Pensado para investigar",
+          "Locomoción, percepción, navegación y aprendizaje por refuerzo."
+        ]
+      ],
+      "specs": [
+        [
+          "Especificaciones físicas y dinámicas",
+          [
+            [
+              "Dimensiones de pie",
+              "635 × 360 × 420 mm"
+            ],
+            [
+              "Dimensiones tumbado",
+              "675 × 435 × 145 mm"
+            ],
+            [
+              "Peso",
+              "aprox. 15,5 kg"
+            ],
+            [
+              "Velocidad máxima",
+              "3,5 – 3,7 m/s según revisión"
+            ],
+            [
+              "Carga nominal",
+              "5 kg"
+            ],
+            [
+              "Pendiente máxima",
+              "40°"
+            ],
+            [
+              "Escalón continuo",
+              "160 mm"
+            ],
+            [
+              "Salto",
+              "hasta 350 mm"
+            ],
+            [
+              "Recorrido",
+              "6 ±1 km"
+            ],
+            [
+              "Autonomía",
+              "aprox. 1 a 2 horas"
+            ]
+          ]
+        ],
+        [
+          "Actuadores",
+          [
+            [
+              "Articulaciones motorizadas",
+              "12"
+            ],
+            [
+              "Par máximo",
+              "48 Nm"
+            ]
+          ]
+        ],
+        [
+          "Interfaces de expansión",
+          [
+            [
+              "Red",
+              "Ethernet"
+            ],
+            [
+              "Datos",
+              "USB"
+            ],
+            [
+              "Alimentación",
+              "salida de alimentación"
+            ],
+            [
+              "Control",
+              "SBUS · UART"
+            ]
+          ]
+        ],
+        [
+          "Herramientas de desarrollo",
+          [
+            [
+              "Modelo",
+              "URDF"
+            ],
+            [
+              "Simulación",
+              "NVIDIA Isaac Sim · MuJoCo"
+            ],
+            [
+              "SDK",
+              "de desarrollo"
+            ],
+            [
+              "Integración",
+              "sensores y cargas externas"
+            ],
+            [
+              "Algoritmos",
+              "locomoción, percepción y navegación"
+            ]
+          ]
+        ]
+      ],
+      "applications": [
+        [
+          "Enseñanza de robótica",
+          null
+        ],
+        [
+          "Aprendizaje por refuerzo",
+          null
+        ],
+        [
+          "Investigación en locomoción",
+          null
+        ],
+        [
+          "Navegación autónoma",
+          null
+        ],
+        [
+          "Desarrollo de visión artificial",
+          null
+        ],
+        [
+          "Competiciones",
+          null
+        ],
+        [
+          "Prototipos universitarios",
+          null
+        ]
+      ],
+      "notes": []
+    },
+    {
+      "slug": "rhd1-ultra",
+      "name": "RHD1 Ultra",
+      "base": "AGIBOT D1 Ultra",
+      "family": "cuadrupedos",
+      "status": "disponible",
+      "claim": "Cuadrúpedo ligero programable con protección IP54",
+      "tagline": "Investigación, inspección y navegación con sensores ampliables y control basado en aprendizaje por refuerzo.",
+      "hero": null,
+      "keyfacts": [
+        [
+          "Peso",
+          "15 kg"
+        ],
+        [
+          "Velocidad máx.",
+          "3,7 m/s"
+        ],
+        [
+          "Protección",
+          "IP54"
+        ],
+        [
+          "Pendiente máx.",
+          "≥ 40°"
+        ]
+      ],
+      "intro": "El RHD1 Ultra es la versión avanzada del cuadrúpedo ligero. Está diseñado para investigación, inspección, navegación y desarrollo de aplicaciones con sensores adicionales.",
+      "highlights": [
+        [
+          "Protección IP54",
+          "Ensayos de funcionamiento estable de hasta 200 horas en entornos exigentes."
+        ],
+        [
+          "Ampliable con sensores",
+          "Compatible con LiDAR 3D, cámara de profundidad, RTK, 4G, transmisión de imagen y módulos de seguimiento."
+        ],
+        [
+          "Control por aprendizaje por refuerzo",
+          "Motores con doble codificador en las articulaciones y control dinámico entrenado."
+        ],
+        [
+          "Entorno de desarrollo",
+          "SDK, URDF y compatibilidad con NVIDIA Isaac Sim y MuJoCo."
+        ]
+      ],
+      "specs": [
+        [
+          "Dimensiones y peso",
+          [
+            [
+              "Dimensiones de pie",
+              "630 × 360 × 420 mm"
+            ],
+            [
+              "Dimensiones plegado",
+              "670 × 435 × 145 mm"
+            ],
+            [
+              "Peso",
+              "aprox. 15 kg"
+            ]
+          ]
+        ],
+        [
+          "Movilidad",
+          [
+            [
+              "Velocidad máxima",
+              "3,7 m/s"
+            ],
+            [
+              "Pendiente máxima",
+              "≥ 40°"
+            ],
+            [
+              "Altura de salto",
+              "350 mm"
+            ],
+            [
+              "Escalón continuo",
+              "160 mm"
+            ],
+            [
+              "Carga nominal",
+              "5 kg"
+            ],
+            [
+              "Distancia recorrida",
+              "aprox. 6 ±1 km"
+            ],
+            [
+              "Autonomía nominal (folleto)",
+              "alrededor de 1 hora"
+            ]
+          ]
+        ],
+        [
+          "Actuadores",
+          [
+            [
+              "Par máximo",
+              "48 Nm"
+            ],
+            [
+              "Codificadores",
+              "doble codificador en las articulaciones"
+            ],
+            [
+              "Control",
+              "dinámico basado en aprendizaje por refuerzo"
+            ]
+          ]
+        ],
+        [
+          "Protección y resistencia",
+          [
+            [
+              "Grado de protección",
+              "IP54"
+            ],
+            [
+              "Ensayos",
+              "funcionamiento estable de hasta 200 horas en entornos exigentes"
+            ]
+          ]
+        ],
+        [
+          "Interfaces",
+          [
+            [
+              "Red",
+              "Ethernet"
+            ],
+            [
+              "Datos",
+              "USB"
+            ],
+            [
+              "Alimentación",
+              "salida de alimentación"
+            ],
+            [
+              "Control",
+              "SBUS · UART"
+            ]
+          ]
+        ],
+        [
+          "Expansiones compatibles",
+          [
+            [
+              "LiDAR",
+              "3D"
+            ],
+            [
+              "Cámara",
+              "de profundidad"
+            ],
+            [
+              "Posicionamiento",
+              "RTK"
+            ],
+            [
+              "Conectividad",
+              "4G"
+            ],
+            [
+              "Vídeo",
+              "sistemas de transmisión de imagen"
+            ],
+            [
+              "Otros",
+              "módulos de seguimiento y cargas útiles específicas"
+            ]
+          ]
+        ],
+        [
+          "Desarrollo",
+          [
+            [
+              "SDK",
+              "disponible"
+            ],
+            [
+              "Modelo",
+              "URDF"
+            ],
+            [
+              "Simulación",
+              "NVIDIA Isaac Sim · MuJoCo"
+            ],
+            [
+              "Áreas",
+              "navegación, percepción y control"
+            ],
+            [
+              "Aprendizaje por refuerzo",
+              "entrenamiento y despliegue de políticas"
+            ]
+          ]
+        ]
+      ],
+      "applications": [
+        [
+          "Investigación universitaria",
+          null
+        ],
+        [
+          "Inspección",
+          null
+        ],
+        [
+          "Navegación autónoma",
+          null
+        ],
+        [
+          "Integración de LiDAR",
+          null
+        ],
+        [
+          "Aplicaciones personalizadas",
+          null
+        ]
+      ],
+      "notes": []
+    },
+    {
+      "slug": "rhd1-ultra-w",
+      "name": "RHD1 Ultra-W",
+      "base": "AGIBOT D1 Ultra-W",
+      "family": "cuadrupedos",
+      "status": "provisional",
+      "claim": "Variante con ruedas anunciada por distribuidores",
+      "tagline": "Denominación asociada a una versión wheel-leg del RHD1 Ultra. Sin catálogo oficial ni manual específico localizados.",
+      "hero": null,
+      "keyfacts": [],
+      "intro": "La denominación D1 Ultra-W aparece en determinadas páginas de distribuidores, normalmente asociada a una versión del D1 Ultra con ruedas o con una modificación wheel-leg. No aparece actualmente como producto independiente en el catálogo público oficial del fabricante y no se ha localizado un manual oficial específico.",
+      "highlights": [],
+      "specs": [
+        [
+          "Qué no debe darse por confirmado",
+          [
+            [
+              "Diámetro de las ruedas",
+              "sin confirmar"
+            ],
+            [
+              "Número de motores adicionales",
+              "sin confirmar"
+            ],
+            [
+              "Velocidad sobre ruedas",
+              "sin confirmar"
+            ],
+            [
+              "Circulación con las ruedas bloqueadas",
+              "sin confirmar"
+            ],
+            [
+              "Peso total",
+              "sin confirmar"
+            ],
+            [
+              "Autonomía",
+              "sin confirmar"
+            ],
+            [
+              "Grado de protección",
+              "sin confirmar"
+            ],
+            [
+              "Compatibilidad con el SDK",
+              "sin confirmar"
+            ],
+            [
+              "Diferencias mecánicas respecto al RHD1 Ultra",
+              "sin confirmar"
+            ]
+          ]
+        ]
+      ],
+      "applications": [],
+      "checklist": [
+        "Ficha técnica del fabricante.",
+        "Código SKU.",
+        "Fotografías del producto real.",
+        "Revisión de hardware.",
+        "Manual de usuario.",
+        "Manual del SDK.",
+        "Certificaciones CE.",
+        "Configuración de batería.",
+        "Accesorios incluidos."
+      ],
+      "notes": [
+        [
+          "alert",
+          "Ficha provisional: no apta para oferta contractual",
+          "Algunas páginas reutilizan las especificaciones del RHD1 Ultra convencional. No se han confirmado dimensiones, peso, velocidad ni autonomía propios. Estado de la ficha: provisional y no apta todavía para una oferta contractual sin confirmación del fabricante."
+        ]
+      ]
+    },
+    {
+      "slug": "rhd1-max",
+      "name": "RHD1 Max",
+      "base": "AGIBOT D1 Max",
+      "family": "cuadrupedos",
+      "status": "disponible",
+      "claim": "Cuadrúpedo híbrido con ruedas para inspección de largo recorrido",
+      "tagline": "Una rueda en cada pata: la capacidad de superar obstáculos de un cuadrúpedo con la velocidad y eficiencia de un vehículo de ruedas.",
+      "hero": null,
+      "keyfacts": [
+        [
+          "Velocidad máx.",
+          "8 m/s"
+        ],
+        [
+          "Carga útil",
+          "25 kg"
+        ],
+        [
+          "Protección",
+          "IP67"
+        ],
+        [
+          "Recorrido",
+          "hasta 29 km"
+        ]
+      ],
+      "intro": "El RHD1 Max es un robot cuadrúpedo híbrido con una rueda en cada pata. Combina la capacidad de superar obstáculos de un cuadrúpedo con la velocidad y eficiencia de un vehículo de ruedas. Está diseñado para inspección industrial, patrullaje, vigilancia, transporte de cargas y operación en terrenos complejos.",
+      "highlights": [
+        [
+          "Arquitectura wheel-leg",
+          "12 articulaciones de las patas más 4 motores de rueda de 8 pulgadas, con cuatro modos de funcionamiento: estacionario, deportivo, navegación y escaleras."
+        ],
+        [
+          "Autonomía de recorrido largo",
+          "Hasta 29 km sin carga y 18 km a plena carga, con dos baterías de sustitución en caliente."
+        ],
+        [
+          "Resistencia IP67",
+          "De −20 a 55 °C, en aleación de aluminio y plásticos de ingeniería de alta resistencia."
+        ],
+        [
+          "Navegación autónoma",
+          "LiDAR, cámaras ópticas, ultrasonidos, IMU y RTK, con creación de mapas y planificación de rutas."
+        ]
+      ],
+      "specs": [
+        [
+          "Identificación y estructura",
+          [
+            [
+              "Modelo técnico",
+              "ZYCXD125M"
+            ],
+            [
+              "Dimensiones de pie",
+              "930 × 480 × 585 mm"
+            ],
+            [
+              "Dimensiones tumbado",
+              "930 × 630 × 200 mm"
+            ],
+            [
+              "Peso",
+              "aprox. 41 kg"
+            ],
+            [
+              "Peso de cada batería",
+              "aprox. 3,3 kg"
+            ],
+            [
+              "Diámetro de las ruedas",
+              "8 pulgadas"
+            ],
+            [
+              "Articulaciones de las patas",
+              "12"
+            ],
+            [
+              "Motores de rueda",
+              "4"
+            ]
+          ]
+        ],
+        [
+          "Rendimiento",
+          [
+            [
+              "Velocidad máxima",
+              "8 m/s"
+            ],
+            [
+              "Carga útil efectiva",
+              "25 kg"
+            ],
+            [
+              "Pendiente máxima",
+              "45°"
+            ],
+            [
+              "Escalón continuo",
+              "250 mm"
+            ],
+            [
+              "Anchura mínima de paso",
+              "500 mm"
+            ],
+            [
+              "Obstáculo vertical máximo anunciado",
+              "800 mm"
+            ],
+            [
+              "Zanja horizontal máxima anunciada",
+              "800 mm"
+            ]
+          ]
+        ],
+        [
+          "Baterías",
+          [
+            [
+              "Configuración",
+              "2 baterías"
+            ],
+            [
+              "Tensión",
+              "54 V"
+            ],
+            [
+              "Capacidad por batería",
+              "9,35 Ah"
+            ],
+            [
+              "Sustitución",
+              "en caliente"
+            ],
+            [
+              "Autonomía sin carga",
+              "aprox. 5 horas"
+            ],
+            [
+              "Autonomía con carga completa",
+              "aprox. 3,5 horas"
+            ],
+            [
+              "Recorrido sin carga",
+              "aprox. 29 km"
+            ],
+            [
+              "Recorrido con carga completa",
+              "aprox. 18 km"
+            ],
+            [
+              "Tiempo de carga",
+              "≤ 2 horas por batería"
+            ],
+            [
+              "Carga simultánea",
+              "de las dos baterías"
+            ]
+          ]
+        ],
+        [
+          "Protección y entorno",
+          [
+            [
+              "Grado de protección",
+              "IP67"
+            ],
+            [
+              "Temperatura de funcionamiento",
+              "−20 a 55 °C"
+            ],
+            [
+              "Construcción",
+              "aleación de aluminio y plásticos de ingeniería de alta resistencia"
+            ]
+          ]
+        ],
+        [
+          "Sensores",
+          [
+            [
+              "LiDAR",
+              "incluido"
+            ],
+            [
+              "Cámaras",
+              "ópticas"
+            ],
+            [
+              "Ultrasonidos",
+              "sensores dedicados"
+            ],
+            [
+              "Inercial",
+              "IMU"
+            ],
+            [
+              "Posicionamiento",
+              "RTK"
+            ],
+            [
+              "Autonomía",
+              "navegación autónoma, creación de mapas y planificación de rutas"
+            ]
+          ]
+        ],
+        [
+          "Interfaces",
+          [
+            [
+              "Alimentación",
+              "48 V/10 A · 24 V/20 A"
+            ],
+            [
+              "Alimentación con Ethernet",
+              "24 V/3 A · 12 V/5 A"
+            ],
+            [
+              "Serie",
+              "RS-232 · RS-485"
+            ],
+            [
+              "Control",
+              "2 × SBUS · PPS"
+            ],
+            [
+              "Datos",
+              "2 × USB 3.0"
+            ],
+            [
+              "Potencia externa total máxima",
+              "aprox. 480 W"
+            ]
+          ]
+        ],
+        [
+          "Modos de funcionamiento",
+          [
+            [
+              "Modos",
+              "estacionario · deportivo · navegación · escaleras"
+            ]
+          ]
+        ]
+      ],
+      "applications": [
+        [
+          "Inspección industrial",
+          null
+        ],
+        [
+          "Patrullaje y vigilancia",
+          null
+        ],
+        [
+          "Transporte de cargas",
+          null
+        ],
+        [
+          "Terrenos complejos",
+          null
+        ]
+      ],
+      "notes": [
+        [
+          "warn",
+          "Sobre los valores máximos de obstáculo",
+          "Los 800 mm de obstáculo vertical y zanja horizontal requieren condiciones y estrategias específicas. No deben interpretarse como capacidad garantizada sobre cualquier terreno."
+        ]
+      ]
+    },
+    {
+      "slug": "rhd1-maxpro",
+      "name": "RHD1 MaxPro",
+      "base": "AGIBOT D1 MaxPro",
+      "family": "cuadrupedos",
+      "status": "disponible",
+      "claim": "Cuadrúpedo de carga pesada para industria y emergencias",
+      "tagline": "Patas convencionales de gran tamaño, 50 kg de carga móvil y protección IP67 para terrenos extremos.",
+      "hero": null,
+      "keyfacts": [
+        [
+          "Carga móvil",
+          "50 kg"
+        ],
+        [
+          "Peso",
+          "aprox. 68 kg"
+        ],
+        [
+          "Protección",
+          "IP67"
+        ],
+        [
+          "Autonomía",
+          "hasta 5,5 h"
+        ]
+      ],
+      "intro": "El RHD1 MaxPro es el cuadrúpedo de carga pesada de la gama. Está orientado a inspección industrial, emergencias, transporte, seguridad, entornos energéticos y terrenos extremos. Utiliza patas convencionales de gran tamaño, sin las ruedas integradas del RHD1 Max.",
+      "highlights": [
+        [
+          "50 kg de carga útil móvil",
+          "Transporte de equipos en planta, escaleras y terreno irregular, con hasta 100 kg de carga estática en condiciones controladas."
+        ],
+        [
+          "Preparado para exteriores",
+          "IP67, de −20 a 55 °C y capacidad anunciada para atravesar agua de hasta unos 200 mm."
+        ],
+        [
+          "Autorrecuperación",
+          "Se levanta tras una caída en 20 segundos o menos."
+        ],
+        [
+          "Conectado en campo",
+          "LiDAR, cámara frontal, IMU y GPS, con transmisión remota de vídeo y conectividad 4G y 5G."
+        ]
+      ],
+      "specs": [
+        [
+          "Identificación y dimensiones",
+          [
+            [
+              "Modelo técnico",
+              "ZYCXD150M"
+            ],
+            [
+              "Dimensiones de pie",
+              "1.230 × 530 × 730 mm"
+            ],
+            [
+              "Dimensiones tumbado",
+              "1.313 × 530 × 300 mm"
+            ],
+            [
+              "Peso (manual de febrero de 2026)",
+              "aprox. 68 kg"
+            ],
+            [
+              "Peso (folleto anterior)",
+              "aprox. 64 kg"
+            ],
+            [
+              "Grados de libertad",
+              "12"
+            ]
+          ]
+        ],
+        [
+          "Carga",
+          [
+            [
+              "Carga útil móvil efectiva",
+              "50 kg"
+            ],
+            [
+              "Carga estática máxima anunciada",
+              "100 kg"
+            ]
+          ]
+        ],
+        [
+          "Movilidad",
+          [
+            [
+              "Velocidad continua",
+              "1,5 m/s"
+            ],
+            [
+              "Velocidad máxima",
+              "3 m/s"
+            ],
+            [
+              "Pendiente máxima",
+              "45°"
+            ],
+            [
+              "Altura de escalón",
+              "300 mm"
+            ],
+            [
+              "Tiempo de autorrecuperación",
+              "≤ 20 segundos"
+            ],
+            [
+              "Capacidad",
+              "levantarse tras una caída"
+            ]
+          ]
+        ],
+        [
+          "Batería",
+          [
+            [
+              "Capacidad (página comercial reciente)",
+              "aprox. 2.081 Wh"
+            ],
+            [
+              "Capacidad (manual técnico)",
+              "48 V · 45 Ah — equivalentes a 2.160 Wh"
+            ],
+            [
+              "Autonomía sin carga",
+              "aprox. 5,5 horas"
+            ],
+            [
+              "Autonomía con carga",
+              "2 a 2,5 horas según revisión"
+            ],
+            [
+              "Recorrido con carga",
+              "aprox. 13,5 km"
+            ],
+            [
+              "Carga estándar",
+              "alrededor de 4,5 horas"
+            ],
+            [
+              "Carga rápida opcional",
+              "aprox. 2 horas"
+            ],
+            [
+              "Batería",
+              "intercambiable"
+            ],
+            [
+              "Estación de carga autónoma",
+              "opcional"
+            ]
+          ]
+        ],
+        [
+          "Protección",
+          [
+            [
+              "Grado de protección",
+              "IP67"
+            ],
+            [
+              "Temperatura de trabajo",
+              "−20 a 55 °C"
+            ],
+            [
+              "Vadeo",
+              "capacidad anunciada para agua de hasta aprox. 200 mm de profundidad"
+            ]
+          ]
+        ],
+        [
+          "Sensores y navegación",
+          [
+            [
+              "LiDAR",
+              "incluido"
+            ],
+            [
+              "Cámara",
+              "frontal"
+            ],
+            [
+              "Inercial",
+              "IMU"
+            ],
+            [
+              "Posicionamiento",
+              "GPS"
+            ],
+            [
+              "Autonomía",
+              "navegación autónoma, creación de mapas y planificación de trayectorias"
+            ],
+            [
+              "Vídeo",
+              "transmisión remota"
+            ],
+            [
+              "Conectividad",
+              "4G · 5G"
+            ]
+          ]
+        ]
+      ],
+      "applications": [
+        [
+          "Inspección de plantas industriales",
+          null
+        ],
+        [
+          "Patrullaje energético",
+          null
+        ],
+        [
+          "Refinerías",
+          null
+        ],
+        [
+          "Minería",
+          null
+        ],
+        [
+          "Transporte de equipos",
+          null
+        ],
+        [
+          "Emergencias y rescate",
+          null
+        ],
+        [
+          "Vigilancia",
+          null
+        ],
+        [
+          "Operaciones en lluvia, polvo y terrenos irregulares",
+          null
+        ]
+      ],
+      "notes": [
+        [
+          "warn",
+          "Carga estática de 100 kg",
+          "La carga estática de 100 kg se refiere a condiciones controladas con el robot parado. No debe utilizarse como carga móvil nominal en escaleras, escombros o pendientes pronunciadas."
+        ],
+        [
+          "warn",
+          "Indicar la revisión al presupuestar",
+          "La documentación pública presenta diferencias en peso (64 vs 68 kg), capacidad de batería (2.081 vs 2.160 Wh) y autonomía con carga. Es importante indicar la revisión exacta del hardware al elaborar el presupuesto."
+        ]
+      ]
+    }
+  ]
+}

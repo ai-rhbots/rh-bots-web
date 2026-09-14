@@ -1,0 +1,207 @@
+{
+  "seo": {
+    "dominio": "https://www.rh-bots.com",
+    "nombre": "RH·BOTS",
+    "og_imagen": "assets/robots/rhc5/vista-0.webp",
+    "twitter": "",
+    "locale": "es_ES"
+  },
+  "analitica": {
+    "ga4": "",
+    "gtm": "",
+    "google_site_verification": ""
+  },
+  "nav": [
+    {
+      "label": "Inicio",
+      "href": "index.html",
+      "key": "home"
+    },
+    {
+      "label": "Robots",
+      "href": "robots.html",
+      "key": "robots"
+    },
+    {
+      "label": "Aplicaciones",
+      "href": "index.html#aplicaciones",
+      "key": ""
+    },
+    {
+      "label": "Accesorios",
+      "href": "index.html",
+      "key": "",
+      "oculto": true
+    },
+    {
+      "label": "Blog",
+      "href": "blog.html",
+      "key": "blog"
+    },
+    {
+      "label": "RH·BOTS",
+      "href": "rh-bots.html",
+      "key": "rhbots"
+    },
+    {
+      "label": "Contacto",
+      "href": "contacto.html",
+      "key": "contacto"
+    }
+  ],
+  "home": {
+    "kicker": "Recursos<br>humanoides",
+    "h1": "Robots que trabajan<br>de manera autónoma",
+    "lede": "Limpieza autónoma, humanoides y cuadrúpedos. Seleccionamos el robot, lo ponemos en marcha y damos soporte durante toda su vida útil.",
+    "destacados": [
+      "rhc5",
+      "rhx2-ultra",
+      "rhg2",
+      "rhd1-max"
+    ],
+    "sectores": [
+      [
+        "Supermercados",
+        "assets/escenarios/supermercados.jpg"
+      ],
+      [
+        "Edificios de oficinas",
+        "assets/escenarios/edificios-oficinas.jpg"
+      ],
+      [
+        "Estaciones y aeropuertos",
+        "assets/escenarios/estaciones-transporte.jpg"
+      ],
+      [
+        "Fábricas y almacenes",
+        "assets/escenarios/fabricas-almacenes.jpg"
+      ],
+      [
+        "Complejos comerciales",
+        "assets/escenarios/complejos-comerciales.jpg"
+      ],
+      [
+        "Hospitales",
+        "assets/escenarios/hospitales.jpg"
+      ]
+    ],
+    "beneficios": [
+      "Un solo proveedor<br>para toda la flota",
+      "Reducción de<br>tareas repetitivas",
+      "Mayor flexibilidad<br>que la automatización fija",
+      "Adaptación a<br>entornos cambiantes",
+      "Imagen innovadora<br>de la empresa"
+    ],
+    "faq": [
+      [
+        "¿Qué robot necesito?",
+        "Depende de la tarea, del entorno y del volumen. La limpieza de grandes superficies interiores es cosa del RHC5; la atención al público, de la familia A3 o X2; la manipulación industrial, del RHG2; y la inspección en exteriores o terreno difícil, de la familia D1. Te acompañamos en la elección con un asesoramiento previo."
+      ],
+      [
+        "¿Hace falta programar el robot?",
+        "No para el uso estándar: los modelos vienen con un paquete de habilidades listo para ejecutar múltiples funciones desde el primer momento. Si quieres desarrollar tus propias aplicaciones, existen versiones abiertas (RHX2 Ultra, RHD1 Edu, RHD1 Ultra, RHX2 EDU) con SDK, simuladores e interfaces documentadas."
+      ],
+      [
+        "¿Se puede adaptar a mi empresa?",
+        "Sí. Partimos de un asesoramiento previo para entender tu caso de uso y configuramos el robot, sus rutinas y su comportamiento a tu operativa. Incluye instalación, puesta en marcha y formación de tu equipo."
+      ],
+      [
+        "¿Qué mantenimiento requieren?",
+        "Mantenimiento preventivo periódico de articulaciones, baterías y sensores, más actualizaciones de software. Ofrecemos un servicio continuado de mantenimiento y soporte para asegurar la disponibilidad del equipo."
+      ],
+      [
+        "¿Se puede alquilar en lugar de comprar?",
+        "Consúltanos. Según el modelo y la duración del proyecto podemos plantear compra o alquiler, incluyendo la puesta en marcha y el soporte."
+      ]
+    ],
+    "gama_img": "assets/robots/gama.webp",
+    "video": {
+      "src": "assets/video/gama.mp4",
+      "poster": "assets/video/gama.jpg",
+      "titulo": "La gama RH·BOTS al completo"
+    }
+  },
+  "servicios": [
+    [
+      "Asesoramiento<br>previo",
+      "asesoramiento"
+    ],
+    [
+      "Instalación y<br>puesta en marcha",
+      "instalacion"
+    ],
+    [
+      "Formación<br>de equipos",
+      "formacion"
+    ],
+    [
+      "Mantenimiento<br>y soporte",
+      "mantenimiento"
+    ],
+    [
+      "Adaptación<br>a cada cliente",
+      "adaptacion"
+    ]
+  ],
+  "contacto": {
+    "intro": "Cuéntanos qué necesitas resolver y te decimos qué robot encaja, con qué configuración y en qué plazo.",
+    "empresa": "RH·BOTS — Recursos Humanoides",
+    "direccion": [
+      "Calle 6, nº 29",
+      "Polígono Industrial de Picassent",
+      "46220 Picassent (Valencia)"
+    ],
+    "personas": [
+      {
+        "nombre": "Marcos Blasco",
+        "cargo": "Co-Founder",
+        "email": "mblasco@rh-bots.com",
+        "tel": "+34 650 48 41 50"
+      },
+      {
+        "nombre": "Javier Sirvent",
+        "cargo": "Co-Founder",
+        "email": "javier.sirvent@rh-bots.com",
+        "tel": ""
+      }
+    ],
+    "motivos": [
+      "Información de un modelo",
+      "Solicitar una demostración",
+      "Presupuesto",
+      "Alquiler",
+      "Servicio y mantenimiento",
+      "Otro"
+    ]
+  },
+  "posts": [],
+  "tienda": {
+    "dominio": "rzrujk-0d.myshopify.com",
+    "moneda": "EUR",
+    "activa": true,
+    "texto_boton": "Comprar ahora",
+    "mostrar_precio": true
+  },
+  "rhbots": {
+    "kicker": "Quiénes somos",
+    "h1": "El equipo detrás de RH·BOTS",
+    "lede": "Distribuidor oficial de AGIBOT en España y Portugal, con base en Picassent (Valencia). Acompañamos a cada cliente desde la elección del robot hasta el mantenimiento del día a día.",
+    "historia_subtitulo": "Nuestra historia",
+    "historia_cuerpo": "<p>RH·BOTS nace para acercar la robótica humanoide a empresas que necesitan resultados reales, no demostraciones. Como distribuidor oficial de AGIBOT en España y Portugal, seleccionamos el robot adecuado para cada operación y acompañamos a nuestros clientes en todo el proceso: asesoramiento previo, instalación, formación de equipos y mantenimiento continuado.</p><p>Trabajamos desde Picassent (Valencia), con clientes en sectores que van de la limpieza industrial a la atención al público y la automatización de fábrica.</p>",
+    "cifras": [],
+    "equipo": [
+      [
+        "",
+        "Marcos Blasco",
+        "Co-Founder",
+        "Al frente de la relación con AGIBOT y del desarrollo de negocio de RH·BOTS."
+      ],
+      [
+        "",
+        "Javier Sirvent",
+        "Co-Founder",
+        ""
+      ]
+    ]
+  }
+}

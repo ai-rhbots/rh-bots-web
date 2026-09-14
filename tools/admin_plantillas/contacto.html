@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block titulo %}Contacto{% endblock %}
+{% block contenido %}
+<h1>Contacto</h1>
+<form method="post" class="formulario">
+  <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+
+  <label for="intro">Entradilla</label>
+  <textarea id="intro" name="intro" rows="3">{{ c.intro }}</textarea>
+
+  <label for="empresa">Empresa</label>
+  <input id="empresa" name="empresa" value="{{ c.empresa }}">
+
+  <label>Dirección</label>
+  <div class="filas" data-filas data-target="direccion"
+       data-cols='[{"label":"Línea","tipo":"texto"}]'>
+    <textarea id="direccion" name="direccion" hidden>{{ c.direccion|join("\n") }}</textarea>
+    <div class="filas__lista" data-filas-lista></div>
+    <button type="button" class="btn btn--plano" data-filas-add>+ Añadir línea</button>
+  </div>
+
+  <label>Personas de contacto</label>
+  <div class="filas" data-filas data-target="personas"
+       data-cols='[{"label":"Nombre","tipo":"texto"},{"label":"Cargo","tipo":"texto"},{"label":"Correo","tipo":"texto"},{"label":"Teléfono","tipo":"texto"}]'>
+    <textarea id="personas" name="personas" hidden>{{ personas }}</textarea>
+    <div class="filas__lista" data-filas-lista></div>
+    <button type="button" class="btn btn--plano" data-filas-add>+ Añadir persona</button>
+  </div>
+
+  <label>Motivos del formulario</label>
+  <div class="filas" data-filas data-target="motivos"
+       data-cols='[{"label":"Motivo","tipo":"texto"}]'>
+    <textarea id="motivos" name="motivos" hidden>{{ c.motivos|join("\n") }}</textarea>
+    <div class="filas__lista" data-filas-lista></div>
+    <button type="button" class="btn btn--plano" data-filas-add>+ Añadir motivo</button>
+  </div>
+
+  <div class="acciones"><button class="btn" type="submit">Guardar</button></div>
+</form>
+{% endblock %}

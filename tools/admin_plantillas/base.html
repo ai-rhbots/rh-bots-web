@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>{% block titulo %}Panel{% endblock %} · RH·BOTS</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+<script>window.RH_CSRF = {{ csrf_token()|tojson }};</script>
+</head>
+<body>
+
+{% if session.dentro %}
+<header class="cab">
+  <a class="marca" href="{{ url_for('panel') }}">RH<span>·</span>BOTS <em>panel</em></a>
+  <nav>
+    <a href="{{ url_for('panel') }}"     class="{{ 'on' if request.endpoint == 'panel' }}">Inicio</a>
+    <a href="{{ url_for('home') }}"      class="{{ 'on' if request.endpoint == 'home' }}">Home</a>
+    <a href="{{ url_for('productos') }}" class="{{ 'on' if request.endpoint in ('productos','producto') }}">Robots</a>
+    <a href="{{ url_for('rhbots') }}"    class="{{ 'on' if request.endpoint == 'rhbots' }}">RH·BOTS</a>
+    <a href="{{ url_for('blog') }}"      class="{{ 'on' if request.endpoint in ('blog','post') }}">Blog</a>
+    <a href="{{ url_for('medios') }}"    class="{{ 'on' if request.endpoint == 'medios' }}">Biblioteca</a>
+    <a href="{{ url_for('contacto') }}"  class="{{ 'on' if request.endpoint == 'contacto' }}">Contacto</a>
+    <a href="{{ url_for('menu') }}"      class="{{ 'on' if request.endpoint == 'menu' }}">Menú</a>
+    <a href="{{ url_for('tienda') }}"    class="{{ 'on' if request.endpoint == 'tienda' }}">Tienda</a>
+    <a href="{{ url_for('seo') }}"       class="{{ 'on' if request.endpoint == 'seo' }}">SEO y analítica</a>
+  </nav>
+  <form method="post" action="{{ url_for('logout') }}" class="salir">
+    <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+    <button type="submit">Salir</button>
+  </form>
+</header>
+{% endif %}
+
+<main class="lienzo">
+  {% with mensajes = get_flashed_messages(with_categories=true) %}
+    {% for categoria, m in mensajes %}
+      <p class="aviso {{ 'aviso--error' if categoria == 'error' }}">{{ m }}</p>
+    {% endfor %}
+  {% endwith %}
+
+  {% block contenido %}{% endblock %}
+</main>
+
+<script src="{{ url_for('static', filename='admin.js') }}"></script>
+{% block extra_js %}{% endblock %}
+</body>
+</html>

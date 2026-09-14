@@ -1,0 +1,35 @@
+# Esta carpeta es el Escritorio del usuario, no un directorio de proyecto:
+# contiene otros proyectos y documentos sueltos (presentaciones, PDFs, zips,
+# otra app con su propio .env...). Para no subir nada de eso por accidente,
+# se ignora todo por defecto y sólo se permite explícitamente lo que es
+# parte de la web RH·BOTS.
+/*
+!/web
+!/tools
+!/datos
+!/DESPLIEGUE.md
+!/GEO-AUDIT-REPORT.md
+!/.gitignore
+!/vercel.json
+!/README.md
+
+# Nunca subir: contiene el hash de la contraseña del panel
+datos/admin.json
+datos/copias/
+
+# Imágenes originales de producto (4–20 MB cada una).
+# Sólo se publica web/assets/robots/, que genera tools/optimizar.py
+web/assets/productos/C5/
+web/assets/productos/G2/
+web/assets/*.png
+!web/assets/logo-*.png
+!web/assets/robot-*.png
+
+# Vídeos originales (hasta 958 MB).
+# Sólo se publica web/assets/video/, que genera tools/optimizar_video.py
+web/assets/*.mp4
+web/assets/*.MP4
+
+__pycache__/
+*.pyc
+.venv/
