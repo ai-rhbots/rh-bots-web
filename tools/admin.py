@@ -165,6 +165,7 @@ GIT_PUSH = os.environ.get('RHBOTS_GIT_PUSH') == '1'
 GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN', '')
 GIT_REMOTE = os.environ.get('RHBOTS_GIT_REMOTE', 'origin')
 GIT_BRANCH = os.environ.get('RHBOTS_GIT_BRANCH', 'master')
+GIT_URL = os.environ.get('RHBOTS_GIT_URL', 'https://github.com/ai-rhbots/rh-bots-web.git')
 GIT_IDENTIDAD = ['-c', 'user.name=RH-BOTS Panel', '-c', 'user.email=ai.rhbots@gmail.com']
 
 
@@ -182,6 +183,21 @@ def _git(*args, timeout=60):
         return False, str(ex)
 
 
+def _asegurar_remoto():
+    """Da de alta el remoto si el checkout del hosting no lo trae.
+
+    Render (y algún otro hosting) despliega el repositorio sin dejar el
+    remoto «origin» apuntando a GitHub — a veces no hay ningún remoto, a
+    veces apunta a la propia infraestructura del hosting. Sin esto, cada
+    push fallaba con «'origin' does not appear to be a git repository».
+    """
+    ok, _ = _git('remote', 'get-url', GIT_REMOTE)
+    if not ok:
+        _git('remote', 'add', GIT_REMOTE, GIT_URL)
+    else:
+        _git('remote', 'set-url', GIT_REMOTE, GIT_URL)
+
+
 def _sincronizar_git(mensaje):
     """Sube a GitHub lo que ha cambiado (datos/, web/) tras un guardado.
 
@@ -192,18 +208,26 @@ def _sincronizar_git(mensaje):
     """
     if not GIT_PUSH:
         return True, ''
+    _asegurar_remoto()
     _git('add', '-A')
     ok_commit, salida_commit = _git(*GIT_IDENTIDAD, 'commit', '-m', f'Panel: {mensaje}')
     if not ok_commit and 'nothing to commit' not in salida_commit.lower():
         return False, salida_commit
-    return _git('push', GIT_REMOTE, GIT_BRANCH)
+    # HEAD:<rama>, no <rama> a secas: el checkout del hosting puede estar
+    # en HEAD desacoplado o con la rama local llamada de otra forma.
+    return _git('push', GIT_REMOTE, f'HEAD:{GIT_BRANCH}')
 
 
 def _sincronizar_git_inicio():
     """Al arrancar, parte del último contenido publicado en GitHub."""
     if not GIT_PUSH:
         return
-    ok, salida = _git('pull', '--ff-only', GIT_REMOTE, GIT_BRANCH)
+    _asegurar_remoto()
+    ok, salida = _git('fetch', GIT_REMOTE, GIT_BRANCH)
+    if not ok:
+        print(f'AVISO: no se pudo sincronizar con git al arrancar: {salida[-300:]}')
+        return
+    ok, salida = _git('reset', '--hard', f'{GIT_REMOTE}/{GIT_BRANCH}')
     if not ok:
         print(f'AVISO: no se pudo sincronizar con git al arrancar: {salida[-300:]}')
 
