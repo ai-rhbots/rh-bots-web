@@ -241,7 +241,7 @@ def head(title, desc, base, ruta='', extra_css=True, og_img=None, extra_jsonld=N
 {tw}{analitica()}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="stylesheet" href="{base}css/styles.css">
 {'<link rel="stylesheet" href="%scss/catalogo.css">' % base if extra_css else ''}
@@ -846,12 +846,30 @@ def home_page():
     {fondo_video('fondo-c5', base, 'fondovid--oscuro')}
     <div class="hero__diagonal" aria-hidden="true"></div>
     <div class="wrap hero__copy">
-      <p class="hero__kicker">{HOME['kicker']}</p>
+      <p class="kicker hero__kicker">{HOME['kicker']}</p>
       <h1 class="display display--hero">{HOME['h1']}</h1>
       <p class="lede lede--hero">{e(HOME['lede'])}</p>
       <div class="hero__cta">
         <a class="pill" href="robots.html"><span>Ver los robots</span>{CHEVRON}</a>
         <a class="pill pill--line" href="contacto.html"><span>Habla con nosotros</span>{CHEVRON}</a>
+      </div>
+    </div>
+  </section>
+''')
+
+    # qué hacemos: titular a la izquierda, tarjeta con la propuesta a la derecha
+    q = HOME.get('que_hacemos')
+    if q:
+        out.append(f'''  <section class="section section--white que" id="que-hacemos">
+    <div class="wrap que__grid">
+      <div class="que__texto reveal">
+        <p class="kicker">{e(q['kicker'])}</p>
+        <h2 class="que__titulo">{q['titulo']}</h2>
+        <p class="que__lede">{e(q['texto'])}</p>
+      </div>
+      <div class="que__tarjeta reveal">
+        <p class="que__destacado">{e(q['destacado'])}</p>
+        <p class="que__detalle">{e(q['detalle'])}</p>
       </div>
     </div>
   </section>

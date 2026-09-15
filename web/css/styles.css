@@ -134,9 +134,10 @@ svg .nostroke{ stroke:none; }
   position:relative; z-index:2;
   padding-block:clamp(64px, 9vw, 120px);
 }
-.hero__kicker{
-  font-family:var(--font-title);
-  font-weight:800; font-size:clamp(11px, .95vw, 13px);
+/* rótulo pequeño sobre un titular (hero, qué hacemos…) */
+.kicker{
+  font-family:var(--font);
+  font-weight:800; font-size:clamp(12px, 1vw, 14px);
   letter-spacing:.24em; text-transform:uppercase;
   color:var(--blue);
 }

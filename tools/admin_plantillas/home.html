@@ -15,6 +15,23 @@
   <label for="lede">Entradilla</label>
   <textarea id="lede" name="lede" rows="3">{{ h.lede }}</textarea>
 
+  {% set q = h.que_hacemos or {} %}
+  <label for="q_kicker">Qué hacemos — rótulo</label>
+  <input id="q_kicker" name="q_kicker" value="{{ q.kicker }}">
+
+  <label for="q_titulo">Qué hacemos — titular</label>
+  <input id="q_titulo" name="q_titulo" value="{{ q.titulo }}">
+  <p class="pista">Admite &lt;span class="acento"&gt;…&lt;/span&gt; para poner una palabra en azul.</p>
+
+  <label for="q_texto">Qué hacemos — texto</label>
+  <textarea id="q_texto" name="q_texto" rows="3">{{ q.texto }}</textarea>
+
+  <label for="q_destacado">Qué hacemos — frase destacada de la tarjeta</label>
+  <textarea id="q_destacado" name="q_destacado" rows="2">{{ q.destacado }}</textarea>
+
+  <label for="q_detalle">Qué hacemos — texto de la tarjeta</label>
+  <textarea id="q_detalle" name="q_detalle" rows="3">{{ q.detalle }}</textarea>
+
   <label>Modelos destacados</label>
   <div class="filas" data-filas data-target="destacados"
        data-cols='[{"label":"Modelo","tipo":"select","opciones":{{ opciones_modelo|tojson }}}]'>

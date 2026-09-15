@@ -391,6 +391,13 @@ def crear_app():
                 'beneficios': lineas(f.get('beneficios', '')),
                 'sectores': filas(f.get('sectores', ''), 2),
                 'faq': filas(f.get('faq', ''), 2),
+                'que_hacemos': {
+                    'kicker': f.get('q_kicker', '').strip(),
+                    'titulo': f.get('q_titulo', '').strip(),
+                    'texto': f.get('q_texto', '').strip(),
+                    'destacado': f.get('q_destacado', '').strip(),
+                    'detalle': f.get('q_detalle', '').strip(),
+                },
             })
             guardar_y_publicar('sitio', s, 'Home guardada.')
             return redirect(url_for('home'))

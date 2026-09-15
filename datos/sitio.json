@@ -53,6 +53,13 @@
     "kicker": "RH·BOTS — Recursos humanoides",
     "h1": "El futuro de la<br>robótica<br>es <span class=\"acento\">ahora</span>",
     "lede": "Robots humanoides de última generación, preparados para operar en entornos reales con asesoramiento, instalación y soporte profesional.",
+    "que_hacemos": {
+      "kicker": "Qué hacemos",
+      "titulo": "Robots humanoides para empresas que quieren <span class=\"acento\">avanzar</span>",
+      "texto": "RH·BOTS acerca la robótica humanoide a organizaciones que buscan mejorar procesos, atención al cliente, logística, formación o experiencias interactivas.",
+      "destacado": "No vendemos solo tecnología: diseñamos contigo una solución realista, útil y preparada para crecer.",
+      "detalle": "Desde la primera reunión analizamos tus objetivos, el entorno donde trabajará el robot y el nivel de integración necesario para que la inversión tenga sentido."
+    },
     "destacados": [
       "rhc5",
       "rhx2-ultra",
