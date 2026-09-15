@@ -1315,8 +1315,8 @@ def contacto_page():
 # ────────────────────────────────────────────────────────────────── main ──
 # Todos los títulos (h1 y h2) acaban en un punto. Se añade aquí, al escribir,
 # para no tener que acordarse en cada plantilla. El punto toma el color de la
-# penúltima palabra del título: en «es <span class="acento">ahora</span>.» va
-# del color de «es». Los que ya cierran con signo propio (¿…?, ¡…!, comillas)
+# primera palabra del título: en «El futuro… es <span class="acento">ahora</span>.»
+# va del color de «El». Los que ya cierran con signo propio (¿…?, ¡…!, comillas)
 # se dejan como están; los que llevan data-punto="manual" lo ponen ellos.
 _TITULO = re.compile(r'(<h([1-6])\b[^>]*>)(.*?)(</h\2>)', re.S)
 _TROZO = re.compile(r'(<[^>]+>)|([^<]+)')
@@ -1343,7 +1343,7 @@ def con_punto(fragmento):
     texto = html.unescape(re.sub(r'<[^>]+>', '', fragmento)).strip()
     if not palabras or texto[-1] in '.?!:;…»"\'':
         return fragmento
-    acento = palabras[-2][1] if len(palabras) > 1 else palabras[-1][1]
+    acento = palabras[0][1]
     clase = 'punto punto--acento' if acento else 'punto'
     return fragmento.rstrip() + f'<span class="{clase}" aria-hidden="true">.</span>'
 

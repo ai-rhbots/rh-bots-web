@@ -845,6 +845,6 @@ html body :is(h3, h4, .kicker, .phero__claim, .que__destacado,
 
 /* 3 · TEXTO — lo hereda todo lo demás desde body (Exo). */
 
-/* el punto va del color de la penúltima palabra (lo decide build.py) */
+/* el punto va del color de la primera palabra del título (lo decide build.py) */
 .punto{ color:inherit; }
 .punto--acento{ color:var(--blue); }
