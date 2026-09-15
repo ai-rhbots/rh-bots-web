@@ -39,6 +39,7 @@
   color:var(--navy); letter-spacing:.01em;
 }
 .phero__claim{
+  display:block; font-family:var(--font); letter-spacing:normal;
   margin-top:12px; font-weight:500;
   font-size:clamp(15px, 1.5vw, 20px); line-height:1.35; color:var(--blue);
 }
@@ -213,7 +214,7 @@
   background:var(--light);
   padding:18px 22px; border-radius:0 10px 10px 0;
 }
-.nota h3{
+.nota__titulo{
   font-weight:700; font-size:13px; letter-spacing:.05em; text-transform:uppercase;
   color:var(--ink);
 }
@@ -819,11 +820,14 @@
    TÍTULOS
    Todos los h1 y h2 van en Plus Jakarta Sans, en negrita y apretados, y
    terminan con un punto (lo añade tools/build.py al escribir cada página).
+   Jerarquía: un solo h1 por página, h2 por sección y h3 dentro de cada una.
    Va al final para imponerse a los font-weight de cada componente.
    ========================================================================== */
-h1, h2, h1[class], h2[class]{
+h1, h2, h1[class], h2[class], p.h-section{
   font-family:var(--font-title);
   font-weight:700;
   letter-spacing:-.035em;
 }
-.punto{ color:var(--punto); }
+/* el punto va del color de la penúltima palabra (lo decide build.py) */
+.punto{ color:inherit; }
+.punto--acento{ color:var(--blue); }

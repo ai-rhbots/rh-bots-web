@@ -20,7 +20,6 @@
   --font:      'Exo', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-title:'Plus Jakarta Sans', 'Exo', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --night:     #0b1626;
-  --punto:     #ffffff;   /* color del punto final de los títulos */
 
   --wrap:      1180px;
   --wrap-narrow: 780px;
@@ -64,6 +63,12 @@ svg .nostroke{ stroke:none; }
   background:var(--navy); color:#fff; padding:.75rem 1.25rem;
 }
 .skip-link:focus{ left:0; }
+
+/* oculto a la vista pero presente para buscadores y lectores de pantalla */
+.sr-only{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;
+}
 
 :focus-visible{ outline:3px solid var(--navy); outline-offset:3px; }
 

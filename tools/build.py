@@ -463,7 +463,7 @@ def notes_html(p):
         return ''
     rows = ''
     for kind, title, body in p['notes']:
-        rows += (f'<div class="nota nota--{kind}"><h3>{e(title)}</h3>'
+        rows += (f'<div class="nota nota--{kind}"><p class="nota__titulo">{e(title)}</p>'
                  f'<p>{e(body)}</p></div>\n')
     return f'<div class="notas">\n{rows}</div>\n'
 
@@ -524,8 +524,7 @@ def product_page(p):
           <em>{e(p['name'])}</em>
         </nav>
         <div class="badges">{badges(p)}</div>
-        <h1 class="phero__name">{e(p['name'])}</h1>
-        <p class="phero__claim">{e(p['claim'])}</p>
+        <h1 class="phero__name" data-punto="manual">{con_punto(e(p['name']))} <span class="phero__claim">{e(p['claim'])}</span></h1>
         <p class="phero__tag">{e(p['tagline'])}</p>
         <div class="phero__cta">
           <a class="pill" href="{base}contacto.html"><span>Pide más información</span>
@@ -581,7 +580,7 @@ def product_page(p):
                 f'<li class="reveal">{e(n)}</li>' for n, _ in p['applications']) + '</ul>'
         out.append(f'''  <section class="section section--light" id="aplicaciones">
     <div class="wrap">
-      <header class="section-head reveal"><h2 class="h-section">Aplicaciones</h2>
+      <header class="section-head reveal"><h2 class="h-section">Aplicaciones del {e(p['name'])}</h2>
         <p class="sub">Escenarios en los que encaja el {e(p['name'])}.</p></header>
       {lista}
     </div>
@@ -596,7 +595,7 @@ def product_page(p):
                    f'<table class="spectable"><tbody>{trs}</tbody></table></div>\n')
     out.append(f'''  <section class="section section--white" id="especificaciones">
     <div class="wrap">
-      <header class="section-head reveal"><h2 class="h-section h-section--blue">Especificaciones técnicas</h2></header>
+      <header class="section-head reveal"><h2 class="h-section h-section--blue">Especificaciones técnicas del {e(p['name'])}</h2></header>
       <div class="specgrid">{groups}</div>
     </div>
   </section>
@@ -611,7 +610,7 @@ def product_page(p):
             for t, img in p['gallery'])
         out.append(f'''  <section class="section section--white" id="galeria">
     <div class="wrap">
-      <header class="section-head reveal"><h2 class="h-section">Galería</h2></header>
+      <header class="section-head reveal"><h2 class="h-section">Galería del {e(p['name'])}</h2></header>
       <ul class="gal">{figs}</ul>
     </div>
   </section>
@@ -662,7 +661,7 @@ def cta_final(base):
     return f'''  <section class="section section--blue section--tight cta-seccion">
     {fondo_video('fondo-gama', base)}
     <div class="wrap cta-final">
-      <h2 class="h-section h-section--onblue">¿Hablamos de tu caso?</h2>
+      <p class="h-section h-section--onblue">¿Hablamos de tu caso?</p>
       <p class="sub sub--onblue">Te asesoramos sobre el modelo, la configuración y la puesta en marcha.</p>
       <a class="pill pill--ghost" href="{base}contacto.html"><span>Contacta con RH·BOTS</span>
         <i class="pill__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
@@ -719,6 +718,7 @@ def index_page():
 
     out.append(f'''  <section class="section section--white" id="familias">
     <div class="wrap">
+      <h2 class="sr-only">Catálogo de robots de limpieza, humanoides y cuadrúpedos</h2>
       <div class="chips" id="chips" role="group" aria-label="Filtrar por familia">{chips}</div>
       <ul class="pgrid pgrid--big" id="pgrid">{cards}</ul>
       <p class="empty" id="empty" hidden>No hay modelos en esta familia.</p>
@@ -1296,23 +1296,53 @@ def contacto_page():
 
 
 # ────────────────────────────────────────────────────────────────── main ──
-# Todos los títulos (h1 y h2) acaban en un punto de color. Se añade aquí, al
-# escribir, para no tener que acordarse en cada plantilla. Los que ya cierran
-# con signo propio (¿...?, ¡...!, «...») se dejan como están.
-_TITULO = re.compile(r'(<h([12])\b[^>]*>)(.*?)(</h\2>)', re.S)
+# Todos los títulos (h1 y h2) acaban en un punto. Se añade aquí, al escribir,
+# para no tener que acordarse en cada plantilla. El punto toma el color de la
+# penúltima palabra del título: en «es <span class="acento">ahora</span>.» va
+# del color de «es». Los que ya cierran con signo propio (¿…?, ¡…!, comillas)
+# se dejan como están; los que llevan data-punto="manual" lo ponen ellos.
+_TITULO = re.compile(r'(<h([1-6])\b[^>]*>)(.*?)(</h\2>)', re.S)
+_TROZO = re.compile(r'(<[^>]+>)|([^<]+)')
 
 
-def _punto(m):
-    texto = re.sub(r'<[^>]+>', '', m.group(3)).strip()
-    if not texto or texto[-1] in '.?!:;…»"\'' or 'class="punto"' in m.group(3):
-        return m.group(0)
-    return (m.group(1) + m.group(3).rstrip()
-            + '<span class="punto" aria-hidden="true">.</span>' + m.group(4))
+def _palabras(fragmento):
+    """[(palabra, va_en_acento)] del HTML de un título."""
+    pila, out = [], []
+    for etiqueta, texto in _TROZO.findall(fragmento):
+        if etiqueta:
+            if etiqueta.startswith('</span'):
+                if pila:
+                    pila.pop()
+            elif etiqueta.startswith('<span'):
+                pila.append('acento' in etiqueta)
+        else:
+            out += [(w, any(pila)) for w in html.unescape(texto).split()
+                    if re.search(r'\w', w)]
+    return out
+
+
+def con_punto(fragmento):
+    palabras = _palabras(fragmento)
+    texto = html.unescape(re.sub(r'<[^>]+>', '', fragmento)).strip()
+    if not palabras or texto[-1] in '.?!:;…»"\'':
+        return fragmento
+    acento = palabras[-2][1] if len(palabras) > 1 else palabras[-1][1]
+    clase = 'punto punto--acento' if acento else 'punto'
+    return fragmento.rstrip() + f'<span class="{clase}" aria-hidden="true">.</span>'
+
+
+def _titulo(m):
+    abre, nivel, dentro, cierra = m.group(1), m.group(2), m.group(3), m.group(4)
+    # que Google no lea «larobótica» donde hay un salto de línea
+    dentro = re.sub(r'(?<=\S)<br\s*/?>', ' <br>', dentro)
+    if nivel in '12' and 'data-punto' not in abre and 'class="punto' not in dentro:
+        dentro = con_punto(dentro)
+    return abre + dentro + cierra
 
 
 def write(path, content):
     if path.endswith('.html'):
-        content = _TITULO.sub(_punto, content)
+        content = _TITULO.sub(_titulo, content)
     os.makedirs(os.path.dirname(path), exist_ok=True)
     io.open(path, 'w', encoding='utf-8').write(content)
     return path
