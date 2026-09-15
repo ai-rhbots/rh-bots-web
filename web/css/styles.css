@@ -2,7 +2,8 @@
    RH·BOTS — RHX2 landing
    Design tokens taken from the approved maqueta:
    #282828 · #8a8a8a (o #282828 66%) · #009ee3 · #f3f5f8 · #2f2483
-   Tipografía: Exo (Regular 400 / Medium 500 / Bold 700)
+   Tipografía: Exo (Regular 400 / Medium 500 / Bold 700) para texto;
+               Plus Jakarta Sans (700/800) para títulos y botones
    ========================================================================== */
 
 :root{
@@ -17,6 +18,9 @@
   --ink-66:    rgba(40,40,40,.66);
 
   --font:      'Exo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-title:'Plus Jakarta Sans', 'Exo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --night:     #0b1626;
+  --punto:     #ffffff;   /* color del punto final de los títulos */
 
   --wrap:      1180px;
   --wrap-narrow: 780px;
@@ -112,50 +116,51 @@ svg .nostroke{ stroke:none; }
 
 
 /* ==========================================================================
-   HERO
+   HERO — vídeo a pantalla completa, velo oscuro y franja diagonal clara
    ========================================================================== */
-.hero{ background:var(--light); }
-
-.hero__stage{
-  position:relative;
-  background:var(--blue);
-  height:clamp(280px, 30vw, 420px);
+.hero{
+  position:relative; overflow:hidden; isolation:isolate;
+  background:var(--night);
+  min-height:clamp(560px, calc(100svh - var(--header-h)), 880px);
+  display:flex; align-items:center;
 }
-/* franja diagonal más oscura de la maqueta */
+/* franja diagonal azul translúcida del lado derecho */
 .hero__diagonal{
-  position:absolute; inset:0; overflow:hidden;
+  position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:linear-gradient(180deg, rgba(0,158,227,.22) 0%, rgba(10,127,196,.32) 100%);
+  clip-path:polygon(71% 0, 100% 0, 100% 100%, 53% 100%);
 }
-.hero__diagonal::after{
-  content:'';
-  position:absolute; inset:0;
-  background:var(--blue-deep);
-  /* la arista pasa justo bajo la mano del robot, como en la maqueta */
-  clip-path:polygon(0 110%, 100% 72%, 100% 100%, 0 100%);
-}
-.hero__stage-inner{
-  position:relative; height:100%;
-  display:flex; align-items:center; justify-content:flex-end;
-}
-
-.hero__robot{
-  position:absolute; left:2%; bottom:0;
-  width:clamp(300px, 42vw, 560px);
-  transform:translateY(38%) rotate(6deg);
-  transform-origin:50% 100%;
-  z-index:2;
-  filter:drop-shadow(0 34px 40px rgba(0,0,0,.20));
-}
-.hero__wordmark{
-  position:relative; z-index:1;
-  width:clamp(210px, 34vw, 460px);
-  margin-right:clamp(0px, 3vw, 40px);
-}
-
 .hero__copy{
-  padding-top:clamp(120px, 17vw, 230px);
-  padding-bottom:clamp(56px, 7vw, 92px);
-  text-align:center;
+  position:relative; z-index:2;
+  padding-block:clamp(64px, 9vw, 120px);
 }
+.hero__kicker{
+  font-family:var(--font-title);
+  font-weight:800; font-size:clamp(11px, .95vw, 13px);
+  letter-spacing:.24em; text-transform:uppercase;
+  color:var(--blue);
+}
+.hero .display--hero{
+  margin-top:clamp(14px, 1.6vw, 22px);
+  font-size:clamp(46px, 7vw, 104px);
+  line-height:.98;
+  letter-spacing:-.05em;
+  color:#fff;
+}
+.acento{ color:var(--blue); }
+.hero .lede--hero{
+  margin-top:clamp(22px, 2.6vw, 34px);
+  max-width:40ch;
+  font-size:clamp(16px, 1.45vw, 21px);
+  line-height:1.65;
+  color:rgba(255,255,255,.86);
+}
+.hero__cta{
+  margin-top:clamp(30px, 3.4vw, 48px);
+  display:flex; flex-wrap:wrap; gap:16px 22px;
+}
+.hero__cta .pill{ min-width:0; padding:15px 14px 15px 34px; font-size:clamp(16px, 1.3vw, 18px); gap:22px; }
+.hero__cta .pill__ico{ width:34px; height:34px; }
 
 .display{
   font-weight:400;
@@ -263,34 +268,37 @@ svg .nostroke{ stroke:none; }
    Clase, no id: la sección «Qué hace» de las fichas no debe heredarlo. */
 .section--overlap{ padding-bottom:clamp(160px, 23vw, 345px); }
 .pill{
-  display:inline-flex; align-items:center; gap:20px;
+  display:inline-flex; align-items:center; gap:18px;
   min-width:264px;
-  padding:13px 12px 13px 30px;
+  padding:12px 12px 12px 30px;
   background:var(--blue); color:#fff;
+  border:0;
   border-radius:var(--r-pill);
-  font-weight:400; font-size:15px; line-height:1.25; text-align:center;
+  font-family:var(--font-title);
+  font-weight:700; font-size:16px; line-height:1.25; letter-spacing:-.01em; text-align:center;
   justify-content:space-between;
-  box-shadow:0 8px 20px rgba(0,158,227,.26);
+  box-shadow:0 10px 30px rgba(0,158,227,.42);
   transition:transform .28s var(--ease), box-shadow .28s var(--ease), background .28s var(--ease);
 }
 .pill span{ flex:1; }
 .pill__ico{
-  flex:none; width:30px; height:30px; border-radius:50%;
+  flex:none; width:32px; height:32px; border-radius:50%;
   display:grid; place-items:center;
-  background:rgba(255,255,255,.18);
+  background:rgba(255,255,255,.26);
   transition:transform .28s var(--ease);
 }
 .pill__ico svg{ width:15px; height:15px; stroke-width:2.4; }
-.pill:hover{ transform:translateY(-3px); box-shadow:0 14px 30px rgba(0,158,227,.34); }
+.pill:hover{ transform:translateY(-3px); box-shadow:0 16px 38px rgba(0,158,227,.55); }
 .pill:hover .pill__ico{ transform:translateX(4px); }
 
+/* secundario: el mismo botón en negativo, blanco con letras azules */
 .pill--ghost{
   background:#fff; color:var(--blue);
   min-width:340px;
-  box-shadow:0 10px 24px rgba(0,0,0,.14);
+  box-shadow:0 10px 28px rgba(0,0,0,.16);
 }
 .pill--ghost .pill__ico{ background:var(--blue); color:#fff; }
-.pill--ghost:hover{ box-shadow:0 16px 32px rgba(0,0,0,.2); }
+.pill--ghost:hover{ box-shadow:0 16px 36px rgba(0,0,0,.22); }
 
 
 /* ==========================================================================
@@ -575,15 +583,10 @@ svg .nostroke{ stroke:none; }
   .nav a::after{ display:none; }
 
   /* hero */
-  .hero__stage{ height:clamp(230px, 44vw, 300px); }
-  .hero__robot{
-    left:50%; transform:translate(-50%, 30%) rotate(6deg);
-    transform-origin:50% 100%;
-    width:clamp(230px, 56vw, 340px);
-  }
-  .hero__stage-inner{ justify-content:center; align-items:flex-start; padding-top:22px; }
-  .hero__wordmark{ margin-right:0; width:clamp(180px, 52vw, 300px); }
-  .hero__copy{ padding-top:clamp(130px, 40vw, 200px); }
+  .hero{ min-height:0; }
+  .hero__diagonal{ clip-path:polygon(84% 0, 100% 0, 100% 100%, 62% 100%); }
+  .hero__cta{ flex-direction:column; align-items:stretch; }
+  .hero__cta .pill{ width:100%; }
 
   /* qué hace */
   .features{ grid-template-columns:1fr; gap:0; }
@@ -618,7 +621,8 @@ svg .nostroke{ stroke:none; }
   .spec::after{ display:none !important; }
   .spec:nth-child(2n)::after{ display:block !important; }
   .display{ font-size:24px; }
-  .lede br, .sub br, .display br{ display:none; }
+  .hero .display--hero{ font-size:clamp(40px, 12vw, 52px); }
+  .lede br, .sub br, .display:not(.display--hero) br{ display:none; }
 }
 
 @media (prefers-reduced-motion:reduce){

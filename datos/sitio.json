@@ -50,9 +50,9 @@
     }
   ],
   "home": {
-    "kicker": "Recursos<br>humanoides",
-    "h1": "Robots que trabajan<br>de manera autónoma",
-    "lede": "Limpieza autónoma, humanoides y cuadrúpedos. Seleccionamos el robot, lo ponemos en marcha y damos soporte durante toda su vida útil.",
+    "kicker": "RH·BOTS — Recursos humanoides",
+    "h1": "El futuro de la<br>robótica<br>es <span class=\"acento\">ahora</span>",
+    "lede": "Robots humanoides de última generación, preparados para operar en entornos reales con asesoramiento, instalación y soporte profesional.",
     "destacados": [
       "rhc5",
       "rhx2-ultra",

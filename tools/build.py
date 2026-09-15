@@ -241,7 +241,7 @@ def head(title, desc, base, ruta='', extra_css=True, og_img=None, extra_jsonld=N
 {tw}{analitica()}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="stylesheet" href="{base}css/styles.css">
 {'<link rel="stylesheet" href="%scss/catalogo.css">' % base if extra_css else ''}
@@ -491,7 +491,7 @@ def product_page(p):
         for i, f in enumerate(frames):
             capas += (f'<img class="viewer__frame{" is-on" if i == 0 else ""}" '
                       f'src="{base}{f}" alt="" '
-                      f'{"loading=\"eager\"" if i == 0 else "loading=\"lazy\""} '
+                      f'loading="{"eager" if i == 0 else "lazy"}" '
                       f'draggable="false">')
         media = f'''<div class="viewer" id="viewer" tabindex="0" role="img"
              aria-label="{e(p["name"])} — vista giratoria. Usa las flechas para girarlo."
@@ -529,7 +529,7 @@ def product_page(p):
         <p class="phero__tag">{e(p['tagline'])}</p>
         <div class="phero__cta">
           <a class="pill" href="{base}contacto.html"><span>Pide más información</span>
-            <i class="pill__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></i></a>
+            <i class="pill__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
           <a class="pill pill--line" href="#especificaciones"><span>Ver especificaciones</span>
             <i class="pill__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></i></a>
           {boton_compra(p, base)}
@@ -665,7 +665,7 @@ def cta_final(base):
       <h2 class="h-section h-section--onblue">¿Hablamos de tu caso?</h2>
       <p class="sub sub--onblue">Te asesoramos sobre el modelo, la configuración y la puesta en marcha.</p>
       <a class="pill pill--ghost" href="{base}contacto.html"><span>Contacta con RH·BOTS</span>
-        <i class="pill__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></i></a>
+        <i class="pill__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
     </div>
   </section>
 '''
@@ -769,7 +769,7 @@ MARCA_SVG = ('<svg viewBox="0 0 64 64">'
              '<rect x="24.6" y="29" width="6" height="11.5" rx="3" class="fill nostroke"/>'
              '<rect x="33.4" y="29" width="6" height="11.5" rx="3" class="fill nostroke"/></svg>')
 
-CHEVRON = '<i class="pill__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></i>'
+CHEVRON = '<i class="pill__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i>'
 
 
 def bloque_servicio(base):
@@ -840,26 +840,18 @@ def home_page():
                 extra_jsonld=[schema_organization(), schema_faqpage(HOME['faq'])]),
            header(base, 'home'), '<main id="contenido">']
 
-    # hero
+    # hero: vídeo a pantalla completa, velo oscuro y franja diagonal
     out.append(f'''
   <section class="hero" id="inicio">
-    <div class="hero__stage">
-      {fondo_video('fondo-gama', base)}
-      <div class="hero__diagonal" aria-hidden="true"></div>
-      <div class="wrap hero__stage-inner">
-        <img class="hero__robot" src="assets/robot-sentado.png"
-             alt="Robot humanoide RHX2" width="845" height="838" fetchpriority="high">
-        <p class="hero__kicker">{HOME['kicker']}</p>
-      </div>
-    </div>
-    <div class="hero__copy">
-      <div class="wrap">
-        <h1 class="display">{HOME['h1']}</h1>
-        <p class="lede">{e(HOME['lede'])}</p>
-        <div class="feat-cta">
-          <a class="pill" href="robots.html"><span>Ver los robots</span>{CHEVRON}</a>
-          <a class="pill pill--line" href="contacto.html"><span>Habla con nosotros</span>{CHEVRON}</a>
-        </div>
+    {fondo_video('fondo-c5', base, 'fondovid--oscuro')}
+    <div class="hero__diagonal" aria-hidden="true"></div>
+    <div class="wrap hero__copy">
+      <p class="hero__kicker">{HOME['kicker']}</p>
+      <h1 class="display display--hero">{HOME['h1']}</h1>
+      <p class="lede lede--hero">{e(HOME['lede'])}</p>
+      <div class="hero__cta">
+        <a class="pill" href="robots.html"><span>Ver los robots</span>{CHEVRON}</a>
+        <a class="pill pill--line" href="contacto.html"><span>Habla con nosotros</span>{CHEVRON}</a>
       </div>
     </div>
   </section>
@@ -1286,7 +1278,23 @@ def contacto_page():
 
 
 # ────────────────────────────────────────────────────────────────── main ──
+# Todos los títulos (h1 y h2) acaban en un punto de color. Se añade aquí, al
+# escribir, para no tener que acordarse en cada plantilla. Los que ya cierran
+# con signo propio (¿...?, ¡...!, «...») se dejan como están.
+_TITULO = re.compile(r'(<h([12])\b[^>]*>)(.*?)(</h\2>)', re.S)
+
+
+def _punto(m):
+    texto = re.sub(r'<[^>]+>', '', m.group(3)).strip()
+    if not texto or texto[-1] in '.?!:;…»"\'' or 'class="punto"' in m.group(3):
+        return m.group(0)
+    return (m.group(1) + m.group(3).rstrip()
+            + '<span class="punto" aria-hidden="true">.</span>' + m.group(4))
+
+
 def write(path, content):
+    if path.endswith('.html'):
+        content = _TITULO.sub(_punto, content)
     os.makedirs(os.path.dirname(path), exist_ok=True)
     io.open(path, 'w', encoding='utf-8').write(content)
     return path
