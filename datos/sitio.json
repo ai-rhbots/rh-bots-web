@@ -60,6 +60,10 @@
       "destacado": "No vendemos solo tecnología: diseñamos contigo una solución realista, útil y preparada para crecer.",
       "detalle": "Desde la primera reunión analizamos tus objetivos, el entorno donde trabajará el robot y el nivel de integración necesario para que la inversión tenga sentido."
     },
+    "robots_grid": {
+      "kicker": "Nuestros robots",
+      "titulo": "Una gama preparada para <span class=\"acento\">entornos reales</span>"
+    },
     "destacados": [
       "rhc5",
       "rhx2-ultra",

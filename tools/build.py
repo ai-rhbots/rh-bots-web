@@ -306,6 +306,14 @@ SILUETAS = {
 }
 
 
+# rótulo de cada tarjeta de la home, en singular
+ETIQUETA_FAMILIA = {
+    'limpieza': 'Limpieza autónoma',
+    'humanoides': 'Robot humanoide',
+    'cuadrupedos': 'Robot cuadrúpedo',
+}
+
+
 def placeholder(fam, name):
     return (f'<div class="ph ph--{fam}" role="img" aria-label="{e(name)}">'
             f'<svg viewBox="0 0 64 64">{SILUETAS[fam]}</svg>'
@@ -875,24 +883,33 @@ def home_page():
   </section>
 ''')
 
-    # familias
-    fam_cards = ''
-    for key, nombre, desc in FAMILIAS:
-        n = len([p for p in PRODUCTOS if p['family'] == key])
-        fam_cards += f'''<li class="famcard reveal">
-        <a href="robots.html?fam={key}#familias">
-          <span class="famcard__ico" aria-hidden="true"><svg viewBox="0 0 64 64">{SILUETAS[key]}</svg></span>
-          <h3>{e(nombre)}</h3>
-          <p>{e(desc)}</p>
-          <span class="famcard__n">{n} {'modelo' if n == 1 else 'modelos'}</span>
-        </a></li>\n'''
-    out.append(f'''  <section class="section section--white" id="familias">
+    # nuestros robots: rejilla con todos los modelos disponibles
+    g = HOME.get('robots_grid')
+    if g:
+        tarjetas = ''
+        for p in PRODUCTOS:
+            if p['status'] != 'disponible':
+                continue
+            if p.get('hero'):
+                media = f'<img src="{e(p["hero"])}" alt="{e(p["name"])} — {e(p["claim"])}" loading="lazy">'
+            else:
+                media = placeholder(p['family'], p['name'])
+            tarjetas += f'''<li class="lcard reveal">
+          <a href="robots/{p['slug']}.html">
+            <div class="lcard__media">{media}</div>
+            <div class="lcard__body">
+              <p class="lcard__cat">{e(ETIQUETA_FAMILIA.get(p['family'], FAM_NAME[p['family']]))}</p>
+              <h3 class="lcard__name">{e(p['name'])}</h3>
+            </div>
+          </a></li>\n'''
+        out.append(f'''  <section class="section section--light loop" id="nuestros-robots">
     <div class="wrap">
-      <header class="section-head reveal">
-        <h2 class="h-section h-section--blue">Tres familias de robots</h2>
-        <p class="sub">Catorce modelos con ficha técnica completa.</p>
+      <header class="loop__head reveal">
+        <p class="kicker">{e(g['kicker'])}</p>
+        <h2 class="loop__titulo">{g['titulo']}</h2>
       </header>
-      <ul class="famgrid">{fam_cards}</ul>
+      <ul class="loop__grid">{tarjetas}</ul>
+      <p class="loop__mas reveal"><a class="pill" href="robots.html"><span>Ver todos los modelos</span>{CHEVRON}</a></p>
     </div>
   </section>
 ''')

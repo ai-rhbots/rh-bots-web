@@ -398,6 +398,10 @@ def crear_app():
                     'destacado': f.get('q_destacado', '').strip(),
                     'detalle': f.get('q_detalle', '').strip(),
                 },
+                'robots_grid': {
+                    'kicker': f.get('g_kicker', '').strip(),
+                    'titulo': f.get('g_titulo', '').strip(),
+                },
             })
             guardar_y_publicar('sitio', s, 'Home guardada.')
             return redirect(url_for('home'))

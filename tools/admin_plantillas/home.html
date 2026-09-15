@@ -32,6 +32,14 @@
   <label for="q_detalle">Qué hacemos — texto de la tarjeta</label>
   <textarea id="q_detalle" name="q_detalle" rows="3">{{ q.detalle }}</textarea>
 
+  {% set g = h.robots_grid or {} %}
+  <label for="g_kicker">Nuestros robots — rótulo</label>
+  <input id="g_kicker" name="g_kicker" value="{{ g.kicker }}">
+
+  <label for="g_titulo">Nuestros robots — titular</label>
+  <input id="g_titulo" name="g_titulo" value="{{ g.titulo }}">
+  <p class="pista">La rejilla muestra solos los modelos con estado «Disponible».</p>
+
   <label>Modelos destacados</label>
   <div class="filas" data-filas data-target="destacados"
        data-cols='[{"label":"Modelo","tipo":"select","opciones":{{ opciones_modelo|tojson }}}]'>
