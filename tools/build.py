@@ -883,7 +883,7 @@ def home_page():
   </section>
 ''')
 
-    # nuestros robots: rejilla con todos los modelos disponibles
+    # nuestros robots: carrusel con todos los modelos disponibles
     g = HOME.get('robots_grid')
     if g:
         tarjetas = ''
@@ -891,15 +891,17 @@ def home_page():
             if p['status'] != 'disponible':
                 continue
             if p.get('hero'):
-                media = f'<img src="{e(p["hero"])}" alt="{e(p["name"])} — {e(p["claim"])}" loading="lazy">'
+                media = (f'<img src="{e(p["hero"])}" alt="{e(p["name"])} — {e(p["claim"])}" '
+                         f'loading="lazy" draggable="false">')
             else:
                 media = placeholder(p['family'], p['name'])
-            tarjetas += f'''<li class="lcard reveal">
+            tarjetas += f'''<li class="lcard">
           <a href="robots/{p['slug']}.html">
             <div class="lcard__media">{media}</div>
             <div class="lcard__body">
               <p class="lcard__cat">{e(ETIQUETA_FAMILIA.get(p['family'], FAM_NAME[p['family']]))}</p>
               <h3 class="lcard__name">{e(p['name'])}</h3>
+              <p class="lcard__desc">{e(p['claim'])}</p>
             </div>
           </a></li>\n'''
         out.append(f'''  <section class="section section--light loop" id="nuestros-robots">
@@ -908,7 +910,13 @@ def home_page():
         <p class="kicker">{e(g['kicker'])}</p>
         <h2 class="loop__titulo">{g['titulo']}</h2>
       </header>
-      <ul class="loop__grid">{tarjetas}</ul>
+      <div class="carrusel reveal" data-carrusel>
+        <ul class="carrusel__pista" tabindex="0" aria-label="Modelos disponibles">{tarjetas}</ul>
+        <button type="button" class="carrusel__btn carrusel__btn--prev" aria-label="Modelos anteriores">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+        <button type="button" class="carrusel__btn carrusel__btn--next" aria-label="Modelos siguientes">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
       <p class="loop__mas reveal"><a class="pill" href="robots.html"><span>Ver todos los modelos</span>{CHEVRON}</a></p>
     </div>
   </section>

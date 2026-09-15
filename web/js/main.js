@@ -485,6 +485,74 @@
     });
   });
 
+  /* ---------- carruseles de tarjetas ----------
+     Scroll horizontal nativo (táctil y trackpad funcionan solos) con flechas
+     que avanzan una tarjeta y arrastre con el ratón. Al soltar se encaja en
+     la tarjeta más cercana; si se ha arrastrado, el clic no abre el enlace.  */
+  Array.prototype.forEach.call(document.querySelectorAll('[data-carrusel]'), function (caja) {
+    var pista = caja.querySelector('.carrusel__pista');
+    var prev = caja.querySelector('.carrusel__btn--prev');
+    var next = caja.querySelector('.carrusel__btn--next');
+    if (!pista) return;
+
+    var paso = function () {
+      var t = pista.children;
+      if (t.length < 2) return pista.clientWidth;
+      return t[1].offsetLeft - t[0].offsetLeft;
+    };
+    var ir = function (x, suave) {
+      pista.scrollTo({ left: x, behavior: suave && !reduced ? 'smooth' : 'auto' });
+    };
+    var botones = function () {
+      var max = pista.scrollWidth - pista.clientWidth - 2;
+      if (prev) prev.disabled = pista.scrollLeft <= 2;
+      if (next) next.disabled = pista.scrollLeft >= max;
+    };
+
+    if (prev) prev.addEventListener('click', function () { ir(pista.scrollLeft - paso(), true); });
+    if (next) next.addEventListener('click', function () { ir(pista.scrollLeft + paso(), true); });
+    pista.addEventListener('scroll', botones, { passive: true });
+    window.addEventListener('resize', botones);
+    botones();
+
+    pista.addEventListener('keydown', function (ev) {
+      if (ev.key !== 'ArrowRight' && ev.key !== 'ArrowLeft') return;
+      ev.preventDefault();
+      ir(pista.scrollLeft + (ev.key === 'ArrowRight' ? paso() : -paso()), true);
+    });
+
+    /* --- arrastrar con el ratón --- */
+    var abajo = false, movido = false, x0 = 0, s0 = 0;
+    pista.addEventListener('pointerdown', function (ev) {
+      if (ev.pointerType !== 'mouse' || ev.button !== 0) return;
+      abajo = true; movido = false;
+      x0 = ev.clientX; s0 = pista.scrollLeft;
+    });
+    window.addEventListener('pointermove', function (ev) {
+      if (!abajo) return;
+      var dx = ev.clientX - x0;
+      if (!movido && Math.abs(dx) > 5) {
+        movido = true;
+        caja.classList.add('is-arrastrando');
+      }
+      if (movido) pista.scrollLeft = s0 - dx;
+    });
+    window.addEventListener('pointerup', function () {
+      if (!abajo) return;
+      abajo = false;
+      if (!movido) return;
+      caja.classList.remove('is-arrastrando');
+      // encajar en la tarjeta más cercana
+      var p = paso();
+      ir(Math.round(pista.scrollLeft / p) * p, true);
+    });
+    // tras un arrastre, el clic que suelta el ratón no debe navegar
+    pista.addEventListener('click', function (ev) {
+      if (movido) { ev.preventDefault(); ev.stopPropagation(); movido = false; }
+    }, true);
+    pista.addEventListener('dragstart', function (ev) { ev.preventDefault(); });
+  });
+
   /* ---------- reveal on scroll ---------- */
   var items = document.querySelectorAll('.reveal');
 
