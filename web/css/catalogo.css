@@ -39,7 +39,7 @@
   color:var(--navy); letter-spacing:.01em;
 }
 .phero__claim{
-  display:block; font-family:var(--font); letter-spacing:normal;
+  display:block; letter-spacing:normal;
   margin-top:12px; font-weight:500;
   font-size:clamp(15px, 1.5vw, 20px); line-height:1.35; color:var(--blue);
 }
@@ -401,7 +401,6 @@
   font-size:clamp(38px, 4.4vw, 68px); line-height:1.06;
   color:var(--ink);
 }
-.que h2.que__titulo{ font-weight:600; letter-spacing:-.02em; }
 .que__lede{
   margin-top:clamp(24px, 3vw, 40px); max-width:44ch;
   font-weight:400; font-size:clamp(16px, 1.3vw, 19px); line-height:1.9;
@@ -414,7 +413,7 @@
   padding:clamp(30px, 4vw, 64px) clamp(26px, 4vw, 64px);
 }
 .que__destacado{
-  font-weight:800; font-size:clamp(20px, 1.9vw, 30px); line-height:1.55;
+  font-size:clamp(20px, 1.9vw, 30px); line-height:1.5;
   color:var(--navy);
 }
 .que__detalle{
@@ -746,7 +745,7 @@
 }
 .art__cuerpo code{
   background:var(--light); padding:2px 7px; border-radius:5px;
-  font-family:ui-monospace, Consolas, monospace; font-size:.9em;
+  font-size:.9em;
 }
 .art__cuerpo hr{ border:0; border-top:1px solid #dcdfe4; margin:32px 0; }
 
@@ -817,17 +816,32 @@
 
 
 /* ==========================================================================
-   TÍTULOS
-   Todos los h1 y h2 van en Plus Jakarta Sans, en negrita y apretados, y
-   terminan con un punto (lo añade tools/build.py al escribir cada página).
+   TIPOGRAFÍA — tres estilos para toda la web
+   Va al final para imponerse a los pesos sueltos de cada componente.
    Jerarquía: un solo h1 por página, h2 por sección y h3 dentro de cada una.
-   Va al final para imponerse a los font-weight de cada componente.
    ========================================================================== */
-h1, h2, h1[class], h2[class], p.h-section{
-  font-family:var(--font-title);
+
+/* 1 · TÍTULOS — h1 y h2. Terminan con un punto (lo añade tools/build.py). */
+html body :is(h1, h2, p.h-section, .err404, .cifra__valor){
+  font-family:var(--font-titulo);
   font-weight:700;
   letter-spacing:-.035em;
 }
+
+/* 2 · SUBTÍTULOS — h3 y todo lo que rotula: rótulos, botones, menú,
+   etiquetas, pies de foto, frases destacadas. */
+html body :is(h3, h4, .kicker, .phero__claim, .que__destacado,
+  .pill, .chip, .nav a, .crumbs, .badge, .keyfacts span, .viewer__hint,
+  .vid__item figcaption, .gal__item figcaption, .ph span, .nota__titulo,
+  .pcard__more, .famcard__n, .verplus a, .post__meta, .form label,
+  .persona__cargo, .art__meta, .art__volver a, .cifra__etiqueta,
+  .persona-equipo__nombre, .persona-equipo__cargo, .slide-name){
+  font-family:var(--font-subtitulo);
+  font-weight:700;
+}
+
+/* 3 · TEXTO — lo hereda todo lo demás desde body (Exo). */
+
 /* el punto va del color de la penúltima palabra (lo decide build.py) */
 .punto{ color:inherit; }
 .punto--acento{ color:var(--blue); }

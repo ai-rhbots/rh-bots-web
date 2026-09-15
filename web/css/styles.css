@@ -2,8 +2,10 @@
    RH·BOTS — RHX2 landing
    Design tokens taken from the approved maqueta:
    #282828 · #8a8a8a (o #282828 66%) · #009ee3 · #f3f5f8 · #2f2483
-   Tipografía: Exo (Regular 400 / Medium 500 / Bold 700) para texto;
-               Plus Jakarta Sans (700/800) para títulos y botones
+   Tipografía: tres estilos y ninguno más (ver «TIPOGRAFÍA» en catalogo.css)
+     · títulos     Plus Jakarta Sans 700  (h1, h2)
+     · subtítulos  Saira 700              (h3, rótulos, botones, etiquetas)
+     · texto       Exo 400/500            (todo lo demás)
    ========================================================================== */
 
 :root{
@@ -17,8 +19,9 @@
 
   --ink-66:    rgba(40,40,40,.66);
 
-  --font:      'Exo', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-title:'Plus Jakarta Sans', 'Exo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-titulo:    'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-subtitulo: 'Saira', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-texto:     'Exo', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --night:     #0b1626;
 
   --wrap:      1180px;
@@ -37,7 +40,7 @@
 html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
 body{
   margin:0;
-  font-family:var(--font);
+  font-family:var(--font-texto);
   font-weight:500;
   color:var(--ink);
   background:var(--white);
@@ -49,6 +52,7 @@ h1,h2,h3,p,dl,dd,figure{ margin:0; }
 ul{ margin:0; padding:0; list-style:none; }
 a{ color:inherit; text-decoration:none; }
 button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; }
+input, select, textarea{ font:inherit; }
 
 svg{
   width:100%; height:100%;
@@ -141,8 +145,7 @@ svg .nostroke{ stroke:none; }
 }
 /* rótulo pequeño sobre un titular (hero, qué hacemos…) */
 .kicker{
-  font-family:var(--font);
-  font-weight:800; font-size:clamp(12px, 1vw, 14px);
+  font-size:clamp(12px, 1vw, 14px);
   letter-spacing:.24em; text-transform:uppercase;
   color:var(--blue);
 }
@@ -280,8 +283,7 @@ svg .nostroke{ stroke:none; }
   background:var(--blue); color:#fff;
   border:0;
   border-radius:var(--r-pill);
-  font-family:var(--font-title);
-  font-weight:700; font-size:16px; line-height:1.25; letter-spacing:-.01em; text-align:center;
+  font-size:16px; line-height:1.25; letter-spacing:-.01em; text-align:center;
   justify-content:space-between;
   box-shadow:0 10px 30px rgba(0,158,227,.42);
   transition:transform .28s var(--ease), box-shadow .28s var(--ease), background .28s var(--ease);

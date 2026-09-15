@@ -241,7 +241,7 @@ def head(title, desc, base, ruta='', extra_css=True, og_img=None, extra_jsonld=N
 {tw}{analitica()}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700&family=Saira:wght@600;700&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="stylesheet" href="{base}css/styles.css">
 {'<link rel="stylesheet" href="%scss/catalogo.css">' % base if extra_css else ''}
