@@ -762,7 +762,7 @@
 }
 .ctafinal__grid{
   position:relative; z-index:1;
-  display:grid; grid-template-columns:42% minmax(0, 1fr) minmax(0, .5fr);
+  display:grid; grid-template-columns:38% minmax(0, 1fr) minmax(0, .5fr);
   align-items:end; column-gap:clamp(20px, 3vw, 48px);
 }
 .ctafinal__copy{
@@ -785,8 +785,8 @@
 .ctafinal__robot{
   /* muy ampliado y desplazado hacia abajo: sólo asoma de la pegatina
      «RH·BOTS» del pecho hacia arriba; la sección recorta el resto */
-  position:absolute; right:clamp(-150px, -7vw, -20px); bottom:0; z-index:0;
-  width:clamp(480px, 46vw, 780px); height:auto;
+  position:absolute; right:clamp(-190px, -9vw, -30px); bottom:0; z-index:0;
+  width:clamp(420px, 40vw, 680px); height:auto;
   transform:translateY(48%);
   pointer-events:none;
 }
