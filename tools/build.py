@@ -90,7 +90,7 @@ def schema_organization():
         'logo': f'{dominio}/assets/logo-rhbots.png',
         'image': f'{dominio}/{SEO["og_imagen"]}',
         'description': ('Distribuidor oficial de AGIBOT en España y Portugal: robots de limpieza '
-                        'autónoma, humanoides y cuadrúpedos, con asesoramiento, instalación, '
+                        'autónoma, humanoides, cuadrúpedos, AMR de intralogística y accesorios, con asesoramiento, instalación, '
                         'formación y mantenimiento.'),
         'areaServed': ['ES', 'PT'],
         'address': {
@@ -342,6 +342,8 @@ SILUETAS = {
     'limpieza': '<rect x="16" y="26" width="32" height="26" rx="6"/><path d="M16 46h32"/><circle cx="24" cy="55" r="3"/><circle cx="40" cy="55" r="3"/><path d="M22 20h20l-2 6H24z"/>',
     'humanoides': '<rect x="25" y="9" width="14" height="12" rx="6"/><path d="M32 21v18"/><path d="M32 24l-10 6M32 24l10 6"/><path d="M32 39l-6 16M32 39l6 16"/>',
     'cuadrupedos': '<rect x="16" y="24" width="32" height="14" rx="5"/><path d="M20 38l-4 16M28 38l-2 16M36 38l2 16M44 38l4 16"/><path d="M48 28h6"/>',
+    'amr': '<rect x="12" y="22" width="40" height="18" rx="4"/><path d="M18 22v-6h28v6"/><circle cx="20" cy="46" r="4"/><circle cx="44" cy="46" r="4"/>',
+    'accesorios': '<path d="M22 54V34l-6-8a3 3 0 015-3l5 6V12a3 3 0 016 0v14-18a3 3 0 016 0v18-14a3 3 0 016 0v16-10a3 3 0 016 0v20c0 10-6 18-16 18h-2c-3 0-6-1-8-4z"/>',
 }
 
 
@@ -350,6 +352,8 @@ ETIQUETA_FAMILIA = {
     'limpieza': 'Limpieza autónoma',
     'humanoides': 'Robot humanoide',
     'cuadrupedos': 'Robot cuadrúpedo',
+    'amr': 'AMR intralogística',
+    'accesorios': 'Accesorio',
 }
 
 
@@ -472,7 +476,7 @@ def fondo_video(nombre, base, clase=''):
 # qué bucle de fondo le toca a cada familia de producto
 FONDO_POR_MODELO = {
     'rhx2': 'fondo-x2', 'rhx2-ultra': 'fondo-x2',
-    'rhx2-edu': 'fondo-x2', 'rhx2-rec': 'fondo-x2',
+    'rhx2-edu': 'fondo-x2',
     'rha3': 'fondo-a3', 'rha3-ultra': 'fondo-a3',
 }
 
@@ -725,37 +729,42 @@ def cta_final(base):
 def index_page():
     base = ''
     out = [head('Robots RH·BOTS — catálogo completo | RH·BOTS',
-                'Catálogo RH·BOTS: robots de limpieza, humanoides y cuadrúpedos, con fichas '
-                'técnicas completas.', base, 'robots.html'),
+                'Catálogo RH·BOTS: robots humanoides, cuadrúpedos, de limpieza y AMR de '
+                'intralogística, y accesorios, con fichas técnicas completas.', base, 'robots.html'),
            header(base), '<main id="contenido">']
 
-    out.append('''
+    # accesos directos a cada familia
+    chips = ''.join(
+        f'<a class="chip" href="#{key}">{e(name)} <em>{len([p for p in PRODUCTOS if p["family"] == key])}</em></a>'
+        for key, name, _ in FAMILIAS if any(p['family'] == key for p in PRODUCTOS))
+
+    out.append(f'''
   <section class="chero">
     <div class="wrap">
       <nav class="crumbs" aria-label="Miga de pan"><a href="index.html">Inicio</a> <span>/</span> <em>Robots</em></nav>
       <h1 class="display display--left">Nuestros robots</h1>
-      <p class="lede lede--left">Limpieza autónoma, humanoides y cuadrúpedos.
-        Catorce modelos con ficha técnica completa para elegir el que encaja en tu operación.</p>
+      <p class="lede lede--left">Humanoides, cuadrúpedos, limpieza autónoma, AMR de intralogística y accesorios.
+        {len(PRODUCTOS)} modelos con ficha técnica completa para elegir el que encaja en tu operación.</p>
+      <nav class="chips chips--familias" aria-label="Familias de robots">{chips}</nav>
     </div>
   </section>
 ''')
 
-    # filtros
-    chips = '<button type="button" class="chip is-on" data-fam="todas">Todas</button>'
-    for key, name, _ in FAMILIAS:
-        n = len([p for p in PRODUCTOS if p['family'] == key])
-        chips += f'<button type="button" class="chip" data-fam="{key}">{e(name)} <em>{n}</em></button>'
-
-    cards = ''
-    for p in PRODUCTOS:
-        media = (f'<img src="{p["hero"]}" alt="{e(p["name"])}" loading="lazy">'
-                 if p.get('hero') else placeholder(p['family'], p['name']))
-        facts = ''
-        if p['keyfacts']:
-            facts = '<ul class="pcard__facts">' + ''.join(
-                f'<li><span>{e(l)}</span><strong>{e(v)}</strong></li>' for l, v in p['keyfacts'][:3]
-            ) + '</ul>'
-        cards += f'''<li class="pcard reveal" data-fam="{p['family']}">
+    # una sección por familia
+    for i, (key, name, desc) in enumerate(FAMILIAS):
+        modelos = [p for p in PRODUCTOS if p['family'] == key]
+        if not modelos:
+            continue
+        cards = ''
+        for p in modelos:
+            media = (f'<img src="{p["hero"]}" alt="{e(p["name"])}" loading="lazy">'
+                     if p.get('hero') else placeholder(p['family'], p['name']))
+            facts = ''
+            if p['keyfacts']:
+                facts = '<ul class="pcard__facts">' + ''.join(
+                    f'<li><span>{e(l)}</span><strong>{e(v)}</strong></li>' for l, v in p['keyfacts'][:3]
+                ) + '</ul>'
+            cards += f'''<li class="pcard reveal">
           <a href="robots/{p['slug']}.html">
             <div class="pcard__media">{media}</div>
             <div class="pcard__body">
@@ -766,13 +775,15 @@ def index_page():
               <span class="pcard__more">Ver ficha técnica</span>
             </div>
           </a></li>\n'''
-
-    out.append(f'''  <section class="section section--white" id="familias">
+        fondo = 'section--white' if i % 2 == 0 else 'section--light'
+        out.append(f'''  <section class="section {fondo} familia" id="{key}">
     <div class="wrap">
-      <h2 class="sr-only">Catálogo de robots de limpieza, humanoides y cuadrúpedos</h2>
-      <div class="chips" id="chips" role="group" aria-label="Filtrar por familia">{chips}</div>
-      <ul class="pgrid pgrid--big" id="pgrid">{cards}</ul>
-      <p class="empty" id="empty" hidden>No hay modelos en esta familia.</p>
+      <header class="familia__head reveal">
+        <p class="kicker">{len(modelos)} {'modelo' if len(modelos) == 1 else 'modelos'}</p>
+        <h2 class="familia__titulo">{e(name)}</h2>
+        <p class="familia__desc">{e(desc)}</p>
+      </header>
+      <ul class="pgrid pgrid--big">{cards}</ul>
     </div>
   </section>
 ''')
@@ -840,7 +851,7 @@ def mes_y_ano(fecha):
 def home_page():
     base = ''
     out = [head('RH·BOTS — Recursos humanoides para tu empresa',
-                'Robots de limpieza, humanoides y cuadrúpedos. Asesoramiento, instalación, '
+                'Robots humanoides, cuadrúpedos, de limpieza y de intralogística. Asesoramiento, instalación, '
                 'formación y soporte en Valencia.', base, 'index.html',
                 extra_jsonld=[schema_organization(), schema_faqpage(HOME['faq'])]),
            header(base, 'home'), '<main id="contenido">']
@@ -1438,7 +1449,7 @@ def llms_txt():
     d = SEO['dominio'].rstrip('/')
     out = ['# RH·BOTS\n',
            f'> Distribuidor oficial de AGIBOT en España y Portugal. Robots de limpieza '
-           f'autónoma, humanoides y cuadrúpedos, con asesoramiento, instalación, '
+           f'autónoma, humanoides, cuadrúpedos, AMR de intralogística y accesorios, con asesoramiento, instalación, '
            f'formación y mantenimiento. Sede en Picassent (Valencia).\n']
 
     out.append('## Robots\n')
@@ -1475,8 +1486,15 @@ def main():
     ]
     for nombre, contenido in paginas:
         write(os.path.join(WEB, nombre), contenido)
+    fichas_vivas = set()
     for p in PRODUCTOS:
+        fichas_vivas.add(p['slug'] + '.html')
         write(os.path.join(WEB, 'robots', p['slug'] + '.html'), product_page(p))
+
+    # un modelo retirado del catálogo no debe dejar su ficha publicada
+    for archivo in os.listdir(os.path.join(WEB, 'robots')):
+        if archivo.endswith('.html') and archivo not in fichas_vivas:
+            os.remove(os.path.join(WEB, 'robots', archivo))
 
     slugs_vivos = set()
     for post in POSTS:

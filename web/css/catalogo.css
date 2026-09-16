@@ -311,6 +311,19 @@
 
 /* ---------- índice: filtros ---------- */
 .chips{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:clamp(28px, 3.5vw, 42px); }
+.chips--familias{ margin:clamp(22px, 2.6vw, 34px) 0 0; }
+
+/* catálogo: una sección por familia */
+.familia{ scroll-margin-top:calc(var(--header-h) + 12px); }
+.familia__head{ max-width:760px; margin-bottom:clamp(28px, 3.5vw, 46px); }
+.familia__titulo{
+  margin-top:clamp(10px, 1.2vw, 16px);
+  font-size:clamp(30px, 3.4vw, 50px); line-height:1.08; color:var(--ink);
+}
+.familia__desc{
+  margin-top:clamp(12px, 1.4vw, 18px);
+  font-size:clamp(15px, 1.2vw, 18px); line-height:1.7; color:var(--ink-66);
+}
 .chip{
   padding:9px 18px; border-radius:var(--r-pill);
   border:1.5px solid #dcdfe4; background:#fff;
@@ -345,10 +358,15 @@
 /* altura fija: mantiene alineadas las tarjetas de una misma fila,
    mezclando fotos verticales, horizontales y marcadores */
 .pcard__media{
-  height:clamp(165px, 15vw, 205px); background:var(--light);
+  position:relative;
+  height:clamp(190px, 17vw, 240px); background:var(--light);
   display:grid; place-items:center; padding:14px; overflow:hidden;
 }
-.pcard__media img{ max-width:100%; max-height:100%; width:auto; object-fit:contain; }
+/* la foto entera, quepa como quepa: las de los AMR y humanoides son muy altas */
+.pcard__media img{
+  position:absolute; inset:14px; width:calc(100% - 28px); height:calc(100% - 28px);
+  object-fit:contain; mix-blend-mode:multiply;
+}
 .pcard__media .ph{
   border:0; background:transparent;
   height:100%; aspect-ratio:auto; gap:8px;

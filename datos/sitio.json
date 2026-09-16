@@ -119,11 +119,11 @@
     "faq": [
       [
         "¿Qué robot necesito?",
-        "Depende de la tarea, del entorno y del volumen. La limpieza de grandes superficies interiores es cosa del RHC5; la atención al público, de la familia A3 o X2; la manipulación industrial, del RHG2; y la inspección en exteriores o terreno difícil, de la familia D1. Te acompañamos en la elección con un asesoramiento previo."
+        "Depende de la tarea, del entorno y del volumen. La limpieza de grandes superficies es cosa del RHC5, el MT1 o el MT1 Max; la atención al público, de las familias RHA3 y RHX2; la manipulación industrial, del RHG2; el transporte interno de materiales, de los AMR T150, T300, T600 y MP2000; y la inspección en exteriores o terreno difícil, del cuadrúpedo D5W. Te acompañamos en la elección con un asesoramiento previo."
       ],
       [
         "¿Hace falta programar el robot?",
-        "No para el uso estándar: los modelos vienen con un paquete de habilidades listo para ejecutar múltiples funciones desde el primer momento. Si quieres desarrollar tus propias aplicaciones, existen versiones abiertas (RHX2 Ultra, RHD1 Edu, RHD1 Ultra, RHX2 EDU) con SDK, simuladores e interfaces documentadas."
+        "No para el uso estándar: los modelos vienen con un paquete de habilidades listo para ejecutar múltiples funciones desde el primer momento. Si quieres desarrollar tus propias aplicaciones, existen versiones abiertas (RHX2 Ultra y RHX2 EDU) con SDK, simuladores e interfaces documentadas."
       ],
       [
         "¿Se puede adaptar a mi empresa?",

@@ -5,7 +5,7 @@ Sin dependencias ni build: se abre `index.html` y funciona.
 
 ```
 datos/                    ← EL CONTENIDO VIVE AQUÍ
-├── productos.json        las 14 fichas
+├── productos.json        las 19 fichas
 ├── sitio.json            menú, home, blog, contacto, SEO, analítica
 ├── admin.json            hash de la contraseña (NO subir a git ni al servidor público)
 └── copias/               copia de seguridad automática de cada guardado
@@ -23,7 +23,7 @@ web/                      ⟵ TODO el HTML es generado
 ├── robots.html           catálogo (filtrable)
 ├── blog.html             blog
 ├── contacto.html         contacto
-├── robots/*.html         14 fichas de producto
+├── robots/*.html         19 fichas de producto
 ├── css/styles.css        sistema de diseño (maqueta aprobada)
 ├── css/catalogo.css      catálogo, fichas, home, blog y contacto
 ├── js/main.js
@@ -54,7 +54,7 @@ imprime en la consola; para cambiarla:
 python tools/admin.py --clave
 ```
 
-Desde el panel se editan la home, las 14 fichas, el blog, el contacto, el menú,
+Desde el panel se editan la home, las 19 fichas, el blog, el contacto, el menú,
 el SEO y los códigos de Google, y se regenera la web con el botón **Publicar**.
 Cada guardado deja una copia en `datos/copias/` y la escritura es atómica, así
 que un corte a media faena no deja el archivo a medias.
@@ -176,8 +176,8 @@ Sin enlazar y por qué:
 |---|---|
 | RHA3 | En Shopify sólo está el A3 Ultra |
 | RHX2 Ultra | No existe en Shopify |
-| RHD1 Pro / Edu / Ultra / Max / MaxPro | Shopify tiene un único «D1 Series» genérico |
-| RHX2 REC · RHD1 Ultra-W | Fichas provisionales: no deberían venderse |
+| D5W · MT1 · MT1 Max · T150 · T300 · T600 · T600 Underride · MP2000 | Modelos PUDU, sin producto en Shopify |
+| OmniHand · OmniHand Tactile · OmniHand Pro 2025 · OmniPicker | Accesorios sin producto en Shopify con el mismo nombre |
 
 En Shopify hay además dos productos sin ficha en la web: **Genie G2 Max** y
 **OmniHand 3 Ultra-M**.
@@ -304,9 +304,21 @@ que es la única disponible en la maqueta.
 
 ## Catálogo de producto
 
-14 fichas repartidas en tres familias: limpieza (1), humanoides (7) y
-cuadrúpedos (6). Nomenclatura con prefijo **RH** (RHC5, RHA3, RHX2, RHG2,
-RHD1…), coherente con el dossier `RHC5_VF` y con la maqueta aprobada.
+19 fichas repartidas en cinco familias, que en `robots.html` son cinco secciones:
+
+| Familia | Modelos |
+|---|---|
+| Humanoides | RHX2, RHA3, RHX2 Ultra, RHX2 EDU, RHA3 Ultra, RHG2 |
+| Cuadrúpedos | D5W |
+| Limpieza autónoma | RHC5, MT1, MT1 Max |
+| AMR intralogística | T150, T300, T600, T600 Underride, MP2000 |
+| Accesorios | OmniHand, OmniHand Tactile, OmniHand Pro 2025, OmniPicker |
+
+Los modelos AGIBOT llevan el prefijo **RH** (RHC5, RHA3, RHX2, RHG2), coherente
+con el dossier `RHC5_VF` y con la maqueta aprobada. Los de PUDU y los accesorios
+conservan el nombre del fabricante. Las fichas se redactaron a partir de la
+documentación de la carpeta `INFORMACIÓN` (fichas técnicas, catálogos PUDU y
+presentaciones).
 
 Cada ficha incluye hero con datos rápidos, puntos clave, aplicaciones,
 especificaciones completas agrupadas y enlaces al resto de la familia.
@@ -319,19 +331,14 @@ favorable:
 
 | Estado | Significado | Modelos |
 |---|---|---|
-| *(sin distintivo)* | Ficha completa y contrastada | 11 modelos |
-| `Datos parciales` | Anunciado, faltan datos oficiales | RHX2 EDU |
-| `Ficha provisional` | Sin ficha oficial — **no apta para oferta contractual** | RHX2 REC, RHD1 Ultra-W |
+| *(sin distintivo)* | Ficha completa y contrastada | los 19 modelos |
+| `Datos parciales` | Anunciado, faltan datos oficiales | — |
+| `Ficha provisional` | Sin ficha oficial — **no apta para oferta contractual** | — |
 
 Los avisos aparecen en un bloque destacado bajo el hero. Ejemplos: el
-rendimiento del RHC5 (1.920 vs 1.980 m²/h), los grados de libertad del RHX2
-Ultra (30 vs 31), su batería (421 vs 500 Wh), el peso y la batería del
-RHD1 MaxPro (64/68 kg, 2.081/2.160 Wh), o la carga estática de 100 kg que no
-debe usarse como carga móvil.
-
-Las dos fichas provisionales **no reproducen especificaciones de otros modelos**
-y llevan una lista numerada de la documentación que hay que pedir al fabricante
-antes de ofertarlas.
+rendimiento del RHC5 (1.920 vs 1.980 m²/h), el peso del MT1 (65 vs 74 kg), las
+cifras de la serie T300 que el catálogo copia del T150, o la configuración del
+RHX2 base, que la ficha RH·BOTS describe con datos del Ultra.
 
 ## Pendiente de contenido definitivo
 

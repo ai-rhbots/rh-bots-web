@@ -67,7 +67,6 @@ TRABAJOS = [
     # ─── familia X2: una imagen distinta por modelo ───
     # (rhx2 y rhx2-ultra ya usan robot-sentado.png y robot-frontal.png)
     ('rhx2-edu/hero',         'bcdaf302f10439090f551e9906ef7285.png', 460),
-    ('rhx2-rec/hero',         'robot-aplicaciones.png',               900),
 
     # ─── accesorios / varios ───
     ('accesorios/mano',       'ea340bb6b53603126a1bc9f845073742.png', 700),

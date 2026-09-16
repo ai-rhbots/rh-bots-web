@@ -106,39 +106,6 @@
   });
   }
 
-  /* ---------- catálogo: filtro por familia ---------- */
-  var chips = document.getElementById('chips');
-  if (chips) {
-    var grid = document.getElementById('pgrid');
-    var empty = document.getElementById('empty');
-
-    function aplicarFiltro(fam) {
-      Array.prototype.forEach.call(chips.children, function (c) {
-        c.classList.toggle('is-on', c.getAttribute('data-fam') === fam);
-      });
-
-      var shown = 0;
-      Array.prototype.forEach.call(grid.children, function (card) {
-        var ok = fam === 'todas' || card.getAttribute('data-fam') === fam;
-        card.hidden = !ok;
-        if (ok) shown++;
-      });
-      empty.hidden = shown > 0;
-    }
-
-    chips.addEventListener('click', function (ev) {
-      var btn = ev.target.closest('.chip');
-      if (!btn) return;
-      aplicarFiltro(btn.getAttribute('data-fam'));
-    });
-
-    // ?fam=humanoides — enlaces de familia desde la home
-    var pedida = new URLSearchParams(location.search).get('fam');
-    if (pedida && chips.querySelector('[data-fam="' + pedida + '"]')) {
-      aplicarFiltro(pedida);
-    }
-  }
-
   /* ---------- fondos de vídeo ----------
      Aparecen con una transición sólo cuando hay fotogramas de verdad, para
      que no se vea el salto del poster al primer cuadro. Si el navegador

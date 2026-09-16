@@ -1,32 +1,43 @@
 # RH·BOTS
 
-> Distribuidor oficial de AGIBOT en España y Portugal. Robots de limpieza autónoma, humanoides y cuadrúpedos, con asesoramiento, instalación, formación y mantenimiento. Sede en Picassent (Valencia).
+> Distribuidor oficial de AGIBOT en España y Portugal. Robots de limpieza autónoma, humanoides, cuadrúpedos, AMR de intralogística y accesorios, con asesoramiento, instalación, formación y mantenimiento. Sede en Picassent (Valencia).
 
 ## Robots
 
 
-### Limpieza autónoma
-
-- [RHC5](https://www.rh-bots.com/robots/rhc5.html): Limpieza profesional autónoma para grandes superficies
-
 ### Humanoides
 
-- [RHA3](https://www.rh-bots.com/robots/rha3.html): Humanoide de tamaño adulto para atención al público
-- [RHA3 Ultra "Reboniko"](https://www.rh-bots.com/robots/rha3-ultra.html): Humanoide avanzado para investigación e inteligencia corporal
-- [RHX2](https://www.rh-bots.com/robots/rhx2.html): Humanoide compacto para eventos, recepción y educación
-- [RHX2 Ultra](https://www.rh-bots.com/robots/rhx2-ultra.html): Humanoide compacto y programable para desarrollo de aplicaciones
-- [RHX2 EDU](https://www.rh-bots.com/robots/rhx2-edu.html): Plataforma humanoide para enseñanza e investigación
-- [RHX2 REC](https://www.rh-bots.com/robots/rhx2-rec.html): Variante anunciada, pendiente de ficha oficial
+- [RHX2](https://www.rh-bots.com/robots/rhx2.html): Humanoide compacto para atención al público y eventos
+- [RHA3](https://www.rh-bots.com/robots/rha3.html): Humanoide de tamaño adulto para escena y atención al público
+- [RHX2 Ultra](https://www.rh-bots.com/robots/rhx2-ultra.html): Humanoide programable con percepción 3D y NVIDIA Orin NX
+- [RHX2 EDU](https://www.rh-bots.com/robots/rhx2-edu.html): Humanoide desmontable para enseñanza e investigación
+- [RHA3 Ultra "Reboniko"](https://www.rh-bots.com/robots/rha3-ultra.html): Humanoide de servicio para operación autónoma 24/7
 - [RHG2](https://www.rh-bots.com/robots/rhg2.html): Humanoide industrial con base móvil y torso telescópico
 
 ### Cuadrúpedos
 
-- [RHD1 Pro](https://www.rh-bots.com/robots/rhd1-pro.html): Cuadrúpedo compacto para inspección y demostraciones
-- [RHD1 Edu](https://www.rh-bots.com/robots/rhd1-edu.html): Cuadrúpedo para docencia e investigación
-- [RHD1 Ultra](https://www.rh-bots.com/robots/rhd1-ultra.html): Cuadrúpedo ligero programable con protección IP54
-- [RHD1 Ultra-W](https://www.rh-bots.com/robots/rhd1-ultra-w.html): Variante con ruedas anunciada por distribuidores
-- [RHD1 Max](https://www.rh-bots.com/robots/rhd1-max.html): Cuadrúpedo híbrido con ruedas para inspección de largo recorrido
-- [RHD1 MaxPro](https://www.rh-bots.com/robots/rhd1-maxpro.html): Cuadrúpedo de carga pesada para industria y emergencias
+- [D5W](https://www.rh-bots.com/robots/d5w.html): Cuadrúpedo industrial con ruedas para inspección y reparto
+
+### Limpieza autónoma
+
+- [RHC5](https://www.rh-bots.com/robots/rhc5.html): Limpieza profesional autónoma para grandes superficies
+- [MT1](https://www.rh-bots.com/robots/mt1.html): Barredora autónoma con IA para grandes superficies
+- [MT1 Max](https://www.rh-bots.com/robots/mt1-max.html): Barredora autónoma con lidar 3D para interior y semiexterior
+
+### AMR intralogística
+
+- [T150](https://www.rh-bots.com/robots/t150.html): Robot autónomo de transporte industrial para 150 kg
+- [T300](https://www.rh-bots.com/robots/t300.html): Robot autónomo modular de transporte para 300 kg
+- [T600](https://www.rh-bots.com/robots/t600.html): Robot autónomo de elevación para cargas de 600 kg
+- [T600 Underride](https://www.rh-bots.com/robots/t600-underride.html): Robot autónomo bajo carro para cargas de 600 kg
+- [MP2000](https://www.rh-bots.com/robots/mp2000.html): Transpaleta autónoma para palés de 2.000 kg
+
+### Accesorios
+
+- [OmniHand](https://www.rh-bots.com/robots/omnihand.html): Mano robótica diestra de 16 grados de libertad
+- [OmniHand Tactile](https://www.rh-bots.com/robots/omnihand-tactile.html): Mano robótica diestra con sensores táctiles
+- [OmniHand Pro 2025](https://www.rh-bots.com/robots/omnihand-pro-2025.html): Mano robótica diestra de 19 grados de libertad
+- [OmniPicker](https://www.rh-bots.com/robots/omnipicker.html): Pinza industrial con tacto para IA encarnada
 
 
 ## Empresa
