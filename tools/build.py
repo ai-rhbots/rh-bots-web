@@ -1377,14 +1377,15 @@ def con_punto(fragmento):
 
 
 def ultima_en_azul(fragmento):
-    """La última palabra del titular va en azul.
+    """La última palabra del titular va en azul; si solo tiene una, entera.
 
     Se salta los títulos que ya traen su propio <span class="acento"> (el
     del hero, por ejemplo, donde el azul empieza antes) y los que van
     blancos sobre banda azul, donde el azul claro no se leería.
     """
-    if 'acento' in fragmento or len(_palabras(fragmento)) < 2:
-        return fragmento          # un título de una sola palabra no se parte
+    if 'acento' in fragmento or not _palabras(fragmento):
+        return fragmento
+    # un título de una sola palabra va entero en azul (y su punto también)
     m = re.search(r'([^\s<>]+)(\s*)$', fragmento)
     if not m or not re.search(r'\w', m.group(1)):
         return fragmento
