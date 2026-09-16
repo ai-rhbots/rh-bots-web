@@ -277,6 +277,22 @@ def header(base, active='robots'):
 '''
 
 
+# iconos de marca en cuadrado índigo con el glifo en blanco (franja «Síguenos»)
+ICONO_INSTAGRAM = (
+    '<svg viewBox="0 0 48 48" aria-hidden="true">'
+    '<rect width="48" height="48" rx="7" fill="#2f2483" stroke="none"/>'
+    '<rect x="11" y="11" width="26" height="26" rx="7.5" fill="none" stroke="#fff" stroke-width="3.4"/>'
+    '<circle cx="24" cy="24" r="6.3" fill="none" stroke="#fff" stroke-width="3.4"/>'
+    '<circle cx="31.4" cy="16.6" r="2" fill="#fff" stroke="none"/></svg>')
+ICONO_LINKEDIN = (
+    '<svg viewBox="0 0 48 48" aria-hidden="true">'
+    '<rect width="48" height="48" rx="7" fill="#2f2483" stroke="none"/>'
+    '<circle cx="14.2" cy="13.8" r="3.4" fill="#fff" stroke="none"/>'
+    '<rect x="11.3" y="19.4" width="5.8" height="18.1" fill="#fff" stroke="none"/>'
+    '<path d="M21.2 19.4h5.5v2.5h.1c.8-1.4 2.7-2.9 5.5-2.9 5.8 0 6.9 3.8 6.9 8.8v9.7h-5.8v-8.6'
+    'c0-2.1 0-4.7-2.9-4.7s-3.4 2.2-3.4 4.6v8.7h-5.8z" fill="#fff" stroke="none"/></svg>')
+
+
 def prefooter(base):
     """Franja clara previa al pie: mensaje de contacto y logotipo vertical."""
     if not PREFOOTER.get('titulo') and not PREFOOTER.get('texto'):
@@ -293,6 +309,13 @@ def prefooter(base):
       <img src="{base}assets/logo-rhbots-vertical.png" alt="RH·BOTS — Recursos Humanoides"
            width="560" height="452" loading="lazy">
     </a>
+    <div class="prefoot__redes">
+      <p class="prefoot__titulo">{e(PREFOOTER.get('siguenos', 'Síguenos'))}</p>
+      <ul>
+        <li><a href="{INSTAGRAM_EMPRESA}" target="_blank" rel="noopener" aria-label="Instagram de RH·BOTS">{ICONO_INSTAGRAM}</a></li>
+        <li><a href="{LINKEDIN_EMPRESA}" target="_blank" rel="noopener" aria-label="LinkedIn de RH·BOTS">{ICONO_LINKEDIN}</a></li>
+      </ul>
+    </div>
   </div>
 </aside>'''
 

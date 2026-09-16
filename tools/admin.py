@@ -428,6 +428,7 @@ def crear_app():
             s['prefooter'] = {
                 'titulo': f.get('pf_titulo', '').strip(),
                 'texto': f.get('pf_texto', '').strip(),
+                'siguenos': f.get('pf_siguenos', '').strip() or 'Síguenos',
             }
             guardar_y_publicar('sitio', s, 'Home guardada.')
             return redirect(url_for('home'))

@@ -112,6 +112,9 @@
   <label for="pf_texto">Franja sobre el pie — texto</label>
   <textarea id="pf_texto" name="pf_texto" rows="3">{{ pf.texto }}</textarea>
 
+  <label for="pf_siguenos">Franja sobre el pie — título de redes</label>
+  <input id="pf_siguenos" name="pf_siguenos" value="{{ pf.siguenos or 'Síguenos' }}">
+
   <label>Preguntas frecuentes</label>
   <div class="filas" data-filas data-target="faq"
        data-cols='[{"label":"Pregunta","tipo":"texto"},{"label":"Respuesta","tipo":"textarea"}]'>
