@@ -61,6 +61,21 @@
     <button type="button" class="btn btn--plano" data-filas-add>+ Añadir sector</button>
   </div>
 
+  {% set me = h.metodo or {} %}
+  <label for="m_kicker">Método — rótulo</label>
+  <input id="m_kicker" name="m_kicker" value="{{ me.kicker }}">
+
+  <label for="m_titulo">Método — titular</label>
+  <input id="m_titulo" name="m_titulo" value="{{ me.titulo }}">
+
+  <label>Método — pasos</label>
+  <div class="filas" data-filas data-target="m_pasos"
+       data-cols='[{"label":"Paso","tipo":"texto"},{"label":"Descripción","tipo":"texto"}]'>
+    <textarea id="m_pasos" name="m_pasos" hidden>{{ a_texto(me.pasos or []) }}</textarea>
+    <div class="filas__lista" data-filas-lista></div>
+    <button type="button" class="btn btn--plano" data-filas-add>+ Añadir paso</button>
+  </div>
+
   <label>Modelos destacados</label>
   <div class="filas" data-filas data-target="destacados"
        data-cols='[{"label":"Modelo","tipo":"select","opciones":{{ opciones_modelo|tojson }}}]'>

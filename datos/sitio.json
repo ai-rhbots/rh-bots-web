@@ -88,6 +88,28 @@
         ]
       ]
     },
+    "metodo": {
+      "kicker": "Método RH·BOTS",
+      "titulo": "Un proceso claro para implantar <span class=\"acento\">sin complicaciones</span>",
+      "pasos": [
+        [
+          "Escuchamos",
+          "Entendemos tu negocio, tus objetivos y el contexto de uso."
+        ],
+        [
+          "Definimos",
+          "Seleccionamos el robot y planteamos una solución viable."
+        ],
+        [
+          "Implantamos",
+          "Configuración, puesta en marcha y formación del equipo."
+        ],
+        [
+          "Acompañamos",
+          "Soporte técnico, mantenimiento y mejora continua."
+        ]
+      ]
+    },
     "destacados": [
       "rhc5",
       "rhx2-ultra",

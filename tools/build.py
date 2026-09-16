@@ -942,6 +942,25 @@ def home_page():
   </section>
 ''')
 
+    # método: cuatro pasos en una rejilla con separadores
+    met = HOME.get('metodo')
+    if met:
+        pasos = ''.join(
+            f'<li class="metodo__paso reveal"><p class="metodo__num">{i:02d}</p>'
+            f'<h3 class="metodo__nombre">{e(t)}</h3>'
+            f'<p class="metodo__texto">{e(txt)}</p></li>\n'
+            for i, (t, txt) in enumerate(met['pasos'], 1))
+        out.append(f'''  <section class="section section--white metodo" id="metodo">
+    <div class="wrap">
+      <header class="metodo__head reveal">
+        <p class="kicker">{e(met['kicker'])}</p>
+        <h2 class="metodo__titulo">{met['titulo']}</h2>
+      </header>
+      <ol class="metodo__grid">{pasos}</ol>
+    </div>
+  </section>
+''')
+
     # vídeo general
     if HOME.get('video'):
         out.append(video_html([HOME['video']], base, 'Míralos trabajando'))
@@ -1360,10 +1379,28 @@ def con_punto(fragmento):
     return fragmento.rstrip() + f'<span class="{clase}" aria-hidden="true">.</span>'
 
 
+def ultima_en_azul(fragmento):
+    """La última palabra del titular va en azul.
+
+    Se salta los títulos que ya traen su propio <span class="acento"> (el
+    del hero, por ejemplo, donde el azul empieza antes) y los que van
+    blancos sobre banda azul, donde el azul claro no se leería.
+    """
+    if 'acento' in fragmento or len(_palabras(fragmento)) < 2:
+        return fragmento          # un título de una sola palabra no se parte
+    m = re.search(r'([^\s<>]+)(\s*)$', fragmento)
+    if not m or not re.search(r'\w', m.group(1)):
+        return fragmento
+    return (fragmento[:m.start(1)]
+            + f'<span class="acento">{m.group(1)}</span>' + m.group(2))
+
+
 def _titulo(m):
     abre, nivel, dentro, cierra = m.group(1), m.group(2), m.group(3), m.group(4)
     # que Google no lea «larobótica» donde hay un salto de línea
     dentro = re.sub(r'(?<=\S)<br\s*/?>', ' <br>', dentro)
+    if nivel in '12' and 'sr-only' not in abre and 'onblue' not in abre:
+        dentro = ultima_en_azul(dentro)
     if nivel in '12' and 'data-punto' not in abre and 'class="punto' not in dentro:
         dentro = con_punto(dentro)
     return abre + dentro + cierra

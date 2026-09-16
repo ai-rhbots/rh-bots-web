@@ -409,6 +409,11 @@ def crear_app():
                     'boton': f.get('s_boton', '').strip(),
                     'tarjetas': filas(f.get('s_tarjetas', ''), 2),
                 },
+                'metodo': {
+                    'kicker': f.get('m_kicker', '').strip(),
+                    'titulo': f.get('m_titulo', '').strip(),
+                    'pasos': filas(f.get('m_pasos', ''), 2),
+                },
             })
             guardar_y_publicar('sitio', s, 'Home guardada.')
             return redirect(url_for('home'))
