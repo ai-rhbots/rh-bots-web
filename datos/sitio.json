@@ -64,6 +64,30 @@
       "kicker": "Nuestros robots",
       "titulo": "Una gama preparada para <span class=\"acento\">entornos reales</span>"
     },
+    "sectores_bloque": {
+      "kicker": "Aplicaciones",
+      "titulo": "Robótica humanoide para distintos sectores",
+      "texto": "Cada proyecto tiene un objetivo. Por eso adaptamos la solución al entorno, al equipo y al tipo de interacción que necesita tu empresa.",
+      "boton": "Ver aplicaciones",
+      "tarjetas": [
+        [
+          "Retail y atención",
+          "Recepción, información, acompañamiento y experiencias de marca."
+        ],
+        [
+          "Industria y logística",
+          "Apoyo en procesos, inspección, movilidad y demostraciones técnicas."
+        ],
+        [
+          "Educación y eventos",
+          "Formación, innovación, ferias, presentaciones y activaciones."
+        ],
+        [
+          "Salud y asistencia",
+          "Interacción guiada, apoyo informativo y acompañamiento no clínico."
+        ]
+      ]
+    },
     "destacados": [
       "rhc5",
       "rhx2-ultra",
@@ -124,8 +148,7 @@
         "¿Se puede alquilar en lugar de comprar?",
         "Consúltanos. Según el modelo y la duración del proyecto podemos plantear compra o alquiler, incluyendo la puesta en marcha y el soporte."
       ]
-    ],
-    "gama_img": "assets/robots/gama.webp"
+    ]
   },
   "servicios": [
     [

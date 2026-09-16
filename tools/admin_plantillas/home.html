@@ -40,6 +40,27 @@
   <input id="g_titulo" name="g_titulo" value="{{ g.titulo }}">
   <p class="pista">El carrusel muestra solos los modelos con estado «Disponible», con su claim como descripción.</p>
 
+  {% set sb = h.sectores_bloque or {} %}
+  <label for="s_kicker">Aplicaciones — rótulo</label>
+  <input id="s_kicker" name="s_kicker" value="{{ sb.kicker }}">
+
+  <label for="s_titulo">Aplicaciones — titular</label>
+  <input id="s_titulo" name="s_titulo" value="{{ sb.titulo }}">
+
+  <label for="s_texto">Aplicaciones — texto</label>
+  <textarea id="s_texto" name="s_texto" rows="3">{{ sb.texto }}</textarea>
+
+  <label for="s_boton">Aplicaciones — texto del botón</label>
+  <input id="s_boton" name="s_boton" value="{{ sb.boton }}">
+
+  <label>Aplicaciones — tarjetas</label>
+  <div class="filas" data-filas data-target="s_tarjetas"
+       data-cols='[{"label":"Sector","tipo":"texto"},{"label":"Descripción","tipo":"texto"}]'>
+    <textarea id="s_tarjetas" name="s_tarjetas" hidden>{{ a_texto(sb.tarjetas or []) }}</textarea>
+    <div class="filas__lista" data-filas-lista></div>
+    <button type="button" class="btn btn--plano" data-filas-add>+ Añadir sector</button>
+  </div>
+
   <label>Modelos destacados</label>
   <div class="filas" data-filas data-target="destacados"
        data-cols='[{"label":"Modelo","tipo":"select","opciones":{{ opciones_modelo|tojson }}}]'>

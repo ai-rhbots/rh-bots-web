@@ -922,18 +922,22 @@ def home_page():
   </section>
 ''')
 
-    # la gama al completo, en una imagen
-    if HOME.get('gama_img'):
-        out.append(f'''  <section class="section section--light" id="gama">
-    <div class="wrap">
-      <header class="section-head reveal">
-        <h2 class="h-section">Una gama para cada tarea</h2>
-        <p class="sub">Limpieza, atención al público, industria e inspección.</p>
-      </header>
-      <figure class="gama reveal">
-        <img src="{e(HOME['gama_img'])}" alt="La gama completa de robots RH·BOTS"
-             loading="lazy" width="1582" height="1070">
-      </figure>
+    # aplicaciones por sector: bloque azul con tarjetas
+    sec = HOME.get('sectores_bloque')
+    if sec:
+        fichas = ''.join(
+            f'<li class="secbloque__ficha reveal"><h3>{e(t)}</h3><p>{e(txt)}</p></li>\n'
+            for t, txt in sec['tarjetas'])
+        out.append(f'''  <section class="secbloque" id="sectores">
+    <div class="secbloque__diagonal" aria-hidden="true"></div>
+    <div class="wrap secbloque__grid">
+      <div class="secbloque__copy reveal">
+        <p class="kicker">{e(sec['kicker'])}</p>
+        <h2 class="secbloque__titulo">{e(sec['titulo'])}</h2>
+        <p class="secbloque__lede">{e(sec['texto'])}</p>
+        <a class="pill" href="#aplicaciones"><span>{e(sec['boton'])}</span>{CHEVRON}</a>
+      </div>
+      <ul class="secbloque__fichas">{fichas}</ul>
     </div>
   </section>
 ''')
