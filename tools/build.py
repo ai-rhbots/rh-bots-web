@@ -738,16 +738,26 @@ def index_page():
         f'<a class="chip" href="#{key}">{e(name)} <em>{len([p for p in PRODUCTOS if p["family"] == key])}</em></a>'
         for key, name, _ in FAMILIAS if any(p['family'] == key for p in PRODUCTOS))
 
+    # portada del catálogo: fondo oscuro, robot en penumbra y franja diagonal azul
     out.append(f'''
-  <section class="chero">
-    <div class="wrap">
-      <nav class="crumbs" aria-label="Miga de pan"><a href="index.html">Inicio</a> <span>/</span> <em>Robots</em></nav>
-      <h1 class="display display--left">Nuestros robots</h1>
-      <p class="lede lede--left">Humanoides, cuadrúpedos, limpieza autónoma, AMR de intralogística y accesorios.
-        {len(PRODUCTOS)} modelos con ficha técnica completa para elegir el que encaja en tu operación.</p>
-      <nav class="chips chips--familias" aria-label="Familias de robots">{chips}</nav>
+  <section class="hero hero--catalogo" id="inicio">
+    <img class="hero__robot-fondo" src="assets/robot-frontal.png" alt="" aria-hidden="true"
+         width="630" height="1000" fetchpriority="high">
+    <div class="hero__diagonal" aria-hidden="true"></div>
+    <div class="wrap hero__copy">
+      <p class="kicker hero__kicker">Catálogo RH·BOTS</p>
+      <h1 class="display display--hero">Robots para empresas que quieren ir un paso por delante</h1>
+      <p class="lede lede--hero">Humanoides, cuadrúpedos, robots de limpieza, AMR de intralogística y
+        accesorios para automatizar tareas, mejorar procesos y llevar la robótica avanzada a entornos
+        reales. {len(PRODUCTOS)} modelos con ficha técnica completa y acompañamiento de principio a fin.</p>
+      <div class="hero__cta">
+        <a class="pill" href="contacto.html"><span>Solicitar asesoramiento</span>{CHEVRON}</a>
+      </div>
     </div>
   </section>
+  <nav class="familias-nav" aria-label="Familias de robots">
+    <div class="wrap"><div class="chips chips--familias">{chips}</div></div>
+  </nav>
 ''')
 
     # una sección por familia
