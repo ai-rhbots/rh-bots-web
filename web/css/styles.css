@@ -382,70 +382,6 @@ svg .nostroke{ stroke:none; }
 /* ==========================================================================
    BENEFICIOS
    ========================================================================== */
-.benefits{
-  display:grid; grid-template-columns:repeat(5,1fr);
-  gap:clamp(14px, 2.4vw, 30px);
-  text-align:center;
-}
-.benefit{ display:flex; flex-direction:column; align-items:center; }
-
-/* icono de marca RH·BOTS */
-.benefit__ico{
-  position:relative;
-  width:clamp(56px, 6vw, 74px); aspect-ratio:1;
-  border-radius:50%; background:#fff; color:var(--blue);
-  transition:transform .35s var(--ease);
-}
-/* inset absoluto: evita el ciclo de porcentajes con aspect-ratio */
-.benefit__ico svg{ position:absolute; inset:17%; width:auto; height:auto; }
-.benefit:hover .benefit__ico{ transform:translateY(-5px); }
-
-.benefit h3{
-  margin-top:16px;
-  font-weight:700; font-size:clamp(11px, .96vw, 13px);
-  letter-spacing:.045em; text-transform:uppercase; line-height:1.4;
-  color:#fff;
-}
-.benefit h3::after{
-  content:''; display:block; width:26px; height:3px;
-  background:#fff; margin:12px auto 0;
-}
-
-
-/* ==========================================================================
-   ESPECIFICACIONES
-   ========================================================================== */
-.specs{
-  display:grid; grid-template-columns:repeat(5,1fr);
-  gap:clamp(26px, 3.4vw, 44px) 0;
-}
-.spec{
-  position:relative;
-  padding-inline:clamp(12px, 1.8vw, 24px);
-  text-align:center;
-}
-/* divisores azules a ambos lados */
-.spec::before,
-.spec::after{
-  content:''; position:absolute; top:50%; transform:translateY(-50%);
-  width:4px; height:26px; background:var(--blue); border-radius:1px;
-}
-.spec::before{ left:0; }
-.spec::after { right:0; display:none; }
-.spec:nth-child(5n)::after,
-.spec:last-child::after{ display:block; }
-
-.spec dt{
-  font-weight:400; font-size:clamp(11px, .92vw, 12.5px);
-  line-height:1.4; color:var(--ink-66);
-}
-.spec dd{
-  margin:8px 0 0;
-  font-weight:700; font-size:clamp(12px, 1vw, 13.5px);
-  line-height:1.4; color:var(--ink);
-}
-
-
 /* ==========================================================================
    SERVICIO
    ========================================================================== */
@@ -564,7 +500,6 @@ svg .nostroke{ stroke:none; }
    RESPONSIVE
    ========================================================================== */
 @media (max-width:1024px){
-  .benefits{ grid-template-columns:repeat(3,1fr); row-gap:34px; }
   .services{ grid-template-columns:repeat(3,1fr); row-gap:34px; }
   .specs   { grid-template-columns:repeat(3,1fr); }
   .spec::after{ display:none !important; }
@@ -623,7 +558,6 @@ svg .nostroke{ stroke:none; }
 }
 
 @media (max-width:560px){
-  .benefits{ grid-template-columns:repeat(2,1fr); }
   .services{ grid-template-columns:repeat(2,1fr); }
   .specs   { grid-template-columns:repeat(2,1fr); }
   .spec::after{ display:none !important; }

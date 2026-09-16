@@ -80,21 +80,16 @@
     <button type="button" class="btn btn--plano" data-filas-add>+ Añadir paso</button>
   </div>
 
-  <label>Modelos destacados</label>
-  <div class="filas" data-filas data-target="destacados"
-       data-cols='[{"label":"Modelo","tipo":"select","opciones":{{ opciones_modelo|tojson }}}]'>
-    <textarea id="destacados" name="destacados" hidden>{{ h.destacados|join("\n") }}</textarea>
-    <div class="filas__lista" data-filas-lista></div>
-    <button type="button" class="btn btn--plano" data-filas-add>+ Añadir modelo</button>
-  </div>
+  {% set ac = h.actualidad or {} %}
+  <label for="a_kicker">Actualidad — rótulo</label>
+  <input id="a_kicker" name="a_kicker" value="{{ ac.kicker }}">
 
-  <label>Beneficios clave</label>
-  <div class="filas" data-filas data-target="beneficios"
-       data-cols='[{"label":"Texto (admite <br>)","tipo":"texto"}]'>
-    <textarea id="beneficios" name="beneficios" hidden>{{ h.beneficios|join("\n") }}</textarea>
-    <div class="filas__lista" data-filas-lista></div>
-    <button type="button" class="btn btn--plano" data-filas-add>+ Añadir beneficio</button>
-  </div>
+  <label for="a_titulo">Actualidad — titular</label>
+  <input id="a_titulo" name="a_titulo" value="{{ ac.titulo }}">
+
+  <label for="a_enlace">Actualidad — texto del enlace al blog</label>
+  <input id="a_enlace" name="a_enlace" value="{{ ac.enlace }}">
+  <p class="pista">Muestra las tres últimas entradas del blog.</p>
 
   <label>Sectores</label>
   <div class="filas" data-filas data-target="sectores"

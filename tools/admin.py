@@ -387,8 +387,6 @@ def crear_app():
                 'kicker': f.get('kicker', '').strip(),
                 'h1': f.get('h1', '').strip(),
                 'lede': f.get('lede', '').strip(),
-                'destacados': lineas(f.get('destacados', '')),
-                'beneficios': lineas(f.get('beneficios', '')),
                 'sectores': filas(f.get('sectores', ''), 2),
                 'faq': filas(f.get('faq', ''), 2),
                 'que_hacemos': {
@@ -408,6 +406,11 @@ def crear_app():
                     'texto': f.get('s_texto', '').strip(),
                     'boton': f.get('s_boton', '').strip(),
                     'tarjetas': filas(f.get('s_tarjetas', ''), 2),
+                },
+                'actualidad': {
+                    'kicker': f.get('a_kicker', '').strip(),
+                    'titulo': f.get('a_titulo', '').strip(),
+                    'enlace': f.get('a_enlace', '').strip(),
                 },
                 'metodo': {
                     'kicker': f.get('m_kicker', '').strip(),

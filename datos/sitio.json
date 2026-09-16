@@ -89,7 +89,7 @@
       ]
     },
     "metodo": {
-      "kicker": "Método RH·BOTS",
+      "kicker": "Cómo trabajamos",
       "titulo": "Un proceso claro para implantar <span class=\"acento\">sin complicaciones</span>",
       "boton": "Habla con nosotros",
       "pasos": [
@@ -111,12 +111,11 @@
         ]
       ]
     },
-    "destacados": [
-      "rhc5",
-      "rhx2-ultra",
-      "rhg2",
-      "rhd1-max"
-    ],
+    "actualidad": {
+      "kicker": "Actualidad",
+      "titulo": "Últimas noticias de robótica",
+      "enlace": "Ir al blog"
+    },
     "sectores": [
       [
         "Supermercados",
@@ -142,13 +141,6 @@
         "Hospitales",
         "assets/escenarios/hospitales.jpg"
       ]
-    ],
-    "beneficios": [
-      "Un solo proveedor<br>para toda la flota",
-      "Reducción de<br>tareas repetitivas",
-      "Mayor flexibilidad<br>que la automatización fija",
-      "Adaptación a<br>entornos cambiantes",
-      "Imagen innovadora<br>de la empresa"
     ],
     "faq": [
       [
@@ -226,7 +218,38 @@
       "Otro"
     ]
   },
-  "posts": [],
+  "posts": [
+    {
+      "titulo": "Cómo preparar tu empresa para la robótica humanoide",
+      "fecha": "2026-09-10",
+      "categoria": "Guía",
+      "resumen": "Claves para evaluar procesos, espacios y objetivos antes de invertir.",
+      "cuerpo": "<p>Incorporar un robot humanoide no empieza por el robot, sino por el proceso que se quiere resolver. Antes de pedir presupuesto conviene tener claro qué tarea se quiere cubrir, cuántas horas al día y con qué resultado esperado.</p><h2>Define la tarea, no el modelo</h2><p>Un mismo espacio puede necesitar un robot de limpieza, uno de atención al público o ninguno de los dos. Describe la tarea con números: superficie, franjas horarias, volumen de personas o de piezas, y qué pasa hoy cuando falta personal.</p><h2>Revisa el entorno</h2><p>Anchura de pasillos, rampas, ascensores, puertas automáticas, cobertura wifi y puntos de carga condicionan qué modelos encajan. Una visita previa evita sorpresas en la puesta en marcha.</p><h2>Piensa en quién lo va a usar</h2><p>El equipo que convive con el robot necesita formación y un procedimiento claro para el día a día: arranque, incidencias, limpieza y mantenimiento básico.</p><h2>Calcula el retorno con datos propios</h2><p>Compara el coste del robot y su mantenimiento con las horas que libera y con el coste actual de la tarea. Un proyecto bien dimensionado se sostiene con números, no con expectativas.</p>",
+      "slug": "como-preparar-tu-empresa-para-la-robotica-humanoide",
+      "url": "blog/como-preparar-tu-empresa-para-la-robotica-humanoide.html",
+      "img": "assets/robots/rhg2/hero.webp"
+    },
+    {
+      "titulo": "Aplicaciones reales de robots humanoides",
+      "fecha": "2026-09-03",
+      "categoria": "Casos de uso",
+      "resumen": "Retail, industria, educación y eventos ya están incorporando esta tecnología.",
+      "cuerpo": "<p>La robótica humanoide y de servicio ya está trabajando en entornos reales. Estos son los usos que más nos piden las empresas con las que hablamos.</p><h2>Retail y atención al público</h2><p>Recepción de visitantes, información básica, acompañamiento en tienda y activaciones de marca. El robot no sustituye al equipo: absorbe las preguntas repetitivas y libera tiempo para la venta.</p><h2>Industria y logística</h2><p>Traslado de material ligero entre puestos, inspección de instalaciones y apoyo en tareas repetitivas de línea. Aquí pesan la autonomía, la carga útil y la integración con los sistemas existentes.</p><h2>Limpieza profesional</h2><p>Grandes superficies interiores con rutas fijas: supermercados, estaciones, naves y centros comerciales. Es el caso de uso más maduro y el que antes se amortiza.</p><h2>Educación e investigación</h2><p>Universidades y centros de formación usan plataformas abiertas para desarrollar y probar sus propias aplicaciones, con SDK y simuladores.</p>",
+      "slug": "aplicaciones-reales-de-robots-humanoides",
+      "url": "blog/aplicaciones-reales-de-robots-humanoides.html",
+      "img": "assets/robots/rha3/hero.webp"
+    },
+    {
+      "titulo": "Cinco preguntas antes de incorporar un robot de limpieza",
+      "fecha": "2026-08-27",
+      "categoria": "Guía",
+      "resumen": "Superficie, suelo, agua, rutina diaria y soporte: lo que conviene medir antes de decidir.",
+      "cuerpo": "<p>Un robot de limpieza autónomo rinde cuando el espacio y la operativa acompañan. Antes de decidir, conviene responder a estas cinco preguntas.</p><h2>1. ¿Cuántos metros hay que limpiar y en cuánto tiempo?</h2><p>El rendimiento se mide en metros cuadrados por hora en condiciones reales, con giros, obstáculos y paradas de carga incluidos.</p><h2>2. ¿Cómo es el suelo?</h2><p>No es lo mismo un pavimento continuo que uno con juntas, rejillas o desniveles. El tipo de suelo marca el sistema de fregado y el consumo de agua.</p><h2>3. ¿Dónde se llena y se vacía?</h2><p>Hace falta un punto de agua y un desagüe accesibles, cerca de la zona de trabajo y del punto de carga.</p><h2>4. ¿Quién lo pone en marcha cada día?</h2><p>Conviene asignar responsable y una rutina corta de arranque y revisión. La mayoría de incidencias se evitan con dos minutos de comprobación.</p><h2>5. ¿Qué pasa si se para?</h2><p>Pregunta por el tiempo de respuesta del soporte, el stock de recambios y qué cubre exactamente el mantenimiento.</p>",
+      "slug": "cinco-preguntas-antes-de-incorporar-un-robot-de-limpieza",
+      "url": "blog/cinco-preguntas-antes-de-incorporar-un-robot-de-limpieza.html",
+      "img": "assets/robots/rhc5/vista-0.webp"
+    }
+  ],
   "tienda": {
     "dominio": "rzrujk-0d.myshopify.com",
     "moneda": "EUR",

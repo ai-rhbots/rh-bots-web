@@ -777,6 +777,9 @@ MARCA_SVG = ('<svg viewBox="0 0 64 64">'
              '<rect x="24.6" y="29" width="6" height="11.5" rx="3" class="fill nostroke"/>'
              '<rect x="33.4" y="29" width="6" height="11.5" rx="3" class="fill nostroke"/></svg>')
 
+FLECHA = ('<svg class="flecha" viewBox="0 0 24 24" aria-hidden="true">'
+          '<path d="M5 12h14M13 6l6 6-6 6"/></svg>')
+
 CHEVRON = '<i class="pill__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i>'
 
 
@@ -816,27 +819,14 @@ def bloque_faq(preguntas, titulo='Preguntas frecuentes'):
 '''
 
 
-def tarjeta_producto(p, base, href_prefix='robots/'):
-    if p.get('hero'):
-        media = '<img src="%s%s" alt="%s" loading="lazy">' % (base, p['hero'], e(p['name']))
-    else:
-        media = placeholder(p['family'], p['name'])
-    facts = ''
-    if p['keyfacts']:
-        facts = '<ul class="pcard__facts">' + ''.join(
-            f'<li><span>{e(l)}</span><strong>{e(v)}</strong></li>' for l, v in p['keyfacts'][:3]
-        ) + '</ul>'
-    return f'''<li class="pcard reveal" data-fam="{p['family']}">
-      <a href="{base}{href_prefix}{p['slug']}.html">
-        <div class="pcard__media">{media}</div>
-        <div class="pcard__body">
-          <div class="badges">{badges(p)}</div>
-          <h3>{e(p['name'])}</h3>
-          <p>{e(p['claim'])}</p>
-          {facts}
-          <span class="pcard__more">Ver ficha técnica</span>
-        </div>
-      </a></li>\n'''
+MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio',
+         'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
+
+
+def mes_y_ano(fecha):
+    """'2026-09-10' pasa a 'septiembre 2026'. Si no es una fecha ISO, se deja igual."""
+    m = re.match(r'(\d{4})-(\d{2})', fecha or '')
+    return f'{MESES[int(m.group(2)) - 1]} {m.group(1)}' if m else (fecha or '')
 
 
 # ──────────────────────────────────────────────────────────────────── home ──
@@ -902,6 +892,7 @@ def home_page():
               <p class="lcard__cat">{e(ETIQUETA_FAMILIA.get(p['family'], FAM_NAME[p['family']]))}</p>
               <h3 class="lcard__name">{e(p['name'])}</h3>
               <p class="lcard__desc">{e(p['claim'])}</p>
+              <span class="lcard__mas">Ver modelo{FLECHA}</span>
             </div>
           </a></li>\n'''
         out.append(f'''  <section class="section section--light loop" id="nuestros-robots">
@@ -966,20 +957,6 @@ def home_page():
     if HOME.get('video'):
         out.append(video_html([HOME['video']], base, 'Míralos trabajando'))
 
-    # destacados
-    cards = ''.join(tarjeta_producto(BY_SLUG[s], base) for s in HOME['destacados'] if s in BY_SLUG)
-    out.append(f'''  <section class="section section--light" id="destacados">
-    <div class="wrap">
-      <header class="section-head reveal">
-        <h2 class="h-section">Modelos destacados</h2>
-        <p class="sub">Los cuatro que más nos preguntan.</p>
-      </header>
-      <ul class="pgrid pgrid--destacados">{cards}</ul>
-      <p class="verplus reveal"><a href="robots.html">Ver los catorce modelos →</a></p>
-    </div>
-  </section>
-''')
-
     # sectores / aplicaciones
     secs = ''.join(
         f'<li class="apx__item reveal"><figure><img src="{img}" alt="{e(n)}" loading="lazy"'
@@ -996,26 +973,36 @@ def home_page():
   </section>
 ''')
 
-    # beneficios
-    bens = ''.join(
-        f'<li class="benefit reveal"><span class="benefit__ico" aria-hidden="true">{MARCA_SVG}</span>'
-        f'<h3>{b}</h3></li>\n' for b in HOME['beneficios'])
-    out.append(f'''  <section class="section section--blue" id="beneficios">
+    out.append(bloque_servicio(base))
+    # actualidad: últimas entradas del blog
+    act = HOME.get('actualidad')
+    if act and POSTS:
+        fichas = ''
+        for post in POSTS[:3]:
+            media = (f'<div class="ncard__media"><img src="{e(post["img"])}" alt="" loading="lazy"></div>'
+                     if post.get('img') else '')
+            fichas += f'''<li class="ncard reveal"><a href="{e(post['url'])}">
+          {media}
+          <div class="ncard__body">
+            <p class="ncard__fecha">{e(mes_y_ano(post.get('fecha', '')))}</p>
+            <h3>{e(post['titulo'])}</h3>
+            <p class="ncard__resumen">{e(post.get('resumen', ''))}</p>
+            <span class="ncard__mas">Leer más{FLECHA}</span>
+          </div></a></li>\n'''
+        out.append(f'''  <section class="section section--light actualidad" id="actualidad">
     <div class="wrap">
-      <header class="section-head reveal">
-        <h2 class="h-section h-section--onblue">Beneficios clave</h2>
-        <p class="sub sub--onblue">¿Por qué incorporar un robot a tu operación?</p>
+      <header class="actualidad__head reveal">
+        <div>
+          <p class="kicker">{e(act['kicker'])}</p>
+          <h2 class="actualidad__titulo">{e(act['titulo'])}</h2>
+        </div>
+        <a class="actualidad__enlace" href="blog.html">{e(act['enlace'])}{FLECHA}</a>
       </header>
-      <ul class="benefits">{bens}</ul>
-      <div class="feat-cta reveal">
-        <a class="pill pill--ghost" href="contacto.html">
-          <span>Descubre cómo puede integrarse en tu negocio</span>{CHEVRON}</a>
-      </div>
+      <ul class="actualidad__grid">{fichas}</ul>
     </div>
   </section>
 ''')
 
-    out.append(bloque_servicio(base))
     out.append(bloque_faq(HOME['faq']))
     out.append(cta_final(base))
     out.append('</main>')
@@ -1048,7 +1035,7 @@ def blog_page():
             arts += f'''<li class="post reveal"><a href="{e(post['url'])}">
               {img}
               <div class="post__body">
-                <p class="post__meta">{e(post.get('categoria', ''))} · {e(post.get('fecha', ''))}</p>
+                <p class="post__meta">{e(post.get('categoria', ''))} · {e(mes_y_ano(post.get('fecha', '')))}</p>
                 <h2>{e(post['titulo'])}</h2>
                 <p>{e(post.get('resumen', ''))}</p>
                 <span class="pcard__more">Leer</span>
@@ -1099,7 +1086,7 @@ def articulo_page(post):
         <a href="{base}blog.html">Blog</a> <span>/</span>
         <em>{e(post['titulo'])}</em>
       </nav>
-      <p class="art__meta">{e(post.get('categoria', ''))} · {e(post.get('fecha', ''))}</p>
+      <p class="art__meta">{e(post.get('categoria', ''))} · {e(mes_y_ano(post.get('fecha', '')))}</p>
       <h1 class="display display--left">{e(post['titulo'])}</h1>
     </div>
   </section>
