@@ -47,6 +47,7 @@
       "base": "AGIBOT X2",
       "family": "humanoides",
       "status": "disponible",
+      "precio": "19900",
       "claim": "Humanoide compacto para atención al público y eventos",
       "tagline": "Interacción por voz, gestos y visión en un formato de 1,31 m y 35 kg, fácil de llevar a recepciones, tiendas y eventos.",
       "hero": "assets/robots/rhx2/hero.webp",
@@ -352,7 +353,7 @@
         "handle": "agibot-lingxi-x2",
         "variante": "50384848552173",
         "sku": "AGIBOT-X2",
-        "precio": "35000.00",
+        "precio": "19900.00",
         "moneda": "EUR",
         "disponible": true
       },
@@ -370,6 +371,7 @@
       "base": "AGIBOT A3",
       "family": "humanoides",
       "status": "disponible",
+      "precio": "74700",
       "claim": "Humanoide de tamaño adulto para escena y atención al público",
       "tagline": "Espectáculos, recepción, presentaciones y entretenimiento, con interacción multimodal, jornadas de hasta 10 horas y control coordinado de flotas.",
       "hero": "assets/robots/rha3/hero.webp",
@@ -773,6 +775,7 @@
       "base": "AGIBOT X2 Ultra",
       "family": "humanoides",
       "status": "disponible",
+      "precio": "38500",
       "claim": "Humanoide programable con percepción 3D y NVIDIA Orin NX",
       "tagline": "LiDAR 3D, cuatro cámaras y una unidad de computación para desarrollo en el formato de 1,31 m de la serie X2, con SDK para crear tus propias aplicaciones.",
       "hero": "assets/robots/rhx2-ultra/hero.webp",
@@ -1144,6 +1147,7 @@
       "base": "AGIBOT X2 EDU",
       "family": "humanoides",
       "status": "disponible",
+      "precio": "30000",
       "claim": "Humanoide desmontable para enseñanza e investigación",
       "tagline": "Se monta y desmonta por completo y abre el control de movimiento al desarrollo, con guías, vídeos y lista de consumibles para el aula.",
       "hero": "assets/robots/rhx2-edu/hero.webp",
@@ -1345,7 +1349,7 @@
         "handle": "agibot-lingxi-x2-edu",
         "variante": "50384849207533",
         "sku": "AGIBOT-X2-EDU",
-        "precio": "40000.00",
+        "precio": "30000.00",
         "moneda": "EUR",
         "disponible": true
       }
@@ -1356,6 +1360,7 @@
       "base": "AGIBOT A3 Ultra",
       "family": "humanoides",
       "status": "disponible",
+      "precio": "96600",
       "claim": "Humanoide de servicio para operación autónoma 24/7",
       "tagline": "La versión de mayores prestaciones del RHA3: percepción LiDAR de 360°, 700 TOPS de cálculo, carga autónoma y un sistema de seguridad en cuatro capas.",
       "hero": "assets/robots/rha3-ultra/hero.webp",
@@ -1749,7 +1754,7 @@
         "handle": "agibot-yuanzheng-a3-ultra",
         "variante": "50384844456173",
         "sku": "AGIBOT-A3-ULTRA",
-        "precio": "120000.00",
+        "precio": "96600.00",
         "moneda": "EUR",
         "disponible": true
       },
@@ -1772,6 +1777,7 @@
       "base": "AGIBOT G2",
       "family": "humanoides",
       "status": "disponible",
+      "precio": "134300",
       "claim": "Humanoide industrial con base móvil y torso telescópico",
       "tagline": "Dos brazos manipuladores sobre plataforma de ruedas, para fabricación, logística, montaje, manipulación de materiales e inspección.",
       "hero": "assets/robots/rhg2/hero.webp",
@@ -2128,6 +2134,11 @@
       "notes": [
         [
           "info",
+          "Precio del paquete completo",
+          "El precio corresponde a la solución completa: cuerpo, equipo de realidad virtual, mando, OmniPicker y maletín. La tarifa incluye también el cuerpo solo, a un precio menor."
+        ],
+        [
+          "info",
           "Módulo de computación",
           "La ficha técnica de RH·BOTS indica «NVIDIA Jetson Thor T500»; el módulo de la gama Jetson Thor es el T5000, que es el que figura en la ficha. Conviene confirmarlo con el fabricante."
         ],
@@ -2141,7 +2152,7 @@
         "handle": "agibot-genie-g2",
         "variante": "50384849535213",
         "sku": "AGIBOT-G2",
-        "precio": "150000.00",
+        "precio": "134300.00",
         "moneda": "EUR",
         "disponible": true
       }
@@ -2152,6 +2163,7 @@
       "base": "PUDU D5W",
       "family": "cuadrupedos",
       "status": "disponible",
+      "precio": "49000",
       "claim": "Cuadrúpedo industrial con ruedas para inspección y reparto",
       "tagline": "Combina patas y ruedas para recorrer largas distancias en suelos llanos y superar escalones y pendientes, con protección IP67.",
       "hero": "assets/robots/d5w/hero.webp",
@@ -2458,6 +2470,7 @@
       "base": "AGIBOT C5",
       "family": "limpieza",
       "status": "disponible",
+      "precio": "24500",
       "claim": "Limpieza profesional autónoma para grandes superficies",
       "tagline": "Fregado, aspiración, recogida de residuos y mopa de polvo en una sola pasada, con navegación autónoma y gestión remota de tareas.",
       "hero": "assets/robots/rhc5/vista-0.webp",
@@ -2823,6 +2836,11 @@
       "notes": [
         [
           "info",
+          "Precio con estación",
+          "El precio incluye el robot y su estación de servicio."
+        ],
+        [
+          "info",
           "Rendimiento: 1.920 vs 1.980 m²/h",
           "El manual técnico indica hasta 1.920 m²/h y la documentación comercial más reciente hasta 1.980 m²/h. La diferencia parece corresponder a distintas revisiones del producto o del método de cálculo. Conviene confirmar la cifra aplicable a la revisión ofertada."
         ],
@@ -2841,7 +2859,7 @@
         "handle": "agibot-c5",
         "variante": "50384849928429",
         "sku": "AGIBOT-C5",
-        "precio": "30000.00",
+        "precio": "24500.00",
         "moneda": "EUR",
         "disponible": true
       }
@@ -2852,6 +2870,7 @@
       "base": "PUDU MT1",
       "family": "limpieza",
       "status": "disponible",
+      "precio": "14900",
       "claim": "Barredora autónoma con IA para grandes superficies",
       "tagline": "Barre polvo fino y residuos voluminosos en una sola pasada y trabaja por turnos sin supervisión, con carga automática en su estación.",
       "hero": "assets/robots/mt1/hero.webp",
@@ -3161,6 +3180,7 @@
       "base": "PUDU MT1 Max",
       "family": "limpieza",
       "status": "disponible",
+      "precio": "19900",
       "claim": "Barredora autónoma con lidar 3D para interior y semiexterior",
       "tagline": "La versión del MT1 para aparcamientos, patios y zonas semiexteriores: percepción 3D, protección IP54 y señalización para convivir con vehículos.",
       "hero": "assets/robots/mt1-max/hero.webp",
@@ -3512,6 +3532,7 @@
       "base": "PUDU T150",
       "family": "amr",
       "status": "disponible",
+      "precio": "9500",
       "claim": "Robot autónomo de transporte industrial para 150 kg",
       "tagline": "Mueve material entre estaciones de planta y almacén sin obras ni servidor. Se pone en marcha en una hora y trabaja en turnos continuos con cambio rápido de batería.",
       "hero": "assets/robots/t150/hero.webp",
@@ -3773,6 +3794,11 @@
       "notes": [
         [
           "info",
+          "Precio de la versión con elevación",
+          "El precio de tarifa corresponde al T150 con elevación."
+        ],
+        [
+          "info",
           "Peso según versión",
           "La presentación del producto da 65 kg para la versión estándar y 81 kg para la Lifting; el catálogo indica 81 kg sin distinguir versión."
         ],
@@ -3795,6 +3821,7 @@
       "base": "PUDU T300",
       "family": "amr",
       "status": "disponible",
+      "precio": "17000",
       "claim": "Robot autónomo modular de transporte para 300 kg",
       "tagline": "Una misma base para transportar, remolcar, elevar o transferir carga por rodillos. Se adapta a cada flujo de planta con módulos estándar, sin desarrollos a medida.",
       "hero": "assets/robots/t300/hero.webp",
@@ -4129,6 +4156,11 @@
       ],
       "notes": [
         [
+          "info",
+          "Precio de la versión con elevación",
+          "El precio de tarifa corresponde al T300 con elevación."
+        ],
+        [
           "warn",
           "Datos generales por variante",
           "El catálogo da para el T300 el mismo peso (81 kg) y dimensiones (835 × 500 × 1.350 mm) que el T150 y no detalla cada variante. La versión Conveyor pesa 120 o 180 kg y mide 835 × 665/650 × 1.350 mm. Confirmar los datos de Standard, Lifting y Towing al ofertar."
@@ -4152,6 +4184,7 @@
       "base": "PUDU T600",
       "family": "amr",
       "status": "disponible",
+      "precio": "23000",
       "claim": "Robot autónomo de elevación para cargas de 600 kg",
       "tagline": "Levanta y traslada palés, estanterías y carros de hasta 600 kg entre almacén y línea. Su columna con asas permite moverlo a mano con asistencia eléctrica cuando hace falta.",
       "hero": "assets/robots/t600/hero.webp",
@@ -4434,6 +4467,7 @@
       "base": "PUDU T600 Underride",
       "family": "amr",
       "status": "disponible",
+      "precio": "21000",
       "claim": "Robot autónomo bajo carro para cargas de 600 kg",
       "tagline": "Chasis bajo, sin columna, que se introduce bajo estanterías y carros para levantarlos y llevarlos a su destino. Admite cargas de hasta 600 kg con una base de hasta 1.200 × 1.200 mm.",
       "hero": "assets/robots/t600-underride/hero.webp",
@@ -4712,6 +4746,7 @@
       "base": "PUDU MP2000",
       "family": "amr",
       "status": "disponible",
+      "precio": "30000",
       "claim": "Transpaleta autónoma para palés de 2.000 kg",
       "tagline": "Recoge y deja palés sin reflectores ni marcas en el suelo, con entrada de horquillas en unos 20 s. Trabaja en pasillos de apilado a 90° de 2,0 m y coordina varias unidades sin red ni servidor.",
       "hero": "assets/robots/mp2000/hero.webp",
@@ -5019,6 +5054,7 @@
       "base": "AGIBOT OmniHand",
       "family": "accesorios",
       "status": "disponible",
+      "precio": "4900",
       "claim": "Mano robótica diestra de 16 grados de libertad",
       "tagline": "Efector final compacto y ligero para robots humanoides, manipuladores móviles e investigación. Cubre los gestos y agarres habituales con 10 articulaciones activas.",
       "hero": "assets/robots/omnihand/hero.webp",
@@ -5261,6 +5297,7 @@
       "base": "AGIBOT OmniHand Tactile",
       "family": "accesorios",
       "status": "disponible",
+      "precio": "5750",
       "claim": "Mano robótica diestra con sensores táctiles",
       "tagline": "Versión de OmniHand con detección de fuerza en yemas, palma y dorso. Permite agarres más cuidadosos e interacción por contacto con personas.",
       "hero": "assets/robots/omnihand-tactile/hero.webp",
@@ -5515,6 +5552,7 @@
       "base": "AGIBOT OmniHand Pro 2025",
       "family": "accesorios",
       "status": "disponible",
+      "precio": "12500",
       "claim": "Mano robótica diestra de 19 grados de libertad",
       "tagline": "Efector final de cinco dedos con 12 articulaciones activas y detección de fuerza tridimensional en las yemas, para tareas de manipulación fina con más carga.",
       "hero": "assets/robots/omnihand-pro-2025/hero.webp",
@@ -5765,6 +5803,7 @@
       "base": "AGIBOT OmniPicker",
       "family": "accesorios",
       "status": "disponible",
+      "precio": "875",
       "claim": "Pinza industrial con tacto para IA encarnada",
       "tagline": "Efector final de dos dedos con 140 N de fuerza y sensores táctiles en las yemas, preparado para captura de datos de manipulación y trabajo continuo en producción.",
       "hero": "assets/robots/omnipicker/hero.webp",

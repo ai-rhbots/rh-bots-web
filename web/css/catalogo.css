@@ -77,6 +77,22 @@
   font-size:clamp(14px, 1.2vw, 17px); color:var(--ink);
 }
 
+/* ---------- precio de tarifa ---------- */
+.pvp{
+  margin-top:clamp(16px, 1.8vw, 22px);
+  font-family:var(--font-titulo); font-weight:700; letter-spacing:-.02em;
+  font-size:clamp(26px, 2.6vw, 34px); line-height:1.1; color:var(--navy);
+}
+.pvp__etiqueta,
+.pcard__precio__etiqueta{
+  font-family:var(--font-subtitulo); font-weight:700; font-size:12px;
+  letter-spacing:.14em; color:var(--muted); vertical-align:middle; margin-right:6px;
+}
+.pcard__precio{
+  margin-top:16px; font-family:var(--font-titulo); font-weight:700;
+  font-size:20px; letter-spacing:-.01em; color:var(--navy);
+}
+
 /* ---------- compra ---------- */
 .precio{
   flex-basis:100%; margin:4px 0 -4px;

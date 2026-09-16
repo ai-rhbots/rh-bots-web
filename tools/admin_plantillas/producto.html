@@ -18,6 +18,10 @@
       </select></div>
   </div>
 
+  <label for="precio">Precio de venta al público (PVP, en euros)</label>
+  <input id="precio" name="precio" value="{{ p.precio or '' }}" inputmode="decimal" placeholder="19900">
+  <p class="pista">Vacío = sin precio en la web.</p>
+
   <label for="claim">Titular</label>
   <input id="claim" name="claim" value="{{ p.claim }}">
 

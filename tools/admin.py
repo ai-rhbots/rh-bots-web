@@ -672,6 +672,8 @@ def crear_app():
                 'tagline': f.get('tagline', '').strip(),
                 'intro': f.get('intro', '').strip(),
                 'status': f.get('status', 'disponible'),
+                # PVP: solo cifras; «19.900» o «19900,50» se normalizan a 19900 / 19900.50
+                'precio': re.sub(r'[^\d.]', '', f.get('precio', '').replace('.', '').replace(',', '.')),
                 'keyfacts': filas(f.get('keyfacts', ''), 2),
                 'highlights': filas(f.get('highlights', ''), 2),
                 'applications': [[n, (img or None)]

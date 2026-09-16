@@ -162,7 +162,7 @@ def schema_product(p):
         'name': p['name'],
         'description': p.get('tagline') or p.get('intro') or p['claim'],
         'url': url,
-        'brand': {'@type': 'Brand', 'name': 'AGIBOT'},
+        'brand': {'@type': 'Brand', 'name': (p.get('base') or 'AGIBOT').split()[0]},
         'category': FAM_NAME.get(p['family'], ''),
     }
     if p.get('hero'):
@@ -185,6 +185,19 @@ def schema_product(p):
                                  else 'https://schema.org/OutOfStock'),
                 'seller': {'@id': f'{dominio}/#organization'},
             }
+    try:
+        pvp = float(p.get('precio') or 0)
+    except (TypeError, ValueError):
+        pvp = 0
+    if pvp > 0:
+        data['offers'] = {
+            '@type': 'Offer',
+            'url': url,
+            'priceCurrency': 'EUR',
+            'price': f'{pvp:.2f}',
+            'availability': 'https://schema.org/InStock',
+            'seller': {'@id': f'{dominio}/#organization'},
+        }
     return data
 
 
@@ -394,6 +407,28 @@ def formato_precio(valor):
     return entero.replace(',', '.') + ',' + dec
 
 
+def formato_pvp(valor):
+    """'19900' → «19.900 €»; conserva los céntimos solo si los hay."""
+    try:
+        v = float(valor)
+    except (TypeError, ValueError):
+        return ''
+    if v <= 0:
+        return ''
+    txt = formato_precio(v)
+    if txt.endswith(',00'):
+        txt = txt[:-3]
+    return f'{txt} €'
+
+
+def precio_html(p, clase='pvp'):
+    """Precio de venta al público de la tarifa RH·BOTS."""
+    pvp = formato_pvp(p.get('precio'))
+    if not pvp:
+        return ''
+    return f'<p class="{clase}"><span class="{clase}__etiqueta">PVP</span> {pvp}</p>'
+
+
 def formato_moneda(codigo):
     """EUR → «€». Las monedas sin símbolo conocido se muestran por su código."""
     return SIMBOLOS.get((codigo or '').upper(), codigo or '')
@@ -427,20 +462,22 @@ def boton_compra(p, base):
 
     # Estado del último build. Se ve al instante y es lo que indexa Google;
     # el JS lo reemplaza con el estado en vivo de Shopify en cuanto responde.
+    mostrar = TIENDA.get('mostrar_precio') and not p.get('precio')
     interior = estado_compra(
         disponible=bool(sh.get('disponible')), precio=precio,
         moneda=sh.get('moneda', ''), variante=sh['variante'],
-        dominio=dominio, etiqueta=etiqueta, contacto=contacto)
+        dominio=dominio, etiqueta=etiqueta, contacto=contacto, mostrar_precio=mostrar)
 
     return (f'<div class="compra" data-tienda '
             f'data-dominio="{e(dominio)}" data-handle="{e(sh.get("handle", ""))}" '
             f'data-variante="{e(sh["variante"])}" data-contacto="{e(contacto)}" '
             f'data-texto="{e(etiqueta)}" '
-            f'data-precio="{"1" if TIENDA.get("mostrar_precio") else "0"}">'
+            f'data-precio="{"1" if mostrar else "0"}">'
             f'{interior}</div>')
 
 
-def estado_compra(disponible, precio, moneda, variante, dominio, etiqueta, contacto):
+def estado_compra(disponible, precio, moneda, variante, dominio, etiqueta, contacto,
+                  mostrar_precio=True):
     """Los tres estados posibles del bloque de compra."""
     if not disponible:
         return ('<p class="sinstock"><span class="sinstock__punto" aria-hidden="true"></span>'
@@ -460,7 +497,7 @@ def estado_compra(disponible, precio, moneda, variante, dominio, etiqueta, conta
     # El cart permalink funciona igual de bien sin el parámetro.
     url = f'https://{dominio}/cart/{variante}:1'
     precio_html = ''
-    if TIENDA.get('mostrar_precio'):
+    if mostrar_precio and TIENDA.get('mostrar_precio'):
         precio_html = (f'<p class="precio">{e(formato_precio(precio))} '
                        f'<span>{e(formato_moneda(moneda))}</span></p>')
     return (f'{precio_html}<a class="pill pill--comprar" href="{e(url)}" '
@@ -580,14 +617,10 @@ def product_page(p):
     {fondo_video(FONDO_POR_MODELO.get(p['slug'], 'fondo-gama'), base, 'fondovid--claro')}
     <div class="wrap phero__grid">
       <div class="phero__copy">
-        <nav class="crumbs" aria-label="Miga de pan">
-          <a href="{base}index.html">Inicio</a> <span>/</span>
-          <a href="{base}robots.html">Robots</a> <span>/</span>
-          <em>{e(p['name'])}</em>
-        </nav>
         <div class="badges">{badges(p)}</div>
         <h1 class="phero__name" data-punto="manual">{con_punto(e(p['name']))} <span class="phero__claim">{e(p['claim'])}</span></h1>
         <p class="phero__tag">{e(p['tagline'])}</p>
+        {precio_html(p)}
         <div class="phero__cta">
           <a class="pill" href="{base}contacto.html"><span>Pide más información</span>
             <i class="pill__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
@@ -713,7 +746,6 @@ def product_page(p):
   </section>
 ''')
 
-    out.append(cta_final(base))
     out.append('</main>')
     out.append(footer(base))
     return ''.join(out)
@@ -794,6 +826,7 @@ def index_page():
               <h3>{e(p['name'])}</h3>
               <p>{e(p['claim'])}</p>
               {facts}
+              {precio_html(p, 'pcard__precio')}
               <span class="pcard__more">Ver ficha técnica</span>
             </div>
           </a></li>\n'''
@@ -1039,7 +1072,6 @@ def blog_page():
     out.append('''
   <section class="chero">
     <div class="wrap">
-      <nav class="crumbs" aria-label="Miga de pan"><a href="index.html">Inicio</a> <span>/</span> <em>Blog</em></nav>
       <h1 class="display display--left">Blog</h1>
       <p class="lede lede--left">Novedades de producto, casos de uso reales y notas técnicas
         sobre robótica de servicio e industrial.</p>
@@ -1080,7 +1112,6 @@ def blog_page():
   </section>
 ''')
 
-    out.append(cta_final(base))
     out.append('</main>')
     out.append(footer(base))
     return ''.join(out)
@@ -1101,11 +1132,6 @@ def articulo_page(post):
     out.append(f'''
   <section class="chero chero--art">
     <div class="wrap wrap--narrow">
-      <nav class="crumbs" aria-label="Miga de pan">
-        <a href="{base}index.html">Inicio</a> <span>/</span>
-        <a href="{base}blog.html">Blog</a> <span>/</span>
-        <em>{e(post['titulo'])}</em>
-      </nav>
       <p class="art__meta">{e(post.get('categoria', ''))} · {e(mes_y_ano(post.get('fecha', '')))}</p>
       <h1 class="display display--left">{e(post['titulo'])}</h1>
     </div>
@@ -1122,7 +1148,6 @@ def articulo_page(post):
   </article>
 ''')
 
-    out.append(cta_final(base))
     out.append('</main>')
     out.append(footer(base))
     return ''.join(out)
@@ -1173,7 +1198,6 @@ def rh_bots_page():
     out.append(f'''
   <section class="chero">
     <div class="wrap">
-      <nav class="crumbs" aria-label="Miga de pan"><a href="index.html">Inicio</a> <span>/</span> <em>RH·BOTS</em></nav>
       {f'<p class="art__meta">{e(r["kicker"])}</p>' if r.get('kicker') else ''}
       <h1 class="display display--left">{e(r.get('h1', ''))}</h1>
       <p class="lede lede--left">{e(r.get('lede', ''))}</p>
@@ -1203,7 +1227,6 @@ def rh_bots_page():
 ''')
 
     out.append(bloque_equipo(r.get('equipo'), base))
-    out.append(cta_final(base))
     out.append('</main>')
     out.append(footer(base))
     return ''.join(out)
@@ -1226,7 +1249,6 @@ def legal_page():
     out.append(f'''
   <section class="chero">
     <div class="wrap">
-      <nav class="crumbs" aria-label="Miga de pan"><a href="index.html">Inicio</a> <span>/</span> <em>Aviso legal</em></nav>
       <h1 class="display display--left">Aviso legal, privacidad y cookies</h1>
     </div>
   </section>
@@ -1266,7 +1288,6 @@ def legal_page():
     </div>
   </section>
 ''')
-    out.append(cta_final(base))
     out.append('</main>')
     out.append(footer(base))
     return ''.join(out)
@@ -1294,7 +1315,6 @@ def contacto_page():
     out.append(f'''
   <section class="chero">
     <div class="wrap">
-      <nav class="crumbs" aria-label="Miga de pan"><a href="index.html">Inicio</a> <span>/</span> <em>Contacto</em></nav>
       <h1 class="display display--left">Hablemos</h1>
       <p class="lede lede--left">{e(c['intro'])}</p>
     </div>
@@ -1345,7 +1365,6 @@ def contacto_page():
   </section>
 ''')
 
-    out.append(cta_final(base))
     out.append('</main>')
     out.append(footer(base))
     return ''.join(out)
