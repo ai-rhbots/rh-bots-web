@@ -476,6 +476,16 @@ def boton_compra(p, base):
             f'{interior}</div>')
 
 
+def tarjeta_compra(p, base):
+    """Precio y botón de compra, juntos bajo la imagen del robot."""
+    precio = precio_html(p)
+    boton = boton_compra(p, base)
+    if not precio and not boton:
+        return ''
+    solo = '' if boton else ' phero__compra--solo'
+    return f'<div class="phero__compra{solo}">{precio}{boton}</div>'
+
+
 def estado_compra(disponible, precio, moneda, variante, dominio, etiqueta, contacto,
                   mostrar_precio=True):
     """Los tres estados posibles del bloque de compra."""
@@ -620,17 +630,18 @@ def product_page(p):
         <div class="badges">{badges(p)}</div>
         <h1 class="phero__name" data-punto="manual">{con_punto(e(p['name']))} <span class="phero__claim">{e(p['claim'])}</span></h1>
         <p class="phero__tag">{e(p['tagline'])}</p>
-        {precio_html(p)}
         <div class="phero__cta">
           <a class="pill" href="{base}contacto.html"><span>Pide más información</span>
             <i class="pill__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
           <a class="pill pill--line" href="#especificaciones"><span>Ver especificaciones</span>
             <i class="pill__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></i></a>
-          {boton_compra(p, base)}
         </div>
         {facts}
       </div>
-      <figure class="phero__media">{media}</figure>
+      <div class="phero__lado">
+        <figure class="phero__media">{media}</figure>
+        {tarjeta_compra(p, base)}
+      </div>
     </div>
   </section>
 ''')

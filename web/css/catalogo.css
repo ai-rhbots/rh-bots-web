@@ -51,9 +51,33 @@
 .phero__cta{ display:flex; flex-wrap:wrap; gap:14px; margin-top:28px; }
 .phero__cta .pill{ min-width:0; }
 
+.phero__lado{
+  display:flex; flex-direction:column; align-items:center;
+  gap:clamp(16px, 2vw, 26px);
+}
 .phero__media{
-  margin:0; display:grid; place-items:center;
+  margin:0; display:grid; place-items:center; width:100%;
   min-height:clamp(240px, 30vw, 400px);
+}
+
+/* tarjeta de precio y compra bajo la imagen */
+.phero__compra{
+  width:min(100%, 460px);
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:14px 18px;
+  padding:14px 14px 14px 26px;
+  background:#fff; border-radius:20px;
+  box-shadow:0 14px 34px rgba(40,40,40,.08);
+}
+.phero__compra--solo{ justify-content:center; padding:16px 26px; }
+.phero__compra .pvp{ margin:0; font-size:clamp(24px, 2.2vw, 30px); white-space:nowrap; }
+.phero__compra .compra{ flex:0 1 auto; flex-basis:auto; flex-wrap:nowrap; }
+.phero__compra .compra .pill{ min-width:0; }
+.phero__compra .sinstock{ flex-basis:auto; margin:0; }
+@media (max-width:560px){
+  .phero__compra{ flex-direction:column; align-items:stretch; padding:18px; text-align:center; }
+  .phero__compra .compra{ flex-direction:column; align-items:stretch; }
+  .phero__compra .compra .pill{ width:100%; }
 }
 .phero__media img{
   max-height:clamp(240px, 34vw, 440px); width:auto;
@@ -944,7 +968,8 @@
 /* ---------- responsive ---------- */
 @media (max-width:860px){
   .phero__grid{ grid-template-columns:1fr; }
-  .phero__media{ order:-1; min-height:0; }
+  .phero__lado{ order:-1; }
+  .phero__media{ min-height:0; }
   .phero__media img{ max-height:min(46vh, 320px); }
   .spectable th{ width:52%; }
 }
