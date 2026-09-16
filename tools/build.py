@@ -790,7 +790,6 @@ def index_page():
         out.append(f'''  <section class="section {fondo} familia" id="{key}">
     <div class="wrap">
       <header class="familia__head reveal">
-        <p class="kicker">{len(modelos)} {'modelo' if len(modelos) == 1 else 'modelos'}</p>
         <h2 class="familia__titulo">{e(name)}</h2>
         <p class="familia__desc">{e(desc)}</p>
       </header>

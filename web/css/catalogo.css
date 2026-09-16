@@ -347,7 +347,6 @@
 .familia{ scroll-margin-top:calc(var(--header-h) + 12px); }
 .familia__head{ max-width:760px; margin-bottom:clamp(28px, 3.5vw, 46px); }
 .familia__titulo{
-  margin-top:clamp(10px, 1.2vw, 16px);
   font-size:clamp(30px, 3.4vw, 50px); line-height:1.08; color:var(--ink);
 }
 .familia__desc{
