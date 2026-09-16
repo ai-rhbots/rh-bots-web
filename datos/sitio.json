@@ -177,6 +177,11 @@
     "boton": "Solicitar información",
     "imagen": "assets/robot-cta.webp"
   },
+  "pie": {
+    "titulo": "Hablemos del futuro",
+    "texto": "¿Interesado en integrar robots AGIBOT en tu empresa o centro de investigación? Contáctanos y te asesoramos sin compromiso.",
+    "copyright": "© 2026 RH·BOTS<br>Recursos Humanoides. Distribuidor oficial AGIBOT en Iberia."
+  },
   "posts": [
     {
       "titulo": "Cómo preparar tu empresa para la robótica humanoide",

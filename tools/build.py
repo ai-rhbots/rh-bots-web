@@ -17,7 +17,7 @@ sys.path.insert(0, HERE)
 
 from PIL import Image  # noqa: E402
 from productos import PRODUCTOS, FAMILIAS, ESTADOS, GUIA, BY_SLUG  # noqa: E402
-from sitio import (NAV, HOME, CONTACTO, POSTS, SEO, ANALITICA, CTA,  # noqa: E402
+from sitio import (NAV, HOME, CONTACTO, POSTS, SEO, ANALITICA, CTA, PIE,  # noqa: E402
                    TIENDA, RHBOTS)
 from limpiar_html import limpiar as limpiar_cuerpo  # noqa: E402
 
@@ -277,20 +277,31 @@ def header(base, active='robots'):
 
 
 def footer(base):
+    pie = PIE
     return f'''
 <footer class="site-footer" id="contacto">
-  <div class="wrap footer-inner">
-    <a class="logo logo--footer" href="{base}index.html" aria-label="RH·BOTS — inicio">
-      <img src="{base}assets/logo-rhbots.png" alt="RH·BOTS" width="348" height="72">
-    </a>
-    <ul class="social">
-      <li><a href="{LINKEDIN_EMPRESA}" target="_blank" rel="noopener" aria-label="LinkedIn de RH·BOTS"><svg viewBox="0 0 24 24" class="fill nostroke"><path d="M4.98 3.5A2.5 2.5 0 112.5 6 2.5 2.5 0 014.98 3.5zM3 8.98h4v12H3zM9.5 8.98h3.83v1.64h.05a4.2 4.2 0 013.78-2.08c4.04 0 4.79 2.66 4.79 6.12v6.32h-4v-5.6c0-1.34-.02-3.06-1.86-3.06s-2.15 1.45-2.15 2.96v5.7h-4z"/></svg></a></li>
-    </ul>
-    <p class="footer-legal">
-      <a href="{base}legal.html">Aviso legal</a> ·
-      <a href="{base}legal.html#privacidad">Privacidad</a> ·
-      <a href="{base}legal.html#cookies">Cookies</a>
-    </p>
+  <div class="pie">
+    <div class="pie__diagonal" aria-hidden="true"></div>
+    <div class="wrap pie__grid">
+      <div class="pie__texto">
+        <p class="pie__titulo">{e(pie['titulo'])}</p>
+        <p class="pie__lede">{e(pie['texto'])}</p>
+      </div>
+      <a class="pie__marca" href="{base}index.html" aria-label="RH·BOTS — inicio">
+        <img src="{base}assets/logo-rhbots-marca.webp" alt="RH·BOTS — Recursos Humanoides"
+             width="803" height="650" loading="lazy">
+      </a>
+    </div>
+  </div>
+  <div class="pie-legal">
+    <div class="wrap pie-legal__inner">
+      <p class="pie-legal__copy">{pie['copyright']}</p>
+      <p class="pie-legal__enlaces">
+        <a href="{base}legal.html">Aviso legal</a> ·
+        <a href="{base}legal.html#privacidad">Política de privacidad</a> ·
+        <a href="{base}legal.html#cookies">Política de cookies</a>
+      </p>
+    </div>
   </div>
 </footer>
 <script src="{base}js/main.js"></script>
