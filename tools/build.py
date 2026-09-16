@@ -1141,12 +1141,22 @@ def blog_page():
     out = [head('Blog | RH·BOTS', 'Novedades, casos de uso y notas técnicas sobre robótica de '
                 'servicio e industrial.', base, 'blog.html'),
            header(base, 'blog'), '<main id="contenido">']
-    out.append('''
-  <section class="chero">
-    <div class="wrap">
-      <h1 class="display display--left">Blog</h1>
-      <p class="lede lede--left">Novedades de producto, casos de uso reales y notas técnicas
-        sobre robótica de servicio e industrial.</p>
+    # portada como las del catálogo y aplicaciones, con el cuadrúpedo de fondo
+    out.append(f'''
+  <section class="hero hero--catalogo hero--foto-ancha" id="inicio">
+    <img class="hero__foto" src="assets/robots/d5w/en-aparcamiento.webp" alt="" aria-hidden="true"
+         fetchpriority="high">
+    <div class="hero__velo" aria-hidden="true"></div>
+    <div class="hero__diagonal" aria-hidden="true"></div>
+    <div class="wrap hero__copy">
+      <p class="kicker hero__kicker">RH·BOTS — Blog</p>
+      <h1 class="display display--hero">Actualidad sobre <span class="acento">robótica humanoide</span></h1>
+      <p class="lede lede--hero">Noticias, casos de uso y recursos para entender cómo los robots humanoides
+        pueden integrarse en empresas reales de forma segura, útil y medible.</p>
+      <div class="hero__cta">
+        <a class="pill" href="#articulos"><span>Ver artículos</span>{CHEVRON}</a>
+        <a class="pill pill--line" href="contacto.html"><span>Hablar con un experto</span>{CHEVRON}</a>
+      </div>
     </div>
   </section>
 ''')
@@ -1164,10 +1174,10 @@ def blog_page():
                 <p>{e(post.get('resumen', ''))}</p>
                 <span class="pcard__more">Leer</span>
               </div></a></li>\n'''
-        out.append(f'  <section class="section section--white">\n    <div class="wrap">\n'
+        out.append(f'  <section class="section section--white" id="articulos">\n    <div class="wrap">\n'
                    f'      <ul class="postgrid">{arts}</ul>\n    </div>\n  </section>\n')
     else:
-        out.append(f'''  <section class="section section--white">
+        out.append(f'''  <section class="section section--white" id="articulos">
     <div class="wrap wrap--narrow">
       <div class="vacio reveal">
         <span class="vacio__ico" aria-hidden="true">{MARCA_SVG}</span>

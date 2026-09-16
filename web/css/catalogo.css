@@ -816,7 +816,8 @@
 }
 
 /* ---------- página de aplicaciones ---------- */
-.hero--aplicaciones .hero__foto{ width:62%; object-fit:cover; }
+.hero--aplicaciones .hero__foto,
+.hero--foto-ancha .hero__foto{ width:62%; object-fit:cover; }
 .sector__grid{
   display:grid; grid-template-columns:minmax(0, .9fr) minmax(0, 1.1fr);
   gap:clamp(28px, 5vw, 80px); align-items:center;
@@ -872,7 +873,8 @@
   .sector__grid{ grid-template-columns:1fr; }
   .sector--invertido .sector__foto{ order:0; }
   .sector__foto{ aspect-ratio:16 / 10; }
-  .hero--aplicaciones .hero__foto{ width:100%; }
+  .hero--aplicaciones .hero__foto,
+  .hero--foto-ancha .hero__foto{ width:100%; }
 }
 
 /* ---------- catálogo: cierre «¿No sabes qué robot encaja mejor?» ---------- */
