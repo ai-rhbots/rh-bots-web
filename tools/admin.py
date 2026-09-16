@@ -412,6 +412,7 @@ def crear_app():
                 'metodo': {
                     'kicker': f.get('m_kicker', '').strip(),
                     'titulo': f.get('m_titulo', '').strip(),
+                    'boton': f.get('m_boton', '').strip(),
                     'pasos': filas(f.get('m_pasos', ''), 2),
                 },
             })

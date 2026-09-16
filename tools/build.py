@@ -957,6 +957,7 @@ def home_page():
         <h2 class="metodo__titulo">{met['titulo']}</h2>
       </header>
       <ol class="metodo__grid">{pasos}</ol>
+      {f'<p class="metodo__mas reveal"><a class="pill" href="contacto.html"><span>{e(met["boton"])}</span>{CHEVRON}</a></p>' if met.get('boton') else ''}
     </div>
   </section>
 ''')
