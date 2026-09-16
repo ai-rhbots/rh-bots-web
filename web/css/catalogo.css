@@ -349,10 +349,6 @@
 .display--left, .lede--left{ text-align:left; }
 .lede--left{ max-width:60ch; margin-top:16px; }
 
-/* ---------- índice: filtros ---------- */
-.chips{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:clamp(28px, 3.5vw, 42px); }
-.chips--familias{ margin:0; }
-
 /* catálogo: portada con foto, mismos colores que la de inicio
    (fondo --night, velo oscuro de izquierda a derecha y franja azul translúcida) */
 .hero--catalogo{
@@ -374,10 +370,6 @@
 .hero--catalogo .hero__copy{ padding-block:clamp(48px, 6vw, 88px); }
 .hero--catalogo .display--hero{ max-width:13ch; font-size:clamp(40px, 5.4vw, 84px); }
 .hero--catalogo .lede--hero{ max-width:54ch; font-size:clamp(15px, 1.25vw, 19px); }
-.familias-nav{
-  background:var(--light); border-bottom:1px solid rgba(40,40,40,.06);
-  padding-block:clamp(16px, 2vw, 24px);
-}
 @media (max-width:860px){
   .hero__foto{ width:100%; object-position:60% 30%; -webkit-mask-image:none; mask-image:none; }
 }
@@ -393,16 +385,6 @@
   margin-top:clamp(12px, 1.4vw, 18px);
   font-size:clamp(15px, 1.2vw, 18px); line-height:1.7; color:var(--ink-66);
 }
-.chip{
-  padding:9px 18px; border-radius:var(--r-pill);
-  border:1.5px solid #dcdfe4; background:#fff;
-  font-size:12.5px; font-weight:500; letter-spacing:.04em; color:var(--ink-66);
-  transition:all .25s var(--ease);
-}
-.chip em{ font-style:normal; opacity:.6; margin-left:4px; }
-.chip:hover{ border-color:var(--blue); color:var(--blue); }
-.chip.is-on{ background:var(--blue); border-color:var(--blue); color:#fff; }
-.chip.is-on em{ opacity:.8; }
 
 /* ---------- rejilla de producto ---------- */
 .pgrid{
@@ -1288,7 +1270,7 @@ html body :is(h1, h2, p.h-section, .err404, .cifra__valor){
 /* 2 · SUBTÍTULOS — h3 y todo lo que rotula: rótulos, botones, menú,
    etiquetas, pies de foto, frases destacadas. */
 html body :is(h3, h4, .kicker, .phero__claim, .que__destacado,
-  .pill, .chip, .nav a, .crumbs, .badge, .keyfacts span, .viewer__hint,
+  .pill, .nav a, .crumbs, .badge, .keyfacts span, .viewer__hint,
   .vid__item figcaption, .gal__item figcaption, .ph span, .nota__titulo,
   .pcard__more, .lcard__cat, .lcard__mas, .ncard__fecha, .ncard__mas, .post__meta, .form label,
   .persona__cargo, .art__meta, .art__volver a, .cifra__etiqueta,

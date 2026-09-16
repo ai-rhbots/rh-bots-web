@@ -785,7 +785,6 @@ def aplicaciones_page():
            header(base, 'aplicaciones'), '<main id="contenido">']
 
     sectores = a.get('sectores', [])
-    chips = ''.join(f'<a class="chip" href="#{e(x["id"])}">{e(x["titulo"])}</a>' for x in sectores)
     out.append(f'''
   <section class="hero hero--catalogo hero--aplicaciones" id="inicio">
     <img class="hero__foto" src="{e(a.get('imagen', ''))}" alt="" aria-hidden="true" fetchpriority="high">
@@ -801,9 +800,6 @@ def aplicaciones_page():
       </div>
     </div>
   </section>
-  <nav class="familias-nav" aria-label="Sectores">
-    <div class="wrap"><div class="chips chips--familias">{chips}</div></div>
-  </nav>
 ''')
 
     for i, x in enumerate(sectores):
@@ -867,11 +863,6 @@ def index_page():
                 'intralogística, y accesorios, con fichas técnicas completas.', base, 'robots.html'),
            header(base), '<main id="contenido">']
 
-    # accesos directos a cada familia
-    chips = ''.join(
-        f'<a class="chip" href="#{key}">{e(name)} <em>{len([p for p in PRODUCTOS if p["family"] == key])}</em></a>'
-        for key, name, _ in FAMILIAS if any(p['family'] == key for p in PRODUCTOS))
-
     # portada del catálogo: fondo oscuro, robot en penumbra y franja diagonal azul
     out.append(f'''
   <section class="hero hero--catalogo" id="inicio">
@@ -890,9 +881,6 @@ def index_page():
       </div>
     </div>
   </section>
-  <nav class="familias-nav" aria-label="Familias de robots">
-    <div class="wrap"><div class="chips chips--familias">{chips}</div></div>
-  </nav>
 ''')
 
     # una sección por familia
