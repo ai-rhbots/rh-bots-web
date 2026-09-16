@@ -24,7 +24,7 @@
     },
     {
       "label": "Aplicaciones",
-      "href": "index.html#aplicaciones",
+      "href": "index.html#sectores",
       "key": ""
     },
     {
@@ -116,32 +116,6 @@
       "titulo": "Últimas noticias de robótica",
       "enlace": "Ir al blog"
     },
-    "sectores": [
-      [
-        "Supermercados",
-        "assets/escenarios/supermercados.jpg"
-      ],
-      [
-        "Edificios de oficinas",
-        "assets/escenarios/edificios-oficinas.jpg"
-      ],
-      [
-        "Estaciones y aeropuertos",
-        "assets/escenarios/estaciones-transporte.jpg"
-      ],
-      [
-        "Fábricas y almacenes",
-        "assets/escenarios/fabricas-almacenes.jpg"
-      ],
-      [
-        "Complejos comerciales",
-        "assets/escenarios/complejos-comerciales.jpg"
-      ],
-      [
-        "Hospitales",
-        "assets/escenarios/hospitales.jpg"
-      ]
-    ],
     "faq": [
       [
         "¿Qué robot necesito?",
@@ -165,28 +139,6 @@
       ]
     ]
   },
-  "servicios": [
-    [
-      "Asesoramiento<br>previo",
-      "asesoramiento"
-    ],
-    [
-      "Instalación y<br>puesta en marcha",
-      "instalacion"
-    ],
-    [
-      "Formación<br>de equipos",
-      "formacion"
-    ],
-    [
-      "Mantenimiento<br>y soporte",
-      "mantenimiento"
-    ],
-    [
-      "Adaptación<br>a cada cliente",
-      "adaptacion"
-    ]
-  ],
   "contacto": {
     "intro": "Cuéntanos qué necesitas resolver y te decimos qué robot encaja, con qué configuración y en qué plazo.",
     "empresa": "RH·BOTS — Recursos Humanoides",

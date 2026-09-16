@@ -600,7 +600,7 @@
     groups[parent.className] = groups[parent.className] || [];
     var idx = groups[parent.className].length;
     groups[parent.className].push(el);
-    if (el.matches('.benefit, .service, .spec, .feat, .faq__item')) {
+    if (el.matches('.spec, .feat, .faq__item')) {
       el.style.setProperty('--d', (idx % 5) * 80 + 'ms');
     }
     io.observe(el);

@@ -18,7 +18,6 @@ SEO       = _d['seo']
 ANALITICA = _d['analitica']
 NAV       = _d['nav']
 HOME      = _d['home']
-SERVICIOS = _d['servicios']
 CONTACTO  = _d['contacto']
 POSTS     = _d['posts']
 TIENDA    = _d.get('tienda', {'activa': False})

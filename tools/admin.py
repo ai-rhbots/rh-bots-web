@@ -387,7 +387,6 @@ def crear_app():
                 'kicker': f.get('kicker', '').strip(),
                 'h1': f.get('h1', '').strip(),
                 'lede': f.get('lede', '').strip(),
-                'sectores': filas(f.get('sectores', ''), 2),
                 'faq': filas(f.get('faq', ''), 2),
                 'que_hacemos': {
                     'kicker': f.get('q_kicker', '').strip(),

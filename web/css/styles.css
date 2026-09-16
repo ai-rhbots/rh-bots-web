@@ -385,38 +385,6 @@ svg .nostroke{ stroke:none; }
 /* ==========================================================================
    SERVICIO
    ========================================================================== */
-.services{
-  display:grid; grid-template-columns:repeat(5,1fr);
-  gap:clamp(16px, 2.6vw, 34px);
-  text-align:center;
-}
-.service{ display:flex; flex-direction:column; align-items:center; }
-.service__ico{
-  position:relative;
-  width:clamp(58px, 6.2vw, 76px); aspect-ratio:1;
-  border:2px solid var(--blue); border-radius:50%;
-  color:var(--blue);
-  transition:transform .35s var(--ease), background .35s var(--ease), color .35s var(--ease);
-}
-.service__ico svg{
-  position:absolute; inset:19%; width:auto; height:auto;
-  stroke-width:2.6;
-}
-.service:hover .service__ico{
-  transform:translateY(-5px);
-  background:var(--blue); color:#fff;
-}
-.service h3{
-  margin-top:16px;
-  font-weight:400; font-size:clamp(11px, .96vw, 13px);
-  line-height:1.45; color:var(--ink-66);
-}
-.service h3::after{
-  content:''; display:block; width:26px; height:3px;
-  background:var(--blue); margin:12px auto 0;
-}
-
-
 /* ==========================================================================
    FAQ
    ========================================================================== */
@@ -500,7 +468,6 @@ svg .nostroke{ stroke:none; }
    RESPONSIVE
    ========================================================================== */
 @media (max-width:1024px){
-  .services{ grid-template-columns:repeat(3,1fr); row-gap:34px; }
   .specs   { grid-template-columns:repeat(3,1fr); }
   .spec::after{ display:none !important; }
   .spec:nth-child(3n)::after{ display:block !important; }
@@ -558,7 +525,6 @@ svg .nostroke{ stroke:none; }
 }
 
 @media (max-width:560px){
-  .services{ grid-template-columns:repeat(2,1fr); }
   .specs   { grid-template-columns:repeat(2,1fr); }
   .spec::after{ display:none !important; }
   .spec:nth-child(2n)::after{ display:block !important; }

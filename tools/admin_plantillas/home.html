@@ -91,14 +91,6 @@
   <input id="a_enlace" name="a_enlace" value="{{ ac.enlace }}">
   <p class="pista">Muestra las tres últimas entradas del blog.</p>
 
-  <label>Sectores</label>
-  <div class="filas" data-filas data-target="sectores"
-       data-cols='[{"label":"Nombre","tipo":"texto"},{"label":"Imagen","tipo":"imagen"}]'>
-    <textarea id="sectores" name="sectores" hidden>{{ a_texto(h.sectores) }}</textarea>
-    <div class="filas__lista" data-filas-lista></div>
-    <button type="button" class="btn btn--plano" data-filas-add>+ Añadir sector</button>
-  </div>
-
   <label>Preguntas frecuentes</label>
   <div class="filas" data-filas data-target="faq"
        data-cols='[{"label":"Pregunta","tipo":"texto"},{"label":"Respuesta","tipo":"textarea"}]'>

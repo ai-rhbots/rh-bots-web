@@ -17,7 +17,7 @@ sys.path.insert(0, HERE)
 
 from PIL import Image  # noqa: E402
 from productos import PRODUCTOS, FAMILIAS, ESTADOS, GUIA, BY_SLUG  # noqa: E402
-from sitio import (NAV, HOME, SERVICIOS, CONTACTO, POSTS, SEO, ANALITICA,  # noqa: E402
+from sitio import (NAV, HOME, CONTACTO, POSTS, SEO, ANALITICA,  # noqa: E402
                    TIENDA, RHBOTS)
 from limpiar_html import limpiar as limpiar_cuerpo  # noqa: E402
 
@@ -754,24 +754,6 @@ def index_page():
 
 
 # ─────────────────────────────────────────────────── bloques compartidos ──
-SERVICIO_ICONS = {
- 'asesoramiento': '<rect x="12" y="16" width="26" height="19" rx="4"/><path d="M20 35v6l7-6"/>'
-                  '<rect x="30" y="27" width="22" height="16" rx="4"/><path d="M46 43v5l-6-5"/>'
-                  '<path d="M23.5 26.5a2.6 2.6 0 115.2 0c0 1.9-2.6 2.1-2.6 4"/>'
-                  '<circle cx="26.1" cy="33.4" r=".9" class="fill"/>',
- 'instalacion':   '<circle cx="32" cy="32" r="19"/><path d="M32 20v12l8 5"/>'
-                  '<path d="M34 30l-9 12h9l-2 9 10-13h-9z" class="fill nostroke"/>',
- 'formacion':     '<rect x="13" y="16" width="38" height="27" rx="4"/><path d="M27 47h10M32 43v4"/>'
-                  '<circle cx="32" cy="27" r="4.5"/><path d="M24 38c1.6-4.6 4.6-6.9 8-6.9s6.4 2.3 8 6.9"/>',
- 'mantenimiento': '<circle cx="32" cy="24" r="6.5"/>'
-                  '<path d="M32 17.5v-4M32 34.5v4M25.5 24h-4M42.5 24h4M27.4 19.4l-2.8-2.8'
-                  'M36.6 19.4l2.8-2.8M27.4 28.6l-2.8 2.8M36.6 28.6l2.8 2.8"/>'
-                  '<path d="M18 50c0-7.7 6.3-14 14-14s14 6.3 14 14"/>',
- 'adaptacion':    '<path d="M32 40s-9-5.6-9-11.4a5 5 0 019-3 5 5 0 019 3C41 34.4 32 40 32 40z"/>'
-                  '<path d="M14 34c0 8 5 14 10 17M50 34c0 8-5 14-10 17"/>'
-                  '<path d="M20 47c2.5 3.5 7 5.5 12 5.5s9.5-2 12-5.5"/>',
-}
-
 MARCA_SVG = ('<svg viewBox="0 0 64 64">'
              '<rect x="14" y="17" width="36" height="31" rx="13" stroke-width="6"/>'
              '<rect x="24.6" y="29" width="6" height="11.5" rx="3" class="fill nostroke"/>'
@@ -781,24 +763,6 @@ FLECHA = ('<svg class="flecha" viewBox="0 0 24 24" aria-hidden="true">'
           '<path d="M5 12h14M13 6l6 6-6 6"/></svg>')
 
 CHEVRON = '<i class="pill__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i>'
-
-
-def bloque_servicio(base):
-    lis = ''
-    for titulo, key in SERVICIOS:
-        lis += (f'<li class="service reveal"><span class="service__ico" aria-hidden="true">'
-                f'<svg viewBox="0 0 64 64">{SERVICIO_ICONS[key]}</svg></span>'
-                f'<h3>{titulo}</h3></li>\n')
-    return f'''  <section class="section section--white" id="servicio">
-    <div class="wrap">
-      <header class="section-head reveal">
-        <h2 class="h-section h-section--blue">Servicio RH·BOTS</h2>
-        <p class="sub">Mucho más que un robot: una solución completa</p>
-      </header>
-      <ul class="services">{lis}</ul>
-    </div>
-  </section>
-'''
 
 
 def bloque_faq(preguntas, titulo='Preguntas frecuentes'):
@@ -926,7 +890,7 @@ def home_page():
         <p class="kicker">{e(sec['kicker'])}</p>
         <h2 class="secbloque__titulo">{e(sec['titulo'])}</h2>
         <p class="secbloque__lede">{e(sec['texto'])}</p>
-        <a class="pill" href="#aplicaciones"><span>{e(sec['boton'])}</span>{CHEVRON}</a>
+        <a class="pill" href="contacto.html"><span>{e(sec['boton'])}</span>{CHEVRON}</a>
       </div>
       <ul class="secbloque__fichas">{fichas}</ul>
     </div>
@@ -957,23 +921,6 @@ def home_page():
     if HOME.get('video'):
         out.append(video_html([HOME['video']], base, 'Míralos trabajando'))
 
-    # sectores / aplicaciones
-    secs = ''.join(
-        f'<li class="apx__item reveal"><figure><img src="{img}" alt="{e(n)}" loading="lazy"'
-        f'{img_dims_attr(img)}></figure>'
-        f'<h3>{e(n)}</h3></li>\n' for n, img in HOME['sectores'])
-    out.append(f'''  <section class="section section--white" id="aplicaciones">
-    <div class="wrap">
-      <header class="section-head reveal">
-        <h2 class="h-section h-section--blue">Dónde trabajan</h2>
-        <p class="sub">Entornos reales, en funcionamiento durante toda la jornada.</p>
-      </header>
-      <ul class="apx apx--3">{secs}</ul>
-    </div>
-  </section>
-''')
-
-    out.append(bloque_servicio(base))
     # actualidad: últimas entradas del blog
     act = HOME.get('actualidad')
     if act and POSTS:
