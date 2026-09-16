@@ -25,6 +25,7 @@ e = html.escape
 FAM_NAME = {k: n for k, n, _ in FAMILIAS}
 FECHA_BUILD = time.strftime('%Y-%m-%d')
 LINKEDIN_EMPRESA = 'https://www.linkedin.com/company/rh-bots'
+INSTAGRAM_EMPRESA = 'https://www.instagram.com/rhbots/'
 
 
 # ─────────────────────────────────────────────────────────────── imágenes ──
@@ -105,7 +106,7 @@ def schema_organization():
         data['telephone'] = contacto_principal['tel']
     if contacto_principal.get('email'):
         data['email'] = contacto_principal['email']
-    sameas = [LINKEDIN_EMPRESA]
+    sameas = [LINKEDIN_EMPRESA, INSTAGRAM_EMPRESA]
     data['sameAs'] = sameas
     return data
 
@@ -305,6 +306,7 @@ def footer(base):
     </a>
     <ul class="social">
       <li><a href="{LINKEDIN_EMPRESA}" target="_blank" rel="noopener" aria-label="LinkedIn de RH·BOTS"><svg viewBox="0 0 24 24" class="fill nostroke"><path d="M4.98 3.5A2.5 2.5 0 112.5 6 2.5 2.5 0 014.98 3.5zM3 8.98h4v12H3zM9.5 8.98h3.83v1.64h.05a4.2 4.2 0 013.78-2.08c4.04 0 4.79 2.66 4.79 6.12v6.32h-4v-5.6c0-1.34-.02-3.06-1.86-3.06s-2.15 1.45-2.15 2.96v5.7h-4z"/></svg></a></li>
+      <li><a href="{INSTAGRAM_EMPRESA}" target="_blank" rel="noopener" aria-label="Instagram de RH·BOTS"><svg viewBox="0 0 24 24" class="fill nostroke"><path fill-rule="evenodd" d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3zm5 3.5a4.5 4.5 0 110 9 4.5 4.5 0 010-9zm0 2a2.5 2.5 0 100 5 2.5 2.5 0 000-5zm5.5-4.2a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/></svg></a></li>
     </ul>
     <p class="footer-legal">
       <a href="{base}legal.html">Aviso legal</a> ·
