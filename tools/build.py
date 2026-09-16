@@ -741,8 +741,9 @@ def index_page():
     # portada del catálogo: fondo oscuro, robot en penumbra y franja diagonal azul
     out.append(f'''
   <section class="hero hero--catalogo" id="inicio">
-    <img class="hero__robot-fondo" src="assets/robot-frontal.png" alt="" aria-hidden="true"
-         width="630" height="1000" fetchpriority="high">
+    <img class="hero__foto" src="assets/robots-portada.webp" alt="" aria-hidden="true"
+         width="1600" height="1440" fetchpriority="high">
+    <div class="hero__velo" aria-hidden="true"></div>
     <div class="hero__diagonal" aria-hidden="true"></div>
     <div class="wrap hero__copy">
       <p class="kicker hero__kicker">Catálogo RH·BOTS</p>
