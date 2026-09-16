@@ -762,14 +762,16 @@ def product_page(p):
     return ''.join(out)
 
 
-def bloque_elegir(base):
-    """Cierre de catálogo y aplicaciones: «¿No sabes qué robot encaja mejor?»."""
+def bloque_elegir(base,
+                  titulo='¿No sabes qué robot encaja mejor?',
+                  texto='Cuéntanos tu proyecto y te ayudamos a seleccionar la familia, el modelo y la '
+                        'configuración más adecuada para tu empresa o centro.'):
+    """Banda índigo de cierre del catálogo y de aplicaciones."""
     return f'''  <section class="elegir" id="elegir">
     <div class="wrap elegir__grid">
       <div class="elegir__texto reveal">
-        <h2 class="elegir__titulo">¿No sabes qué robot encaja mejor?</h2>
-        <p class="elegir__lede">Cuéntanos tu proyecto y te ayudamos a seleccionar la familia, el modelo y la
-          configuración más adecuada para tu empresa o centro.</p>
+        <h2 class="elegir__titulo">{e(titulo)}</h2>
+        <p class="elegir__lede">{e(texto)}</p>
       </div>
       <a class="pill elegir__boton reveal" href="{base}contacto.html"><span>Hablar con RH·BOTS</span>{CHEVRON}</a>
     </div>
@@ -832,7 +834,9 @@ def aplicaciones_page():
   </section>
 ''')
 
-    out.append(bloque_elegir(base))
+    out.append(bloque_elegir(
+        base, '¿Tienes una tarea que quieres automatizar?',
+        'Cuéntanos tu caso y te orientamos sobre qué aplicación robótica puede encajar mejor en tu empresa.'))
     out.append('</main>')
     out.append(footer(base))
     return ''.join(out)
