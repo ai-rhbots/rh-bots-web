@@ -21,6 +21,28 @@
     nav.classList.toggle('is-open', !open);
   });
 
+  /* ---------- submenú de familias ----------
+     En escritorio se abre al pasar el ratón (CSS) o con la flecha; en móvil,
+     solo con la flecha, como un acordeón. Escape y un clic fuera lo cierran. */
+  Array.prototype.forEach.call(nav.querySelectorAll('.nav__grupo'), function (grupo) {
+    var boton = grupo.querySelector('.nav__abrir');
+    var cerrar = function () {
+      grupo.classList.remove('is-open');
+      boton.setAttribute('aria-expanded', 'false');
+    };
+    boton.addEventListener('click', function (ev) {
+      ev.stopPropagation();
+      var abierto = grupo.classList.toggle('is-open');
+      boton.setAttribute('aria-expanded', String(abierto));
+    });
+    document.addEventListener('click', function (ev) {
+      if (!grupo.contains(ev.target)) cerrar();
+    });
+    grupo.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Escape') { cerrar(); boton.focus(); }
+    });
+  });
+
   nav.addEventListener('click', function (e) {
     if (e.target.tagName !== 'A') return;
     toggle.setAttribute('aria-expanded', 'false');
