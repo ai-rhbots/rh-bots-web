@@ -194,7 +194,8 @@ svg .nostroke{ stroke:none; }
 .section--white{ background:var(--white); }
 .section--light{ background:var(--light); }
 .section--blue { background:var(--blue); color:#fff; }
-.section--faq  { padding-top:0; }
+/* antes iba pegado a la sección anterior; ahora respira como las demás */
+.section--faq  { padding-top:clamp(56px, 7vw, 96px); }
 
 .section-head{ text-align:center; margin-bottom:clamp(38px, 5vw, 64px); }
 

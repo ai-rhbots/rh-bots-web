@@ -19,6 +19,10 @@ ANALITICA = _d['analitica']
 NAV       = _d['nav']
 HOME      = _d['home']
 CONTACTO  = _d['contacto']
+CTA       = _d.get('cta', {
+    'kicker': '¿Hablamos?', 'titulo': 'Lleva la robótica humanoide a tu empresa',
+    'texto': '', 'boton': 'Solicitar información', 'imagen': 'assets/robot-frontal.png',
+})
 POSTS     = _d['posts']
 TIENDA    = _d.get('tienda', {'activa': False})
 RHBOTS    = _d.get('rhbots', {

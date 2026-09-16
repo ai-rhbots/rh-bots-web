@@ -91,6 +91,21 @@
   <input id="a_enlace" name="a_enlace" value="{{ ac.enlace }}">
   <p class="pista">Muestra las tres últimas entradas del blog.</p>
 
+  <label for="c_kicker">Cierre (todas las páginas) — rótulo</label>
+  <input id="c_kicker" name="c_kicker" value="{{ cta.kicker }}">
+
+  <label for="c_titulo">Cierre — titular</label>
+  <input id="c_titulo" name="c_titulo" value="{{ cta.titulo }}">
+
+  <label for="c_texto">Cierre — texto</label>
+  <textarea id="c_texto" name="c_texto" rows="3">{{ cta.texto }}</textarea>
+
+  <label for="c_boton">Cierre — texto del botón</label>
+  <input id="c_boton" name="c_boton" value="{{ cta.boton }}">
+
+  <label for="c_imagen">Cierre — imagen del robot</label>
+  <input id="c_imagen" name="c_imagen" value="{{ cta.imagen }}" data-imagen>
+
   <label>Preguntas frecuentes</label>
   <div class="filas" data-filas data-target="faq"
        data-cols='[{"label":"Pregunta","tipo":"texto"},{"label":"Respuesta","tipo":"textarea"}]'>

@@ -17,7 +17,7 @@ sys.path.insert(0, HERE)
 
 from PIL import Image  # noqa: E402
 from productos import PRODUCTOS, FAMILIAS, ESTADOS, GUIA, BY_SLUG  # noqa: E402
-from sitio import (NAV, HOME, CONTACTO, POSTS, SEO, ANALITICA,  # noqa: E402
+from sitio import (NAV, HOME, CONTACTO, POSTS, SEO, ANALITICA, CTA,  # noqa: E402
                    TIENDA, RHBOTS)
 from limpiar_html import limpiar as limpiar_cuerpo  # noqa: E402
 
@@ -666,13 +666,17 @@ def product_page(p):
 
 
 def cta_final(base):
-    return f'''  <section class="section section--blue section--tight cta-seccion">
-    {fondo_video('fondo-gama', base)}
-    <div class="wrap cta-final">
-      <p class="h-section h-section--onblue">¿Hablamos de tu caso?</p>
-      <p class="sub sub--onblue">Te asesoramos sobre el modelo, la configuración y la puesta en marcha.</p>
-      <a class="pill pill--ghost" href="{base}contacto.html"><span>Contacta con RH·BOTS</span>
-        <i class="pill__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
+    """Cierre de todas las páginas: franja diagonal, texto y robot a la derecha."""
+    return f'''  <section class="ctafinal" id="hablamos">
+    <div class="ctafinal__diagonal" aria-hidden="true"></div>
+    <div class="wrap ctafinal__grid">
+      <div class="ctafinal__copy reveal">
+        <p class="kicker">{e(CTA['kicker'])}</p>
+        <h2 class="ctafinal__titulo">{e(CTA['titulo'])}</h2>
+        <p class="ctafinal__texto">{e(CTA['texto'])}</p>
+        <a class="pill" href="{base}contacto.html"><span>{e(CTA['boton'])}</span>{CHEVRON}</a>
+      </div>
+      <img class="ctafinal__robot" src="{base}{e(CTA['imagen'])}" alt="" loading="lazy" aria-hidden="true">
     </div>
   </section>
 '''
