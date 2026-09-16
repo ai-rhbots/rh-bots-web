@@ -19,10 +19,6 @@ ANALITICA = _d['analitica']
 NAV       = _d['nav']
 HOME      = _d['home']
 CONTACTO  = _d['contacto']
-PIE       = _d.get('pie', {
-    'titulo': 'Hablemos del futuro',
-    'texto': '', 'copyright': '© RH·BOTS',
-})
 CTA       = _d.get('cta', {
     'kicker': '¿Hablamos?', 'titulo': 'Lleva la robótica humanoide a tu empresa',
     'texto': '', 'boton': 'Solicitar información', 'imagen': 'assets/robot-frontal.png',

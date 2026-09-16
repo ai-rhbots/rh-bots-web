@@ -424,42 +424,29 @@ svg .nostroke{ stroke:none; }
 /* ==========================================================================
    FOOTER
    ========================================================================== */
-/* zona clara con el mensaje y la marca, y banda índigo con el aviso legal */
-.site-footer{ background:#f6f8fb; }
+.site-footer{ background:var(--navy); padding-block:26px; }
+.footer-inner{
+  display:flex; align-items:center; justify-content:space-between; gap:24px;
+}
+.logo--footer img{
+  width:158px;
+  /* la marca original es navy+cyan; en fondo navy se muestra en blanco */
+  filter:brightness(0) invert(1);
+  opacity:.92;
+}
+.social{ display:flex; align-items:center; gap:20px; }
+.social a{
+  display:grid; place-items:center;
+  width:26px; height:26px; color:#fff; opacity:.85;
+  transition:opacity .25s var(--ease), transform .25s var(--ease);
+}
+.social a:hover{ opacity:1; transform:translateY(-2px); }
 
-.pie{ position:relative; overflow:hidden; padding-block:clamp(44px, 5.5vw, 76px); }
-.pie__diagonal{
-  position:absolute; inset:0; z-index:0;
-  background:linear-gradient(135deg, rgba(0,158,227,.16) 0%, rgba(0,158,227,.05) 100%);
-  clip-path:polygon(74% 0, 100% 0, 100% 100%, 56% 100%);
+.footer-legal{
+  margin:0; font-size:12.5px; color:#fff; opacity:.6;
 }
-.pie__grid{
-  position:relative; z-index:1;
-  display:flex; flex-wrap:wrap; align-items:center; justify-content:center;
-  gap:clamp(28px, 6vw, 90px); text-align:center;
-}
-.pie__titulo{
-  font-family:var(--font-titulo); font-weight:700; letter-spacing:-.02em;
-  font-size:clamp(19px, 1.7vw, 24px); color:var(--ink);
-}
-.pie__lede{
-  margin:14px auto 0; max-width:38ch;
-  font-size:clamp(14px, 1.1vw, 16px); line-height:1.7; color:var(--ink-66);
-}
-.pie__marca img{ width:clamp(140px, 15vw, 200px); height:auto; }
-
-.pie-legal{ background:var(--navy); color:#fff; padding-block:clamp(16px, 1.8vw, 24px); }
-.pie-legal__inner{
-  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
-  gap:12px 28px;
-  font-size:clamp(13px, 1vw, 14.5px); line-height:1.6;
-}
-.pie-legal a{ color:#fff; }
-.pie-legal a:hover{ text-decoration:underline; }
-@media (max-width:700px){
-  .pie-legal__inner{ justify-content:center; text-align:center; }
-  .pie__diagonal{ clip-path:polygon(84% 0, 100% 0, 100% 100%, 70% 100%); }
-}
+.footer-legal a{ color:#fff; text-decoration:none; }
+.footer-legal a:hover{ opacity:.85; text-decoration:underline; }
 
 
 /* ==========================================================================
@@ -534,6 +521,8 @@ svg .nostroke{ stroke:none; }
   .slider{ grid-template-columns:1fr; }
   .slider__media{ min-height:260px; }
 
+  /* footer */
+  .footer-inner{ flex-direction:column; gap:18px; }
 }
 
 @media (max-width:560px){

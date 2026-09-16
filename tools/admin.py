@@ -418,11 +418,6 @@ def crear_app():
                     'pasos': filas(f.get('m_pasos', ''), 2),
                 },
             })
-            s['pie'] = {
-                'titulo': f.get('p_titulo', '').strip(),
-                'texto': f.get('p_texto', '').strip(),
-                'copyright': f.get('p_copy', '').strip(),
-            }
             s['cta'] = {
                 'kicker': f.get('c_kicker', '').strip(),
                 'titulo': f.get('c_titulo', '').strip(),
@@ -433,8 +428,7 @@ def crear_app():
             guardar_y_publicar('sitio', s, 'Home guardada.')
             return redirect(url_for('home'))
         prods = D.cargar('productos')['productos']
-        return render_template('home.html', h=s['home'], cta=s.get('cta', {}),
-                               pie=s.get('pie', {}), a_texto=a_texto,
+        return render_template('home.html', h=s['home'], cta=s.get('cta', {}), a_texto=a_texto,
                                opciones_modelo=[{'valor': p['slug'], 'texto': p['name']} for p in prods])
 
     # ── menú ──────────────────────────────────────────────────────────────
