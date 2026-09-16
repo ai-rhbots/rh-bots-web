@@ -762,13 +762,13 @@
 }
 .ctafinal__grid{
   position:relative; z-index:1;
-  display:grid; grid-template-columns:32% minmax(0, 1fr) minmax(0, .8fr);
+  display:grid; grid-template-columns:42% minmax(0, 1fr) minmax(0, .5fr);
   align-items:end; column-gap:clamp(20px, 3vw, 48px);
 }
 .ctafinal__copy{
   position:relative; z-index:2;   /* el texto, por delante del robot */
   grid-column:2;
-  padding-block:clamp(44px, 5vw, 72px);
+  padding-block:clamp(56px, 6.5vw, 100px);
   align-self:center;
 }
 .ctafinal__titulo{
