@@ -17,7 +17,7 @@ sys.path.insert(0, HERE)
 
 from PIL import Image  # noqa: E402
 from productos import PRODUCTOS, FAMILIAS, ESTADOS, GUIA, BY_SLUG  # noqa: E402
-from sitio import (NAV, HOME, CONTACTO, POSTS, SEO, ANALITICA, CTA,  # noqa: E402
+from sitio import (NAV, HOME, CONTACTO, POSTS, SEO, ANALITICA, CTA, PREFOOTER,  # noqa: E402
                    TIENDA, RHBOTS)
 from limpiar_html import limpiar as limpiar_cuerpo  # noqa: E402
 
@@ -276,8 +276,28 @@ def header(base, active='robots'):
 '''
 
 
-def footer(base):
+def prefooter(base):
+    """Franja clara previa al pie: mensaje de contacto y logotipo vertical."""
+    if not PREFOOTER.get('titulo') and not PREFOOTER.get('texto'):
+        return ''
     return f'''
+<aside class="prefoot" aria-label="{e(PREFOOTER.get('titulo', ''))}">
+  <div class="prefoot__diagonal" aria-hidden="true"></div>
+  <div class="wrap prefoot__grid">
+    <div class="prefoot__texto">
+      <p class="prefoot__titulo">{e(PREFOOTER.get('titulo', ''))}</p>
+      <p>{e(PREFOOTER.get('texto', ''))}</p>
+    </div>
+    <a class="prefoot__logo" href="{base}index.html" aria-label="RH·BOTS — inicio">
+      <img src="{base}assets/logo-rhbots-vertical.png" alt="RH·BOTS — Recursos Humanoides"
+           width="560" height="452" loading="lazy">
+    </a>
+  </div>
+</aside>'''
+
+
+def footer(base):
+    return f'''{prefooter(base)}
 <footer class="site-footer" id="contacto">
   <div class="wrap footer-inner">
     <a class="logo logo--footer" href="{base}index.html" aria-label="RH·BOTS — inicio">

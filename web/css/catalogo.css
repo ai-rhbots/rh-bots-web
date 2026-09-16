@@ -750,6 +750,44 @@
   .form .pill{ width:100%; }
 }
 
+/* ---------- franja clara sobre el pie: mensaje y logotipo ---------- */
+.prefoot{
+  position:relative; overflow:hidden; isolation:isolate;
+  background:linear-gradient(90deg, #f1f4f8 0%, #ffffff 45%, #eaf2fa 100%);
+  padding-block:clamp(40px, 5vw, 72px);
+}
+/* dos bandas diagonales azuladas a la derecha, como en la maqueta */
+.prefoot__diagonal,
+.prefoot::before{
+  content:''; position:absolute; inset:0; z-index:-1; pointer-events:none;
+}
+.prefoot::before{
+  background:rgba(0,158,227,.10);
+  clip-path:polygon(64% 0, 77% 0, 67% 100%, 54% 100%);
+}
+.prefoot__diagonal{
+  background:rgba(0,158,227,.06);
+  clip-path:polygon(77% 0, 100% 0, 100% 100%, 67% 100%);
+}
+.prefoot__grid{
+  display:flex; align-items:center; justify-content:center;
+  gap:clamp(36px, 8vw, 140px);
+}
+.prefoot__texto{ max-width:34ch; text-align:center; }
+.prefoot__titulo{
+  font-family:var(--font-titulo); font-weight:700; letter-spacing:-.02em;
+  font-size:clamp(21px, 1.9vw, 27px); line-height:1.2; color:var(--ink);
+}
+.prefoot__texto p + p{
+  margin-top:clamp(14px, 1.6vw, 22px);
+  font-size:clamp(15px, 1.2vw, 18px); line-height:1.75; color:var(--ink-66);
+}
+.prefoot__logo{ flex:none; display:block; }
+.prefoot__logo img{ width:clamp(160px, 16vw, 240px); height:auto; }
+@media (max-width:700px){
+  .prefoot__grid{ flex-direction:column-reverse; gap:28px; }
+}
+
 /* ---------- cierre de página: diagonal, texto y robot ---------- */
 .ctafinal{
   position:relative; overflow:hidden; isolation:isolate;

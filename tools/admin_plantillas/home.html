@@ -106,6 +106,12 @@
   <label for="c_imagen">Cierre — imagen del robot</label>
   <input id="c_imagen" name="c_imagen" value="{{ cta.imagen }}" data-imagen>
 
+  <label for="pf_titulo">Franja sobre el pie (todas las páginas) — titular</label>
+  <input id="pf_titulo" name="pf_titulo" value="{{ pf.titulo }}">
+
+  <label for="pf_texto">Franja sobre el pie — texto</label>
+  <textarea id="pf_texto" name="pf_texto" rows="3">{{ pf.texto }}</textarea>
+
   <label>Preguntas frecuentes</label>
   <div class="filas" data-filas data-target="faq"
        data-cols='[{"label":"Pregunta","tipo":"texto"},{"label":"Respuesta","tipo":"textarea"}]'>
