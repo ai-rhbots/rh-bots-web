@@ -21,6 +21,5 @@ _d = cargar('productos')
 FAMILIAS  = _d['familias']
 ESTADOS   = _d['estados']
 PRODUCTOS = _d['productos']
-GUIA      = _d['guia']
 
 BY_SLUG = {p['slug']: p for p in PRODUCTOS}

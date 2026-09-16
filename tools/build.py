@@ -16,7 +16,7 @@ WEB  = os.path.join(ROOT, 'web')
 sys.path.insert(0, HERE)
 
 from PIL import Image  # noqa: E402
-from productos import PRODUCTOS, FAMILIAS, ESTADOS, GUIA, BY_SLUG  # noqa: E402
+from productos import PRODUCTOS, FAMILIAS, ESTADOS, BY_SLUG  # noqa: E402
 from sitio import (NAV, HOME, CONTACTO, POSTS, SEO, ANALITICA, CTA, PREFOOTER,  # noqa: E402
                    TIENDA, RHBOTS)
 from limpiar_html import limpiar as limpiar_cuerpo  # noqa: E402
@@ -788,20 +788,18 @@ def index_page():
   </section>
 ''')
 
-    # guía rápida
-    rows = ''.join(
-        f'<tr><th scope="row"><a href="robots/{s}.html">{e(BY_SLUG[s]["name"])}</a></th>'
-        f'<td>{e(txt)}</td></tr>' for s, txt in GUIA)
-    out.append(f'''  <section class="section section--light" id="guia">
-    <div class="wrap">
-      <header class="section-head reveal"><h2 class="h-section">Guía rápida de selección</h2>
-        <p class="sub">Qué modelo encaja en cada necesidad.</p></header>
-      <div class="guia reveal"><table class="spectable"><tbody>{rows}</tbody></table></div>
+    # cierre propio del catálogo
+    out.append(f'''  <section class="elegir" id="elegir">
+    <div class="wrap elegir__grid">
+      <div class="elegir__texto reveal">
+        <h2 class="elegir__titulo">¿No sabes qué robot encaja mejor?</h2>
+        <p class="elegir__lede">Cuéntanos tu proyecto y te ayudamos a seleccionar la familia, el modelo y la
+          configuración más adecuada para tu empresa o centro.</p>
+      </div>
+      <a class="pill elegir__boton reveal" href="contacto.html"><span>Hablar con RH·BOTS</span>{CHEVRON}</a>
     </div>
   </section>
 ''')
-
-    out.append(cta_final(base))
     out.append('</main>')
     out.append(footer(base))
     return ''.join(out)

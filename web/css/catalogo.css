@@ -395,10 +395,6 @@
 .empty{ text-align:center; color:var(--muted); padding:40px 0; }
 
 /* ---------- guía rápida ---------- */
-.guia{ background:#fff; border-radius:14px; padding:8px 24px; box-shadow:0 6px 20px rgba(40,40,40,.07); }
-.guia .spectable th{ width:22%; font-weight:700; color:var(--navy); font-size:15px; }
-.guia .spectable th a{ transition:color .25s var(--ease); }
-.guia .spectable th a:hover{ color:var(--blue); }
 
 /* ---------- home: qué hacemos ---------- */
 .que__grid{
@@ -768,6 +764,31 @@
   .form .pill{ width:100%; }
 }
 
+/* ---------- catálogo: cierre «¿No sabes qué robot encaja mejor?» ---------- */
+.elegir{
+  position:relative; overflow:hidden; color:#fff;
+  background:
+    radial-gradient(ellipse 38% 90% at 86% 30%, rgba(0,158,227,.42), transparent 70%),
+    var(--navy);
+  padding-block:clamp(64px, 8vw, 120px);
+}
+.elegir__grid{
+  display:grid; grid-template-columns:minmax(0, 1fr) auto;
+  align-items:center; gap:clamp(28px, 5vw, 90px);
+}
+.elegir__titulo{
+  font-size:clamp(34px, 4vw, 60px); line-height:1.05; color:#fff;
+}
+.elegir__lede{
+  margin-top:clamp(20px, 2.4vw, 32px); max-width:56ch;
+  font-size:clamp(15px, 1.2vw, 18px); line-height:1.8; color:rgba(255,255,255,.82);
+}
+.elegir__boton{ min-width:0; padding:16px 14px 16px 34px; font-size:clamp(16px, 1.3vw, 18px); gap:22px; }
+@media (max-width:860px){
+  .elegir__grid{ grid-template-columns:1fr; }
+  .elegir__boton{ justify-self:start; }
+}
+
 /* ---------- franja clara sobre el pie: mensaje y logotipo ---------- */
 .prefoot{
   position:relative; overflow:hidden; isolation:isolate;
@@ -886,7 +907,6 @@
   .phero__cta{ flex-direction:column; }
   .phero__cta .pill{ width:100%; }
   .spectable th, .spectable td{ font-size:13px; }
-  .guia .spectable th{ width:34%; font-size:14px; }
 }
 
 /* ---------- 404 ---------- */
