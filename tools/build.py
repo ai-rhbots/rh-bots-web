@@ -17,7 +17,7 @@ sys.path.insert(0, HERE)
 
 from PIL import Image  # noqa: E402
 from productos import PRODUCTOS, FAMILIAS, ESTADOS, BY_SLUG  # noqa: E402
-from sitio import (NAV, HOME, CONTACTO, POSTS, SEO, ANALITICA, CTA, PREFOOTER,  # noqa: E402
+from sitio import (NAV, HOME, CONTACTO, POSTS, SEO, ANALITICA, CTA, PREFOOTER, APLICACIONES,  # noqa: E402
                    TIENDA, RHBOTS)
 from limpiar_html import limpiar as limpiar_cuerpo  # noqa: E402
 
@@ -762,6 +762,86 @@ def product_page(p):
     return ''.join(out)
 
 
+def bloque_elegir(base):
+    """Cierre de catálogo y aplicaciones: «¿No sabes qué robot encaja mejor?»."""
+    return f'''  <section class="elegir" id="elegir">
+    <div class="wrap elegir__grid">
+      <div class="elegir__texto reveal">
+        <h2 class="elegir__titulo">¿No sabes qué robot encaja mejor?</h2>
+        <p class="elegir__lede">Cuéntanos tu proyecto y te ayudamos a seleccionar la familia, el modelo y la
+          configuración más adecuada para tu empresa o centro.</p>
+      </div>
+      <a class="pill elegir__boton reveal" href="{base}contacto.html"><span>Hablar con RH·BOTS</span>{CHEVRON}</a>
+    </div>
+  </section>
+'''
+
+
+def aplicaciones_page():
+    base = ''
+    a = APLICACIONES
+    out = [head('Aplicaciones de los robots RH·BOTS por sector | RH·BOTS', a.get('lede', ''),
+                base, 'aplicaciones.html'),
+           header(base, 'aplicaciones'), '<main id="contenido">']
+
+    sectores = a.get('sectores', [])
+    chips = ''.join(f'<a class="chip" href="#{e(x["id"])}">{e(x["titulo"])}</a>' for x in sectores)
+    out.append(f'''
+  <section class="hero hero--catalogo hero--aplicaciones" id="inicio">
+    <img class="hero__foto" src="{e(a.get('imagen', ''))}" alt="" aria-hidden="true" fetchpriority="high">
+    <div class="hero__velo" aria-hidden="true"></div>
+    <div class="hero__diagonal" aria-hidden="true"></div>
+    <div class="wrap hero__copy">
+      <p class="kicker hero__kicker">{e(a.get('kicker', ''))}</p>
+      <h1 class="display display--hero">{e(a.get('h1', ''))}</h1>
+      <p class="lede lede--hero">{e(a.get('lede', ''))}</p>
+      <div class="hero__cta">
+        <a class="pill" href="contacto.html"><span>Cuéntanos tu caso</span>{CHEVRON}</a>
+        <a class="pill pill--line" href="robots.html"><span>Ver los robots</span>{CHEVRON}</a>
+      </div>
+    </div>
+  </section>
+  <nav class="familias-nav" aria-label="Sectores">
+    <div class="wrap"><div class="chips chips--familias">{chips}</div></div>
+  </nav>
+''')
+
+    for i, x in enumerate(sectores):
+        tareas = ''.join(f'<li>{e(t)}</li>' for t in x.get('tareas', []))
+        robots = ''
+        for slug in x.get('robots', []):
+            r = BY_SLUG.get(slug)
+            if not r:
+                continue
+            foto = (f'<img src="{e(r["hero"])}" alt="" loading="lazy">' if r.get('hero')
+                    else placeholder(r['family'], r['name']))
+            robots += (f'<li><a class="minirobot" href="robots/{r["slug"]}.html">'
+                       f'<span class="minirobot__foto">{foto}</span>'
+                       f'<span class="minirobot__texto"><strong>{e(r["name"])}</strong>'
+                       f'<span>{e(ETIQUETA_FAMILIA.get(r["family"], ""))}</span></span></a></li>')
+        fondo = 'section--white' if i % 2 == 0 else 'section--light'
+        lado = ' sector--invertido' if i % 2 else ''
+        out.append(f'''  <section class="section {fondo} sector{lado}" id="{e(x['id'])}">
+    <div class="wrap sector__grid">
+      <figure class="sector__foto reveal"><img src="{e(x.get('imagen', ''))}" alt="{e(x['titulo'])}" loading="lazy"></figure>
+      <div class="sector__texto reveal">
+        <p class="kicker">{i + 1:02d}</p>
+        <h2 class="sector__titulo">{e(x['titulo'])}</h2>
+        <p class="sector__lede">{e(x.get('texto', ''))}</p>
+        <ul class="sector__tareas">{tareas}</ul>
+        <p class="sector__sub">Robots para este uso</p>
+        <ul class="sector__robots">{robots}</ul>
+      </div>
+    </div>
+  </section>
+''')
+
+    out.append(bloque_elegir(base))
+    out.append('</main>')
+    out.append(footer(base))
+    return ''.join(out)
+
+
 def cta_final(base):
     """Cierre de todas las páginas: franja diagonal, texto y robot a la derecha."""
     return f'''  <section class="ctafinal" id="hablamos">
@@ -853,18 +933,7 @@ def index_page():
   </section>
 ''')
 
-    # cierre propio del catálogo
-    out.append(f'''  <section class="elegir" id="elegir">
-    <div class="wrap elegir__grid">
-      <div class="elegir__texto reveal">
-        <h2 class="elegir__titulo">¿No sabes qué robot encaja mejor?</h2>
-        <p class="elegir__lede">Cuéntanos tu proyecto y te ayudamos a seleccionar la familia, el modelo y la
-          configuración más adecuada para tu empresa o centro.</p>
-      </div>
-      <a class="pill elegir__boton reveal" href="contacto.html"><span>Hablar con RH·BOTS</span>{CHEVRON}</a>
-    </div>
-  </section>
-''')
+    out.append(bloque_elegir(base))
     out.append('</main>')
     out.append(footer(base))
     return ''.join(out)
@@ -1007,7 +1076,7 @@ def home_page():
         <p class="kicker">{e(sec['kicker'])}</p>
         <h2 class="secbloque__titulo">{e(sec['titulo'])}</h2>
         <p class="secbloque__lede">{e(sec['texto'])}</p>
-        <a class="pill" href="contacto.html"><span>{e(sec['boton'])}</span>{CHEVRON}</a>
+        <a class="pill" href="aplicaciones.html"><span>{e(sec['boton'])}</span>{CHEVRON}</a>
       </div>
       <ul class="secbloque__fichas">{fichas}</ul>
     </div>
@@ -1480,7 +1549,7 @@ def pagina_404():
 
 def sitemap():
     d = SEO['dominio'].rstrip('/')
-    rutas = [('', '1.0'), ('robots.html', '0.9'), ('rh-bots.html', '0.6'),
+    rutas = [('', '1.0'), ('robots.html', '0.9'), ('aplicaciones.html', '0.8'), ('rh-bots.html', '0.6'),
              ('contacto.html', '0.7'), ('blog.html', '0.5'), ('legal.html', '0.2')]
     rutas += [(f'robots/{p["slug"]}.html', '0.8') for p in PRODUCTOS]
     rutas += [(p['url'], '0.6') for p in POSTS if p.get('url')]
@@ -1512,6 +1581,7 @@ def llms_txt():
             out.append(f'- [{p["name"]}]({d}/robots/{p["slug"]}.html): {p["claim"]}')
     out.append(f'\n\n## Empresa\n')
     out.append(f'- [Catálogo completo]({d}/robots.html)')
+    out.append(f'- [Aplicaciones por sector]({d}/aplicaciones.html): qué robot encaja en cada uso')
     out.append(f'- [Quiénes somos]({d}/rh-bots.html): equipo e historia de RH·BOTS')
     out.append(f'- [Contacto]({d}/contacto.html)')
     out.append(f'\n\n## Optional\n')
@@ -1529,6 +1599,7 @@ def main():
     paginas = [
         ('index.html',    home_page()),
         ('robots.html',   index_page()),
+        ('aplicaciones.html', aplicaciones_page()),
         ('rh-bots.html',  rh_bots_page()),
         ('blog.html',     blog_page()),
         ('contacto.html', contacto_page()),

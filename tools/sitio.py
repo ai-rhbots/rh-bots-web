@@ -24,6 +24,7 @@ CTA       = _d.get('cta', {
     'texto': '', 'boton': 'Solicitar información', 'imagen': 'assets/robot-frontal.png',
 })
 POSTS     = _d['posts']
+APLICACIONES = _d.get('aplicaciones', {})
 PREFOOTER = _d.get('prefooter', {'titulo': '', 'texto': ''})
 TIENDA    = _d.get('tienda', {'activa': False})
 RHBOTS    = _d.get('rhbots', {

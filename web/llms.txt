@@ -43,6 +43,7 @@
 ## Empresa
 
 - [Catálogo completo](https://www.rh-bots.com/robots.html)
+- [Aplicaciones por sector](https://www.rh-bots.com/aplicaciones.html): qué robot encaja en cada uso
 - [Quiénes somos](https://www.rh-bots.com/rh-bots.html): equipo e historia de RH·BOTS
 - [Contacto](https://www.rh-bots.com/contacto.html)
 

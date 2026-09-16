@@ -24,8 +24,8 @@
     },
     {
       "label": "Aplicaciones",
-      "href": "index.html#sectores",
-      "key": ""
+      "href": "aplicaciones.html",
+      "key": "aplicaciones"
     },
     {
       "label": "Accesorios",
@@ -241,6 +241,121 @@
         "Co-Founder",
         ""
       ]
+    ]
+  },
+  "aplicaciones": {
+    "kicker": "Aplicaciones",
+    "h1": "Robots que ya trabajan en entornos reales",
+    "lede": "Atención al público, intralogística, limpieza, formación, salud e inspección. Te ayudamos a elegir el robot adecuado para cada tarea y lo ponemos en marcha en tu instalación.",
+    "imagen": "assets/robots/t300/en-nave.webp",
+    "sectores": [
+      {
+        "id": "retail",
+        "titulo": "Retail y atención al público",
+        "texto": "Humanoides que reciben, informan y acompañan a clientes y visitantes, y que convierten un espacio comercial en una experiencia de marca.",
+        "tareas": [
+          "Recepción e información en tiendas, hoteles y oficinas",
+          "Promociones y activaciones en el punto de venta",
+          "Acompañamiento de visitantes y guía en showrooms",
+          "Preguntas frecuentes y derivación al personal"
+        ],
+        "robots": [
+          "rhx2",
+          "rha3",
+          "rhx2-ultra",
+          "rha3-ultra"
+        ],
+        "imagen": "assets/escenarios/complejos-comerciales.jpg"
+      },
+      {
+        "id": "intralogistica",
+        "titulo": "Industria e intralogística",
+        "texto": "Robots móviles que mueven material entre almacén y línea, y humanoides que manipulan piezas en la planta, sin obras ni cambios en la instalación.",
+        "tareas": [
+          "Transporte de material entre estaciones y almacén",
+          "Traslado de carros y estanterías",
+          "Movimiento de palés en suelo y primer nivel",
+          "Manipulación de piezas y alimentación de máquinas"
+        ],
+        "robots": [
+          "t150",
+          "t300",
+          "t600",
+          "t600-underride",
+          "mp2000",
+          "rhg2",
+          "omnipicker"
+        ],
+        "imagen": "assets/escenarios/fabricas-almacenes.jpg"
+      },
+      {
+        "id": "limpieza",
+        "titulo": "Limpieza de grandes superficies",
+        "texto": "Fregado, aspiración y barrido autónomos para superficies amplias, con rutas programadas y trabajo en horarios sin público.",
+        "tareas": [
+          "Supermercados y centros comerciales",
+          "Estaciones, aeropuertos y edificios de oficinas",
+          "Naves industriales y almacenes",
+          "Aparcamientos y zonas semiexteriores"
+        ],
+        "robots": [
+          "rhc5",
+          "mt1",
+          "mt1-max"
+        ],
+        "imagen": "assets/escenarios/supermercados.jpg"
+      },
+      {
+        "id": "educacion",
+        "titulo": "Educación, investigación y eventos",
+        "texto": "Plataformas abiertas para enseñar robótica e inteligencia artificial, desarrollar aplicaciones propias y protagonizar ferias y presentaciones.",
+        "tareas": [
+          "Docencia universitaria y formación profesional",
+          "Investigación en robótica humanoide y manipulación",
+          "Desarrollo de aplicaciones con SDK y simulación",
+          "Ferias, presentaciones y actuaciones"
+        ],
+        "robots": [
+          "rhx2-edu",
+          "rhx2-ultra",
+          "rha3-ultra",
+          "omnihand",
+          "omnihand-tactile",
+          "omnihand-pro-2025"
+        ],
+        "imagen": "assets/robots/rhx2-edu/aula-stem.webp"
+      },
+      {
+        "id": "salud",
+        "titulo": "Salud y asistencia",
+        "texto": "Interacción guiada y apoyo informativo en centros sanitarios y residencias, y limpieza autónoma de pasillos y zonas comunes.",
+        "tareas": [
+          "Recepción y orientación de pacientes y visitas",
+          "Apoyo informativo y acompañamiento no clínico",
+          "Limpieza de pasillos y zonas comunes"
+        ],
+        "robots": [
+          "rha3",
+          "rhx2",
+          "rhc5"
+        ],
+        "imagen": "assets/escenarios/hospitales.jpg"
+      },
+      {
+        "id": "inspeccion",
+        "titulo": "Inspección y seguridad",
+        "texto": "Un cuadrúpedo con ruedas que recorre exteriores, rampas y escaleras para inspeccionar instalaciones y hacer rondas de vigilancia.",
+        "tareas": [
+          "Rondas de inspección en plantas y aparcamientos",
+          "Vigilancia de perímetros y zonas exteriores",
+          "Recorridos por terreno irregular y escaleras",
+          "Reparto en recintos y última milla"
+        ],
+        "robots": [
+          "d5w"
+        ],
+        "imagen": "assets/robots/d5w/en-aparcamiento.webp"
+      }
     ]
   }
 }
