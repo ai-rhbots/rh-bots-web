@@ -961,6 +961,12 @@ def bloque_faq(preguntas, titulo='Preguntas frecuentes'):
 '''
 
 
+def minutos_lectura(post):
+    """Minutos de lectura a 200 palabras por minuto (mínimo 1)."""
+    palabras = len(re.sub(r'<[^>]+>', ' ', post.get('cuerpo', '')).split())
+    return max(1, -(-palabras // 200))
+
+
 MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio',
          'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
 
@@ -1162,20 +1168,61 @@ def blog_page():
 ''')
 
     if POSTS:
+        def buscable(post):
+            texto = ' '.join([post.get('titulo', ''), post.get('resumen', ''), post.get('categoria', ''),
+                              re.sub(r'<[^>]+>', ' ', post.get('cuerpo', ''))])
+            return e(' '.join(texto.split()).lower())
+
+        # artículo destacado: el más reciente
+        d = POSTS[0]
+        foto = (f'<div class="destacado__foto"><img src="{e(d["img"])}" alt="" loading="eager"></div>'
+                if d.get('img') else '')
+        etiquetas = '<span class="etiqueta">Destacado</span>'
+        if d.get('categoria'):
+            etiquetas += f'<span class="etiqueta">{e(d["categoria"])}</span>'
+        destacado = f'''<article class="destacado reveal" data-buscar="{buscable(d)}">
+        {foto}
+        <div class="destacado__texto">
+          <div class="destacado__etiquetas">{etiquetas}</div>
+          <p class="destacado__meta">{e(mes_y_ano(d.get('fecha', '')).capitalize())} · {minutos_lectura(d)} min de lectura</p>
+          <h3 class="destacado__titulo"><a href="{e(d['url'])}">{e(d['titulo'])}</a></h3>
+          <p class="destacado__resumen">{e(d.get('resumen', ''))}</p>
+          <a class="pill" href="{e(d['url'])}"><span>Leer artículo</span>{CHEVRON}</a>
+        </div>
+      </article>'''
+
         arts = ''
-        for post in POSTS:
+        for post in POSTS[1:]:
             img = (f'<div class="post__media"><img src="{e(post["img"])}" alt="" loading="lazy"></div>'
                    if post.get('img') else '')
-            arts += f'''<li class="post reveal"><a href="{e(post['url'])}">
+            arts += f'''<li class="post reveal" data-buscar="{buscable(post)}"><a href="{e(post['url'])}">
               {img}
               <div class="post__body">
-                <p class="post__meta">{e(post.get('categoria', ''))} · {e(mes_y_ano(post.get('fecha', '')))}</p>
-                <h2>{e(post['titulo'])}</h2>
+                <p class="post__meta">{e(post.get('categoria', ''))} · {e(mes_y_ano(post.get('fecha', '')))} · {minutos_lectura(post)} min</p>
+                <h3>{e(post['titulo'])}</h3>
                 <p>{e(post.get('resumen', ''))}</p>
                 <span class="pcard__more">Leer</span>
               </div></a></li>\n'''
-        out.append(f'  <section class="section section--white" id="articulos">\n    <div class="wrap">\n'
-                   f'      <ul class="postgrid">{arts}</ul>\n    </div>\n  </section>\n')
+
+        out.append(f'''  <section class="section section--white blogbusca" id="articulos">
+    <div class="wrap">
+      <header class="blogbusca__head reveal">
+        <div>
+          <p class="kicker">Conocimiento aplicado</p>
+          <h2 class="blogbusca__titulo">Ideas claras para tomar mejores decisiones</h2>
+        </div>
+        <form class="buscador" role="search" action="blog.html" data-buscador>
+          <label class="sr-only" for="buscar-articulos">Buscar artículos</label>
+          <input id="buscar-articulos" name="q" type="search" placeholder="Buscar artículos…" autocomplete="off">
+          <button type="submit" class="buscador__btn">Buscar</button>
+        </form>
+      </header>
+      {destacado}
+      <ul class="postgrid blogbusca__lista">{arts}</ul>
+      <p class="blogbusca__vacio" hidden>No hay artículos que coincidan con tu búsqueda.</p>
+    </div>
+  </section>
+''')
     else:
         out.append(f'''  <section class="section section--white" id="articulos">
     <div class="wrap wrap--narrow">

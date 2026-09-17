@@ -542,6 +542,35 @@
     pista.addEventListener('dragstart', function (ev) { ev.preventDefault(); });
   });
 
+  /* ---------- blog: buscador de artículos ----------
+     Filtra en la propia página: cada artículo lleva su texto en data-buscar.
+     No distingue mayúsculas ni tildes; todas las palabras deben aparecer.
+     Admite ?q= en la dirección, así el buscador también funciona sin JS.   */
+  var buscador = document.querySelector('[data-buscador]');
+  if (buscador) {
+    var campo = buscador.querySelector('input');
+    var fichas = document.querySelectorAll('[data-buscar]');
+    var vacio = document.querySelector('.blogbusca__vacio');
+    var llano = function (t) {
+      return String(t || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    };
+    var filtrar = function () {
+      var palabras = llano(campo.value).split(/\s+/).filter(Boolean);
+      var vistos = 0;
+      Array.prototype.forEach.call(fichas, function (f) {
+        var texto = llano(f.getAttribute('data-buscar'));
+        var ok = palabras.every(function (p) { return texto.indexOf(p) !== -1; });
+        f.hidden = !ok;
+        if (ok) { vistos++; f.classList.add('is-in'); }
+      });
+      if (vacio) vacio.hidden = vistos > 0;
+    };
+    buscador.addEventListener('submit', function (ev) { ev.preventDefault(); filtrar(); });
+    campo.addEventListener('input', filtrar);
+    var inicial = new URLSearchParams(location.search).get('q');
+    if (inicial) { campo.value = inicial; filtrar(); }
+  }
+
   /* ---------- reveal on scroll ---------- */
   var items = document.querySelectorAll('.reveal');
 
