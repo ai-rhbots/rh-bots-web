@@ -1057,6 +1057,35 @@ html body .artcard h3.artcard__titulo{
   .alianza__valor{ font-size:30px; }
 }
 
+/* ---------- conócenos: cta «¿Hablamos de tu proyecto?» ---------- */
+.proyecto{ padding-bottom:0; }
+.proyecto__caja{
+  position:relative; overflow:hidden;
+  display:grid; grid-template-columns:minmax(0, 1fr) auto;
+  align-items:center; gap:clamp(24px, 4vw, 64px);
+  max-width:1140px; margin-inline:auto;
+  padding:clamp(32px, 4vw, 56px) clamp(26px, 4.4vw, 64px);
+  border-radius:clamp(22px, 2.6vw, 34px);
+  background:
+    radial-gradient(ellipse 42% 120% at 100% 50%, rgba(0,158,227,.16), transparent 70%),
+    var(--light);
+  border:1px solid rgba(47,36,131,.08);
+}
+.proyecto__caja::before{
+  content:""; position:absolute; left:0; top:clamp(28px, 3vw, 40px); bottom:clamp(28px, 3vw, 40px);
+  width:4px; border-radius:0 4px 4px 0; background:var(--blue);
+}
+.proyecto__titulo{ font-size:clamp(28px, 3vw, 44px); line-height:1.08; color:var(--navy); }
+.proyecto__lede{
+  margin-top:clamp(10px, 1.2vw, 16px); max-width:56ch;
+  font-size:clamp(15px, 1.15vw, 17px); line-height:1.7; color:#4b5563;
+}
+.proyecto__boton{ padding:16px 14px 16px 30px; font-size:clamp(15px, 1.2vw, 17px); gap:20px; white-space:nowrap; }
+@media (max-width:760px){
+  .proyecto__caja{ grid-template-columns:1fr; }
+  .proyecto__boton{ justify-self:start; }
+}
+
 /* ---------- página de aplicaciones ---------- */
 .hero--aplicaciones .hero__foto,
 .hero--foto-ancha .hero__foto{ width:62%; object-fit:cover; }

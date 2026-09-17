@@ -260,6 +260,11 @@
         ]
       ]
     },
+    "proyecto": {
+      "titulo": "¿Hablamos de tu proyecto?",
+      "texto": "Cuéntanos qué necesitas y te ayudamos a valorar qué solución robótica encaja mejor con tu empresa.",
+      "boton": "Habla con nosotros"
+    },
     "proceso": {
       "kicker": "Cómo trabajamos",
       "titulo": "Un proceso claro para tomar buenas decisiones",
