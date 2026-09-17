@@ -1376,12 +1376,12 @@
           "assets/robots/rha3-ultra/retrato.webp"
         ],
         [
-          "Hombro y torso en movimiento",
-          "assets/robots/rha3-ultra/detalle-hombro.webp"
+          "El RHA3 Ultra saludando, de cuerpo entero",
+          "assets/robots/rha3-ultra/saludando.webp"
         ],
         [
-          "Detalle de brazos y piernas en carrera",
-          "assets/robots/rha3-ultra/detalle-brazos.webp"
+          "Gesto con la mano abierta, sentado",
+          "assets/robots/rha3-ultra/gesto-sentado.webp"
         ]
       ],
       "intro": "El RHA3 Ultra es la versión de mayores prestaciones del RHA3, un humanoide de tamaño adulto para uso comercial. Hereda la movilidad y la interacción del RHA3 y añade percepción LiDAR de 360°, cálculo de 700 TOPS, manos Omnihand de serie y posicionamiento UWB + RTK para trabajar de forma autónoma en interior y exterior. Fue presentado oficialmente en julio de 2026.",
