@@ -162,7 +162,7 @@ svg .nostroke{ stroke:none; }
 .hero{
   position:relative; overflow:hidden; isolation:isolate;
   background:var(--night);
-  min-height:clamp(460px, calc(100svh - var(--header-h) - 110px), 700px);
+  min-height:clamp(460px, calc(100svh - var(--header-h)), 1100px);
   display:flex; align-items:center;
 }
 /* franja diagonal azul translúcida del lado derecho */
@@ -183,7 +183,7 @@ svg .nostroke{ stroke:none; }
 }
 .hero .display--hero{
   margin-top:clamp(14px, 1.6vw, 22px);
-  font-size:clamp(38px, 5.4vw, 80px);
+  font-size:clamp(40px, 6vw, 90px);
   line-height:1;
   letter-spacing:-.05em;
   color:#fff;
@@ -192,7 +192,7 @@ svg .nostroke{ stroke:none; }
 .hero .lede--hero{
   margin-top:clamp(18px, 2vw, 28px);
   max-width:44ch;
-  font-size:clamp(15px, 1.2vw, 18px);
+  font-size:clamp(15px, 1.3vw, 19px);
   line-height:1.65;
   color:rgba(255,255,255,.86);
 }
