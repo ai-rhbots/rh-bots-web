@@ -1262,6 +1262,19 @@ def blog_page():
   </section>
 ''')
 
+    # cierre: orientación para elegir robot
+    out.append(f'''  <section class="orienta" id="orientacion">
+    <div class="orienta__halo" aria-hidden="true"></div>
+    <div class="wrap orienta__texto reveal">
+      <p class="kicker">¿Necesitas orientación?</p>
+      <h2 class="orienta__titulo">Te ayudamos a entender qué robot <span class="acento">encaja con tu empresa</span></h2>
+      <p class="orienta__lede">Cuéntanos tu caso y nuestro equipo te asesorará sobre modelos, aplicaciones y
+        próximos pasos.</p>
+      <a class="pill pill--line" href="contacto.html"><span>Solicitar información</span>{CHEVRON}</a>
+    </div>
+  </section>
+''')
+
     out.append('</main>')
     out.append(footer(base))
     return ''.join(out)

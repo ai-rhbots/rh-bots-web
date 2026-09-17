@@ -796,6 +796,28 @@ html body .destacado h3.destacado__titulo{
   background:#fff; color:var(--ink-66); font-size:16px;
 }
 
+/* ---------- blog: cierre «¿Necesitas orientación?» ---------- */
+.orienta{
+  position:relative; overflow:hidden; isolation:isolate;
+  background:var(--night); color:#fff;
+  padding-block:clamp(64px, 9vw, 140px);
+}
+/* halo azul desenfocado en la esquina superior derecha */
+.orienta__halo{
+  position:absolute; z-index:-1; pointer-events:none;
+  top:-22%; right:-8%; width:clamp(260px, 32vw, 480px); aspect-ratio:1;
+  border-radius:50%; background:rgba(0,158,227,.2); filter:blur(18px);
+}
+.orienta__titulo{
+  margin-top:clamp(14px, 1.6vw, 22px); max-width:17ch;
+  font-size:clamp(36px, 4.6vw, 72px); line-height:1.02; color:#fff;
+}
+.orienta__lede{
+  margin-top:clamp(18px, 2.2vw, 30px); max-width:46ch;
+  font-size:clamp(15px, 1.25vw, 19px); line-height:1.75; color:rgba(255,255,255,.72);
+}
+.orienta .pill{ margin-top:clamp(26px, 3vw, 44px); min-width:0; }
+
 /* ---------- blog: últimos artículos con filtro por categoría ---------- */
 .ultimos__titulo{
   margin-top:clamp(12px, 1.4vw, 18px);
