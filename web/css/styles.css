@@ -155,7 +155,6 @@ svg .nostroke{ stroke:none; }
 .nav__grupo:hover .nav__sub--mega,
 .nav__grupo:focus-within .nav__sub--mega,
 .nav__grupo.is-open .nav__sub--mega{ transform:translateX(-50%); }
-.nav__sub--mega::before{ left:-50vw; right:-50vw; }
 .nav .nav__sub--mega .nav__famtit{
   display:block; padding:0 0 10px; border-radius:0;
   border-bottom:1px solid rgba(40,40,40,.1);
