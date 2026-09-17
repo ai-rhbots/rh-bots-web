@@ -243,6 +243,11 @@
       "texto": "Trabajamos junto a AGIBOT y PUDU para traer a España y Portugal soluciones robóticas ya probadas en entornos reales.",
       "cifras": [
         [
+          "+145.000",
+          "robots de AGIBOT y PUDU fabricados y enviados en todo el mundo",
+          "destacada"
+        ],
+        [
           "{modelos}",
           "modelos disponibles para distintos sectores"
         ],

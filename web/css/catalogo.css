@@ -1039,6 +1039,14 @@ html body .artcard h3.artcard__titulo{
   text-align:center;
 }
 .alianza__cifra + .alianza__cifra{ border-left:1px solid rgba(255,255,255,.14); }
+.alianza__cifra--destacada{
+  grid-column:1 / -1;
+  background:rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.14);
+}
+.alianza__cifra--destacada .alianza__valor{ font-size:clamp(60px, 8.4vw, 124px); }
+.alianza__cifra--destacada .alianza__etiqueta{ max-width:40ch; font-size:clamp(15px, 1.3vw, 19px); }
+.alianza__cifra--destacada + .alianza__cifra{ border-left:0; }
 .alianza__valor{
   font-family:var(--font-titulo); font-weight:800; letter-spacing:-.03em;
   font-size:clamp(52px, 6vw, 88px); line-height:1; color:#fff;
@@ -1051,6 +1059,7 @@ html body .artcard h3.artcard__titulo{
 @media (max-width:760px){
   .alianza__cifras{ grid-template-columns:1fr; }
   .alianza__cifra + .alianza__cifra{ border-left:0; border-top:1px solid rgba(255,255,255,.14); }
+  .alianza__cifra--destacada + .alianza__cifra{ border-top:0; }
 }
 
 /* ---------- página de aplicaciones ---------- */
