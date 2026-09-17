@@ -227,7 +227,7 @@
     "lede": "Distribuidor oficial de AGIBOT en España y Portugal, con base en Picassent (Valencia). Acompañamos a cada cliente desde la elección del robot hasta el mantenimiento del día a día.",
     "mision": {
       "kicker": "Nuestra misión",
-      "titulo": "Hacer que la robótica humanoide sea accesible, fiable y rentable",
+      "titulo": "Hacer que la robótica humanoide sea <span class=\"acento\">accesible, fiable y rentable</span>",
       "parrafos": [
         "Cada proyecto empieza escuchando. Analizamos necesidades, identificamos oportunidades y recomendamos el modelo de robot que mejor encaja con el objetivo de negocio.",
         "Nuestro equipo combina conocimiento técnico, visión de producto e integración práctica para que la implantación sea clara y medible."
