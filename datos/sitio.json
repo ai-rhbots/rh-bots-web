@@ -375,7 +375,7 @@
           "rhx2-ultra",
           "rha3-ultra"
         ],
-        "imagen": "assets/escenarios/complejos-comerciales.jpg"
+        "imagen": "assets/escenarios/complejos-comerciales.webp"
       },
       {
         "id": "intralogistica",
@@ -396,7 +396,7 @@
           "rhg2",
           "omnipicker"
         ],
-        "imagen": "assets/escenarios/fabricas-almacenes.jpg"
+        "imagen": "assets/escenarios/fabricas-almacenes.webp"
       },
       {
         "id": "limpieza",
@@ -413,7 +413,7 @@
           "mt1",
           "mt1-max"
         ],
-        "imagen": "assets/escenarios/supermercados.jpg"
+        "imagen": "assets/escenarios/supermercados.webp"
       },
       {
         "id": "educacion",
@@ -449,7 +449,7 @@
           "rhx2",
           "rhc5"
         ],
-        "imagen": "assets/escenarios/hospitales.jpg"
+        "imagen": "assets/escenarios/hospitales.webp"
       },
       {
         "id": "inspeccion",

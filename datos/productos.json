@@ -360,7 +360,7 @@
       "videos": [
         {
           "src": "assets/video/x2.mp4",
-          "poster": "assets/video/x2.jpg",
+          "poster": "assets/video/x2.webp",
           "titulo": "El RHX2 en acción"
         }
       ]
@@ -1765,12 +1765,12 @@
       "videos": [
         {
           "src": "assets/video/a3-ultra-1.mp4",
-          "poster": "assets/video/a3-ultra-1.jpg",
+          "poster": "assets/video/a3-ultra-1.webp",
           "titulo": "El RHA3 Ultra en movimiento"
         },
         {
           "src": "assets/video/a3-ultra-2.mp4",
-          "poster": "assets/video/a3-ultra-2.jpg",
+          "poster": "assets/video/a3-ultra-2.webp",
           "titulo": "Manipulación e interacción"
         }
       ]
@@ -2814,27 +2814,27 @@
       "applications": [
         [
           "Supermercados",
-          "assets/escenarios/supermercados.jpg"
+          "assets/escenarios/supermercados.webp"
         ],
         [
           "Edificios de oficinas",
-          "assets/escenarios/edificios-oficinas.jpg"
+          "assets/escenarios/edificios-oficinas.webp"
         ],
         [
           "Estaciones y aeropuertos",
-          "assets/escenarios/estaciones-transporte.jpg"
+          "assets/escenarios/estaciones-transporte.webp"
         ],
         [
           "Fábricas y almacenes",
-          "assets/escenarios/fabricas-almacenes.jpg"
+          "assets/escenarios/fabricas-almacenes.webp"
         ],
         [
           "Complejos comerciales",
-          "assets/escenarios/complejos-comerciales.jpg"
+          "assets/escenarios/complejos-comerciales.webp"
         ],
         [
           "Hospitales",
-          "assets/escenarios/hospitales.jpg"
+          "assets/escenarios/hospitales.webp"
         ]
       ],
       "notes": [

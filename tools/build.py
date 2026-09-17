@@ -235,7 +235,54 @@ def analitica():
     return out
 
 
+_COLGANDO = {'de', 'del', 'a', 'al', 'con', 'para', 'por', 'en', 'y', 'o', 'sin',
+             'sobre', 'el', 'la', 'los', 'las', 'un', 'una', 'que', 'su', 'sus'}
+
+
+def _recorta(texto, limite, puntos=True):
+    """Recorta por palabras, sin dejar la frase colgando de una preposición."""
+    texto = texto.strip()
+    if len(texto) <= limite:
+        return texto
+    palabras = texto[:limite].split(' ')[:-1]
+    while palabras and (palabras[-1].lower().strip(',.;:') in _COLGANDO
+                        or palabras[-1].strip(',.;:').replace('.', '').isdigit()):
+        palabras.pop()
+    corte = ' '.join(palabras).rstrip(' ,.;:·—-')
+    return corte + ('…' if puntos else '')
+
+
+def titulo_seo(title, limite=60):
+    """Google enseña unos 60 caracteres del título.
+
+    Los títulos de ficha son «MODELO · qué es | RH·BOTS»: si no caben, se
+    acorta primero la descripción del medio y, si aún sobra, se quita
+    entera. La marca del final y el nombre del modelo no se tocan.
+    """
+    if len(title) <= limite:
+        return title
+    # la marca es lo que va detrás de la última barra: no se toca
+    if ' | ' in title:
+        cuerpo, marca = title.rsplit(' | ', 1)
+        sufijo = ' | ' + marca
+    else:
+        cuerpo, sufijo = title, ''
+    hueco = limite - len(sufijo)
+    if ' · ' in cuerpo:
+        nombre, claim = cuerpo.split(' · ', 1)
+        if len(nombre) + 3 + 12 <= hueco:      # cabe el nombre y algo de claim
+            cuerpo = nombre + ' · ' + _recorta(claim, hueco - len(nombre) - 3, puntos=False)
+        else:
+            cuerpo = _recorta(nombre, hueco, puntos=False)
+    else:
+        cuerpo = _recorta(cuerpo, hueco)
+    return cuerpo + sufijo
+
+
 def head(title, desc, base, ruta='', extra_css=True, og_img=None, extra_jsonld=None):
+    # los buscadores cortan a unos 60 y 160 caracteres: mejor cortar nosotros
+    title = titulo_seo(title)
+    desc = _recorta(desc, 158)
     dominio = SEO['dominio'].rstrip('/')
     canonical = f'{dominio}/{ruta}' if ruta and ruta != 'index.html' else dominio + '/'
     imagen = f'{dominio}/{og_img or SEO["og_imagen"]}'
@@ -383,7 +430,7 @@ def prefooter(base):
       <p>{e(PREFOOTER.get('texto', ''))}</p>
     </div>
     <a class="prefoot__logo" href="{base}index.html" aria-label="RH·BOTS — inicio">
-      <img src="{base}assets/logo-rhbots-vertical.png" alt="RH·BOTS — Recursos Humanoides"
+      <img src="{base}assets/logo-rhbots-vertical.webp" alt="RH·BOTS — Recursos Humanoides"
            width="560" height="452" loading="lazy">
     </a>
     <div class="prefoot__redes">
@@ -579,7 +626,7 @@ def fondo_video(nombre, base, clase=''):
         return ''
     return (f'<div class="fondovid {clase}" aria-hidden="true">'
             f'<video autoplay muted loop playsinline preload="metadata" '
-            f'poster="{base}assets/video/{nombre}.jpg">'
+            f'poster="{base}assets/video/{nombre}.webp">'
             f'<source src="{base}assets/video/{nombre}.mp4" type="video/mp4">'
             f'</video></div>')
 
@@ -625,7 +672,13 @@ def product_page(p):
     base = '../'
     fam = p['family']
     dominio = SEO['dominio'].rstrip('/')
+    # si el claim entero no cabe en los ~60 caracteres que enseña Google,
+    # es más limpio poner la familia que dejar la frase a medias
     title = f'{p["name"]} · {p["claim"]} | RH·BOTS'
+    if len(title) > 60:
+        corto = f'{p["name"]} · {ETIQUETA_FAMILIA.get(fam, FAM_NAME[fam])} | RH·BOTS'
+        if len(corto) <= 60:
+            title = corto
     breadcrumb = schema_breadcrumb([
         ('Inicio', dominio + '/'),
         ('Robots', dominio + '/robots.html'),
@@ -1586,7 +1639,7 @@ def contacto_page():
     out.append(f'''
   <section class="ctohero" id="inicio">
     <div class="ctohero__lado ctohero__lado--foto" aria-hidden="true">
-      <img src="{base}assets/video/fondo-c5.jpg" alt="" width="1280" height="720" fetchpriority="high">
+      <img src="{base}assets/video/fondo-c5.webp" alt="" width="1280" height="720" fetchpriority="high">
     </div>
     <div class="wrap ctohero__grid">
       <div class="ctohero__copy">
@@ -1812,9 +1865,35 @@ def _titulo(m):
     return abre + dentro + cierra
 
 
+_IMG = re.compile(r'<img\b[^>]*>')
+
+
+def _con_medidas(html_pagina, carpeta):
+    """Añade width/height a las <img> que no los traigan.
+
+    Sin estas medidas el navegador no reserva el hueco y la página da saltos
+    al cargar (mal CLS, uno de los Core Web Vitals). Las dimensiones salen
+    del archivo, así que siempre cuadran con la imagen real.
+    """
+    def arregla(m):
+        tag = m.group(0)
+        if 'width=' in tag and 'height=' in tag:
+            return tag
+        src = re.search(r'src="([^"]+)"', tag)
+        if not src:
+            return tag
+        ruta = os.path.normpath(os.path.join(carpeta, src.group(1)))
+        dims = dimensiones(ruta)
+        return tag[:-1].rstrip() + f'{img_dims_attr(ruta)}>' if dims else tag
+    return _IMG.sub(arregla, html_pagina)
+
+
 def write(path, content):
     if path.endswith('.html'):
         content = _TITULO.sub(_titulo, content)
+        # carpeta de la página dentro de web/, para resolver los src relativos
+        carpeta = os.path.relpath(os.path.dirname(path), WEB)
+        content = _con_medidas(content, '' if carpeta == '.' else carpeta)
     os.makedirs(os.path.dirname(path), exist_ok=True)
     io.open(path, 'w', encoding='utf-8').write(content)
     return path
