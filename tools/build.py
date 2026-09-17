@@ -1407,12 +1407,10 @@ def rh_bots_page():
     if al:
         valores = {'modelos': len(PRODUCTOS),
                    'familias': len({p['family'] for p in PRODUCTOS})}
-        # una cifra puede llevar un tercer elemento, «destacada», y ocupa toda la fila
         celdas = ''.join(
-            f'<div class="alianza__cifra{" alianza__cifra--destacada" if c[2:] == ["destacada"] else ""}">'
-            f'<p class="alianza__valor" data-contar>{e(str(c[0]).format(**valores))}</p>'
-            f'<p class="alianza__etiqueta">{e(c[1])}</p></div>'
-            for c in al.get('cifras', []))
+            f'<div class="alianza__cifra"><p class="alianza__valor" data-contar>{e(str(v).format(**valores))}</p>'
+            f'<p class="alianza__etiqueta">{e(et)}</p></div>'
+            for v, et in al.get('cifras', []))
         out.append(f'''  <section class="alianza" id="alianza">
     <div class="wrap">
       <header class="alianza__head reveal">

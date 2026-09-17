@@ -244,8 +244,11 @@
       "cifras": [
         [
           "+145.000",
-          "robots de AGIBOT y PUDU fabricados y enviados en todo el mundo",
-          "destacada"
+          "robots de AGIBOT y PUDU fabricados y enviados en todo el mundo"
+        ],
+        [
+          "2",
+          "países con distribución oficial de AGIBOT y PUDU: España y Portugal"
         ],
         [
           "{modelos}",
@@ -254,10 +257,6 @@
         [
           "{familias}",
           "familias de robots: humanoides, cuadrúpedos, limpieza, AMR y accesorios"
-        ],
-        [
-          "2",
-          "países con distribución oficial de AGIBOT y PUDU: España y Portugal"
         ]
       ]
     },
