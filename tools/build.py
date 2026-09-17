@@ -1377,6 +1377,25 @@ def rh_bots_page():
   </section>
 ''')
 
+    # misión
+    m = r.get('mision')
+    if m:
+        parrafos = ''.join(f'<p>{e(x)}</p>' for x in m.get('parrafos', []))
+        puntos = ''.join(f'<li>{e(x)}</li>' for x in m.get('puntos', []))
+        out.append(f'''  <section class="section section--white mision" id="mision">
+    <div class="wrap mision__grid">
+      <div class="mision__cabecera reveal">
+        <p class="kicker">{e(m.get('kicker', ''))}</p>
+        <h2 class="mision__titulo">{e(m.get('titulo', ''))}</h2>
+      </div>
+      <div class="mision__texto reveal">
+        {parrafos}
+        <ul class="sector__tareas mision__puntos">{puntos}</ul>
+      </div>
+    </div>
+  </section>
+''')
+
     if r.get('cifras'):
         celdas = ''.join(
             f'<div class="cifra reveal"><p class="cifra__valor">{e(v)}</p>'

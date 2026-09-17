@@ -953,6 +953,26 @@ html body .artcard h3.artcard__titulo{
   .form .pill{ width:100%; }
 }
 
+/* ---------- conócenos: misión ---------- */
+.mision__grid{
+  display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);
+  gap:clamp(32px, 6vw, 110px); align-items:start;
+}
+.mision__titulo{
+  margin-top:clamp(14px, 1.6vw, 22px);
+  font-size:clamp(32px, 3.8vw, 58px); line-height:1.06; color:var(--ink);
+}
+.mision__texto p{
+  font-size:clamp(16px, 1.3vw, 19px); line-height:1.8; color:var(--ink-66);
+}
+.mision__texto p + p{ margin-top:clamp(14px, 1.6vw, 20px); }
+.mision__puntos{
+  margin-top:clamp(24px, 2.8vw, 36px); padding-top:clamp(20px, 2.4vw, 30px);
+  border-top:1px solid rgba(40,40,40,.1);
+}
+.mision__puntos li{ font-weight:600; }
+@media (max-width:860px){ .mision__grid{ grid-template-columns:1fr; } }
+
 /* ---------- página de aplicaciones ---------- */
 .hero--aplicaciones .hero__foto,
 .hero--foto-ancha .hero__foto{ width:62%; object-fit:cover; }
