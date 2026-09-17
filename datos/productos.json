@@ -393,10 +393,6 @@
         [
           "En movimiento sobre plataforma",
           "assets/robots/rha3/en-pedestal.webp"
-        ],
-        [
-          "Cabeza y torso",
-          "assets/robots/rha3/detalle-torso.webp"
         ]
       ],
       "intro": "El RHA3 es un humanoide bípedo de tamaño adulto orientado a espectáculos comerciales, entretenimiento interactivo, recepción, presentaciones y exposiciones. Con 55 kg y 12 kW de potencia instantánea, ejecuta movimientos dinámicos de escena, y su doble batería intercambiable permite trabajar durante periodos prolongados. Incluye de serie posicionamiento UWB para coordinar grupos de más de 100 robots.",
@@ -1378,6 +1374,14 @@
         [
           "Cabeza y torso del RHA3 Ultra",
           "assets/robots/rha3-ultra/retrato.webp"
+        ],
+        [
+          "Hombro y torso en movimiento",
+          "assets/robots/rha3-ultra/detalle-hombro.webp"
+        ],
+        [
+          "Detalle de brazos y piernas en carrera",
+          "assets/robots/rha3-ultra/detalle-brazos.webp"
         ]
       ],
       "intro": "El RHA3 Ultra es la versión de mayores prestaciones del RHA3, un humanoide de tamaño adulto para uso comercial. Hereda la movilidad y la interacción del RHA3 y añade percepción LiDAR de 360°, cálculo de 700 TOPS, manos Omnihand de serie y posicionamiento UWB + RTK para trabajar de forma autónoma en interior y exterior. Fue presentado oficialmente en julio de 2026.",
