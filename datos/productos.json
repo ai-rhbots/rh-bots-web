@@ -1364,7 +1364,7 @@
     },
     {
       "slug": "rha3-ultra",
-      "name": "RHA3 Ultra \"Reboniko\"",
+      "name": "RHA3 Ultra \"Rebonico\"",
       "base": "AGIBOT A3 Ultra",
       "family": "humanoides",
       "status": "disponible",
@@ -1372,12 +1372,12 @@
       "claim": "Humanoide de servicio para operación autónoma 24/7",
       "tagline": "La versión de mayores prestaciones del RHA3: percepción LiDAR de 360°, 700 TOPS de cálculo, carga autónoma y un sistema de seguridad en cuatro capas.",
       "hero": "assets/robots/rha3-ultra/hero.webp",
-      "hero_alt": "Humanoide avanzado RHA3 Ultra",
+      "hero_alt": "RHA3 Ultra Rebonico corriendo, recortado sobre fondo transparente",
       "frames": [],
       "gallery": [
         [
-          "El RHA3 Ultra en carrera",
-          "assets/robots/rha3-ultra/en-carrera.webp"
+          "Cabeza y torso del RHA3 Ultra",
+          "assets/robots/rha3-ultra/retrato.webp"
         ]
       ],
       "intro": "El RHA3 Ultra es la versión de mayores prestaciones del RHA3, un humanoide de tamaño adulto para uso comercial. Hereda la movilidad y la interacción del RHA3 y añade percepción LiDAR de 360°, cálculo de 700 TOPS, manos Omnihand de serie y posicionamiento UWB + RTK para trabajar de forma autónoma en interior y exterior. Fue presentado oficialmente en julio de 2026.",

@@ -11,7 +11,7 @@
 - [RHA3](https://www.rh-bots.com/robots/rha3.html): Humanoide de tamaño adulto para escena y atención al público
 - [RHX2 Ultra](https://www.rh-bots.com/robots/rhx2-ultra.html): Humanoide programable con percepción 3D y NVIDIA Orin NX
 - [RHX2 EDU](https://www.rh-bots.com/robots/rhx2-edu.html): Humanoide desmontable para enseñanza e investigación
-- [RHA3 Ultra "Reboniko"](https://www.rh-bots.com/robots/rha3-ultra.html): Humanoide de servicio para operación autónoma 24/7
+- [RHA3 Ultra "Rebonico"](https://www.rh-bots.com/robots/rha3-ultra.html): Humanoide de servicio para operación autónoma 24/7
 - [RHG2](https://www.rh-bots.com/robots/rhg2.html): Humanoide industrial con base móvil y torso telescópico
 
 ### Cuadrúpedos
