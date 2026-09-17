@@ -793,14 +793,6 @@
         [
           "En movimiento",
           "assets/robots/rhx2-ultra/en-movimiento.webp"
-        ],
-        [
-          "Mano diestra OmniHand",
-          "assets/robots/accesorios/mano.webp"
-        ],
-        [
-          "Equipo de teleoperación",
-          "assets/robots/accesorios/vr.webp"
         ]
       ],
       "intro": "El RHX2 Ultra es la configuración superior de la serie X2. Añade brazos de 7 grados de libertad, LiDAR 3D, cámaras RGB-D, binocular y trasera, conectividad 4G/5G y una unidad NVIDIA Orin NX de 16 GB para desarrollo secundario. Está pensado para visitas guiadas, retail, actuaciones e investigación.",
