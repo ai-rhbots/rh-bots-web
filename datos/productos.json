@@ -5560,9 +5560,13 @@
       "claim": "Mano robótica diestra de 19 grados de libertad",
       "tagline": "Efector final de cinco dedos con 12 articulaciones activas y detección de fuerza tridimensional en las yemas, para tareas de manipulación fina con más carga.",
       "hero": "assets/robots/omnihand-pro-2025/hero.webp",
-      "hero_alt": "Dibujo técnico de la mano robótica OmniHand Pro 2025 con el índice extendido y el resto de dedos flexionados",
+      "hero_alt": "Mano robótica OmniHand Pro 2025 vista de frente",
       "frames": [],
       "gallery": [
+        [
+          "La OmniHand Pro 2025 haciendo un gesto con dos dedos",
+          "assets/robots/omnihand-pro-2025/gesto-dos-dedos.webp"
+        ],
         [
           "Esquema cinemático de dedos y pulgar",
           "assets/robots/omnihand-pro-2025/esquema-articulaciones.webp"
