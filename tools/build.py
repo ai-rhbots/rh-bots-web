@@ -1423,22 +1423,6 @@ def rh_bots_page():
   </section>
 ''')
 
-    # cta: ¿hablamos de tu proyecto?
-    pj = r.get('proyecto')
-    if pj:
-        out.append(f'''  <section class="section section--white proyecto" id="proyecto">
-    <div class="wrap">
-      <div class="proyecto__caja reveal">
-        <div class="proyecto__texto">
-          <h2 class="proyecto__titulo">{e(pj.get('titulo', ''))}</h2>
-          <p class="proyecto__lede">{e(pj.get('texto', ''))}</p>
-        </div>
-        <a class="pill proyecto__boton" href="{base}contacto.html"><span>{e(pj.get('boton') or 'Habla con nosotros')}</span>{CHEVRON}</a>
-      </div>
-    </div>
-  </section>
-''')
-
     # cómo trabajamos: cuatro pasos
     pr = r.get('proceso')
     if pr:
@@ -1456,6 +1440,22 @@ def rh_bots_page():
         <p class="proceso__texto">{e(pr.get('texto', ''))}</p>
       </header>
       <ol class="pasos">{pasos}</ol>
+    </div>
+  </section>
+''')
+
+    # cta: ¿hablamos de tu proyecto?
+    pj = r.get('proyecto')
+    if pj:
+        out.append(f'''  <section class="section section--white proyecto" id="proyecto">
+    <div class="wrap">
+      <div class="proyecto__caja reveal">
+        <div class="proyecto__texto">
+          <h2 class="proyecto__titulo">{e(pj.get('titulo', ''))}</h2>
+          <p class="proyecto__lede">{e(pj.get('texto', ''))}</p>
+        </div>
+        <a class="pill proyecto__boton" href="{base}contacto.html"><span>{e(pj.get('boton') or 'Habla con nosotros')}</span>{CHEVRON}</a>
+      </div>
     </div>
   </section>
 ''')

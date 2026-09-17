@@ -1058,7 +1058,7 @@ html body .artcard h3.artcard__titulo{
 }
 
 /* ---------- conócenos: cta «¿Hablamos de tu proyecto?» ---------- */
-.proyecto{ padding-bottom:0; }
+.proyecto{ padding-top:0; }
 .proyecto__caja{
   position:relative; overflow:hidden;
   display:grid; grid-template-columns:minmax(0, 1fr) auto;
