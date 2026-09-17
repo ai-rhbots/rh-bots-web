@@ -284,15 +284,25 @@ def header(base, active='robots'):
         cls = ' class="is-active"' if it['key'] and it['key'] == active else ''
         enlace = '<a href="%s%s"%s>%s</a>' % (base, it['href'], cls, e(it['label']))
         if it['key'] == 'robots':
-            # submenú con las familias del catálogo (desplegable en escritorio y en móvil)
-            subs = ''.join(
-                f'<li><a href="{base}robots.html#{k}">{e(n)}</a></li>'
-                for k, n, _ in FAMILIAS if any(p['family'] == k for p in PRODUCTOS))
+            # submenú con las familias del catálogo y sus modelos
+            subs = ''
+            for k, n, _ in FAMILIAS:
+                modelos = [q for q in PRODUCTOS if q['family'] == k]
+                if not modelos:
+                    continue
+                enlaces = ''.join(
+                    f'<li><a href="{base}robots/{q["slug"]}.html">{e(q["name"])}</a></li>'
+                    for q in modelos)
+                subs += (f'<li class="nav__fam">'
+                         f'<a class="nav__famtit" href="{base}robots.html#{k}">{e(n)}</a>'
+                         f'<ul class="nav__mods">{enlaces}</ul></li>')
+            subs += (f'<li class="nav__todos"><a href="{base}robots.html">'
+                     f'Ver todo el catálogo{FLECHA}</a></li>')
             enlace = (f'<div class="nav__grupo">{enlace}'
                       f'<button type="button" class="nav__abrir" aria-expanded="false" '
-                      f'aria-controls="sub-robots" aria-label="Ver familias de robots">'
+                      f'aria-controls="sub-robots" aria-label="Ver familias y modelos de robots">'
                       f'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>'
-                      f'<ul class="nav__sub" id="sub-robots">{subs}</ul></div>')
+                      f'<ul class="nav__sub nav__sub--mega" id="sub-robots">{subs}</ul></div>')
         parts.append(enlace)
     links = '\n      '.join(parts)
     return f'''
