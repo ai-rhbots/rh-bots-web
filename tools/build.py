@@ -1450,6 +1450,8 @@ def rh_bots_page():
         out.append(f'''  <section class="section section--white proyecto" id="proyecto">
     <div class="wrap">
       <div class="proyecto__caja reveal">
+        {f'<img class="proyecto__foto" src="{base}{e(pj["foto"])}" alt="" width="1300" height="855" loading="lazy" decoding="async">' if pj.get('foto') else ''}
+        <div class="proyecto__velo" aria-hidden="true"></div>
         <div class="proyecto__texto">
           <h2 class="proyecto__titulo">{e(pj.get('titulo', ''))}</h2>
           <p class="proyecto__lede">{e(pj.get('texto', ''))}</p>

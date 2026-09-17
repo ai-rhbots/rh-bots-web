@@ -263,7 +263,8 @@
     "proyecto": {
       "titulo": "¿Hablamos de tu proyecto?",
       "texto": "Cuéntanos qué necesitas y te ayudamos a valorar qué solución robótica encaja mejor con tu empresa.",
-      "boton": "Habla con nosotros"
+      "boton": "Habla con nosotros",
+      "foto": "assets/robots/rhx2-ultra/serie-x2.webp"
     },
     "proceso": {
       "kicker": "Cómo trabajamos",
