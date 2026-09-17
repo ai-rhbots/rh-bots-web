@@ -1358,12 +1358,21 @@ def rh_bots_page():
                 extra_jsonld=personas_jsonld),
            header(base, 'rhbots'), '<main id="contenido">']
 
+    # portada con foto, como las de robots, aplicaciones y blog
     out.append(f'''
-  <section class="chero">
-    <div class="wrap">
-      {f'<p class="art__meta">{e(r["kicker"])}</p>' if r.get('kicker') else ''}
-      <h1 class="display display--left">{e(r.get('h1', ''))}</h1>
-      <p class="lede lede--left">{e(r.get('lede', ''))}</p>
+  <section class="hero hero--catalogo hero--foto-ancha" id="inicio">
+    <img class="hero__foto hero__foto--arriba" src="assets/conocenos-portada.webp" alt="" aria-hidden="true"
+         width="1600" height="1632" fetchpriority="high">
+    <div class="hero__velo" aria-hidden="true"></div>
+    <div class="hero__diagonal" aria-hidden="true"></div>
+    <div class="wrap hero__copy">
+      {f'<p class="kicker hero__kicker">{e(r["kicker"])}</p>' if r.get('kicker') else ''}
+      <h1 class="display display--hero">{e(r.get('h1', ''))}</h1>
+      <p class="lede lede--hero">{e(r.get('lede', ''))}</p>
+      <div class="hero__cta">
+        <a class="pill" href="contacto.html"><span>Habla con nosotros</span>{CHEVRON}</a>
+        <a class="pill pill--line" href="robots.html"><span>Ver los robots</span>{CHEVRON}</a>
+      </div>
     </div>
   </section>
 ''')

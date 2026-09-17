@@ -956,6 +956,7 @@ html body .artcard h3.artcard__titulo{
 /* ---------- página de aplicaciones ---------- */
 .hero--aplicaciones .hero__foto,
 .hero--foto-ancha .hero__foto{ width:62%; object-fit:cover; }
+.hero__foto--arriba{ object-position:50% 20%; }
 .sector__grid{
   display:grid; grid-template-columns:minmax(0, .9fr) minmax(0, 1.1fr);
   gap:clamp(28px, 5vw, 80px); align-items:center;
