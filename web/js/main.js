@@ -43,6 +43,28 @@
     });
   });
 
+  /* ---------- panel de robots: la familia señalada manda ----------
+     Al pasar el ratón (o al enfocar con el teclado) por una familia se
+     muestran sus modelos. El enlace de la familia sigue llevando a su
+     sección del catálogo; en móvil no hace falta, ahí se ven todas. */
+  Array.prototype.forEach.call(document.querySelectorAll('[data-menurobots]'), function (panel) {
+    var familias = panel.querySelectorAll('.nav__fam');
+    var listas = panel.querySelectorAll('.nav__modelos');
+    var mostrar = function (clave) {
+      Array.prototype.forEach.call(familias, function (f) {
+        f.classList.toggle('is-on', f.dataset.fam === clave);
+      });
+      Array.prototype.forEach.call(listas, function (l) {
+        l.classList.toggle('is-on', l.dataset.fam === clave);
+      });
+    };
+    Array.prototype.forEach.call(familias, function (f) {
+      var ir = function () { mostrar(f.dataset.fam); };
+      f.addEventListener('mouseenter', ir);
+      f.addEventListener('focus', ir);
+    });
+  });
+
   nav.addEventListener('click', function (e) {
     if (e.target.tagName !== 'A') return;
     toggle.setAttribute('aria-expanded', 'false');

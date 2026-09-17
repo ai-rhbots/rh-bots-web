@@ -284,25 +284,41 @@ def header(base, active='robots'):
         cls = ' class="is-active"' if it['key'] and it['key'] == active else ''
         enlace = '<a href="%s%s"%s>%s</a>' % (base, it['href'], cls, e(it['label']))
         if it['key'] == 'robots':
-            # submenú con las familias del catálogo y sus modelos
-            subs = ''
+            # submenú: familias a la izquierda y fichas de los modelos a la derecha
+            familias, paneles = '', ''
+            primera = True
             for k, n, _ in FAMILIAS:
                 modelos = [q for q in PRODUCTOS if q['family'] == k]
                 if not modelos:
                     continue
-                enlaces = ''.join(
-                    f'<li><a href="{base}robots/{q["slug"]}.html">{e(q["name"])}</a></li>'
-                    for q in modelos)
-                subs += (f'<li class="nav__fam">'
-                         f'<a class="nav__famtit" href="{base}robots.html#{k}">{e(n)}</a>'
-                         f'<ul class="nav__mods">{enlaces}</ul></li>')
-            subs += (f'<li class="nav__todos"><a href="{base}robots.html">'
-                     f'Ver todo el catálogo{FLECHA}</a></li>')
+                on = ' is-on' if primera else ''
+                familias += (f'<li><a class="nav__fam{on}" href="{base}robots.html#{k}" '
+                             f'data-fam="{k}">{e(n)}<span class="nav__famchev" aria-hidden="true">'
+                             f'<svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span></a></li>')
+                tarjetas = ''
+                for q in modelos:
+                    foto = (f'<img src="{base}{q["hero"]}" alt="" loading="lazy">' if q.get('hero')
+                            else '')
+                    tarjetas += (f'<li><a class="mcard" href="{base}robots/{q["slug"]}.html">'
+                                 f'<span class="mcard__foto">{foto}</span>'
+                                 f'<span class="mcard__nombre">{e(q["name"])}</span>'
+                                 f'<span class="mcard__claim">{e(q["claim"])}</span></a></li>')
+                # el título solo se ve en el menú del móvil, donde no hay columna de familias
+                paneles += (f'<ul class="nav__modelos{on}" data-fam="{k}" '
+                            f'aria-label="Modelos de {e(n)}">'
+                            f'<li class="nav__modtit"><a href="{base}robots.html#{k}">{e(n)}</a></li>'
+                            f'{tarjetas}</ul>')
+                primera = False
             enlace = (f'<div class="nav__grupo">{enlace}'
                       f'<button type="button" class="nav__abrir" aria-expanded="false" '
                       f'aria-controls="sub-robots" aria-label="Ver familias y modelos de robots">'
                       f'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>'
-                      f'<ul class="nav__sub nav__sub--mega" id="sub-robots">{subs}</ul></div>')
+                      f'<div class="nav__sub nav__sub--mega" id="sub-robots" data-menurobots>'
+                      f'<ul class="nav__fams">{familias}</ul>'
+                      f'<div class="nav__paneles">{paneles}'
+                      f'<p class="nav__todos"><a href="{base}robots.html">'
+                      f'Ver todo el catálogo{FLECHA}</a></p></div>'
+                      f'</div></div>')
         parts.append(enlace)
     links = '\n      '.join(parts)
     return f'''
