@@ -53,7 +53,6 @@
 </header>
 <main id="contenido">
   <section class="phero phero--amr">
-    <div class="fondovid fondovid--claro" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="../assets/video/fondo-gama.jpg"><source src="../assets/video/fondo-gama.mp4" type="video/mp4"></video></div>
     <div class="wrap phero__grid">
       <div class="phero__copy">
         <div class="badges"><span class="badge badge--fam">AMR intralogística</span></div>
@@ -68,7 +67,10 @@
         <ul class="keyfacts"><li><span>Carga máxima</span><strong>150 kg</strong></li><li><span>Velocidad máxima</span><strong>1,2 m/s</strong></li><li><span>Autonomía</span><strong>12 h sin carga</strong></li><li><span>Ancho mínimo de paso</span><strong>600 mm</strong></li></ul>
       </div>
       <div class="phero__lado">
-        <figure class="phero__media"><img src="../assets/robots/t150/hero.webp" alt="Robot T150 en versión estándar, con columna, pantalla táctil y plataforma de carga plana" loading="eager"></figure>
+        <figure class="phero__media">
+          <div class="fondovid fondovid--media" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="../assets/video/fondo-c5.jpg"><source src="../assets/video/fondo-c5.mp4" type="video/mp4"></video></div>
+          <div class="phero__foto"><img src="../assets/robots/t150/hero.webp" alt="Robot T150 en versión estándar, con columna, pantalla táctil y plataforma de carga plana" loading="eager"></div>
+        </figure>
         <div class="phero__compra phero__compra--solo"><p class="pvp"><span class="pvp__etiqueta">PVP</span> 9.500 €</p></div>
       </div>
     </div>
@@ -103,14 +105,20 @@
 </div>
     </div>
   </section>
-  <section class="section section--white" id="galeria">
+  <section class="section section--white galoop" id="galeria">
     <div class="wrap">
       <header class="section-head reveal"><h2 class="h-section">Galería del <span class="acento">T150</span><span class="punto" aria-hidden="true">.</span></h2></header>
-      <ul class="gal"><li class="gal__item reveal"><figure><img src="../assets/robots/t150/en-almacen.webp" alt="T150 trabajando en un almacén de cajas" loading="lazy" width="1002" height="560"><figcaption>T150 trabajando en un almacén de cajas</figcaption></figure></li>
-<li class="gal__item reveal"><figure><img src="../assets/robots/t150/version-lifting.webp" alt="Versión Lifting con estantería de ruedas" loading="lazy" width="565" height="720"><figcaption>Versión Lifting con estantería de ruedas</figcaption></figure></li>
-<li class="gal__item reveal"><figure><img src="../assets/robots/t150/vista-lateral.webp" alt="Vista lateral de la versión estándar" loading="lazy" width="900" height="1395"><figcaption>Vista lateral de la versión estándar</figcaption></figure></li>
-<li class="gal__item reveal"><figure><img src="../assets/robots/t150/pantalla-tactil.webp" alt="Pantalla táctil de 10,1 pulgadas para asignar tareas" loading="lazy" width="1300" height="725"><figcaption>Pantalla táctil de 10,1 pulgadas para asignar tareas</figcaption></figure></li>
+      <div class="carrusel carrusel--gal reveal" data-carrusel>
+        <ul class="carrusel__pista gal" tabindex="0" aria-label="Galería del T150"><li class="gal__item"><figure><img src="../assets/robots/t150/en-almacen.webp" alt="T150 trabajando en un almacén de cajas" loading="lazy" draggable="false" width="1002" height="560"><figcaption>T150 trabajando en un almacén de cajas</figcaption></figure></li>
+<li class="gal__item"><figure><img src="../assets/robots/t150/version-lifting.webp" alt="Versión Lifting con estantería de ruedas" loading="lazy" draggable="false" width="565" height="720"><figcaption>Versión Lifting con estantería de ruedas</figcaption></figure></li>
+<li class="gal__item"><figure><img src="../assets/robots/t150/vista-lateral.webp" alt="Vista lateral de la versión estándar" loading="lazy" draggable="false" width="900" height="1395"><figcaption>Vista lateral de la versión estándar</figcaption></figure></li>
+<li class="gal__item"><figure><img src="../assets/robots/t150/pantalla-tactil.webp" alt="Pantalla táctil de 10,1 pulgadas para asignar tareas" loading="lazy" draggable="false" width="1300" height="725"><figcaption>Pantalla táctil de 10,1 pulgadas para asignar tareas</figcaption></figure></li>
 </ul>
+        <button type="button" class="carrusel__btn carrusel__btn--prev" aria-label="Fotos anteriores">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+        <button type="button" class="carrusel__btn carrusel__btn--next" aria-label="Fotos siguientes">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
     </div>
   </section>
   <section class="section section--white" id="relacionados">

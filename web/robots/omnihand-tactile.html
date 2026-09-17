@@ -53,7 +53,6 @@
 </header>
 <main id="contenido">
   <section class="phero phero--accesorios">
-    <div class="fondovid fondovid--claro" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="../assets/video/fondo-gama.jpg"><source src="../assets/video/fondo-gama.mp4" type="video/mp4"></video></div>
     <div class="wrap phero__grid">
       <div class="phero__copy">
         <div class="badges"><span class="badge badge--fam">Accesorios</span></div>
@@ -68,7 +67,10 @@
         <ul class="keyfacts"><li><span>Grados de libertad</span><strong>16 (10 activos)</strong></li><li><span>Resolución táctil</span><strong>0,1 N</strong></li><li><span>Rango de detección</span><strong>0–20 N</strong></li><li><span>Peso</span><strong>≤ 570 g</strong></li></ul>
       </div>
       <div class="phero__lado">
-        <figure class="phero__media"><img src="../assets/robots/omnihand-tactile/hero.webp" alt="Mano robótica OmniHand Tactile vista desde la palma, con los dedos extendidos" loading="eager"></figure>
+        <figure class="phero__media">
+          <div class="fondovid fondovid--media" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="../assets/video/fondo-c5.jpg"><source src="../assets/video/fondo-c5.mp4" type="video/mp4"></video></div>
+          <div class="phero__foto"><img src="../assets/robots/omnihand-tactile/hero.webp" alt="Mano robótica OmniHand Tactile vista desde la palma, con los dedos extendidos" loading="eager"></div>
+        </figure>
         <div class="phero__compra phero__compra--solo"><p class="pvp"><span class="pvp__etiqueta">PVP</span> 5.750 €</p></div>
       </div>
     </div>
@@ -103,14 +105,20 @@
 </div>
     </div>
   </section>
-  <section class="section section--white" id="galeria">
+  <section class="section section--white galoop" id="galeria">
     <div class="wrap">
       <header class="section-head reveal"><h2 class="h-section">Galería del OmniHand <span class="acento">Tactile</span><span class="punto" aria-hidden="true">.</span></h2></header>
-      <ul class="gal"><li class="gal__item reveal"><figure><img src="../assets/robots/omnihand-tactile/vista-dorso.webp" alt="Vista del dorso" loading="lazy" width="401" height="563"><figcaption>Vista del dorso</figcaption></figure></li>
-<li class="gal__item reveal"><figure><img src="../assets/robots/omnihand-tactile/gesto-precision.webp" alt="Gesto de precisión entre pulgar e índice" loading="lazy" width="1000" height="1300"><figcaption>Gesto de precisión entre pulgar e índice</figcaption></figure></li>
-<li class="gal__item reveal"><figure><img src="../assets/robots/omnihand-tactile/esquema-articulaciones.webp" alt="Esquema de articulaciones de dedos y pulgar" loading="lazy" width="516" height="404"><figcaption>Esquema de articulaciones de dedos y pulgar</figcaption></figure></li>
-<li class="gal__item reveal"><figure><img src="../assets/robots/omnihand-tactile/rango-pulgar.webp" alt="Rango de movimiento del pulgar" loading="lazy" width="564" height="406"><figcaption>Rango de movimiento del pulgar</figcaption></figure></li>
+      <div class="carrusel carrusel--gal reveal" data-carrusel>
+        <ul class="carrusel__pista gal" tabindex="0" aria-label="Galería del OmniHand Tactile"><li class="gal__item"><figure><img src="../assets/robots/omnihand-tactile/vista-dorso.webp" alt="Vista del dorso" loading="lazy" draggable="false" width="401" height="563"><figcaption>Vista del dorso</figcaption></figure></li>
+<li class="gal__item"><figure><img src="../assets/robots/omnihand-tactile/gesto-precision.webp" alt="Gesto de precisión entre pulgar e índice" loading="lazy" draggable="false" width="1000" height="1300"><figcaption>Gesto de precisión entre pulgar e índice</figcaption></figure></li>
+<li class="gal__item"><figure><img src="../assets/robots/omnihand-tactile/esquema-articulaciones.webp" alt="Esquema de articulaciones de dedos y pulgar" loading="lazy" draggable="false" width="516" height="404"><figcaption>Esquema de articulaciones de dedos y pulgar</figcaption></figure></li>
+<li class="gal__item"><figure><img src="../assets/robots/omnihand-tactile/rango-pulgar.webp" alt="Rango de movimiento del pulgar" loading="lazy" draggable="false" width="564" height="406"><figcaption>Rango de movimiento del pulgar</figcaption></figure></li>
 </ul>
+        <button type="button" class="carrusel__btn carrusel__btn--prev" aria-label="Fotos anteriores">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+        <button type="button" class="carrusel__btn carrusel__btn--next" aria-label="Fotos siguientes">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
     </div>
   </section>
   <section class="section section--white" id="relacionados">

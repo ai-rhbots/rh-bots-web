@@ -53,7 +53,6 @@
 </header>
 <main id="contenido">
   <section class="phero phero--limpieza">
-    <div class="fondovid fondovid--claro" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="../assets/video/fondo-gama.jpg"><source src="../assets/video/fondo-gama.mp4" type="video/mp4"></video></div>
     <div class="wrap phero__grid">
       <div class="phero__copy">
         <div class="badges"><span class="badge badge--fam">Limpieza autónoma</span></div>
@@ -68,7 +67,10 @@
         <ul class="keyfacts"><li><span>Rendimiento</span><strong>hasta 2.200 m²/h</strong></li><li><span>Autonomía</span><strong>5-10 h</strong></li><li><span>Protección</span><strong>IP54</strong></li><li><span>Pendiente máx.</span><strong>8°</strong></li></ul>
       </div>
       <div class="phero__lado">
-        <figure class="phero__media"><img src="../assets/robots/mt1-max/hero.webp" alt="Barredora autónoma PUDU MT1 Max con lidar 3D en la parte superior y mástil con luz de advertencia" loading="eager"></figure>
+        <figure class="phero__media">
+          <div class="fondovid fondovid--media" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="../assets/video/fondo-c5.jpg"><source src="../assets/video/fondo-c5.mp4" type="video/mp4"></video></div>
+          <div class="phero__foto"><img src="../assets/robots/mt1-max/hero.webp" alt="Barredora autónoma PUDU MT1 Max con lidar 3D en la parte superior y mástil con luz de advertencia" loading="eager"></div>
+        </figure>
         <div class="phero__compra phero__compra--solo"><p class="pvp"><span class="pvp__etiqueta">PVP</span> 19.900 €</p></div>
       </div>
     </div>
@@ -107,14 +109,20 @@
 </div>
     </div>
   </section>
-  <section class="section section--white" id="galeria">
+  <section class="section section--white galoop" id="galeria">
     <div class="wrap">
       <header class="section-head reveal"><h2 class="h-section">Galería del MT1 <span class="acento">Max</span><span class="punto" aria-hidden="true">.</span></h2></header>
-      <ul class="gal"><li class="gal__item reveal"><figure><img src="../assets/robots/mt1-max/en-exterior.webp" alt="Barriendo hojas en un patio exterior" loading="lazy" width="1300" height="732"><figcaption>Barriendo hojas en un patio exterior</figcaption></figure></li>
-<li class="gal__item reveal"><figure><img src="../assets/robots/mt1-max/en-aparcamiento.webp" alt="Aparcamiento subterráneo con la luz de advertencia elevada encendida" loading="lazy" width="1300" height="884"><figcaption>Aparcamiento subterráneo con la luz de advertencia elevada encendida</figcaption></figure></li>
-<li class="gal__item reveal"><figure><img src="../assets/robots/mt1-max/uso-manual.webp" alt="Desplazamiento manual con la manija retráctil" loading="lazy" width="1300" height="732"><figcaption>Desplazamiento manual con la manija retráctil</figcaption></figure></li>
-<li class="gal__item reveal"><figure><img src="../assets/robots/mt1-max/estacion-de-carga.webp" alt="Acoplada a su estación de carga" loading="lazy" width="1300" height="731"><figcaption>Acoplada a su estación de carga</figcaption></figure></li>
+      <div class="carrusel carrusel--gal reveal" data-carrusel>
+        <ul class="carrusel__pista gal" tabindex="0" aria-label="Galería del MT1 Max"><li class="gal__item"><figure><img src="../assets/robots/mt1-max/en-exterior.webp" alt="Barriendo hojas en un patio exterior" loading="lazy" draggable="false" width="1300" height="732"><figcaption>Barriendo hojas en un patio exterior</figcaption></figure></li>
+<li class="gal__item"><figure><img src="../assets/robots/mt1-max/en-aparcamiento.webp" alt="Aparcamiento subterráneo con la luz de advertencia elevada encendida" loading="lazy" draggable="false" width="1300" height="884"><figcaption>Aparcamiento subterráneo con la luz de advertencia elevada encendida</figcaption></figure></li>
+<li class="gal__item"><figure><img src="../assets/robots/mt1-max/uso-manual.webp" alt="Desplazamiento manual con la manija retráctil" loading="lazy" draggable="false" width="1300" height="732"><figcaption>Desplazamiento manual con la manija retráctil</figcaption></figure></li>
+<li class="gal__item"><figure><img src="../assets/robots/mt1-max/estacion-de-carga.webp" alt="Acoplada a su estación de carga" loading="lazy" draggable="false" width="1300" height="731"><figcaption>Acoplada a su estación de carga</figcaption></figure></li>
 </ul>
+        <button type="button" class="carrusel__btn carrusel__btn--prev" aria-label="Fotos anteriores">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+        <button type="button" class="carrusel__btn carrusel__btn--next" aria-label="Fotos siguientes">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
     </div>
   </section>
   <section class="section section--white" id="relacionados">

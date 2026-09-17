@@ -53,7 +53,6 @@
 </header>
 <main id="contenido">
   <section class="phero phero--humanoides">
-    <div class="fondovid fondovid--claro" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="../assets/video/fondo-x2.jpg"><source src="../assets/video/fondo-x2.mp4" type="video/mp4"></video></div>
     <div class="wrap phero__grid">
       <div class="phero__copy">
         <div class="badges"><span class="badge badge--fam">Humanoides</span></div>
@@ -68,7 +67,10 @@
         <ul class="keyfacts"><li><span>Altura</span><strong>1,30 m</strong></li><li><span>Peso</span><strong>35 kg</strong></li><li><span>Grados de libertad</span><strong>29</strong></li><li><span>Batería</span><strong>500 Wh</strong></li></ul>
       </div>
       <div class="phero__lado">
-        <figure class="phero__media"><img src="../assets/robots/rhx2-edu/hero.webp" alt="Plataforma humanoide RHX2 EDU en acabado negro, de frente" loading="eager"></figure>
+        <figure class="phero__media">
+          <div class="fondovid fondovid--media" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="../assets/video/fondo-x2.jpg"><source src="../assets/video/fondo-x2.mp4" type="video/mp4"></video></div>
+          <div class="phero__foto"><img src="../assets/robots/rhx2-edu/hero.webp" alt="Plataforma humanoide RHX2 EDU en acabado negro, de frente" loading="eager"></div>
+        </figure>
         <div class="phero__compra"><p class="pvp"><span class="pvp__etiqueta">PVP</span> 30.000 €</p><div class="compra" data-tienda data-dominio="rzrujk-0d.myshopify.com" data-handle="agibot-lingxi-x2-edu" data-variante="50384849207533" data-contacto="../contacto.html" data-texto="Comprar ahora" data-precio="0"><a class="pill pill--comprar" href="https://rzrujk-0d.myshopify.com/cart/50384849207533:1" rel="nofollow noopener"><span>Comprar ahora</span><i class="pill__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a></div></div>
       </div>
     </div>
@@ -103,22 +105,28 @@
 </div>
     </div>
   </section>
-  <section class="section section--white" id="galeria">
+  <section class="section section--white galoop" id="galeria">
     <div class="wrap">
       <header class="section-head reveal"><h2 class="h-section">Galería del RHX2 <span class="acento">EDU</span><span class="punto" aria-hidden="true">.</span></h2></header>
-      <ul class="gal"><li class="gal__item reveal"><figure><img src="../assets/robots/rhx2-edu/competicion.webp" alt="En una competición de robótica" loading="lazy" width="627" height="470"><figcaption>En una competición de robótica</figcaption></figure></li>
-<li class="gal__item reveal"><figure><img src="../assets/robots/rhx2-edu/taller-formacion.webp" alt="Taller de montaje y puesta a punto" loading="lazy" width="622" height="467"><figcaption>Taller de montaje y puesta a punto</figcaption></figure></li>
-<li class="gal__item reveal"><figure><img src="../assets/robots/rhx2-edu/aula-stem.webp" alt="Clase de robótica STEM" loading="lazy" width="625" height="469"><figcaption>Clase de robótica STEM</figcaption></figure></li>
+      <div class="carrusel carrusel--gal reveal" data-carrusel>
+        <ul class="carrusel__pista gal" tabindex="0" aria-label="Galería del RHX2 EDU"><li class="gal__item"><figure><img src="../assets/robots/rhx2-edu/competicion.webp" alt="En una competición de robótica" loading="lazy" draggable="false" width="627" height="470"><figcaption>En una competición de robótica</figcaption></figure></li>
+<li class="gal__item"><figure><img src="../assets/robots/rhx2-edu/taller-formacion.webp" alt="Taller de montaje y puesta a punto" loading="lazy" draggable="false" width="622" height="467"><figcaption>Taller de montaje y puesta a punto</figcaption></figure></li>
+<li class="gal__item"><figure><img src="../assets/robots/rhx2-edu/aula-stem.webp" alt="Clase de robótica STEM" loading="lazy" draggable="false" width="625" height="469"><figcaption>Clase de robótica STEM</figcaption></figure></li>
 </ul>
+        <button type="button" class="carrusel__btn carrusel__btn--prev" aria-label="Fotos anteriores">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+        <button type="button" class="carrusel__btn carrusel__btn--next" aria-label="Fotos siguientes">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
     </div>
   </section>
   <section class="section section--white" id="relacionados">
     <div class="wrap">
-      <header class="section-head reveal"><h2 class="h-section">Otros modelos de la <span class="acento">familia</span><span class="punto" aria-hidden="true">.</span></h2></header>
-      <ul class="pgrid"><li class="pcard reveal"><a href="rhx2.html"><div class="pcard__media"><img src="../assets/robots/rhx2/hero.webp" alt="RHX2" loading="lazy"></div><div class="pcard__body"><div class="badges"><span class="badge badge--fam">Humanoides</span></div><h3>RHX2</h3><p>Humanoide compacto para atención al público y eventos</p></div></a></li>
-<li class="pcard reveal"><a href="rha3.html"><div class="pcard__media"><img src="../assets/robots/rha3/hero.webp" alt="RHA3" loading="lazy"></div><div class="pcard__body"><div class="badges"><span class="badge badge--fam">Humanoides</span></div><h3>RHA3</h3><p>Humanoide de tamaño adulto para escena y atención al público</p></div></a></li>
-<li class="pcard reveal"><a href="rhx2-ultra.html"><div class="pcard__media"><img src="../assets/robots/rhx2-ultra/hero.webp" alt="RHX2 Ultra" loading="lazy"></div><div class="pcard__body"><div class="badges"><span class="badge badge--fam">Humanoides</span></div><h3>RHX2 Ultra</h3><p>Humanoide programable con percepción 3D y NVIDIA Orin NX</p></div></a></li>
-<li class="pcard reveal"><a href="rha3-ultra.html"><div class="pcard__media"><img src="../assets/robots/rha3-ultra/hero.webp" alt="RHA3 Ultra &quot;Reboniko&quot;" loading="lazy"></div><div class="pcard__body"><div class="badges"><span class="badge badge--fam">Humanoides</span></div><h3>RHA3 Ultra &quot;Reboniko&quot;</h3><p>Humanoide de servicio para operación autónoma 24/7</p></div></a></li>
+      <header class="section-head reveal"><h2 class="h-section">Accesorios para el RHX2 <span class="acento">EDU</span><span class="punto" aria-hidden="true">.</span></h2></header>
+      <ul class="pgrid"><li class="pcard reveal"><a href="omnihand.html"><div class="pcard__media"><img src="../assets/robots/omnihand/hero.webp" alt="OmniHand" loading="lazy"></div><div class="pcard__body"><div class="badges"><span class="badge badge--fam">Accesorios</span></div><h3>OmniHand</h3><p>Mano robótica diestra de 16 grados de libertad</p></div></a></li>
+<li class="pcard reveal"><a href="omnihand-tactile.html"><div class="pcard__media"><img src="../assets/robots/omnihand-tactile/hero.webp" alt="OmniHand Tactile" loading="lazy"></div><div class="pcard__body"><div class="badges"><span class="badge badge--fam">Accesorios</span></div><h3>OmniHand Tactile</h3><p>Mano robótica diestra con sensores táctiles</p></div></a></li>
+<li class="pcard reveal"><a href="omnihand-pro-2025.html"><div class="pcard__media"><img src="../assets/robots/omnihand-pro-2025/hero.webp" alt="OmniHand Pro 2025" loading="lazy"></div><div class="pcard__body"><div class="badges"><span class="badge badge--fam">Accesorios</span></div><h3>OmniHand Pro 2025</h3><p>Mano robótica diestra de 19 grados de libertad</p></div></a></li>
+<li class="pcard reveal"><a href="omnipicker.html"><div class="pcard__media"><img src="../assets/robots/omnipicker/hero.webp" alt="OmniPicker" loading="lazy"></div><div class="pcard__body"><div class="badges"><span class="badge badge--fam">Accesorios</span></div><h3>OmniPicker</h3><p>Pinza industrial con tacto para IA encarnada</p></div></a></li>
 </ul>
     </div>
   </section>

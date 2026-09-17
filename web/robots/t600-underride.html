@@ -53,7 +53,6 @@
 </header>
 <main id="contenido">
   <section class="phero phero--amr">
-    <div class="fondovid fondovid--claro" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="../assets/video/fondo-gama.jpg"><source src="../assets/video/fondo-gama.mp4" type="video/mp4"></video></div>
     <div class="wrap phero__grid">
       <div class="phero__copy">
         <div class="badges"><span class="badge badge--fam">AMR intralogística</span></div>
@@ -68,7 +67,10 @@
         <ul class="keyfacts"><li><span>Carga máxima</span><strong>600 kg</strong></li><li><span>Altura</span><strong>255 mm</strong></li><li><span>Superficie máxima de carga</span><strong>1.200 × 1.200 × 1.600 mm</strong></li><li><span>Ancho mínimo de paso</span><strong>650 mm</strong></li></ul>
       </div>
       <div class="phero__lado">
-        <figure class="phero__media"><img src="../assets/robots/t600-underride/hero.webp" alt="Robot T600 Underride, chasis bajo y compacto con plataforma elevadora plana y sin columna" loading="eager"></figure>
+        <figure class="phero__media">
+          <div class="fondovid fondovid--media" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="../assets/video/fondo-c5.jpg"><source src="../assets/video/fondo-c5.mp4" type="video/mp4"></video></div>
+          <div class="phero__foto"><img src="../assets/robots/t600-underride/hero.webp" alt="Robot T600 Underride, chasis bajo y compacto con plataforma elevadora plana y sin columna" loading="eager"></div>
+        </figure>
         <div class="phero__compra phero__compra--solo"><p class="pvp"><span class="pvp__etiqueta">PVP</span> 21.000 €</p></div>
       </div>
     </div>
@@ -103,14 +105,20 @@
 </div>
     </div>
   </section>
-  <section class="section section--white" id="galeria">
+  <section class="section section--white galoop" id="galeria">
     <div class="wrap">
       <header class="section-head reveal"><h2 class="h-section">Galería del T600 <span class="acento">Underride</span><span class="punto" aria-hidden="true">.</span></h2></header>
-      <ul class="gal"><li class="gal__item reveal"><figure><img src="../assets/robots/t600-underride/junto-al-t600.webp" alt="T600 Underride (izquierda) junto al T600 de elevación con columna" loading="lazy" width="1100" height="1143"><figcaption>T600 Underride (izquierda) junto al T600 de elevación con columna</figcaption></figure></li>
-<li class="gal__item reveal"><figure><img src="../assets/robots/t600-underride/bajo-estanterias.webp" alt="Robots de la serie T600 recogiendo carga bajo estanterías" loading="lazy" width="666" height="364"><figcaption>Robots de la serie T600 recogiendo carga bajo estanterías</figcaption></figure></li>
-<li class="gal__item reveal"><figure><img src="../assets/robots/t600-underride/flujo-de-estanterias.webp" alt="Traslado de estanterías entre pasillos" loading="lazy" width="688" height="475"><figcaption>Traslado de estanterías entre pasillos</figcaption></figure></li>
-<li class="gal__item reveal"><figure><img src="../assets/robots/t600-underride/planta-en-flota.webp" alt="Flota de robots en una planta de fabricación" loading="lazy" width="1300" height="972"><figcaption>Flota de robots en una planta de fabricación</figcaption></figure></li>
+      <div class="carrusel carrusel--gal reveal" data-carrusel>
+        <ul class="carrusel__pista gal" tabindex="0" aria-label="Galería del T600 Underride"><li class="gal__item"><figure><img src="../assets/robots/t600-underride/junto-al-t600.webp" alt="T600 Underride (izquierda) junto al T600 de elevación con columna" loading="lazy" draggable="false" width="1100" height="1143"><figcaption>T600 Underride (izquierda) junto al T600 de elevación con columna</figcaption></figure></li>
+<li class="gal__item"><figure><img src="../assets/robots/t600-underride/bajo-estanterias.webp" alt="Robots de la serie T600 recogiendo carga bajo estanterías" loading="lazy" draggable="false" width="666" height="364"><figcaption>Robots de la serie T600 recogiendo carga bajo estanterías</figcaption></figure></li>
+<li class="gal__item"><figure><img src="../assets/robots/t600-underride/flujo-de-estanterias.webp" alt="Traslado de estanterías entre pasillos" loading="lazy" draggable="false" width="688" height="475"><figcaption>Traslado de estanterías entre pasillos</figcaption></figure></li>
+<li class="gal__item"><figure><img src="../assets/robots/t600-underride/planta-en-flota.webp" alt="Flota de robots en una planta de fabricación" loading="lazy" draggable="false" width="1300" height="972"><figcaption>Flota de robots en una planta de fabricación</figcaption></figure></li>
 </ul>
+        <button type="button" class="carrusel__btn carrusel__btn--prev" aria-label="Fotos anteriores">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+        <button type="button" class="carrusel__btn carrusel__btn--next" aria-label="Fotos siguientes">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
     </div>
   </section>
   <section class="section section--white" id="relacionados">

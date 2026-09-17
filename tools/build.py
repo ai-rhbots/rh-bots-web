@@ -563,6 +563,7 @@ FONDO_POR_MODELO = {
     'rhx2': 'fondo-x2', 'rhx2-ultra': 'fondo-x2',
     'rhx2-edu': 'fondo-x2',
     'rha3': 'fondo-a3', 'rha3-ultra': 'fondo-a3',
+    'rhc5': 'fondo-c5',
 }
 
 
@@ -641,7 +642,6 @@ def product_page(p):
 
     out.append(f'''
   <section class="phero phero--{fam}">
-    {fondo_video(FONDO_POR_MODELO.get(p['slug'], 'fondo-gama'), base, 'fondovid--claro')}
     <div class="wrap phero__grid">
       <div class="phero__copy">
         <div class="badges">{badges(p)}</div>
@@ -656,7 +656,10 @@ def product_page(p):
         {facts}
       </div>
       <div class="phero__lado">
-        <figure class="phero__media">{media}</figure>
+        <figure class="phero__media">
+          {fondo_video(FONDO_POR_MODELO.get(p['slug'], 'fondo-c5'), base, 'fondovid--media')}
+          <div class="phero__foto">{media}</div>
+        </figure>
         {tarjeta_compra(p, base)}
       </div>
     </div>
@@ -725,14 +728,20 @@ def product_page(p):
     # ---- galería
     if p.get('gallery'):
         figs = ''.join(
-            f'<li class="gal__item reveal"><figure>'
-            f'<img src="{base}{img}" alt="{e(t)}" loading="lazy"{img_dims_attr(img)}>'
+            f'<li class="gal__item"><figure>'
+            f'<img src="{base}{img}" alt="{e(t)}" loading="lazy" draggable="false"{img_dims_attr(img)}>'
             f'<figcaption>{e(t)}</figcaption></figure></li>\n'
             for t, img in p['gallery'])
-        out.append(f'''  <section class="section section--white" id="galeria">
+        out.append(f'''  <section class="section section--white galoop" id="galeria">
     <div class="wrap">
       <header class="section-head reveal"><h2 class="h-section">Galería del {e(p['name'])}</h2></header>
-      <ul class="gal">{figs}</ul>
+      <div class="carrusel carrusel--gal reveal" data-carrusel>
+        <ul class="carrusel__pista gal" tabindex="0" aria-label="Galería del {e(p['name'])}">{figs}</ul>
+        <button type="button" class="carrusel__btn carrusel__btn--prev" aria-label="Fotos anteriores">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+        <button type="button" class="carrusel__btn carrusel__btn--next" aria-label="Fotos siguientes">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
     </div>
   </section>
 ''')
@@ -749,8 +758,13 @@ def product_page(p):
   </section>
 ''')
 
-    # ---- otros modelos
-    others = [q for q in PRODUCTOS if q['family'] == fam and q['slug'] != p['slug']][:4]
+    # ---- otros modelos (en los humanoides, los accesorios que pueden montar)
+    if fam == 'humanoides':
+        others = [q for q in PRODUCTOS if q['family'] == 'accesorios'][:4]
+        titulo_otros = f'Accesorios para el {p["name"]}'
+    else:
+        others = [q for q in PRODUCTOS if q['family'] == fam and q['slug'] != p['slug']][:4]
+        titulo_otros = 'Otros modelos de la familia'
     if others:
         cards = ''
         for q in others:
@@ -766,7 +780,7 @@ def product_page(p):
                 % (q['slug'], media, badges(q), e(q['name']), e(q['claim'])))
         out.append(f'''  <section class="section section--white" id="relacionados">
     <div class="wrap">
-      <header class="section-head reveal"><h2 class="h-section">Otros modelos de la familia</h2></header>
+      <header class="section-head reveal"><h2 class="h-section">{e(titulo_otros)}</h2></header>
       <ul class="pgrid">{cards}</ul>
     </div>
   </section>
