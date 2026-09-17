@@ -375,9 +375,17 @@
       "claim": "Humanoide de tamaño adulto para escena y atención al público",
       "tagline": "Espectáculos, recepción, presentaciones y entretenimiento, con interacción multimodal, jornadas de hasta 10 horas y control coordinado de flotas.",
       "hero": "assets/robots/rha3/hero.webp",
-      "hero_alt": "Humanoide de tamaño adulto RHA3",
+      "hero_alt": "RHA3 de cuerpo entero, de frente, sobre fondo blanco",
       "frames": [],
       "gallery": [
+        [
+          "El RHA3 caminando",
+          "assets/robots/rha3/caminando.webp"
+        ],
+        [
+          "Cabeza y torso del RHA3",
+          "assets/robots/rha3/cabeza-y-torso.webp"
+        ],
         [
           "Tres vistas del RHA3",
           "assets/robots/rha3/tres-poses.webp"

@@ -563,7 +563,6 @@ FONDO_POR_MODELO = {
     'rhx2': 'fondo-x2', 'rhx2-ultra': 'fondo-x2',
     'rhx2-edu': 'fondo-x2',
     'rha3': 'fondo-a3', 'rha3-ultra': 'fondo-a3',
-    'rhc5': 'fondo-c5',
 }
 
 
@@ -642,6 +641,7 @@ def product_page(p):
 
     out.append(f'''
   <section class="phero phero--{fam}">
+    {fondo_video(FONDO_POR_MODELO.get(p['slug'], 'fondo-gama'), base, 'fondovid--claro')}
     <div class="wrap phero__grid">
       <div class="phero__copy">
         <div class="badges">{badges(p)}</div>
@@ -656,10 +656,7 @@ def product_page(p):
         {facts}
       </div>
       <div class="phero__lado">
-        <figure class="phero__media">
-          {fondo_video(FONDO_POR_MODELO.get(p['slug'], 'fondo-c5'), base, 'fondovid--media')}
-          <div class="phero__foto">{media}</div>
-        </figure>
+        <figure class="phero__media">{media}</figure>
         {tarjeta_compra(p, base)}
       </div>
     </div>
@@ -728,9 +725,9 @@ def product_page(p):
     # ---- galería
     if p.get('gallery'):
         figs = ''.join(
-            f'<li class="gal__item"><figure>'
+            f'<li class="gal__item">'
             f'<img src="{base}{img}" alt="{e(t)}" loading="lazy" draggable="false"{img_dims_attr(img)}>'
-            f'<figcaption>{e(t)}</figcaption></figure></li>\n'
+            f'</li>\n'
             for t, img in p['gallery'])
         out.append(f'''  <section class="section section--white galoop" id="galeria">
     <div class="wrap">
