@@ -1417,6 +1417,26 @@ def rh_bots_page():
   </section>
 ''')
 
+    # alianza: cifras con contador
+    al = r.get('alianza')
+    if al:
+        valores = {'modelos': len(PRODUCTOS),
+                   'familias': len({p['family'] for p in PRODUCTOS})}
+        celdas = ''.join(
+            f'<div class="alianza__cifra"><p class="alianza__valor" data-contar>{e(str(v).format(**valores))}</p>'
+            f'<p class="alianza__etiqueta">{e(et)}</p></div>'
+            for v, et in al.get('cifras', []))
+        out.append(f'''  <section class="alianza" id="alianza">
+    <div class="wrap">
+      <header class="alianza__head reveal">
+        <h2 class="alianza__titulo">{e(al.get('titulo', ''))}</h2>
+        <p class="alianza__texto">{e(al.get('texto', ''))}</p>
+      </header>
+      <div class="alianza__cifras reveal">{celdas}</div>
+    </div>
+  </section>
+''')
+
     out.append(bloque_equipo(r.get('equipo'), base))
     out.append('</main>')
     out.append(footer(base))

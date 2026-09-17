@@ -159,7 +159,7 @@
      Sólo se anima la parte numérica: «hasta 1.980 m²/h» conserva el «hasta»
      y las unidades, y «131 cm» cuenta hasta 131.                           */
   function animarCifras(raiz) {
-    var celdas = raiz.querySelectorAll('.keyfacts strong, .spec dd');
+    var celdas = raiz.querySelectorAll('.keyfacts strong, .spec dd, [data-contar]');
     Array.prototype.forEach.call(celdas, function (el) {
       if (el.dataset.contado) return;
 
@@ -168,7 +168,8 @@
       if (!m) return;
 
       var destino = parseFloat(m[2].replace(/\./g, '').replace(',', '.'));
-      if (!isFinite(destino) || destino < 10) return;      // números pequeños no lucen
+      // números pequeños no lucen, salvo en los contadores marcados a propósito
+      if (!isFinite(destino) || (destino < 10 && !el.hasAttribute('data-contar'))) return;
 
       el.dataset.contado = '1';
       el.classList.add('contando');
@@ -209,7 +210,7 @@
      no componen (previsualizaciones, prerender) el observador no entrega
      nunca y las cifras se quedarían sin animar. Mismo criterio que el
      revelado al hacer scroll. */
-  var zonasCifras = document.querySelectorAll('.keyfacts, .specs');
+  var zonasCifras = document.querySelectorAll('.keyfacts, .specs, .alianza__cifras');
   function barrerCifras() {
     if (reduced || !zonasCifras.length) return;
     var vh = window.innerHeight || document.documentElement.clientHeight;
