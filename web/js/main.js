@@ -542,33 +542,55 @@
     pista.addEventListener('dragstart', function (ev) { ev.preventDefault(); });
   });
 
-  /* ---------- blog: buscador de artículos ----------
-     Filtra en la propia página: cada artículo lleva su texto en data-buscar.
-     No distingue mayúsculas ni tildes; todas las palabras deben aparecer.
-     Admite ?q= en la dirección, así el buscador también funciona sin JS.   */
+  /* ---------- blog: buscador y filtro por categoría ----------
+     Filtran en la propia página: cada artículo lleva su texto en data-buscar
+     y su categoría en data-cat. La búsqueda no distingue mayúsculas ni
+     tildes y exige todas las palabras; el filtro se suma a la búsqueda.
+     Admite ?q= en la dirección.                                            */
   var buscador = document.querySelector('[data-buscador]');
   if (buscador) {
     var campo = buscador.querySelector('input');
     var fichas = document.querySelectorAll('[data-buscar]');
     var vacio = document.querySelector('.blogbusca__vacio');
+    var filtros = document.querySelectorAll('.filtro');
+    var categoria = '';
     var llano = function (t) {
       return String(t || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     };
-    var filtrar = function () {
+    var aplicar = function () {
       var palabras = llano(campo.value).split(/\s+/).filter(Boolean);
-      var vistos = 0;
+      var enRejilla = 0;
       Array.prototype.forEach.call(fichas, function (f) {
         var texto = llano(f.getAttribute('data-buscar'));
         var ok = palabras.every(function (p) { return texto.indexOf(p) !== -1; });
+        // el destacado no tiene data-cat: solo le afecta la búsqueda
+        if (ok && categoria && f.hasAttribute('data-cat')) ok = f.getAttribute('data-cat') === categoria;
         f.hidden = !ok;
-        if (ok) { vistos++; f.classList.add('is-in'); }
+        if (ok) f.classList.add('is-in');
+        if (ok && f.hasAttribute('data-cat')) enRejilla++;
       });
-      if (vacio) vacio.hidden = vistos > 0;
+      if (vacio) vacio.hidden = enRejilla > 0;
     };
-    buscador.addEventListener('submit', function (ev) { ev.preventDefault(); filtrar(); });
-    campo.addEventListener('input', filtrar);
+    Array.prototype.forEach.call(filtros, function (b) {
+      b.addEventListener('click', function () {
+        categoria = b.getAttribute('data-cat');
+        Array.prototype.forEach.call(filtros, function (x) {
+          var on = x === b;
+          x.classList.toggle('is-on', on);
+          x.setAttribute('aria-pressed', String(on));
+        });
+        aplicar();
+      });
+    });
+    buscador.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      aplicar();
+      var destino = document.getElementById('ultimos');
+      if (destino) destino.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' });
+    });
+    campo.addEventListener('input', aplicar);
     var inicial = new URLSearchParams(location.search).get('q');
-    if (inicial) { campo.value = inicial; filtrar(); }
+    if (inicial) { campo.value = inicial; aplicar(); }
   }
 
   /* ---------- reveal on scroll ---------- */

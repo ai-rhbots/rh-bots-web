@@ -1192,17 +1192,29 @@ def blog_page():
       </article>'''
 
         arts = ''
-        for post in POSTS[1:]:
-            img = (f'<div class="post__media"><img src="{e(post["img"])}" alt="" loading="lazy"></div>'
+        for post in POSTS:
+            cat = post.get('categoria', '')
+            img = (f'<div class="artcard__foto"><img src="{e(post["img"])}" alt="" loading="lazy"></div>'
                    if post.get('img') else '')
-            arts += f'''<li class="post reveal" data-buscar="{buscable(post)}"><a href="{e(post['url'])}">
-              {img}
-              <div class="post__body">
-                <p class="post__meta">{e(post.get('categoria', ''))} · {e(mes_y_ano(post.get('fecha', '')))} · {minutos_lectura(post)} min</p>
-                <h3>{e(post['titulo'])}</h3>
-                <p>{e(post.get('resumen', ''))}</p>
-                <span class="pcard__more">Leer</span>
-              </div></a></li>\n'''
+            meta = ' · '.join(x for x in [mes_y_ano(post.get('fecha', '')), cat] if x)
+            arts += f'''<li class="artcard reveal" data-buscar="{buscable(post)}" data-cat="{e(cat)}">
+          <a href="{e(post['url'])}">
+            {img}
+            <div class="artcard__texto">
+              <p class="artcard__meta">{e(meta)}</p>
+              <h3 class="artcard__titulo">{e(post['titulo'])}</h3>
+              <p class="artcard__resumen">{e(post.get('resumen', ''))}</p>
+              <span class="artcard__mas">Leer más{FLECHA}</span>
+            </div>
+          </a></li>\n'''
+
+        categorias = []
+        for post in POSTS:
+            if post.get('categoria') and post['categoria'] not in categorias:
+                categorias.append(post['categoria'])
+        filtros = '<button type="button" class="filtro is-on" data-cat="" aria-pressed="true">Todos</button>'
+        filtros += ''.join(f'<button type="button" class="filtro" data-cat="{e(c)}" aria-pressed="false">{e(c)}</button>'
+                           for c in categorias)
 
         out.append(f'''  <section class="section section--white blogbusca" id="articulos">
     <div class="wrap">
@@ -1218,7 +1230,16 @@ def blog_page():
         </form>
       </header>
       {destacado}
-      <ul class="postgrid blogbusca__lista">{arts}</ul>
+    </div>
+  </section>
+  <section class="section section--light ultimos" id="ultimos">
+    <div class="wrap">
+      <header class="ultimos__head reveal">
+        <p class="kicker">Últimos artículos</p>
+        <h2 class="ultimos__titulo">Recursos para entender el presente de la robótica</h2>
+      </header>
+      <div class="filtros reveal" role="group" aria-label="Filtrar por categoría">{filtros}</div>
+      <ul class="artgrid">{arts}</ul>
       <p class="blogbusca__vacio" hidden>No hay artículos que coincidan con tu búsqueda.</p>
     </div>
   </section>
