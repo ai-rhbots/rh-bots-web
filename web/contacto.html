@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contacto | RH·BOTS</title>
-<meta name="description" content="Cuéntanos qué necesitas resolver y te decimos qué robot encaja, con qué configuración y en qué plazo.">
+<meta name="description" content="Cuéntanos qué necesitas y te ayudaremos a encontrar la solución robótica más adecuada para tu empresa, evento o proyecto.">
 <link rel="canonical" href="https://www.rh-bots.com/contacto.html">
 <meta name="theme-color" content="#009ee3">
 <meta name="robots" content="index, follow">
@@ -13,12 +13,12 @@
 <meta property="og:site_name" content="RH·BOTS">
 <meta property="og:locale" content="es_ES">
 <meta property="og:title" content="Contacto | RH·BOTS">
-<meta property="og:description" content="Cuéntanos qué necesitas resolver y te decimos qué robot encaja, con qué configuración y en qué plazo.">
+<meta property="og:description" content="Cuéntanos qué necesitas y te ayudaremos a encontrar la solución robótica más adecuada para tu empresa, evento o proyecto.">
 <meta property="og:url" content="https://www.rh-bots.com/contacto.html">
 <meta property="og:image" content="https://www.rh-bots.com/assets/robots/rhc5/vista-0.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Contacto | RH·BOTS">
-<meta name="twitter:description" content="Cuéntanos qué necesitas resolver y te decimos qué robot encaja, con qué configuración y en qué plazo.">
+<meta name="twitter:description" content="Cuéntanos qué necesitas y te ayudaremos a encontrar la solución robótica más adecuada para tu empresa, evento o proyecto.">
 <meta name="twitter:image" content="https://www.rh-bots.com/assets/robots/rhc5/vista-0.webp">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,66 +50,106 @@
   </div>
 </header>
 <main id="contenido">
-  <section class="chero">
-    <div class="wrap">
-      <h1 class="display display--left"><span class="acento">Hablemos</span><span class="punto punto--acento" aria-hidden="true">.</span></h1>
-      <p class="lede lede--left">Cuéntanos qué necesitas resolver y te decimos qué robot encaja, con qué configuración y en qué plazo.</p>
+  <section class="ctohero" id="inicio">
+    <div class="ctohero__lado ctohero__lado--foto" aria-hidden="true">
+      <img src="assets/video/fondo-c5.jpg" alt="" width="1280" height="720" fetchpriority="high">
+    </div>
+    <div class="wrap ctohero__grid">
+      <div class="ctohero__copy">
+        <p class="kicker ctohero__kicker">Contacto RH·BOTS</p>
+        <h1 class="ctohero__titulo">Hablemos de tu próximo <span class="acento">robot</span><span class="punto" aria-hidden="true">.</span></h1>
+        <p class="ctohero__lede">Cuéntanos qué necesitas y te ayudaremos a encontrar la solución robótica más adecuada para tu empresa, evento o proyecto.</p>
+        <div class="ctohero__cta">
+          <a class="pill" href="#formulario"><span>Solicitar asesoramiento</span><i class="pill__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
+          <a class="pill pill--borde" href="mailto:mblasco@rh-bots.com"><span>Escribir por email</span></a>
+        </div>
+      </div>
+      <aside class="asesora">
+        <h2 class="asesora__titulo">Te asesoramos sin <span class="acento">compromiso</span><span class="punto" aria-hidden="true">.</span></h2>
+        <p class="asesora__texto">Respondemos a tus dudas, revisamos tu caso y te orientamos sobre modelos, usos y posibilidades.</p>
+        <ol class="asesora__pasos"><li class="asesora__paso"><span class="asesora__num">01</span><div><h3>Cuéntanos tu idea</h3><p>Uso, espacio, sector o tarea que quieres automatizar.</p></div></li><li class="asesora__paso"><span class="asesora__num">02</span><div><h3>Analizamos la mejor opción</h3><p>Robots humanoides, cuadrúpedos, de limpieza, AMR o accesorios.</p></div></li><li class="asesora__paso"><span class="asesora__num">03</span><div><h3>Recibe una propuesta clara</h3><p>Sin tecnicismos y adaptada a tus objetivos.</p></div></li></ol>
+      </aside>
     </div>
   </section>
 
-  <section class="section section--white">
-    <div class="wrap contacto">
-      <div class="contacto__form reveal">
-        <h2 class="h-section h-section--blue"><span class="acento">Escríbenos</span><span class="punto punto--acento" aria-hidden="true">.</span></h2>
-        <form class="form" id="contactoForm" novalidate>
-          <div class="form__row">
-            <label for="f-nombre">Nombre y apellidos</label>
-            <input id="f-nombre" name="nombre" type="text" autocomplete="name" required>
+  <section class="section section--light ctoform" id="formulario">
+    <div class="wrap ctoform__grid">
+      <div class="ctoform__caja reveal">
+        <div class="ctoform__cab">
+          <div>
+            <p class="kicker">Formulario</p>
+            <h2 class="ctoform__titulo">Solicita <span class="acento">información</span><span class="punto" aria-hidden="true">.</span></h2>
           </div>
-          <div class="form__row">
-            <label for="f-empresa">Empresa</label>
-            <input id="f-empresa" name="empresa" type="text" autocomplete="organization">
+          <p class="ctoform__sello">Respuesta personalizada</p>
+        </div>
+        <form class="form" id="contactoForm" data-email="mblasco@rh-bots.com" novalidate>
+          <div class="form__two">
+            <div class="form__row">
+              <label for="f-nombre">Nombre</label>
+              <input id="f-nombre" name="nombre" type="text" autocomplete="given-name" placeholder="Tu nombre" required>
+            </div>
+            <div class="form__row">
+              <label for="f-apellidos">Apellidos</label>
+              <input id="f-apellidos" name="apellidos" type="text" autocomplete="family-name" placeholder="Tus apellidos">
+            </div>
           </div>
           <div class="form__two">
             <div class="form__row">
               <label for="f-email">Email</label>
-              <input id="f-email" name="email" type="email" autocomplete="email" required>
+              <input id="f-email" name="email" type="email" autocomplete="email" placeholder="tu@empresa.com" required>
             </div>
             <div class="form__row">
               <label for="f-tel">Teléfono</label>
-              <input id="f-tel" name="tel" type="tel" autocomplete="tel">
+              <input id="f-tel" name="tel" type="tel" autocomplete="tel" placeholder="+34 600 000 000">
             </div>
           </div>
           <div class="form__row">
-            <label for="f-motivo">Motivo</label>
-            <select id="f-motivo" name="motivo"><option>Información de un modelo</option><option>Solicitar una demostración</option><option>Presupuesto</option><option>Alquiler</option><option>Servicio y mantenimiento</option><option>Otro</option></select>
+            <label for="f-empresa">Empresa</label>
+            <input id="f-empresa" name="empresa" type="text" autocomplete="organization" placeholder="Nombre de tu empresa">
           </div>
           <div class="form__row">
-            <label for="f-mensaje">Cuéntanos qué necesitas</label>
-            <textarea id="f-mensaje" name="mensaje" rows="5" required></textarea>
+            <label for="f-robot">¿En qué robot estás interesado?</label>
+            <select id="f-robot" name="robot"><option value="">Selecciona un modelo</option><optgroup label="Humanoides"><option>RHX2</option><option>RHA3</option><option>RHX2 Ultra</option><option>RHX2 EDU</option><option>RHA3 Ultra &quot;Reboniko&quot;</option><option>RHG2</option></optgroup><optgroup label="Cuadrúpedos"><option>D5W</option></optgroup><optgroup label="Limpieza autónoma"><option>RHC5</option><option>MT1</option><option>MT1 Max</option></optgroup><optgroup label="AMR intralogística"><option>T150</option><option>T300</option><option>T600</option><option>T600 Underride</option><option>MP2000</option></optgroup><optgroup label="Accesorios"><option>OmniHand</option><option>OmniHand Tactile</option><option>OmniHand Pro 2025</option><option>OmniPicker</option></optgroup><option>Aún no lo sé</option></select>
           </div>
-          <button class="pill" type="submit"><span>Enviar</span><i class="pill__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></button>
+          <div class="form__row">
+            <label for="f-mensaje">¿Cómo podemos ayudarte?</label>
+            <textarea id="f-mensaje" name="mensaje" rows="6" placeholder="Cuéntanos brevemente tu proyecto, necesidad o tipo de evento…" required></textarea>
+          </div>
+          <button class="pill" type="submit"><span>Enviar solicitud</span><i class="pill__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></button>
           <p class="form__nota" id="formNota" role="status"></p>
         </form>
       </div>
 
-      <aside class="contacto__datos reveal">
-        <h2 class="h-section">RH·BOTS — Recursos <span class="acento">Humanoides</span><span class="punto" aria-hidden="true">.</span></h2>
+      <aside class="ctoform__datos reveal">
+        <h2 class="ctoform__empresa">RH·BOTS — Recursos <span class="acento">Humanoides</span><span class="punto" aria-hidden="true">.</span></h2>
         <address class="direccion">Calle 6, nº 29<br>Polígono Industrial de Picassent<br>46220 Picassent (Valencia)</address>
-        <ul class="personas"><li class="persona reveal">
-        <h3>Marcos Blasco</h3>
-        <p class="persona__cargo">Co-Founder</p>
-        <p><a href="mailto:mblasco@rh-bots.com">mblasco@rh-bots.com</a></p>
-        <p><a href="tel:+34650484150">+34 650 48 41 50</a></p>
-      </li>
-<li class="persona reveal">
-        <h3>Javier Sirvent</h3>
-        <p class="persona__cargo">Co-Founder</p>
-        <p><a href="mailto:javier.sirvent@rh-bots.com">javier.sirvent@rh-bots.com</a></p>
-        <p><a href="tel:"></a></p>
-      </li>
-</ul>
+        <ul class="personas"><li class="persona">
+          <h3>Marcos Blasco</h3>
+          <p class="persona__cargo">Co-Founder</p>
+          <p><a href="mailto:mblasco@rh-bots.com">mblasco@rh-bots.com</a></p>
+          <p><a href="tel:+34650484150">+34 650 48 41 50</a></p>
+        </li><li class="persona">
+          <h3>Javier Sirvent</h3>
+          <p class="persona__cargo">Co-Founder</p>
+          <p><a href="mailto:javier.sirvent@rh-bots.com">javier.sirvent@rh-bots.com</a></p>
+          
+        </li></ul>
       </aside>
+    </div>
+  </section>
+  <section class="section section--white ctoproceso" id="como-trabajamos">
+    <div class="wrap">
+      <header class="reveal">
+        <p class="kicker">Cómo trabajamos</p>
+        <h2 class="ctoproceso__titulo">De la consulta a la solución, paso a <span class="acento">paso</span><span class="punto" aria-hidden="true">.</span></h2>
+      </header>
+      <ol class="ctopasos"><li class="ctopaso reveal"><p class="ctopaso__num">01</p><h3 class="ctopaso__titulo">Escuchamos</h3><p class="ctopaso__texto">Entendemos tu objetivo, el entorno de uso y las necesidades reales del proyecto.</p></li><li class="ctopaso reveal"><p class="ctopaso__num">02</p><h3 class="ctopaso__titulo">Recomendamos</h3><p class="ctopaso__texto">Te orientamos con una propuesta sencilla, clara y adaptada a tu caso.</p></li><li class="ctopaso reveal"><p class="ctopaso__num">03</p><h3 class="ctopaso__titulo">Acompañamos</h3><p class="ctopaso__texto">Resolvemos dudas y te ayudamos a avanzar con seguridad en la elección.</p></li></ol>
+    </div>
+  </section>
+  <section class="ctomail" id="email">
+    <div class="wrap ctomail__texto reveal">
+      <p>También puedes escribirnos directamente a</p>
+      <a class="ctomail__email" href="mailto:mblasco@rh-bots.com">mblasco@rh-bots.com</a>
     </div>
   </section>
 </main>

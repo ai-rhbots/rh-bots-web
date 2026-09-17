@@ -436,20 +436,21 @@
 
       // Sin backend todavía: se abre el correo con los datos ya redactados.
       var d = new FormData(form);
+      var robot = d.get('robot') || '';
       var cuerpo = [
-        'Nombre: ' + (d.get('nombre') || ''),
+        'Nombre: ' + [d.get('nombre'), d.get('apellidos')].filter(Boolean).join(' '),
         'Empresa: ' + (d.get('empresa') || ''),
         'Email: ' + (d.get('email') || ''),
         'Teléfono: ' + (d.get('tel') || ''),
-        'Motivo: ' + (d.get('motivo') || ''),
+        'Robot de interés: ' + (robot || 'sin indicar'),
         '', d.get('mensaje') || ''
       ].join('\n');
 
       nota.className = 'form__nota is-ok';
       nota.textContent = 'Abriendo tu gestor de correo con el mensaje redactado…';
 
-      location.href = 'mailto:mblasco@rh-bots.com'
-        + '?subject=' + encodeURIComponent('Web RH·BOTS — ' + (d.get('motivo') || 'Consulta'))
+      location.href = 'mailto:' + (form.getAttribute('data-email') || 'mblasco@rh-bots.com')
+        + '?subject=' + encodeURIComponent('Web RH·BOTS — ' + (robot ? 'Consulta sobre ' + robot : 'Solicitud de información'))
         + '&body=' + encodeURIComponent(cuerpo);
     });
   }

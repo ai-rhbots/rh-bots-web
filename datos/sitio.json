@@ -140,7 +140,46 @@
     ]
   },
   "contacto": {
-    "intro": "Cuéntanos qué necesitas resolver y te decimos qué robot encaja, con qué configuración y en qué plazo.",
+    "kicker": "Contacto RH·BOTS",
+    "h1": "Hablemos de tu próximo robot",
+    "asesoria": {
+      "titulo": "Te asesoramos sin compromiso",
+      "texto": "Respondemos a tus dudas, revisamos tu caso y te orientamos sobre modelos, usos y posibilidades.",
+      "pasos": [
+        [
+          "Cuéntanos tu idea",
+          "Uso, espacio, sector o tarea que quieres automatizar."
+        ],
+        [
+          "Analizamos la mejor opción",
+          "Robots humanoides, cuadrúpedos, de limpieza, AMR o accesorios."
+        ],
+        [
+          "Recibe una propuesta clara",
+          "Sin tecnicismos y adaptada a tus objetivos."
+        ]
+      ]
+    },
+    "proceso": {
+      "kicker": "Cómo trabajamos",
+      "titulo": "De la consulta a la solución, paso a paso",
+      "pasos": [
+        [
+          "Escuchamos",
+          "Entendemos tu objetivo, el entorno de uso y las necesidades reales del proyecto."
+        ],
+        [
+          "Recomendamos",
+          "Te orientamos con una propuesta sencilla, clara y adaptada a tu caso."
+        ],
+        [
+          "Acompañamos",
+          "Resolvemos dudas y te ayudamos a avanzar con seguridad en la elección."
+        ]
+      ]
+    },
+    "email_directo": "mblasco@rh-bots.com",
+    "intro": "Cuéntanos qué necesitas y te ayudaremos a encontrar la solución robótica más adecuada para tu empresa, evento o proyecto.",
     "empresa": "RH·BOTS — Recursos Humanoides",
     "direccion": [
       "Calle 6, nº 29",

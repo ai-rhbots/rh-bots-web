@@ -1532,70 +1532,143 @@ def legal_page():
 def contacto_page():
     base = ''
     c = CONTACTO
+    email = c.get('email_directo') or (c['personas'][0]['email'] if c.get('personas') else '')
     out = [head('Contacto | RH·BOTS', c['intro'], base, 'contacto.html'),
            header(base, 'contacto'), '<main id="contenido">']
 
+    # portada partida: texto sobre noche y foto con la tarjeta de asesoramiento
+    a = c.get('asesoria', {})
+    pasos_a = ''.join(
+        f'<li class="asesora__paso"><span class="asesora__num">{i:02d}</span>'
+        f'<div><h3>{e(t)}</h3><p>{e(x)}</p></div></li>'
+        for i, (t, x) in enumerate(a.get('pasos', []), 1))
+    out.append(f'''
+  <section class="ctohero" id="inicio">
+    <div class="ctohero__lado ctohero__lado--foto" aria-hidden="true">
+      <img src="{base}assets/video/fondo-c5.jpg" alt="" width="1280" height="720" fetchpriority="high">
+    </div>
+    <div class="wrap ctohero__grid">
+      <div class="ctohero__copy">
+        <p class="kicker ctohero__kicker">{e(c.get('kicker', 'Contacto'))}</p>
+        <h1 class="ctohero__titulo">{e(c.get('h1', 'Hablemos'))}</h1>
+        <p class="ctohero__lede">{e(c['intro'])}</p>
+        <div class="ctohero__cta">
+          <a class="pill" href="#formulario"><span>Solicitar asesoramiento</span>{CHEVRON}</a>
+          <a class="pill pill--borde" href="mailto:{e(email)}"><span>Escribir por email</span></a>
+        </div>
+      </div>
+      <aside class="asesora">
+        <h2 class="asesora__titulo">{e(a.get('titulo', ''))}</h2>
+        <p class="asesora__texto">{e(a.get('texto', ''))}</p>
+        <ol class="asesora__pasos">{pasos_a}</ol>
+      </aside>
+    </div>
+  </section>
+''')
+
+    # formulario + datos de la empresa
+    robots = '<option value="">Selecciona un modelo</option>'
+    for key, nombre, _ in FAMILIAS:
+        ps = [p for p in PRODUCTOS if p['family'] == key]
+        if ps:
+            robots += (f'<optgroup label="{e(nombre)}">'
+                       + ''.join(f'<option>{e(p["name"])}</option>' for p in ps) + '</optgroup>')
+    robots += '<option>Aún no lo sé</option>'
+
     personas = ''
     for p in c['personas']:
-        personas += f'''<li class="persona reveal">
-        <h3>{e(p['nombre'])}</h3>
-        <p class="persona__cargo">{e(p['cargo'])}</p>
-        <p><a href="mailto:{e(p['email'])}">{e(p['email'])}</a></p>
-        <p><a href="tel:{p['tel'].replace(' ', '')}">{e(p['tel'])}</a></p>
-      </li>\n'''
-
-    opciones = ''.join(f'<option>{e(m)}</option>' for m in c['motivos'])
+        tel = (f'<p><a href="tel:{p["tel"].replace(" ", "")}">{e(p["tel"])}</a></p>'
+               if p.get('tel') else '')
+        personas += f'''<li class="persona">
+          <h3>{e(p['nombre'])}</h3>
+          <p class="persona__cargo">{e(p['cargo'])}</p>
+          <p><a href="mailto:{e(p['email'])}">{e(p['email'])}</a></p>
+          {tel}
+        </li>'''
     direccion = '<br>'.join(e(x) for x in c['direccion'])
 
     out.append(f'''
-  <section class="chero">
-    <div class="wrap">
-      <h1 class="display display--left">Hablemos</h1>
-      <p class="lede lede--left">{e(c['intro'])}</p>
-    </div>
-  </section>
-
-  <section class="section section--white">
-    <div class="wrap contacto">
-      <div class="contacto__form reveal">
-        <h2 class="h-section h-section--blue">Escríbenos</h2>
-        <form class="form" id="contactoForm" novalidate>
-          <div class="form__row">
-            <label for="f-nombre">Nombre y apellidos</label>
-            <input id="f-nombre" name="nombre" type="text" autocomplete="name" required>
+  <section class="section section--light ctoform" id="formulario">
+    <div class="wrap ctoform__grid">
+      <div class="ctoform__caja reveal">
+        <div class="ctoform__cab">
+          <div>
+            <p class="kicker">Formulario</p>
+            <h2 class="ctoform__titulo">Solicita información</h2>
           </div>
-          <div class="form__row">
-            <label for="f-empresa">Empresa</label>
-            <input id="f-empresa" name="empresa" type="text" autocomplete="organization">
+          <p class="ctoform__sello">Respuesta personalizada</p>
+        </div>
+        <form class="form" id="contactoForm" data-email="{e(email)}" novalidate>
+          <div class="form__two">
+            <div class="form__row">
+              <label for="f-nombre">Nombre</label>
+              <input id="f-nombre" name="nombre" type="text" autocomplete="given-name" placeholder="Tu nombre" required>
+            </div>
+            <div class="form__row">
+              <label for="f-apellidos">Apellidos</label>
+              <input id="f-apellidos" name="apellidos" type="text" autocomplete="family-name" placeholder="Tus apellidos">
+            </div>
           </div>
           <div class="form__two">
             <div class="form__row">
               <label for="f-email">Email</label>
-              <input id="f-email" name="email" type="email" autocomplete="email" required>
+              <input id="f-email" name="email" type="email" autocomplete="email" placeholder="tu@empresa.com" required>
             </div>
             <div class="form__row">
               <label for="f-tel">Teléfono</label>
-              <input id="f-tel" name="tel" type="tel" autocomplete="tel">
+              <input id="f-tel" name="tel" type="tel" autocomplete="tel" placeholder="+34 600 000 000">
             </div>
           </div>
           <div class="form__row">
-            <label for="f-motivo">Motivo</label>
-            <select id="f-motivo" name="motivo">{opciones}</select>
+            <label for="f-empresa">Empresa</label>
+            <input id="f-empresa" name="empresa" type="text" autocomplete="organization" placeholder="Nombre de tu empresa">
           </div>
           <div class="form__row">
-            <label for="f-mensaje">Cuéntanos qué necesitas</label>
-            <textarea id="f-mensaje" name="mensaje" rows="5" required></textarea>
+            <label for="f-robot">¿En qué robot estás interesado?</label>
+            <select id="f-robot" name="robot">{robots}</select>
           </div>
-          <button class="pill" type="submit"><span>Enviar</span>{CHEVRON}</button>
+          <div class="form__row">
+            <label for="f-mensaje">¿Cómo podemos ayudarte?</label>
+            <textarea id="f-mensaje" name="mensaje" rows="6" placeholder="Cuéntanos brevemente tu proyecto, necesidad o tipo de evento…" required></textarea>
+          </div>
+          <button class="pill" type="submit"><span>Enviar solicitud</span>{CHEVRON}</button>
           <p class="form__nota" id="formNota" role="status"></p>
         </form>
       </div>
 
-      <aside class="contacto__datos reveal">
-        <h2 class="h-section">{e(c['empresa'])}</h2>
+      <aside class="ctoform__datos reveal">
+        <h2 class="ctoform__empresa">{e(c['empresa'])}</h2>
         <address class="direccion">{direccion}</address>
         <ul class="personas">{personas}</ul>
       </aside>
+    </div>
+  </section>
+''')
+
+    # cómo trabajamos: tres pasos
+    pr = c.get('proceso')
+    if pr:
+        pasos = ''.join(
+            f'<li class="ctopaso reveal"><p class="ctopaso__num">{i:02d}</p>'
+            f'<h3 class="ctopaso__titulo">{e(t)}</h3><p class="ctopaso__texto">{e(x)}</p></li>'
+            for i, (t, x) in enumerate(pr.get('pasos', []), 1))
+        out.append(f'''  <section class="section section--white ctoproceso" id="como-trabajamos">
+    <div class="wrap">
+      <header class="reveal">
+        <p class="kicker">{e(pr.get('kicker', ''))}</p>
+        <h2 class="ctoproceso__titulo">{e(pr.get('titulo', ''))}</h2>
+      </header>
+      <ol class="ctopasos">{pasos}</ol>
+    </div>
+  </section>
+''')
+
+    # franja: email directo
+    if email:
+        out.append(f'''  <section class="ctomail" id="email">
+    <div class="wrap ctomail__texto reveal">
+      <p>También puedes escribirnos directamente a</p>
+      <a class="ctomail__email" href="mailto:{e(email)}">{e(email)}</a>
     </div>
   </section>
 ''')
