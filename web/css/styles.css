@@ -162,7 +162,7 @@ svg .nostroke{ stroke:none; }
 .hero{
   position:relative; overflow:hidden; isolation:isolate;
   background:var(--night);
-  min-height:clamp(560px, calc(100svh - var(--header-h)), 880px);
+  min-height:clamp(460px, calc(100svh - var(--header-h) - 110px), 700px);
   display:flex; align-items:center;
 }
 /* franja diagonal azul translúcida del lado derecho */
@@ -173,7 +173,7 @@ svg .nostroke{ stroke:none; }
 }
 .hero__copy{
   position:relative; z-index:2;
-  padding-block:clamp(64px, 9vw, 120px);
+  padding-block:clamp(48px, 6.4vw, 92px);
 }
 /* rótulo pequeño sobre un titular (hero, qué hacemos…) */
 .kicker{
@@ -183,25 +183,25 @@ svg .nostroke{ stroke:none; }
 }
 .hero .display--hero{
   margin-top:clamp(14px, 1.6vw, 22px);
-  font-size:clamp(46px, 7vw, 104px);
-  line-height:.98;
+  font-size:clamp(38px, 5.4vw, 80px);
+  line-height:1;
   letter-spacing:-.05em;
   color:#fff;
 }
 .acento{ color:var(--blue); }
 .hero .lede--hero{
-  margin-top:clamp(22px, 2.6vw, 34px);
-  max-width:40ch;
-  font-size:clamp(16px, 1.45vw, 21px);
+  margin-top:clamp(18px, 2vw, 28px);
+  max-width:44ch;
+  font-size:clamp(15px, 1.2vw, 18px);
   line-height:1.65;
   color:rgba(255,255,255,.86);
 }
 .hero__cta{
-  margin-top:clamp(30px, 3.4vw, 48px);
-  display:flex; flex-wrap:wrap; gap:16px 22px;
+  margin-top:clamp(24px, 2.8vw, 38px);
+  display:flex; flex-wrap:wrap; gap:14px 18px;
 }
-.hero__cta .pill{ min-width:0; padding:15px 14px 15px 34px; font-size:clamp(16px, 1.3vw, 18px); gap:22px; }
-.hero__cta .pill__ico{ width:34px; height:34px; }
+.hero__cta .pill{ min-width:0; padding:12px 12px 12px 28px; font-size:clamp(15px, 1.1vw, 16px); gap:18px; }
+.hero__cta .pill__ico{ width:30px; height:30px; }
 
 .display{
   font-weight:400;
@@ -566,7 +566,7 @@ svg .nostroke{ stroke:none; }
   .spec::after{ display:none !important; }
   .spec:nth-child(2n)::after{ display:block !important; }
   .display{ font-size:24px; }
-  .hero .display--hero{ font-size:clamp(40px, 12vw, 52px); }
+  .hero .display--hero{ font-size:clamp(34px, 10vw, 44px); }
   .lede br, .sub br, .display:not(.display--hero) br{ display:none; }
 }
 
