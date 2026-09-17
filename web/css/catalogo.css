@@ -985,9 +985,54 @@ html body .artcard h3.artcard__titulo{
 
 /* ---------- contacto: formulario ---------- */
 .ctoform__grid{
-  display:grid; grid-template-columns:minmax(0, 1.55fr) minmax(0, .85fr);
-  gap:clamp(24px, 3.4vw, 48px); align-items:start;
+  display:grid; grid-template-columns:minmax(0, .82fr) minmax(0, 1.18fr);
+  gap:clamp(20px, 2.6vw, 36px); align-items:start;
 }
+.ctoform__lado{
+  background:#fff; border:1px solid #e6e9ee;
+  border-radius:clamp(22px, 2.6vw, 32px);
+  padding:clamp(26px, 3.4vw, 48px);
+  box-shadow:0 20px 50px rgba(11,22,38,.06);
+}
+.ctoform__ladotitulo{ margin-top:12px; font-size:clamp(26px, 2.8vw, 40px); line-height:1.1; color:var(--ink); }
+.ctoform__ladotexto{
+  margin-top:clamp(16px, 1.8vw, 24px);
+  font-size:clamp(15px, 1.15vw, 17px); line-height:1.75; color:var(--ink-66);
+}
+.datos{ list-style:none; margin:clamp(24px, 2.8vw, 36px) 0 0; padding:0; display:grid; gap:12px; }
+.dato{
+  display:flex; align-items:center; gap:16px;
+  background:#f7f9fb; border:1px solid #eceff3; border-radius:16px;
+  padding:16px 18px;
+}
+.dato__ico{
+  flex:none; width:44px; height:44px; border-radius:12px;
+  display:grid; place-items:center;
+  background:#e8f4fd; color:var(--blue);
+}
+.dato__ico svg{ width:21px; height:21px; }
+.dato__etiqueta{
+  font-family:var(--font-subtitulo); font-weight:700;
+  font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:#8b93a1;
+}
+.dato__valor{ margin-top:3px; font-size:16px; font-weight:600; color:var(--ink); overflow-wrap:anywhere; }
+.dato__valor--dir{ font-style:normal; font-weight:500; font-size:14.5px; line-height:1.6; color:var(--ink-66); }
+.dato__valor a{ transition:color .25s var(--ease); }
+.dato__valor a:hover{ color:var(--blue); }
+
+.form__consent{ display:flex; align-items:flex-start; gap:14px; }
+html body .form__consent input{
+  flex:none; width:22px; height:22px; min-height:0; margin-top:2px; padding:0;
+  border-radius:6px; background:#fff;
+  accent-color:var(--blue); cursor:pointer;
+}
+html body .form .form__consent label{
+  flex:1; min-width:0;
+  font-family:var(--font-texto); font-size:14px; line-height:1.6;
+  letter-spacing:normal; text-transform:none; font-weight:400; color:var(--ink-66);
+}
+.form__consent a{ color:var(--blue); text-decoration:underline; }
+.pill--ancho{ width:100%; justify-content:space-between; padding:18px 18px 18px 30px; }
 .ctoform__caja{
   background:#fff; border:1px solid #e6e9ee;
   border-radius:clamp(22px, 2.6vw, 32px);
@@ -1031,26 +1076,8 @@ html body .artcard h3.artcard__titulo{
 .form__nota.is-ok{ color:var(--blue-deep); font-weight:700; }
 .form__nota.is-err{ color:#c62828; }
 
-.ctoform__datos{
-  position:sticky; top:110px;
-  background:var(--navy); color:#fff;
-  border-radius:clamp(22px, 2.6vw, 32px); padding:clamp(26px, 3vw, 40px);
-}
-.ctoform__empresa{ font-size:clamp(20px, 1.8vw, 26px); line-height:1.2; color:#fff; }
-.direccion{ margin-top:16px; font-style:normal; font-size:14.5px; line-height:1.8; color:rgba(255,255,255,.75); }
-.personas{ list-style:none; padding:24px 0 0; display:grid; gap:22px; margin-top:26px; border-top:1px solid rgba(255,255,255,.16); }
-.persona h3{ font-weight:700; font-size:16px; color:#fff; }
-.persona__cargo{
-  font-size:11.5px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
-  color:var(--blue); margin-top:2px;
-}
-.persona p{ font-size:14.5px; line-height:1.7; color:rgba(255,255,255,.78); }
-.persona a{ transition:color .25s var(--ease); }
-.persona a:hover{ color:#fff; text-decoration:underline; }
-
 @media (max-width:960px){
   .ctoform__grid{ grid-template-columns:1fr; }
-  .ctoform__datos{ position:static; }
 }
 @media (max-width:560px){
   .form__two{ grid-template-columns:1fr; }

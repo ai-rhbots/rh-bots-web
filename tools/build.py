@@ -313,6 +313,22 @@ def header(base, active='robots'):
 
 
 # iconos de marca en cuadrado índigo con el glifo en blanco (franja «Síguenos»)
+# iconos de la página de contacto (trazo, heredan el color del texto)
+_SVG = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" '
+        'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">')
+ICONO_SOBRE = _SVG + '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>'
+ICONO_TEL = _SVG + ('<path d="M6 3h3l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v3a2 2 0 0 1-2.2 2'
+                    'A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3z"/></svg>')
+ICONO_ROBOT = _SVG + ('<rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 4v4"/>'
+                      '<circle cx="9" cy="13" r="1"/><circle cx="15" cy="13" r="1"/></svg>')
+ICONO_PIN = _SVG + '<path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>'
+
+
+def tel_href(t):
+    """«(+34) 680 40 41 41» → «+34680404141»."""
+    return '+' + re.sub(r'\D', '', t) if '+' in t else re.sub(r'\D', '', t)
+
+
 ICONO_INSTAGRAM = (
     '<svg viewBox="0 0 48 48" aria-hidden="true">'
     '<rect width="48" height="48" rx="7" fill="#2f2483" stroke="none"/>'
@@ -1566,7 +1582,7 @@ def contacto_page():
   </section>
 ''')
 
-    # formulario + datos de la empresa
+    # formulario: tarjeta con los datos y tarjeta con el formulario
     robots = '<option value="">Selecciona un modelo</option>'
     for key, nombre, _ in FAMILIAS:
         ps = [p for p in PRODUCTOS if p['family'] == key]
@@ -1575,21 +1591,42 @@ def contacto_page():
                        + ''.join(f'<option>{e(p["name"])}</option>' for p in ps) + '</optgroup>')
     robots += '<option>Aún no lo sé</option>'
 
-    personas = ''
-    for p in c['personas']:
-        tel = (f'<p><a href="tel:{p["tel"].replace(" ", "")}">{e(p["tel"])}</a></p>'
-               if p.get('tel') else '')
-        personas += f'''<li class="persona">
-          <h3>{e(p['nombre'])}</h3>
-          <p class="persona__cargo">{e(p['cargo'])}</p>
-          <p><a href="mailto:{e(p['email'])}">{e(p['email'])}</a></p>
-          {tel}
-        </li>'''
+    lado = c.get('lado', {})
+    tel = c.get('telefono_directo', '')
     direccion = '<br>'.join(e(x) for x in c['direccion'])
+    datos = f'''<li class="dato">
+          <span class="dato__ico">{ICONO_SOBRE}</span>
+          <div><p class="dato__etiqueta">Email directo</p>
+          <p class="dato__valor"><a href="mailto:{e(email)}">{e(email)}</a></p></div>
+        </li>'''
+    if tel:
+        datos += f'''<li class="dato">
+          <span class="dato__ico">{ICONO_TEL}</span>
+          <div><p class="dato__etiqueta">Teléfono</p>
+          <p class="dato__valor"><a href="tel:{tel_href(tel)}">{e(tel)}</a></p></div>
+        </li>'''
+    if lado.get('especialidad'):
+        datos += f'''<li class="dato">
+          <span class="dato__ico">{ICONO_ROBOT}</span>
+          <div><p class="dato__etiqueta">Especialistas en</p>
+          <p class="dato__valor">{e(lado['especialidad'])}</p></div>
+        </li>'''
+    datos += f'''<li class="dato">
+          <span class="dato__ico">{ICONO_PIN}</span>
+          <div><p class="dato__etiqueta">Dónde estamos</p>
+          <address class="dato__valor dato__valor--dir">{direccion}</address></div>
+        </li>'''
 
     out.append(f'''
   <section class="section section--light ctoform" id="formulario">
     <div class="wrap ctoform__grid">
+      <aside class="ctoform__lado reveal">
+        <p class="kicker">{e(lado.get('kicker', 'Hablemos'))}</p>
+        <h2 class="ctoform__ladotitulo">{e(lado.get('titulo', ''))}</h2>
+        <p class="ctoform__ladotexto">{e(lado.get('texto', ''))}</p>
+        <ul class="datos">{datos}</ul>
+      </aside>
+
       <div class="ctoform__caja reveal">
         <div class="ctoform__cab">
           <div>
@@ -1631,16 +1668,16 @@ def contacto_page():
             <label for="f-mensaje">¿Cómo podemos ayudarte?</label>
             <textarea id="f-mensaje" name="mensaje" rows="6" placeholder="Cuéntanos brevemente tu proyecto, necesidad o tipo de evento…" required></textarea>
           </div>
-          <button class="pill" type="submit"><span>Enviar solicitud</span>{CHEVRON}</button>
+          <div class="form__consent">
+            <input id="f-privacidad" name="privacidad" type="checkbox" required>
+            <label for="f-privacidad">He leído y acepto la
+              <a href="{base}legal.html#privacidad">política de privacidad</a>.
+              Consiento el tratamiento de mis datos para recibir información comercial de RH·BOTS.</label>
+          </div>
+          <button class="pill pill--ancho" type="submit"><span>Enviar mensaje</span>{CHEVRON}</button>
           <p class="form__nota" id="formNota" role="status"></p>
         </form>
       </div>
-
-      <aside class="ctoform__datos reveal">
-        <h2 class="ctoform__empresa">{e(c['empresa'])}</h2>
-        <address class="direccion">{direccion}</address>
-        <ul class="personas">{personas}</ul>
-      </aside>
     </div>
   </section>
 ''')
@@ -1663,8 +1700,16 @@ def contacto_page():
   </section>
 ''')
 
-    # franja: email directo
-    if email:
+    # franja: teléfono (o correo, si no hubiera teléfono)
+    if tel:
+        out.append(f'''  <section class="ctomail" id="telefono">
+    <div class="wrap ctomail__texto reveal">
+      <p>También puedes llamarnos al</p>
+      <a class="ctomail__email" href="tel:{tel_href(tel)}">{e(tel)}</a>
+    </div>
+  </section>
+''')
+    elif email:
         out.append(f'''  <section class="ctomail" id="email">
     <div class="wrap ctomail__texto reveal">
       <p>También puedes escribirnos directamente a</p>

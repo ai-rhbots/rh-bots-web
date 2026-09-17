@@ -178,7 +178,14 @@
         ]
       ]
     },
-    "email_directo": "mblasco@rh-bots.com",
+    "email_directo": "info@rh-bots.com",
+    "telefono_directo": "(+34) 680 40 41 41",
+    "lado": {
+      "kicker": "Hablemos",
+      "titulo": "Un contacto más directo, claro y humano",
+      "texto": "Rellena el formulario y un especialista de RH·BOTS se pondrá en contacto contigo lo antes posible. También puedes escribirnos directamente si lo prefieres.",
+      "especialidad": "Robótica para empresas y eventos"
+    },
     "intro": "Cuéntanos qué necesitas y te ayudaremos a encontrar la solución robótica más adecuada para tu empresa, evento o proyecto.",
     "empresa": "RH·BOTS — Recursos Humanoides",
     "direccion": [

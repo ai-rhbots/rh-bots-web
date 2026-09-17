@@ -428,8 +428,11 @@
       ev.preventDefault();
 
       if (!form.checkValidity()) {
+        var falta = form.querySelector('#f-privacidad');
         nota.className = 'form__nota is-err';
-        nota.textContent = 'Revisa los campos obligatorios: nombre, email y mensaje.';
+        nota.textContent = (falta && !falta.checked && form.querySelector(':invalid') === falta)
+          ? 'Para enviar el mensaje tienes que aceptar la política de privacidad.'
+          : 'Revisa los campos obligatorios: nombre, email, mensaje y la política de privacidad.';
         form.reportValidity();
         return;
       }
@@ -449,9 +452,9 @@
       nota.className = 'form__nota is-ok';
       nota.textContent = 'Abriendo tu gestor de correo con el mensaje redactado…';
 
-      location.href = 'mailto:' + (form.getAttribute('data-email') || 'mblasco@rh-bots.com')
+      location.href = 'mailto:' + (form.getAttribute('data-email') || 'info@rh-bots.com')
         + '?subject=' + encodeURIComponent('Web RH·BOTS — ' + (robot ? 'Consulta sobre ' + robot : 'Solicitud de información'))
-        + '&body=' + encodeURIComponent(cuerpo);
+        + '&body=' + encodeURIComponent(cuerpo + '\n\n---\nAcepto la política de privacidad y el tratamiento de mis datos para recibir información comercial de RH·BOTS.');
     });
   }
 
