@@ -1316,38 +1316,6 @@ def articulo_page(post):
     return ''.join(out)
 
 
-SIN_FOTO_SVG = ('<svg viewBox="0 0 64 64">'
-                '<circle cx="32" cy="24" r="12"/>'
-                '<path d="M12 54c0-12 9-20 20-20s20 8 20 20"/></svg>')
-
-
-def bloque_equipo(equipo, base):
-    if not equipo:
-        return ''
-    tarjetas = ''
-    for foto, nombre, cargo, bio in equipo:
-        if foto:
-            media = (f'<div class="persona-equipo__foto"><img src="{base}{e(foto)}" alt="" '
-                    f'loading="lazy"{img_dims_attr(foto)}></div>')
-        else:
-            media = (f'<div class="persona-equipo__foto persona-equipo__foto--vacia" '
-                     f'aria-hidden="true">{SIN_FOTO_SVG}</div>')
-        bio_html = f'<p class="persona-equipo__bio">{e(bio)}</p>' if bio else ''
-        tarjetas += f'''<li class="persona-equipo reveal">
-        {media}
-        <p class="persona-equipo__nombre">{e(nombre)}</p>
-        <p class="persona-equipo__cargo">{e(cargo)}</p>
-        {bio_html}
-      </li>\n'''
-    return f'''  <section class="section section--white" id="equipo">
-    <div class="wrap">
-      <header class="section-head reveal"><h2 class="h-section h-section--blue">Equipo</h2></header>
-      <ul class="equipo">{tarjetas}</ul>
-    </div>
-  </section>
-'''
-
-
 def rh_bots_page():
     base = ''
     r = RHBOTS
@@ -1437,7 +1405,27 @@ def rh_bots_page():
   </section>
 ''')
 
-    out.append(bloque_equipo(r.get('equipo'), base))
+    # cómo trabajamos: cuatro pasos
+    pr = r.get('proceso')
+    if pr:
+        pasos = ''.join(
+            f'<li class="paso reveal"><p class="paso__num">{i:02d}</p>'
+            f'<h3 class="paso__titulo">{e(t)}</h3><p class="paso__texto">{e(txt)}</p></li>'
+            for i, (t, txt) in enumerate(pr.get('pasos', []), 1))
+        out.append(f'''  <section class="section section--white proceso" id="como-trabajamos">
+    <div class="wrap">
+      <header class="proceso__head reveal">
+        <div>
+          <p class="kicker">{e(pr.get('kicker', ''))}</p>
+          <h2 class="proceso__titulo">{e(pr.get('titulo', ''))}</h2>
+        </div>
+        <p class="proceso__texto">{e(pr.get('texto', ''))}</p>
+      </header>
+      <ol class="pasos">{pasos}</ol>
+    </div>
+  </section>
+''')
+
     out.append('</main>')
     out.append(footer(base))
     return ''.join(out)
