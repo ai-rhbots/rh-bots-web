@@ -973,6 +973,45 @@ html body .artcard h3.artcard__titulo{
 .mision__puntos li{ font-weight:600; }
 @media (max-width:860px){ .mision__grid{ grid-template-columns:1fr; } }
 
+/* ---------- marcas distribuidas: franja en inicio y tarjetas en conócenos ---------- */
+.marcas{
+  background:var(--light);
+  border-bottom:1px solid rgba(47,36,131,.08);
+  padding-block:clamp(22px, 2.6vw, 34px);
+}
+.marcas__fila{
+  display:flex; align-items:center; justify-content:center; flex-wrap:wrap;
+  gap:clamp(14px, 3vw, 48px);
+}
+.marcas__rotulo{
+  margin:0; font-family:var(--font-subtitulo); font-weight:700;
+  font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--navy);
+}
+.marcas__logos, .alianza__marcas{ list-style:none; margin:0; padding:0; display:flex; align-items:center; }
+.marcas__logos{ gap:clamp(28px, 4vw, 64px); }
+.marcas__logo img{ display:block; height:clamp(26px, 2.6vw, 36px); width:auto; }
+.marcas__logo:last-child img{ height:clamp(30px, 3vw, 42px); }
+
+.alianza__marcas{
+  justify-content:center; flex-wrap:wrap;
+  gap:clamp(12px, 1.6vw, 20px);
+  margin-top:clamp(28px, 3.4vw, 44px);
+}
+.alianza__marca{
+  display:flex; align-items:center; justify-content:center;
+  width:clamp(200px, 22vw, 280px); height:clamp(76px, 8vw, 100px);
+  padding:0 clamp(22px, 2.6vw, 34px);
+  background:#fff; border-radius:clamp(16px, 1.8vw, 22px);
+  box-shadow:0 12px 30px rgba(11,22,38,.18);
+}
+.alianza__marca img{ display:block; width:100%; height:auto; max-height:44px; object-fit:contain; }
+.alianza__marca:last-child img{ max-height:36px; }
+@media (max-width:560px){
+  .marcas__fila{ flex-direction:column; gap:14px; }
+  .marcas__rotulo{ text-align:center; font-size:12px; letter-spacing:.1em; }
+  .alianza__marca{ width:calc(50% - 6px); height:70px; padding:0 16px; }
+}
+
 /* ---------- conócenos: alianza con cifras ---------- */
 .alianza{
   position:relative; overflow:hidden; color:#fff;

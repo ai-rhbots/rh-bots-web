@@ -1,6 +1,6 @@
 # RH·BOTS
 
-> Distribuidor oficial de AGIBOT en España y Portugal. Robots de limpieza autónoma, humanoides, cuadrúpedos, AMR de intralogística y accesorios, con asesoramiento, instalación, formación y mantenimiento. Sede en Picassent (Valencia).
+> Distribuidor oficial de AGIBOT y PUDU en España y Portugal. Robots de limpieza autónoma, humanoides, cuadrúpedos, AMR de intralogística y accesorios, con asesoramiento, instalación, formación y mantenimiento. Sede en Picassent (Valencia).
 
 ## Robots
 

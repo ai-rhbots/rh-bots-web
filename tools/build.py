@@ -27,6 +27,17 @@ FECHA_BUILD = time.strftime('%Y-%m-%d')
 LINKEDIN_EMPRESA = 'https://www.linkedin.com/company/rh-bots'
 INSTAGRAM_EMPRESA = 'https://www.instagram.com/rhbots/'
 
+# marcas de las que somos distribuidores oficiales (logos en assets/marcas/)
+MARCAS = [('AGIBOT', 'assets/marcas/agibot.webp', 560, 95),
+          ('PUDU', 'assets/marcas/pudu.webp', 560, 148)]
+
+
+def logos_marcas(base, clase):
+    return ''.join(
+        f'<li class="{clase}"><img src="{base}{src}" alt="Logotipo de {nombre}" '
+        f'width="{w}" height="{h}" loading="lazy" decoding="async"></li>'
+        for nombre, src, w, h in MARCAS)
+
 
 # ─────────────────────────────────────────────────────────────── imágenes ──
 _DIM_CACHE = {}
@@ -89,7 +100,7 @@ def schema_organization():
         'url': dominio + '/',
         'logo': f'{dominio}/assets/logo-rhbots.png',
         'image': f'{dominio}/{SEO["og_imagen"]}',
-        'description': ('Distribuidor oficial de AGIBOT en España y Portugal: robots de limpieza '
+        'description': ('Distribuidor oficial de AGIBOT y PUDU en España y Portugal: robots de limpieza '
                         'autónoma, humanoides, cuadrúpedos, AMR de intralogística y accesorios, con asesoramiento, instalación, '
                         'formación y mantenimiento.'),
         'areaServed': ['ES', 'PT'],
@@ -1001,6 +1012,12 @@ def home_page():
       </div>
     </div>
   </section>
+  <section class="marcas" id="marcas" aria-label="Marcas que distribuimos">
+    <div class="wrap marcas__fila">
+      <p class="marcas__rotulo">Distribuidores oficiales en España y Portugal</p>
+      <ul class="marcas__logos">{logos_marcas(base, 'marcas__logo')}</ul>
+    </div>
+  </section>
 ''')
 
     # qué hacemos: titular a la izquierda, tarjeta con la propuesta a la derecha
@@ -1400,6 +1417,7 @@ def rh_bots_page():
         <h2 class="alianza__titulo">{e(al.get('titulo', ''))}</h2>
         <p class="alianza__texto">{e(al.get('texto', ''))}</p>
       </header>
+      <ul class="alianza__marcas reveal" aria-label="Marcas que distribuimos">{logos_marcas(base, 'alianza__marca')}</ul>
       <div class="alianza__cifras reveal">{celdas}</div>
     </div>
   </section>
@@ -1461,7 +1479,7 @@ def legal_page():
       <strong>Dominio:</strong> {e(dominio)}</p>
       <p>El acceso y uso de este sitio web atribuye la condición de usuario e implica
       la aceptación de las condiciones aquí recogidas. {e(empresa)} es distribuidor
-      oficial de AGIBOT en España y Portugal.</p>
+      oficial de AGIBOT y PUDU en España y Portugal.</p>
 
       <h2 id="privacidad">Política de privacidad</h2>
       <p><strong>Responsable del tratamiento:</strong> {e(empresa)}{f', {e(email)}' if email else ''}.</p>
@@ -1686,7 +1704,7 @@ def llms_txt():
     todo el HTML."""
     d = SEO['dominio'].rstrip('/')
     out = ['# RH·BOTS\n',
-           f'> Distribuidor oficial de AGIBOT en España y Portugal. Robots de limpieza '
+           f'> Distribuidor oficial de AGIBOT y PUDU en España y Portugal. Robots de limpieza '
            f'autónoma, humanoides, cuadrúpedos, AMR de intralogística y accesorios, con asesoramiento, instalación, '
            f'formación y mantenimiento. Sede en Picassent (Valencia).\n']
 

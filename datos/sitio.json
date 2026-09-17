@@ -179,7 +179,7 @@
   },
   "prefooter": {
     "titulo": "Hablemos del futuro",
-    "texto": "¿Interesado en integrar robots AGIBOT en tu empresa o centro de investigación? Contáctanos y te asesoramos sin compromiso.",
+    "texto": "¿Interesado en integrar robots AGIBOT o PUDU en tu empresa o centro de investigación? Contáctanos y te asesoramos sin compromiso.",
     "siguenos": "Síguenos"
   },
   "posts": [
@@ -224,7 +224,7 @@
   "rhbots": {
     "kicker": "Quiénes somos",
     "h1": "El equipo detrás de RH·BOTS",
-    "lede": "Distribuidor oficial de AGIBOT en España y Portugal, con base en Picassent (Valencia). Acompañamos a cada cliente desde la elección del robot hasta el mantenimiento del día a día.",
+    "lede": "Distribuidor oficial de AGIBOT y PUDU en España y Portugal, con base en Picassent (Valencia). Acompañamos a cada cliente desde la elección del robot hasta el mantenimiento del día a día.",
     "mision": {
       "kicker": "Nuestra misión",
       "titulo": "Hacer que la robótica humanoide sea <span class=\"acento\">accesible, fiable y rentable</span>",
@@ -252,7 +252,7 @@
         ],
         [
           "2",
-          "países con distribución oficial de AGIBOT: España y Portugal"
+          "países con distribución oficial de AGIBOT y PUDU: España y Portugal"
         ]
       ]
     },
@@ -280,7 +280,7 @@
       ]
     },
     "historia_subtitulo": "Nuestra historia",
-    "historia_cuerpo": "<p>RH·BOTS nace para acercar la robótica humanoide a empresas que necesitan resultados reales, no demostraciones. Como distribuidor oficial de AGIBOT en España y Portugal, seleccionamos el robot adecuado para cada operación y acompañamos a nuestros clientes en todo el proceso: asesoramiento previo, instalación, formación de equipos y mantenimiento continuado.</p><p>Trabajamos desde Picassent (Valencia), con clientes en sectores que van de la limpieza industrial a la atención al público y la automatización de fábrica.</p>",
+    "historia_cuerpo": "<p>RH·BOTS nace para acercar la robótica humanoide a empresas que necesitan resultados reales, no demostraciones. Como distribuidor oficial de AGIBOT y PUDU en España y Portugal, seleccionamos el robot adecuado para cada operación y acompañamos a nuestros clientes en todo el proceso: asesoramiento previo, instalación, formación de equipos y mantenimiento continuado.</p><p>Trabajamos desde Picassent (Valencia), con clientes en sectores que van de la limpieza industrial a la atención al público y la automatización de fábrica.</p>",
     "cifras": [],
     "equipo": [
       [
