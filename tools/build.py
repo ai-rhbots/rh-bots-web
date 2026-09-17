@@ -594,16 +594,6 @@ def video_html(videos, base, titulo='Vídeo'):
 '''
 
 
-def notes_html(p):
-    if not p['notes']:
-        return ''
-    rows = ''
-    for kind, title, body in p['notes']:
-        rows += (f'<div class="nota nota--{kind}"><p class="nota__titulo">{e(title)}</p>'
-                 f'<p>{e(body)}</p></div>\n')
-    return f'<div class="notas">\n{rows}</div>\n'
-
-
 # ─────────────────────────────────────────────────────────── ficha (x14) ──
 def product_page(p):
     base = '../'
@@ -673,10 +663,8 @@ def product_page(p):
   </section>
 ''')
 
-    # ---- avisos
-    if p['notes']:
-        out.append(f'  <section class="section section--white section--tight">\n'
-                   f'    <div class="wrap wrap--narrow">{notes_html(p)}</div>\n  </section>\n')
+    # Los avisos («notes») son notas internas para preparar ofertas: se guardan
+    # en productos.json y se ven en el panel, pero no se publican en la ficha.
 
     # ---- intro + highlights
     out.append('  <section class="section section--white" id="que-hace">\n    <div class="wrap">\n')
