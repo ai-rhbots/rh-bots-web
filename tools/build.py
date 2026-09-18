@@ -667,6 +667,66 @@ def video_html(videos, base, titulo='Vídeo'):
 '''
 
 
+# Qué se enseña en la rejilla corta de especificaciones, por orden. La ficha
+# completa sigue debajo, desplegable: aquí solo van los datos que alguien mira
+# antes de decidir si el robot le encaja.
+CLAVES_SPECS = [
+    'altura', 'peso neto', 'peso', 'dimensiones de pie', 'velocidad máxima',
+    'velocidad', 'autonomía', 'batería', 'tiempo de carga', 'carga máxima',
+    'carga útil', 'rendimiento', 'anchura de trabajo', 'anchura de fregado',
+    'depósito', 'grados de libertad', 'par máximo', 'fuerza de agarre',
+    'repetibilidad', 'resolución', 'alcance', 'visión', 'sensor de movimiento',
+    'navegación', 'unidad de control', 'unidad de computación', 'pendiente',
+    'franqueo de obstáculos', 'protección', 'conectividad', 'garantía',
+]
+MAX_SPECS_DESTACADAS = 15     # tres filas de cinco
+
+
+def _valor_corto(v, largo):
+    """Valor en versión resumida: el detalle completo queda en la tabla."""
+    v = v.split(' · ')[0].strip()
+    if len(v) > largo:
+        v = v.split(', ')[0].strip()
+    if len(v) > largo:
+        v = v.split(' (')[0].strip()
+    return v if len(v) <= largo else ''
+
+
+def specs_destacadas(p, maximo=MAX_SPECS_DESTACADAS, largo=44):
+    """Las filas más útiles de la ficha, una por concepto y sin repetir."""
+    filas = [(l, v) for _, rows in p['specs'] for l, v in rows]
+    elegidas, etiquetas, conceptos = [], set(), set()
+    for clave in CLAVES_SPECS:
+        if clave in conceptos or len(elegidas) >= maximo:
+            continue
+        for l, v in filas:
+            bajo = l.lower()
+            if bajo in etiquetas or not bajo.startswith(clave) and clave not in bajo:
+                continue
+            corto = _valor_corto(v, largo)
+            if not corto:
+                continue
+            elegidas.append((l, corto))
+            etiquetas.add(bajo)
+            # ese concepto ya está cubierto: nada de «Peso neto» y «Peso con embalaje»
+            conceptos.update(c for c in CLAVES_SPECS if c in bajo or bajo.startswith(c))
+            break
+    # si el producto trae pocas coincidencias, se completa por orden
+    for l, v in filas:
+        if len(elegidas) >= maximo:
+            break
+        bajo = l.lower()
+        corto = _valor_corto(v, largo)
+        if bajo in etiquetas or not corto:
+            continue
+        if any(c in bajo for c in conceptos):     # ese concepto ya está puesto
+            continue
+        elegidas.append((l, corto))
+        etiquetas.add(bajo)
+        conceptos.update(c for c in CLAVES_SPECS if c in bajo)
+    return elegidas[:maximo]
+
+
 # ─────────────────────────────────────────────────────────── ficha (x14) ──
 def product_page(p):
     base = '../'
@@ -787,16 +847,24 @@ def product_page(p):
   </section>
 ''')
 
-    # ---- especificaciones
+    # ---- especificaciones: primero las 15 clave, y debajo la ficha completa
+    destacadas = ''.join(
+        f'<li class="dato-tec"><p class="dato-tec__etiqueta">{e(l)}</p>'
+        f'<p class="dato-tec__valor">{e(v)}</p></li>'
+        for l, v in specs_destacadas(p))
     groups = ''
     for gtitle, rows in p['specs']:
         trs = ''.join(f'<tr><th scope="row">{e(l)}</th><td>{e(v)}</td></tr>' for l, v in rows)
-        groups += (f'<div class="specgrp reveal"><h3>{e(gtitle)}</h3>'
+        groups += (f'<div class="specgrp"><h3>{e(gtitle)}</h3>'
                    f'<table class="spectable"><tbody>{trs}</tbody></table></div>\n')
     out.append(f'''  <section class="section section--white" id="especificaciones">
     <div class="wrap">
       <header class="section-head reveal"><h2 class="h-section h-section--blue">Especificaciones técnicas del {e(p['name'])}</h2></header>
-      <div class="specgrid">{groups}</div>
+      <ul class="datos-tec reveal">{destacadas}</ul>
+      <details class="fichacompleta reveal">
+        <summary>Ver la ficha técnica completa</summary>
+        <div class="specgrid">{groups}</div>
+      </details>
     </div>
   </section>
 ''')
