@@ -302,10 +302,18 @@
           ? '<p class="precio">' + importe(v.price) +
             ' <span>' + esc(simbolo(moneda)) + '</span></p>'
           : '';
+        var carro = '<i class="pill__ico pill__ico--carro" aria-hidden="true">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" ' +
+          'stroke-linecap="round" stroke-linejoin="round">' +
+          '<path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.4a2 2 0 0 0 2-1.5L20.5 8H6"/>' +
+          '<circle cx="10" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/></svg></i>';
         return precio +
           '<a class="pill pill--comprar" rel="nofollow noopener" href="' +
           esc(base + '/cart/' + v.id + ':1') + '"><span>' +
-          esc(d.texto) + '</span>' + chevron + '</a>';
+          esc(d.texto) + '</span>' + chevron + '</a>' +
+          '<button class="pill pill--anadir" type="button" data-anadir data-variante="' +
+          esc(v.id) + '" data-precio-num="' + (v.price / 100) + '">' +
+          '<span>Añadir al carrito</span>' + carro + '</button>';
       }
 
       function pedir(ruta) {
@@ -329,6 +337,140 @@
         compra.innerHTML = pinta(v, tienda && tienda.currency);
         compra.setAttribute('data-vivo', '1');
       });
+    })();
+  }
+
+  /* ---------- carrito ----------
+     El carrito se guarda en el navegador (localStorage). Al finalizar, las
+     líneas se traducen en un «cart permalink» de Shopify
+     (/cart/<variante>:<unidades>,…), así que el cobro, el stock, los envíos
+     y los impuestos los sigue llevando Shopify: aquí no hay ni claves ni
+     datos de pago.                                                          */
+  var cajaCarrito = document.querySelector('[data-carrito]');
+  if (cajaCarrito) {
+    (function () {
+      var LLAVE = 'rhbots-carrito';
+      var dominio = cajaCarrito.dataset.dominio;
+      var lista = cajaCarrito.querySelector('[data-carrito-lista]');
+      var pie = cajaCarrito.querySelector('[data-carrito-pie]');
+      var totalEl = cajaCarrito.querySelector('[data-carrito-total]');
+      var pagar = cajaCarrito.querySelector('[data-carrito-pagar]');
+      var abrir = document.querySelector('[data-carrito-abrir]');
+      var numero = document.querySelector('[data-carrito-num]');
+
+      function leer() {
+        try { return JSON.parse(localStorage.getItem(LLAVE)) || []; }
+        catch (e) { return []; }
+      }
+      function guardar(items) {
+        try { localStorage.setItem(LLAVE, JSON.stringify(items)); } catch (e) {}
+      }
+      function esc(s) {
+        return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+        });
+      }
+      function dinero(n, moneda) {
+        try {
+          return new Intl.NumberFormat('es-ES', {
+            style: 'currency', currency: moneda || 'EUR', maximumFractionDigits: 0
+          }).format(n);
+        } catch (e) { return n + ' ' + (moneda || ''); }
+      }
+
+      function pinta() {
+        var items = leer();
+        var unidades = items.reduce(function (n, i) { return n + i.uds; }, 0);
+        if (numero) {
+          numero.textContent = unidades;
+          numero.hidden = unidades === 0;
+        }
+        if (!items.length) {
+          lista.innerHTML = '<p class="carrito__vacio">Todavía no has añadido ningún robot.' +
+            '<a href="' + esc(cajaCarrito.dataset.robots || 'robots.html') + '">Ver el catálogo</a></p>';
+          pie.hidden = true;
+          return;
+        }
+        var total = 0, moneda = 'EUR';
+        lista.innerHTML = items.map(function (i) {
+          total += i.precio * i.uds;
+          moneda = i.moneda || moneda;
+          return '<article class="citem" data-variante="' + esc(i.id) + '">' +
+            (i.foto ? '<a class="citem__foto" href="' + esc(i.url) + '">' +
+                      '<img src="' + esc(i.foto) + '" alt="" loading="lazy"></a>' : '') +
+            '<div class="citem__texto">' +
+              '<a class="citem__nombre" href="' + esc(i.url) + '">' + esc(i.nombre) + '</a>' +
+              '<p class="citem__precio">' + esc(dinero(i.precio, i.moneda)) + '</p>' +
+              '<div class="citem__uds">' +
+                '<button type="button" data-menos aria-label="Quitar una unidad">−</button>' +
+                '<span>' + i.uds + '</span>' +
+                '<button type="button" data-mas aria-label="Añadir una unidad">+</button>' +
+                '<button type="button" class="citem__quitar" data-quitar>Quitar</button>' +
+              '</div>' +
+            '</div></article>';
+        }).join('');
+        totalEl.textContent = dinero(total, moneda);
+        pagar.href = 'https://' + dominio + '/cart/' + items.map(function (i) {
+          return i.id + ':' + i.uds;
+        }).join(',');
+        pie.hidden = false;
+      }
+
+      function abrirPanel(si) {
+        cajaCarrito.hidden = !si;
+        cajaCarrito.classList.toggle('is-open', si);
+        document.documentElement.classList.toggle('sin-scroll', si);
+        if (abrir) abrir.setAttribute('aria-expanded', String(si));
+      }
+
+      function anadir(datos) {
+        var items = leer();
+        var ya = items.filter(function (i) { return i.id === datos.id; })[0];
+        if (ya) ya.uds += 1; else items.push(datos);
+        guardar(items);
+        pinta();
+        abrirPanel(true);
+      }
+
+      // botones «añadir al carrito» (los repinta el bloque de precio en vivo)
+      document.addEventListener('click', function (ev) {
+        var b = ev.target.closest && ev.target.closest('[data-anadir]');
+        if (!b) return;
+        var caja = b.closest('[data-tienda]');
+        if (!caja) return;
+        ev.preventDefault();
+        anadir({
+          id: b.dataset.variante || caja.dataset.variante,
+          nombre: caja.dataset.nombre || document.title,
+          precio: Number(b.dataset.precioNum || caja.dataset.precioNum || 0),
+          moneda: caja.dataset.moneda || 'EUR',
+          foto: caja.dataset.foto || '',
+          url: caja.dataset.url || location.pathname,
+          uds: 1
+        });
+      });
+
+      // abrir, cerrar y cambiar unidades
+      if (abrir) abrir.addEventListener('click', function () { abrirPanel(true); });
+      cajaCarrito.addEventListener('click', function (ev) {
+        if (ev.target.closest('[data-carrito-cerrar]')) return abrirPanel(false);
+        var fila = ev.target.closest('.citem');
+        if (!fila) return;
+        var items = leer();
+        var i = items.filter(function (x) { return String(x.id) === fila.dataset.variante; })[0];
+        if (!i) return;
+        if (ev.target.closest('[data-mas]')) i.uds += 1;
+        else if (ev.target.closest('[data-menos]')) i.uds -= 1;
+        else if (ev.target.closest('[data-quitar]')) i.uds = 0;
+        else return;
+        guardar(items.filter(function (x) { return x.uds > 0; }));
+        pinta();
+      });
+      document.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Escape' && cajaCarrito.classList.contains('is-open')) abrirPanel(false);
+      });
+
+      pinta();
     })();
   }
 

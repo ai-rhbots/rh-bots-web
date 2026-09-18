@@ -323,6 +323,55 @@ def head(title, desc, base, ruta='', extra_css=True, og_img=None, extra_jsonld=N
 '''
 
 
+_SVG_TRAZO = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" '
+              'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">')
+ICONO_CARRITO = (_SVG_TRAZO + '<path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.4a2 2 0 0 0 2-1.5L20.5 8H6"/>'
+                 '<circle cx="10" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/></svg>')
+
+
+def boton_carrito(base):
+    """Acceso al carrito en la cabecera. Solo si la tienda está activa."""
+    if not TIENDA.get('activa'):
+        return ''
+    return (f'<button class="carrito-abrir" type="button" data-carrito-abrir '
+            f'aria-label="Abrir el carrito" aria-controls="carrito" aria-expanded="false">'
+            f'{ICONO_CARRITO}<span class="carrito-abrir__num" data-carrito-num hidden>0</span>'
+            f'</button>')
+
+
+def panel_carrito(base):
+    """Carrito lateral.
+
+    El carrito vive en el navegador (localStorage) y al finalizar se traduce
+    en un «cart permalink» de Shopify con todas las líneas, así que el cobro,
+    el stock y los impuestos los sigue llevando Shopify. No hace falta ninguna
+    clave de API ni que el visitante tenga sesión abierta en la tienda.
+    """
+    if not TIENDA.get('activa'):
+        return ''
+    dominio = TIENDA['dominio'].strip('/')
+    return f'''
+<div class="carrito" id="carrito" data-carrito data-dominio="{e(dominio)}" hidden>
+  <div class="carrito__fondo" data-carrito-cerrar></div>
+  <aside class="carrito__panel" role="dialog" aria-modal="true" aria-label="Carrito">
+    <header class="carrito__cab">
+      <h2 class="carrito__titulo onblue" data-punto="manual">Tu carrito</h2>
+      <button class="carrito__cerrar" type="button" data-carrito-cerrar aria-label="Cerrar el carrito">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </header>
+    <div class="carrito__cuerpo" data-carrito-lista></div>
+    <footer class="carrito__pie" data-carrito-pie hidden>
+      <p class="carrito__total"><span>Total</span><strong data-carrito-total></strong></p>
+      <p class="carrito__nota">Los gastos de envío y los impuestos se calculan al finalizar la compra.</p>
+      <a class="pill carrito__pagar" data-carrito-pagar rel="nofollow noopener" href="#"><span>Finalizar compra</span>{CHEVRON}</a>
+      <a class="carrito__consulta" href="{base}contacto.html">¿Prefieres que te asesoremos antes? Escríbenos</a>
+    </footer>
+  </aside>
+</div>
+'''
+
+
 def header(base, active='robots'):
     parts = []
     for it in NAV:
@@ -377,18 +426,19 @@ def header(base, active='robots'):
     <nav class="nav" id="nav" aria-label="Navegación principal">
       {links}
     </nav>
+    {boton_carrito(base)}
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
+{panel_carrito(base)}
 '''
 
 
 # iconos de marca en cuadrado índigo con el glifo en blanco (franja «Síguenos»)
 # iconos de la página de contacto (trazo, heredan el color del texto)
-_SVG = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" '
-        'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">')
+_SVG = _SVG_TRAZO
 ICONO_SOBRE = _SVG + '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>'
 ICONO_TEL = _SVG + ('<path d="M6 3h3l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v3a2 2 0 0 1-2.2 2'
                     'A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3z"/></svg>')
@@ -572,6 +622,10 @@ def boton_compra(p, base):
             f'data-dominio="{e(dominio)}" data-handle="{e(sh.get("handle", ""))}" '
             f'data-variante="{e(sh["variante"])}" data-contacto="{e(contacto)}" '
             f'data-texto="{e(etiqueta)}" '
+            f'data-nombre="{e(p["name"])}" '
+            f'data-foto="{e(base + p["hero"]) if p.get("hero") else ""}" '
+            f'data-url="{e(base + "robots/" + p["slug"] + ".html")}" '
+            f'data-moneda="{e(sh.get("moneda", TIENDA.get("moneda", "EUR")))}" '
             f'data-precio="{"1" if mostrar else "0"}">'
             f'{interior}</div>')
 
@@ -610,8 +664,12 @@ def estado_compra(disponible, precio, moneda, variante, dominio, etiqueta, conta
     if mostrar_precio and TIENDA.get('mostrar_precio'):
         precio_html = (f'<p class="precio">{e(formato_precio(precio))} '
                        f'<span>{e(formato_moneda(moneda))}</span></p>')
+    anadir = (f'<button class="pill pill--anadir" type="button" data-anadir '
+              f'data-variante="{e(str(variante))}" data-precio-num="{precio:.2f}">'
+              f'<span>Añadir al carrito</span>'
+              f'<i class="pill__ico pill__ico--carro" aria-hidden="true">{ICONO_CARRITO}</i></button>')
     return (f'{precio_html}<a class="pill pill--comprar" href="{e(url)}" '
-            f'rel="nofollow noopener"><span>{e(etiqueta)}</span>{CHEVRON}</a>')
+            f'rel="nofollow noopener"><span>{e(etiqueta)}</span>{CHEVRON}</a>{anadir}')
 
 
 def fondo_video(nombre, base, clase=''):

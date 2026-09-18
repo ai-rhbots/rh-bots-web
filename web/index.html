@@ -46,11 +46,32 @@
       <a href="rh-bots.html">Conócenos</a>
       <a href="contacto.html">Contacto</a>
     </nav>
+    <button class="carrito-abrir" type="button" data-carrito-abrir aria-label="Abrir el carrito" aria-controls="carrito" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.4a2 2 0 0 0 2-1.5L20.5 8H6"/><circle cx="10" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/></svg><span class="carrito-abrir__num" data-carrito-num hidden>0</span></button>
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
+
+<div class="carrito" id="carrito" data-carrito data-dominio="rzrujk-0d.myshopify.com" hidden>
+  <div class="carrito__fondo" data-carrito-cerrar></div>
+  <aside class="carrito__panel" role="dialog" aria-modal="true" aria-label="Carrito">
+    <header class="carrito__cab">
+      <h2 class="carrito__titulo onblue" data-punto="manual">Tu carrito</h2>
+      <button class="carrito__cerrar" type="button" data-carrito-cerrar aria-label="Cerrar el carrito">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </header>
+    <div class="carrito__cuerpo" data-carrito-lista></div>
+    <footer class="carrito__pie" data-carrito-pie hidden>
+      <p class="carrito__total"><span>Total</span><strong data-carrito-total></strong></p>
+      <p class="carrito__nota">Los gastos de envío y los impuestos se calculan al finalizar la compra.</p>
+      <a class="pill carrito__pagar" data-carrito-pagar rel="nofollow noopener" href="#"><span>Finalizar compra</span><i class="pill__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
+      <a class="carrito__consulta" href="contacto.html">¿Prefieres que te asesoremos antes? Escríbenos</a>
+    </footer>
+  </aside>
+</div>
+
 <main id="contenido">
   <section class="hero" id="inicio">
     <div class="fondovid fondovid--oscuro" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="assets/video/fondo-c5.webp"><source src="assets/video/fondo-c5.mp4" type="video/mp4"></video></div>
