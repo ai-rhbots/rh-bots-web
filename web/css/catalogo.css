@@ -108,13 +108,14 @@
   font-size:clamp(26px, 2.6vw, 34px); line-height:1.1; color:var(--navy);
 }
 .pvp__etiqueta,
-.pcard__precio__etiqueta{
+.pcard .pcard__precio__etiqueta{
   font-family:var(--font-subtitulo); font-weight:700; font-size:12px;
-  letter-spacing:.14em; color:var(--muted); vertical-align:middle; margin-right:6px;
+  letter-spacing:.14em; color:var(--muted); vertical-align:middle; margin-right:8px;
 }
-.pcard__precio{
-  margin-top:16px; font-family:var(--font-titulo); font-weight:700;
-  font-size:20px; letter-spacing:-.01em; color:var(--navy);
+.pcard .pcard__precio{
+  margin-top:18px; font-family:var(--font-titulo); font-weight:800;
+  font-size:clamp(24px, 2.1vw, 29px); line-height:1.1; letter-spacing:-.02em;
+  color:var(--blue);
 }
 
 /* ---------- compra ---------- */
