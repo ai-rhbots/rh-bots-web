@@ -20,14 +20,16 @@
     <p>Titular, entradilla, secciones de la portada y preguntas frecuentes.</p></a>
   <a class="tarjeta" href="{{ url_for('productos') }}"><h2>Robots</h2>
     <p>{{ productos|length }} fichas: textos, datos rápidos, aplicaciones y especificaciones.</p></a>
-  <a class="tarjeta" href="{{ url_for('rhbots') }}"><h2>RH·BOTS</h2>
-    <p>Historia de la empresa y {{ sitio.rhbots.equipo|length if sitio.rhbots else 0 }} persona(s) en el equipo.</p></a>
+  <a class="tarjeta" href="{{ url_for('rhbots') }}"><h2>Conócenos</h2>
+    <p>Misión, alianza con AGIBOT y PUDU, cómo trabajamos e historia de la empresa.</p></a>
+  <a class="tarjeta" href="{{ url_for('aplicaciones') }}"><h2>Aplicaciones</h2>
+    <p>{{ sitio.aplicaciones.sectores|length if sitio.aplicaciones else 0 }} sector(es): tareas y robots recomendados por sector.</p></a>
   <a class="tarjeta" href="{{ url_for('blog') }}"><h2>Blog</h2>
     <p>{{ sitio.posts|length }} entrada(s) publicada(s).</p></a>
   <a class="tarjeta" href="{{ url_for('medios') }}"><h2>Biblioteca</h2>
     <p>Sube imágenes y reutilízalas en cualquier campo del panel.</p></a>
   <a class="tarjeta" href="{{ url_for('contacto') }}"><h2>Contacto</h2>
-    <p>Dirección, personas de contacto y motivos del formulario.</p></a>
+    <p>Dirección, personas de contacto, asesoría y cómo trabajamos.</p></a>
   <a class="tarjeta" href="{{ url_for('menu') }}"><h2>Menú</h2>
     <p>Entradas de navegación; se pueden ocultar sin borrarlas.</p></a>
   <a class="tarjeta" href="{{ url_for('tienda') }}"><h2>Tienda</h2>

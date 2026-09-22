@@ -1,7 +1,7 @@
 {% extends "base.html" %}
-{% block titulo %}RH·BOTS{% endblock %}
+{% block titulo %}Conócenos{% endblock %}
 {% block contenido %}
-<h1>RH·BOTS — equipo e historia</h1>
+<h1>Conócenos</h1>
 <form method="post" class="formulario">
   <input type="hidden" name="csrf" value="{{ csrf_token() }}">
 
@@ -13,6 +13,86 @@
 
   <label for="lede">Entradilla</label>
   <textarea id="lede" name="lede" rows="3">{{ r.lede }}</textarea>
+
+  <h2>Nuestra misión</h2>
+  <div class="dos">
+    <div><label for="m_kicker">Antetítulo</label>
+      <input id="m_kicker" name="m_kicker" value="{{ m.kicker }}"></div>
+  </div>
+  <label for="m_titulo">Título</label>
+  <input id="m_titulo" name="m_titulo" value="{{ m.titulo }}">
+  <p class="pista">Puedes usar <code>&lt;span class="acento"&gt;...&lt;/span&gt;</code> para resaltar una parte en azul, como en el resto de títulos de la web.</p>
+  <label>Párrafos</label>
+  <div class="filas" data-filas data-target="m_parrafos"
+       data-cols='[{"label":"Párrafo","tipo":"textarea"}]'>
+    <textarea id="m_parrafos" name="m_parrafos" hidden>{{ m.parrafos|join("\n") }}</textarea>
+    <div class="filas__lista" data-filas-lista></div>
+    <button type="button" class="btn btn--plano" data-filas-add>+ Añadir párrafo</button>
+  </div>
+  <label>Puntos (lista con viñetas)</label>
+  <div class="filas" data-filas data-target="m_puntos"
+       data-cols='[{"label":"Punto","tipo":"texto"}]'>
+    <textarea id="m_puntos" name="m_puntos" hidden>{{ m.puntos|join("\n") }}</textarea>
+    <div class="filas__lista" data-filas-lista></div>
+    <button type="button" class="btn btn--plano" data-filas-add>+ Añadir punto</button>
+  </div>
+
+  <h2>Alianza con AGIBOT y PUDU</h2>
+  <label for="al_titulo">Título</label>
+  <input id="al_titulo" name="al_titulo" value="{{ al.titulo }}">
+  <label for="al_texto">Texto</label>
+  <textarea id="al_texto" name="al_texto" rows="2">{{ al.texto }}</textarea>
+  <label>Cifras (con contador al hacer scroll)</label>
+  <div class="filas" data-filas data-target="al_cifras"
+       data-cols='[{"label":"Cifra","tipo":"texto"},{"label":"Etiqueta","tipo":"texto"}]'>
+    <textarea id="al_cifras" name="al_cifras" hidden>{{ a_texto(al.cifras) }}</textarea>
+    <div class="filas__lista" data-filas-lista></div>
+    <button type="button" class="btn btn--plano" data-filas-add>+ Añadir cifra</button>
+  </div>
+  <p class="pista">En la cifra puedes usar <code>{modelos}</code> o <code>{familias}</code> — se sustituyen automáticamente por el número real de modelos y familias del catálogo.</p>
+
+  <h2>«Cómo trabajamos» (cuatro pasos)</h2>
+  <div class="dos">
+    <div><label for="pr_kicker">Antetítulo</label>
+      <input id="pr_kicker" name="pr_kicker" value="{{ pr.kicker }}"></div>
+    <div><label for="pr_titulo">Título</label>
+      <input id="pr_titulo" name="pr_titulo" value="{{ pr.titulo }}"></div>
+  </div>
+  <label for="pr_texto">Texto</label>
+  <textarea id="pr_texto" name="pr_texto" rows="2">{{ pr.texto }}</textarea>
+  <label>Pasos</label>
+  <div class="filas" data-filas data-target="pr_pasos"
+       data-cols='[{"label":"Título","tipo":"texto"},{"label":"Texto","tipo":"textarea"}]'>
+    <textarea id="pr_pasos" name="pr_pasos" hidden>{{ a_texto(pr.pasos) }}</textarea>
+    <div class="filas__lista" data-filas-lista></div>
+    <button type="button" class="btn btn--plano" data-filas-add>+ Añadir paso</button>
+  </div>
+
+  <h2>Cierre «¿Hablamos de tu proyecto?»</h2>
+  <label for="pj_titulo">Título</label>
+  <input id="pj_titulo" name="pj_titulo" value="{{ pj.titulo }}">
+  <label for="pj_texto">Texto</label>
+  <textarea id="pj_texto" name="pj_texto" rows="2">{{ pj.texto }}</textarea>
+  <div class="dos">
+    <div><label for="pj_boton">Texto del botón</label>
+      <input id="pj_boton" name="pj_boton" value="{{ pj.boton }}"></div>
+  </div>
+  <label>Foto de fondo</label>
+  <div class="imgpicker" data-imgpicker>
+    <div class="imgpicker__zona" data-imgpicker-zona tabindex="0" role="button"
+         aria-label="Subir foto de fondo">
+      <img class="imgpicker__preview" data-imgpicker-preview alt="" hidden>
+      <p class="imgpicker__texto" data-imgpicker-texto>Arrastra una imagen aquí o haz clic para elegirla</p>
+    </div>
+    <input type="file" data-imgpicker-file accept="image/*" hidden>
+    <div class="imgpicker__fila">
+      <input type="text" id="pj_foto" name="pj_foto" value="{{ pj.foto or '' }}" placeholder="Sin foto">
+      <button type="button" class="btn btn--mini btn--plano" data-imgpicker-quitar hidden>Quitar</button>
+    </div>
+  </div>
+
+  <h2>Otros bloques (ya no se muestran en la web actual)</h2>
+  <p class="pista">Estos campos se conservan por si vuelven a usarse, pero ahora mismo no aparecen en la página.</p>
 
   <label>Cifras destacadas (opcional)</label>
   <div class="filas" data-filas data-target="cifras"

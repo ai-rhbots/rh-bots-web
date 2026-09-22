@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block titulo %}Aplicaciones{% endblock %}
+{% block contenido %}
+<h1>Aplicaciones por sector</h1>
+<form method="post" class="formulario">
+  <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+
+  <label for="kicker">Antetítulo</label>
+  <input id="kicker" name="kicker" value="{{ a.kicker }}">
+
+  <label for="h1">Título</label>
+  <input id="h1" name="h1" value="{{ a.h1 }}" required>
+
+  <label for="lede">Entradilla</label>
+  <textarea id="lede" name="lede" rows="3">{{ a.lede }}</textarea>
+
+  <label>Foto de portada</label>
+  <div class="imgpicker" data-imgpicker>
+    <div class="imgpicker__zona" data-imgpicker-zona tabindex="0" role="button"
+         aria-label="Subir foto de portada">
+      <img class="imgpicker__preview" data-imgpicker-preview alt="" hidden>
+      <p class="imgpicker__texto" data-imgpicker-texto>Arrastra una imagen aquí o haz clic para elegirla</p>
+    </div>
+    <input type="file" data-imgpicker-file accept="image/*" hidden>
+    <div class="imgpicker__fila">
+      <input type="text" id="imagen" name="imagen" value="{{ a.imagen or '' }}" placeholder="Sin foto">
+      <button type="button" class="btn btn--mini btn--plano" data-imgpicker-quitar hidden>Quitar</button>
+    </div>
+  </div>
+
+  <label for="sectores">Sectores</label>
+  <textarea id="sectores" name="sectores" rows="26" class="codigo">{{ sectores_txt }}</textarea>
+  <p class="pista">Formato JSON: una lista de sectores, cada uno con
+    <code>id</code> (identificador corto, sin espacios), <code>titulo</code>,
+    <code>texto</code>, <code>tareas</code> (lista de frases),
+    <code>robots</code> (lista de slugs de fichas — el mismo texto que aparece
+    al final de la URL de cada robot, por ejemplo <code>rhx2</code> o
+    <code>rhc5</code>) e <code>imagen</code> (ruta dentro de <code>assets/</code>).
+    Los robots que no existan en el catálogo simplemente no se muestran, sin dar error.
+    Si el JSON no es válido se avisa y no se guarda nada.</p>
+  <p class="pista">Slugs disponibles ahora mismo: {{ slugs_disponibles }}</p>
+
+  <div class="acciones"><button class="btn" type="submit">Guardar</button></div>
+</form>
+{% endblock %}

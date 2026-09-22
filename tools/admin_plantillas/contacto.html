@@ -5,10 +5,24 @@
 <form method="post" class="formulario">
   <input type="hidden" name="csrf" value="{{ csrf_token() }}">
 
+  <div class="dos">
+    <div><label for="kicker">Antetítulo</label>
+      <input id="kicker" name="kicker" value="{{ c.kicker }}"></div>
+    <div><label for="h1">Título</label>
+      <input id="h1" name="h1" value="{{ c.h1 }}"></div>
+  </div>
+
   <label for="intro">Entradilla</label>
   <textarea id="intro" name="intro" rows="3">{{ c.intro }}</textarea>
 
-  <label for="empresa">Empresa</label>
+  <div class="dos">
+    <div><label for="email_directo">Email directo</label>
+      <input id="email_directo" name="email_directo" value="{{ c.email_directo }}"></div>
+    <div><label for="telefono_directo">Teléfono directo (opcional)</label>
+      <input id="telefono_directo" name="telefono_directo" value="{{ c.telefono_directo }}"></div>
+  </div>
+
+  <label for="empresa">Empresa (nombre legal)</label>
   <input id="empresa" name="empresa" value="{{ c.empresa }}">
 
   <label>Dirección</label>
@@ -27,12 +41,46 @@
     <button type="button" class="btn btn--plano" data-filas-add>+ Añadir persona</button>
   </div>
 
-  <label>Motivos del formulario</label>
-  <div class="filas" data-filas data-target="motivos"
-       data-cols='[{"label":"Motivo","tipo":"texto"}]'>
-    <textarea id="motivos" name="motivos" hidden>{{ c.motivos|join("\n") }}</textarea>
+  <h2>Tarjeta «Te asesoramos» (junto a la portada)</h2>
+  <div class="dos">
+    <div><label for="ase_titulo">Título</label>
+      <input id="ase_titulo" name="ase_titulo" value="{{ a.titulo }}"></div>
+  </div>
+  <label for="ase_texto">Texto</label>
+  <textarea id="ase_texto" name="ase_texto" rows="2">{{ a.texto }}</textarea>
+  <label>Pasos</label>
+  <div class="filas" data-filas data-target="ase_pasos"
+       data-cols='[{"label":"Título","tipo":"texto"},{"label":"Texto","tipo":"textarea"}]'>
+    <textarea id="ase_pasos" name="ase_pasos" hidden>{{ a_texto(a.pasos) }}</textarea>
     <div class="filas__lista" data-filas-lista></div>
-    <button type="button" class="btn btn--plano" data-filas-add>+ Añadir motivo</button>
+    <button type="button" class="btn btn--plano" data-filas-add>+ Añadir paso</button>
+  </div>
+
+  <h2>Barra lateral del formulario</h2>
+  <div class="dos">
+    <div><label for="lado_kicker">Antetítulo</label>
+      <input id="lado_kicker" name="lado_kicker" value="{{ lado.kicker }}"></div>
+    <div><label for="lado_especialidad">Especialistas en</label>
+      <input id="lado_especialidad" name="lado_especialidad" value="{{ lado.especialidad }}"></div>
+  </div>
+  <label for="lado_titulo">Título</label>
+  <input id="lado_titulo" name="lado_titulo" value="{{ lado.titulo }}">
+  <label for="lado_texto">Texto</label>
+  <textarea id="lado_texto" name="lado_texto" rows="3">{{ lado.texto }}</textarea>
+
+  <h2>«Cómo trabajamos» (tres pasos)</h2>
+  <div class="dos">
+    <div><label for="pr_kicker">Antetítulo</label>
+      <input id="pr_kicker" name="pr_kicker" value="{{ pr.kicker }}"></div>
+    <div><label for="pr_titulo">Título</label>
+      <input id="pr_titulo" name="pr_titulo" value="{{ pr.titulo }}"></div>
+  </div>
+  <label>Pasos</label>
+  <div class="filas" data-filas data-target="pr_pasos"
+       data-cols='[{"label":"Título","tipo":"texto"},{"label":"Texto","tipo":"textarea"}]'>
+    <textarea id="pr_pasos" name="pr_pasos" hidden>{{ a_texto(pr.pasos) }}</textarea>
+    <div class="filas__lista" data-filas-lista></div>
+    <button type="button" class="btn btn--plano" data-filas-add>+ Añadir paso</button>
   </div>
 
   <div class="acciones"><button class="btn" type="submit">Guardar</button></div>

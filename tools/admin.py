@@ -465,25 +465,46 @@ def crear_app():
     @requiere_acceso
     def contacto():
         s = D.cargar('sitio')
+        c = s['contacto']
         if request.method == 'POST':
             f = request.form
-            s['contacto'].update({
+            c.update({
+                'kicker': f.get('kicker', '').strip(),
+                'h1': f.get('h1', '').strip(),
                 'intro': f.get('intro', '').strip(),
                 'empresa': f.get('empresa', '').strip(),
+                'email_directo': f.get('email_directo', '').strip(),
+                'telefono_directo': f.get('telefono_directo', '').strip(),
                 'direccion': lineas(f.get('direccion', '')),
-                'motivos': lineas(f.get('motivos', '')),
                 'personas': [
-                    {'nombre': n, 'cargo': c, 'email': e_, 'tel': t}
-                    for n, c, e_, t in filas(f.get('personas', ''), 4) if n
+                    {'nombre': n, 'cargo': c_, 'email': e_, 'tel': t}
+                    for n, c_, e_, t in filas(f.get('personas', ''), 4) if n
                 ],
+                'asesoria': {
+                    'titulo': f.get('ase_titulo', '').strip(),
+                    'texto': f.get('ase_texto', '').strip(),
+                    'pasos': filas(f.get('ase_pasos', ''), 2),
+                },
+                'lado': {
+                    'kicker': f.get('lado_kicker', '').strip(),
+                    'titulo': f.get('lado_titulo', '').strip(),
+                    'texto': f.get('lado_texto', '').strip(),
+                    'especialidad': f.get('lado_especialidad', '').strip(),
+                },
+                'proceso': {
+                    'kicker': f.get('pr_kicker', '').strip(),
+                    'titulo': f.get('pr_titulo', '').strip(),
+                    'pasos': filas(f.get('pr_pasos', ''), 2),
+                },
             })
             guardar_y_publicar('sitio', s, 'Contacto guardado.')
             return redirect(url_for('contacto'))
-        c = s['contacto']
         personas = '\n'.join(' | '.join([p.get('nombre', ''), p.get('cargo', ''),
                                          p.get('email', ''), p.get('tel', '')])
                              for p in c['personas'])
-        return render_template('contacto.html', c=c, personas=personas)
+        return render_template('contacto.html', c=c, personas=personas, a_texto=a_texto,
+                               a=c.get('asesoria', {}), lado=c.get('lado', {}),
+                               pr=c.get('proceso', {}))
 
     # ── RH·BOTS (equipo e historia) ──────────────────────────────────────
     @app.route('/rh-bots', methods=['GET', 'POST'])
@@ -506,12 +527,69 @@ def crear_app():
                 'cifras': [[v, et] for v, et in filas(f.get('cifras', ''), 2) if v or et],
                 'equipo': [[foto, nombre, cargo, bio]
                           for foto, nombre, cargo, bio in filas(f.get('equipo', ''), 4) if nombre],
+                'mision': {
+                    'kicker': f.get('m_kicker', '').strip(),
+                    'titulo': f.get('m_titulo', '').strip(),
+                    'parrafos': lineas(f.get('m_parrafos', '')),
+                    'puntos': lineas(f.get('m_puntos', '')),
+                },
+                'alianza': {
+                    'titulo': f.get('al_titulo', '').strip(),
+                    'texto': f.get('al_texto', '').strip(),
+                    'cifras': filas(f.get('al_cifras', ''), 2),
+                },
+                'proceso': {
+                    'kicker': f.get('pr_kicker', '').strip(),
+                    'titulo': f.get('pr_titulo', '').strip(),
+                    'texto': f.get('pr_texto', '').strip(),
+                    'pasos': filas(f.get('pr_pasos', ''), 2),
+                },
+                'proyecto': {
+                    'titulo': f.get('pj_titulo', '').strip(),
+                    'texto': f.get('pj_texto', '').strip(),
+                    'boton': f.get('pj_boton', '').strip(),
+                    'foto': f.get('pj_foto', '').strip(),
+                },
             })
-            guardar_y_publicar('sitio', s, 'RH·BOTS guardado.')
+            guardar_y_publicar('sitio', s, 'Conócenos guardado.')
             return redirect(url_for('rhbots'))
         cifras = a_texto(r['cifras'])
         equipo = a_texto(r['equipo'])
-        return render_template('rhbots.html', r=r, cifras=cifras, equipo=equipo)
+        return render_template('rhbots.html', r=r, cifras=cifras, equipo=equipo, a_texto=a_texto,
+                               m=r.get('mision', {}), al=r.get('alianza', {}),
+                               pr=r.get('proceso', {}), pj=r.get('proyecto', {}))
+
+    # ── aplicaciones (página por sector) ─────────────────────────────────
+    @app.route('/aplicaciones', methods=['GET', 'POST'])
+    @requiere_acceso
+    def aplicaciones():
+        s = D.cargar('sitio')
+        a = s.setdefault('aplicaciones', {'kicker': '', 'h1': '', 'lede': '',
+                                          'imagen': '', 'sectores': []})
+        if request.method == 'POST':
+            f = request.form
+            try:
+                sectores = json.loads(f.get('sectores') or '[]')
+            except json.JSONDecodeError as ex:
+                flash(f'Los sectores no son JSON válido: {ex}', 'error')
+                return render_template('aplicaciones.html', a=a, sectores_txt=f.get('sectores', ''),
+                                       slugs_disponibles=_slugs_disponibles())
+            a.update({
+                'kicker': f.get('kicker', '').strip(),
+                'h1': f.get('h1', '').strip(),
+                'lede': f.get('lede', '').strip(),
+                'imagen': f.get('imagen', '').strip(),
+                'sectores': sectores,
+            })
+            guardar_y_publicar('sitio', s, 'Aplicaciones guardado.')
+            return redirect(url_for('aplicaciones'))
+        return render_template('aplicaciones.html', a=a,
+                               sectores_txt=json.dumps(a.get('sectores', []),
+                                                       ensure_ascii=False, indent=2),
+                               slugs_disponibles=_slugs_disponibles())
+
+    def _slugs_disponibles():
+        return ', '.join(p['slug'] for p in D.cargar('productos')['productos'])
 
     # ── blog ──────────────────────────────────────────────────────────────
     @app.route('/blog')
@@ -639,7 +717,7 @@ def crear_app():
             slug = slug_unico(nombre, d['productos'])
             d['productos'].append({
                 'slug': slug, 'name': nombre, 'base': '', 'family': familia,
-                'status': 'disponible', 'claim': '', 'tagline': '',
+                'status': 'disponible', 'claim': '', 'tagline': '', 'precio': '',
                 'hero': None, 'hero_alt': '', 'frames': [], 'gallery': [],
                 'intro': '', 'keyfacts': [], 'highlights': [],
                 'specs': [], 'applications': [], 'notes': [],
