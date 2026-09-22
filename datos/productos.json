@@ -771,7 +771,14 @@
         ]
       ],
       "notes": [],
-      "shopify": null
+      "shopify": {
+        "handle": "agibot-a3",
+        "variante": "50723653681389",
+        "sku": "AGIBOT-A3",
+        "precio": "74700.00",
+        "moneda": "EUR",
+        "disponible": true
+      }
     },
     {
       "slug": "rhx2-ultra",
@@ -1135,7 +1142,14 @@
           "El alcance de aprox. 570 mm solo aparece en las especificaciones «Lingxi X2»; la hoja de datos actual no lo indica."
         ]
       ],
-      "shopify": null
+      "shopify": {
+        "handle": "agibot-x2-ultra",
+        "variante": "50723654664429",
+        "sku": "AGIBOT-X2-ULTRA",
+        "precio": "38500.00",
+        "moneda": "EUR",
+        "disponible": true
+      }
     },
     {
       "slug": "rhx2-edu",
@@ -2466,7 +2480,14 @@
           "El fabricante indica que las prestaciones proceden de ensayos de laboratorio y pueden variar según el entorno. La velocidad de 5 m/s y el alcance de 14 km figuran en la presentación, no en la tabla de especificaciones."
         ]
       ],
-      "shopify": null
+      "shopify": {
+        "handle": "pudu-d5w",
+        "variante": "50723655155949",
+        "sku": "PUDU-D5W",
+        "precio": "49000.00",
+        "moneda": "EUR",
+        "disponible": true
+      }
     },
     {
       "slug": "rhc5",
@@ -3176,7 +3197,14 @@
           "El MT1 está pensado para interiores. Para aparcamientos, patios y zonas semiexteriores existe el MT1 Max, con lidar 3D, protección IP54 y más autonomía."
         ]
       ],
-      "shopify": null
+      "shopify": {
+        "handle": "pudu-mt1",
+        "variante": "50723655221485",
+        "sku": "PUDU-MT1",
+        "precio": "14900.00",
+        "moneda": "EUR",
+        "disponible": true
+      }
     },
     {
       "slug": "mt1-max",
@@ -3528,7 +3556,14 @@
           "El fabricante indica que no se debe limpiar en condiciones meteorológicas extremas; la protección es IP54."
         ]
       ],
-      "shopify": null
+      "shopify": {
+        "handle": "pudu-mt1-max",
+        "variante": "50723655319789",
+        "sku": "PUDU-MT1-MAX",
+        "precio": "19900.00",
+        "moneda": "EUR",
+        "disponible": true
+      }
     },
     {
       "slug": "t150",
@@ -3817,7 +3852,14 @@
           "El catálogo indica «ciclo de vida < 1000, SOH 70 %», dato que parece una errata. Confirmar con el fabricante antes de citarlo."
         ]
       ],
-      "shopify": null
+      "shopify": {
+        "handle": "pudu-t150",
+        "variante": "50723655385325",
+        "sku": "PUDU-T150",
+        "precio": "9500.00",
+        "moneda": "EUR",
+        "disponible": true
+      }
     },
     {
       "slug": "t300",
@@ -4180,7 +4222,14 @@
           "El catálogo indica «ciclo de vida < 1000, SOH 70 %», dato que parece una errata. Confirmar con el fabricante antes de citarlo."
         ]
       ],
-      "shopify": null
+      "shopify": {
+        "handle": "pudu-t300",
+        "variante": "50723655516397",
+        "sku": "PUDU-T300",
+        "precio": "17000.00",
+        "moneda": "EUR",
+        "disponible": true
+      }
     },
     {
       "slug": "t600",
@@ -4463,7 +4512,14 @@
           "El catálogo indica «ciclo de vida < 1000, SOH 70 %», dato que parece una errata. Confirmar con el fabricante antes de citarlo."
         ]
       ],
-      "shopify": null
+      "shopify": {
+        "handle": "pudu-t600",
+        "variante": "50723655581933",
+        "sku": "PUDU-T600",
+        "precio": "23000.00",
+        "moneda": "EUR",
+        "disponible": true
+      }
     },
     {
       "slug": "t600-underride",
@@ -4742,7 +4798,14 @@
           "El catálogo indica «ciclo de vida < 1000, SOH 70 %», dato que parece una errata. Confirmar con el fabricante antes de citarlo."
         ]
       ],
-      "shopify": null
+      "shopify": {
+        "handle": "pudu-t600-underride",
+        "variante": "50723655647469",
+        "sku": "PUDU-T600-UNDERRIDE",
+        "precio": "21000.00",
+        "moneda": "EUR",
+        "disponible": true
+      }
     },
     {
       "slug": "mp2000",
@@ -5050,7 +5113,14 @@
           "Es una transpaleta de elevación baja (hasta 200 mm): solo cubre almacenamiento en suelo y el primer nivel de estantería, no estanterías en altura."
         ]
       ],
-      "shopify": null
+      "shopify": {
+        "handle": "pudu-mp2000",
+        "variante": "50723655778541",
+        "sku": "PUDU-MP2000",
+        "precio": "30000.00",
+        "moneda": "EUR",
+        "disponible": true
+      }
     },
     {
       "slug": "omnihand",
@@ -5293,7 +5363,14 @@
           "La presentación comercial describe la detección táctil distribuida de la familia, pero según la hoja técnica solo la incluye la versión OmniHand Tactile."
         ]
       ],
-      "shopify": null
+      "shopify": {
+        "handle": "agibot-omnihand",
+        "variante": "50723654762733",
+        "sku": "AGIBOT-OMNIHAND",
+        "precio": "4900.00",
+        "moneda": "EUR",
+        "disponible": true
+      }
     },
     {
       "slug": "omnihand-tactile",
@@ -5548,7 +5625,14 @@
           "La hoja técnica y la presentación comercial son comunes a OmniHand y OmniHand Tactile. Las cifras de sensores y el peso de ≤ 570 g corresponden a la versión táctil; la presentación indica 510 g sin especificar versión."
         ]
       ],
-      "shopify": null
+      "shopify": {
+        "handle": "agibot-omnihand-tactile",
+        "variante": "50723654861037",
+        "sku": "AGIBOT-OMNIHAND-TACTILE",
+        "precio": "5750.00",
+        "moneda": "EUR",
+        "disponible": true
+      }
     },
     {
       "slug": "omnihand-pro-2025",
@@ -5803,7 +5887,14 @@
           "La documentación solo incluye dibujos técnicos, sin fotografías del producto. Conviene sustituir la imagen principal por una fotografía oficial."
         ]
       ],
-      "shopify": null
+      "shopify": {
+        "handle": "agibot-omnihand-pro-2025",
+        "variante": "50723654959341",
+        "sku": "AGIBOT-OMNIHAND-PRO-2025",
+        "precio": "12500.00",
+        "moneda": "EUR",
+        "disponible": true
+      }
     },
     {
       "slug": "omnipicker",
@@ -5980,7 +6071,14 @@
           "Solo se dispone de una presentación comercial de dos páginas: no incluye dimensiones, tensión de alimentación ni temperatura de trabajo."
         ]
       ],
-      "shopify": null
+      "shopify": {
+        "handle": "agibot-omnipicker",
+        "variante": "50723655024877",
+        "sku": "AGIBOT-OMNIPICKER",
+        "precio": "875.00",
+        "moneda": "EUR",
+        "disponible": true
+      }
     }
   ]
 }
