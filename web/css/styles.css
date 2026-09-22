@@ -212,6 +212,29 @@ html body .nav .nav__todos a:hover .flecha{ transform:translateX(4px); }
 }
 
 /* ---------- carrito ---------- */
+/* ---------- selector de idioma (banderas) ---------- */
+.lang-switch{
+  display:flex; align-items:center; gap:6px;
+  margin-left:14px; padding:3px; border-radius:999px;
+  background:var(--light);
+}
+.lang-switch__op{
+  display:grid; place-items:center;
+  width:26px; height:18px; border-radius:5px;
+  overflow:hidden; line-height:0;
+  opacity:.8;
+  transition:opacity .2s var(--ease), box-shadow .2s var(--ease);
+}
+.lang-switch__op svg{ width:100%; height:100%; display:block; }
+.lang-switch__op:hover{ opacity:1; }
+.lang-switch__op.is-on{
+  opacity:1; filter:none;
+  box-shadow:0 0 0 1.5px var(--blue);
+}
+@media (max-width:860px){
+  .lang-switch{ margin-left:auto; margin-right:6px; }
+}
+
 .carrito-abrir{
   position:relative; width:44px; height:44px; margin-left:8px; padding:10px;
   display:grid; place-items:center; color:var(--navy);

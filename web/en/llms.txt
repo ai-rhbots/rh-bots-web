@@ -1,0 +1,60 @@
+# RH·BOTS
+
+> Official distributor of AGIBOT and PUDU in Spain and Portugal. Autonomous cleaning, humanoid and quadruped robots, intralogistics AMRs and accessories, with advice, installation, training and maintenance. Based in Picassent (Valencia, Spain).
+
+## Robots
+
+
+### Humanoid robots
+
+- [RHX2](https://www.rh-bots.com/en/robots/rhx2.html): Compact humanoid for public-facing service and events
+- [RHA3](https://www.rh-bots.com/en/robots/rha3.html): Adult-sized humanoid for stage performance and public-facing service
+- [RHX2 Ultra](https://www.rh-bots.com/en/robots/rhx2-ultra.html): Programmable humanoid with 3D perception and NVIDIA Orin NX
+- [RHX2 EDU](https://www.rh-bots.com/en/robots/rhx2-edu.html): Modular humanoid for teaching and research
+- [RHA3 Ultra "Rebonico"](https://www.rh-bots.com/en/robots/rha3-ultra.html): Service humanoid for 24/7 autonomous operation
+- [RHG2](https://www.rh-bots.com/en/robots/rhg2.html): Industrial humanoid with mobile base and telescopic torso
+
+### Quadrupeds
+
+- [D5W](https://www.rh-bots.com/en/robots/d5w.html): Industrial wheeled quadruped for inspection and delivery
+
+### Autonomous cleaning
+
+- [RHC5](https://www.rh-bots.com/en/robots/rhc5.html): Autonomous professional cleaning for large surfaces
+- [MT1](https://www.rh-bots.com/en/robots/mt1.html): Autonomous AI sweeper for large areas
+- [MT1 Max](https://www.rh-bots.com/en/robots/mt1-max.html): Autonomous sweeper with 3D lidar for indoor and semi-outdoor use
+
+### AMR intralogistics
+
+- [T150](https://www.rh-bots.com/en/robots/t150.html): Autonomous industrial transport robot for 150 kg
+- [T300](https://www.rh-bots.com/en/robots/t300.html): Modular autonomous transport robot for 300 kg
+- [T600](https://www.rh-bots.com/en/robots/t600.html): Autonomous lifting robot for 600 kg loads
+- [T600 Underride](https://www.rh-bots.com/en/robots/t600-underride.html): Autonomous under-cart robot for 600 kg loads
+- [MP2000](https://www.rh-bots.com/en/robots/mp2000.html): Autonomous pallet truck for 2,000 kg pallets
+
+### Accessories
+
+- [OmniHand](https://www.rh-bots.com/en/robots/omnihand.html): Dexterous robotic hand with 16 degrees of freedom
+- [OmniHand Tactile](https://www.rh-bots.com/en/robots/omnihand-tactile.html): Dexterous robotic hand with tactile sensors
+- [OmniHand Pro 2025](https://www.rh-bots.com/en/robots/omnihand-pro-2025.html): Dexterous robotic hand with 19 degrees of freedom
+- [OmniPicker](https://www.rh-bots.com/en/robots/omnipicker.html): Industrial gripper with touch sensing for embodied AI
+- [Estación de carga D5W](https://www.rh-bots.com/en/robots/d5w-estacion-carga.html): Dedicated charging station for the D5W
+- [Batería extra D5W](https://www.rh-bots.com/en/robots/d5w-bateria.html): Spare battery for the D5W quadruped
+- [Kit de inspección D5W](https://www.rh-bots.com/en/robots/d5w-kit-inspeccion.html): Sensor kit for inspection tasks with the D5W
+- [Cajón de extensión de batería D5W](https://www.rh-bots.com/en/robots/d5w-cajon-bateria.html): Additional compartment to extend the D5W's runtime
+- [Estación de carga MT1 y MT1 Max](https://www.rh-bots.com/en/robots/mt1-estacion-carga.html): Charging station for the MT1 and MT1 Max
+- [Cargador AMR serie T y MP](https://www.rh-bots.com/en/robots/amr-cargador.html): Charger for the T-series AMRs and the MP2000
+
+
+## Company
+
+- [Full catalog](https://www.rh-bots.com/en/robots.html)
+- [Applications by sector](https://www.rh-bots.com/en/aplicaciones.html): which robot fits which use
+- [About us](https://www.rh-bots.com/en/rh-bots.html): the RH·BOTS team and story
+- [Contact](https://www.rh-bots.com/en/contacto.html)
+
+
+## Optional
+
+- [Blog](https://www.rh-bots.com/en/blog.html)
+- [Legal notice and privacy](https://www.rh-bots.com/en/legal.html)

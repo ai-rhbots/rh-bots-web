@@ -1,0 +1,6093 @@
+{
+  "rhx2": {
+    "claim": "Compact humanoid for public-facing service and events",
+    "tagline": "Voice, gesture and vision interaction in a 1.31 m, 35 kg format, easy to deploy in receptions, shops and events.",
+    "hero_alt": "RHX2 humanoid robot standing, walking with one arm raised",
+    "gallery": [
+      [
+        "Kneeling position",
+        "assets/robots/rhx2/de-rodillas.webp"
+      ],
+      [
+        "Sitting on a wall",
+        "assets/robots/rhx2/sentado.webp"
+      ]
+    ],
+    "intro": "The RHX2 is the base version of the X2 series: a 1.31 m, 35 kg humanoid with an interaction RGB camera, expression display, speaker and microphone array. It is designed for reception, customer service, retail and events, with more than 20 built-in actions and control via remote, app or voice.",
+    "keyfacts": [
+      [
+        "Height",
+        "1.31 m"
+      ],
+      [
+        "Weight",
+        "35 kg"
+      ],
+      [
+        "Max load",
+        "3 kg"
+      ],
+      [
+        "Battery life",
+        "approx. 2 h"
+      ]
+    ],
+    "highlights": [
+      [
+        "Interaction with people",
+        "Interaction RGB camera, microphone array, speaker and expression display for communicating through voice, gestures and visual recognition."
+      ],
+      [
+        "Humanoid movement",
+        "Joints with 120 Nm maximum torque; clears 50 mm steps and ±10° slopes, and comes with more than 20 built-in actions."
+      ],
+      [
+        "Ready to use",
+        "Controlled via remote control, the AGIBOT Go app or voice, and includes a wireless emergency stop."
+      ],
+      [
+        "Swappable battery",
+        "About 500 Wh for approx. 2 h of walking; full charge in approx. 1.5 h, or battery swap."
+      ]
+    ],
+    "specs": [
+      [
+        "Dimensions and structure",
+        [
+          [
+            "Height",
+            "1.31 m"
+          ],
+          [
+            "Standing dimensions",
+            "1,310 × 460 × 210 mm (± 30 mm), height × width × depth"
+          ],
+          [
+            "Packaging dimensions",
+            "945 × 705 × 475 mm"
+          ],
+          [
+            "Net weight",
+            "approx. 35 kg, with battery and end effector"
+          ],
+          [
+            "Weight with packaging",
+            "approx. 63.5 kg"
+          ],
+          [
+            "Materials",
+            "aluminium alloy, magnesium alloy, high-strength engineering plastic and PU foam"
+          ],
+          [
+            "Operating temperature",
+            "−10 to 40 °C (performance and battery life decrease at −10 °C)"
+          ]
+        ]
+      ],
+      [
+        "Joints",
+        [
+          [
+            "Active degrees of freedom",
+            "25 per the AGIBOT datasheet · 27 per the RH·BOTS spec sheet"
+          ],
+          [
+            "Arms",
+            "5 per arm"
+          ],
+          [
+            "Waist",
+            "3"
+          ],
+          [
+            "Legs",
+            "6 per leg"
+          ],
+          [
+            "Max joint torque",
+            "120 Nm"
+          ]
+        ]
+      ],
+      [
+        "Mobility",
+        [
+          [
+            "Max speed",
+            "≤ 1.8 m/s running (AGIBOT datasheet) · 2 m/s (RH·BOTS spec sheet)"
+          ],
+          [
+            "Everyday speed",
+            "≤ 0.8 m/s"
+          ],
+          [
+            "Max step height",
+            "50 mm"
+          ],
+          [
+            "Obstacle clearance",
+            "50 mm"
+          ],
+          [
+            "Slope",
+            "± 10°"
+          ],
+          [
+            "Minimum corridor width to turn",
+            "900 mm"
+          ],
+          [
+            "Built-in actions",
+            "20 or more"
+          ]
+        ]
+      ],
+      [
+        "Arms and payload",
+        [
+          [
+            "Max load",
+            "3 kg in a specific posture, excluding end effector"
+          ],
+          [
+            "Load across full workspace",
+            "≤ 1 kg, excluding end effector"
+          ],
+          [
+            "Single-arm reach without effector",
+            "approx. 437 mm"
+          ],
+          [
+            "Compatible effector",
+            "artificial hand"
+          ]
+        ]
+      ],
+      [
+        "Sensors and interaction",
+        [
+          [
+            "Vision",
+            "1 × interaction RGB camera"
+          ],
+          [
+            "Motion sensor",
+            "1 × 6-axis IMU"
+          ],
+          [
+            "Touch",
+            "sensor on the head"
+          ],
+          [
+            "Audio",
+            "speaker and microphone array"
+          ],
+          [
+            "Display",
+            "expression display"
+          ],
+          [
+            "Control",
+            "remote control, AGIBOT Go app and voice (priority in that order)"
+          ]
+        ]
+      ],
+      [
+        "Power",
+        [
+          [
+            "Battery",
+            "approx. 500 Wh"
+          ],
+          [
+            "Battery life",
+            "approx. 2 h walking at 0.5 m/s"
+          ],
+          [
+            "Charging time",
+            "approx. 1.5 h, from 15% to 100%"
+          ],
+          [
+            "Typical consumption",
+            "approx. 240 W"
+          ],
+          [
+            "Recharging",
+            "direct charging and battery swap"
+          ]
+        ]
+      ],
+      [
+        "Computing and connectivity",
+        [
+          [
+            "Control unit",
+            "1 × RK3588S and 1 × RK3588"
+          ],
+          [
+            "Development computing unit",
+            "not included"
+          ],
+          [
+            "Secondary development",
+            "no; the SDK is available on the RHX2 Ultra"
+          ],
+          [
+            "Debug ports",
+            "1 × USB-C · 1 × USB-A"
+          ],
+          [
+            "Power outputs",
+            "1 × 12 V/3 A · 1 × 48 V/5 A"
+          ],
+          [
+            "Connectivity",
+            "Wi-Fi · Bluetooth"
+          ]
+        ]
+      ],
+      [
+        "Supply and warranty",
+        [
+          [
+            "Includes",
+            "robot, battery and charger, remote control, wireless emergency stop, quick-start guide and certificate of conformity"
+          ],
+          [
+            "Warranty",
+            "8 months"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Reception and customer service",
+        null
+      ],
+      [
+        "Retail and commercial spaces",
+        null
+      ],
+      [
+        "Tech events and demonstrations",
+        null
+      ],
+      [
+        "Security and patrolling",
+        null
+      ],
+      [
+        "Assistance in light industrial environments",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "warn",
+        "The RH·BOTS spec sheet and the AGIBOT datasheet do not match",
+        "The RH·BOTS spec sheet attributes to the RHX2 a LiDAR and RGB-D camera, an NVIDIA Jetson Orin NX module (157 TOPS) with an 8-core Arm Cortex-A78AE CPU, 27 degrees of freedom and 2 m/s. The AGIBOT datasheet (December 2025) gives the base X2 only an interaction RGB camera, no development unit, 25 degrees of freedom and ≤ 1.8 m/s; the LiDAR, RGB-D and Orin NX correspond to the X2 Ultra. Confirm the configuration before quoting."
+      ],
+      [
+        "info",
+        "Earlier X2 revision",
+        "The «Lingxi X2» (Interactive edition) specifications list 1.27 m, 33 kg, a 2-DoF head and 1-DoF waist, 1.5 m/s, obstacles ≤ 20 mm, slope ≤ 12.5%, a battery of approx. 10,000 mAh, and no user ports. The December 2025 datasheet has been used as the reference."
+      ],
+      [
+        "info",
+        "About the «X2 Lite» name",
+        "There is no separate product called X2 Lite; the name is often used for the base X2, identified in some markets as the Youth Edition. Confirm the exact SKU with the distributor."
+      ]
+    ]
+  },
+  "rha3": {
+    "claim": "Adult-sized humanoid for stage performance and public-facing service",
+    "tagline": "Shows, reception, presentations and entertainment, with multimodal interaction, shifts of up to 10 hours and coordinated fleet control.",
+    "hero_alt": "Full-body RHA3, front view, on a white background",
+    "gallery": [
+      [
+        "The RHA3 walking",
+        "assets/robots/rha3/caminando.webp"
+      ],
+      [
+        "RHA3 head and torso",
+        "assets/robots/rha3/cabeza-y-torso.webp"
+      ],
+      [
+        "Three views of the RHA3",
+        "assets/robots/rha3/tres-poses.webp"
+      ],
+      [
+        "In motion on a platform",
+        "assets/robots/rha3/en-pedestal.webp"
+      ]
+    ],
+    "intro": "The RHA3 is an adult-sized bipedal humanoid designed for commercial shows, interactive entertainment, reception, presentations and exhibitions. With 55 kg and 12 kW of peak power, it performs dynamic stage movements, and its swappable dual battery allows it to work for extended periods. It includes UWB positioning as standard to coordinate groups of more than 100 robots.",
+    "keyfacts": [
+      [
+        "Height",
+        "1.73 m"
+      ],
+      [
+        "Weight",
+        "55 kg"
+      ],
+      [
+        "Battery life",
+        "up to 10 h"
+      ],
+      [
+        "Peak power",
+        "12 kW"
+      ]
+    ],
+    "highlights": [
+      [
+        "Power in 55 kg",
+        "12 kW of peak power and 150 A of maximum current, with a power-to-weight ratio of 0.218 kW/kg. Structure in magnesium alloy, titanium and flexible TPU."
+      ],
+      [
+        "Full-day battery life",
+        "Redundant dual battery of 1,152 Wh with up to 10 hours of use and hot-swapping in about 10 seconds, for continuous 24-hour operation."
+      ],
+      [
+        "Fleet coordination",
+        "Standard UWB positioning with accuracy under ±10 cm to coordinate more than 100 units without modification."
+      ],
+      [
+        "Multimodal interaction",
+        "Binocular vision, touch sensors on the shoulders, 360° voice pickup with multiple microphone arrays, and a front display."
+      ]
+    ],
+    "specs": [
+      [
+        "Dimensions and structure",
+        [
+          [
+            "Height",
+            "approx. 1.73 m"
+          ],
+          [
+            "Dimensions",
+            "1,730 × 520 × 300 mm"
+          ],
+          [
+            "Weight",
+            "approx. 55 kg"
+          ],
+          [
+            "Neck",
+            "2 degrees of freedom"
+          ],
+          [
+            "Each arm",
+            "7 degrees of freedom"
+          ],
+          [
+            "Waist",
+            "3 degrees of freedom"
+          ],
+          [
+            "Each leg",
+            "6 degrees of freedom"
+          ],
+          [
+            "Dexterous hands",
+            "optional"
+          ],
+          [
+            "Total degrees of freedom",
+            "51 with Omnihand hands"
+          ],
+          [
+            "Materials",
+            "magnesium alloy, titanium alloy and flexible TPU"
+          ],
+          [
+            "Customization",
+            "from color vinyl wraps to a full shell"
+          ]
+        ]
+      ],
+      [
+        "Mobility",
+        [
+          [
+            "Max speed",
+            "1.2 m/s"
+          ],
+          [
+            "Max slope (omnidirectional)",
+            "15°"
+          ],
+          [
+            "Max obstacle height",
+            "250 mm"
+          ],
+          [
+            "Min frontal width",
+            "approx. 900 mm"
+          ],
+          [
+            "Min lateral width",
+            "approx. 600 mm"
+          ],
+          [
+            "Navigation",
+            "autonomous with dynamic obstacle avoidance"
+          ],
+          [
+            "Positioning",
+            "vision and wireless systems"
+          ],
+          [
+            "Peak power",
+            "12 kW"
+          ],
+          [
+            "Max current",
+            "150 A"
+          ],
+          [
+            "Power-to-weight ratio",
+            "0.218 kW/kg"
+          ],
+          [
+            "Movements",
+            "somersaults and aerial walking"
+          ]
+        ]
+      ],
+      [
+        "Arms and manipulation",
+        [
+          [
+            "Rated load per arm",
+            "5 kg"
+          ],
+          [
+            "End-effector speed with load",
+            "up to 1 m/s"
+          ],
+          [
+            "Speed without load",
+            "up to 3 m/s"
+          ],
+          [
+            "Compatibility",
+            "dexterous hands and other end effectors"
+          ]
+        ]
+      ],
+      [
+        "Battery and battery life",
+        [
+          [
+            "Total capacity",
+            "1,152 Wh"
+          ],
+          [
+            "Configuration",
+            "swappable, redundant dual battery, full-tab cells"
+          ],
+          [
+            "Battery life",
+            "up to 10 hours depending on usage pattern"
+          ],
+          [
+            "Charging time",
+            "≤ 2 hours"
+          ],
+          [
+            "Battery swap",
+            "approx. 10 seconds"
+          ],
+          [
+            "Extended operation",
+            "up to 24 continuous hours via hot battery swap"
+          ]
+        ]
+      ],
+      [
+        "Perception",
+        [
+          [
+            "Vision",
+            "binocular system"
+          ],
+          [
+            "Binocular resolution",
+            "1,920 × 1,536 px at 30 fps"
+          ],
+          [
+            "Visual positioning — position",
+            "±10 cm"
+          ],
+          [
+            "Visual positioning — orientation",
+            "±10°"
+          ],
+          [
+            "UWB",
+            "standard, accuracy under ±10 cm"
+          ],
+          [
+            "Audio",
+            "microphones and speakers for voice interaction"
+          ],
+          [
+            "Display",
+            "front interaction display"
+          ],
+          [
+            "Touch",
+            "sensors on the shoulders"
+          ],
+          [
+            "Voice pickup",
+            "360°, with multiple microphone arrays"
+          ]
+        ]
+      ],
+      [
+        "Computing",
+        [
+          [
+            "Main unit MDU",
+            "Rockchip RK3588"
+          ],
+          [
+            "MDU memory",
+            "16 GB"
+          ],
+          [
+            "MDU storage",
+            "256 GB"
+          ],
+          [
+            "HDU unit",
+            "RK3588S2"
+          ],
+          [
+            "HDU memory",
+            "16 GB"
+          ],
+          [
+            "HDU storage",
+            "128 GB"
+          ]
+        ]
+      ],
+      [
+        "Communications",
+        [
+          [
+            "Connectivity",
+            "Wi-Fi · Bluetooth · 4G · 5G"
+          ],
+          [
+            "Mobile",
+            "dual-module 5G with dual SIM (eSIM and SIM card)"
+          ],
+          [
+            "5G modules",
+            "LGA for China and M.2 for other markets"
+          ]
+        ]
+      ],
+      [
+        "Fleet and deployment",
+        [
+          [
+            "Fleet control",
+            "precise coordination of more than 100 units"
+          ],
+          [
+            "Fleet positioning",
+            "standard UWB, per-unit accuracy under ±10 cm"
+          ],
+          [
+            "Transport",
+            "carryable by one person; foldable packaging that fits an off-road vehicle"
+          ],
+          [
+            "Packaging",
+            "autonomous entry and exit from the case; deployment by a single operator"
+          ]
+        ]
+      ],
+      [
+        "Operating environment",
+        [
+          [
+            "Operating temperature",
+            "−10 to 45 °C"
+          ],
+          [
+            "Storage temperature",
+            "−20 to 70 °C"
+          ],
+          [
+            "Relative humidity",
+            "10 to 90%"
+          ],
+          [
+            "Joint module protection",
+            "IP5X"
+          ],
+          [
+            "Design life",
+            "3 years"
+          ],
+          [
+            "Quality control",
+            "92 automotive-grade tests before delivery"
+          ]
+        ]
+      ],
+      [
+        "Software and development",
+        [
+          [
+            "Motion creation",
+            "LinkCraft, with a content library for uploading and downloading"
+          ],
+          [
+            "Character design",
+            "LinkSoul"
+          ],
+          [
+            "Interfaces",
+            "open for secondary development"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Commercial shows and dance",
+        null
+      ],
+      [
+        "Brand ambassador",
+        null
+      ],
+      [
+        "Interactive entertainment and livestreaming",
+        null
+      ],
+      [
+        "Exhibition and theme park guide",
+        null
+      ],
+      [
+        "Hotel and office reception",
+        null
+      ],
+      [
+        "Product presenter",
+        null
+      ],
+      [
+        "Customer service",
+        null
+      ],
+      [
+        "Research and education in embodied intelligence",
+        null
+      ]
+    ],
+    "notes": []
+  },
+  "rhx2-edu": {
+    "claim": "Modular humanoid for teaching and research",
+    "tagline": "Fully assembles and disassembles and opens motion control to development, with guides, videos and a classroom consumables list.",
+    "hero_alt": "RHX2 EDU humanoid platform in black finish, front view",
+    "gallery": [
+      [
+        "At a robotics competition",
+        "assets/robots/rhx2-edu/competicion.webp"
+      ],
+      [
+        "Assembly and setup workshop",
+        "assets/robots/rhx2-edu/taller-formacion.webp"
+      ],
+      [
+        "STEM robotics class",
+        "assets/robots/rhx2-edu/aula-stem.webp"
+      ]
+    ],
+    "intro": "The RHX2 EDU is the version of the X2 series for research, teaching and hands-on training. It focuses on assembling and disassembling the robot and on developing motion control, and is used for engineering practicals, competitions and the purchase of component kits.",
+    "keyfacts": [
+      [
+        "Height",
+        "1.30 m"
+      ],
+      [
+        "Weight",
+        "35 kg"
+      ],
+      [
+        "Degrees of freedom",
+        "29"
+      ],
+      [
+        "Battery",
+        "500 Wh"
+      ]
+    ],
+    "highlights": [
+      [
+        "Full assembly",
+        "Assembles and disassembles from start to finish, with design and assembly guides, videos and a simulation assembly guide."
+      ],
+      [
+        "Open motion control",
+        "Allows development of joint, gripper and actuator control, as well as embedded systems and mechatronic integration."
+      ],
+      [
+        "Flexible integration",
+        "Supports grippers, simulated hands and wrists, external sensors via power and data interfaces, and custom development boards."
+      ],
+      [
+        "Teaching support",
+        "Consumables list to simplify purchasing and maintenance, and a customizable exterior for projects and competitions."
+      ]
+    ],
+    "specs": [
+      [
+        "Dimensions and structure",
+        [
+          [
+            "Height",
+            "1.30 m, with simulated head"
+          ],
+          [
+            "Weight",
+            "35 kg"
+          ],
+          [
+            "Total degrees of freedom",
+            "29"
+          ],
+          [
+            "Degrees of freedom per arm",
+            "7"
+          ],
+          [
+            "Full assembly and disassembly",
+            "yes"
+          ],
+          [
+            "Exterior",
+            "customizable in design and structure"
+          ]
+        ]
+      ],
+      [
+        "Performance",
+        [
+          [
+            "Max walking speed",
+            "1.8 m/s"
+          ],
+          [
+            "Max effector load",
+            "3 kg"
+          ],
+          [
+            "Optional effectors",
+            "grippers, simulated hands and simulated wrists"
+          ]
+        ]
+      ],
+      [
+        "Power",
+        [
+          [
+            "Battery",
+            "500 Wh"
+          ],
+          [
+            "Battery life",
+            "2 h"
+          ]
+        ]
+      ],
+      [
+        "Computing and expansion",
+        [
+          [
+            "Computing module",
+            "1 × RK3588"
+          ],
+          [
+            "Computing and sensor expansion",
+            "yes; supports advanced user development boards"
+          ],
+          [
+            "Interfaces",
+            "built-in power and data for external devices"
+          ]
+        ]
+      ],
+      [
+        "Software",
+        [
+          [
+            "Secondary development",
+            "yes, for motion control"
+          ],
+          [
+            "Development areas",
+            "joint, gripper and actuator control; embedded development; mechatronic systems integration"
+          ]
+        ]
+      ],
+      [
+        "Educational resources",
+        [
+          [
+            "Guides",
+            "full product design and assembly, with videos"
+          ],
+          [
+            "Simulation",
+            "simulation assembly guide"
+          ],
+          [
+            "Consumables",
+            "consumables list for purchasing and maintenance"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "STEM robotics education",
+        null
+      ],
+      [
+        "Robotics competitions",
+        null
+      ],
+      [
+        "Training in assembly, setup and maintenance",
+        null
+      ],
+      [
+        "Engineering practicals",
+        null
+      ],
+      [
+        "Motion control research",
+        null
+      ],
+      [
+        "Component kits for educational institutions",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Data the brochure does not detail",
+        "The brochure does not specify which sensors and connectivity are included as standard (only that adding sensors and computing is supported), nor the protection rating or the warranty. Confirm these when quoting."
+      ]
+    ]
+  },
+  "rhx2-ultra": {
+    "claim": "Programmable humanoid with 3D perception and NVIDIA Orin NX",
+    "tagline": "3D LiDAR, four cameras and a development compute unit in the 1.31 m form factor of the X2 series, with an SDK to build your own applications.",
+    "hero_alt": "RHX2 Ultra humanoid robot standing, facing forward, with its hand on its forehead",
+    "gallery": [
+      [
+        "X2 series with component kit",
+        "assets/robots/rhx2-ultra/serie-x2.webp"
+      ],
+      [
+        "In motion",
+        "assets/robots/rhx2-ultra/en-movimiento.webp"
+      ]
+    ],
+    "intro": "The RHX2 Ultra is the top configuration of the X2 series. It adds 7-degree-of-freedom arms, 3D LiDAR, RGB-D, binocular and rear cameras, 4G/5G connectivity and a 16 GB NVIDIA Orin NX unit for secondary development. It is designed for guided tours, retail, performances and research.",
+    "keyfacts": [
+      [
+        "Height",
+        "1.31 m"
+      ],
+      [
+        "Weight",
+        "39 kg"
+      ],
+      [
+        "Degrees of freedom",
+        "30"
+      ],
+      [
+        "Computing",
+        "NVIDIA Orin NX 16 GB"
+      ]
+    ],
+    "highlights": [
+      [
+        "3D perception",
+        "3D LiDAR and RGB-D, binocular, interaction and rear cameras: single-pass mapping and navigation that avoids static and dynamic obstacles."
+      ],
+      [
+        "7-degree-of-freedom arms",
+        "Reach of approx. 570 mm and 3 kg payload; supports an artificial hand, OmniPicker gripper and OmniHand dexterous hand."
+      ],
+      [
+        "Autonomous attendance",
+        "Facial recognition and proactive greeting, knowledge-base-driven responses and explanations in several languages, with more than 30 facial expressions."
+      ],
+      [
+        "Development platform",
+        "16 GB Orin NX unit, secondary development SDK and compatibility with LinkCraft and LinkSoul; optional charging station and teleoperation."
+      ]
+    ],
+    "specs": [
+      [
+        "Dimensions and structure",
+        [
+          [
+            "Height",
+            "1.31 m"
+          ],
+          [
+            "Standing dimensions",
+            "1,310 × 460 × 210 mm (± 30 mm), height × width × depth"
+          ],
+          [
+            "Packaging dimensions",
+            "945 × 705 × 475 mm"
+          ],
+          [
+            "Net weight",
+            "approx. 39 kg, with battery and end effector"
+          ],
+          [
+            "Weight with packaging",
+            "approx. 67.5 kg"
+          ],
+          [
+            "Materials",
+            "aluminium alloy, magnesium alloy, high-strength engineering plastic and PU foam"
+          ],
+          [
+            "Operating temperature",
+            "−10 to 40 °C (at −10 °C, performance and battery life are reduced)"
+          ]
+        ]
+      ],
+      [
+        "Joints",
+        [
+          [
+            "Active degrees of freedom",
+            "30"
+          ],
+          [
+            "Head",
+            "1"
+          ],
+          [
+            "Arms",
+            "7 per arm"
+          ],
+          [
+            "Waist",
+            "3 (roll, pitch and yaw)"
+          ],
+          [
+            "Legs",
+            "6 per leg"
+          ],
+          [
+            "Maximum joint torque",
+            "120 Nm"
+          ]
+        ]
+      ],
+      [
+        "Mobility and navigation",
+        [
+          [
+            "Maximum speed",
+            "≤ 1.8 m/s running (datasheet) · 2 m/s (brochure)"
+          ],
+          [
+            "Everyday operating speed",
+            "≤ 0.8 m/s"
+          ],
+          [
+            "Maximum step height",
+            "50 mm"
+          ],
+          [
+            "Obstacle clearance",
+            "50 mm"
+          ],
+          [
+            "Slope",
+            "± 10°"
+          ],
+          [
+            "Minimum corridor width to turn",
+            "900 mm"
+          ],
+          [
+            "Minimum passage width",
+            "600 mm"
+          ],
+          [
+            "Navigation",
+            "multidimensional mapping, autonomous route planning and avoidance of static and dynamic obstacles"
+          ],
+          [
+            "Autonomous recharging",
+            "return to the optional charging station"
+          ],
+          [
+            "Built-in actions",
+            "20 or more"
+          ]
+        ]
+      ],
+      [
+        "Arms and manipulation",
+        [
+          [
+            "Single-arm reach without end effector",
+            "approx. 570 mm"
+          ],
+          [
+            "Maximum payload",
+            "3 kg in a specific posture, not counting the end effector"
+          ],
+          [
+            "Payload across the full workspace",
+            "≤ 1 kg, not counting the end effector"
+          ],
+          [
+            "Compatible end effectors",
+            "artificial hand, OmniPicker gripper and OmniHand dexterous hand"
+          ]
+        ]
+      ],
+      [
+        "Perception",
+        [
+          [
+            "Cameras",
+            "1 × interaction RGB · 1 × binocular RGB · 1 × RGB-D · 1 × rear RGB"
+          ],
+          [
+            "LiDAR",
+            "1 × 3D LiDAR"
+          ],
+          [
+            "Motion sensor",
+            "1 × 6-axis IMU"
+          ],
+          [
+            "Touch",
+            "sensor on the head"
+          ]
+        ]
+      ],
+      [
+        "Interaction",
+        [
+          [
+            "Audio",
+            "speaker and microphone array"
+          ],
+          [
+            "Display",
+            "expression screen, with more than 30 facial expressions"
+          ],
+          [
+            "Functions",
+            "facial recognition, proactive greeting, knowledge-base Q&A and explanations in several languages"
+          ],
+          [
+            "Presentations",
+            "built-in tool to create and edit explanations, gestures, voice, tours and motion sequences"
+          ],
+          [
+            "Control",
+            "remote control, AGIBOT Go app and voice (in that priority order)"
+          ]
+        ]
+      ],
+      [
+        "Computing",
+        [
+          [
+            "Control unit",
+            "1 × RK3588S and 1 × RK3588"
+          ],
+          [
+            "Development compute unit",
+            "NVIDIA Orin NX 16 GB"
+          ]
+        ]
+      ],
+      [
+        "Power",
+        [
+          [
+            "Battery",
+            "approx. 500 Wh"
+          ],
+          [
+            "Battery life",
+            "approx. 2 h walking at 0.5 m/s"
+          ],
+          [
+            "Charging time",
+            "approx. 1.5 h, from 15% to 100%"
+          ],
+          [
+            "Typical power draw",
+            "approx. 240 W"
+          ],
+          [
+            "Recharging",
+            "direct charging, battery swap and optional autonomous charging station"
+          ]
+        ]
+      ],
+      [
+        "Communications and ports",
+        [
+          [
+            "Connectivity",
+            "Wi-Fi · Bluetooth · 4G/5G · GPS"
+          ],
+          [
+            "Debug ports",
+            "2 × USB-C · 2 × USB-A · 2 × RJ45"
+          ],
+          [
+            "Power outputs",
+            "1 × 12 V/3 A · 1 × 48 V/5 A"
+          ]
+        ]
+      ],
+      [
+        "Development and options",
+        [
+          [
+            "Secondary development",
+            "yes, with SDK"
+          ],
+          [
+            "LinkCraft",
+            "no-code motion training, action imitation, voice narration and coordinated group performances"
+          ],
+          [
+            "LinkSoul",
+            "customizable robot personality, wake words and voice tones"
+          ],
+          [
+            "Optional accessories",
+            "dexterous hands and grippers, automatic charging station, beyond-visual-range teleoperation with VR equipment and edge computing equipment"
+          ]
+        ]
+      ],
+      [
+        "Package contents and warranty",
+        [
+          [
+            "Includes",
+            "robot, battery and charger, remote control, wireless emergency stop, quick guide and certificate of conformity"
+          ],
+          [
+            "Warranty",
+            "1.5 years"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Reception and in-store guidance",
+        null
+      ],
+      [
+        "Customer engagement and guidance",
+        null
+      ],
+      [
+        "Guided tours in showrooms",
+        null
+      ],
+      [
+        "Guided performances",
+        null
+      ],
+      [
+        "Teleoperation and remote presence",
+        null
+      ],
+      [
+        "Research and education",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Figures differ by document",
+        "Maximum speed: ≤ 1.8 m/s in AGIBOT's datasheet (December 2025), 2 m/s in the brochure and 1.5 m/s in the \"Lingxi X2\" specifications. The latter, from an earlier revision, also list 1.30 m, 35 kg, a 2-degree-of-freedom head, obstacles ≤ 20 mm, a slope of ≤ 12.5%, a battery of approx. 10,000 mAh, and 1 × USB-A, 1 × USB-C and 2 × RJ45. The December 2025 datasheet has been used as the reference."
+      ],
+      [
+        "info",
+        "Arm reach",
+        "The reach of approx. 570 mm only appears in the \"Lingxi X2\" specifications; the current datasheet does not state it."
+      ]
+    ]
+  },
+  "rha3-ultra": {
+    "claim": "Service humanoid for 24/7 autonomous operation",
+    "tagline": "The highest-performance version of the RHA3: 360° LiDAR perception, 700 TOPS of compute, autonomous charging and a four-layer safety system.",
+    "hero_alt": "RHA3 Ultra Rebonico running, cut out on a transparent background",
+    "gallery": [
+      [
+        "Head and torso of the RHA3 Ultra",
+        "assets/robots/rha3-ultra/retrato.webp"
+      ],
+      [
+        "The RHA3 Ultra waving, full body",
+        "assets/robots/rha3-ultra/saludando.webp"
+      ],
+      [
+        "Open-hand gesture, seated",
+        "assets/robots/rha3-ultra/gesto-sentado.webp"
+      ]
+    ],
+    "intro": "The RHA3 Ultra is the highest-performance version of the RHA3, an adult-sized humanoid for commercial use. It inherits the RHA3's mobility and interaction capabilities and adds 360° LiDAR perception, 700 TOPS of compute, Omnihand hands as standard, and UWB + RTK positioning to work autonomously indoors and outdoors. It was officially unveiled in July 2026.",
+    "keyfacts": [
+      [
+        "Height",
+        "1.74 m"
+      ],
+      [
+        "Degrees of freedom",
+        "51"
+      ],
+      [
+        "Compute",
+        "700 TOPS"
+      ],
+      [
+        "Battery life",
+        "up to 8 h"
+      ]
+    ],
+    "highlights": [
+      [
+        "Continuous autonomous operation",
+        "Up to 8 hours of battery life, autonomous charging at a station, battery swap in about 10 seconds, and ADU air cooling to work around the clock."
+      ],
+      [
+        "Perception and compute",
+        "LiDAR and several cameras with 360° vision, 700 TOPS of compute and a three-tier heterogeneous architecture to plan routes and avoid obstacles without teleoperation."
+      ],
+      [
+        "Touch-sensitive manipulation",
+        "Omnihand hands as standard, with omnidirectional tactile sensing, for objects ranging from a sheet of paper to 5 kg."
+      ],
+      [
+        "Four-layer safety",
+        "Risk prediction at 3 m, force-controlled contact stop, dual emergency stop with millisecond cutoff, and fall protection."
+      ]
+    ],
+    "specs": [
+      [
+        "Dimensions and weight",
+        [
+          [
+            "Height",
+            "approx. 1.74 m"
+          ],
+          [
+            "Dimensions",
+            "1,740 × 520 × 300 mm"
+          ],
+          [
+            "Weight",
+            "approx. 60 kg"
+          ],
+          [
+            "Active degrees of freedom",
+            "51"
+          ],
+          [
+            "Neck",
+            "2"
+          ],
+          [
+            "Arms",
+            "7 per arm"
+          ],
+          [
+            "Waist",
+            "3"
+          ],
+          [
+            "Legs",
+            "6 per leg"
+          ],
+          [
+            "Dexterous hands",
+            "Omnihand as standard; 10 DOF per hand in the 51-DOF configuration, with configurations of up to 20 DOF"
+          ],
+          [
+            "Structure",
+            "magnesium alloy and carbon-fibre-reinforced nylon composite"
+          ]
+        ]
+      ],
+      [
+        "Mobility",
+        [
+          [
+            "Typical maximum speed",
+            "1.8 m/s"
+          ],
+          [
+            "Recommended normal speed",
+            "< 1.2 m/s"
+          ],
+          [
+            "Maximum lab speed",
+            "2.5 m/s"
+          ],
+          [
+            "Announced maximum running speed",
+            "5 m/s"
+          ],
+          [
+            "Maximum knee torque",
+            "320 Nm"
+          ],
+          [
+            "Capabilities",
+            "dynamic locomotion and balance recovery"
+          ],
+          [
+            "Terrain",
+            "stairs and slopes"
+          ]
+        ]
+      ],
+      [
+        "Manipulation",
+        [
+          [
+            "Rated payload per arm",
+            "5 kg"
+          ],
+          [
+            "Arms",
+            "7 degrees of freedom"
+          ],
+          [
+            "Dexterous hands",
+            "Omnihand as standard, with omnidirectional tactile sensing"
+          ],
+          [
+            "Object range",
+            "from a sheet of paper to 5 kg"
+          ],
+          [
+            "Perception",
+            "dedicated RGB-D for manipulation"
+          ],
+          [
+            "Learning",
+            "skill acquisition from a single demonstration"
+          ],
+          [
+            "Focus",
+            "object manipulation, interaction and advanced services"
+          ]
+        ]
+      ],
+      [
+        "Sensors",
+        [
+          [
+            "Perception system",
+            "LiDAR, perimeter cameras and dual depth camera, 360° coverage"
+          ],
+          [
+            "LiDAR",
+            "3D"
+          ],
+          [
+            "RGB-D cameras",
+            "manipulation and terrain recognition"
+          ],
+          [
+            "Binocular camera",
+            "RGB"
+          ],
+          [
+            "Perimeter vision",
+            "RGB cameras"
+          ],
+          [
+            "Positioning",
+            "GPS · RTK · UWB"
+          ],
+          [
+            "Positioning accuracy",
+            "under ±1 cm (UWB indoors and RTK outdoors)"
+          ],
+          [
+            "Touch",
+            "sensors on the shoulders"
+          ],
+          [
+            "Audio",
+            "front and rear 8-microphone arrays; speaker"
+          ],
+          [
+            "Interface",
+            "curved display and omnidirectional light indicators"
+          ]
+        ]
+      ],
+      [
+        "Computing",
+        [
+          [
+            "Compute capacity",
+            "700 TOPS"
+          ],
+          [
+            "Processors",
+            "2 × Rockchip RK3588"
+          ],
+          [
+            "AI platform",
+            "NVIDIA Jetson Thor"
+          ],
+          [
+            "Architecture",
+            "three-tier heterogeneous, with local execution of perception, planning and embodied intelligence"
+          ],
+          [
+            "Functions",
+            "autonomous task decomposition, route planning and dynamic obstacle avoidance"
+          ],
+          [
+            "Maps",
+            "autonomous construction of semantic maps of the environment"
+          ]
+        ]
+      ],
+      [
+        "Battery",
+        [
+          [
+            "Capacity",
+            "1,152 Wh"
+          ],
+          [
+            "Battery life",
+            "up to 8 hours"
+          ],
+          [
+            "Official calculation basis",
+            "approx. 50% in motion and 50% stationary"
+          ],
+          [
+            "Charging time",
+            "≤ 2 hours"
+          ],
+          [
+            "Input",
+            "110–220 V"
+          ],
+          [
+            "Charging modes",
+            "autonomous charging by docking at the station, direct charging and battery replacement"
+          ],
+          [
+            "Battery swap",
+            "approx. 10 seconds"
+          ],
+          [
+            "Cooling",
+            "air-based, ADU system"
+          ]
+        ]
+      ],
+      [
+        "Safety and reliability",
+        [
+          [
+            "Active perception",
+            "risk prediction at 3 m"
+          ],
+          [
+            "Passive force control",
+            "stops on contact detection"
+          ],
+          [
+            "Emergency stop",
+            "dual, with millisecond power cutoff"
+          ],
+          [
+            "Falls",
+            "intelligent protection of the robot and its surroundings"
+          ],
+          [
+            "Testing",
+            "collisions, falls and extreme temperatures"
+          ],
+          [
+            "Inspection",
+            "92-step process based on automotive standards"
+          ]
+        ]
+      ],
+      [
+        "Communications and development",
+        [
+          [
+            "Connectivity",
+            "Wi-Fi · Bluetooth · 4G · 5G"
+          ],
+          [
+            "Mobile network",
+            "global dual-band 5G, dual eSIM and physical SIM"
+          ],
+          [
+            "Fleet control",
+            "coordination of hundreds of units, compatible with LinkBots"
+          ],
+          [
+            "Platforms",
+            "LinkCraft (choreography) and LinkSoul (characters)"
+          ],
+          [
+            "Development",
+            "open interfaces for secondary development"
+          ],
+          [
+            "Interfaces",
+            "sensors, algorithms and external applications"
+          ]
+        ]
+      ],
+      [
+        "Deployment and maintenance",
+        [
+          [
+            "Transport",
+            "autonomous entry and exit from its case, folding storage, fits in an off-road vehicle"
+          ],
+          [
+            "Setup",
+            "by a single person"
+          ],
+          [
+            "Operation",
+            "unsupervised, with self-diagnosis of faults"
+          ],
+          [
+            "Maintenance",
+            "modular design"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Reception and guided tours",
+        null
+      ],
+      [
+        "Assistance in stores and brand events",
+        null
+      ],
+      [
+        "Facility patrol and inspection",
+        null
+      ],
+      [
+        "Research and education in embodied intelligence",
+        null
+      ],
+      [
+        "Training data collection",
+        null
+      ],
+      [
+        "Shows and events",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Speeds depend on context",
+        "Typical maximum speed is 1.8 m/s, and the recommended speed in normal use is under 1.2 m/s. The figures of 2.5 m/s (laboratory) and 5 m/s (running) correspond to test conditions and should not be interpreted as the working speed."
+      ],
+      [
+        "info",
+        "Hand degrees of freedom",
+        "The 51-degree-of-freedom configuration corresponds to 10-DOF hands. The product sheet lists Omnihand hands as standard with up to 20 DOF: it is advisable to confirm the hand configuration when quoting."
+      ]
+    ]
+  },
+  "rhg2": {
+    "claim": "Industrial humanoid with mobile base and telescopic torso",
+    "tagline": "Two manipulator arms on a wheeled platform, for manufacturing, logistics, assembly, material handling and inspection.",
+    "hero_alt": "Industrial humanoid RHG2",
+    "gallery": [
+      [
+        "Profile",
+        "assets/robots/rhg2/perfil.webp"
+      ],
+      [
+        "Interaction",
+        "assets/robots/rhg2/saludando.webp"
+      ],
+      [
+        "Torso and screen",
+        "assets/robots/rhg2/display-frontal.webp"
+      ],
+      [
+        "Facial screen",
+        "assets/robots/rhg2/display.webp"
+      ]
+    ],
+    "intro": "The RHG2 is an industrial humanoid with a mobile base, telescopic torso and two manipulator arms. Unlike bipedal humanoids, it uses a wheeled platform to gain stability, autonomy and industrial capacity, and is designed to carry out complete tasks with minimal supervision in production, logistics and inspection.",
+    "keyfacts": [
+      [
+        "Adjustable height",
+        "1,225 – 1,795 mm"
+      ],
+      [
+        "Weight",
+        "185 kg"
+      ],
+      [
+        "Maximum load",
+        "10 kg (5 kg per arm)"
+      ],
+      [
+        "Battery life",
+        "up to 4 h"
+      ]
+    ],
+    "highlights": [
+      [
+        "Telescopic torso",
+        "Adjustable height between 1,225 and 1,795 mm to work at different station heights without reconfiguring the cell."
+      ],
+      [
+        "Precision manipulation",
+        "7-DOF arms with joint torque sensors and force control, with sub-millimetre precision operations announced by the manufacturer."
+      ],
+      [
+        "Autonomous mobile platform",
+        "Ackermann steering, lateral movement, in-place rotation, 360° perception and automatic charging station."
+      ],
+      [
+        "High-performance computing",
+        "NVIDIA Jetson Thor T5000 with 2,070 TFLOPS announced at FP4 precision, for perception and skill learning."
+      ]
+    ],
+    "specs": [
+      [
+        "Dimensions and weight",
+        [
+          [
+            "Adjustable height",
+            "1,225 – 1,795 mm"
+          ],
+          [
+            "Width",
+            "640 mm"
+          ],
+          [
+            "Length",
+            "760 mm"
+          ],
+          [
+            "Weight",
+            "approx. 185 kg"
+          ],
+          [
+            "Protection rating (full robot)",
+            "IP42"
+          ],
+          [
+            "Active degrees of freedom",
+            "26, not counting end effectors"
+          ],
+          [
+            "Neck",
+            "3"
+          ],
+          [
+            "Each arm",
+            "7"
+          ],
+          [
+            "Waist and legs (lift)",
+            "5"
+          ],
+          [
+            "Omnidirectional wheels",
+            "4"
+          ]
+        ]
+      ],
+      [
+        "Mobile platform",
+        [
+          [
+            "Maximum speed",
+            "1.5 m/s"
+          ],
+          [
+            "Wheels",
+            "omnidirectional"
+          ],
+          [
+            "Steering",
+            "Ackermann type"
+          ],
+          [
+            "Movements",
+            "lateral movement and in-place rotation"
+          ],
+          [
+            "Navigation",
+            "autonomous"
+          ],
+          [
+            "Perception",
+            "360°"
+          ],
+          [
+            "Charging",
+            "automatic charging station"
+          ]
+        ]
+      ],
+      [
+        "Arms and manipulation",
+        [
+          [
+            "Rated load per arm",
+            "5 kg"
+          ],
+          [
+            "Total maximum load",
+            "10 kg"
+          ],
+          [
+            "Arms",
+            "7 degrees of freedom"
+          ],
+          [
+            "Sensors",
+            "joint torque sensors"
+          ],
+          [
+            "Control",
+            "force control"
+          ],
+          [
+            "Dexterous hands",
+            "optional, 19 degrees of freedom"
+          ],
+          [
+            "Precision",
+            "sub-millimetre operations announced by the manufacturer"
+          ],
+          [
+            "Skills",
+            "learning and deployment via reinforcement learning"
+          ]
+        ]
+      ],
+      [
+        "Sensors",
+        [
+          [
+            "3D LiDAR",
+            "2 units"
+          ],
+          [
+            "Stereo camera",
+            "1 unit"
+          ],
+          [
+            "Fisheye cameras",
+            "3 units"
+          ],
+          [
+            "RGB-D camera on the head",
+            "1 unit"
+          ],
+          [
+            "RGB-D cameras on the wrists",
+            "2 units"
+          ],
+          [
+            "Interactive camera",
+            "RGB"
+          ],
+          [
+            "Inertial",
+            "IMU unit"
+          ],
+          [
+            "Force and torque",
+            "dedicated sensors"
+          ],
+          [
+            "Perimeter perception",
+            "for navigation and manipulation"
+          ]
+        ]
+      ],
+      [
+        "Interaction",
+        [
+          [
+            "Audio",
+            "microphone array and speaker"
+          ],
+          [
+            "Display",
+            "facial"
+          ],
+          [
+            "Indicator",
+            "multicolour light"
+          ],
+          [
+            "Identification",
+            "NFC"
+          ]
+        ]
+      ],
+      [
+        "Computing",
+        [
+          [
+            "Platform",
+            "NVIDIA Jetson Thor T5000"
+          ],
+          [
+            "Announced performance",
+            "2,070 TFLOPS at FP4 precision"
+          ]
+        ]
+      ],
+      [
+        "Battery",
+        [
+          [
+            "Configuration",
+            "dual battery"
+          ],
+          [
+            "Total capacity",
+            "approx. 1,652 Wh"
+          ],
+          [
+            "Battery life",
+            "up to 4 hours of continuous operation"
+          ],
+          [
+            "Charging time",
+            "≤ 2 hours"
+          ],
+          [
+            "Input",
+            "100–240 V"
+          ],
+          [
+            "Charger output",
+            "54.75 V · 15 A"
+          ],
+          [
+            "Charging modes",
+            "direct charging, battery replacement, hot-swap and autonomous charging"
+          ]
+        ]
+      ],
+      [
+        "Communications",
+        [
+          [
+            "Connectivity",
+            "Wi-Fi · Bluetooth · 4G · 5G · NFC"
+          ]
+        ]
+      ],
+      [
+        "Development and control",
+        [
+          [
+            "Secondary development",
+            "supported"
+          ],
+          [
+            "Software",
+            "OTA updates"
+          ],
+          [
+            "Control",
+            "remote power-on and teleoperation"
+          ],
+          [
+            "Learning",
+            "by demonstration"
+          ],
+          [
+            "Integration",
+            "industrial applications"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Machine feeding",
+        null
+      ],
+      [
+        "Component handling",
+        null
+      ],
+      [
+        "Order picking",
+        null
+      ],
+      [
+        "Logistics sorting",
+        null
+      ],
+      [
+        "Assembly and quality control",
+        null
+      ],
+      [
+        "Maintenance and inspection",
+        null
+      ],
+      [
+        "Internal transport",
+        null
+      ],
+      [
+        "Reception and assistance in professional settings",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Full package price",
+        "The price corresponds to the complete solution: body, virtual reality headset, controller, OmniPicker and case. The price list also includes the body alone, at a lower price."
+      ],
+      [
+        "info",
+        "Computing module",
+        "The RH·BOTS data sheet states \"NVIDIA Jetson Thor T500\"; the module in the Jetson Thor range is the T5000, which is the one listed on the sheet. It should be confirmed with the manufacturer."
+      ],
+      [
+        "info",
+        "Chassis steering",
+        "The documentation describes Ackermann-type steering with lateral movement, while the data sheet refers to omnidirectional wheels. The chassis type of the unit being quoted should be confirmed."
+      ]
+    ]
+  },
+  "rhc5": {
+    "claim": "Autonomous professional cleaning for large surfaces",
+    "tagline": "Scrubbing, vacuuming, debris collection and dust mopping in a single pass, with autonomous navigation and remote task management.",
+    "hero_alt": "Autonomous cleaning robot RHC5",
+    "gallery": [
+      [
+        "The RHC5 with its service station",
+        "assets/robots/rhc5/robot-estacion.webp"
+      ],
+      [
+        "Cleaning a spill in a hospital",
+        "assets/robots/rhc5/en-hospital.webp"
+      ],
+      [
+        "On a covered walkway",
+        "assets/robots/rhc5/en-pasarela.webp"
+      ],
+      [
+        "Station — front view",
+        "assets/robots/rhc5/estacion-frontal.webp"
+      ],
+      [
+        "Station — perspective view",
+        "assets/robots/rhc5/estacion-perp.webp"
+      ]
+    ],
+    "intro": "The RHC5 is an autonomous professional cleaning robot designed for medium and large commercial and industrial facilities. It integrates scrubbing, vacuuming, debris collection, dust mopping and autonomous navigation in a single machine.",
+    "keyfacts": [
+      [
+        "Performance",
+        "up to 1,980 m²/h"
+      ],
+      [
+        "Battery life",
+        "3 h scrubbing"
+      ],
+      [
+        "Tanks",
+        "45 + 45 L"
+      ],
+      [
+        "Scrubbing width",
+        "550 mm"
+      ]
+    ],
+    "highlights": [
+      [
+        "Single-pass cleaning",
+        "Combined sweeping, scrubbing and drying, with a side brush for edges and corners. Debris removal above 95%."
+      ],
+      [
+        "Autonomous navigation",
+        "Fusion of LiDAR, RGB depth vision and IMU with real-time SLAM and 2D/3D maps. It plans routes, avoids obstacles and resumes the task after an interruption."
+      ],
+      [
+        "Dual 45-litre tank",
+        "90 litres of total liquid capacity with secondary treatment of dirty water and tank self-cleaning in 4 minutes."
+      ],
+      [
+        "Building integration",
+        "Wi-Fi, 4G and LoRa, with elevator integration and access control to work across different floors and areas."
+      ]
+    ],
+    "specs": [
+      [
+        "Physical characteristics",
+        [
+          [
+            "Dimensions",
+            "820 × 680 × 1,130 mm"
+          ],
+          [
+            "Gross weight",
+            "approx. 215 kg"
+          ],
+          [
+            "Machine weight (data sheet)",
+            "170 kg"
+          ],
+          [
+            "Minimum passage width",
+            "800 mm"
+          ],
+          [
+            "Minimum turning radius",
+            "1,720 mm"
+          ],
+          [
+            "Maximum speed",
+            "1.0 m/s"
+          ],
+          [
+            "Vertical step climbing",
+            "15 mm"
+          ],
+          [
+            "Maximum recommended slope",
+            "2%"
+          ],
+          [
+            "Noise level",
+            "≤ 70 dB(A)"
+          ],
+          [
+            "Total noise level (data sheet)",
+            "< 68 dB(A)"
+          ],
+          [
+            "Protection rating",
+            "IPX3"
+          ],
+          [
+            "Recommended use",
+            "indoors only, on firm surfaces"
+          ],
+          [
+            "Floor types",
+            "concrete, marble, epoxy, PVC and emery flooring"
+          ]
+        ]
+      ],
+      [
+        "Cleaning system",
+        [
+          [
+            "Total width with side brush",
+            "840 mm"
+          ],
+          [
+            "Scrubbing width",
+            "550 mm"
+          ],
+          [
+            "Vacuum nozzle width",
+            "730 mm"
+          ],
+          [
+            "Clean water capacity",
+            "45 litres"
+          ],
+          [
+            "Wastewater capacity",
+            "45 litres"
+          ],
+          [
+            "Total liquid capacity",
+            "90 litres"
+          ],
+          [
+            "Solid waste tank",
+            "1.8 litres"
+          ],
+          [
+            "Brush motors",
+            "2 × 400 W"
+          ],
+          [
+            "Contact pressure",
+            "16 kPa"
+          ],
+          [
+            "Scrubbing vertical load",
+            "up to 25 kg"
+          ],
+          [
+            "Maximum water flow",
+            "800 ml/min"
+          ],
+          [
+            "Vacuum suction",
+            "approx. 18.18 kPa"
+          ],
+          [
+            "Debris removal",
+            "above 95%"
+          ],
+          [
+            "Brushes",
+            "dual main brush and side brush for edges"
+          ],
+          [
+            "Dirty water treatment",
+            "dual tank with secondary treatment"
+          ],
+          [
+            "Dirty water tank self-cleaning",
+            "4 min"
+          ],
+          [
+            "Fan service life",
+            "10,000 h"
+          ]
+        ]
+      ],
+      [
+        "Performance",
+        [
+          [
+            "Performance (technical manual)",
+            "up to 1,920 m²/h"
+          ],
+          [
+            "Performance (commercial documentation)",
+            "up to 1,980 m²/h"
+          ],
+          [
+            "Battery life in scrubbing mode",
+            "approx. 3 hours"
+          ],
+          [
+            "Battery life in dust mopping mode",
+            "approx. 8 hours"
+          ]
+        ]
+      ],
+      [
+        "Battery",
+        [
+          [
+            "Type",
+            "lithium"
+          ],
+          [
+            "Rated voltage",
+            "24 V"
+          ],
+          [
+            "Capacity",
+            "80 Ah"
+          ],
+          [
+            "Charging time",
+            "approx. 1.5 hours"
+          ]
+        ]
+      ],
+      [
+        "Navigation and safety",
+        [
+          [
+            "Navigation",
+            "fusion of LiDAR and RGB depth vision"
+          ],
+          [
+            "Localization",
+            "real-time SLAM with 2D/3D maps; millimetre precision according to the manufacturer"
+          ],
+          [
+            "Cameras",
+            "depth and fisheye"
+          ],
+          [
+            "Inertial",
+            "IMU unit"
+          ],
+          [
+            "Sensors",
+            "anti-fall, edge and obstacle detection"
+          ],
+          [
+            "Protection",
+            "against collisions and uncontrolled movements"
+          ],
+          [
+            "Routes",
+            "autonomous planning and resumption after interruptions"
+          ],
+          [
+            "Coverage",
+            "management of multiple areas and floors"
+          ]
+        ]
+      ],
+      [
+        "Communications and integration",
+        [
+          [
+            "Connectivity",
+            "Wi-Fi · 4G · LoRa"
+          ],
+          [
+            "Building",
+            "integration with elevators and access systems"
+          ],
+          [
+            "Management",
+            "remote task and map management"
+          ]
+        ]
+      ],
+      [
+        "Service station",
+        [
+          [
+            "Type",
+            "optional"
+          ],
+          [
+            "Functions",
+            "charging, water filling, draining and tank self-cleaning"
+          ],
+          [
+            "Dimensions",
+            "520 × 310 × 1,038 mm"
+          ],
+          [
+            "Water tank",
+            "8 L"
+          ],
+          [
+            "Dirty water drain rate",
+            "10–15 L/min"
+          ],
+          [
+            "Fill rate",
+            "7–10 L/min"
+          ],
+          [
+            "Maximum power",
+            "1,800 W"
+          ],
+          [
+            "Rated input voltage",
+            "200–240 V"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Supermarkets",
+        "assets/escenarios/supermercados.webp"
+      ],
+      [
+        "Office buildings",
+        "assets/escenarios/edificios-oficinas.webp"
+      ],
+      [
+        "Stations and airports",
+        "assets/escenarios/estaciones-transporte.webp"
+      ],
+      [
+        "Factories and warehouses",
+        "assets/escenarios/fabricas-almacenes.webp"
+      ],
+      [
+        "Shopping centres",
+        "assets/escenarios/complejos-comerciales.webp"
+      ],
+      [
+        "Hospitals",
+        "assets/escenarios/hospitales.webp"
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Price with station",
+        "The price includes the robot and its service station."
+      ],
+      [
+        "info",
+        "Performance: 1,920 vs 1,980 m²/h",
+        "The technical manual states up to 1,920 m²/h and the most recent commercial documentation up to 1,980 m²/h. The difference appears to correspond to different product revisions or calculation methods. The figure applicable to the revision being quoted should be confirmed."
+      ],
+      [
+        "info",
+        "Weight: 170 vs 215 kg",
+        "The RH·BOTS data sheet states a machine weight of 170 kg, while the earlier documentation states an approximate gross weight of 215 kg. The difference may be due to full tanks or packaging; it should be confirmed when quoting."
+      ],
+      [
+        "info",
+        "Noise level: < 68 vs ≤ 70 dB(A)",
+        "The RH·BOTS data sheet states a total noise level below 68 dB(A), while the earlier documentation states ≤ 70 dB(A)."
+      ]
+    ]
+  },
+  "d5w": {
+    "claim": "Industrial wheeled quadruped for inspection and delivery",
+    "tagline": "Combines legs and wheels to cover long distances on flat ground and overcome steps and slopes, with IP67 protection.",
+    "hero_alt": "White PUDU D5W quadruped robot with a wheel at the end of each leg",
+    "gallery": [
+      [
+        "Moving through an underground car park",
+        "assets/robots/d5w/en-aparcamiento.webp"
+      ],
+      [
+        "Overcoming a tall obstacle outdoors",
+        "assets/robots/d5w/superando-obstaculo.webp"
+      ],
+      [
+        "Moving along a wet path",
+        "assets/robots/d5w/terreno-humedo.webp"
+      ],
+      [
+        "Delivery with the optional transport box",
+        "assets/robots/d5w/reparto-con-caja.webp"
+      ],
+      [
+        "Following a person in a shopping centre",
+        "assets/robots/d5w/en-centro-comercial.webp"
+      ]
+    ],
+    "intro": "The D5W is the wheeled version of the D5 industrial quadruped, designed to work autonomously in inspection, delivery and events. With two 192-line lidar units and four fisheye cameras, it maps and navigates facilities of up to one million square metres. The wheels let it move quickly and with low power consumption on flat ground without losing the ability to climb steps.",
+    "keyfacts": [
+      [
+        "Max. speed",
+        "5 m/s"
+      ],
+      [
+        "Payload",
+        "20-30 kg"
+      ],
+      [
+        "Battery life",
+        "2-3 h"
+      ],
+      [
+        "Protection rating",
+        "IP67"
+      ]
+    ],
+    "highlights": [
+      [
+        "Wheeled legs",
+        "The hybrid system reaches 5 m/s on flat ground and overcomes 25 cm steps and 30° slopes."
+      ],
+      [
+        "360° perception",
+        "Two 192-line 3D lidar units and four fisheye cameras for centimetre-accurate maps and obstacle avoidance."
+      ],
+      [
+        "All-weather",
+        "IP67 protection, operation between −20 and 55 °C, and cold start below −10 °C."
+      ],
+      [
+        "Voice, gestures and tracking",
+        "6-channel microphone with noise reduction, gesture commands and autonomous person tracking."
+      ]
+    ],
+    "specs": [
+      [
+        "Dimensions and weight",
+        [
+          [
+            "Standing dimensions",
+            "900 × 543 × 572 mm"
+          ],
+          [
+            "Weight with battery",
+            "62 kg"
+          ]
+        ]
+      ],
+      [
+        "Mobility",
+        [
+          [
+            "Locomotion type",
+            "wheeled legs (4 high-durability tyres)"
+          ],
+          [
+            "Maximum speed",
+            "5 m/s"
+          ],
+          [
+            "Payload during continuous operation",
+            "20-30 kg"
+          ],
+          [
+            "Maximum step height",
+            "25 cm"
+          ],
+          [
+            "Climbing capacity",
+            "up to 80 cm"
+          ],
+          [
+            "Slope",
+            "30° uphill and 45° downhill"
+          ],
+          [
+            "Range per charge",
+            "up to 14 km"
+          ]
+        ]
+      ],
+      [
+        "Actuators",
+        [
+          [
+            "Motors",
+            "16"
+          ],
+          [
+            "Maximum joint torque",
+            "165 Nm"
+          ]
+        ]
+      ],
+      [
+        "Computing",
+        [
+          [
+            "Platform",
+            "NVIDIA Jetson AGX Orin 64 GB + RK3588"
+          ],
+          [
+            "Computing power",
+            "275 TOPS in total"
+          ],
+          [
+            "On-device AI",
+            "supports locally run language models"
+          ]
+        ]
+      ],
+      [
+        "Perception and navigation",
+        [
+          [
+            "Lidar",
+            "2 192-line 3D lidar units (front and rear)"
+          ],
+          [
+            "Cameras",
+            "4 fisheye cameras with 360° coverage"
+          ],
+          [
+            "Autonomous navigation",
+            "yes, with centimetre-accurate 3D maps"
+          ],
+          [
+            "Mappable area",
+            "up to 1,000,000 m²"
+          ],
+          [
+            "Autonomous workflow",
+            "departure, inspection, obstacle handling and return to charge"
+          ]
+        ]
+      ],
+      [
+        "Interaction",
+        [
+          [
+            "Voice",
+            "6-microphone array with AI noise reduction and source localisation"
+          ],
+          [
+            "Speakers",
+            "2"
+          ],
+          [
+            "Gestures",
+            "command recognition (start, stop, stand up, follow)"
+          ],
+          [
+            "Autonomous tracking",
+            "yes, with dynamic obstacle avoidance"
+          ],
+          [
+            "Remote control",
+            "RCOS controller with live panoramic video"
+          ]
+        ]
+      ],
+      [
+        "Battery",
+        [
+          [
+            "Capacity",
+            "1,000 Wh"
+          ],
+          [
+            "Type",
+            "swappable"
+          ],
+          [
+            "Battery life",
+            "2-3 h"
+          ]
+        ]
+      ],
+      [
+        "Environment",
+        [
+          [
+            "Protection rating",
+            "IP67 (sealed motors, batteries and sensors)"
+          ],
+          [
+            "Operating temperature",
+            "−20 to 55 °C"
+          ],
+          [
+            "Cold start",
+            "below −10 °C"
+          ]
+        ]
+      ],
+      [
+        "Connectivity and expansion",
+        [
+          [
+            "Connection",
+            "4G + wifi 6 + Bluetooth"
+          ],
+          [
+            "Expansion",
+            "expansion rail and ports"
+          ],
+          [
+            "Other",
+            "emergency stop button, status indicator and auxiliary cooling"
+          ]
+        ]
+      ],
+      [
+        "Optional accessories",
+        [
+          [
+            "Charging station",
+            "automatic charging, including spare batteries"
+          ],
+          [
+            "Delivery box",
+            "up to 30 kg and items up to 50 × 29 × 40 cm, with adjustable straps"
+          ],
+          [
+            "Bispectral inspection gimbal",
+            "infrared and optical imaging, plus acoustic imaging to detect cracks, leaks and electrical anomalies"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Inspection of campuses, factories and power plants",
+        null
+      ],
+      [
+        "Security patrols in logistics centres",
+        null
+      ],
+      [
+        "Delivery across industrial parks, warehouses and construction sites",
+        null
+      ],
+      [
+        "Airports and metro networks",
+        null
+      ],
+      [
+        "Events, trade fairs and shopping centres",
+        null
+      ],
+      [
+        "Robotics research and teaching",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "warn",
+        "Wheel module",
+        "According to the manufacturer, the point-foot and wheel modules are modular accessories sold separately. When quoting, confirm that the configuration includes the wheel module."
+      ],
+      [
+        "info",
+        "Laboratory data",
+        "The manufacturer states that the performance figures come from laboratory tests and may vary depending on the environment. The 5 m/s speed and 14 km range appear in the presentation, not in the specifications table."
+      ]
+    ]
+  },
+  "mt1": {
+    "claim": "Autonomous AI sweeper for large areas",
+    "tagline": "Sweeps fine dust and bulky debris in a single pass and works unsupervised shift after shift, with automatic charging at its station.",
+    "hero_alt": "Autonomous PUDU MT1 sweeper in three-quarter view, showing its two front side brushes",
+    "gallery": [
+      [
+        "Sweeping sand and bottles in a production plant",
+        "assets/robots/mt1/en-fabrica.webp"
+      ],
+      [
+        "Manual movement using the extendable handlebar",
+        "assets/robots/mt1/uso-manual.webp"
+      ],
+      [
+        "35 L waste bin removed from the robot",
+        "assets/robots/mt1/cubo-de-residuos.webp"
+      ],
+      [
+        "Spot cleaning of debris detected by the camera in a warehouse",
+        "assets/robots/mt1/limpieza-puntual.webp"
+      ],
+      [
+        "Moving along a warehouse aisle",
+        "assets/robots/mt1/en-almacen.webp"
+      ]
+    ],
+    "intro": "The MT1 is a robotic sweeper for dry cleaning of large indoor spaces: warehouses, factories, shopping centres or stations. Its dual-disc brushes pick up everything from fine dust to leaves and bottles, and its AI cameras locate debris for spot cleaning. It navigates autonomously using lidar SLAM and VSLAM, and returns on its own to charge.",
+    "keyfacts": [
+      [
+        "Performance",
+        "up to 1,800 m²/h"
+      ],
+      [
+        "Cleaning width",
+        "70 cm"
+      ],
+      [
+        "Waste bin",
+        "35 L"
+      ],
+      [
+        "Battery life",
+        "4-8 h"
+      ]
+    ],
+    "highlights": [
+      [
+        "Large and small debris",
+        "The dual-disc brushes pick up leaves and bottles while sweeping fine dust and dirt at the same time."
+      ],
+      [
+        "AI debris recognition",
+        "The cameras identify different types of debris in real time; in spot-cleaning mode it covers up to 6,000 m²/h."
+      ],
+      [
+        "Active dust control",
+        "High-flow negative-pressure ventilation and a filter retain particles in the bin and prevent them from returning to the air."
+      ],
+      [
+        "Continuous operation",
+        "Up to 8 h of battery life, charging in about 3 h, and automatic docking at the station to work in shifts."
+      ]
+    ],
+    "specs": [
+      [
+        "Dimensions and weight",
+        [
+          [
+            "Dimensions (L × W × H)",
+            "840 × 600 × 490 mm"
+          ],
+          [
+            "Weight",
+            "65 kg (presentation) / 74 kg (catalogue)"
+          ]
+        ]
+      ],
+      [
+        "Cleaning",
+        [
+          [
+            "Method",
+            "dry sweeping"
+          ],
+          [
+            "Performance in full cleaning mode",
+            "up to 1,800 m²/h"
+          ],
+          [
+            "Performance in spot-cleaning mode",
+            "up to 6,000 m²/h"
+          ],
+          [
+            "Cleaning width",
+            "70 cm"
+          ],
+          [
+            "Brushes",
+            "2 side disc brushes and a roller brush"
+          ],
+          [
+            "Waste bin capacity",
+            "35 L"
+          ],
+          [
+            "Dust bag",
+            "35 L, shared with the waste bin"
+          ],
+          [
+            "Dust control",
+            "negative-pressure ventilation and filter"
+          ],
+          [
+            "Edge cleaning",
+            "follows walls and corners"
+          ],
+          [
+            "Recommended operating area (catalogue)",
+            "indoor spaces from 500 to 25,000 m²"
+          ],
+          [
+            "Maximum design area",
+            "more than 100,000 m²"
+          ]
+        ]
+      ],
+      [
+        "AI functions",
+        [
+          [
+            "Debris recognition",
+            "AI cameras with deep learning"
+          ],
+          [
+            "AI modes (catalogue)",
+            "magic cleaning, spot cleaning, adaptive cleaning, smart recharging, heat map and guided cleaning"
+          ]
+        ]
+      ],
+      [
+        "Mobility and navigation",
+        [
+          [
+            "Navigation",
+            "VSLAM + markers + lidar SLAM"
+          ],
+          [
+            "Cruising speed",
+            "0.2 to 1.2 m/s (adjustable)"
+          ],
+          [
+            "Minimum passage width",
+            "75 cm"
+          ],
+          [
+            "Maximum obstacle height",
+            "20 mm"
+          ],
+          [
+            "Passable gaps",
+            "35 mm"
+          ]
+        ]
+      ],
+      [
+        "Sensors",
+        [
+          [
+            "Lidar",
+            "1"
+          ],
+          [
+            "VSLAM camera",
+            "1"
+          ],
+          [
+            "RGBD cameras",
+            "3"
+          ],
+          [
+            "RGB cameras",
+            "2"
+          ],
+          [
+            "Line laser",
+            "2"
+          ],
+          [
+            "Other",
+            "fill light and bumper sensor"
+          ]
+        ]
+      ],
+      [
+        "Battery and charging",
+        [
+          [
+            "Battery capacity",
+            "45 Ah"
+          ],
+          [
+            "Battery life",
+            "4-8 h depending on cleaning level"
+          ],
+          [
+            "Charging time",
+            "< 3 h (catalogue: approx. 3 h)"
+          ],
+          [
+            "Charging",
+            "automatic docking at the charging station"
+          ]
+        ]
+      ],
+      [
+        "Interface and handling",
+        [
+          [
+            "Display",
+            "10 inches"
+          ],
+          [
+            "Controls",
+            "power button and emergency stop button"
+          ],
+          [
+            "Manual handling",
+            "extendable steering handlebar"
+          ],
+          [
+            "Maintenance",
+            "quick-release modular bin and consumables"
+          ]
+        ]
+      ],
+      [
+        "Connectivity",
+        [
+          [
+            "IoT",
+            "elevator control and electronic door modules for working across multiple floors"
+          ],
+          [
+            "Monitoring",
+            "PUDU Link app and PC interface with cleaning reports and full-bin alerts"
+          ]
+        ]
+      ],
+      [
+        "Accessories and consumables",
+        [
+          [
+            "Charging station",
+            "yes"
+          ],
+          [
+            "Consumables",
+            "side brush, sweeping roller brush, rubber roller brush and removable roller brush"
+          ],
+          [
+            "Filter",
+            "high-efficiency H11/H13"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Warehouses and logistics",
+        null
+      ],
+      [
+        "Manufacturing plants",
+        null
+      ],
+      [
+        "Large DIY stores",
+        null
+      ],
+      [
+        "Shopping centres",
+        null
+      ],
+      [
+        "Public transport and airports",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Weight depends on the source",
+        "The product presentation states 65 kg, while the cleaning catalogue table states 74 kg. It is worth confirming this with the manufacturer."
+      ],
+      [
+        "info",
+        "MT1 and MT1 Max",
+        "The MT1 is designed for indoor use. For car parks, courtyards and semi-outdoor areas, the MT1 Max is available, with 3D lidar, IP54 protection and longer battery life."
+      ]
+    ]
+  },
+  "mt1-max": {
+    "claim": "Autonomous sweeper with 3D lidar for indoor and semi-outdoor use",
+    "tagline": "The MT1 version for car parks, courtyards and semi-outdoor areas: 3D perception, IP54 protection and signalling to operate safely alongside vehicles.",
+    "hero_alt": "Autonomous PUDU MT1 Max sweeper with 3D lidar on top and a mast with a warning light",
+    "gallery": [
+      [
+        "Sweeping leaves in an outdoor courtyard",
+        "assets/robots/mt1-max/en-exterior.webp"
+      ],
+      [
+        "Underground car park with the elevated warning light on",
+        "assets/robots/mt1-max/en-aparcamiento.webp"
+      ],
+      [
+        "Manual movement using the retractable handle",
+        "assets/robots/mt1-max/uso-manual.webp"
+      ],
+      [
+        "Docked at its charging station",
+        "assets/robots/mt1-max/estacion-de-carga.webp"
+      ]
+    ],
+    "intro": "The MT1 Max builds on the MT1 and adapts it to semi-outdoor environments with traffic, such as car parks, residential courtyards or squares. It adds 3D lidar, a dual processor, IP54 protection and an elevated warning light, and can climb slopes and speed bumps. It sweeps everything from cigarette butts and paper to large bottles with a 70 cm width.",
+    "keyfacts": [
+      [
+        "Performance",
+        "up to 2,200 m²/h"
+      ],
+      [
+        "Battery life",
+        "5-10 h"
+      ],
+      [
+        "Protection rating",
+        "IP54"
+      ],
+      [
+        "Max. slope",
+        "8°"
+      ]
+    ],
+    "highlights": [
+      [
+        "3D perception",
+        "3D lidar and sensor fusion for mapping with high ceilings, glass canopies, low light, dust or fog."
+      ],
+      [
+        "Operates alongside vehicles",
+        "It stops, waits or moves aside to give way, and reacts to sudden movements from people and animals."
+      ],
+      [
+        "AI-driven adaptive cleaning",
+        "With a dual processor, it adjusts brush force according to the debris and positions itself to keep it between the side brushes."
+      ],
+      [
+        "Built for semi-outdoor use",
+        "IP54 sealing, water-droplet detection, operation between −10 and 45 °C, and ability to pass 5 cm speed bumps."
+      ]
+    ],
+    "specs": [
+      [
+        "Dimensions and weight",
+        [
+          [
+            "Dimensions (L × W × H)",
+            "840 × 600 × 675 mm"
+          ],
+          [
+            "Weight",
+            "85 kg (presentation) / 81 kg (catalogue)"
+          ]
+        ]
+      ],
+      [
+        "Cleaning",
+        [
+          [
+            "Method",
+            "dry sweeping"
+          ],
+          [
+            "Performance in full cleaning mode",
+            "up to 2,200 m²/h"
+          ],
+          [
+            "Performance in spot-cleaning mode",
+            "up to 7,000 m²/h"
+          ],
+          [
+            "Cleaning width",
+            "70 cm with side brush"
+          ],
+          [
+            "Edge cleaning",
+            "0 cm"
+          ],
+          [
+            "Waste container capacity",
+            "35 L"
+          ],
+          [
+            "Dust bag",
+            "35 L, shared with the container"
+          ],
+          [
+            "Filter",
+            "automatic vibration cleaning"
+          ],
+          [
+            "Recommended operating area (catalogue)",
+            "garages, outdoor areas and complex spaces from 500 to 25,000 m²"
+          ],
+          [
+            "Maximum design area",
+            "more than 100,000 m²"
+          ]
+        ]
+      ],
+      [
+        "AI functions",
+        [
+          [
+            "Processing",
+            "dual-SoC architecture with redundancy"
+          ],
+          [
+            "Debris recognition",
+            "AI camera with deep learning"
+          ],
+          [
+            "Adaptive cleaning",
+            "adjustment of brushing mode and posture according to the debris"
+          ],
+          [
+            "AI modes (catalogue)",
+            "magic cleaning, spot cleaning, adaptive cleaning, smart recharging, heat map and guided cleaning"
+          ]
+        ]
+      ],
+      [
+        "Mobility and navigation",
+        [
+          [
+            "Navigation",
+            "VSLAM + markers + 3D lidar SLAM"
+          ],
+          [
+            "Cruising speed",
+            "0.2 to 1.2 m/s (adjustable)"
+          ],
+          [
+            "Maximum slope",
+            "8°"
+          ],
+          [
+            "Maximum obstacle height",
+            "50 mm (speed bumps)"
+          ],
+          [
+            "Minimum passage width",
+            "75 cm"
+          ],
+          [
+            "Obstacle avoidance",
+            "gives way to vehicles and reacts to people and animals"
+          ]
+        ]
+      ],
+      [
+        "Sensors",
+        [
+          [
+            "3D lidar",
+            "1"
+          ],
+          [
+            "VSLAM camera",
+            "1"
+          ],
+          [
+            "RGBD cameras",
+            "3"
+          ],
+          [
+            "RGB cameras",
+            "2"
+          ],
+          [
+            "Line laser",
+            "2"
+          ],
+          [
+            "Other",
+            "fill light, bumper sensor, water-droplet sensor and temperature sensor"
+          ]
+        ]
+      ],
+      [
+        "Safety and environment",
+        [
+          [
+            "Protection rating",
+            "IP54"
+          ],
+          [
+            "Operating temperature",
+            "−10 to 45 °C"
+          ],
+          [
+            "Rain",
+            "detects water droplets and heads to a safe area"
+          ],
+          [
+            "Signalling",
+            "1.2 m tall warning light, safety projection light, and audible and visual alarms"
+          ],
+          [
+            "Stop",
+            "emergency button"
+          ]
+        ]
+      ],
+      [
+        "Battery and charging",
+        [
+          [
+            "Battery capacity",
+            "60 Ah"
+          ],
+          [
+            "Battery life",
+            "5-10 h; 8 h in standard mode (catalogue: 6.5-10 h)"
+          ],
+          [
+            "Charging time",
+            "< 3.5 h"
+          ],
+          [
+            "Charging",
+            "automatic charging station"
+          ]
+        ]
+      ],
+      [
+        "Interface and handling",
+        [
+          [
+            "Display",
+            "10.1 inches"
+          ],
+          [
+            "Manual handling",
+            "retractable handle"
+          ]
+        ]
+      ],
+      [
+        "Connectivity",
+        [
+          [
+            "IoT",
+            "elevator control and electronic door modules for working across multiple floors"
+          ],
+          [
+            "Monitoring",
+            "PUDU Link app and PC with cleaning reports and full-container alerts"
+          ]
+        ]
+      ],
+      [
+        "Accessories and consumables",
+        [
+          [
+            "Charging station",
+            "yes"
+          ],
+          [
+            "Consumables",
+            "side brush, sweeping roller brush, rubber roller brush and removable roller brush"
+          ],
+          [
+            "Filter",
+            "high-efficiency H11/H13"
+          ],
+          [
+            "Lighting",
+            "forklift-style safety light and elevated warning lights"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Underground and surface car parks",
+        null
+      ],
+      [
+        "Residential courtyards and common areas",
+        null
+      ],
+      [
+        "Industrial parks and factory aisles",
+        null
+      ],
+      [
+        "Shopping centres and their surroundings",
+        null
+      ],
+      [
+        "Airports and stations",
+        null
+      ],
+      [
+        "Squares, pavements and park walkways",
+        null
+      ],
+      [
+        "Sports and event venues",
+        null
+      ],
+      [
+        "Campuses and office buildings",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Weight and battery life depend on the source",
+        "The presentation states 85 kg and 5-10 h of battery life; the cleaning catalogue table states 81 kg and 6.5-10 h."
+      ],
+      [
+        "info",
+        "Differences from the MT1",
+        "Compared with the MT1, it adds 3D lidar, a dual SoC, IP54 protection, an elevated warning light, a 60 Ah battery, higher performance (2,200 m²/h) and the ability to pass 5 cm speed bumps; it is taller (675 mm) and heavier."
+      ],
+      [
+        "warn",
+        "Outdoor use",
+        "The manufacturer states that it should not be used for cleaning in extreme weather conditions; the protection rating is IP54."
+      ]
+    ]
+  },
+  "d5w-estacion-carga": {
+    "claim": "Dedicated charging station for the D5W",
+    "tagline": "Fixed charging point to leave the D5W charging between shifts, without relying on someone plugging it in by hand.",
+    "hero_alt": "",
+    "gallery": [],
+    "intro": "Charging station designed for the D5W quadruped. It allows the robot to be left charging autonomously between shifts, at the same point where it operates.",
+    "keyfacts": [
+      [
+        "Manufacturer",
+        "PUDU"
+      ],
+      [
+        "Type",
+        "Charging station"
+      ],
+      [
+        "Compatible with",
+        "D5W"
+      ]
+    ],
+    "highlights": [],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Manufacturer",
+            "PUDU"
+          ],
+          [
+            "Accessory type",
+            "Charging station"
+          ],
+          [
+            "Compatible with",
+            "D5W"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Automatic charging between shifts",
+        null
+      ],
+      [
+        "Fixed operating base for the D5W",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Documentation pending",
+        "The manufacturer has not shared a technical data sheet for this accessory: only the name and price from the RH·BOTS price list (10 September 2026) are available. Confirm power, charging time and dimensions before quoting it."
+      ],
+      [
+        "info",
+        "\"S/F\" mark on the price list",
+        "The price list marks this accessory with \"S/F\" next to the price. Confirm with the supplier what this refers to (possibly that the photo is missing, or that the price is subject to availability) before quoting it."
+      ]
+    ]
+  },
+  "d5w-bateria": {
+    "claim": "Spare battery for the D5W quadruped",
+    "tagline": "Additional battery to keep the D5W operational while the other one recharges, or to extend the working day.",
+    "hero_alt": "",
+    "gallery": [],
+    "intro": "Spare battery for the D5W, designed for quick swapping between shifts and to extend the available battery life during long working days.",
+    "keyfacts": [
+      [
+        "Manufacturer",
+        "PUDU"
+      ],
+      [
+        "Type",
+        "Spare battery"
+      ],
+      [
+        "Compatible with",
+        "D5W"
+      ]
+    ],
+    "highlights": [],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Manufacturer",
+            "PUDU"
+          ],
+          [
+            "Accessory type",
+            "Spare battery"
+          ],
+          [
+            "Compatible with",
+            "D5W"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Quick battery swap between shifts",
+        null
+      ],
+      [
+        "Extended battery life for long working days",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Documentation pending",
+        "The manufacturer has not shared a technical data sheet for this accessory: its capacity and charging time are not known. Only the name and price from the RH·BOTS price list (10 September 2026) are available; confirm the details before quoting it."
+      ]
+    ]
+  },
+  "d5w-kit-inspeccion": {
+    "claim": "Sensor kit for inspection tasks with the D5W",
+    "tagline": "Expands the D5W with additional sensors for industrial inspection, beyond delivery and transport.",
+    "hero_alt": "",
+    "gallery": [],
+    "intro": "Sensor kit for the D5W aimed at industrial inspection tasks, complementing its usual use for delivery and cargo transport.",
+    "keyfacts": [
+      [
+        "Manufacturer",
+        "PUDU"
+      ],
+      [
+        "Type",
+        "Inspection kit"
+      ],
+      [
+        "Compatible with",
+        "D5W"
+      ]
+    ],
+    "highlights": [],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Manufacturer",
+            "PUDU"
+          ],
+          [
+            "Accessory type",
+            "Inspection kit"
+          ],
+          [
+            "Compatible with",
+            "D5W"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Industrial inspection with the D5W",
+        null
+      ],
+      [
+        "Sensor data capture on the plant floor",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Documentation pending",
+        "The manufacturer has not shared a technical data sheet for this kit: it is not known which sensors it includes or their specifications. Only the name and price from the RH·BOTS price list (10 September 2026) are available; confirm the exact contents before quoting it."
+      ]
+    ]
+  },
+  "t150": {
+    "claim": "Autonomous industrial transport robot for 150 kg",
+    "tagline": "Moves material between plant and warehouse stations without construction work or a server. It is up and running within an hour and operates in continuous shifts with quick battery swapping.",
+    "hero_alt": "T150 robot in the standard version, with column, touchscreen and flat loading platform",
+    "gallery": [
+      [
+        "T150 working in a box warehouse",
+        "assets/robots/t150/en-almacen.webp"
+      ],
+      [
+        "Lifting version with wheeled shelving unit",
+        "assets/robots/t150/version-lifting.webp"
+      ],
+      [
+        "Side view of the standard version",
+        "assets/robots/t150/vista-lateral.webp"
+      ],
+      [
+        "10.1-inch touchscreen for assigning tasks",
+        "assets/robots/t150/pantalla-tactil.webp"
+      ]
+    ],
+    "intro": "The T150 is an autonomous mobile robot for transporting loads of up to 150 kg in manufacturing plants and warehouses. It combines VSLAM navigation with LiDAR, an onboard touchscreen and integration with lifts, doors and management systems. It is available in standard and Lifting versions, and is designed for internal logistics of small items and assisted picking.",
+    "keyfacts": [
+      [
+        "Maximum load",
+        "150 kg"
+      ],
+      [
+        "Maximum speed",
+        "1.2 m/s"
+      ],
+      [
+        "Battery life",
+        "12 h unloaded"
+      ],
+      [
+        "Minimum aisle width",
+        "600 mm"
+      ]
+    ],
+    "highlights": [
+      [
+        "Up and running in one hour",
+        "No facility modifications or server setup required: mapping and task configuration are done in minutes."
+      ],
+      [
+        "VSLAM and LiDAR navigation",
+        "It localizes using ceiling reference points and two LiDAR units with 360° perception, and updates the map when the environment changes."
+      ],
+      [
+        "Continuous operation",
+        "Supports automatic station charging, cable charging and quick battery swapping to work 24/7."
+      ],
+      [
+        "Open integration",
+        "It is controlled from the screen, Pager, the PUDU Link app or API, and connects with lifts, doors, WMS, MES and ERP systems."
+      ]
+    ],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Configurations",
+            "standard and Lifting"
+          ],
+          [
+            "Dimensions",
+            "835 × 500 × 1,350 mm"
+          ],
+          [
+            "Weight",
+            "65 kg (standard), 81 kg (Lifting)"
+          ],
+          [
+            "Ground clearance",
+            "30 mm"
+          ],
+          [
+            "Chassis height",
+            "241 mm"
+          ],
+          [
+            "Screen",
+            "10.1-inch touchscreen"
+          ],
+          [
+            "Structure",
+            "single-piece die-cast chassis"
+          ],
+          [
+            "Operating temperature",
+            "0 ℃ to 40 ℃"
+          ]
+        ]
+      ],
+      [
+        "Load",
+        [
+          [
+            "Maximum load",
+            "150 kg"
+          ],
+          [
+            "Maximum load surface",
+            "1,200 × 1,000 × 1,100 mm"
+          ],
+          [
+            "Lift height",
+            "60 mm"
+          ]
+        ]
+      ],
+      [
+        "Movement and navigation",
+        [
+          [
+            "Navigation",
+            "VSLAM + LiDAR SLAM"
+          ],
+          [
+            "Drive",
+            "dual-wheel differential"
+          ],
+          [
+            "Speed",
+            "0.2 to 1.2 m/s"
+          ],
+          [
+            "Position accuracy",
+            "±10 mm"
+          ],
+          [
+            "Angular accuracy",
+            "±1°"
+          ],
+          [
+            "Maximum gradient",
+            "5°"
+          ],
+          [
+            "Step-crossing height",
+            "20 mm"
+          ],
+          [
+            "Gap-crossing width",
+            "35 mm"
+          ],
+          [
+            "Minimum aisle width",
+            "600 mm"
+          ]
+        ]
+      ],
+      [
+        "Battery and charging",
+        [
+          [
+            "Battery",
+            "lithium iron phosphate, 29.2 V DC, 30 Ah, swappable"
+          ],
+          [
+            "Battery life",
+            "12 h unloaded, 6 h at full load"
+          ],
+          [
+            "Charging time",
+            "2 h (0% to 90%)"
+          ],
+          [
+            "Charging methods",
+            "automatic at charging station, manual by cable, and quick battery swapping"
+          ]
+        ]
+      ],
+      [
+        "Sensors and safety",
+        [
+          [
+            "2D LiDAR",
+            "2 (front and rear)"
+          ],
+          [
+            "RGBD cameras",
+            "2 (top and bottom)"
+          ],
+          [
+            "Anti-collision bumper",
+            "yes"
+          ],
+          [
+            "Emergency stops",
+            "3"
+          ],
+          [
+            "Indicators",
+            "high-brightness status indicator and turn signals"
+          ],
+          [
+            "Audio",
+            "2 stereo 10 W speakers"
+          ],
+          [
+            "Compliance",
+            "ISO 3691-4, CE marking"
+          ]
+        ]
+      ],
+      [
+        "Control and integration",
+        [
+          [
+            "Control",
+            "onboard screen, Pager, PUDU Link app and API"
+          ],
+          [
+            "IoT",
+            "lifts, doors and gates, remote call, Bluetooth speaker"
+          ],
+          [
+            "Systems",
+            "open API; integration with WMS, MES and ERP"
+          ],
+          [
+            "Hardware",
+            "peripheral interface for additional modules"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Internal logistics in 3C electronics manufacturing",
+        null
+      ],
+      [
+        "Plastics and injection molding plants",
+        null
+      ],
+      [
+        "Footwear and apparel manufacturing",
+        null
+      ],
+      [
+        "Consumer goods and cosmetics",
+        null
+      ],
+      [
+        "Assisted order-to-person picking in warehouses",
+        null
+      ],
+      [
+        "Transport of small items between stations",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Price of the lifting version",
+        "The list price corresponds to the T150 with lifting."
+      ],
+      [
+        "info",
+        "Weight by version",
+        "The product presentation gives 65 kg for the standard version and 81 kg for the Lifting version; the catalog states 81 kg without distinguishing between versions."
+      ],
+      [
+        "info",
+        "Lift height",
+        "The catalog states a 60 mm lift height without specifying the version; this is understood to apply to the Lifting version. It should be confirmed when quoting."
+      ],
+      [
+        "warn",
+        "Battery service life",
+        "The catalog states «cycle life < 1000, SOH 70%», which appears to be a typo. Confirm with the manufacturer before quoting this figure."
+      ]
+    ]
+  },
+  "t300": {
+    "claim": "Modular autonomous transport robot for 300 kg",
+    "tagline": "A single base for transporting, towing, lifting or transferring loads by roller conveyor. It adapts to each plant workflow with standard modules, without custom development.",
+    "hero_alt": "T300 Conveyor robot with a single-layer roller conveyor on the mobile base",
+    "gallery": [
+      [
+        "T300 series variants with different modules",
+        "assets/robots/t300/variantes.webp"
+      ],
+      [
+        "T300 Conveyor receiving boxes from a conveyor line",
+        "assets/robots/t300/acoplamiento-linea.webp"
+      ],
+      [
+        "Two-layer T300 Conveyor",
+        "assets/robots/t300/conveyor-dos-capas.webp"
+      ],
+      [
+        "Two T300 units in an industrial warehouse",
+        "assets/robots/t300/en-nave.webp"
+      ]
+    ],
+    "intro": "The T300 is an autonomous mobile robot for loads of up to 300 kg in factories and warehouses. It is configured as Standard, Lifting, Towing or Conveyor depending on the module fitted. The Conveyor version incorporates motorized rollers to load and unload material directly onto conveyor lines and other equipment.",
+    "keyfacts": [
+      [
+        "Maximum load",
+        "300 kg"
+      ],
+      [
+        "Maximum speed",
+        "1.2 m/s"
+      ],
+      [
+        "Docking accuracy",
+        "±10 mm, ±1°"
+      ],
+      [
+        "Load per layer (Conveyor)",
+        "80 kg"
+      ]
+    ],
+    "highlights": [
+      [
+        "Four variants on one base",
+        "Standard, Lifting, Towing and Conveyor: transport, towing, lifting and multi-layer shelving modules on the same chassis."
+      ],
+      [
+        "Automatic roller transfer",
+        "The Conveyor version detects the load with barrier sensors and communicates with the line via IoT, API or automatic induction."
+      ],
+      [
+        "Adjustable conveyor",
+        "Working height from 305 to 1,100 mm, width from 120 to 540 mm and configurable orientation, with one or two layers."
+      ],
+      [
+        "Fleet and continuous shifts",
+        "Distributed or centralized scheduling, automatic charging and quick battery swapping for 24/7 operation."
+      ]
+    ],
+    "specs": [
+      [
+        "General (T300 series)",
+        [
+          [
+            "Variants",
+            "Standard, Lifting, Towing and Conveyor"
+          ],
+          [
+            "Dimensions",
+            "835 × 500 × 1,350 mm"
+          ],
+          [
+            "Weight",
+            "81 kg"
+          ],
+          [
+            "Ground clearance",
+            "30 mm"
+          ],
+          [
+            "Chassis height",
+            "241 mm"
+          ],
+          [
+            "Screen",
+            "10.1 inches"
+          ]
+        ]
+      ],
+      [
+        "Load",
+        [
+          [
+            "Maximum load",
+            "300 kg"
+          ],
+          [
+            "Maximum load surface",
+            "1,200 × 1,000 × 1,100 mm"
+          ],
+          [
+            "Lift height",
+            "60 mm"
+          ],
+          [
+            "Modules",
+            "conveyor, towing, lifting and multi-layer shelving"
+          ]
+        ]
+      ],
+      [
+        "Movement and navigation",
+        [
+          [
+            "Navigation",
+            "VSLAM + LiDAR SLAM"
+          ],
+          [
+            "Drive",
+            "dual-wheel differential"
+          ],
+          [
+            "Maximum speed",
+            "1.2 m/s"
+          ],
+          [
+            "Position accuracy",
+            "±10 mm"
+          ],
+          [
+            "Angular accuracy",
+            "±1°"
+          ],
+          [
+            "Maximum gradient",
+            "5°"
+          ],
+          [
+            "Step-crossing height",
+            "20 mm"
+          ],
+          [
+            "Gap-crossing width",
+            "35 mm"
+          ],
+          [
+            "Minimum aisle width",
+            "600 mm"
+          ]
+        ]
+      ],
+      [
+        "Battery and charging",
+        [
+          [
+            "Battery",
+            "lithium iron phosphate, 29.2 V DC, 30 Ah"
+          ],
+          [
+            "Battery life",
+            "12 h unloaded, 6 h at full load"
+          ],
+          [
+            "Charging time",
+            "2 h (0% to 90%)"
+          ],
+          [
+            "Charging methods",
+            "automatic, manual and quick battery swapping"
+          ]
+        ]
+      ],
+      [
+        "Sensors and safety",
+        [
+          [
+            "2D LiDAR",
+            "2 (front and rear)"
+          ],
+          [
+            "RGBD cameras",
+            "2 (top and bottom)"
+          ],
+          [
+            "RGB camera",
+            "yes"
+          ],
+          [
+            "Anti-collision bumper",
+            "yes"
+          ],
+          [
+            "Emergency stops",
+            "3"
+          ],
+          [
+            "Status indicators",
+            "yes"
+          ],
+          [
+            "Audio",
+            "2 stereo 10 W speakers"
+          ],
+          [
+            "Compliance",
+            "ISO 3691-4"
+          ]
+        ]
+      ],
+      [
+        "T300 Conveyor: base",
+        [
+          [
+            "Dimensions (front/rear transfer)",
+            "835 × 665 × 1,350 mm"
+          ],
+          [
+            "Dimensions (side transfer)",
+            "835 × 650 × 1,350 mm"
+          ],
+          [
+            "Weight",
+            "120 kg (one layer), 180 kg (two layers)"
+          ],
+          [
+            "Aisle width",
+            "750 mm"
+          ],
+          [
+            "Maximum speed",
+            "1.2 m/s"
+          ],
+          [
+            "Docking accuracy",
+            "±10 mm, ±1°"
+          ],
+          [
+            "Battery life unloaded",
+            "12 h (one layer), 10 h (two layers)"
+          ],
+          [
+            "Battery life at full load",
+            "10 h (one layer), 8 h (two layers)"
+          ],
+          [
+            "Charging time",
+            "2 h (0% to 90%)"
+          ]
+        ]
+      ],
+      [
+        "T300 Conveyor: conveyor",
+        [
+          [
+            "Number of layers",
+            "1 or 2"
+          ],
+          [
+            "Rated load per layer",
+            "80 kg"
+          ],
+          [
+            "Depth",
+            "650 mm"
+          ],
+          [
+            "Width",
+            "120 to 540 mm, adjustable"
+          ],
+          [
+            "Working surface height",
+            "305 to 1,100 mm, adjustable"
+          ],
+          [
+            "Orientation",
+            "adjustable along the docking axis"
+          ],
+          [
+            "Components",
+            "rollers with non-slip rubber coating, 3 infrared laser barrier sensors, 3 stoppers and a stop bar"
+          ],
+          [
+            "Communication with the line",
+            "IoT, API or automatic induction; PLC integration"
+          ]
+        ]
+      ],
+      [
+        "Control and integration",
+        [
+          [
+            "IoT",
+            "lifts, access control, automatic doors, fire systems and call via self-organizing network"
+          ],
+          [
+            "Systems",
+            "open API; integration with WMS, MES and ERP"
+          ],
+          [
+            "Fleet management",
+            "distributed and centralized scheduling; also works with a single unit"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "3C electronics and PCB manufacturing",
+        null
+      ],
+      [
+        "SMT and PCBA lines",
+        null
+      ],
+      [
+        "Lithium battery and photovoltaic panel processing",
+        null
+      ],
+      [
+        "Automotive parts manufacturing",
+        null
+      ],
+      [
+        "Material transfer between production lines",
+        null
+      ],
+      [
+        "Loading and unloading in automated warehouses",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Price of the lifting version",
+        "The list price corresponds to the T300 with lifting."
+      ],
+      [
+        "warn",
+        "General data by variant",
+        "The catalog gives the T300 the same weight (81 kg) and dimensions (835 × 500 × 1,350 mm) as the T150 and does not detail each variant. The Conveyor version weighs 120 or 180 kg and measures 835 × 665/650 × 1,350 mm. Confirm the data for Standard, Lifting and Towing when quoting."
+      ],
+      [
+        "info",
+        "Battery life and aisle width",
+        "The catalog states 6 h at full load and a 600 mm aisle width for the series; the Conveyor data sheet states 10 h (one layer) or 8 h (two layers) at full load and a 750 mm aisle width."
+      ],
+      [
+        "warn",
+        "Battery service life",
+        "The catalog states «cycle life < 1000, SOH 70%», which appears to be a typo. Confirm with the manufacturer before quoting this figure."
+      ]
+    ]
+  },
+  "t600": {
+    "claim": "Autonomous lifting robot for 600 kg loads",
+    "tagline": "Lifts and moves pallets, shelving units and carts of up to 600 kg between warehouse and line. Its column with handles allows it to be moved by hand with electric assistance when needed.",
+    "hero_alt": "T600 lifting robot, with central column, screen, side handles and flat lifting platform",
+    "gallery": [
+      [
+        "T600 moving a pallet with cable reels",
+        "assets/robots/t600/bobinas-de-cable.webp"
+      ],
+      [
+        "T600 in a metalworking manufacturing plant",
+        "assets/robots/t600/planta-metalurgica.webp"
+      ],
+      [
+        "Manual handling with electric assistance from the column handles",
+        "assets/robots/t600/asistencia-manual.webp"
+      ],
+      [
+        "T600 lifting a wheeled frame",
+        "assets/robots/t600/elevacion-de-carro.webp"
+      ]
+    ],
+    "intro": "The T600 is the lifting (Lifting) version of the T600 series: an autonomous mobile robot that positions itself under pallets, shelving units or carts, lifts them 60 mm and moves them with up to 600 kg of load. It navigates with VSLAM and LiDAR, features a 10.1-inch screen and is designed for internal logistics of heavy loads in manufacturing and warehouses.",
+    "keyfacts": [
+      [
+        "Maximum load",
+        "600 kg"
+      ],
+      [
+        "Maximum speed",
+        "1.2 m/s"
+      ],
+      [
+        "Battery life",
+        "6 h at full load, 12 h unloaded"
+      ],
+      [
+        "Minimum aisle width",
+        "700 mm"
+      ]
+    ],
+    "highlights": [
+      [
+        "600 kg per trip",
+        "Moves entire pallets and shelving units, reducing the number of trips and intermediate handling."
+      ],
+      [
+        "Column with handles and assistance",
+        "The column incorporates a screen and handles; manual handling has speed-controlled electric assistance."
+      ],
+      [
+        "VSLAM and LiDAR navigation",
+        "It combines ceiling-based localization with two LiDAR units and RGBD cameras, and recognizes shelving groups to pick up and set down the load at its location."
+      ],
+      [
+        "Fleet and compliance",
+        "It complies with ISO 3691-4, is compatible with VDA5050, and works alone or in a fleet with distributed or central scheduling."
+      ]
+    ],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Version",
+            "Lifting (with column)"
+          ],
+          [
+            "Dimensions",
+            "960 × 500 × 1,350 mm"
+          ],
+          [
+            "Weight",
+            "112 kg"
+          ],
+          [
+            "Ground clearance",
+            "30 mm"
+          ],
+          [
+            "Chassis height",
+            "255 mm"
+          ],
+          [
+            "Screen",
+            "10.1 inches"
+          ],
+          [
+            "Operating temperature",
+            "0 ℃ to 40 ℃"
+          ]
+        ]
+      ],
+      [
+        "Load",
+        [
+          [
+            "Maximum load",
+            "600 kg"
+          ],
+          [
+            "Maximum load surface",
+            "1,200 × 1,000 × 1,100 mm"
+          ],
+          [
+            "Lift height",
+            "60 mm"
+          ],
+          [
+            "Compatible accessories",
+            "lifting shelf, reflector posts, call control box, access door and automatic door module, pager"
+          ]
+        ]
+      ],
+      [
+        "Movement and navigation",
+        [
+          [
+            "Navigation",
+            "VSLAM + LiDAR SLAM"
+          ],
+          [
+            "Drive",
+            "dual-wheel differential"
+          ],
+          [
+            "Speed",
+            "0.2 to 1.2 m/s"
+          ],
+          [
+            "Position accuracy",
+            "±10 mm"
+          ],
+          [
+            "Angular accuracy",
+            "±1°"
+          ],
+          [
+            "Maximum gradient",
+            "5°"
+          ],
+          [
+            "Step-crossing height",
+            "10 mm"
+          ],
+          [
+            "Gap-crossing width",
+            "35 mm"
+          ],
+          [
+            "Minimum aisle width",
+            "700 mm"
+          ]
+        ]
+      ],
+      [
+        "Battery and charging",
+        [
+          [
+            "Battery",
+            "lithium iron phosphate, 29.2 V DC, 30 Ah, swappable"
+          ],
+          [
+            "Battery life",
+            "6 h at full load, 12 h unloaded"
+          ],
+          [
+            "Charging time",
+            "2 h (0% to 90%)"
+          ],
+          [
+            "Charging methods",
+            "automatic at charging station, manual, and quick battery swapping"
+          ]
+        ]
+      ],
+      [
+        "Sensors and safety",
+        [
+          [
+            "2D LiDAR",
+            "2 (front and rear)"
+          ],
+          [
+            "RGBD cameras",
+            "2 (top and bottom)"
+          ],
+          [
+            "RGB camera",
+            "yes"
+          ],
+          [
+            "Anti-collision bumper",
+            "yes"
+          ],
+          [
+            "Emergency stops",
+            "3"
+          ],
+          [
+            "Status indicators",
+            "yes"
+          ],
+          [
+            "Audio",
+            "2 stereo 10 W speakers"
+          ],
+          [
+            "Compliance",
+            "ISO 3691-4"
+          ]
+        ]
+      ],
+      [
+        "Control and integration",
+        [
+          [
+            "Fleet scheduling",
+            "independent deployment without a server, distributed coordination or central orchestration"
+          ],
+          [
+            "Protocol",
+            "VDA5050, for coordination with other compatible robots and systems"
+          ],
+          [
+            "IoT",
+            "lifts, access control, automatic doors, PLC activation, fire systems and pager-based calling"
+          ],
+          [
+            "Systems",
+            "open API; integration with WMS, MES and ERP"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Pallet transport in warehouses",
+        null
+      ],
+      [
+        "Line supply in automotive component plants",
+        null
+      ],
+      [
+        "Transfers between foundry, machining, heat treatment and inspection",
+        null
+      ],
+      [
+        "Transport of cable harnesses and heavy reels",
+        null
+      ],
+      [
+        "Movement of shelving units and carts with a lifting shelf",
+        null
+      ],
+      [
+        "Assisted picking with shelving delivery to stations",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Name in the documents",
+        "The catalog refers to this version as «PUDU T600 Lifting» in the range presentation and «PUDU T600» in the specifications table; the product presentation uses «PUDU T600»."
+      ],
+      [
+        "warn",
+        "Battery service life",
+        "The catalog states «cycle life < 1000, SOH 70%», which appears to be a typo. Confirm with the manufacturer before quoting this figure."
+      ]
+    ]
+  },
+  "t600-underride": {
+    "claim": "Autonomous under-cart robot for 600 kg loads",
+    "tagline": "Low chassis, without a mast, that slides under shelving units and carts to lift them and carry them to their destination. Handles loads of up to 600 kg with a base of up to 1,200 × 1,200 mm.",
+    "hero_alt": "T600 Underride robot, low and compact chassis with a flat lifting platform and no mast",
+    "gallery": [
+      [
+        "T600 Underride (left) next to the T600 lifting model with mast",
+        "assets/robots/t600-underride/junto-al-t600.webp"
+      ],
+      [
+        "T600 series robots picking up loads under shelving units",
+        "assets/robots/t600-underride/bajo-estanterias.webp"
+      ],
+      [
+        "Moving shelving units between aisles",
+        "assets/robots/t600-underride/flujo-de-estanterias.webp"
+      ],
+      [
+        "Fleet of robots in a manufacturing plant",
+        "assets/robots/t600-underride/planta-en-flota.webp"
+      ]
+    ],
+    "intro": "The T600 Underride is the low-chassis version of the T600 series: it stands 255 mm tall, slides under shelving units, carts or racks, lifts them and carries them with loads of up to 600 kg. It navigates with LiDAR SLAM and has no mast or screen, which lets it handle loads with a larger footprint and height than the lifting version.",
+    "keyfacts": [
+      [
+        "Maximum load",
+        "600 kg"
+      ],
+      [
+        "Height",
+        "255 mm"
+      ],
+      [
+        "Maximum load footprint",
+        "1,200 × 1,200 × 1,600 mm"
+      ],
+      [
+        "Minimum aisle width",
+        "650 mm"
+      ]
+    ],
+    "highlights": [
+      [
+        "Low profile",
+        "At 255 mm tall, it slides under the load and lifts it 60 mm, with no mast to limit the size of what it carries."
+      ],
+      [
+        "Larger loads",
+        "Handles bases of up to 1,200 × 1,200 mm and load heights of up to 1,600 mm, with a weight of 600 kg."
+      ],
+      [
+        "LiDAR navigation",
+        "Two 2D LiDAR units, two lower RGBD cameras and bumpers; recognizes groups of shelving units to pick up and drop off loads at their location."
+      ],
+      [
+        "Fleet and compliance",
+        "Complies with ISO 3691-4, is compatible with VDA5050 and works alone or in a fleet with distributed or central scheduling."
+      ]
+    ],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Version",
+            "Underride (slides under the load, no mast)"
+          ],
+          [
+            "Dimensions",
+            "845 × 500 × 255 mm"
+          ],
+          [
+            "Weight",
+            "94 kg"
+          ],
+          [
+            "Ground clearance",
+            "30 mm"
+          ],
+          [
+            "Chassis height",
+            "255 mm"
+          ],
+          [
+            "Screen",
+            "no"
+          ],
+          [
+            "Operating temperature",
+            "0 ℃ to 40 ℃"
+          ]
+        ]
+      ],
+      [
+        "Load",
+        [
+          [
+            "Maximum load",
+            "600 kg"
+          ],
+          [
+            "Maximum load footprint",
+            "1,200 × 1,200 × 1,600 mm"
+          ],
+          [
+            "Lift height",
+            "60 mm"
+          ],
+          [
+            "Compatible accessories",
+            "lifting shelf, reflector posts, call control box, access door and automatic door module, pager"
+          ]
+        ]
+      ],
+      [
+        "Motion and navigation",
+        [
+          [
+            "Navigation",
+            "LiDAR SLAM"
+          ],
+          [
+            "Drive",
+            "dual-wheel differential"
+          ],
+          [
+            "Speed",
+            "0.2 to 1.2 m/s"
+          ],
+          [
+            "Positioning accuracy",
+            "±10 mm"
+          ],
+          [
+            "Angular accuracy",
+            "±1°"
+          ],
+          [
+            "Maximum slope",
+            "5°"
+          ],
+          [
+            "Step climbing",
+            "10 mm"
+          ],
+          [
+            "Gap crossing",
+            "35 mm"
+          ],
+          [
+            "Minimum aisle width",
+            "650 mm"
+          ]
+        ]
+      ],
+      [
+        "Battery and charging",
+        [
+          [
+            "Battery",
+            "lithium iron phosphate, 29.2 V DC, 30 Ah, swappable"
+          ],
+          [
+            "Runtime",
+            "6 h at full load, 12 h unloaded"
+          ],
+          [
+            "Charging time",
+            "2 h (0% to 90%)"
+          ],
+          [
+            "Charging methods",
+            "automatic at station, manual and quick battery swap"
+          ]
+        ]
+      ],
+      [
+        "Sensors and safety",
+        [
+          [
+            "2D LiDAR",
+            "2 (front and rear)"
+          ],
+          [
+            "RGBD cameras",
+            "2 (lower)"
+          ],
+          [
+            "RGB camera",
+            "no"
+          ],
+          [
+            "Anti-collision bumpers",
+            "yes"
+          ],
+          [
+            "Emergency stops",
+            "2"
+          ],
+          [
+            "Status indicators",
+            "yes"
+          ],
+          [
+            "Audio",
+            "2 stereo 10 W speakers"
+          ],
+          [
+            "Compliance",
+            "ISO 3691-4"
+          ]
+        ]
+      ],
+      [
+        "Control and integration",
+        [
+          [
+            "Fleet scheduling",
+            "independent server-free deployment, distributed coordination or central orchestration"
+          ],
+          [
+            "Protocol",
+            "VDA5050, for coordination with other compatible robots and systems"
+          ],
+          [
+            "IoT",
+            "elevators, access control, automatic doors, PLC-triggered activation, fire systems and pager calling"
+          ],
+          [
+            "Systems",
+            "open API; integration with WMS, MES and ERP"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Moving shelving units and carts between warehouse and line",
+        null
+      ],
+      [
+        "Assisted picking with shelving delivery to stations (order-to-person)",
+        null
+      ],
+      [
+        "Transport of bulky loads up to 1,600 mm in height",
+        null
+      ],
+      [
+        "Moving heavy racks and tooling in automotive and metalworking",
+        null
+      ],
+      [
+        "Transfers between floors with elevator integration",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Data shared with the T600",
+        "Battery, runtime, speed, accuracy, slope, gap crossing and operating temperature appear with the same values for both versions. Series-wide features (VDA5050, ISO 3691-4, shelving recognition) are described for the whole T600 series."
+      ],
+      [
+        "warn",
+        "Battery lifespan",
+        "The catalog states «cycle life < 1000, SOH 70%», which looks like a typo. Confirm with the manufacturer before citing it."
+      ]
+    ]
+  },
+  "mp2000": {
+    "claim": "Autonomous pallet truck for 2,000 kg pallets",
+    "tagline": "Picks up and sets down pallets without reflectors or floor markings, with fork entry in about 20 s. Works in 2.0 m 90° stacking aisles and coordinates multiple units without a network or server.",
+    "hero_alt": "MP2000 autonomous pallet truck seen from the front, with grey body, sensor mast, control tiller and forks",
+    "gallery": [
+      [
+        "Rear view with forks and mast",
+        "assets/robots/mp2000/vista-horquillas.webp"
+      ],
+      [
+        "MP2000 next to a pallet in a shelving warehouse",
+        "assets/robots/mp2000/almacen-con-pale.webp"
+      ],
+      [
+        "Pallet supply with boxes in a production plant",
+        "assets/robots/mp2000/planta-de-produccion.webp"
+      ],
+      [
+        "Approaching a pallet in a floor storage area",
+        "assets/robots/mp2000/entrada-en-pale.webp"
+      ]
+    ],
+    "intro": "The MP2000 is an autonomous pallet truck (pallet AMR) for the horizontal transport of pallets weighing up to 2,000 kg in docks, warehouses, line-side areas and workshops. It navigates with 3D SLAM (3D LiDAR and vision), detects pallet position and location occupancy, and supports automatic or manual driving. It covers floor storage and the first shelving level.",
+    "keyfacts": [
+      [
+        "Payload",
+        "2,000 kg"
+      ],
+      [
+        "Speed unloaded / loaded",
+        "1.6 / 1.2 m/s"
+      ],
+      [
+        "Runtime",
+        "up to 12 h"
+      ],
+      [
+        "90° stacking aisle",
+        "2.0 m"
+      ]
+    ],
+    "highlights": [
+      [
+        "No facility changes needed",
+        "Locates itself with 3D LiDAR and vision, without reflectors or floor markings; mapping and commissioning take minutes."
+      ],
+      [
+        "Pallet tolerance",
+        "Enters pallets offset by up to 15 cm or rotated up to 15°, whether three-runner or perimeter-base, in about 20 s."
+      ],
+      [
+        "Autonomous locations and fleet",
+        "Detects which locations are occupied, chooses destination and route, and coordinates multiple units without a network or server."
+      ],
+      [
+        "360° perception",
+        "3D and 2D LiDAR, cameras, contour projector and LiDAR at the fork tips: stops for moving objects and goes around fixed obstacles."
+      ]
+    ],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Type",
+            "autonomous fork pallet truck"
+          ],
+          [
+            "Dimensions (L × W × H)",
+            "1,585 × 910 × 1,870 mm"
+          ],
+          [
+            "Weight with battery",
+            "420 kg"
+          ],
+          [
+            "Driving mode",
+            "automatic or manual (control tiller)"
+          ],
+          [
+            "Screen",
+            "LCD"
+          ]
+        ]
+      ],
+      [
+        "Load and forks",
+        [
+          [
+            "Rated payload",
+            "2,000 kg"
+          ],
+          [
+            "Fork height",
+            "80 to 200 mm (max. 200 ± 5 mm)"
+          ],
+          [
+            "Fork dimensions (length × width × thickness)",
+            "1,130 × 160 × 60 mm"
+          ],
+          [
+            "Fork outer width",
+            "550 or 620 mm (two versions)"
+          ],
+          [
+            "Fork entry time",
+            "20 s"
+          ],
+          [
+            "Pallet types",
+            "stringer or block; three-runner and perimeter-base"
+          ],
+          [
+            "Pallet position tolerance",
+            "15 cm offset, 15° deviation"
+          ],
+          [
+            "Coverage",
+            "floor storage and first shelving level"
+          ]
+        ]
+      ],
+      [
+        "Motion and navigation",
+        [
+          [
+            "Navigation",
+            "SLAM with 3D LiDAR + VSLAM"
+          ],
+          [
+            "Drive",
+            "steerable drive wheel (forward, reverse and turning), with auxiliary wheel"
+          ],
+          [
+            "Rated speed",
+            "1.6 m/s unloaded, 1.2 m/s loaded"
+          ],
+          [
+            "Positioning accuracy",
+            "±10 mm"
+          ],
+          [
+            "Minimum turning radius",
+            "1,350 mm"
+          ],
+          [
+            "Minimum straight aisle width unloaded",
+            "1.1 m"
+          ],
+          [
+            "Minimum turning aisle width unloaded",
+            "2,000 mm"
+          ],
+          [
+            "90° stacking aisle, 1,000 × 1,200 mm pallet",
+            "2,000 mm"
+          ],
+          [
+            "90° stacking aisle, 800 × 1,200 mm pallet",
+            "1,960 mm"
+          ],
+          [
+            "Step climbing",
+            "10 mm"
+          ],
+          [
+            "Gap crossing",
+            "35 mm"
+          ],
+          [
+            "Slope climbing",
+            "3° loaded, 8° unloaded"
+          ]
+        ]
+      ],
+      [
+        "Battery and charging",
+        [
+          [
+            "Battery",
+            "lithium iron phosphate, 51.2 V; 60 Ah rated (54.9 Ah typical)"
+          ],
+          [
+            "Runtime",
+            "12 h unloaded, 6 h loaded"
+          ],
+          [
+            "Full charging time",
+            "2 h"
+          ],
+          [
+            "Charging methods",
+            "automatic at station and manual"
+          ]
+        ]
+      ],
+      [
+        "Sensors and safety",
+        [
+          [
+            "LiDAR",
+            "3D and 2D"
+          ],
+          [
+            "Cameras",
+            "top, front and depth"
+          ],
+          [
+            "Obstacle avoidance",
+            "with LiDAR and 3D vision; stops for moving objects and goes around static obstacles"
+          ],
+          [
+            "Fork protection",
+            "LiDAR at the fork tips"
+          ],
+          [
+            "In-position pallet detection",
+            "yes"
+          ],
+          [
+            "Anti-collision bumpers",
+            "yes"
+          ],
+          [
+            "Emergency stop",
+            "yes"
+          ],
+          [
+            "Signaling",
+            "warning light, indicator light, safety contour projector and audible and visual alarm"
+          ]
+        ]
+      ],
+      [
+        "Control and integration",
+        [
+          [
+            "Task assignment",
+            "robot screen, PUDU Link app, PDA scanning, PUDU Pager and open API"
+          ],
+          [
+            "Fleet",
+            "distributed multi-robot coordination, without a network or server, with traffic zone control"
+          ],
+          [
+            "IoT",
+            "automatic charging station, automatic door control and elevator control module"
+          ],
+          [
+            "Location setup",
+            "endpoint scanning with automatic data generation"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Receiving and dispatching pallets at docks",
+        null
+      ],
+      [
+        "Floor storage and first shelving level",
+        null
+      ],
+      [
+        "Line supply from staging areas",
+        null
+      ],
+      [
+        "Moving finished product to warehouse and dispatch",
+        null
+      ],
+      [
+        "Distribution centers and urgent load transfer",
+        null
+      ],
+      [
+        "Replenishment for picking and consolidation in e-commerce",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Specifications to confirm",
+        "The presentation states that the specifications are subject to the performance matrix and the parameter sheet to be confirmed with the manufacturer."
+      ],
+      [
+        "info",
+        "Fork width",
+        "There are two versions, with a fork outer width of 550 mm or 620 mm. Confirm which one applies based on the customer's pallets."
+      ],
+      [
+        "warn",
+        "Working height",
+        "This is a low-lift pallet truck (up to 200 mm): it only covers floor storage and the first shelving level, not elevated racking."
+      ]
+    ]
+  },
+  "omnihand": {
+    "claim": "Dexterous robotic hand with 16 degrees of freedom",
+    "tagline": "Compact, lightweight end effector for humanoid robots, mobile manipulators and research. Covers common gestures and grips with 10 active joints.",
+    "hero_alt": "White OmniHand robotic hand making the OK gesture with thumb and index finger",
+    "gallery": [
+      [
+        "Palm view",
+        "assets/robots/omnihand/vista-palma.webp"
+      ],
+      [
+        "Back-of-hand view",
+        "assets/robots/omnihand/vista-dorso.webp"
+      ],
+      [
+        "Interaction with people in a home setting",
+        "assets/robots/omnihand/interaccion-personas.webp"
+      ],
+      [
+        "Humanoid robot manipulating objects in a teaching exercise",
+        "assets/robots/omnihand/formacion.webp"
+      ],
+      [
+        "Light grip on parts in a tray",
+        "assets/robots/omnihand/robotica-servicio.webp"
+      ]
+    ],
+    "intro": "OmniHand is a five-finger robotic hand that mounts as an end effector on humanoid robots, robotic arms and mobile manipulators. It combines 16 degrees of freedom, 10 of them active, in 180 × 85 × 38.5 mm and around 550 g. It is designed for interaction with people, service robotics, teaching and research.",
+    "keyfacts": [
+      [
+        "Degrees of freedom",
+        "16 (10 active)"
+      ],
+      [
+        "Weight",
+        "≤ 550 g"
+      ],
+      [
+        "Grip force",
+        "50 N"
+      ],
+      [
+        "Repeat accuracy",
+        "0.3 mm"
+      ]
+    ],
+    "highlights": [
+      [
+        "Built for large-scale deployment",
+        "Compact, lightweight format, designed to integrate into common humanoid robots and mobile manipulators."
+      ],
+      [
+        "10 active joints and 6 passive joints",
+        "Covers common gestures and most grip types, enabling collaboration with people beyond simply picking up objects."
+      ],
+      [
+        "Fast response",
+        "Opens and closes in 0.5 s and repeats fingertip position with a typical accuracy of 0.3 mm."
+      ],
+      [
+        "Open integration",
+        "CAN-FD or RS485 communication, compatibility with Dex-UMI and ROS 2, Python and C++ SDK, and OTA updates."
+      ]
+    ],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Weight (without wrist cover or screws)",
+            "≤ 550 g"
+          ],
+          [
+            "Dimensions",
+            "180 × 85 × 38.5 mm"
+          ],
+          [
+            "Degrees of freedom",
+            "16"
+          ],
+          [
+            "Active degrees of freedom",
+            "10"
+          ],
+          [
+            "Passive degrees of freedom",
+            "6"
+          ]
+        ]
+      ],
+      [
+        "Performance",
+        [
+          [
+            "Minimum open / close time (typical)",
+            "0.5 s / 0.5 s"
+          ],
+          [
+            "Fingertip repeat accuracy (typical)",
+            "0.3 mm"
+          ],
+          [
+            "Five-finger grip force",
+            "50 N"
+          ],
+          [
+            "Payload (commercial presentation)",
+            "2 kg in stable grip; 5 kg lifting"
+          ]
+        ]
+      ],
+      [
+        "Electronics and environment",
+        [
+          [
+            "Operating voltage",
+            "18–27 V"
+          ],
+          [
+            "Communication interface",
+            "CAN-FD / RS485"
+          ],
+          [
+            "Operating temperature",
+            "-10 to 45 °C"
+          ],
+          [
+            "Tactile sensors",
+            "not included (available on OmniHand Tactile)"
+          ]
+        ]
+      ],
+      [
+        "Joint range",
+        [
+          [
+            "Index-to-pinky fingers · DIP (flexion/extension)",
+            "0° to 171°"
+          ],
+          [
+            "Index-to-pinky fingers · PIP (flexion/extension)",
+            "0° to 80°"
+          ],
+          [
+            "Index-to-pinky fingers · ABAD (abduction/adduction)",
+            "0° to 10°"
+          ],
+          [
+            "Thumb · DIP (flexion/extension)",
+            "0° to 160°"
+          ],
+          [
+            "Thumb · PIP (flexion/extension)",
+            "0° to 106°"
+          ],
+          [
+            "Thumb · MCP (flexion/extension)",
+            "0° to 45°"
+          ],
+          [
+            "Thumb · ABAD (abduction/adduction)",
+            "0° to 90°"
+          ],
+          [
+            "Thumb · ROLL (rotation)",
+            "0° to 60°"
+          ]
+        ]
+      ],
+      [
+        "Compatibility and integration",
+        [
+          [
+            "Platforms",
+            "common humanoid robots and robotic arms"
+          ],
+          [
+            "Data collection",
+            "Dex-UMI"
+          ],
+          [
+            "Software",
+            "ROS 2, Python and C++ SDK"
+          ],
+          [
+            "Updates",
+            "OTA (remote)"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Human-robot interaction: gestures, service tasks and collaboration",
+        null
+      ],
+      [
+        "Training and development of teaching content on manipulation",
+        null
+      ],
+      [
+        "Prototyping in academic research projects",
+        null
+      ],
+      [
+        "Mobile and service robotics: light grip for delivery, hospitality and assistance",
+        null
+      ],
+      [
+        "End effector for humanoid robots",
+        null
+      ],
+      [
+        "End effector for mobile manipulators",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Weight",
+        "The datasheet states ≤ 550 g without wrist cover or screws; the commercial presentation states 510 g."
+      ],
+      [
+        "info",
+        "Grip force and payload",
+        "The datasheet gives a five-finger grip force of 50 N, measured in hybrid force control mode; the commercial presentation cites 2 kg in stable grip and 5 kg lifting. These are different quantities: confirm with the manufacturer which applies in each case."
+      ],
+      [
+        "info",
+        "Version with tactile sensors",
+        "The commercial presentation describes the family's distributed tactile sensing, but according to the datasheet only the OmniHand Tactile version includes it."
+      ]
+    ]
+  },
+  "omnihand-tactile": {
+    "claim": "Dexterous robotic hand with tactile sensors",
+    "tagline": "Version of OmniHand with force detection on fingertips, palm and back of the hand. Enables gentler grips and contact interaction with people.",
+    "hero_alt": "OmniHand Tactile robotic hand seen from the palm, with fingers extended",
+    "gallery": [
+      [
+        "Back-of-hand view",
+        "assets/robots/omnihand-tactile/vista-dorso.webp"
+      ],
+      [
+        "Precision gesture between thumb and index finger",
+        "assets/robots/omnihand-tactile/gesto-precision.webp"
+      ],
+      [
+        "Diagram of finger and thumb joints",
+        "assets/robots/omnihand-tactile/esquema-articulaciones.webp"
+      ],
+      [
+        "Thumb range of motion",
+        "assets/robots/omnihand-tactile/rango-pulgar.webp"
+      ]
+    ],
+    "intro": "OmniHand Tactile is the tactile-sensor version of the OmniHand robotic hand. It keeps the 16 degrees of freedom (10 active) and adds force detection on the fingertips, palm and back of the hand, with a resolution of 0.1 N. It serves as an end effector on humanoid robots and mobile manipulators that work close to people or with delicate objects.",
+    "keyfacts": [
+      [
+        "Degrees of freedom",
+        "16 (10 active)"
+      ],
+      [
+        "Tactile resolution",
+        "0.1 N"
+      ],
+      [
+        "Detection range",
+        "0–20 N"
+      ],
+      [
+        "Weight",
+        "≤ 570 g"
+      ]
+    ],
+    "highlights": [
+      [
+        "Distributed tactile sensing",
+        "More than 300 force-sensitive points spread across the fingertips, palm and back of the hand."
+      ],
+      [
+        "Safe contact",
+        "Anti-pinch design for gentle interaction with people and objects."
+      ],
+      [
+        "Back-of-hand interaction",
+        "In addition to gestures and grips, it recognizes contact on the back of the hand for human-robot collaboration."
+      ],
+      [
+        "Robust sensors",
+        "Measure from 0 to 20 N and withstand up to 200 N without damage."
+      ]
+    ],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Weight (without wrist cover or screws)",
+            "≤ 570 g"
+          ],
+          [
+            "Dimensions",
+            "180 × 85 × 38.5 mm"
+          ],
+          [
+            "Degrees of freedom",
+            "16"
+          ],
+          [
+            "Active degrees of freedom",
+            "10"
+          ],
+          [
+            "Passive degrees of freedom",
+            "6"
+          ]
+        ]
+      ],
+      [
+        "Performance",
+        [
+          [
+            "Minimum open / close time (typical)",
+            "0.5 s / 0.5 s"
+          ],
+          [
+            "Fingertip repeat accuracy (typical)",
+            "0.3 mm"
+          ],
+          [
+            "Five-finger grip force",
+            "50 N"
+          ],
+          [
+            "Payload (commercial presentation)",
+            "2 kg in stable grip; 5 kg lifting"
+          ]
+        ]
+      ],
+      [
+        "Tactile sensors",
+        [
+          [
+            "Force detection",
+            "one-dimensional on fingertips, palm and back of the hand"
+          ],
+          [
+            "Sensing points (commercial presentation)",
+            "more than 300"
+          ],
+          [
+            "Resolution",
+            "0.1 N"
+          ],
+          [
+            "Detection range",
+            "0–20 N"
+          ],
+          [
+            "Maximum force without damage",
+            "200 N"
+          ]
+        ]
+      ],
+      [
+        "Electronics and environment",
+        [
+          [
+            "Operating voltage",
+            "18–27 V"
+          ],
+          [
+            "Communication interface",
+            "CAN-FD / RS485"
+          ],
+          [
+            "Operating temperature",
+            "-10 to 45 °C"
+          ]
+        ]
+      ],
+      [
+        "Joint range",
+        [
+          [
+            "Index-to-pinky fingers · DIP (flexion/extension)",
+            "0° to 171°"
+          ],
+          [
+            "Index-to-pinky fingers · PIP (flexion/extension)",
+            "0° to 80°"
+          ],
+          [
+            "Index-to-pinky fingers · ABAD (abduction/adduction)",
+            "0° to 10°"
+          ],
+          [
+            "Thumb · DIP (flexion/extension)",
+            "0° to 160°"
+          ],
+          [
+            "Thumb · PIP (flexion/extension)",
+            "0° to 106°"
+          ],
+          [
+            "Thumb · MCP (flexion/extension)",
+            "0° to 45°"
+          ],
+          [
+            "Thumb · ABAD (abduction/adduction)",
+            "0° to 90°"
+          ],
+          [
+            "Thumb · ROLL (rotation)",
+            "0° to 60°"
+          ]
+        ]
+      ],
+      [
+        "Compatibility and integration",
+        [
+          [
+            "Platforms",
+            "common humanoid robots and robotic arms"
+          ],
+          [
+            "Data collection",
+            "Dex-UMI"
+          ],
+          [
+            "Software",
+            "ROS 2, Python and C++ SDK"
+          ],
+          [
+            "Updates",
+            "OTA (remote)"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Contact-based human-robot interaction: gestures, service tasks and collaboration",
+        null
+      ],
+      [
+        "Handling delicate objects with force control",
+        null
+      ],
+      [
+        "Mobile and service robotics: delivery, hospitality and assistance",
+        null
+      ],
+      [
+        "Training and development of teaching content on manipulation",
+        null
+      ],
+      [
+        "Academic research in manipulation and touch",
+        null
+      ],
+      [
+        "End effector for humanoid robots and mobile manipulators",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Grip force and payload",
+        "The datasheet gives a five-finger grip force of 50 N, measured in hybrid force control mode; the commercial presentation cites 2 kg in stable grip and 5 kg lifting. These are different quantities: confirm with the manufacturer which applies in each case."
+      ],
+      [
+        "info",
+        "Shared documentation",
+        "The datasheet and commercial presentation are common to OmniHand and OmniHand Tactile. The sensor figures and the ≤ 570 g weight correspond to the tactile version; the presentation states 510 g without specifying a version."
+      ]
+    ]
+  },
+  "omnihand-pro-2025": {
+    "claim": "Dexterous robotic hand with 19 degrees of freedom",
+    "tagline": "Five-finger end effector with 12 active joints and three-axis force sensing at the fingertips, for fine manipulation tasks with higher payload.",
+    "hero_alt": "OmniHand Pro 2025 robotic hand, front view",
+    "gallery": [
+      [
+        "The OmniHand Pro 2025 making a two-finger gesture",
+        "assets/robots/omnihand-pro-2025/gesto-dos-dedos.webp"
+      ],
+      [
+        "Kinematic diagram of the fingers and thumb",
+        "assets/robots/omnihand-pro-2025/esquema-articulaciones.webp"
+      ],
+      [
+        "Flexion range of the fingers and thumb",
+        "assets/robots/omnihand-pro-2025/rango-articular.webp"
+      ]
+    ],
+    "intro": "OmniHand Pro 2025 is a five-finger robotic hand with 19 degrees of freedom, 12 of them active, designed to be mounted as an end effector on humanoid robots and robotic arms. It integrates tactile sensors with three-axis force sensing at the fingertips and single-axis sensing in the palm, and offers a five-finger grip force of 10 kg.",
+    "keyfacts": [
+      [
+        "Degrees of freedom",
+        "19 (12 active)"
+      ],
+      [
+        "Grip force",
+        "10 kg"
+      ],
+      [
+        "Weight",
+        "≤ 810 g"
+      ],
+      [
+        "Tactile resolution",
+        "0.1 N"
+      ]
+    ],
+    "highlights": [
+      [
+        "More active joints",
+        "12 active degrees of freedom out of 19; the index and middle fingers offer up to 14° of abduction, and the thumb rotates up to 42°."
+      ],
+      [
+        "Three-axis touch sensing at the fingertips",
+        "Measures force on three axes at the fingertips and on one axis in the palm, with 0.1 N resolution and a range of 0 to 50 N."
+      ],
+      [
+        "Rugged construction",
+        "The sensors withstand up to 1,000 N without damage, and the hand operates between -20 and 50 °C."
+      ],
+      [
+        "Simple integration",
+        "12 to 24 V power supply, CAN-FD communication, and OTA updates."
+      ]
+    ],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Weight",
+            "≤ 810 g"
+          ],
+          [
+            "Dimensions",
+            "207 × 98 × 56 mm"
+          ],
+          [
+            "Degrees of freedom",
+            "19"
+          ],
+          [
+            "Active degrees of freedom",
+            "12"
+          ]
+        ]
+      ],
+      [
+        "Performance",
+        [
+          [
+            "Minimum open/close time (typical)",
+            "0.7 s"
+          ],
+          [
+            "Fingertip repeatability (typical)",
+            "0.4 mm"
+          ],
+          [
+            "Five-finger grip force",
+            "10 kg"
+          ]
+        ]
+      ],
+      [
+        "Electronics and environment",
+        [
+          [
+            "Operating voltage",
+            "12–24 V"
+          ],
+          [
+            "Communication interface",
+            "CAN-FD"
+          ],
+          [
+            "Operating temperature",
+            "-20 to 50 °C"
+          ],
+          [
+            "Updates",
+            "OTA (remote)"
+          ]
+        ]
+      ],
+      [
+        "Tactile sensors",
+        [
+          [
+            "Force sensing",
+            "three-axis at the fingertips; single-axis in the palm"
+          ],
+          [
+            "Resolution",
+            "0.1 N"
+          ],
+          [
+            "Sensing range",
+            "0–50 N"
+          ],
+          [
+            "Maximum force without damage",
+            "1,000 N"
+          ]
+        ]
+      ],
+      [
+        "Joint range: index and middle fingers",
+        [
+          [
+            "Index · DIP (flexion/extension)",
+            "0° to 226°"
+          ],
+          [
+            "Index · PIP (flexion/extension)",
+            "0° to 157°"
+          ],
+          [
+            "Index · MCP (flexion/extension)",
+            "0° to 76°"
+          ],
+          [
+            "Index · ABAD (abduction/adduction)",
+            "0° to 14°"
+          ],
+          [
+            "Middle · DIP (flexion/extension)",
+            "0° to 227°"
+          ],
+          [
+            "Middle · PIP (flexion/extension)",
+            "0° to 159°"
+          ],
+          [
+            "Middle · MCP (flexion/extension)",
+            "0° to 77°"
+          ],
+          [
+            "Middle · ABAD (abduction/adduction)",
+            "0° to 14°"
+          ]
+        ]
+      ],
+      [
+        "Joint range: ring finger, little finger, and thumb",
+        [
+          [
+            "Ring and little fingers · DIP (flexion/extension)",
+            "0° to 228°"
+          ],
+          [
+            "Ring and little fingers · PIP (flexion/extension)",
+            "0° to 159°"
+          ],
+          [
+            "Ring and little fingers · MCP (flexion/extension)",
+            "0° to 85°"
+          ],
+          [
+            "Ring and little fingers · ABAD (abduction/adduction)",
+            "0° (no abduction)"
+          ],
+          [
+            "Thumb · DIP (flexion/extension)",
+            "40° to 172°"
+          ],
+          [
+            "Thumb · PIP (flexion/extension)",
+            "40° to 112°"
+          ],
+          [
+            "Thumb · MCP (flexion/extension)",
+            "40° to 77°"
+          ],
+          [
+            "Thumb · ABAD (abduction/adduction)",
+            "0° to 54°"
+          ],
+          [
+            "Thumb · ROLL (rotation)",
+            "0° to 42°"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "End effector for humanoid robots",
+        null
+      ],
+      [
+        "Fine manipulation with fingertip force control",
+        null
+      ],
+      [
+        "Research in dexterous manipulation",
+        null
+      ],
+      [
+        "Integration into robotic arms and mobile manipulators",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Applications",
+        "The OmniHand Pro 2025 datasheet does not detail applications; those listed are based on documentation for the OmniHand family and should be confirmed with the manufacturer."
+      ],
+      [
+        "warn",
+        "Images",
+        "The documentation only includes technical drawings, with no product photographs. The main image should be replaced with an official photograph."
+      ]
+    ]
+  },
+  "omnipicker": {
+    "claim": "Industrial gripper with touch sensing for embodied AI",
+    "tagline": "Two-finger end effector with 140 N of force and tactile sensors at the fingertips, built for manipulation data capture and continuous production work.",
+    "hero_alt": "Black-and-white OmniPicker robotic gripper with open fingers",
+    "gallery": [
+      [
+        "Gripper with fingers closed",
+        "assets/robots/omnipicker/pinza-cerrada.webp"
+      ],
+      [
+        "Sorting tools on a tray",
+        "assets/robots/omnipicker/clasificacion-industrial.webp"
+      ],
+      [
+        "Robot with grippers handling textiles in an operations setting",
+        "assets/robots/omnipicker/despliegue-produccion.webp"
+      ]
+    ],
+    "intro": "OmniPicker is a two-finger robotic gripper for robotic arms and humanoid robots. It combines 140 N of grip force, 120 mm of stroke, and tactile sensing at the fingertips with 0.1 N resolution. It is used in sorting and logistics, in data capture to train embodied AI systems, and in continuous production operations.",
+    "keyfacts": [
+      [
+        "Maximum force",
+        "140 N"
+      ],
+      [
+        "Maximum stroke",
+        "120 mm"
+      ],
+      [
+        "Maximum payload",
+        "5 kg"
+      ],
+      [
+        "Weight",
+        "600 g"
+      ]
+    ],
+    "highlights": [
+      [
+        "Industrial reliability",
+        "The 140 N grip force is validated over one million cycles at full load."
+      ],
+      [
+        "Adaptive grip with touch sensing",
+        "Tactile sensors on the gripping surface, with 0.1 N resolution, for handling standard parts, irregular shapes, and delicate objects with force control."
+      ],
+      [
+        "Built for data collection",
+        "Compatible with Dex-UMI and with an optional depth or fisheye camera, for capturing manipulation data and training models."
+      ],
+      [
+        "Open integration",
+        "CAN FD or RS485 communication, ROS 2, and an SDK in Python and C++."
+      ]
+    ],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Weight",
+            "600 g"
+          ],
+          [
+            "Maximum payload",
+            "5 kg"
+          ]
+        ]
+      ],
+      [
+        "Performance",
+        [
+          [
+            "Maximum grip force",
+            "140 N"
+          ],
+          [
+            "Maximum stroke",
+            "120 mm"
+          ],
+          [
+            "Repeatability",
+            "±0.1 mm"
+          ],
+          [
+            "Validated service life",
+            "1 million cycles at full load"
+          ]
+        ]
+      ],
+      [
+        "Tactile sensors",
+        [
+          [
+            "Location",
+            "fingertips, on the gripping surface"
+          ],
+          [
+            "Force resolution",
+            "0.1 N"
+          ]
+        ]
+      ],
+      [
+        "Communication and integration",
+        [
+          [
+            "Communication interface",
+            "CAN FD / RS485"
+          ],
+          [
+            "Platforms",
+            "common robotic arms"
+          ],
+          [
+            "Data collection",
+            "UMI (Dex-UMI)"
+          ],
+          [
+            "Vision",
+            "optional depth or fisheye camera"
+          ],
+          [
+            "Software",
+            "ROS 2, Python and C++ SDK"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Pick-and-place in industrial sorting",
+        null
+      ],
+      [
+        "Parcel handling",
+        null
+      ],
+      [
+        "Warehouse automation",
+        null
+      ],
+      [
+        "Large-scale demonstration capture for embodied AI",
+        null
+      ],
+      [
+        "Force-based manipulation data collection",
+        null
+      ],
+      [
+        "Continuous operations in retail and e-commerce",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Product generation",
+        "The sales presentation refers to OmniPicker 3. Confirm the generation when quoting."
+      ],
+      [
+        "info",
+        "Limited documentation",
+        "Only a two-page sales presentation is available: it does not include dimensions, supply voltage, or operating temperature."
+      ]
+    ]
+  },
+  "d5w-cajon-bateria": {
+    "claim": "Additional compartment to extend the D5W's runtime",
+    "tagline": "Drawer that houses an extra battery in the D5W itself, extending its runtime without charging stops.",
+    "hero_alt": "",
+    "gallery": [],
+    "intro": "Extension drawer that houses an additional battery in the D5W itself, designed to extend its runtime without relying on a charging stop.",
+    "keyfacts": [
+      [
+        "Manufacturer",
+        "PUDU"
+      ],
+      [
+        "Type",
+        "Battery extension drawer"
+      ],
+      [
+        "Compatible with",
+        "D5W"
+      ]
+    ],
+    "highlights": [],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Manufacturer",
+            "PUDU"
+          ],
+          [
+            "Accessory type",
+            "Battery extension drawer"
+          ],
+          [
+            "Compatible with",
+            "D5W"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Extending runtime on the go",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Documentation pending",
+        "The manufacturer has not shared a datasheet for this accessory: the capacity it adds and its dimensions are not known. Only the name and the RH·BOTS price list entry (10 September 2026) are available; confirm the details before quoting it."
+      ]
+    ]
+  },
+  "mt1-estacion-carga": {
+    "claim": "Charging station for the MT1 and MT1 Max",
+    "tagline": "Dedicated charging dock for leaving the MT1 or MT1 Max charging between cleaning shifts.",
+    "hero_alt": "",
+    "gallery": [],
+    "intro": "RH·BOTS charging station (reference MSBC01) compatible with the MT1 and MT1 Max, for leaving them charging autonomously between cleaning shifts.",
+    "keyfacts": [
+      [
+        "Manufacturer",
+        "PUDU"
+      ],
+      [
+        "Reference",
+        "MSBC01"
+      ],
+      [
+        "Compatible with",
+        "MT1 and MT1 Max"
+      ]
+    ],
+    "highlights": [],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Manufacturer",
+            "PUDU"
+          ],
+          [
+            "Reference",
+            "MSBC01"
+          ],
+          [
+            "Compatible with",
+            "MT1, MT1 Max"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Automatic charging between cleaning shifts",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Documentation pending",
+        "The manufacturer has not shared a datasheet for this accessory: only the name, reference, and RH·BOTS price list entry (10 September 2026) are available. Confirm power and charging time before quoting it."
+      ]
+    ]
+  },
+  "amr-cargador": {
+    "claim": "Charger for the T-series AMRs and the MP2000",
+    "tagline": "Common charger for the T-series delivery robots (T150, T300, T600, and T600 Underride) and for the MP2000 pallet truck.",
+    "hero_alt": "",
+    "gallery": [],
+    "intro": "Charger compatible with the entire T-series of delivery AMRs (T150, T300, T600, and T600 Underride) and with the MP2000 autonomous pallet truck.",
+    "keyfacts": [
+      [
+        "Manufacturer",
+        "PUDU"
+      ],
+      [
+        "Type",
+        "Charger"
+      ],
+      [
+        "Compatible with",
+        "T-series and MP2000"
+      ]
+    ],
+    "highlights": [],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Manufacturer",
+            "PUDU"
+          ],
+          [
+            "Accessory type",
+            "Charger"
+          ],
+          [
+            "Compatible with",
+            "T150, T300, T600, T600 Underride, MP2000"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Charging delivery and intralogistics AMRs",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Documentation pending",
+        "The manufacturer has not shared a datasheet for this charger: only the name and the RH·BOTS price list entry (10 September 2026) are available. Confirm power and charging time before quoting it."
+      ]
+    ]
+  },
+  "estados": {
+    "disponible": [
+      "Available",
+      "ok"
+    ],
+    "parcial": [
+      "Partial data",
+      "warn"
+    ],
+    "provisional": [
+      "Draft sheet",
+      "alert"
+    ]
+  },
+  "familias": [
+    [
+      "humanoides",
+      "Humanoid robots",
+      "Humanoid robots for customer service, events, training, research and industry."
+    ],
+    [
+      "cuadrupedos",
+      "Quadrupeds",
+      "Leg-and-wheel platforms for inspection, patrol and complex terrain."
+    ],
+    [
+      "limpieza",
+      "Autonomous cleaning",
+      "Professional cleaning robots for indoor commercial and industrial surfaces."
+    ],
+    [
+      "amr",
+      "AMR intralogistics",
+      "Autonomous mobile robots for internal material handling in factories and warehouses."
+    ],
+    [
+      "accesorios",
+      "Accessories",
+      "Dexterous hands and grippers that extend what our robots can do."
+    ]
+  ]
+}

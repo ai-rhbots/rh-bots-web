@@ -1,0 +1,407 @@
+{
+  "nav": [
+    {
+      "label": "Home",
+      "href": "index.html",
+      "key": "home"
+    },
+    {
+      "label": "Robots",
+      "href": "robots.html",
+      "key": "robots"
+    },
+    {
+      "label": "Applications",
+      "href": "aplicaciones.html",
+      "key": "aplicaciones"
+    },
+    {
+      "label": "Accessories",
+      "href": "index.html",
+      "key": "",
+      "oculto": true
+    },
+    {
+      "label": "Blog",
+      "href": "blog.html",
+      "key": "blog"
+    },
+    {
+      "label": "About Us",
+      "href": "rh-bots.html",
+      "key": "rhbots"
+    },
+    {
+      "label": "Contact",
+      "href": "contacto.html",
+      "key": "contacto"
+    }
+  ],
+  "home": {
+    "kicker": "RH·BOTS — Humanoid resources",
+    "h1": "The future of<br>robotics<br>is <span class=\"acento\">now</span>",
+    "lede": "Latest-generation humanoid robots, ready to operate in real environments with professional advice, installation and support.",
+    "que_hacemos": {
+      "kicker": "What we do",
+      "titulo": "Humanoid robots for companies that want to <span class=\"acento\">move forward</span>",
+      "texto": "RH·BOTS brings humanoid robotics to organisations looking to improve processes, customer service, logistics, training or interactive experiences.",
+      "destacado": "We don't just sell technology: we design a realistic, useful solution with you, ready to grow.",
+      "detalle": "From the first meeting, we analyse your objectives, the environment where the robot will work and the level of integration needed to make the investment worthwhile."
+    },
+    "robots_grid": {
+      "kicker": "Our robots",
+      "titulo": "A range built for <span class=\"acento\">real environments</span>"
+    },
+    "sectores_bloque": {
+      "kicker": "Applications",
+      "titulo": "Humanoid robotics for different sectors",
+      "texto": "Every project has a goal. That's why we adapt the solution to the environment, the team and the type of interaction your company needs.",
+      "boton": "View applications",
+      "tarjetas": [
+        [
+          "Retail and customer service",
+          "Reception, information, guidance and brand experiences."
+        ],
+        [
+          "Industry and logistics",
+          "Support for processes, inspection, mobility and technical demonstrations."
+        ],
+        [
+          "Education and events",
+          "Training, innovation, trade fairs, presentations and activations."
+        ],
+        [
+          "Health and assistance",
+          "Guided interaction, informational support and non-clinical companionship."
+        ]
+      ]
+    },
+    "metodo": {
+      "kicker": "How we work",
+      "titulo": "A clear process for a <span class=\"acento\">hassle-free</span> rollout",
+      "boton": "Talk to us",
+      "pasos": [
+        [
+          "We listen",
+          "We understand your business, your goals and the context of use."
+        ],
+        [
+          "We define",
+          "We select the robot and put forward a viable solution."
+        ],
+        [
+          "We implement",
+          "Configuration, commissioning and team training."
+        ],
+        [
+          "We support",
+          "Technical support, maintenance and continuous improvement."
+        ]
+      ]
+    },
+    "actualidad": {
+      "kicker": "News",
+      "titulo": "Latest robotics news",
+      "enlace": "Go to the blog"
+    },
+    "faq": [
+      [
+        "Which robot do I need?",
+        "It depends on the task, the environment and the volume. Large-surface cleaning is a job for the RHC5, the MT1 or the MT1 Max; customer service is handled by the RHA3 and RHX2 families; industrial manipulation, by the RHG2; internal material transport, by the T150, T300, T600 and MP2000 AMRs; and outdoor or rough-terrain inspection, by the D5W quadruped. We help you choose with prior advice."
+      ],
+      [
+        "Do I need to program the robot?",
+        "Not for standard use: the models come with a ready-made skill set that runs multiple functions from day one. If you want to develop your own applications, open versions are available (RHX2 Ultra and RHX2 EDU) with an SDK, simulators and documented interfaces."
+      ],
+      [
+        "Can it be adapted to my company?",
+        "Yes. We start with prior advice to understand your use case, and we configure the robot, its routines and its behaviour to match your operations. This includes installation, commissioning and training for your team."
+      ],
+      [
+        "What maintenance do they require?",
+        "Regular preventive maintenance of joints, batteries and sensors, plus software updates. We offer an ongoing maintenance and support service to keep the equipment available."
+      ],
+      [
+        "Can it be rented instead of bought?",
+        "Get in touch with us. Depending on the model and the length of the project, we can offer purchase or rental, including commissioning and support."
+      ]
+    ]
+  },
+  "aplicaciones": {
+    "kicker": "Applications",
+    "h1": "Robots already at work in real environments",
+    "lede": "Customer service, intralogistics, cleaning, training, health and inspection. We help you choose the right robot for each task and get it up and running at your site.",
+    "sectores": [
+      {
+        "id": "retail",
+        "titulo": "Retail and customer service",
+        "texto": "Humanoids that greet, inform and accompany customers and visitors, turning a retail space into a brand experience.",
+        "tareas": [
+          "Reception and information in shops, hotels and offices",
+          "Promotions and activations at the point of sale",
+          "Visitor guidance and tours in showrooms",
+          "Frequently asked questions and hand-off to staff"
+        ],
+        "robots": [
+          "rhx2",
+          "rha3",
+          "rhx2-ultra",
+          "rha3-ultra"
+        ],
+        "imagen": "assets/escenarios/complejos-comerciales.webp"
+      },
+      {
+        "id": "intralogistica",
+        "titulo": "Industry and intralogistics",
+        "texto": "Mobile robots that move material between warehouse and production line, and humanoids that handle parts on the shop floor, with no construction work or changes to the facility.",
+        "tareas": [
+          "Material transport between stations and the warehouse",
+          "Moving carts and shelving units",
+          "Pallet movement at floor and first-level height",
+          "Parts handling and machine feeding"
+        ],
+        "robots": [
+          "t150",
+          "t300",
+          "t600",
+          "t600-underride",
+          "mp2000",
+          "rhg2",
+          "omnipicker"
+        ],
+        "imagen": "assets/escenarios/fabricas-almacenes.webp"
+      },
+      {
+        "id": "limpieza",
+        "titulo": "Large-surface cleaning",
+        "texto": "Autonomous scrubbing, vacuuming and sweeping for large surfaces, with programmed routes and work scheduled outside public hours.",
+        "tareas": [
+          "Supermarkets and shopping centres",
+          "Stations, airports and office buildings",
+          "Industrial units and warehouses",
+          "Car parks and semi-outdoor areas"
+        ],
+        "robots": [
+          "rhc5",
+          "mt1",
+          "mt1-max"
+        ],
+        "imagen": "assets/escenarios/supermercados.webp"
+      },
+      {
+        "id": "educacion",
+        "titulo": "Education, research and events",
+        "texto": "Open platforms for teaching robotics and artificial intelligence, developing your own applications, and taking centre stage at trade fairs and presentations.",
+        "tareas": [
+          "University teaching and vocational training",
+          "Research in humanoid robotics and manipulation",
+          "Application development with SDK and simulation",
+          "Trade fairs, presentations and performances"
+        ],
+        "robots": [
+          "rhx2-edu",
+          "rhx2-ultra",
+          "rha3-ultra",
+          "omnihand",
+          "omnihand-tactile",
+          "omnihand-pro-2025"
+        ],
+        "imagen": "assets/robots/rhx2-edu/aula-stem.webp"
+      },
+      {
+        "id": "salud",
+        "titulo": "Health and assistance",
+        "texto": "Guided interaction and informational support in healthcare centres and care homes, plus autonomous cleaning of corridors and common areas.",
+        "tareas": [
+          "Reception and guidance for patients and visitors",
+          "Informational support and non-clinical companionship",
+          "Cleaning of corridors and common areas"
+        ],
+        "robots": [
+          "rha3",
+          "rhx2",
+          "rhc5"
+        ],
+        "imagen": "assets/escenarios/hospitales.webp"
+      },
+      {
+        "id": "inspeccion",
+        "titulo": "Inspection and security",
+        "texto": "A wheeled quadruped that covers outdoor areas, ramps and stairs to inspect facilities and carry out security rounds.",
+        "tareas": [
+          "Inspection rounds in plants and car parks",
+          "Perimeter and outdoor area surveillance",
+          "Routes across uneven terrain and stairs",
+          "Deliveries within premises and last-mile"
+        ],
+        "robots": [
+          "d5w"
+        ],
+        "imagen": "assets/robots/d5w/en-aparcamiento.webp"
+      }
+    ]
+  },
+  "rhbots": {
+    "kicker": "Who we are",
+    "h1": "The team behind RH·BOTS",
+    "lede": "Official distributor of AGIBOT and PUDU in Spain and Portugal, based in Picassent (Valencia). We support every client from choosing the robot through to day-to-day maintenance.",
+    "mision": {
+      "kicker": "Our mission",
+      "titulo": "Making humanoid robotics <span class=\"acento\">accessible, reliable and profitable</span>",
+      "parrafos": [
+        "Every project starts with listening. We analyse needs, identify opportunities and recommend the robot model that best fits the business objective.",
+        "Our team combines technical knowledge, product vision and hands-on integration so that the rollout is clear and measurable."
+      ],
+      "puntos": [
+        "Prior advice and selection of the right robot.",
+        "Installation, commissioning and training.",
+        "Support to keep the robot delivering value."
+      ]
+    },
+    "alianza": {
+      "titulo": "A partnership built to scale",
+      "texto": "We work alongside AGIBOT and PUDU to bring robotic solutions already proven in real environments to Spain and Portugal.",
+      "cifras": [
+        [
+          "+145.000",
+          "AGIBOT and PUDU robots manufactured and shipped worldwide"
+        ],
+        [
+          "2",
+          "countries with official AGIBOT and PUDU distribution: Spain and Portugal"
+        ],
+        [
+          "{modelos}",
+          "models available for different sectors"
+        ],
+        [
+          "{familias}",
+          "robot families: humanoids, quadrupeds, cleaning, AMR and accessories"
+        ]
+      ]
+    },
+    "proyecto": {
+      "titulo": "Shall we talk about your project?",
+      "texto": "Tell us what you need and we'll help you assess which robotic solution best fits your company.",
+      "boton": "Talk to us",
+      "foto": "assets/robots/rhx2-ultra/serie-x2.webp"
+    },
+    "proceso": {
+      "kicker": "How we work",
+      "titulo": "A clear process for making good decisions",
+      "texto": "We simplify the adoption of humanoid robots with an orderly methodology: understand, propose, implement and support. This reduces uncertainty and speeds up results.",
+      "pasos": [
+        [
+          "Diagnosis",
+          "We listen to your needs and analyse where a humanoid robot can add the most value."
+        ],
+        [
+          "Proposal",
+          "We select the model and put forward a realistic solution aligned with your objectives."
+        ],
+        [
+          "Implementation",
+          "We coordinate delivery, installation, configuration and training for the teams involved."
+        ],
+        [
+          "Support",
+          "We follow the project's progress to ensure continuity and improvement."
+        ]
+      ]
+    },
+    "historia_subtitulo": "Our story",
+    "historia_cuerpo": "<p>RH·BOTS was created to bring humanoid robotics to companies that need real results, not demonstrations. As the official distributor of AGIBOT and PUDU in Spain and Portugal, we select the right robot for each operation and support our clients through the whole process: prior advice, installation, team training and ongoing maintenance.</p><p>We work from Picassent (Valencia), with clients in sectors ranging from industrial cleaning to customer service and factory automation.</p>"
+  },
+  "posts": [
+    {
+      "titulo": "How to prepare your company for humanoid robotics",
+      "categoria": "Guide",
+      "resumen": "Key points for evaluating processes, spaces and objectives before investing.",
+      "cuerpo": "<p>Bringing in a humanoid robot doesn't start with the robot, but with the process you want to solve. Before asking for a quote, it helps to be clear about which task needs covering, how many hours a day, and what result you expect.</p><h2>Define the task, not the model</h2><p>The same space might need a cleaning robot, a customer-service robot, or neither. Describe the task with numbers: floor area, time slots, the volume of people or parts, and what happens today when staff are short.</p><h2>Review the environment</h2><p>Corridor width, ramps, lifts, automatic doors, wifi coverage and charging points determine which models fit. A prior site visit avoids surprises during commissioning.</p><h2>Think about who will use it</h2><p>The team that works alongside the robot needs training and a clear day-to-day procedure: start-up, incidents, cleaning and basic maintenance.</p><h2>Calculate the return with your own data</h2><p>Compare the cost of the robot and its maintenance with the hours it frees up and the current cost of the task. A well-sized project stands on numbers, not expectations.</p>",
+      "fecha": "2026-09-10",
+      "slug": "como-preparar-tu-empresa-para-la-robotica-humanoide",
+      "url": "blog/como-preparar-tu-empresa-para-la-robotica-humanoide.html",
+      "img": "assets/robots/rhg2/hero.webp"
+    },
+    {
+      "titulo": "Real-world applications of humanoid robots",
+      "categoria": "Use cases",
+      "resumen": "Retail, industry, education and events are already adopting this technology.",
+      "cuerpo": "<p>Humanoid and service robotics are already at work in real environments. These are the uses that companies ask us about most.</p><h2>Retail and customer service</h2><p>Visitor reception, basic information, in-store guidance and brand activations. The robot doesn't replace the team: it absorbs repetitive questions and frees up time for sales.</p><h2>Industry and logistics</h2><p>Moving light material between workstations, facility inspection and support for repetitive line tasks. Here, autonomy, payload and integration with existing systems matter most.</p><h2>Professional cleaning</h2><p>Large indoor surfaces with fixed routes: supermarkets, stations, industrial units and shopping centres. This is the most mature use case, and the one that pays for itself soonest.</p><h2>Education and research</h2><p>Universities and training centres use open platforms to develop and test their own applications, with SDKs and simulators.</p>",
+      "fecha": "2026-09-03",
+      "slug": "aplicaciones-reales-de-robots-humanoides",
+      "url": "blog/aplicaciones-reales-de-robots-humanoides.html",
+      "img": "assets/robots/rha3/hero.webp"
+    },
+    {
+      "titulo": "Five questions before adding a cleaning robot",
+      "categoria": "Guide",
+      "resumen": "Surface area, flooring, water, daily routine and support: what's worth measuring before deciding.",
+      "cuerpo": "<p>An autonomous cleaning robot performs well when the space and the operation support it. Before deciding, it's worth answering these five questions.</p><h2>1. How many square metres need cleaning, and in how much time?</h2><p>Performance is measured in square metres per hour under real conditions, including turns, obstacles and charging stops.</p><h2>2. What is the floor like?</h2><p>A continuous floor is not the same as one with joints, grilles or level changes. The type of floor determines the scrubbing system and water consumption.</p><h2>3. Where does it fill and empty?</h2><p>You need an accessible water point and drain, close to the work area and the charging point.</p><h2>4. Who starts it up each day?</h2><p>It's worth assigning a person responsible and a short start-up and check routine. Most incidents are avoided with two minutes of inspection.</p><h2>5. What happens if it breaks down?</h2><p>Ask about the support response time, spare-parts stock and exactly what the maintenance covers.</p>",
+      "fecha": "2026-08-27",
+      "slug": "cinco-preguntas-antes-de-incorporar-un-robot-de-limpieza",
+      "url": "blog/cinco-preguntas-antes-de-incorporar-un-robot-de-limpieza.html",
+      "img": "assets/robots/rhc5/vista-0.webp"
+    }
+  ],
+  "prefooter": {
+    "titulo": "Let's talk about the future",
+    "texto": "Interested in integrating AGIBOT or PUDU robots into your company or research centre? Contact us for free, no-obligation advice.",
+    "siguenos": "Follow us"
+  },
+  "cta": {
+    "kicker": "Shall we talk?",
+    "titulo": "Bring humanoid robotics to your company",
+    "texto": "Tell us about your project and we'll advise you with no obligation. We'll help you find the solution that best suits your case.",
+    "boton": "Request information",
+    "imagen": "assets/robot-cta.webp"
+  },
+  "contacto": {
+    "kicker": "RH·BOTS Contact",
+    "h1": "Let's talk about your next robot",
+    "asesoria": {
+      "titulo": "We advise you with no obligation",
+      "texto": "We answer your questions, review your case and guide you on models, uses and possibilities.",
+      "pasos": [
+        [
+          "Tell us your idea",
+          "Use, space, sector or task you want to automate."
+        ],
+        [
+          "We analyse the best option",
+          "Humanoid, quadruped, cleaning or AMR robots, or accessories."
+        ],
+        [
+          "Get a clear proposal",
+          "No jargon, tailored to your goals."
+        ]
+      ]
+    },
+    "proceso": {
+      "kicker": "How we work",
+      "titulo": "From enquiry to solution, step by step",
+      "pasos": [
+        [
+          "We listen",
+          "We understand your goal, the environment and the real needs of the project."
+        ],
+        [
+          "We recommend",
+          "We guide you with a simple, clear proposal tailored to your case."
+        ],
+        [
+          "We support you",
+          "We answer your questions and help you move forward with confidence."
+        ]
+      ]
+    },
+    "lado": {
+      "kicker": "Let's talk",
+      "titulo": "A more direct, clear and human contact",
+      "texto": "Fill in the form and an RH·BOTS specialist will get in touch with you as soon as possible. You can also write to us directly if you prefer.",
+      "especialidad": "Robotics for businesses and events"
+    },
+    "intro": "Tell us what you need and we'll help you find the best robotic solution for your business, event or project.",
+    "empresa": "RH·BOTS — Humanoid Resources"
+  }
+}

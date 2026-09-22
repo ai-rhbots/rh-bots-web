@@ -2,6 +2,50 @@
 (function () {
   'use strict';
 
+  /* ---------- idioma: las cadenas que genera el propio JS (el resto ya
+     viene traducido desde el HTML) leen el <html lang="es|en"> de la página */
+  var LANG = document.documentElement.lang === 'en' ? 'en' : 'es';
+  var TXT = {
+    es: {
+      sinStock: 'Sin stock — consúltanos la disponibilidad',
+      avisame: 'Avísame cuando esté',
+      precioConsulta: 'Precio bajo consulta',
+      pedirPresupuesto: 'Pedir presupuesto',
+      anadirCarrito: 'Añadir al carrito',
+      carritoVacio: 'Todavía no has añadido ningún robot.',
+      verCatalogo: 'Ver el catálogo',
+      quitarUnidad: 'Quitar una unidad',
+      anadirUnidad: 'Añadir una unidad',
+      quitar: 'Quitar',
+      formIncompleto: 'Revisa los campos obligatorios: nombre, email, mensaje y la política de privacidad.',
+      formSinPrivacidad: 'Para enviar el mensaje tienes que aceptar la política de privacidad.',
+      abriendoCorreo: 'Abriendo tu gestor de correo con el mensaje redactado…',
+      campoNombre: 'Nombre: ', campoEmpresa: 'Empresa: ', campoEmail: 'Email: ',
+      campoTelefono: 'Teléfono: ', campoRobot: 'Robot de interés: ', sinIndicar: 'sin indicar',
+      asuntoWeb: 'Web RH·BOTS — ', asuntoConsulta: 'Consulta sobre ', asuntoSolicitud: 'Solicitud de información',
+      consentimientoCorreo: '\n\n---\nAcepto la política de privacidad y el tratamiento de mis datos para recibir información comercial de RH·BOTS.'
+    },
+    en: {
+      sinStock: 'Out of stock — ask us about availability',
+      avisame: 'Notify me when available',
+      precioConsulta: 'Price on request',
+      pedirPresupuesto: 'Request a quote',
+      anadirCarrito: 'Add to cart',
+      carritoVacio: "You haven't added any robots yet.",
+      verCatalogo: 'View the catalog',
+      quitarUnidad: 'Remove one unit',
+      anadirUnidad: 'Add one unit',
+      quitar: 'Remove',
+      formIncompleto: 'Please check the required fields: name, email, message and the privacy policy.',
+      formSinPrivacidad: 'You need to accept the privacy policy to send the message.',
+      abriendoCorreo: 'Opening your email client with the drafted message…',
+      campoNombre: 'Name: ', campoEmpresa: 'Company: ', campoEmail: 'Email: ',
+      campoTelefono: 'Phone: ', campoRobot: 'Robot of interest: ', sinIndicar: 'not specified',
+      asuntoWeb: 'RH·BOTS website — ', asuntoConsulta: 'Enquiry about ', asuntoSolicitud: 'Information request',
+      consentimientoCorreo: '\n\n---\nI accept the privacy policy and the processing of my data to receive commercial information from RH·BOTS.'
+    }
+  }[LANG];
+
   /* ---------- header sticky state ---------- */
   var header = document.getElementById('header');
   var onScroll = function () {
@@ -269,7 +313,7 @@
                     '<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></i>';
 
       function importe(centimos) {
-        return new Intl.NumberFormat('es-ES', {
+        return new Intl.NumberFormat(LANG === 'en' ? 'en-GB' : 'es-ES', {
           minimumFractionDigits: 2, maximumFractionDigits: 2
         }).format(centimos / 100);
       }
@@ -293,10 +337,10 @@
 
       function pinta(v, moneda) {
         if (!v || !v.available) {
-          return aviso('Sin stock — consúltanos la disponibilidad', 'Avísame cuando esté');
+          return aviso(TXT.sinStock, TXT.avisame);
         }
         if (!v.price || v.price <= 0) {
-          return aviso('Precio bajo consulta', 'Pedir presupuesto');
+          return aviso(TXT.precioConsulta, TXT.pedirPresupuesto);
         }
         var precio = d.precio === '1'
           ? '<p class="precio">' + importe(v.price) +
@@ -313,7 +357,7 @@
           esc(d.texto) + '</span>' + chevron + '</a>' +
           '<button class="pill pill--anadir" type="button" data-anadir data-variante="' +
           esc(v.id) + '" data-precio-num="' + (v.price / 100) + '">' +
-          '<span>Añadir al carrito</span>' + carro + '</button>';
+          '<span>' + esc(TXT.anadirCarrito) + '</span>' + carro + '</button>';
       }
 
       function pedir(ruta) {
@@ -372,7 +416,7 @@
       }
       function dinero(n, moneda) {
         try {
-          return new Intl.NumberFormat('es-ES', {
+          return new Intl.NumberFormat(LANG === 'en' ? 'en-GB' : 'es-ES', {
             style: 'currency', currency: moneda || 'EUR', maximumFractionDigits: 0
           }).format(n);
         } catch (e) { return n + ' ' + (moneda || ''); }
@@ -386,8 +430,8 @@
           numero.hidden = unidades === 0;
         }
         if (!items.length) {
-          lista.innerHTML = '<p class="carrito__vacio">Todavía no has añadido ningún robot.' +
-            '<a href="' + esc(cajaCarrito.dataset.robots || 'robots.html') + '">Ver el catálogo</a></p>';
+          lista.innerHTML = '<p class="carrito__vacio">' + esc(TXT.carritoVacio) +
+            '<a href="' + esc(cajaCarrito.dataset.robots || 'robots.html') + '">' + esc(TXT.verCatalogo) + '</a></p>';
           pie.hidden = true;
           return;
         }
@@ -402,10 +446,10 @@
               '<a class="citem__nombre" href="' + esc(i.url) + '">' + esc(i.nombre) + '</a>' +
               '<p class="citem__precio">' + esc(dinero(i.precio, i.moneda)) + '</p>' +
               '<div class="citem__uds">' +
-                '<button type="button" data-menos aria-label="Quitar una unidad">−</button>' +
+                '<button type="button" data-menos aria-label="' + esc(TXT.quitarUnidad) + '">−</button>' +
                 '<span>' + i.uds + '</span>' +
-                '<button type="button" data-mas aria-label="Añadir una unidad">+</button>' +
-                '<button type="button" class="citem__quitar" data-quitar>Quitar</button>' +
+                '<button type="button" data-mas aria-label="' + esc(TXT.anadirUnidad) + '">+</button>' +
+                '<button type="button" class="citem__quitar" data-quitar>' + esc(TXT.quitar) + '</button>' +
               '</div>' +
             '</div></article>';
         }).join('');
@@ -595,8 +639,8 @@
         var falta = form.querySelector('#f-privacidad');
         nota.className = 'form__nota is-err';
         nota.textContent = (falta && !falta.checked && form.querySelector(':invalid') === falta)
-          ? 'Para enviar el mensaje tienes que aceptar la política de privacidad.'
-          : 'Revisa los campos obligatorios: nombre, email, mensaje y la política de privacidad.';
+          ? TXT.formSinPrivacidad
+          : TXT.formIncompleto;
         form.reportValidity();
         return;
       }
@@ -605,20 +649,20 @@
       var d = new FormData(form);
       var robot = d.get('robot') || '';
       var cuerpo = [
-        'Nombre: ' + [d.get('nombre'), d.get('apellidos')].filter(Boolean).join(' '),
-        'Empresa: ' + (d.get('empresa') || ''),
-        'Email: ' + (d.get('email') || ''),
-        'Teléfono: ' + (d.get('tel') || ''),
-        'Robot de interés: ' + (robot || 'sin indicar'),
+        TXT.campoNombre + [d.get('nombre'), d.get('apellidos')].filter(Boolean).join(' '),
+        TXT.campoEmpresa + (d.get('empresa') || ''),
+        TXT.campoEmail + (d.get('email') || ''),
+        TXT.campoTelefono + (d.get('tel') || ''),
+        TXT.campoRobot + (robot || TXT.sinIndicar),
         '', d.get('mensaje') || ''
       ].join('\n');
 
       nota.className = 'form__nota is-ok';
-      nota.textContent = 'Abriendo tu gestor de correo con el mensaje redactado…';
+      nota.textContent = TXT.abriendoCorreo;
 
       location.href = 'mailto:' + (form.getAttribute('data-email') || 'info@rh-bots.com')
-        + '?subject=' + encodeURIComponent('Web RH·BOTS — ' + (robot ? 'Consulta sobre ' + robot : 'Solicitud de información'))
-        + '&body=' + encodeURIComponent(cuerpo + '\n\n---\nAcepto la política de privacidad y el tratamiento de mis datos para recibir información comercial de RH·BOTS.');
+        + '?subject=' + encodeURIComponent(TXT.asuntoWeb + (robot ? TXT.asuntoConsulta + robot : TXT.asuntoSolicitud))
+        + '&body=' + encodeURIComponent(cuerpo + TXT.consentimientoCorreo);
     });
   }
 
