@@ -1,0 +1,405 @@
+{
+  "nav": [
+    {
+      "label": "Início",
+      "href": "index.html",
+      "key": "home"
+    },
+    {
+      "label": "Robots",
+      "href": "robots.html",
+      "key": "robots"
+    },
+    {
+      "label": "Aplicações",
+      "href": "aplicaciones.html",
+      "key": "aplicaciones"
+    },
+    {
+      "label": "Acessórios",
+      "href": "index.html",
+      "key": "",
+      "oculto": true
+    },
+    {
+      "label": "Blog",
+      "href": "blog.html",
+      "key": "blog"
+    },
+    {
+      "label": "Sobre nós",
+      "href": "rh-bots.html",
+      "key": "rhbots"
+    },
+    {
+      "label": "Contacto",
+      "href": "contacto.html",
+      "key": "contacto"
+    }
+  ],
+  "home": {
+    "kicker": "RH·BOTS — Recursos humanoides",
+    "h1": "O futuro da<br>robótica<br>é <span class=\"acento\">agora</span>",
+    "lede": "Robôs humanoides de última geração, preparados para operar em ambientes reais com aconselhamento, instalação e suporte profissional.",
+    "que_hacemos": {
+      "kicker": "O que fazemos",
+      "titulo": "Robôs humanoides para empresas que querem <span class=\"acento\">avançar</span>",
+      "texto": "A RH·BOTS aproxima a robótica humanoide de organizações que procuram melhorar processos, atendimento ao cliente, logística, formação ou experiências interativas.",
+      "destacado": "Não vendemos apenas tecnologia: desenhamos consigo uma solução realista, útil e preparada para crescer.",
+      "detalle": "Desde a primeira reunião analisamos os seus objetivos, o ambiente onde o robô vai trabalhar e o nível de integração necessário para que o investimento faça sentido."
+    },
+    "robots_grid": {
+      "kicker": "Os nossos robôs",
+      "titulo": "Uma gama preparada para <span class=\"acento\">ambientes reais</span>"
+    },
+    "sectores_bloque": {
+      "kicker": "Aplicações",
+      "titulo": "Robótica humanoide para diferentes setores",
+      "texto": "Cada projeto tem um objetivo. Por isso adaptamos a solução ao ambiente, à equipa e ao tipo de interação que a sua empresa precisa.",
+      "boton": "Ver aplicações",
+      "tarjetas": [
+        [
+          "Retalho e atendimento",
+          "Receção, informação, acompanhamento e experiências de marca."
+        ],
+        [
+          "Indústria e logística",
+          "Apoio em processos, inspeção, mobilidade e demonstrações técnicas."
+        ],
+        [
+          "Educação e eventos",
+          "Formação, inovação, feiras, apresentações e ativações."
+        ],
+        [
+          "Saúde e assistência",
+          "Interação guiada, apoio informativo e acompanhamento não clínico."
+        ]
+      ]
+    },
+    "metodo": {
+      "kicker": "Como trabalhamos",
+      "titulo": "Um processo claro para implementar <span class=\"acento\">sem complicações</span>",
+      "boton": "Fale connosco",
+      "pasos": [
+        [
+          "Ouvimos",
+          "Compreendemos o seu negócio, os seus objetivos e o contexto de utilização."
+        ],
+        [
+          "Definimos",
+          "Selecionamos o robô e propomos uma solução viável."
+        ],
+        [
+          "Implementamos",
+          "Configuração, arranque e formação da equipa."
+        ],
+        [
+          "Acompanhamos",
+          "Suporte técnico, manutenção e melhoria contínua."
+        ]
+      ]
+    },
+    "actualidad": {
+      "kicker": "Atualidade",
+      "titulo": "Últimas notícias de robótica",
+      "enlace": "Ir para o blog"
+    },
+    "faq": [
+      [
+        "Que robô preciso?",
+        "Depende da tarefa, do ambiente e do volume. A limpeza de grandes superfícies é função do RHC5, do MT1 ou do MT1 Max; o atendimento ao público, das famílias RHA3 e RHX2; a manipulação industrial, do RHG2; o transporte interno de materiais, dos AMR T150, T300, T600 e MP2000; e a inspeção em exteriores ou terreno difícil, do quadrúpede D5W. Acompanhamo-lo na escolha com um aconselhamento prévio."
+      ],
+      [
+        "É preciso programar o robô?",
+        "Não para o uso padrão: os modelos vêm com um pacote de competências pronto para executar múltiplas funções desde o primeiro momento. Se quiser desenvolver as suas próprias aplicações, existem versões abertas (RHX2 Ultra e RHX2 EDU) com SDK, simuladores e interfaces documentadas."
+      ],
+      [
+        "Pode adaptar-se à minha empresa?",
+        "Sim. Partimos de um aconselhamento prévio para compreender o seu caso de utilização e configuramos o robô, as suas rotinas e o seu comportamento de acordo com a sua operação. Inclui instalação, arranque e formação da sua equipa."
+      ],
+      [
+        "Que manutenção requerem?",
+        "Manutenção preventiva periódica de articulações, baterias e sensores, mais atualizações de software. Oferecemos um serviço contínuo de manutenção e suporte para assegurar a disponibilidade do equipamento."
+      ],
+      [
+        "É possível alugar em vez de comprar?",
+        "Consulte-nos. Consoante o modelo e a duração do projeto, podemos propor compra ou aluguer, incluindo o arranque e o suporte."
+      ]
+    ]
+  },
+  "contacto": {
+    "kicker": "Contacto RH·BOTS",
+    "h1": "Falemos do seu próximo robô",
+    "asesoria": {
+      "titulo": "Aconselhamo-lo sem compromisso",
+      "texto": "Respondemos às suas dúvidas, revemos o seu caso e orientamo-lo sobre modelos, usos e possibilidades.",
+      "pasos": [
+        [
+          "Conte-nos a sua ideia",
+          "Uso, espaço, setor ou tarefa que quer automatizar."
+        ],
+        [
+          "Analisamos a melhor opção",
+          "Robôs humanoides, quadrúpedes, de limpeza, AMR ou acessórios."
+        ],
+        [
+          "Receba uma proposta clara",
+          "Sem tecnicismos e adaptada aos seus objetivos."
+        ]
+      ]
+    },
+    "proceso": {
+      "kicker": "Como trabalhamos",
+      "titulo": "Da consulta à solução, passo a passo",
+      "pasos": [
+        [
+          "Ouvimos",
+          "Compreendemos o seu objetivo, o ambiente de utilização e as necessidades reais do projeto."
+        ],
+        [
+          "Recomendamos",
+          "Orientamo-lo com uma proposta simples, clara e adaptada ao seu caso."
+        ],
+        [
+          "Acompanhamos",
+          "Resolvemos dúvidas e ajudamo-lo a avançar com segurança na escolha."
+        ]
+      ]
+    },
+    "lado": {
+      "kicker": "Falemos",
+      "titulo": "Um contacto mais direto, claro e humano",
+      "texto": "Preencha o formulário e um especialista da RH·BOTS entrará em contacto consigo o mais brevemente possível. Também pode escrever-nos diretamente, se preferir.",
+      "especialidad": "Robótica para empresas e eventos"
+    },
+    "intro": "Conte-nos o que precisa e ajudamo-lo a encontrar a solução robótica mais adequada para a sua empresa, evento ou projeto.",
+    "empresa": "RH·BOTS — Recursos Humanoides"
+  },
+  "cta": {
+    "kicker": "Falamos?",
+    "titulo": "Leve a robótica humanoide para a sua empresa",
+    "texto": "Conte-nos o seu projeto e aconselhamo-lo sem compromisso. Ajudamo-lo a encontrar a solução mais adequada para o seu caso.",
+    "boton": "Solicitar informação"
+  },
+  "prefooter": {
+    "titulo": "Falemos do futuro",
+    "texto": "Interessado em integrar robôs AGIBOT ou PUDU na sua empresa ou centro de investigação? Contacte-nos e aconselhamo-lo sem compromisso.",
+    "siguenos": "Siga-nos"
+  },
+  "posts": [
+    {
+      "titulo": "Como preparar a sua empresa para a robótica humanoide",
+      "fecha": "2026-09-10",
+      "categoria": "Guia",
+      "resumen": "Pontos-chave para avaliar processos, espaços e objetivos antes de investir.",
+      "cuerpo": "<p>Incorporar um robô humanoide não começa pelo robô, mas pelo processo que se quer resolver. Antes de pedir orçamento, convém ter claro que tarefa se quer cobrir, quantas horas por dia e com que resultado esperado.</p><h2>Defina a tarefa, não o modelo</h2><p>Um mesmo espaço pode precisar de um robô de limpeza, um de atendimento ao público ou nenhum dos dois. Descreva a tarefa com números: superfície, faixas horárias, volume de pessoas ou de peças, e o que acontece hoje quando falta pessoal.</p><h2>Reveja o ambiente</h2><p>Largura dos corredores, rampas, elevadores, portas automáticas, cobertura wifi e pontos de carregamento condicionam que modelos se adequam. Uma visita prévia evita surpresas no arranque.</p><h2>Pense em quem o vai usar</h2><p>A equipa que convive com o robô precisa de formação e de um procedimento claro para o dia a dia: arranque, incidências, limpeza e manutenção básica.</p><h2>Calcule o retorno com dados próprios</h2><p>Compare o custo do robô e da sua manutenção com as horas que liberta e com o custo atual da tarefa. Um projeto bem dimensionado sustenta-se com números, não com expectativas.</p>",
+      "slug": "como-preparar-tu-empresa-para-la-robotica-humanoide",
+      "url": "blog/como-preparar-tu-empresa-para-la-robotica-humanoide.html",
+      "img": "assets/robots/rhg2/hero.webp"
+    },
+    {
+      "titulo": "Aplicações reais de robôs humanoides",
+      "fecha": "2026-09-03",
+      "categoria": "Casos de uso",
+      "resumen": "Retalho, indústria, educação e eventos já estão a incorporar esta tecnologia.",
+      "cuerpo": "<p>A robótica humanoide e de serviço já está a trabalhar em ambientes reais. Estes são os usos mais pedidos pelas empresas com quem falamos.</p><h2>Retalho e atendimento ao público</h2><p>Receção de visitantes, informação básica, acompanhamento na loja e ativações de marca. O robô não substitui a equipa: absorve as perguntas repetitivas e liberta tempo para a venda.</p><h2>Indústria e logística</h2><p>Transporte de material leve entre postos, inspeção de instalações e apoio em tarefas repetitivas de linha. Aqui pesam a autonomia, a capacidade de carga e a integração com os sistemas existentes.</p><h2>Limpeza profissional</h2><p>Grandes superfícies interiores com rotas fixas: supermercados, estações, naves e centros comerciais. É o caso de uso mais maduro e o que se amortiza mais depressa.</p><h2>Educação e investigação</h2><p>Universidades e centros de formação usam plataformas abertas para desenvolver e testar as suas próprias aplicações, com SDK e simuladores.</p>",
+      "slug": "aplicaciones-reales-de-robots-humanoides",
+      "url": "blog/aplicaciones-reales-de-robots-humanoides.html",
+      "img": "assets/robots/rha3/hero.webp"
+    },
+    {
+      "titulo": "Cinco perguntas antes de incorporar um robô de limpeza",
+      "fecha": "2026-08-27",
+      "categoria": "Guia",
+      "resumen": "Superfície, pavimento, água, rotina diária e suporte: o que convém medir antes de decidir.",
+      "cuerpo": "<p>Um robô de limpeza autónomo rende quando o espaço e a operação acompanham. Antes de decidir, convém responder a estas cinco perguntas.</p><h2>1. Quantos metros há para limpar e em quanto tempo?</h2><p>O rendimento mede-se em metros quadrados por hora em condições reais, com curvas, obstáculos e paragens de carregamento incluídos.</p><h2>2. Como é o pavimento?</h2><p>Não é o mesmo um pavimento contínuo do que um com juntas, grelhas ou desníveis. O tipo de pavimento determina o sistema de lavagem e o consumo de água.</p><h2>3. Onde se enche e se esvazia?</h2><p>É preciso um ponto de água e um esgoto acessíveis, perto da zona de trabalho e do ponto de carregamento.</p><h2>4. Quem o põe a funcionar todos os dias?</h2><p>Convém atribuir um responsável e uma rotina curta de arranque e revisão. A maioria das incidências evita-se com dois minutos de verificação.</p><h2>5. O que acontece se parar?</h2><p>Pergunte pelo tempo de resposta do suporte, o stock de peças de substituição e o que cobre exatamente a manutenção.</p>",
+      "slug": "cinco-preguntas-antes-de-incorporar-un-robot-de-limpieza",
+      "url": "blog/cinco-preguntas-antes-de-incorporar-un-robot-de-limpieza.html",
+      "img": "assets/robots/rhc5/vista-0.webp"
+    }
+  ],
+  "rhbots": {
+    "kicker": "Quem somos",
+    "h1": "A equipa por trás da RH·BOTS",
+    "lede": "Distribuidor oficial de AGIBOT e PUDU em Espanha e Portugal, com sede em Picassent (Valencia). Acompanhamos cada cliente desde a escolha do robô até à manutenção do dia a dia.",
+    "historia_subtitulo": "A nossa história",
+    "historia_cuerpo": "<p>A RH·BOTS nasce para aproximar a robótica humanoide de empresas que precisam de resultados reais, não de demonstrações. Como distribuidor oficial de AGIBOT e PUDU em Espanha e Portugal, selecionamos o robô adequado para cada operação e acompanhamos os nossos clientes em todo o processo: aconselhamento prévio, instalação, formação de equipas e manutenção contínua.</p><p>Trabalhamos a partir de Picassent (Valencia), com clientes em setores que vão da limpeza industrial ao atendimento ao público e à automatização de fábrica.</p>",
+    "mision": {
+      "kicker": "A nossa missão",
+      "titulo": "Tornar a robótica humanoide <span class=\"acento\">acessível, fiável e rentável</span>",
+      "parrafos": [
+        "Cada projeto começa por ouvir. Analisamos necessidades, identificamos oportunidades e recomendamos o modelo de robô que melhor se adequa ao objetivo de negócio.",
+        "A nossa equipa combina conhecimento técnico, visão de produto e integração prática para que a implementação seja clara e mensurável."
+      ],
+      "puntos": [
+        "Aconselhamento prévio e seleção do robô adequado.",
+        "Instalação, arranque e formação.",
+        "Suporte para que o robô continue a gerar valor."
+      ]
+    },
+    "alianza": {
+      "titulo": "Uma aliança preparada para escalar",
+      "texto": "Trabalhamos junto com a AGIBOT e a PUDU para trazer a Espanha e Portugal soluções robóticas já testadas em ambientes reais.",
+      "cifras": [
+        [
+          "+145.000",
+          "robôs da AGIBOT e da PUDU fabricados e enviados em todo o mundo"
+        ],
+        [
+          "2",
+          "países com distribuição oficial de AGIBOT e PUDU: Espanha e Portugal"
+        ],
+        [
+          "{modelos}",
+          "modelos disponíveis para diferentes setores"
+        ],
+        [
+          "{familias}",
+          "famílias de robôs: humanoides, quadrúpedes, limpeza, AMR e acessórios"
+        ]
+      ]
+    },
+    "proyecto": {
+      "titulo": "Falamos do seu projeto?",
+      "texto": "Conte-nos o que precisa e ajudamo-lo a avaliar que solução robótica se adequa melhor à sua empresa.",
+      "boton": "Fale connosco"
+    },
+    "proceso": {
+      "kicker": "Como trabalhamos",
+      "titulo": "Um processo claro para tomar boas decisões",
+      "texto": "Simplificamos a incorporação de robôs humanoides com uma metodologia organizada: compreender, propor, implementar e acompanhar. Assim reduzimos a incerteza e aceleramos resultados.",
+      "pasos": [
+        [
+          "Diagnóstico",
+          "Ouvimos as suas necessidades e analisamos onde um robô humanoide pode gerar mais valor."
+        ],
+        [
+          "Proposta",
+          "Selecionamos o modelo e propomos uma solução realista, alinhada com os seus objetivos."
+        ],
+        [
+          "Implementação",
+          "Coordenamos a entrega, instalação, configuração e formação das equipas envolvidas."
+        ],
+        [
+          "Suporte",
+          "Acompanhamos a evolução do projeto para assegurar continuidade e melhoria."
+        ]
+      ]
+    }
+  },
+  "aplicaciones": {
+    "kicker": "Aplicações",
+    "h1": "Robôs que já trabalham em ambientes reais",
+    "lede": "Atendimento ao público, intralogística, limpeza, formação, saúde e inspeção. Ajudamo-lo a escolher o robô adequado para cada tarefa e colocamo-lo em funcionamento nas suas instalações.",
+    "sectores": [
+      {
+        "id": "retail",
+        "titulo": "Retalho e atendimento ao público",
+        "texto": "Humanoides que recebem, informam e acompanham clientes e visitantes, e que transformam um espaço comercial numa experiência de marca.",
+        "tareas": [
+          "Receção e informação em lojas, hotéis e escritórios",
+          "Promoções e ativações no ponto de venda",
+          "Acompanhamento de visitantes e visitas guiadas em showrooms",
+          "Perguntas frequentes e encaminhamento para a equipa"
+        ],
+        "robots": [
+          "rhx2",
+          "rha3",
+          "rhx2-ultra",
+          "rha3-ultra"
+        ],
+        "imagen": "assets/escenarios/complejos-comerciales.webp"
+      },
+      {
+        "id": "intralogistica",
+        "titulo": "Indústria e intralogística",
+        "texto": "Robôs móveis que movem material entre o armazém e a linha, e humanoides que manipulam peças na fábrica, sem obras nem alterações nas instalações.",
+        "tareas": [
+          "Transporte de material entre estações e armazém",
+          "Deslocação de carrinhos e estantes",
+          "Movimentação de paletes ao nível do solo e primeiro nível",
+          "Manipulação de peças e alimentação de máquinas"
+        ],
+        "robots": [
+          "t150",
+          "t300",
+          "t600",
+          "t600-underride",
+          "mp2000",
+          "rhg2",
+          "omnipicker"
+        ],
+        "imagen": "assets/escenarios/fabricas-almacenes.webp"
+      },
+      {
+        "id": "limpieza",
+        "titulo": "Limpeza de grandes superfícies",
+        "texto": "Lavagem, aspiração e varredura autónomas para superfícies amplas, com rotas programadas e trabalho em horários sem público.",
+        "tareas": [
+          "Supermercados e centros comerciais",
+          "Estações, aeroportos e edifícios de escritórios",
+          "Naves industriais e armazéns",
+          "Parques de estacionamento e zonas semiexteriores"
+        ],
+        "robots": [
+          "rhc5",
+          "mt1",
+          "mt1-max"
+        ],
+        "imagen": "assets/escenarios/supermercados.webp"
+      },
+      {
+        "id": "educacion",
+        "titulo": "Educação, investigação e eventos",
+        "texto": "Plataformas abertas para ensinar robótica e inteligência artificial, desenvolver aplicações próprias e protagonizar feiras e apresentações.",
+        "tareas": [
+          "Docência universitária e formação profissional",
+          "Investigação em robótica humanoide e manipulação",
+          "Desenvolvimento de aplicações com SDK e simulação",
+          "Feiras, apresentações e atuações"
+        ],
+        "robots": [
+          "rhx2-edu",
+          "rhx2-ultra",
+          "rha3-ultra",
+          "omnihand",
+          "omnihand-tactile",
+          "omnihand-pro-2025"
+        ],
+        "imagen": "assets/robots/rhx2-edu/aula-stem.webp"
+      },
+      {
+        "id": "salud",
+        "titulo": "Saúde e assistência",
+        "texto": "Interação guiada e apoio informativo em centros de saúde e lares, e limpeza autónoma de corredores e zonas comuns.",
+        "tareas": [
+          "Receção e orientação de pacientes e visitas",
+          "Apoio informativo e acompanhamento não clínico",
+          "Limpeza de corredores e zonas comuns"
+        ],
+        "robots": [
+          "rha3",
+          "rhx2",
+          "rhc5"
+        ],
+        "imagen": "assets/escenarios/hospitales.webp"
+      },
+      {
+        "id": "inspeccion",
+        "titulo": "Inspeção e segurança",
+        "texto": "Um quadrúpede com rodas que percorre exteriores, rampas e escadas para inspecionar instalações e fazer rondas de vigilância.",
+        "tareas": [
+          "Rondas de inspeção em fábricas e parques de estacionamento",
+          "Vigilância de perímetros e zonas exteriores",
+          "Percursos em terreno irregular e escadas",
+          "Entregas em recintos e última milha"
+        ],
+        "robots": [
+          "d5w"
+        ],
+        "imagen": "assets/robots/d5w/en-aparcamiento.webp"
+      }
+    ]
+  }
+}

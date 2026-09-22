@@ -1,0 +1,405 @@
+{
+  "home": {
+    "kicker": "RH·BOTS — Ressources humanoïdes",
+    "h1": "L'avenir de la<br>robotique<br>c'est <span class=\"acento\">maintenant</span>",
+    "lede": "Des robots humanoïdes de dernière génération, prêts à opérer dans des environnements réels, avec conseil, installation et support professionnel.",
+    "que_hacemos": {
+      "kicker": "Ce que nous faisons",
+      "titulo": "Des robots humanoïdes pour les entreprises qui veulent <span class=\"acento\">avancer</span>",
+      "texto": "RH·BOTS rapproche la robotique humanoïde des organisations qui cherchent à améliorer leurs processus, leur service client, leur logistique, leur formation ou leurs expériences interactives.",
+      "destacado": "Nous ne vendons pas seulement de la technologie : nous concevons avec vous une solution réaliste, utile et prête à évoluer.",
+      "detalle": "Dès la première réunion, nous analysons vos objectifs, l'environnement dans lequel le robot travaillera et le niveau d'intégration nécessaire pour que l'investissement ait du sens."
+    },
+    "robots_grid": {
+      "kicker": "Nos robots",
+      "titulo": "Une gamme prête pour des <span class=\"acento\">environnements réels</span>"
+    },
+    "sectores_bloque": {
+      "kicker": "Applications",
+      "titulo": "Robotique humanoïde pour différents secteurs",
+      "texto": "Chaque projet a un objectif. C'est pourquoi nous adaptons la solution à l'environnement, à l'équipe et au type d'interaction dont votre entreprise a besoin.",
+      "boton": "Voir les applications",
+      "tarjetas": [
+        [
+          "Commerce et accueil",
+          "Réception, information, accompagnement et expériences de marque."
+        ],
+        [
+          "Industrie et logistique",
+          "Soutien aux processus, inspection, mobilité et démonstrations techniques."
+        ],
+        [
+          "Éducation et événements",
+          "Formation, innovation, salons, présentations et animations."
+        ],
+        [
+          "Santé et assistance",
+          "Interaction guidée, soutien informatif et accompagnement non clinique."
+        ]
+      ]
+    },
+    "metodo": {
+      "kicker": "Comment nous travaillons",
+      "titulo": "Un processus clair pour une mise en place <span class=\"acento\">sans complications</span>",
+      "boton": "Parlez-nous",
+      "pasos": [
+        [
+          "Nous écoutons",
+          "Nous comprenons votre activité, vos objectifs et le contexte d'utilisation."
+        ],
+        [
+          "Nous définissons",
+          "Nous sélectionnons le robot et proposons une solution viable."
+        ],
+        [
+          "Nous mettons en place",
+          "Configuration, mise en service et formation de l'équipe."
+        ],
+        [
+          "Nous accompagnons",
+          "Support technique, maintenance et amélioration continue."
+        ]
+      ]
+    },
+    "actualidad": {
+      "kicker": "Actualité",
+      "titulo": "Dernières actualités de robotique",
+      "enlace": "Aller au blog"
+    },
+    "faq": [
+      [
+        "De quel robot ai-je besoin ?",
+        "Cela dépend de la tâche, de l'environnement et du volume. Le nettoyage des grandes surfaces est l'affaire du RHC5, du MT1 ou du MT1 Max ; l'accueil du public, des familles RHA3 et RHX2 ; la manipulation industrielle, du RHG2 ; le transport interne de matériaux, des AMR T150, T300, T600 et MP2000 ; et l'inspection en extérieur ou en terrain difficile, du quadrupède D5W. Nous vous accompagnons dans le choix grâce à un conseil préalable."
+      ],
+      [
+        "Faut-il programmer le robot ?",
+        "Pas pour un usage standard : les modèles sont livrés avec un ensemble de compétences prêtes à exécuter de multiples fonctions dès le premier instant. Si vous souhaitez développer vos propres applications, il existe des versions ouvertes (RHX2 Ultra et RHX2 EDU) avec SDK, simulateurs et interfaces documentées."
+      ],
+      [
+        "Peut-il s'adapter à mon entreprise ?",
+        "Oui. Nous partons d'un conseil préalable pour comprendre votre cas d'usage, puis nous configurons le robot, ses routines et son comportement selon votre activité. Cela inclut l'installation, la mise en service et la formation de votre équipe."
+      ],
+      [
+        "Quel entretien nécessitent-ils ?",
+        "Un entretien préventif périodique des articulations, des batteries et des capteurs, ainsi que des mises à jour logicielles. Nous proposons un service continu de maintenance et de support pour garantir la disponibilité de l'équipement."
+      ],
+      [
+        "Peut-on louer plutôt qu'acheter ?",
+        "Contactez-nous. Selon le modèle et la durée du projet, nous pouvons envisager l'achat ou la location, installation et support inclus."
+      ]
+    ]
+  },
+  "aplicaciones": {
+    "kicker": "Applications",
+    "h1": "Des robots qui travaillent déjà dans des environnements réels",
+    "lede": "Accueil du public, intralogistique, nettoyage, formation, santé et inspection. Nous vous aidons à choisir le robot adapté à chaque tâche et le mettons en service dans votre installation.",
+    "sectores": [
+      {
+        "id": "retail",
+        "titulo": "Commerce et accueil du public",
+        "texto": "Des humanoïdes qui accueillent, informent et accompagnent clients et visiteurs, et qui transforment un espace commercial en une expérience de marque.",
+        "tareas": [
+          "Accueil et information dans les boutiques, hôtels et bureaux",
+          "Promotions et animations sur le point de vente",
+          "Accompagnement des visiteurs et guidage en showroom",
+          "Questions fréquentes et orientation vers le personnel"
+        ],
+        "robots": [
+          "rhx2",
+          "rha3",
+          "rhx2-ultra",
+          "rha3-ultra"
+        ],
+        "imagen": "assets/escenarios/complejos-comerciales.webp"
+      },
+      {
+        "id": "intralogistica",
+        "titulo": "Industrie et intralogistique",
+        "texto": "Des robots mobiles qui déplacent le matériel entre l'entrepôt et la ligne, et des humanoïdes qui manipulent des pièces dans l'usine, sans travaux ni modification de l'installation.",
+        "tareas": [
+          "Transport de matériel entre les postes et l'entrepôt",
+          "Déplacement de chariots et d'étagères",
+          "Déplacement de palettes au sol et au premier niveau",
+          "Manipulation de pièces et alimentation de machines"
+        ],
+        "robots": [
+          "t150",
+          "t300",
+          "t600",
+          "t600-underride",
+          "mp2000",
+          "rhg2",
+          "omnipicker"
+        ],
+        "imagen": "assets/escenarios/fabricas-almacenes.webp"
+      },
+      {
+        "id": "limpieza",
+        "titulo": "Nettoyage de grandes surfaces",
+        "texto": "Lavage, aspiration et balayage autonomes pour de grandes surfaces, avec des trajets programmés et un fonctionnement en dehors des horaires d'affluence.",
+        "tareas": [
+          "Supermarchés et centres commerciaux",
+          "Gares, aéroports et immeubles de bureaux",
+          "Entrepôts et locaux industriels",
+          "Parkings et zones semi-extérieures"
+        ],
+        "robots": [
+          "rhc5",
+          "mt1",
+          "mt1-max"
+        ],
+        "imagen": "assets/escenarios/supermercados.webp"
+      },
+      {
+        "id": "educacion",
+        "titulo": "Éducation, recherche et événements",
+        "texto": "Des plateformes ouvertes pour enseigner la robotique et l'intelligence artificielle, développer ses propres applications et être au cœur des salons et présentations.",
+        "tareas": [
+          "Enseignement universitaire et formation professionnelle",
+          "Recherche en robotique humanoïde et manipulation",
+          "Développement d'applications avec SDK et simulation",
+          "Salons, présentations et démonstrations"
+        ],
+        "robots": [
+          "rhx2-edu",
+          "rhx2-ultra",
+          "rha3-ultra",
+          "omnihand",
+          "omnihand-tactile",
+          "omnihand-pro-2025"
+        ],
+        "imagen": "assets/robots/rhx2-edu/aula-stem.webp"
+      },
+      {
+        "id": "salud",
+        "titulo": "Santé et assistance",
+        "texto": "Interaction guidée et soutien informatif dans les établissements de santé et les résidences, ainsi que nettoyage autonome des couloirs et des espaces communs.",
+        "tareas": [
+          "Accueil et orientation des patients et des visiteurs",
+          "Soutien informatif et accompagnement non clinique",
+          "Nettoyage des couloirs et des espaces communs"
+        ],
+        "robots": [
+          "rha3",
+          "rhx2",
+          "rhc5"
+        ],
+        "imagen": "assets/escenarios/hospitales.webp"
+      },
+      {
+        "id": "inspeccion",
+        "titulo": "Inspection et sécurité",
+        "texto": "Un quadrupède à roues qui parcourt les extérieurs, rampes et escaliers pour inspecter les installations et effectuer des rondes de surveillance.",
+        "tareas": [
+          "Rondes d'inspection dans les usines et les parkings",
+          "Surveillance des périmètres et des zones extérieures",
+          "Déplacements en terrain irrégulier et dans les escaliers",
+          "Livraison sur site et dernier kilomètre"
+        ],
+        "robots": [
+          "d5w"
+        ],
+        "imagen": "assets/robots/d5w/en-aparcamiento.webp"
+      }
+    ]
+  },
+  "rhbots": {
+    "kicker": "Qui sommes-nous",
+    "h1": "L'équipe derrière RH·BOTS",
+    "lede": "Distributeur officiel d'AGIBOT et PUDU en Espagne et au Portugal, basé à Picassent (Valence). Nous accompagnons chaque client, du choix du robot à la maintenance au quotidien.",
+    "historia_subtitulo": "Notre histoire",
+    "historia_cuerpo": "<p>RH·BOTS est né pour rapprocher la robotique humanoïde des entreprises qui ont besoin de résultats réels, et non de démonstrations. En tant que distributeur officiel d'AGIBOT et PUDU en Espagne et au Portugal, nous sélectionnons le robot adapté à chaque opération et accompagnons nos clients tout au long du processus : conseil préalable, installation, formation des équipes et maintenance continue.</p><p>Nous travaillons depuis Picassent (Valence), avec des clients dans des secteurs allant du nettoyage industriel à l'accueil du public et à l'automatisation d'usine.</p>",
+    "mision": {
+      "kicker": "Notre mission",
+      "titulo": "Rendre la robotique humanoïde <span class=\"acento\">accessible, fiable et rentable</span>",
+      "parrafos": [
+        "Chaque projet commence par l'écoute. Nous analysons les besoins, identifions les opportunités et recommandons le modèle de robot qui correspond le mieux à l'objectif de l'entreprise.",
+        "Notre équipe allie connaissance technique, vision produit et intégration pratique pour que la mise en place soit claire et mesurable."
+      ],
+      "puntos": [
+        "Conseil préalable et sélection du robot adapté.",
+        "Installation, mise en service et formation.",
+        "Support pour que le robot continue d'apporter de la valeur."
+      ]
+    },
+    "alianza": {
+      "titulo": "Une alliance prête à se développer",
+      "texto": "Nous travaillons aux côtés d'AGIBOT et PUDU pour apporter en Espagne et au Portugal des solutions robotiques déjà éprouvées dans des environnements réels.",
+      "cifras": [
+        [
+          "+145.000",
+          "robots AGIBOT et PUDU fabriqués et livrés dans le monde entier"
+        ],
+        [
+          "2",
+          "pays avec distribution officielle d'AGIBOT et PUDU : l'Espagne et le Portugal"
+        ],
+        [
+          "{modelos}",
+          "modèles disponibles pour différents secteurs"
+        ],
+        [
+          "{familias}",
+          "familles de robots : humanoïdes, quadrupèdes, nettoyage, AMR et accessoires"
+        ]
+      ]
+    },
+    "proyecto": {
+      "titulo": "Parlons de votre projet ?",
+      "texto": "Dites-nous ce dont vous avez besoin et nous vous aiderons à déterminer quelle solution robotique convient le mieux à votre entreprise.",
+      "boton": "Parlez-nous"
+    },
+    "proceso": {
+      "kicker": "Comment nous travaillons",
+      "titulo": "Un processus clair pour prendre de bonnes décisions",
+      "texto": "Nous simplifions l'intégration de robots humanoïdes grâce à une méthodologie structurée : comprendre, proposer, mettre en œuvre et accompagner. Nous réduisons ainsi l'incertitude et accélérons les résultats.",
+      "pasos": [
+        [
+          "Diagnostic",
+          "Nous écoutons vos besoins et analysons où un robot humanoïde peut apporter le plus de valeur."
+        ],
+        [
+          "Proposition",
+          "Nous sélectionnons le modèle et proposons une solution réaliste, alignée sur vos objectifs."
+        ],
+        [
+          "Mise en place",
+          "Nous coordonnons la livraison, l'installation, la configuration et la formation des équipes concernées."
+        ],
+        [
+          "Support",
+          "Nous accompagnons l'évolution du projet pour en assurer la continuité et l'amélioration."
+        ]
+      ]
+    }
+  },
+  "posts": [
+    {
+      "titulo": "Comment préparer votre entreprise à la robotique humanoïde",
+      "fecha": "2026-09-10",
+      "categoria": "Guide",
+      "resumen": "Les clés pour évaluer processus, espaces et objectifs avant d'investir.",
+      "cuerpo": "<p>Intégrer un robot humanoïde ne commence pas par le robot, mais par le processus que l'on souhaite résoudre. Avant de demander un devis, il convient de bien définir quelle tâche doit être couverte, combien d'heures par jour et avec quel résultat attendu.</p><h2>Définissez la tâche, pas le modèle</h2><p>Un même espace peut nécessiter un robot de nettoyage, un robot d'accueil ou aucun des deux. Décrivez la tâche avec des chiffres : surface, plages horaires, volume de personnes ou de pièces, et ce qui se passe aujourd'hui en cas de manque de personnel.</p><h2>Examinez l'environnement</h2><p>La largeur des couloirs, les rampes, les ascenseurs, les portes automatiques, la couverture wifi et les points de charge déterminent quels modèles conviennent. Une visite préalable évite les surprises lors de la mise en service.</p><h2>Pensez à qui va l'utiliser</h2><p>L'équipe qui côtoie le robot a besoin d'une formation et d'une procédure claire pour le quotidien : démarrage, incidents, nettoyage et maintenance de base.</p><h2>Calculez le retour avec vos propres données</h2><p>Comparez le coût du robot et de sa maintenance avec les heures qu'il libère et le coût actuel de la tâche. Un projet bien dimensionné repose sur des chiffres, pas sur des attentes.</p>",
+      "slug": "como-preparar-tu-empresa-para-la-robotica-humanoide",
+      "url": "blog/como-preparar-tu-empresa-para-la-robotica-humanoide.html",
+      "img": "assets/robots/rhg2/hero.webp"
+    },
+    {
+      "titulo": "Applications réelles des robots humanoïdes",
+      "fecha": "2026-09-03",
+      "categoria": "Cas d'usage",
+      "resumen": "Commerce, industrie, éducation et événements intègrent déjà cette technologie.",
+      "cuerpo": "<p>La robotique humanoïde et de service travaille déjà dans des environnements réels. Voici les usages les plus demandés par les entreprises avec lesquelles nous échangeons.</p><h2>Commerce et accueil du public</h2><p>Accueil des visiteurs, information de base, accompagnement en magasin et animations de marque. Le robot ne remplace pas l'équipe : il absorbe les questions répétitives et libère du temps pour la vente.</p><h2>Industrie et logistique</h2><p>Transport de matériel léger entre postes, inspection des installations et soutien aux tâches répétitives de ligne. Ici, l'autonomie, la charge utile et l'intégration avec les systèmes existants pèsent lourd.</p><h2>Nettoyage professionnel</h2><p>Grandes surfaces intérieures avec trajets fixes : supermarchés, gares, entrepôts et centres commerciaux. C'est le cas d'usage le plus mature et celui qui s'amortit le plus vite.</p><h2>Éducation et recherche</h2><p>Les universités et centres de formation utilisent des plateformes ouvertes pour développer et tester leurs propres applications, avec SDK et simulateurs.</p>",
+      "slug": "aplicaciones-reales-de-robots-humanoides",
+      "url": "blog/aplicaciones-reales-de-robots-humanoides.html",
+      "img": "assets/robots/rha3/hero.webp"
+    },
+    {
+      "titulo": "Cinq questions avant d'intégrer un robot de nettoyage",
+      "fecha": "2026-08-27",
+      "categoria": "Guide",
+      "resumen": "Surface, sol, eau, routine quotidienne et support : ce qu'il convient d'évaluer avant de décider.",
+      "cuerpo": "<p>Un robot de nettoyage autonome est performant lorsque l'espace et l'organisation le permettent. Avant de décider, il convient de répondre à ces cinq questions.</p><h2>1. Combien de mètres faut-il nettoyer et en combien de temps ?</h2><p>La performance se mesure en mètres carrés par heure dans des conditions réelles, virages, obstacles et arrêts de charge inclus.</p><h2>2. Comment est le sol ?</h2><p>Un revêtement continu n'est pas la même chose qu'un sol avec joints, grilles ou dénivelés. Le type de sol détermine le système de lavage et la consommation d'eau.</p><h2>3. Où se fait le remplissage et la vidange ?</h2><p>Il faut un point d'eau et une évacuation accessibles, proches de la zone de travail et du point de charge.</p><h2>4. Qui le met en marche chaque jour ?</h2><p>Il convient de désigner un responsable et une courte routine de démarrage et de vérification. La plupart des incidents s'évitent avec deux minutes de contrôle.</p><h2>5. Que se passe-t-il en cas de panne ?</h2><p>Renseignez-vous sur le délai de réponse du support, le stock de pièces de rechange et ce que couvre exactement la maintenance.</p>",
+      "slug": "cinco-preguntas-antes-de-incorporar-un-robot-de-limpieza",
+      "url": "blog/cinco-preguntas-antes-de-incorporar-un-robot-de-limpieza.html",
+      "img": "assets/robots/rhc5/vista-0.webp"
+    }
+  ],
+  "prefooter": {
+    "titulo": "Parlons de l'avenir",
+    "texto": "Intéressé par l'intégration de robots AGIBOT ou PUDU dans votre entreprise ou centre de recherche ? Contactez-nous, nous vous conseillons sans engagement.",
+    "siguenos": "Suivez-nous"
+  },
+  "cta": {
+    "kicker": "On en parle ?",
+    "titulo": "Faites entrer la robotique humanoïde dans votre entreprise",
+    "texto": "Parlez-nous de votre projet, nous vous conseillons sans engagement. Nous vous aiderons à trouver la solution la plus adaptée à votre cas.",
+    "boton": "Demander des informations"
+  },
+  "nav": [
+    {
+      "label": "Accueil",
+      "href": "index.html",
+      "key": "home"
+    },
+    {
+      "label": "Robots",
+      "href": "robots.html",
+      "key": "robots"
+    },
+    {
+      "label": "Applications",
+      "href": "aplicaciones.html",
+      "key": "aplicaciones"
+    },
+    {
+      "label": "Accessoires",
+      "href": "index.html",
+      "key": "",
+      "oculto": true
+    },
+    {
+      "label": "Blog",
+      "href": "blog.html",
+      "key": "blog"
+    },
+    {
+      "label": "À propos",
+      "href": "rh-bots.html",
+      "key": "rhbots"
+    },
+    {
+      "label": "Contact",
+      "href": "contacto.html",
+      "key": "contacto"
+    }
+  ],
+  "contacto": {
+    "kicker": "Contact RH·BOTS",
+    "h1": "Parlons de votre prochain robot",
+    "intro": "Dites-nous ce dont vous avez besoin, et nous vous aiderons à trouver la solution robotique la plus adaptée à votre entreprise, votre événement ou votre projet.",
+    "empresa": "RH·BOTS — Ressources Humanoïdes",
+    "asesoria": {
+      "titulo": "Nous vous conseillons sans engagement",
+      "texto": "Nous répondons à vos questions, examinons votre cas et vous orientons sur les modèles, les usages et les possibilités.",
+      "pasos": [
+        [
+          "Parlez-nous de votre idée",
+          "Usage, espace, secteur ou tâche que vous souhaitez automatiser."
+        ],
+        [
+          "Nous analysons la meilleure option",
+          "Robots humanoïdes, quadrupèdes, de nettoyage, AMR ou accessoires."
+        ],
+        [
+          "Recevez une proposition claire",
+          "Sans jargon technique et adaptée à vos objectifs."
+        ]
+      ]
+    },
+    "proceso": {
+      "kicker": "Comment nous travaillons",
+      "titulo": "De la consultation à la solution, étape par étape",
+      "pasos": [
+        [
+          "Nous écoutons",
+          "Nous comprenons votre objectif, l'environnement d'utilisation et les besoins réels du projet."
+        ],
+        [
+          "Nous recommandons",
+          "Nous vous orientons avec une proposition simple, claire et adaptée à votre cas."
+        ],
+        [
+          "Nous accompagnons",
+          "Nous répondons à vos questions et vous aidons à avancer en toute confiance dans votre choix."
+        ]
+      ]
+    },
+    "lado": {
+      "kicker": "Parlons-en",
+      "titulo": "Un contact plus direct, clair et humain",
+      "texto": "Remplissez le formulaire et un spécialiste de RH·BOTS vous contactera dans les meilleurs délais. Vous pouvez aussi nous écrire directement si vous préférez.",
+      "especialidad": "Robotique pour entreprises et événements"
+    }
+  }
+}

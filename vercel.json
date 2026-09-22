@@ -6,8 +6,16 @@
   ],
   "rewrites": [
     { "source": "/", "destination": "/web/index.html" },
+    { "source": "/pt", "destination": "/web/pt/index.html" },
+    { "source": "/pt/", "destination": "/web/pt/index.html" },
     { "source": "/en", "destination": "/web/en/index.html" },
     { "source": "/en/", "destination": "/web/en/index.html" },
+    { "source": "/fr", "destination": "/web/fr/index.html" },
+    { "source": "/fr/", "destination": "/web/fr/index.html" },
+    { "source": "/zh", "destination": "/web/zh/index.html" },
+    { "source": "/zh/", "destination": "/web/zh/index.html" },
+    { "source": "/ca", "destination": "/web/ca/index.html" },
+    { "source": "/ca/", "destination": "/web/ca/index.html" },
     { "source": "/:path*", "destination": "/web/:path*" }
   ]
 }

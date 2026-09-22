@@ -3,10 +3,14 @@
   'use strict';
 
   /* ---------- idioma: las cadenas que genera el propio JS (el resto ya
-     viene traducido desde el HTML) leen el <html lang="es|en"> de la página */
-  var LANG = document.documentElement.lang === 'en' ? 'en' : 'es';
+     viene traducido desde el HTML) leen el <html lang="es|pt|en|fr|zh|ca">
+     de la página */
+  var IDIOMAS = ['es', 'pt', 'en', 'fr', 'zh', 'ca'];
+  var LANG = IDIOMAS.indexOf(document.documentElement.lang) > -1 ? document.documentElement.lang : 'es';
+  var LOCALES = { es: 'es-ES', pt: 'pt-PT', en: 'en-GB', fr: 'fr-FR', zh: 'zh-CN', ca: 'ca-ES' };
   var TXT = {
     es: {
+      abrirMenu: 'Abrir menú', cerrarMenu: 'Cerrar menú',
       sinStock: 'Sin stock — consúltanos la disponibilidad',
       avisame: 'Avísame cuando esté',
       precioConsulta: 'Precio bajo consulta',
@@ -25,7 +29,28 @@
       asuntoWeb: 'Web RH·BOTS — ', asuntoConsulta: 'Consulta sobre ', asuntoSolicitud: 'Solicitud de información',
       consentimientoCorreo: '\n\n---\nAcepto la política de privacidad y el tratamiento de mis datos para recibir información comercial de RH·BOTS.'
     },
+    pt: {
+      abrirMenu: 'Abrir menu', cerrarMenu: 'Fechar menu',
+      sinStock: 'Sem stock — consulte-nos a disponibilidade',
+      avisame: 'Avisem-me quando estiver disponível',
+      precioConsulta: 'Preço sob consulta',
+      pedirPresupuesto: 'Pedir orçamento',
+      anadirCarrito: 'Adicionar ao carrinho',
+      carritoVacio: 'Ainda não adicionou nenhum robô.',
+      verCatalogo: 'Ver o catálogo',
+      quitarUnidad: 'Remover uma unidade',
+      anadirUnidad: 'Adicionar uma unidade',
+      quitar: 'Remover',
+      formIncompleto: 'Reveja os campos obrigatórios: nome, email, mensagem e a política de privacidade.',
+      formSinPrivacidad: 'Para enviar a mensagem tem de aceitar a política de privacidade.',
+      abriendoCorreo: 'A abrir o seu gestor de email com a mensagem redigida…',
+      campoNombre: 'Nome: ', campoEmpresa: 'Empresa: ', campoEmail: 'Email: ',
+      campoTelefono: 'Telefone: ', campoRobot: 'Robô de interesse: ', sinIndicar: 'não indicado',
+      asuntoWeb: 'Site RH·BOTS — ', asuntoConsulta: 'Consulta sobre ', asuntoSolicitud: 'Pedido de informação',
+      consentimientoCorreo: '\n\n---\nAceito a política de privacidade e o tratamento dos meus dados para receber informação comercial da RH·BOTS.'
+    },
     en: {
+      abrirMenu: 'Open menu', cerrarMenu: 'Close menu',
       sinStock: 'Out of stock — ask us about availability',
       avisame: 'Notify me when available',
       precioConsulta: 'Price on request',
@@ -43,6 +68,66 @@
       campoTelefono: 'Phone: ', campoRobot: 'Robot of interest: ', sinIndicar: 'not specified',
       asuntoWeb: 'RH·BOTS website — ', asuntoConsulta: 'Enquiry about ', asuntoSolicitud: 'Information request',
       consentimientoCorreo: '\n\n---\nI accept the privacy policy and the processing of my data to receive commercial information from RH·BOTS.'
+    },
+    fr: {
+      abrirMenu: 'Ouvrir le menu', cerrarMenu: 'Fermer le menu',
+      sinStock: 'Rupture de stock — demandez-nous la disponibilité',
+      avisame: 'M\'avertir quand disponible',
+      precioConsulta: 'Prix sur demande',
+      pedirPresupuesto: 'Demander un devis',
+      anadirCarrito: 'Ajouter au panier',
+      carritoVacio: "Vous n'avez encore ajouté aucun robot.",
+      verCatalogo: 'Voir le catalogue',
+      quitarUnidad: 'Retirer une unité',
+      anadirUnidad: 'Ajouter une unité',
+      quitar: 'Retirer',
+      formIncompleto: 'Vérifiez les champs obligatoires : nom, email, message et la politique de confidentialité.',
+      formSinPrivacidad: 'Pour envoyer le message, vous devez accepter la politique de confidentialité.',
+      abriendoCorreo: 'Ouverture de votre messagerie avec le message rédigé…',
+      campoNombre: 'Nom : ', campoEmpresa: 'Entreprise : ', campoEmail: 'Email : ',
+      campoTelefono: 'Téléphone : ', campoRobot: 'Robot qui vous intéresse : ', sinIndicar: 'non précisé',
+      asuntoWeb: 'Site RH·BOTS — ', asuntoConsulta: 'Question sur ', asuntoSolicitud: "Demande d'information",
+      consentimientoCorreo: '\n\n---\nJ\'accepte la politique de confidentialité et le traitement de mes données pour recevoir des informations commerciales de RH·BOTS.'
+    },
+    zh: {
+      abrirMenu: '打开菜单', cerrarMenu: '关闭菜单',
+      sinStock: '无现货 — 请咨询我们了解供货情况',
+      avisame: '到货时通知我',
+      precioConsulta: '价格面议',
+      pedirPresupuesto: '索取报价',
+      anadirCarrito: '加入购物车',
+      carritoVacio: '您还没有添加任何机器人。',
+      verCatalogo: '查看产品目录',
+      quitarUnidad: '减少一件',
+      anadirUnidad: '增加一件',
+      quitar: '移除',
+      formIncompleto: '请检查必填项：姓名、邮箱、留言以及隐私政策同意选项。',
+      formSinPrivacidad: '发送留言前需要接受隐私政策。',
+      abriendoCorreo: '正在打开您的邮件客户端，留言内容已自动填写…',
+      campoNombre: '姓名：', campoEmpresa: '公司：', campoEmail: '邮箱：',
+      campoTelefono: '电话：', campoRobot: '感兴趣的机器人：', sinIndicar: '未指定',
+      asuntoWeb: 'RH·BOTS网站 — ', asuntoConsulta: '咨询关于 ', asuntoSolicitud: '信息申请',
+      consentimientoCorreo: '\n\n---\n我接受隐私政策，并同意处理我的数据以接收RH·BOTS的商业信息。'
+    },
+    ca: {
+      abrirMenu: 'Obre el menú', cerrarMenu: 'Tanca el menú',
+      sinStock: 'Sense estoc — consulta\'ns la disponibilitat',
+      avisame: 'Avisa\'m quan hi sigui',
+      precioConsulta: 'Preu sota consulta',
+      pedirPresupuesto: 'Demanar pressupost',
+      anadirCarrito: 'Afegeix al carret',
+      carritoVacio: 'Encara no has afegit cap robot.',
+      verCatalogo: 'Veure el catàleg',
+      quitarUnidad: 'Treu una unitat',
+      anadirUnidad: 'Afegeix una unitat',
+      quitar: 'Treu',
+      formIncompleto: 'Revisa els camps obligatoris: nom, email, missatge i la política de privacitat.',
+      formSinPrivacidad: 'Per enviar el missatge cal acceptar la política de privacitat.',
+      abriendoCorreo: 'S\'està obrint el teu gestor de correu amb el missatge redactat…',
+      campoNombre: 'Nom: ', campoEmpresa: 'Empresa: ', campoEmail: 'Email: ',
+      campoTelefono: 'Telèfon: ', campoRobot: 'Robot d\'interès: ', sinIndicar: 'sense indicar',
+      asuntoWeb: 'Web RH·BOTS — ', asuntoConsulta: 'Consulta sobre ', asuntoSolicitud: 'Sol·licitud d\'informació',
+      consentimientoCorreo: '\n\n---\nAccepto la política de privacitat i el tractament de les meves dades per rebre informació comercial de RH·BOTS.'
     }
   }[LANG];
 
@@ -61,7 +146,7 @@
   toggle.addEventListener('click', function () {
     var open = toggle.getAttribute('aria-expanded') === 'true';
     toggle.setAttribute('aria-expanded', String(!open));
-    toggle.setAttribute('aria-label', open ? 'Abrir menú' : 'Cerrar menú');
+    toggle.setAttribute('aria-label', open ? TXT.abrirMenu : TXT.cerrarMenu);
     nav.classList.toggle('is-open', !open);
   });
 
@@ -112,9 +197,32 @@
   nav.addEventListener('click', function (e) {
     if (e.target.tagName !== 'A') return;
     toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Abrir menú');
+    toggle.setAttribute('aria-label', TXT.abrirMenu);
     nav.classList.remove('is-open');
   });
+
+  /* ---------- selector de idioma: desplegable de banderas ----------
+     Mismo patrón que el submenú de familias: clic para abrir/cerrar,
+     clic fuera y Escape lo cierran. */
+  var langSwitch = document.querySelector('.lang-switch');
+  if (langSwitch) {
+    var langBoton = langSwitch.querySelector('.lang-switch__abrir');
+    var cerrarLang = function () {
+      langSwitch.classList.remove('is-open');
+      langBoton.setAttribute('aria-expanded', 'false');
+    };
+    langBoton.addEventListener('click', function (ev) {
+      ev.stopPropagation();
+      var abierto = langSwitch.classList.toggle('is-open');
+      langBoton.setAttribute('aria-expanded', String(abierto));
+    });
+    document.addEventListener('click', function (ev) {
+      if (!langSwitch.contains(ev.target)) cerrarLang();
+    });
+    langSwitch.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Escape') { cerrarLang(); langBoton.focus(); }
+    });
+  }
 
   /* ---------- aplicaciones: carrusel ----------
      Una diapositiva por aplicación. La foto es intercambiable:
@@ -264,7 +372,7 @@
         var suave = 1 - Math.pow(1 - p, 3);               // frena al final
         var v = destino * suave;
         el.textContent = m[1] +
-          v.toLocaleString('es-ES', { minimumFractionDigits: decimales,
+          v.toLocaleString(LOCALES[LANG], { minimumFractionDigits: decimales,
                                       maximumFractionDigits: decimales }) + m[3];
         requestAnimationFrame(paso);
       }
@@ -313,7 +421,7 @@
                     '<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></i>';
 
       function importe(centimos) {
-        return new Intl.NumberFormat(LANG === 'en' ? 'en-GB' : 'es-ES', {
+        return new Intl.NumberFormat(LOCALES[LANG], {
           minimumFractionDigits: 2, maximumFractionDigits: 2
         }).format(centimos / 100);
       }
@@ -416,7 +524,7 @@
       }
       function dinero(n, moneda) {
         try {
-          return new Intl.NumberFormat(LANG === 'en' ? 'en-GB' : 'es-ES', {
+          return new Intl.NumberFormat(LOCALES[LANG], {
             style: 'currency', currency: moneda || 'EUR', maximumFractionDigits: 0
           }).format(n);
         } catch (e) { return n + ' ' + (moneda || ''); }

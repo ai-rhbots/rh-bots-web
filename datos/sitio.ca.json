@@ -1,0 +1,405 @@
+{
+  "nav": [
+    {
+      "label": "Inici",
+      "href": "index.html",
+      "key": "home"
+    },
+    {
+      "label": "Robots",
+      "href": "robots.html",
+      "key": "robots"
+    },
+    {
+      "label": "Aplicacions",
+      "href": "aplicaciones.html",
+      "key": "aplicaciones"
+    },
+    {
+      "label": "Accessoris",
+      "href": "index.html",
+      "key": "",
+      "oculto": true
+    },
+    {
+      "label": "Blog",
+      "href": "blog.html",
+      "key": "blog"
+    },
+    {
+      "label": "Coneix-nos",
+      "href": "rh-bots.html",
+      "key": "rhbots"
+    },
+    {
+      "label": "Contacte",
+      "href": "contacto.html",
+      "key": "contacto"
+    }
+  ],
+  "home": {
+    "kicker": "RH·BOTS — Recursos humanoides",
+    "h1": "El futur de la<br>robòtica<br>és <span class=\"acento\">ara</span>",
+    "lede": "Robots humanoides d'última generació, preparats per operar en entorns reals amb assessorament, instal·lació i suport professional.",
+    "que_hacemos": {
+      "kicker": "Què fem",
+      "titulo": "Robots humanoides per a empreses que volen <span class=\"acento\">avançar</span>",
+      "texto": "RH·BOTS acosta la robòtica humanoide a organitzacions que busquen millorar processos, atenció al client, logística, formació o experiències interactives.",
+      "destacado": "No venem només tecnologia: dissenyem amb tu una solució realista, útil i preparada per créixer.",
+      "detalle": "Des de la primera reunió analitzem els teus objectius, l'entorn on treballarà el robot i el nivell d'integració necessari perquè la inversió tingui sentit."
+    },
+    "robots_grid": {
+      "kicker": "Els nostres robots",
+      "titulo": "Una gamma preparada per a <span class=\"acento\">entorns reals</span>"
+    },
+    "sectores_bloque": {
+      "kicker": "Aplicacions",
+      "titulo": "Robòtica humanoide per a diferents sectors",
+      "texto": "Cada projecte té un objectiu. Per això adaptem la solució a l'entorn, a l'equip i al tipus d'interacció que necessita la teva empresa.",
+      "boton": "Veure aplicacions",
+      "tarjetas": [
+        [
+          "Retail i atenció",
+          "Recepció, informació, acompanyament i experiències de marca."
+        ],
+        [
+          "Indústria i logística",
+          "Suport en processos, inspecció, mobilitat i demostracions tècniques."
+        ],
+        [
+          "Educació i esdeveniments",
+          "Formació, innovació, fires, presentacions i activacions."
+        ],
+        [
+          "Salut i assistència",
+          "Interacció guiada, suport informatiu i acompanyament no clínic."
+        ]
+      ]
+    },
+    "metodo": {
+      "kicker": "Com treballem",
+      "titulo": "Un procés clar per implantar <span class=\"acento\">sense complicacions</span>",
+      "boton": "Parla amb nosaltres",
+      "pasos": [
+        [
+          "Escoltem",
+          "Entenem el teu negoci, els teus objectius i el context d'ús."
+        ],
+        [
+          "Definim",
+          "Seleccionem el robot i plantegem una solució viable."
+        ],
+        [
+          "Implantem",
+          "Configuració, posada en marxa i formació de l'equip."
+        ],
+        [
+          "Acompanyem",
+          "Suport tècnic, manteniment i millora contínua."
+        ]
+      ]
+    },
+    "actualidad": {
+      "kicker": "Actualitat",
+      "titulo": "Últimes notícies de robòtica",
+      "enlace": "Anar al blog"
+    },
+    "faq": [
+      [
+        "Quin robot necessito?",
+        "Depèn de la tasca, de l'entorn i del volum. La neteja de grans superfícies és cosa del RHC5, el MT1 o el MT1 Max; l'atenció al públic, de les famílies RHA3 i RHX2; la manipulació industrial, del RHG2; el transport intern de materials, dels AMR T150, T300, T600 i MP2000; i la inspecció a l'exterior o en terreny difícil, del quadrúpede D5W. T'acompanyem en l'elecció amb un assessorament previ."
+      ],
+      [
+        "Cal programar el robot?",
+        "No per a l'ús estàndard: els models vénen amb un paquet d'habilitats a punt per executar múltiples funcions des del primer moment. Si vols desenvolupar les teves pròpies aplicacions, hi ha versions obertes (RHX2 Ultra i RHX2 EDU) amb SDK, simuladors i interfícies documentades."
+      ],
+      [
+        "Es pot adaptar a la meva empresa?",
+        "Sí. Partim d'un assessorament previ per entendre el teu cas d'ús i configurem el robot, les seves rutines i el seu comportament a la teva operativa. Inclou instal·lació, posada en marxa i formació del teu equip."
+      ],
+      [
+        "Quin manteniment requereixen?",
+        "Manteniment preventiu periòdic d'articulacions, bateries i sensors, més actualitzacions de programari. Oferim un servei continuat de manteniment i suport per assegurar la disponibilitat de l'equip."
+      ],
+      [
+        "Es pot llogar en lloc de comprar?",
+        "Consulta'ns. Segons el model i la durada del projecte podem plantejar compra o lloguer, incloent-hi la posada en marxa i el suport."
+      ]
+    ]
+  },
+  "aplicaciones": {
+    "kicker": "Aplicacions",
+    "h1": "Robots que ja treballen en entorns reals",
+    "lede": "Atenció al públic, intralogística, neteja, formació, salut i inspecció. T'ajudem a triar el robot adequat per a cada tasca i el posem en marxa a la teva instal·lació.",
+    "sectores": [
+      {
+        "id": "retail",
+        "titulo": "Retail i atenció al públic",
+        "texto": "Humanoides que reben, informen i acompanyen clients i visitants, i que converteixen un espai comercial en una experiència de marca.",
+        "tareas": [
+          "Recepció i informació en botigues, hotels i oficines",
+          "Promocions i activacions al punt de venda",
+          "Acompanyament de visitants i guia en showrooms",
+          "Preguntes freqüents i derivació al personal"
+        ],
+        "robots": [
+          "rhx2",
+          "rha3",
+          "rhx2-ultra",
+          "rha3-ultra"
+        ],
+        "imagen": "assets/escenarios/complejos-comerciales.webp"
+      },
+      {
+        "id": "intralogistica",
+        "titulo": "Indústria i intralogística",
+        "texto": "Robots mòbils que mouen material entre magatzem i línia, i humanoides que manipulen peces a la planta, sense obres ni canvis a la instal·lació.",
+        "tareas": [
+          "Transport de material entre estacions i magatzem",
+          "Trasllat de carros i prestatgeries",
+          "Moviment de palets a terra i primer nivell",
+          "Manipulació de peces i alimentació de màquines"
+        ],
+        "robots": [
+          "t150",
+          "t300",
+          "t600",
+          "t600-underride",
+          "mp2000",
+          "rhg2",
+          "omnipicker"
+        ],
+        "imagen": "assets/escenarios/fabricas-almacenes.webp"
+      },
+      {
+        "id": "limpieza",
+        "titulo": "Neteja de grans superfícies",
+        "texto": "Fregat, aspiració i escombrat autònoms per a superfícies àmplies, amb rutes programades i treball en horaris sense públic.",
+        "tareas": [
+          "Supermercats i centres comercials",
+          "Estacions, aeroports i edificis d'oficines",
+          "Naus industrials i magatzems",
+          "Aparcaments i zones semiexteriors"
+        ],
+        "robots": [
+          "rhc5",
+          "mt1",
+          "mt1-max"
+        ],
+        "imagen": "assets/escenarios/supermercados.webp"
+      },
+      {
+        "id": "educacion",
+        "titulo": "Educació, investigació i esdeveniments",
+        "texto": "Plataformes obertes per ensenyar robòtica i intel·ligència artificial, desenvolupar aplicacions pròpies i protagonitzar fires i presentacions.",
+        "tareas": [
+          "Docència universitària i formació professional",
+          "Investigació en robòtica humanoide i manipulació",
+          "Desenvolupament d'aplicacions amb SDK i simulació",
+          "Fires, presentacions i actuacions"
+        ],
+        "robots": [
+          "rhx2-edu",
+          "rhx2-ultra",
+          "rha3-ultra",
+          "omnihand",
+          "omnihand-tactile",
+          "omnihand-pro-2025"
+        ],
+        "imagen": "assets/robots/rhx2-edu/aula-stem.webp"
+      },
+      {
+        "id": "salud",
+        "titulo": "Salut i assistència",
+        "texto": "Interacció guiada i suport informatiu en centres sanitaris i residències, i neteja autònoma de passadissos i zones comunes.",
+        "tareas": [
+          "Recepció i orientació de pacients i visites",
+          "Suport informatiu i acompanyament no clínic",
+          "Neteja de passadissos i zones comunes"
+        ],
+        "robots": [
+          "rha3",
+          "rhx2",
+          "rhc5"
+        ],
+        "imagen": "assets/escenarios/hospitales.webp"
+      },
+      {
+        "id": "inspeccion",
+        "titulo": "Inspecció i seguretat",
+        "texto": "Un quadrúpede amb rodes que recorre exteriors, rampes i escales per inspeccionar instal·lacions i fer rondes de vigilància.",
+        "tareas": [
+          "Rondes d'inspecció en plantes i aparcaments",
+          "Vigilància de perímetres i zones exteriors",
+          "Recorreguts per terreny irregular i escales",
+          "Repartiment en recintes i última milla"
+        ],
+        "robots": [
+          "d5w"
+        ],
+        "imagen": "assets/robots/d5w/en-aparcamiento.webp"
+      }
+    ]
+  },
+  "rhbots": {
+    "kicker": "Qui som",
+    "h1": "L'equip darrere de RH·BOTS",
+    "lede": "Distribuïdor oficial d'AGIBOT i PUDU a Espanya i Portugal, amb seu a Picassent (Valencia). Acompanyem cada client des de l'elecció del robot fins al manteniment del dia a dia.",
+    "historia_subtitulo": "La nostra història",
+    "historia_cuerpo": "<p>RH·BOTS neix per acostar la robòtica humanoide a empreses que necessiten resultats reals, no demostracions. Com a distribuïdor oficial d'AGIBOT i PUDU a Espanya i Portugal, seleccionem el robot adequat per a cada operació i acompanyem els nostres clients en tot el procés: assessorament previ, instal·lació, formació d'equips i manteniment continuat.</p><p>Treballem des de Picassent (Valencia), amb clients en sectors que van des de la neteja industrial fins a l'atenció al públic i l'automatització de fàbrica.</p>",
+    "mision": {
+      "kicker": "La nostra missió",
+      "titulo": "Fer que la robòtica humanoide sigui <span class=\"acento\">accessible, fiable i rendible</span>",
+      "parrafos": [
+        "Cada projecte comença escoltant. Analitzem necessitats, identifiquem oportunitats i recomanem el model de robot que millor encaixa amb l'objectiu de negoci.",
+        "El nostre equip combina coneixement tècnic, visió de producte i integració pràctica perquè la implantació sigui clara i mesurable."
+      ],
+      "puntos": [
+        "Assessorament previ i selecció del robot adequat.",
+        "Instal·lació, posada en marxa i formació.",
+        "Suport perquè el robot continuï aportant valor."
+      ]
+    },
+    "alianza": {
+      "titulo": "Una aliança preparada per escalar",
+      "texto": "Treballem juntament amb AGIBOT i PUDU per portar a Espanya i Portugal solucions robòtiques ja provades en entorns reals.",
+      "cifras": [
+        [
+          "+145.000",
+          "robots d'AGIBOT i PUDU fabricats i enviats a tot el món"
+        ],
+        [
+          "2",
+          "països amb distribució oficial d'AGIBOT i PUDU: Espanya i Portugal"
+        ],
+        [
+          "{modelos}",
+          "models disponibles per a diferents sectors"
+        ],
+        [
+          "{familias}",
+          "famílies de robots: humanoides, quadrúpedes, neteja, AMR i accessoris"
+        ]
+      ]
+    },
+    "proyecto": {
+      "titulo": "Parlem del teu projecte?",
+      "texto": "Explica'ns què necessites i t'ajudem a valorar quina solució robòtica encaixa millor amb la teva empresa.",
+      "boton": "Parla amb nosaltres"
+    },
+    "proceso": {
+      "kicker": "Com treballem",
+      "titulo": "Un procés clar per prendre bones decisions",
+      "texto": "Simplifiquem la incorporació de robots humanoides amb una metodologia ordenada: entendre, proposar, implementar i acompanyar. Així reduïm la incertesa i accelerem els resultats.",
+      "pasos": [
+        [
+          "Diagnòstic",
+          "Escoltem les teves necessitats i analitzem on pot aportar més valor un robot humanoide."
+        ],
+        [
+          "Proposta",
+          "Seleccionem el model i plantegem una solució realista, alineada amb els teus objectius."
+        ],
+        [
+          "Implantació",
+          "Coordinem lliurament, instal·lació, configuració i formació dels equips implicats."
+        ],
+        [
+          "Suport",
+          "Acompanyem l'evolució del projecte per assegurar continuïtat i millora."
+        ]
+      ]
+    }
+  },
+  "posts": [
+    {
+      "titulo": "Com preparar la teva empresa per a la robòtica humanoide",
+      "fecha": "2026-09-10",
+      "categoria": "Guia",
+      "resumen": "Claus per avaluar processos, espais i objectius abans d'invertir.",
+      "cuerpo": "<p>Incorporar un robot humanoide no comença pel robot, sinó pel procés que es vol resoldre. Abans de demanar pressupost convé tenir clar quina tasca es vol cobrir, quantes hores al dia i amb quin resultat esperat.</p><h2>Defineix la tasca, no el model</h2><p>Un mateix espai pot necessitar un robot de neteja, un d'atenció al públic o cap dels dos. Descriu la tasca amb números: superfície, franges horàries, volum de persones o de peces, i què passa avui quan falta personal.</p><h2>Revisa l'entorn</h2><p>L'amplada de passadissos, rampes, ascensors, portes automàtiques, cobertura wifi i punts de càrrega condicionen quins models encaixen. Una visita prèvia evita sorpreses en la posada en marxa.</p><h2>Pensa en qui l'utilitzarà</h2><p>L'equip que conviu amb el robot necessita formació i un procediment clar per al dia a dia: arrencada, incidències, neteja i manteniment bàsic.</p><h2>Calcula el retorn amb dades pròpies</h2><p>Compara el cost del robot i el seu manteniment amb les hores que allibera i amb el cost actual de la tasca. Un projecte ben dimensionat es sosté amb números, no amb expectatives.</p>",
+      "slug": "como-preparar-tu-empresa-para-la-robotica-humanoide",
+      "url": "blog/como-preparar-tu-empresa-para-la-robotica-humanoide.html",
+      "img": "assets/robots/rhg2/hero.webp"
+    },
+    {
+      "titulo": "Aplicacions reals de robots humanoides",
+      "fecha": "2026-09-03",
+      "categoria": "Casos d'ús",
+      "resumen": "Retail, indústria, educació i esdeveniments ja estan incorporant aquesta tecnologia.",
+      "cuerpo": "<p>La robòtica humanoide i de servei ja està treballant en entorns reals. Aquests són els usos que més ens demanen les empreses amb què parlem.</p><h2>Retail i atenció al públic</h2><p>Recepció de visitants, informació bàsica, acompanyament a la botiga i activacions de marca. El robot no substitueix l'equip: absorbeix les preguntes repetitives i allibera temps per a la venda.</p><h2>Indústria i logística</h2><p>Trasllat de material lleuger entre llocs de treball, inspecció d'instal·lacions i suport en tasques repetitives de línia. Aquí pesen l'autonomia, la càrrega útil i la integració amb els sistemes existents.</p><h2>Neteja professional</h2><p>Grans superfícies interiors amb rutes fixes: supermercats, estacions, naus i centres comercials. És el cas d'ús més madur i el que abans s'amortitza.</p><h2>Educació i investigació</h2><p>Universitats i centres de formació utilitzen plataformes obertes per desenvolupar i provar les seves pròpies aplicacions, amb SDK i simuladors.</p>",
+      "slug": "aplicaciones-reales-de-robots-humanoides",
+      "url": "blog/aplicaciones-reales-de-robots-humanoides.html",
+      "img": "assets/robots/rha3/hero.webp"
+    },
+    {
+      "titulo": "Cinc preguntes abans d'incorporar un robot de neteja",
+      "fecha": "2026-08-27",
+      "categoria": "Guia",
+      "resumen": "Superfície, terra, aigua, rutina diària i suport: el que convé mesurar abans de decidir.",
+      "cuerpo": "<p>Un robot de neteja autònom rendeix quan l'espai i l'operativa acompanyen. Abans de decidir, convé respondre a aquestes cinc preguntes.</p><h2>1. Quants metres cal netejar i en quant de temps?</h2><p>El rendiment es mesura en metres quadrats per hora en condicions reals, amb girs, obstacles i parades de càrrega inclosos.</p><h2>2. Com és el terra?</h2><p>No és el mateix un paviment continu que un amb juntes, reixes o desnivells. El tipus de terra marca el sistema de fregat i el consum d'aigua.</p><h2>3. On s'omple i es buida?</h2><p>Cal un punt d'aigua i un desguàs accessibles, a prop de la zona de treball i del punt de càrrega.</p><h2>4. Qui el posa en marxa cada dia?</h2><p>Convé assignar un responsable i una rutina curta d'arrencada i revisió. La majoria d'incidències s'eviten amb dos minuts de comprovació.</p><h2>5. Què passa si s'atura?</h2><p>Pregunta pel temps de resposta del suport, l'estoc de recanvis i què cobreix exactament el manteniment.</p>",
+      "slug": "cinco-preguntas-antes-de-incorporar-un-robot-de-limpieza",
+      "url": "blog/cinco-preguntas-antes-de-incorporar-un-robot-de-limpieza.html",
+      "img": "assets/robots/rhc5/vista-0.webp"
+    }
+  ],
+  "prefooter": {
+    "titulo": "Parlem del futur",
+    "texto": "Interessat a integrar robots AGIBOT o PUDU a la teva empresa o centre de recerca? Contacta'ns i t'assessorem sense compromís.",
+    "siguenos": "Segueix-nos"
+  },
+  "cta": {
+    "kicker": "Parlem?",
+    "titulo": "Porta la robòtica humanoide a la teva empresa",
+    "texto": "Explica'ns el teu projecte i t'assessorem sense compromís. T'ajudarem a trobar la solució més adequada per al teu cas.",
+    "boton": "Sol·licitar informació"
+  },
+  "contacto": {
+    "kicker": "Contacte RH·BOTS",
+    "h1": "Parlem del teu proper robot",
+    "intro": "Explica'ns què necessites i t'ajudarem a trobar la solució robòtica més adequada per a la teva empresa, esdeveniment o projecte.",
+    "empresa": "RH·BOTS — Recursos Humanoides",
+    "asesoria": {
+      "titulo": "T'assessorem sense compromís",
+      "texto": "Responem els teus dubtes, revisem el teu cas i t'orientem sobre models, usos i possibilitats.",
+      "pasos": [
+        [
+          "Explica'ns la teva idea",
+          "Ús, espai, sector o tasca que vols automatitzar."
+        ],
+        [
+          "Analitzem la millor opció",
+          "Robots humanoides, quadrúpedes, de neteja, AMR o accessoris."
+        ],
+        [
+          "Rep una proposta clara",
+          "Sense tecnicismes i adaptada als teus objectius."
+        ]
+      ]
+    },
+    "proceso": {
+      "kicker": "Com treballem",
+      "titulo": "De la consulta a la solució, pas a pas",
+      "pasos": [
+        [
+          "Escoltem",
+          "Entenem el teu objectiu, l'entorn d'ús i les necessitats reals del projecte."
+        ],
+        [
+          "Recomanem",
+          "T'orientem amb una proposta senzilla, clara i adaptada al teu cas."
+        ],
+        [
+          "Acompanyem",
+          "Resolem dubtes i t'ajudem a avançar amb seguretat en l'elecció."
+        ]
+      ]
+    },
+    "lado": {
+      "kicker": "Parlem",
+      "titulo": "Un contacte més directe, clar i humà",
+      "texto": "Omple el formulari i un especialista de RH·BOTS es posarà en contacte amb tu com més aviat millor. També pots escriure'ns directament si ho prefereixes.",
+      "especialidad": "Robòtica per a empreses i esdeveniments"
+    }
+  }
+}

@@ -32,19 +32,31 @@ e = html.escape
 # datos/productos.en.json) — lo que falte en esa capa cae al español, así
 # que una traducción a medias no rompe nunca la build.
 LANG = 'es'
-NIVEL = {'es': '', 'en': '../'}   # tramos «../» extra para bajar a /en/
+IDIOMAS = ['es', 'pt', 'en', 'fr', 'zh', 'ca']   # orden en el desplegable del menú
+NOMBRE_IDIOMA = {
+    'es': 'Español', 'pt': 'Português', 'en': 'English',
+    'fr': 'Français', 'zh': '中文', 'ca': 'Català',
+}
+
+
+def nivel(lang):
+    """Tramos «../» extra para bajar de /{lang}/ a la raíz. El español vive
+    en la raíz (sin prefijo); el resto, cada uno en su propia subcarpeta."""
+    return '' if lang == 'es' else '../'
 
 
 def _fusiona(es, capa):
-    """Superpone «capa» (inglés) sobre «es» (español), recursivo en dicts.
-    Listas y valores sueltos se sustituyen enteros si la capa los trae."""
+    """Superpone «capa» (la traducción) sobre «es» (español), recursivo en
+    dicts. Listas y valores sueltos se sustituyen enteros si la capa los
+    trae; lo que falte en la capa cae al español, así que una traducción a
+    medias no rompe nunca la build."""
     if not isinstance(capa, dict) or not isinstance(es, dict):
         return capa if capa is not None else es
     return {k: (_fusiona(es.get(k), v) if isinstance(v, dict) and isinstance(es.get(k), dict) else v)
             for k, v in {**es, **capa}.items()}
 
 
-def _carga_en(nombre):
+def _carga_json(nombre):
     ruta = os.path.join(os.path.dirname(HERE), 'datos', nombre)
     if not os.path.exists(ruta):
         return {}
@@ -52,46 +64,54 @@ def _carga_en(nombre):
         return json.load(f)
 
 
-_SITIO_EN = _carga_en('sitio.en.json')
-_PRODUCTOS_EN_POR_SLUG = _carga_en('productos.en.json')
-_ESTADOS_EN = (_PRODUCTOS_EN_POR_SLUG.pop('estados', None) or {})
-_FAMILIAS_EN = (_PRODUCTOS_EN_POR_SLUG.pop('familias', None) or [])
-_PRODUCTOS_EN_POR_SLUG.pop('productos', None)  # por si el archivo viniera con esa envoltura
-
-_NAV_ES, _HOME_ES, _CONTACTO_ES = NAV, HOME, CONTACTO
-_CTA_ES, _PREFOOTER_ES, _POSTS_ES = CTA, PREFOOTER, POSTS
-_RHBOTS_ES, _APLICACIONES_ES = RHBOTS, APLICACIONES
-_FAMILIAS_ES, _ESTADOS_ES, _PRODUCTOS_ES = FAMILIAS, ESTADOS, PRODUCTOS
+_SITIO_ES = {'nav': NAV, 'home': HOME, 'contacto': CONTACTO, 'cta': CTA,
+             'prefooter': PREFOOTER, 'posts': POSTS, 'rhbots': RHBOTS,
+             'aplicaciones': APLICACIONES}
+_PRODUCTOS_ES, _FAMILIAS_ES, _ESTADOS_ES = PRODUCTOS, FAMILIAS, ESTADOS
 
 
-def _familias_en():
-    if not _FAMILIAS_EN:
+def _familias_fusionadas(familias_capa):
+    if not familias_capa:
         return _FAMILIAS_ES
-    por_clave = {k: (n, d) for k, n, d in _FAMILIAS_EN}
+    por_clave = {k: (n, d) for k, n, d in familias_capa}
     return [[k, *por_clave.get(k, (n, d))] for k, n, d in _FAMILIAS_ES]
 
 
-def _productos_en():
-    fusion = []
-    for p in _PRODUCTOS_ES:
-        capa = _PRODUCTOS_EN_POR_SLUG.get(p['slug'])
-        fusion.append(_fusiona(p, capa) if capa else p)
-    return fusion
+def _productos_fusionados(productos_capa):
+    return [_fusiona(p, productos_capa.get(p['slug'])) if productos_capa.get(p['slug']) else p
+            for p in _PRODUCTOS_ES]
 
 
-_NAV_EN = [_fusiona(it, capa) for it, capa in
-           zip(_NAV_ES, (_SITIO_EN.get('nav') or [{}] * len(_NAV_ES)))] if _SITIO_EN.get('nav') else _NAV_ES
-_HOME_EN = _fusiona(_HOME_ES, _SITIO_EN.get('home'))
-_CONTACTO_EN = _fusiona(_CONTACTO_ES, _SITIO_EN.get('contacto'))
-_CTA_EN = _fusiona(_CTA_ES, _SITIO_EN.get('cta'))
-_PREFOOTER_EN = _fusiona(_PREFOOTER_ES, _SITIO_EN.get('prefooter'))
-_RHBOTS_EN = _fusiona(_RHBOTS_ES, _SITIO_EN.get('rhbots'))
-_APLICACIONES_EN = _fusiona(_APLICACIONES_ES, _SITIO_EN.get('aplicaciones'))
-_POSTS_EN = ([_fusiona(es, en) for es, en in zip(_POSTS_ES, _SITIO_EN['posts'])]
-             if _SITIO_EN.get('posts') and len(_SITIO_EN['posts']) == len(_POSTS_ES) else _POSTS_ES)
-_ESTADOS_EN_FUSION = _fusiona(_ESTADOS_ES, _ESTADOS_EN)
-_PRODUCTOS_EN = _productos_en()
-_FAM_NAME_EN = {k: n for k, n, _ in _familias_en()}
+# capa de traducción por idioma: {} para español (es la base), y el
+# contenido de datos/sitio.<lang>.json / productos.<lang>.json para el resto
+_SITIO_POR_LANG = {'es': _SITIO_ES}
+_PRODUCTOS_POR_LANG = {'es': _PRODUCTOS_ES}
+_FAMILIAS_POR_LANG = {'es': _FAMILIAS_ES}
+_ESTADOS_POR_LANG = {'es': _ESTADOS_ES}
+
+for _lang in IDIOMAS:
+    if _lang == 'es':
+        continue
+    _capa_sitio = _carga_json(f'sitio.{_lang}.json')
+    _capa_prod = _carga_json(f'productos.{_lang}.json')
+    _familias_capa = _capa_prod.pop('familias', None) or []
+    _estados_capa = _capa_prod.pop('estados', None) or {}
+    _capa_prod.pop('productos', None)   # por si el archivo viniera con esa envoltura
+
+    _SITIO_POR_LANG[_lang] = {k: _fusiona(_SITIO_ES.get(k), _capa_sitio.get(k)) for k in _SITIO_ES}
+    _PRODUCTOS_POR_LANG[_lang] = _productos_fusionados(_capa_prod)
+    _FAMILIAS_POR_LANG[_lang] = _familias_fusionadas(_familias_capa)
+    _ESTADOS_POR_LANG[_lang] = _fusiona(_ESTADOS_ES, _estados_capa)
+
+# los posts (artículos del blog) son una lista: si la capa no trae el mismo
+# número de entradas, mejor quedarse con el español entero que mezclar mal
+for _lang in IDIOMAS:
+    _posts_lang = _SITIO_POR_LANG[_lang].get('posts')
+    if _lang != 'es' and (not _posts_lang or len(_posts_lang) != len(POSTS)):
+        _SITIO_POR_LANG[_lang]['posts'] = POSTS
+    _nav_lang = _SITIO_POR_LANG[_lang].get('nav')
+    if _lang != 'es' and (not _nav_lang or len(_nav_lang) != len(NAV)):
+        _SITIO_POR_LANG[_lang]['nav'] = NAV
 
 
 def set_lang(lang):
@@ -101,16 +121,11 @@ def set_lang(lang):
     global LANG, NAV, HOME, CONTACTO, CTA, PREFOOTER, POSTS, RHBOTS, APLICACIONES
     global FAMILIAS, ESTADOS, PRODUCTOS, BY_SLUG, FAM_NAME
     LANG = lang
-    if lang == 'en':
-        NAV, HOME, CONTACTO = _NAV_EN, _HOME_EN, _CONTACTO_EN
-        CTA, PREFOOTER, POSTS = _CTA_EN, _PREFOOTER_EN, _POSTS_EN
-        RHBOTS, APLICACIONES = _RHBOTS_EN, _APLICACIONES_EN
-        FAMILIAS, ESTADOS, PRODUCTOS = _familias_en(), _ESTADOS_EN_FUSION, _PRODUCTOS_EN
-    else:
-        NAV, HOME, CONTACTO = _NAV_ES, _HOME_ES, _CONTACTO_ES
-        CTA, PREFOOTER, POSTS = _CTA_ES, _PREFOOTER_ES, _POSTS_ES
-        RHBOTS, APLICACIONES = _RHBOTS_ES, _APLICACIONES_ES
-        FAMILIAS, ESTADOS, PRODUCTOS = _FAMILIAS_ES, _ESTADOS_ES, _PRODUCTOS_ES
+    d = _SITIO_POR_LANG[lang]
+    NAV, HOME, CONTACTO = d['nav'], d['home'], d['contacto']
+    CTA, PREFOOTER, POSTS = d['cta'], d['prefooter'], d['posts']
+    RHBOTS, APLICACIONES = d['rhbots'], d['aplicaciones']
+    FAMILIAS, ESTADOS, PRODUCTOS = _FAMILIAS_POR_LANG[lang], _ESTADOS_POR_LANG[lang], _PRODUCTOS_POR_LANG[lang]
     BY_SLUG = {p['slug']: p for p in PRODUCTOS}
     FAM_NAME = {k: n for k, n, _ in FAMILIAS}
 
@@ -118,192 +133,159 @@ def set_lang(lang):
 # Todas las cadenas de interfaz que no vienen de datos/*.json (botones,
 # rótulos de sección, aria-labels…). t('clave') da la del idioma activo.
 TEXTOS = {
-    'saltar_contenido': ('Saltar al contenido', 'Skip to content'),
-    'ver_todo_catalogo': ('Ver todo el catálogo', 'View full catalog'),
-    'nav_inicio': ('Inicio', 'Home'),
-    'nav_robots': ('Robots', 'Robots'),
-    'carrito_titulo': ('Tu carrito', 'Your cart'),
-    'carrito_total': ('Total', 'Total'),
-    'carrito_nota_envio': ('Los gastos de envío y los impuestos se calculan al finalizar la compra.',
-                            'Shipping and taxes are calculated at checkout.'),
-    'carrito_finalizar': ('Finalizar compra', 'Checkout'),
-    'carrito_asesor': ('¿Prefieres que te asesoremos antes? Escríbenos',
-                        'Prefer to talk to us first? Get in touch'),
-    'carrito_vacio': ('Todavía no has añadido ningún robot.', "You haven't added any robots yet."),
-    'carrito_ver_catalogo': ('Ver el catálogo', 'View the catalog'),
-    'aviso_legal': ('Aviso Legal', 'Legal Notice'),
-    'politica_privacidad': ('Política de Privacidad', 'Privacy Policy'),
-    'politica_cookies': ('Política de Cookies', 'Cookie Policy'),
-    'recursos_humanoides': ('Recursos Humanoides', 'Humanoid Resources'),
-    'pide_info': ('Pide más información', 'Ask for more information'),
-    'ver_especificaciones': ('Ver especificaciones', 'View specifications'),
-    'que_es_pregunta': ('¿Qué es el {n}?', 'What is the {n}?'),
-    'aplicaciones_de': ('Aplicaciones del {n}', 'Applications of the {n}'),
-    'escenarios_encaja': ('Escenarios en los que encaja el {n}.', 'Scenarios where the {n} fits in.'),
-    'specs_tecnicas_de': ('Especificaciones técnicas del {n}', 'Technical specifications of the {n}'),
-    'ver_ficha_completa': ('Ver la ficha técnica completa', 'View the full technical sheet'),
-    'galeria_de': ('Galería del {n}', 'Gallery of the {n}'),
-    'fotos_anteriores': ('Fotos anteriores', 'Previous photos'),
-    'fotos_siguientes': ('Fotos siguientes', 'Next photos'),
-    'antes_de_ofertar': ('Antes de ofertar este modelo', 'Before quoting this model'),
-    'doc_a_solicitar': ('Documentación a solicitar al fabricante.', 'Documentation to request from the manufacturer.'),
-    'accesorios_para': ('Accesorios para el {n}', 'Accessories for the {n}'),
-    'otros_modelos_familia': ('Otros modelos de la familia', 'Other models in the range'),
-    'giralo': ('Gíralo', 'Spin it'),
-    'vista_giratoria': ('{n} — vista giratoria. Usa las flechas para girarlo.',
-                        '{n} — 360° view. Use the arrow keys to spin it.'),
-    'navegador_sin_video': ('Tu navegador no puede reproducir este vídeo.',
-                             "Your browser can't play this video."),
-    'en_video': ('El {n} en vídeo', 'The {n} on video'),
-    'sin_stock': ('Sin stock — consúltanos la disponibilidad', 'Out of stock — ask us about availability'),
-    'avisame': ('Avísame cuando esté', 'Notify me when available'),
-    'precio_consulta': ('Precio bajo consulta', 'Price on request'),
-    'pedir_presupuesto': ('Pedir presupuesto', 'Request a quote'),
-    'anadir_carrito': ('Añadir al carrito', 'Add to cart'),
-    'comprar_ahora': ('Comprar ahora', 'Buy now'),
-    'pvp': ('PVP', 'RRP'),
-    'preguntas_frecuentes': ('Preguntas frecuentes', 'Frequently asked questions'),
-    'distribuidores_oficiales': ('Distribuidores oficiales en España y Portugal',
-                                 'Official distributors in Spain and Portugal'),
-    'ver_robots': ('Ver los robots', 'View the robots'),
-    'habla_nosotros': ('Habla con nosotros', 'Talk to us'),
-    'ver_todos_modelos': ('Ver todos los modelos', 'View all models'),
-    'modelos_disponibles': ('Modelos disponibles', 'Available models'),
-    'modelos_anteriores': ('Modelos anteriores', 'Previous models'),
-    'modelos_siguientes': ('Modelos siguientes', 'Next models'),
-    'ver_modelo': ('Ver modelo', 'View model'),
-    'no_sabes_robot_titulo': ('¿No sabes qué robot encaja mejor?', 'Not sure which robot fits best?'),
-    'no_sabes_robot_texto': ('Cuéntanos tu proyecto y te ayudamos a seleccionar la familia, el modelo y la '
-                              'configuración más adecuada para tu empresa o centro.',
-                              'Tell us about your project and we\'ll help you choose the range, model and '
-                              'configuration that best suits your company or centre.'),
-    'hablar_rhbots': ('Hablar con RH·BOTS', 'Talk to RH·BOTS'),
-    'catalogo_kicker': ('Catálogo RH·BOTS', 'RH·BOTS Catalog'),
-    'catalogo_h1': ('Robots para empresas que quieren ir un paso por delante',
-                     'Robots for businesses that want to stay one step ahead'),
-    'catalogo_lede': ('Humanoides, cuadrúpedos, robots de limpieza, AMR de intralogística y '
-                       'accesorios para automatizar tareas, mejorar procesos y llevar la robótica avanzada a entornos '
-                       'reales. {n} modelos con ficha técnica completa y acompañamiento de principio a fin.',
-                       'Humanoid, quadruped and cleaning robots, intralogistics AMRs and accessories '
-                       'to automate tasks, improve processes and bring advanced robotics to real environments. '
-                       '{n} models with a full technical sheet and support from start to finish.'),
-    'solicitar_asesoramiento': ('Solicitar asesoramiento', 'Request advice'),
-    'ver_ficha_tecnica': ('Ver ficha técnica', 'View technical sheet'),
-    'robots_para_uso': ('Robots para este uso', 'Robots for this use'),
-    'cuentanos_tu_caso': ('Cuéntanos tu caso', 'Tell us about your case'),
-    'tienes_tarea_titulo': ('¿Tienes una tarea que quieres automatizar?',
-                             'Have a task you want to automate?'),
-    'tienes_tarea_texto': ('Cuéntanos tu caso y te orientamos sobre qué aplicación robótica puede encajar '
-                            'mejor en tu empresa.',
-                            'Tell us about your case and we\'ll advise you on which robotic application '
-                            'could best fit your business.'),
-    'blog_kicker': ('RH·BOTS — Blog', 'RH·BOTS — Blog'),
-    'blog_h1': ('Actualidad sobre <span class="acento">robótica humanoide</span>',
-                'News on <span class="acento">humanoid robotics</span>'),
-    'blog_lede': ('Noticias, casos de uso y recursos para entender cómo los robots humanoides '
-                   'pueden integrarse en empresas reales de forma segura, útil y medible.',
-                   'News, use cases and resources to understand how humanoid robots can be '
-                   'integrated into real businesses safely, usefully and measurably.'),
-    'ver_articulos': ('Ver artículos', 'View articles'),
-    'hablar_experto': ('Hablar con un experto', 'Talk to an expert'),
-    'destacado': ('Destacado', 'Featured'),
-    'min_lectura': ('min de lectura', 'min read'),
-    'leer_articulo': ('Leer artículo', 'Read article'),
-    'leer_mas': ('Leer más', 'Read more'),
-    'conocimiento_aplicado': ('Conocimiento aplicado', 'Applied knowledge'),
-    'ideas_claras': ('Ideas claras para tomar mejores decisiones', 'Clear ideas for better decisions'),
-    'buscar_articulos': ('Buscar artículos', 'Search articles'),
-    'buscar_articulos_placeholder': ('Buscar artículos…', 'Search articles…'),
-    'buscar': ('Buscar', 'Search'),
-    'ultimos_articulos': ('Últimos artículos', 'Latest articles'),
-    'recursos_presente': ('Recursos para entender el presente de la robótica',
-                           'Resources to understand robotics today'),
-    'todos': ('Todos', 'All'),
-    'sin_resultados_busqueda': ('No hay artículos que coincidan con tu búsqueda.',
-                                 'No articles match your search.'),
-    'preparando_articulos': ('Estamos preparando los primeros artículos', 'We are preparing our first articles'),
-    'preparando_articulos_texto': ('Aquí publicaremos novedades de producto, casos de uso de nuestros clientes y notas '
-                                    'técnicas sobre los modelos del catálogo. Mientras tanto, puedes consultar las fichas '
-                                    'técnicas o escribirnos directamente.',
-                                    "We'll publish product news, customer use cases and technical notes about our "
-                                    'catalog here. In the meantime, you can check the technical sheets or write to us directly.'),
-    'escribenos': ('Escríbenos', 'Get in touch'),
-    'necesitas_orientacion': ('¿Necesitas orientación?', 'Need guidance?'),
-    'orienta_titulo': ('Te ayudamos a entender qué robot <span class="acento">encaja con tu empresa</span>',
-                        'We help you understand which robot <span class="acento">fits your business</span>'),
-    'orienta_texto': ('Cuéntanos tu caso y nuestro equipo te asesorará sobre modelos, aplicaciones y '
-                       'próximos pasos.',
-                       "Tell us about your case and our team will advise you on models, applications and next steps."),
-    'solicitar_informacion': ('Solicitar información', 'Request information'),
-    'volver_blog': ('← Volver al blog', '← Back to blog'),
-    'pagina_404_titulo': ('Esta página no existe', "This page doesn't exist"),
-    'pagina_404_texto': ('Puede que el enlace esté mal escrito o que hayamos movido el contenido. '
-                          'Desde aquí llegas a todo:',
-                          "The link may be mistyped, or we may have moved the content. "
-                          "You can get anywhere from here:"),
-    'ir_inicio': ('Ir al inicio', 'Go to homepage'),
-    'formulario': ('Formulario', 'Form'),
-    'solicita_info': ('Solicita información', 'Request information'),
-    'respuesta_personalizada': ('Respuesta personalizada', 'Personalised reply'),
-    'nombre': ('Nombre', 'First name'),
-    'apellidos': ('Apellidos', 'Last name'),
-    'tu_nombre': ('Tu nombre', 'Your first name'),
-    'tus_apellidos': ('Tus apellidos', 'Your last name'),
-    'email': ('Email', 'Email'),
-    'telefono': ('Teléfono', 'Phone'),
-    'empresa_campo': ('Empresa', 'Company'),
-    'nombre_empresa_placeholder': ('Nombre de tu empresa', 'Your company name'),
-    'que_robot_interesa': ('¿En qué robot estás interesado?', 'Which robot are you interested in?'),
-    'selecciona_modelo': ('Selecciona un modelo', 'Select a model'),
-    'aun_no_lo_se': ('Aún no lo sé', "I don't know yet"),
-    'como_ayudarte': ('¿Cómo podemos ayudarte?', 'How can we help you?'),
-    'mensaje_placeholder': ('Cuéntanos brevemente tu proyecto, necesidad o tipo de evento…',
-                             'Briefly tell us about your project, need or type of event…'),
-    'consiento_privacidad': ('He leído y acepto la', 'I have read and accept the'),
-    'politica_privacidad_link': ('política de privacidad', 'privacy policy'),
-    'consiento_privacidad_fin': ('. Consiento el tratamiento de mis datos para recibir información comercial de RH·BOTS.',
-                                  '. I consent to the processing of my data to receive commercial information from RH·BOTS.'),
-    'enviar_mensaje': ('Enviar mensaje', 'Send message'),
-    'solicitar_asesoramiento_cta': ('Solicitar asesoramiento', 'Request advice'),
-    'escribir_email': ('Escribir por email', 'Write by email'),
-    'email_directo_etq': ('Email directo', 'Direct email'),
-    'especialistas_en': ('Especialistas en', 'Specialists in'),
-    'donde_estamos': ('Dónde estamos', 'Where we are'),
-    'llamanos_al': ('También puedes llamarnos al', 'You can also call us on'),
-    'escribenos_directamente': ('También puedes escribirnos directamente a', 'You can also write to us directly at'),
-    'aviso_legal_titulo': ('Aviso legal, privacidad y cookies', 'Legal notice, privacy and cookies'),
-    'pagina_no_encontrada': ('Página no encontrada | RH·BOTS', 'Page not found | RH·BOTS'),
-    'pagina_no_encontrada_desc': ('La página que buscas no existe o ha cambiado de sitio.',
-                                   "The page you're looking for doesn't exist or has moved."),
-    'contacto_titulo': ('Contacto | RH·BOTS', 'Contact | RH·BOTS'),
-    'blog_titulo': ('Blog | RH·BOTS', 'Blog | RH·BOTS'),
-    'blog_desc': ('Novedades, casos de uso y notas técnicas sobre robótica de servicio e industrial.',
-                   'News, use cases and technical notes on service and industrial robotics.'),
-    'aplicaciones_titulo': ('Aplicaciones de los robots RH·BOTS por sector | RH·BOTS',
-                             'RH·BOTS robots by sector | RH·BOTS'),
-    'robots_catalogo_titulo': ('Robots RH·BOTS — catálogo completo | RH·BOTS',
-                                'RH·BOTS Robots — full catalog | RH·BOTS'),
-    'robots_catalogo_desc': ('Catálogo RH·BOTS: robots humanoides, cuadrúpedos, de limpieza y AMR de '
-                              'intralogística, y accesorios, con fichas técnicas completas.',
-                              'RH·BOTS catalog: humanoid, quadruped and cleaning robots, intralogistics AMRs '
-                              'and accessories, with full technical sheets.'),
-    'inicio_titulo': ('RH·BOTS — Recursos humanoides para tu empresa', 'RH·BOTS — Humanoid resources for your business'),
-    'inicio_desc': ('Robots humanoides, cuadrúpedos, de limpieza y de intralogística. Asesoramiento, instalación, '
-                     'formación y soporte en Valencia.',
-                     'Humanoid, quadruped, cleaning and intralogistics robots. Advice, installation, '
-                     'training and support from Valencia, Spain.'),
-    'legal_meta_titulo': ('Aviso legal, privacidad y cookies | RH·BOTS', 'Legal notice, privacy and cookies | RH·BOTS'),
-    'legal_meta_desc': ('Aviso legal, política de privacidad y cookies de RH·BOTS.',
-                         "RH·BOTS's legal notice, privacy policy and cookie policy."),
-    'blog_articulo_sufijo': (' | Blog RH·BOTS', ' | RH·BOTS Blog'),
-    'lang_switch_es': ('Español', 'Spanish'),
-    'lang_switch_en': ('English', 'English'),
+    'saltar_contenido': {'es': 'Saltar al contenido', 'pt': 'Saltar para o conteúdo', 'en': 'Skip to content', 'fr': 'Passer au contenu', 'zh': '跳至内容', 'ca': 'Saltar al contingut'},
+    'ver_todo_catalogo': {'es': 'Ver todo el catálogo', 'pt': 'Ver todo o catálogo', 'en': 'View full catalog', 'fr': 'Voir tout le catalogue', 'zh': '查看完整产品目录', 'ca': 'Veure tot el catàleg'},
+    'nav_inicio': {'es': 'Inicio', 'pt': 'Início', 'en': 'Home', 'fr': 'Accueil', 'zh': '首页', 'ca': 'Inici'},
+    'nav_robots': {'es': 'Robots', 'pt': 'Robôs', 'en': 'Robots', 'fr': 'Robots', 'zh': '机器人', 'ca': 'Robots'},
+    'carrito_titulo': {'es': 'Tu carrito', 'pt': 'O seu carrinho', 'en': 'Your cart', 'fr': 'Votre panier', 'zh': '您的购物车', 'ca': 'El teu carret'},
+    'carrito_total': {'es': 'Total', 'pt': 'Total', 'en': 'Total', 'fr': 'Total', 'zh': '总计', 'ca': 'Total'},
+    'carrito_nota_envio': {'es': 'Los gastos de envío y los impuestos se calculan al finalizar la compra.', 'pt': 'Os custos de envio e os impostos são calculados na finalização da compra.', 'en': 'Shipping and taxes are calculated at checkout.', 'fr': 'Les frais de livraison et les taxes sont calculés lors du paiement.', 'zh': '运费和税费将在结算时计算。', 'ca': "Les despeses d'enviament i els impostos es calculen en finalitzar la compra."},
+    'carrito_finalizar': {'es': 'Finalizar compra', 'pt': 'Finalizar compra', 'en': 'Checkout', 'fr': 'Finaliser la commande', 'zh': '结算', 'ca': 'Finalitzar la compra'},
+    'carrito_asesor': {'es': '¿Prefieres que te asesoremos antes? Escríbenos', 'pt': 'Prefere que o aconselhemos antes? Escreva-nos', 'en': 'Prefer to talk to us first? Get in touch', 'fr': 'Vous préférez être conseillé au préalable ? Contactez-nous', 'zh': '希望先获得咨询？请联系我们', 'ca': "Prefereixes que t'assessorem abans? Escriu-nos"},
+    'carrito_vacio': {'es': 'Todavía no has añadido ningún robot.', 'pt': 'Ainda não adicionou nenhum robô.', 'en': "You haven't added any robots yet.", 'fr': "Vous n'avez encore ajouté aucun robot.", 'zh': '您还未添加任何机器人。', 'ca': 'Encara no has afegit cap robot.'},
+    'carrito_ver_catalogo': {'es': 'Ver el catálogo', 'pt': 'Ver o catálogo', 'en': 'View the catalog', 'fr': 'Voir le catalogue', 'zh': '查看产品目录', 'ca': 'Veure el catàleg'},
+    'aviso_legal': {'es': 'Aviso Legal', 'pt': 'Aviso Legal', 'en': 'Legal Notice', 'fr': 'Mentions légales', 'zh': '法律声明', 'ca': 'Avís Legal'},
+    'politica_privacidad': {'es': 'Política de Privacidad', 'pt': 'Política de Privacidade', 'en': 'Privacy Policy', 'fr': 'Politique de confidentialité', 'zh': '隐私政策', 'ca': 'Política de Privacitat'},
+    'politica_cookies': {'es': 'Política de Cookies', 'pt': 'Política de Cookies', 'en': 'Cookie Policy', 'fr': 'Politique de cookies', 'zh': 'Cookie政策', 'ca': 'Política de Cookies'},
+    'recursos_humanoides': {'es': 'Recursos Humanoides', 'pt': 'Recursos Humanoides', 'en': 'Humanoid Resources', 'fr': 'Ressources Humanoïdes', 'zh': '人形资源', 'ca': 'Recursos Humanoides'},
+    'pide_info': {'es': 'Pide más información', 'pt': 'Peça mais informações', 'en': 'Ask for more information', 'fr': "Demandez plus d'informations", 'zh': '获取更多信息', 'ca': 'Demana més informació'},
+    'ver_especificaciones': {'es': 'Ver especificaciones', 'pt': 'Ver especificações', 'en': 'View specifications', 'fr': 'Voir les spécifications', 'zh': '查看技术参数', 'ca': 'Veure especificacions'},
+    'que_es_pregunta': {'es': '¿Qué es el {n}?', 'pt': 'O que é o {n}?', 'en': 'What is the {n}?', 'fr': "Qu'est-ce que le {n} ?", 'zh': '{n} 是什么？', 'ca': 'Què és el {n}?'},
+    'aplicaciones_de': {'es': 'Aplicaciones del {n}', 'pt': 'Aplicações do {n}', 'en': 'Applications of the {n}', 'fr': 'Applications du {n}', 'zh': '{n} 的应用场景', 'ca': 'Aplicacions del {n}'},
+    'escenarios_encaja': {'es': 'Escenarios en los que encaja el {n}.', 'pt': 'Cenários em que o {n} se enquadra.', 'en': 'Scenarios where the {n} fits in.', 'fr': 'Scénarios dans lesquels le {n} trouve sa place.', 'zh': '{n} 适用的应用场景。', 'ca': 'Escenaris en què encaixa el {n}.'},
+    'specs_tecnicas_de': {'es': 'Especificaciones técnicas del {n}', 'pt': 'Especificações técnicas do {n}', 'en': 'Technical specifications of the {n}', 'fr': 'Spécifications techniques du {n}', 'zh': '{n} 的技术参数', 'ca': 'Especificacions tècniques del {n}'},
+    'ver_ficha_completa': {'es': 'Ver la ficha técnica completa', 'pt': 'Ver a ficha técnica completa', 'en': 'View the full technical sheet', 'fr': 'Voir la fiche technique complète', 'zh': '查看完整技术资料', 'ca': 'Veure la fitxa tècnica completa'},
+    'galeria_de': {'es': 'Galería del {n}', 'pt': 'Galeria do {n}', 'en': 'Gallery of the {n}', 'fr': 'Galerie du {n}', 'zh': '{n} 图库', 'ca': 'Galeria del {n}'},
+    'fotos_anteriores': {'es': 'Fotos anteriores', 'pt': 'Fotos anteriores', 'en': 'Previous photos', 'fr': 'Photos précédentes', 'zh': '上一组照片', 'ca': 'Fotos anteriors'},
+    'fotos_siguientes': {'es': 'Fotos siguientes', 'pt': 'Fotos seguintes', 'en': 'Next photos', 'fr': 'Photos suivantes', 'zh': '下一组照片', 'ca': 'Fotos següents'},
+    'antes_de_ofertar': {'es': 'Antes de ofertar este modelo', 'pt': 'Antes de orçamentar este modelo', 'en': 'Before quoting this model', 'fr': 'Avant de proposer ce modèle', 'zh': '报价此型号前须知', 'ca': 'Abans de pressupostar aquest model'},
+    'doc_a_solicitar': {'es': 'Documentación a solicitar al fabricante.', 'pt': 'Documentação a solicitar ao fabricante.', 'en': 'Documentation to request from the manufacturer.', 'fr': 'Documentation à demander au fabricant.', 'zh': '需向制造商索取的文件。', 'ca': 'Documentació que cal sol·licitar al fabricant.'},
+    'accesorios_para': {'es': 'Accesorios para el {n}', 'pt': 'Acessórios para o {n}', 'en': 'Accessories for the {n}', 'fr': 'Accessoires pour le {n}', 'zh': '{n} 配件', 'ca': 'Accessoris per al {n}'},
+    'otros_modelos_familia': {'es': 'Otros modelos de la familia', 'pt': 'Outros modelos da família', 'en': 'Other models in the range', 'fr': 'Autres modèles de la gamme', 'zh': '同系列其他型号', 'ca': 'Altres models de la família'},
+    'giralo': {'es': 'Gíralo', 'pt': 'Rode-o', 'en': 'Spin it', 'fr': 'Faites-le pivoter', 'zh': '旋转查看', 'ca': "Gira'l"},
+    'vista_giratoria': {'es': '{n} — vista giratoria. Usa las flechas para girarlo.', 'pt': '{n} — vista giratória. Use as setas para o rodar.', 'en': '{n} — 360° view. Use the arrow keys to spin it.', 'fr': '{n} — vue à 360°. Utilisez les flèches pour le faire pivoter.', 'zh': '{n} — 360° 旋转视图。使用方向键旋转。', 'ca': '{n} — vista giratòria. Utilitza les fletxes per girar-lo.'},
+    'navegador_sin_video': {'es': 'Tu navegador no puede reproducir este vídeo.', 'pt': 'O seu navegador não consegue reproduzir este vídeo.', 'en': "Your browser can't play this video.", 'fr': 'Votre navigateur ne peut pas lire cette vidéo.', 'zh': '您的浏览器无法播放此视频。', 'ca': 'El teu navegador no pot reproduir aquest vídeo.'},
+    'en_video': {'es': 'El {n} en vídeo', 'pt': 'O {n} em vídeo', 'en': 'The {n} on video', 'fr': 'Le {n} en vidéo', 'zh': '{n} 视频介绍', 'ca': 'El {n} en vídeo'},
+    'sin_stock': {'es': 'Sin stock — consúltanos la disponibilidad', 'pt': 'Sem stock — consulte-nos sobre a disponibilidade', 'en': 'Out of stock — ask us about availability', 'fr': 'Rupture de stock — contactez-nous pour connaître la disponibilité', 'zh': '暂无库存——请咨询我们了解供货情况', 'ca': "Sense estoc — consulta'ns la disponibilitat"},
+    'avisame': {'es': 'Avísame cuando esté', 'pt': 'Avise-me quando estiver disponível', 'en': 'Notify me when available', 'fr': 'Prévenez-moi quand il sera disponible', 'zh': '到货时通知我', 'ca': "Avisa'm quan estigui disponible"},
+    'precio_consulta': {'es': 'Precio bajo consulta', 'pt': 'Preço sob consulta', 'en': 'Price on request', 'fr': 'Prix sur demande', 'zh': '价格详询', 'ca': 'Preu a consultar'},
+    'pedir_presupuesto': {'es': 'Pedir presupuesto', 'pt': 'Pedir orçamento', 'en': 'Request a quote', 'fr': 'Demander un devis', 'zh': '索取报价', 'ca': 'Demanar pressupost'},
+    'anadir_carrito': {'es': 'Añadir al carrito', 'pt': 'Adicionar ao carrinho', 'en': 'Add to cart', 'fr': 'Ajouter au panier', 'zh': '加入购物车', 'ca': 'Afegir al carret'},
+    'comprar_ahora': {'es': 'Comprar ahora', 'pt': 'Comprar agora', 'en': 'Buy now', 'fr': 'Acheter maintenant', 'zh': '立即购买', 'ca': 'Comprar ara'},
+    'pvp': {'es': 'PVP', 'pt': 'PVP', 'en': 'RRP', 'fr': 'Prix public', 'zh': '建议零售价', 'ca': 'PVP'},
+    'preguntas_frecuentes': {'es': 'Preguntas frecuentes', 'pt': 'Perguntas frequentes', 'en': 'Frequently asked questions', 'fr': 'Questions fréquentes', 'zh': '常见问题', 'ca': 'Preguntes freqüents'},
+    'distribuidores_oficiales': {'es': 'Distribuidores oficiales en España y Portugal', 'pt': 'Distribuidores oficiais em Espanha e Portugal', 'en': 'Official distributors in Spain and Portugal', 'fr': 'Distributeurs officiels en Espagne et au Portugal', 'zh': '西班牙和葡萄牙官方经销商', 'ca': 'Distribuïdors oficials a Espanya i Portugal'},
+    'ver_robots': {'es': 'Ver los robots', 'pt': 'Ver os robôs', 'en': 'View the robots', 'fr': 'Voir les robots', 'zh': '查看机器人', 'ca': 'Veure els robots'},
+    'habla_nosotros': {'es': 'Habla con nosotros', 'pt': 'Fale connosco', 'en': 'Talk to us', 'fr': 'Parlez-nous', 'zh': '联系我们', 'ca': 'Parla amb nosaltres'},
+    'ver_todos_modelos': {'es': 'Ver todos los modelos', 'pt': 'Ver todos os modelos', 'en': 'View all models', 'fr': 'Voir tous les modèles', 'zh': '查看所有型号', 'ca': 'Veure tots els models'},
+    'modelos_disponibles': {'es': 'Modelos disponibles', 'pt': 'Modelos disponíveis', 'en': 'Available models', 'fr': 'Modèles disponibles', 'zh': '可选型号', 'ca': 'Models disponibles'},
+    'modelos_anteriores': {'es': 'Modelos anteriores', 'pt': 'Modelos anteriores', 'en': 'Previous models', 'fr': 'Modèles précédents', 'zh': '上一组型号', 'ca': 'Models anteriors'},
+    'modelos_siguientes': {'es': 'Modelos siguientes', 'pt': 'Modelos seguintes', 'en': 'Next models', 'fr': 'Modèles suivants', 'zh': '下一组型号', 'ca': 'Models següents'},
+    'ver_modelo': {'es': 'Ver modelo', 'pt': 'Ver modelo', 'en': 'View model', 'fr': 'Voir le modèle', 'zh': '查看型号', 'ca': 'Veure model'},
+    'no_sabes_robot_titulo': {'es': '¿No sabes qué robot encaja mejor?', 'pt': 'Não sabe que robô se adapta melhor?', 'en': 'Not sure which robot fits best?', 'fr': 'Vous ne savez pas quel robot convient le mieux ?', 'zh': '不确定哪款机器人最适合您？', 'ca': 'No saps quin robot encaixa millor?'},
+    'no_sabes_robot_texto': {'es': 'Cuéntanos tu proyecto y te ayudamos a seleccionar la familia, el modelo y la configuración más adecuada para tu empresa o centro.', 'pt': 'Conte-nos o seu projeto e ajudamo-lo a selecionar a família, o modelo e a configuração mais adequada para a sua empresa ou centro.', 'en': "Tell us about your project and we'll help you choose the range, model and configuration that best suits your company or centre.", 'fr': 'Parlez-nous de votre projet et nous vous aiderons à choisir la gamme, le modèle et la configuration les plus adaptés à votre entreprise ou établissement.', 'zh': '告诉我们您的项目需求，我们将协助您为企业或机构挑选最合适的系列、型号和配置。', 'ca': "Explica'ns el teu projecte i t'ajudem a seleccionar la família, el model i la configuració més adequada per a la teva empresa o centre."},
+    'hablar_rhbots': {'es': 'Hablar con RH·BOTS', 'pt': 'Falar com a RH·BOTS', 'en': 'Talk to RH·BOTS', 'fr': 'Parler avec RH·BOTS', 'zh': '联系 RH·BOTS', 'ca': 'Parlar amb RH·BOTS'},
+    'catalogo_kicker': {'es': 'Catálogo RH·BOTS', 'pt': 'Catálogo RH·BOTS', 'en': 'RH·BOTS Catalog', 'fr': 'Catalogue RH·BOTS', 'zh': 'RH·BOTS 产品目录', 'ca': 'Catàleg RH·BOTS'},
+    'catalogo_h1': {'es': 'Robots para empresas que quieren ir un paso por delante', 'pt': 'Robôs para empresas que querem estar um passo à frente', 'en': 'Robots for businesses that want to stay one step ahead', 'fr': "Des robots pour les entreprises qui veulent garder une longueur d'avance", 'zh': '为追求领先一步的企业打造的机器人', 'ca': 'Robots per a empreses que volen anar un pas per davant'},
+    'catalogo_lede': {'es': 'Humanoides, cuadrúpedos, robots de limpieza, AMR de intralogística y accesorios para automatizar tareas, mejorar procesos y llevar la robótica avanzada a entornos reales. {n} modelos con ficha técnica completa y acompañamiento de principio a fin.', 'pt': 'Humanoides, quadrúpedes, robôs de limpeza, AMR de intralogística e acessórios para automatizar tarefas, melhorar processos e levar a robótica avançada a ambientes reais. {n} modelos com ficha técnica completa e acompanhamento do início ao fim.', 'en': 'Humanoid, quadruped and cleaning robots, intralogistics AMRs and accessories to automate tasks, improve processes and bring advanced robotics to real environments. {n} models with a full technical sheet and support from start to finish.', 'fr': "Humanoïdes, quadrupèdes, robots de nettoyage, AMR d'intralogistique et accessoires pour automatiser des tâches, améliorer les processus et apporter la robotique avancée dans des environnements réels. {n} modèles avec fiche technique complète et accompagnement de bout en bout.", 'zh': '人形机器人、四足机器人、清洁机器人、智能物流 AMR 及配件，助力任务自动化、优化流程，将先进机器人技术引入实际应用场景。{n} 款机型，配备完整技术资料，并提供从头到尾的全程支持。', 'ca': "Humanoides, quadrúpedes, robots de neteja, AMR d'intralogística i accessoris per automatitzar tasques, millorar processos i portar la robòtica avançada a entorns reals. {n} models amb fitxa tècnica completa i acompanyament de principi a fi."},
+    'solicitar_asesoramiento': {'es': 'Solicitar asesoramiento', 'pt': 'Solicitar aconselhamento', 'en': 'Request advice', 'fr': 'Demander conseil', 'zh': '申请咨询', 'ca': 'Sol·licitar assessorament'},
+    'ver_ficha_tecnica': {'es': 'Ver ficha técnica', 'pt': 'Ver ficha técnica', 'en': 'View technical sheet', 'fr': 'Voir la fiche technique', 'zh': '查看技术资料', 'ca': 'Veure fitxa tècnica'},
+    'robots_para_uso': {'es': 'Robots para este uso', 'pt': 'Robôs para este uso', 'en': 'Robots for this use', 'fr': 'Robots pour cet usage', 'zh': '适用于此场景的机器人', 'ca': 'Robots per a aquest ús'},
+    'cuentanos_tu_caso': {'es': 'Cuéntanos tu caso', 'pt': 'Conte-nos o seu caso', 'en': 'Tell us about your case', 'fr': 'Parlez-nous de votre cas', 'zh': '告诉我们您的需求', 'ca': "Explica'ns el teu cas"},
+    'tienes_tarea_titulo': {'es': '¿Tienes una tarea que quieres automatizar?', 'pt': 'Tem uma tarefa que quer automatizar?', 'en': 'Have a task you want to automate?', 'fr': 'Vous avez une tâche que vous souhaitez automatiser ?', 'zh': '有想要实现自动化的任务吗？', 'ca': 'Tens una tasca que vols automatitzar?'},
+    'tienes_tarea_texto': {'es': 'Cuéntanos tu caso y te orientamos sobre qué aplicación robótica puede encajar mejor en tu empresa.', 'pt': 'Conte-nos o seu caso e orientamo-lo sobre que aplicação robótica pode encaixar melhor na sua empresa.', 'en': "Tell us about your case and we'll advise you on which robotic application could best fit your business.", 'fr': "Parlez-nous de votre cas et nous vous orienterons vers l'application robotique la plus adaptée à votre entreprise.", 'zh': '告诉我们您的情况，我们将为您推荐最适合贵公司的机器人应用方案。', 'ca': "Explica'ns el teu cas i t'orientem sobre quina aplicació robòtica pot encaixar millor a la teva empresa."},
+    'blog_kicker': {'es': 'RH·BOTS — Blog', 'pt': 'RH·BOTS — Blog', 'en': 'RH·BOTS — Blog', 'fr': 'RH·BOTS — Blog', 'zh': 'RH·BOTS — 博客', 'ca': 'RH·BOTS — Blog'},
+    'blog_h1': {'es': 'Actualidad sobre <span class="acento">robótica humanoide</span>', 'pt': 'Atualidade sobre <span class="acento">robótica humanoide</span>', 'en': 'News on <span class="acento">humanoid robotics</span>', 'fr': 'Actualité sur <span class="acento">la robotique humanoïde</span>', 'zh': '关于<span class="acento">人形机器人技术</span>的最新资讯', 'ca': 'Actualitat sobre <span class="acento">robòtica humanoide</span>'},
+    'blog_lede': {'es': 'Noticias, casos de uso y recursos para entender cómo los robots humanoides pueden integrarse en empresas reales de forma segura, útil y medible.', 'pt': 'Notícias, casos de uso e recursos para compreender como os robôs humanoides podem integrar-se em empresas reais de forma segura, útil e mensurável.', 'en': 'News, use cases and resources to understand how humanoid robots can be integrated into real businesses safely, usefully and measurably.', 'fr': "Actualités, cas d'usage et ressources pour comprendre comment les robots humanoïdes peuvent s'intégrer dans des entreprises réelles de manière sûre, utile et mesurable.", 'zh': '新闻资讯、应用案例和资源，帮助您了解人形机器人如何以安全、实用且可衡量的方式融入实际企业运营。', 'ca': "Notícies, casos d'ús i recursos per entendre com els robots humanoides poden integrar-se en empreses reals de manera segura, útil i mesurable."},
+    'ver_articulos': {'es': 'Ver artículos', 'pt': 'Ver artigos', 'en': 'View articles', 'fr': 'Voir les articles', 'zh': '查看文章', 'ca': 'Veure articles'},
+    'hablar_experto': {'es': 'Hablar con un experto', 'pt': 'Falar com um especialista', 'en': 'Talk to an expert', 'fr': 'Parler à un expert', 'zh': '咨询专家', 'ca': 'Parlar amb un expert'},
+    'destacado': {'es': 'Destacado', 'pt': 'Destaque', 'en': 'Featured', 'fr': 'À la une', 'zh': '精选', 'ca': 'Destacat'},
+    'min_lectura': {'es': 'min de lectura', 'pt': 'min de leitura', 'en': 'min read', 'fr': 'min de lecture', 'zh': '分钟阅读', 'ca': 'min de lectura'},
+    'leer_articulo': {'es': 'Leer artículo', 'pt': 'Ler artigo', 'en': 'Read article', 'fr': "Lire l'article", 'zh': '阅读文章', 'ca': 'Llegir article'},
+    'leer_mas': {'es': 'Leer más', 'pt': 'Ler mais', 'en': 'Read more', 'fr': 'Lire la suite', 'zh': '阅读更多', 'ca': 'Llegir més'},
+    'conocimiento_aplicado': {'es': 'Conocimiento aplicado', 'pt': 'Conhecimento aplicado', 'en': 'Applied knowledge', 'fr': 'Connaissances appliquées', 'zh': '实用知识', 'ca': 'Coneixement aplicat'},
+    'ideas_claras': {'es': 'Ideas claras para tomar mejores decisiones', 'pt': 'Ideias claras para tomar melhores decisões', 'en': 'Clear ideas for better decisions', 'fr': 'Des idées claires pour mieux décider', 'zh': '清晰的思路，助您做出更好的决策', 'ca': 'Idees clares per prendre millors decisions'},
+    'buscar_articulos': {'es': 'Buscar artículos', 'pt': 'Pesquisar artigos', 'en': 'Search articles', 'fr': 'Rechercher des articles', 'zh': '搜索文章', 'ca': 'Cercar articles'},
+    'buscar_articulos_placeholder': {'es': 'Buscar artículos…', 'pt': 'Pesquisar artigos…', 'en': 'Search articles…', 'fr': 'Rechercher des articles…', 'zh': '搜索文章……', 'ca': 'Cercar articles…'},
+    'buscar': {'es': 'Buscar', 'pt': 'Pesquisar', 'en': 'Search', 'fr': 'Rechercher', 'zh': '搜索', 'ca': 'Cercar'},
+    'ultimos_articulos': {'es': 'Últimos artículos', 'pt': 'Últimos artigos', 'en': 'Latest articles', 'fr': 'Derniers articles', 'zh': '最新文章', 'ca': 'Últims articles'},
+    'recursos_presente': {'es': 'Recursos para entender el presente de la robótica', 'pt': 'Recursos para compreender o presente da robótica', 'en': 'Resources to understand robotics today', 'fr': "Des ressources pour comprendre la robotique d'aujourd'hui", 'zh': '了解机器人技术现状的资源', 'ca': 'Recursos per entendre el present de la robòtica'},
+    'todos': {'es': 'Todos', 'pt': 'Todos', 'en': 'All', 'fr': 'Tous', 'zh': '全部', 'ca': 'Tots'},
+    'sin_resultados_busqueda': {'es': 'No hay artículos que coincidan con tu búsqueda.', 'pt': 'Não há artigos que correspondam à sua pesquisa.', 'en': 'No articles match your search.', 'fr': 'Aucun article ne correspond à votre recherche.', 'zh': '没有与您的搜索匹配的文章。', 'ca': 'No hi ha articles que coincideixin amb la teva cerca.'},
+    'preparando_articulos': {'es': 'Estamos preparando los primeros artículos', 'pt': 'Estamos a preparar os primeiros artigos', 'en': 'We are preparing our first articles', 'fr': 'Nous préparons nos premiers articles', 'zh': '我们正在准备首批文章', 'ca': 'Estem preparant els primers articles'},
+    'preparando_articulos_texto': {'es': 'Aquí publicaremos novedades de producto, casos de uso de nuestros clientes y notas técnicas sobre los modelos del catálogo. Mientras tanto, puedes consultar las fichas técnicas o escribirnos directamente.', 'pt': 'Aqui publicaremos novidades de produto, casos de uso dos nossos clientes e notas técnicas sobre os modelos do catálogo. Entretanto, pode consultar as fichas técnicas ou escrever-nos diretamente.', 'en': "We'll publish product news, customer use cases and technical notes about our catalog here. In the meantime, you can check the technical sheets or write to us directly.", 'fr': "Nous y publierons des nouveautés produit, des cas d'usage de nos clients et des notes techniques sur les modèles du catalogue. En attendant, vous pouvez consulter les fiches techniques ou nous écrire directement.", 'zh': '我们将在这里发布产品动态、客户应用案例以及产品目录中各型号的技术说明。与此同时，您可以查阅技术资料或直接与我们联系。', 'ca': "Aquí publicarem novetats de producte, casos d'ús dels nostres clients i notes tècniques sobre els models del catàleg. Mentrestant, pots consultar les fitxes tècniques o escriure'ns directament."},
+    'escribenos': {'es': 'Escríbenos', 'pt': 'Escreva-nos', 'en': 'Get in touch', 'fr': 'Contactez-nous', 'zh': '联系我们', 'ca': 'Escriu-nos'},
+    'necesitas_orientacion': {'es': '¿Necesitas orientación?', 'pt': 'Precisa de orientação?', 'en': 'Need guidance?', 'fr': "Besoin d'être orienté ?", 'zh': '需要指导建议吗？', 'ca': 'Necessites orientació?'},
+    'orienta_titulo': {'es': 'Te ayudamos a entender qué robot <span class="acento">encaja con tu empresa</span>', 'pt': 'Ajudamo-lo a compreender que robô <span class="acento">se adapta à sua empresa</span>', 'en': 'We help you understand which robot <span class="acento">fits your business</span>', 'fr': 'Nous vous aidons à comprendre quel robot <span class="acento">convient à votre entreprise</span>', 'zh': '我们帮您了解哪款机器人<span class="acento">适合您的企业</span>', 'ca': 'T\'ajudem a entendre quin robot <span class="acento">encaixa amb la teva empresa</span>'},
+    'orienta_texto': {'es': 'Cuéntanos tu caso y nuestro equipo te asesorará sobre modelos, aplicaciones y próximos pasos.', 'pt': 'Conte-nos o seu caso e a nossa equipa aconselhá-lo-á sobre modelos, aplicações e próximos passos.', 'en': 'Tell us about your case and our team will advise you on models, applications and next steps.', 'fr': 'Parlez-nous de votre cas et notre équipe vous conseillera sur les modèles, les applications et les prochaines étapes.', 'zh': '告诉我们您的情况，我们的团队将为您提供关于型号、应用方案及后续步骤的建议。', 'ca': "Explica'ns el teu cas i el nostre equip t'assessorarà sobre models, aplicacions i propers passos."},
+    'solicitar_informacion': {'es': 'Solicitar información', 'pt': 'Solicitar informação', 'en': 'Request information', 'fr': 'Demander des informations', 'zh': '索取资料', 'ca': 'Sol·licitar informació'},
+    'volver_blog': {'es': '← Volver al blog', 'pt': '← Voltar ao blog', 'en': '← Back to blog', 'fr': '← Retour au blog', 'zh': '← 返回博客', 'ca': '← Tornar al blog'},
+    'pagina_404_titulo': {'es': 'Esta página no existe', 'pt': 'Esta página não existe', 'en': "This page doesn't exist", 'fr': "Cette page n'existe pas", 'zh': '该页面不存在', 'ca': 'Aquesta pàgina no existeix'},
+    'pagina_404_texto': {'es': 'Puede que el enlace esté mal escrito o que hayamos movido el contenido. Desde aquí llegas a todo:', 'pt': 'O link pode estar mal escrito ou podemos ter movido o conteúdo. A partir daqui chega a tudo:', 'en': 'The link may be mistyped, or we may have moved the content. You can get anywhere from here:', 'fr': 'Le lien est peut-être mal orthographié, ou nous avons déplacé le contenu. Vous pouvez tout retrouver depuis ici :', 'zh': '链接可能有误，或内容已被移动。您可以从这里访问全部内容：', 'ca': "Pot ser que l'enllaç estigui mal escrit o que hàgim mogut el contingut. Des d'aquí arribes a tot:"},
+    'ir_inicio': {'es': 'Ir al inicio', 'pt': 'Ir para o início', 'en': 'Go to homepage', 'fr': "Aller à l'accueil", 'zh': '返回首页', 'ca': "Anar a l'inici"},
+    'formulario': {'es': 'Formulario', 'pt': 'Formulário', 'en': 'Form', 'fr': 'Formulaire', 'zh': '表单', 'ca': 'Formulari'},
+    'solicita_info': {'es': 'Solicita información', 'pt': 'Solicite informação', 'en': 'Request information', 'fr': 'Demandez des informations', 'zh': '索取资料', 'ca': 'Sol·licita informació'},
+    'respuesta_personalizada': {'es': 'Respuesta personalizada', 'pt': 'Resposta personalizada', 'en': 'Personalised reply', 'fr': 'Réponse personnalisée', 'zh': '个性化回复', 'ca': 'Resposta personalitzada'},
+    'nombre': {'es': 'Nombre', 'pt': 'Nome', 'en': 'First name', 'fr': 'Prénom', 'zh': '名字', 'ca': 'Nom'},
+    'apellidos': {'es': 'Apellidos', 'pt': 'Apelido', 'en': 'Last name', 'fr': 'Nom', 'zh': '姓氏', 'ca': 'Cognoms'},
+    'tu_nombre': {'es': 'Tu nombre', 'pt': 'O seu nome', 'en': 'Your first name', 'fr': 'Votre prénom', 'zh': '您的名字', 'ca': 'El teu nom'},
+    'tus_apellidos': {'es': 'Tus apellidos', 'pt': 'O seu apelido', 'en': 'Your last name', 'fr': 'Votre nom', 'zh': '您的姓氏', 'ca': 'Els teus cognoms'},
+    'email': {'es': 'Email', 'pt': 'Email', 'en': 'Email', 'fr': 'E-mail', 'zh': '邮箱', 'ca': 'Email'},
+    'telefono': {'es': 'Teléfono', 'pt': 'Telefone', 'en': 'Phone', 'fr': 'Téléphone', 'zh': '电话', 'ca': 'Telèfon'},
+    'empresa_campo': {'es': 'Empresa', 'pt': 'Empresa', 'en': 'Company', 'fr': 'Entreprise', 'zh': '公司', 'ca': 'Empresa'},
+    'nombre_empresa_placeholder': {'es': 'Nombre de tu empresa', 'pt': 'Nome da sua empresa', 'en': 'Your company name', 'fr': 'Nom de votre entreprise', 'zh': '您的公司名称', 'ca': 'Nom de la teva empresa'},
+    'que_robot_interesa': {'es': '¿En qué robot estás interesado?', 'pt': 'Em que robô está interessado?', 'en': 'Which robot are you interested in?', 'fr': 'Quel robot vous intéresse ?', 'zh': '您对哪款机器人感兴趣？', 'ca': 'En quin robot estàs interessat?'},
+    'selecciona_modelo': {'es': 'Selecciona un modelo', 'pt': 'Selecione um modelo', 'en': 'Select a model', 'fr': 'Sélectionnez un modèle', 'zh': '请选择型号', 'ca': 'Selecciona un model'},
+    'aun_no_lo_se': {'es': 'Aún no lo sé', 'pt': 'Ainda não sei', 'en': "I don't know yet", 'fr': 'Je ne sais pas encore', 'zh': '暂不确定', 'ca': 'Encara no ho sé'},
+    'como_ayudarte': {'es': '¿Cómo podemos ayudarte?', 'pt': 'Como podemos ajudá-lo?', 'en': 'How can we help you?', 'fr': 'Comment pouvons-nous vous aider ?', 'zh': '我们能为您提供什么帮助？', 'ca': 'Com et podem ajudar?'},
+    'mensaje_placeholder': {'es': 'Cuéntanos brevemente tu proyecto, necesidad o tipo de evento…', 'pt': 'Conte-nos brevemente o seu projeto, necessidade ou tipo de evento…', 'en': 'Briefly tell us about your project, need or type of event…', 'fr': "Décrivez-nous brièvement votre projet, votre besoin ou le type d'événement…", 'zh': '请简要介绍您的项目、需求或活动类型……', 'ca': "Explica'ns breument el teu projecte, necessitat o tipus d'esdeveniment…"},
+    'consiento_privacidad': {'es': 'He leído y acepto la', 'pt': 'Li e aceito a', 'en': 'I have read and accept the', 'fr': "J'ai lu et j'accepte la", 'zh': '我已阅读并接受', 'ca': 'He llegit i accepto la'},
+    'politica_privacidad_link': {'es': 'política de privacidad', 'pt': 'política de privacidade', 'en': 'privacy policy', 'fr': 'politique de confidentialité', 'zh': '隐私政策', 'ca': 'política de privacitat'},
+    'consiento_privacidad_fin': {'es': '. Consiento el tratamiento de mis datos para recibir información comercial de RH·BOTS.', 'pt': '. Consinto o tratamento dos meus dados para receber informação comercial da RH·BOTS.', 'en': '. I consent to the processing of my data to receive commercial information from RH·BOTS.', 'fr': '. Je consens au traitement de mes données pour recevoir des informations commerciales de RH·BOTS.', 'zh': '。我同意 RH·BOTS 处理我的个人数据，以接收商业信息。', 'ca': '. Consento el tractament de les meves dades per rebre informació comercial de RH·BOTS.'},
+    'enviar_mensaje': {'es': 'Enviar mensaje', 'pt': 'Enviar mensagem', 'en': 'Send message', 'fr': 'Envoyer le message', 'zh': '发送信息', 'ca': 'Enviar missatge'},
+    'solicitar_asesoramiento_cta': {'es': 'Solicitar asesoramiento', 'pt': 'Solicitar aconselhamento', 'en': 'Request advice', 'fr': 'Demander conseil', 'zh': '申请咨询', 'ca': 'Sol·licitar assessorament'},
+    'escribir_email': {'es': 'Escribir por email', 'pt': 'Escrever por email', 'en': 'Write by email', 'fr': 'Écrire par e-mail', 'zh': '发送邮件', 'ca': 'Escriure per email'},
+    'email_directo_etq': {'es': 'Email directo', 'pt': 'Email direto', 'en': 'Direct email', 'fr': 'E-mail direct', 'zh': '直接邮箱', 'ca': 'Email directe'},
+    'especialistas_en': {'es': 'Especialistas en', 'pt': 'Especialistas em', 'en': 'Specialists in', 'fr': 'Spécialistes en', 'zh': '专业领域', 'ca': 'Especialistes en'},
+    'donde_estamos': {'es': 'Dónde estamos', 'pt': 'Onde estamos', 'en': 'Where we are', 'fr': 'Où nous trouver', 'zh': '我们的位置', 'ca': 'On som'},
+    'llamanos_al': {'es': 'También puedes llamarnos al', 'pt': 'Também pode ligar-nos para o', 'en': 'You can also call us on', 'fr': 'Vous pouvez aussi nous appeler au', 'zh': '您也可以致电', 'ca': 'També ens pots trucar al'},
+    'escribenos_directamente': {'es': 'También puedes escribirnos directamente a', 'pt': 'Também pode escrever-nos diretamente para', 'en': 'You can also write to us directly at', 'fr': 'Vous pouvez aussi nous écrire directement à', 'zh': '您也可以直接发邮件至', 'ca': 'També ens pots escriure directament a'},
+    'aviso_legal_titulo': {'es': 'Aviso legal, privacidad y cookies', 'pt': 'Aviso legal, privacidade e cookies', 'en': 'Legal notice, privacy and cookies', 'fr': 'Mentions légales, confidentialité et cookies', 'zh': '法律声明、隐私与Cookie政策', 'ca': 'Avís legal, privacitat i cookies'},
+    'pagina_no_encontrada': {'es': 'Página no encontrada | RH·BOTS', 'pt': 'Página não encontrada | RH·BOTS', 'en': 'Page not found | RH·BOTS', 'fr': 'Page non trouvée | RH·BOTS', 'zh': '页面未找到 | RH·BOTS', 'ca': 'Pàgina no trobada | RH·BOTS'},
+    'pagina_no_encontrada_desc': {'es': 'La página que buscas no existe o ha cambiado de sitio.', 'pt': 'A página que procura não existe ou mudou de sítio.', 'en': "The page you're looking for doesn't exist or has moved.", 'fr': "La page que vous recherchez n'existe pas ou a changé d'adresse.", 'zh': '您访问的页面不存在或已移动。', 'ca': 'La pàgina que busques no existeix o ha canviat de lloc.'},
+    'contacto_titulo': {'es': 'Contacto | RH·BOTS', 'pt': 'Contacto | RH·BOTS', 'en': 'Contact | RH·BOTS', 'fr': 'Contact | RH·BOTS', 'zh': '联系我们 | RH·BOTS', 'ca': 'Contacte | RH·BOTS'},
+    'blog_titulo': {'es': 'Blog | RH·BOTS', 'pt': 'Blog | RH·BOTS', 'en': 'Blog | RH·BOTS', 'fr': 'Blog | RH·BOTS', 'zh': '博客 | RH·BOTS', 'ca': 'Blog | RH·BOTS'},
+    'blog_desc': {'es': 'Novedades, casos de uso y notas técnicas sobre robótica de servicio e industrial.', 'pt': 'Novidades, casos de uso e notas técnicas sobre robótica de serviço e industrial.', 'en': 'News, use cases and technical notes on service and industrial robotics.', 'fr': "Actualités, cas d'usage et notes techniques sur la robotique de service et industrielle.", 'zh': '关于服务机器人和工业机器人的最新资讯、应用案例和技术说明。', 'ca': "Novetats, casos d'ús i notes tècniques sobre robòtica de servei i industrial."},
+    'aplicaciones_titulo': {'es': 'Aplicaciones de los robots RH·BOTS por sector | RH·BOTS', 'pt': 'Aplicações dos robôs RH·BOTS por setor | RH·BOTS', 'en': 'RH·BOTS robots by sector | RH·BOTS', 'fr': 'Applications des robots RH·BOTS par secteur | RH·BOTS', 'zh': 'RH·BOTS 机器人行业应用 | RH·BOTS', 'ca': 'Aplicacions dels robots RH·BOTS per sector | RH·BOTS'},
+    'robots_catalogo_titulo': {'es': 'Robots RH·BOTS — catálogo completo | RH·BOTS', 'pt': 'Robôs RH·BOTS — catálogo completo | RH·BOTS', 'en': 'RH·BOTS Robots — full catalog | RH·BOTS', 'fr': 'Robots RH·BOTS — catalogue complet | RH·BOTS', 'zh': 'RH·BOTS 机器人——完整产品目录 | RH·BOTS', 'ca': 'Robots RH·BOTS — catàleg complet | RH·BOTS'},
+    'robots_catalogo_desc': {'es': 'Catálogo RH·BOTS: robots humanoides, cuadrúpedos, de limpieza y AMR de intralogística, y accesorios, con fichas técnicas completas.', 'pt': 'Catálogo RH·BOTS: robôs humanoides, quadrúpedes, de limpeza e AMR de intralogística, e acessórios, com fichas técnicas completas.', 'en': 'RH·BOTS catalog: humanoid, quadruped and cleaning robots, intralogistics AMRs and accessories, with full technical sheets.', 'fr': "Catalogue RH·BOTS : robots humanoïdes, quadrupèdes, de nettoyage et AMR d'intralogistique, ainsi que des accessoires, avec fiches techniques complètes.", 'zh': 'RH·BOTS 产品目录：人形机器人、四足机器人、清洁机器人、智能物流 AMR 及配件，配备完整技术资料。', 'ca': "Catàleg RH·BOTS: robots humanoides, quadrúpedes, de neteja i AMR d'intralogística, i accessoris, amb fitxes tècniques completes."},
+    'inicio_titulo': {'es': 'RH·BOTS — Recursos humanoides para tu empresa', 'pt': 'RH·BOTS — Recursos humanoides para a sua empresa', 'en': 'RH·BOTS — Humanoid resources for your business', 'fr': 'RH·BOTS — Ressources humanoïdes pour votre entreprise', 'zh': 'RH·BOTS — 为企业提供人形资源', 'ca': 'RH·BOTS — Recursos humanoides per a la teva empresa'},
+    'inicio_desc': {'es': 'Robots humanoides, cuadrúpedos, de limpieza y de intralogística. Asesoramiento, instalación, formación y soporte en Valencia.', 'pt': 'Robôs humanoides, quadrúpedes, de limpeza e de intralogística. Aconselhamento, instalação, formação e suporte em Valência.', 'en': 'Humanoid, quadruped, cleaning and intralogistics robots. Advice, installation, training and support from Valencia, Spain.', 'fr': "Robots humanoïdes, quadrupèdes, de nettoyage et d'intralogistique. Conseil, installation, formation et assistance à Valencia.", 'zh': '人形机器人、四足机器人、清洁机器人及物流机器人。在巴伦西亚为您提供咨询、安装、培训与支持服务。', 'ca': "Robots humanoides, quadrúpedes, de neteja i d'intralogística. Assessorament, instal·lació, formació i suport a València."},
+    'legal_meta_titulo': {'es': 'Aviso legal, privacidad y cookies | RH·BOTS', 'pt': 'Aviso legal, privacidade e cookies | RH·BOTS', 'en': 'Legal notice, privacy and cookies | RH·BOTS', 'fr': 'Mentions légales, confidentialité et cookies | RH·BOTS', 'zh': '法律声明、隐私与Cookie政策 | RH·BOTS', 'ca': 'Avís legal, privacitat i cookies | RH·BOTS'},
+    'legal_meta_desc': {'es': 'Aviso legal, política de privacidad y cookies de RH·BOTS.', 'pt': 'Aviso legal, política de privacidade e cookies da RH·BOTS.', 'en': "RH·BOTS's legal notice, privacy policy and cookie policy.", 'fr': 'Mentions légales, politique de confidentialité et cookies de RH·BOTS.', 'zh': 'RH·BOTS 的法律声明、隐私政策与Cookie政策。', 'ca': 'Avís legal, política de privacitat i cookies de RH·BOTS.'},
+    'blog_articulo_sufijo': {'es': ' | Blog RH·BOTS', 'pt': ' | Blog RH·BOTS', 'en': ' | RH·BOTS Blog', 'fr': ' | Blog RH·BOTS', 'zh': ' | RH·BOTS 博客', 'ca': ' | Blog RH·BOTS'},
+    'lang_switch_boton': {'es': 'Cambiar idioma', 'pt': 'Mudar de idioma', 'en': 'Change language', 'fr': 'Changer de langue', 'zh': '切换语言', 'ca': 'Canvia d\'idioma'},
+    'carrito_abrir_boton': {'es': 'Abrir el carrito', 'pt': 'Abrir o carrinho', 'en': 'Open the cart', 'fr': 'Ouvrir le panier', 'zh': '打开购物车', 'ca': 'Obrir el carret'},
+    'carrito_cerrar_boton': {'es': 'Cerrar el carrito', 'pt': 'Fechar o carrinho', 'en': 'Close the cart', 'fr': 'Fermer le panier', 'zh': '关闭购物车', 'ca': 'Tancar el carret'},
+    'nav_ver_familias_aria': {'es': 'Ver familias y modelos de robots', 'pt': 'Ver famílias e modelos de robôs',
+                               'en': 'View robot families and models', 'fr': 'Voir les familles et modèles de robots',
+                               'zh': '查看机器人系列和型号', 'ca': 'Veure famílies i models de robots'},
+    'nav_principal_aria': {'es': 'Navegación principal', 'pt': 'Navegação principal', 'en': 'Main navigation',
+                            'fr': 'Navigation principale', 'zh': '主导航', 'ca': 'Navegació principal'},
+    'nav_abrir_menu': {'es': 'Abrir menú', 'pt': 'Abrir menu', 'en': 'Open menu', 'fr': 'Ouvrir le menu',
+                        'zh': '打开菜单', 'ca': 'Obre el menú'},
+    'nav_cerrar_menu': {'es': 'Cerrar menú', 'pt': 'Fechar menu', 'en': 'Close menu', 'fr': 'Fermer le menu',
+                         'zh': '关闭菜单', 'ca': 'Tanca el menú'},
+    'marcas_distribuimos_aria': {'es': 'Marcas que distribuimos', 'pt': 'Marcas que distribuímos',
+                                  'en': 'Brands we distribute', 'fr': 'Marques que nous distribuons',
+                                  'zh': '我们经销的品牌', 'ca': 'Marques que distribuïm'},
+    'filtrar_categoria_aria': {'es': 'Filtrar por categoría', 'pt': 'Filtrar por categoria', 'en': 'Filter by category',
+                                'fr': 'Filtrer par catégorie', 'zh': '按类别筛选', 'ca': 'Filtrar per categoria'},
 }
 
 
 def t(clave, **kw):
-    es, en = TEXTOS[clave]
-    txt = en if LANG == 'en' else es
+    txt = TEXTOS[clave][LANG]
     return txt.format(**kw) if kw else txt
 
 
@@ -385,13 +367,25 @@ def schema_organization():
         'url': dominio + '/',
         'logo': f'{dominio}/assets/logo-rhbots.png',
         'image': f'{dominio}/{SEO["og_imagen"]}',
-        'description': (
-            'Official distributor of AGIBOT and PUDU in Spain and Portugal: autonomous cleaning, '
-            'humanoid and quadruped robots, intralogistics AMRs and accessories, with advice, installation, '
-            'training and maintenance.' if LANG == 'en' else
-            'Distribuidor oficial de AGIBOT y PUDU en España y Portugal: robots de limpieza '
-            'autónoma, humanoides, cuadrúpedos, AMR de intralogística y accesorios, con asesoramiento, instalación, '
-            'formación y mantenimiento.'),
+        'description': {
+            'es': 'Distribuidor oficial de AGIBOT y PUDU en España y Portugal: robots de limpieza '
+                  'autónoma, humanoides, cuadrúpedos, AMR de intralogística y accesorios, con asesoramiento, instalación, '
+                  'formación y mantenimiento.',
+            'pt': 'Distribuidor oficial da AGIBOT e da PUDU em Espanha e Portugal: robôs de limpeza '
+                  'autónoma, humanoides, quadrúpedes, AMR de intralogística e acessórios, com aconselhamento, instalação, '
+                  'formação e manutenção.',
+            'en': 'Official distributor of AGIBOT and PUDU in Spain and Portugal: autonomous cleaning, '
+                  'humanoid and quadruped robots, intralogistics AMRs and accessories, with advice, installation, '
+                  'training and maintenance.',
+            'fr': 'Distributeur officiel d\'AGIBOT et de PUDU en Espagne et au Portugal : robots de nettoyage '
+                  'autonome, humanoïdes, quadrupèdes, AMR d\'intralogistique et accessoires, avec conseil, installation, '
+                  'formation et maintenance.',
+            'zh': 'AGIBOT和PUDU在西班牙和葡萄牙的官方经销商：自主清洁机器人、人形机器人、四足机器人、AMR移动机器人及配件，'
+                  '提供咨询、安装、培训和维护服务。',
+            'ca': 'Distribuïdor oficial d\'AGIBOT i PUDU a Espanya i Portugal: robots de neteja '
+                  'autònoma, humanoides, quadrúpedes, AMR d\'intralogística i accessoris, amb assessorament, instal·lació, '
+                  'formació i manteniment.',
+        }[LANG],
         'inLanguage': LANG,
         'areaServed': ['ES', 'PT'],
         'address': {
@@ -575,12 +569,17 @@ def head(title, desc, base, ruta='', extra_css=True, og_img=None, extra_jsonld=N
     desc = _recorta(desc, 158)
     dominio = SEO['dominio'].rstrip('/')
     limpia = '' if ruta == 'index.html' else ruta
-    canonical = f'{dominio}/{"en/" if LANG == "en" else ""}{limpia}' if limpia else f'{dominio}/{"en/" if LANG == "en" else ""}'
-    alterno_es = f'{dominio}/{limpia}' if limpia else dominio + '/'
-    alterno_en = f'{dominio}/en/{limpia}' if limpia else f'{dominio}/en/'
-    hreflang = (f'<link rel="alternate" hreflang="es" href="{e(alterno_es)}">\n'
-               f'<link rel="alternate" hreflang="en" href="{e(alterno_en)}">\n'
-               f'<link rel="alternate" hreflang="x-default" href="{e(alterno_es)}">\n')
+    prefijo_actual = f'{LANG}/' if LANG != 'es' else ''
+    canonical = f'{dominio}/{prefijo_actual}{limpia}' if limpia else f'{dominio}/{prefijo_actual}'
+    hreflang = ''
+    alterno_es = ''
+    for cod in IDIOMAS:
+        prefijo = f'{cod}/' if cod != 'es' else ''
+        alterno = f'{dominio}/{prefijo}{limpia}' if limpia else f'{dominio}/{prefijo}'
+        if cod == 'es':
+            alterno_es = alterno
+        hreflang += f'<link rel="alternate" hreflang="{cod}" href="{e(alterno)}">\n'
+    hreflang += f'<link rel="alternate" hreflang="x-default" href="{e(alterno_es)}">\n'
     imagen = f'{dominio}/{og_img or SEO["og_imagen"]}'
     tw = (f'<meta name="twitter:site" content="{e(SEO["twitter"])}">\n'
           if SEO.get('twitter') else '')
@@ -630,7 +629,7 @@ def boton_carrito(base):
     if not TIENDA.get('activa'):
         return ''
     return (f'<button class="carrito-abrir" type="button" data-carrito-abrir '
-            f'aria-label="Abrir el carrito" aria-controls="carrito" aria-expanded="false">'
+            f'aria-label="{t("carrito_abrir_boton")}" aria-controls="carrito" aria-expanded="false">'
             f'{ICONO_CARRITO}<span class="carrito-abrir__num" data-carrito-num hidden>0</span>'
             f'</button>')
 
@@ -649,10 +648,10 @@ def panel_carrito(base):
     return f'''
 <div class="carrito" id="carrito" data-carrito data-dominio="{e(dominio)}" data-robots="{base}robots.html" hidden>
   <div class="carrito__fondo" data-carrito-cerrar></div>
-  <aside class="carrito__panel" role="dialog" aria-modal="true" aria-label="Carrito">
+  <aside class="carrito__panel" role="dialog" aria-modal="true" aria-label="{t('carrito_titulo')}">
     <header class="carrito__cab">
       <h2 class="carrito__titulo onblue" data-punto="manual">{t('carrito_titulo')}</h2>
-      <button class="carrito__cerrar" type="button" data-carrito-cerrar aria-label="Cerrar el carrito">
+      <button class="carrito__cerrar" type="button" data-carrito-cerrar aria-label="{t('carrito_cerrar_boton')}">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
       </button>
     </header>
@@ -668,28 +667,58 @@ def panel_carrito(base):
 '''
 
 
-BANDERA_ES = ('<svg viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#c60b1e"/>'
-              '<rect y=".5" width="3" height="1" fill="#ffc400"/></svg>')
-BANDERA_EN = ('<svg viewBox="0 0 60 30" aria-hidden="true"><clipPath id="s"><rect width="60" height="30" rx="0"/></clipPath>'
-              '<g clip-path="url(#s)"><rect width="60" height="30" fill="#012169"/>'
-              '<path d="M0 0 60 30M60 0 0 30" stroke="#fff" stroke-width="6"/>'
-              '<path d="M0 0 60 30M60 0 0 30" stroke="#C8102E" stroke-width="2"/>'
-              '<path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/>'
-              '<path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></g></svg>')
+BANDERAS = {
+    'es': ('<svg viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#c60b1e"/>'
+           '<rect y=".5" width="3" height="1" fill="#ffc400"/></svg>'),
+    'pt': ('<svg viewBox="0 0 3 2" aria-hidden="true"><rect width="1.2" height="2" fill="#046a38"/>'
+           '<rect x="1.2" width="1.8" height="2" fill="#da291c"/>'
+           '<circle cx="1.2" cy="1" r=".34" fill="#ffe900" stroke="#046a38" stroke-width=".04"/></svg>'),
+    'en': ('<svg viewBox="0 0 60 30" aria-hidden="true"><clipPath id="s"><rect width="60" height="30" rx="0"/></clipPath>'
+           '<g clip-path="url(#s)"><rect width="60" height="30" fill="#012169"/>'
+           '<path d="M0 0 60 30M60 0 0 30" stroke="#fff" stroke-width="6"/>'
+           '<path d="M0 0 60 30M60 0 0 30" stroke="#C8102E" stroke-width="2"/>'
+           '<path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/>'
+           '<path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></g></svg>'),
+    'fr': ('<svg viewBox="0 0 3 2" aria-hidden="true"><rect width="1" height="2" fill="#0055a4"/>'
+           '<rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg>'),
+    'zh': ('<svg viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#de2910"/>'
+           '<g fill="#ffde00">'
+           '<polygon points="0.90,0.35 0.96,0.56 1.19,0.56 1.00,0.68 1.08,0.89 0.90,0.76 0.72,0.89 0.80,0.68 0.61,0.56 0.84,0.56"/>'
+           '<polygon points="1.64,0.26 1.58,0.29 1.60,0.35 1.55,0.31 1.49,0.35 1.52,0.29 1.47,0.25 1.53,0.25 1.55,0.19 1.57,0.25"/>'
+           '<polygon points="1.84,0.51 1.77,0.52 1.77,0.59 1.74,0.53 1.67,0.54 1.72,0.50 1.69,0.44 1.74,0.47 1.79,0.42 1.78,0.48"/>'
+           '<polygon points="1.82,0.84 1.76,0.81 1.72,0.86 1.72,0.80 1.66,0.77 1.72,0.76 1.73,0.69 1.76,0.75 1.83,0.73 1.78,0.78"/>'
+           '<polygon points="1.58,1.08 1.54,1.03 1.48,1.06 1.52,1.00 1.48,0.95 1.54,0.97 1.57,0.91 1.58,0.98 1.64,1.00 1.58,1.02"/>'
+           '</g></svg>'),
+    'ca': ('<svg viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fcdd09"/>'
+           '<g fill="#da121a">'
+           '<rect y=".222" width="3" height=".222"/><rect y=".667" width="3" height=".222"/>'
+           '<rect y="1.111" width="3" height=".222"/><rect y="1.556" width="3" height=".222"/>'
+           '</g></svg>'),
+}
 
 
 def selector_idioma(ruta):
-    """Banderas ES/EN en la cabecera. «ruta» es la de la página actual
-    (p.ej. 'robots/rhx2.html', o '' para portada), igual en los dos idiomas:
-    solo cambia si lleva o no el prefijo /en/ por delante."""
+    """Desplegable con las banderas de los idiomas disponibles. «ruta» es la
+    de la página actual (p.ej. 'robots/rhx2.html', o '' para portada),
+    igual en todos los idiomas: solo cambia el prefijo de carpeta."""
     limpia = '' if ruta in ('', 'index.html') else ruta
-    activo_es = ' is-on' if LANG == 'es' else ''
-    activo_en = ' is-on' if LANG == 'en' else ''
-    return (f'<div class="lang-switch" role="group" aria-label="Idioma / Language">'
-            f'<a href="/{e(limpia)}" hreflang="es" lang="es" class="lang-switch__op{activo_es}" '
-            f'aria-current="{"true" if LANG == "es" else "false"}" aria-label="{t("lang_switch_es")}">{BANDERA_ES}</a>'
-            f'<a href="/en/{e(limpia)}" hreflang="en" lang="en" class="lang-switch__op{activo_en}" '
-            f'aria-current="{"true" if LANG == "en" else "false"}" aria-label="{t("lang_switch_en")}">{BANDERA_EN}</a>'
+    opciones = ''
+    for cod in IDIOMAS:
+        prefijo = '' if cod == 'es' else f'{cod}/'
+        activo = cod == LANG
+        opciones += (f'<li><a href="/{prefijo}{e(limpia)}" hreflang="{cod}" lang="{cod}" '
+                     f'class="lang-menu__op{" is-on" if activo else ""}" '
+                     f'aria-current="{"true" if activo else "false"}">'
+                     f'<span class="lang-menu__bandera">{BANDERAS[cod]}</span>'
+                     f'<span class="lang-menu__nombre">{e(NOMBRE_IDIOMA[cod])}</span></a></li>')
+    return (f'<div class="lang-switch">'
+            f'<button type="button" class="lang-switch__abrir" aria-haspopup="true" '
+            f'aria-expanded="false" aria-controls="lang-menu" '
+            f'aria-label="{t("lang_switch_boton")}">'
+            f'<span class="lang-switch__bandera">{BANDERAS[LANG]}</span>'
+            f'<svg class="lang-switch__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>'
+            f'</button>'
+            f'<ul class="lang-menu" id="lang-menu" role="menu" aria-label="{t("lang_switch_boton")}">{opciones}</ul>'
             f'</div>')
 
 
@@ -728,7 +757,7 @@ def header(base, active='robots', ruta=''):
                 primera = False
             enlace = (f'<div class="nav__grupo">{enlace}'
                       f'<button type="button" class="nav__abrir" aria-expanded="false" '
-                      f'aria-controls="sub-robots" aria-label="Ver familias y modelos de robots">'
+                      f'aria-controls="sub-robots" aria-label="{t("nav_ver_familias_aria")}">'
                       f'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>'
                       f'<div class="nav__sub nav__sub--mega" id="sub-robots" data-menurobots>'
                       f'<ul class="nav__fams">{familias}</ul>'
@@ -744,12 +773,12 @@ def header(base, active='robots', ruta=''):
     <a class="logo" href="{base}index.html" aria-label="RH·BOTS — inicio">
       <img src="{base}assets/logo-rhbots.png" alt="RH·BOTS" width="348" height="72">
     </a>
-    <nav class="nav" id="nav" aria-label="Navegación principal">
+    <nav class="nav" id="nav" aria-label="{t('nav_principal_aria')}">
       {links}
     </nav>
     {selector_idioma(ruta)}
     {boton_carrito(base)}
-    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+    <button class="nav-toggle" id="navToggle" aria-label="{t('nav_abrir_menu')}" aria-expanded="false" aria-controls="nav">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -853,6 +882,22 @@ _ETIQUETA_FAMILIA = {
         'limpieza': 'Cleaning robot', 'humanoides': 'Humanoid robot',
         'cuadrupedos': 'Quadruped robot', 'amr': 'AMR', 'accesorios': 'Accessory',
     },
+    'pt': {
+        'limpieza': 'Limpeza autónoma', 'humanoides': 'Robô humanoide',
+        'cuadrupedos': 'Robô quadrúpede', 'amr': 'AMR intralogística', 'accesorios': 'Acessório',
+    },
+    'fr': {
+        'limpieza': 'Nettoyage autonome', 'humanoides': 'Robot humanoïde',
+        'cuadrupedos': 'Robot quadrupède', 'amr': 'AMR intralogistique', 'accesorios': 'Accessoire',
+    },
+    'zh': {
+        'limpieza': '清洁机器人', 'humanoides': '人形机器人',
+        'cuadrupedos': '四足机器人', 'amr': 'AMR 移动机器人', 'accesorios': '配件',
+    },
+    'ca': {
+        'limpieza': 'Neteja autònoma', 'humanoides': 'Robot humanoide',
+        'cuadrupedos': 'Robot quadrúpede', 'amr': 'AMR intralogística', 'accesorios': 'Accessori',
+    },
 }
 
 
@@ -889,7 +934,7 @@ def formato_precio(valor):
     """100000.0 → «100.000,00» en español (miles con punto, decimales con coma)
     o «100,000.00» en inglés (al revés), según el idioma activo."""
     entero, _, dec = f'{valor:,.2f}'.partition('.')
-    if LANG == 'en':
+    if LANG in ('en', 'zh'):
         return entero + '.' + dec
     return entero.replace(',', '.') + ',' + dec
 
@@ -937,7 +982,7 @@ def boton_compra(p, base):
         return ''
 
     dominio = TIENDA['dominio'].strip('/')
-    etiqueta = t('comprar_ahora') if LANG == 'en' else (TIENDA.get('texto_boton') or t('comprar_ahora'))
+    etiqueta = (TIENDA.get('texto_boton') or t('comprar_ahora')) if LANG == 'es' else t('comprar_ahora')
     contacto = base + 'contacto.html'
 
     try:
@@ -1051,7 +1096,7 @@ def video_html(videos, base, titulo='Vídeo'):
             f'<video controls preload="none" playsinline '
             f'poster="{base}{e(v["poster"])}">'
             f'<source src="{base}{e(v["src"])}" type="video/mp4">'
-            f'Tu navegador no puede reproducir este vídeo.'
+            f'{t("navegador_sin_video")}'
             f'</video>{pie}</figure></li>\n')
     return f'''  <section class="section section--light" id="video">
     <div class="wrap">
@@ -1124,7 +1169,7 @@ def specs_destacadas(p, maximo=MAX_SPECS_DESTACADAS, largo=44):
 
 # ─────────────────────────────────────────────────────────── ficha (x14) ──
 def product_page(p):
-    base = NIVEL[LANG] + '../'
+    base = nivel(LANG) + '../'
     fam = p['family']
     dominio = SEO['dominio'].rstrip('/')
     # si el claim entero no cabe en los ~60 caracteres que enseña Google,
@@ -1134,7 +1179,7 @@ def product_page(p):
         corto = f'{p["name"]} · {ETIQUETA_FAMILIA.get(fam, FAM_NAME[fam])} | RH·BOTS'
         if len(corto) <= 60:
             title = corto
-    _pfijo = f'{dominio}/en' if LANG == 'en' else dominio
+    _pfijo = f'{dominio}/{LANG}' if LANG != 'es' else dominio
     breadcrumb = schema_breadcrumb([
         (t('nav_inicio'), _pfijo + '/'),
         (t('nav_robots'), _pfijo + '/robots.html'),
@@ -1357,7 +1402,7 @@ def bloque_elegir(base, titulo=None, texto=None):
 
 
 def aplicaciones_page():
-    base = NIVEL[LANG]
+    base = nivel(LANG)
     a = APLICACIONES
     out = [head(t('aplicaciones_titulo'), a.get('lede', ''),
                 base, 'aplicaciones.html'),
@@ -1436,7 +1481,7 @@ def cta_final(base):
 
 # ──────────────────────────────────────────────────────────────── índice ──
 def index_page():
-    base = NIVEL[LANG]
+    base = nivel(LANG)
     out = [head(t('robots_catalogo_titulo'), t('robots_catalogo_desc'), base, 'robots.html'),
            header(base, 'robots', 'robots.html'), '<main id="contenido">']
 
@@ -1544,6 +1589,13 @@ _MESES = {
            'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
     'en': ['January', 'February', 'March', 'April', 'May', 'June', 'July',
            'August', 'September', 'October', 'November', 'December'],
+    'pt': ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho',
+           'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+    'fr': ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet',
+           'août', 'septembre', 'octobre', 'novembre', 'décembre'],
+    'zh': ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+    'ca': ['gener', 'febrer', 'març', 'abril', 'maig', 'juny', 'juliol',
+           'agost', 'setembre', 'octubre', 'novembre', 'desembre'],
 }
 
 
@@ -1556,7 +1608,7 @@ def mes_y_ano(fecha):
 
 # ──────────────────────────────────────────────────────────────────── home ──
 def home_page():
-    base = NIVEL[LANG]
+    base = nivel(LANG)
     out = [head(t('inicio_titulo'), t('inicio_desc'), base, 'index.html',
                 extra_jsonld=[schema_organization(), schema_faqpage(HOME['faq'])]),
            header(base, 'home', ''), '<main id="contenido">']
@@ -1576,7 +1628,7 @@ def home_page():
       </div>
     </div>
   </section>
-  <section class="marcas" id="marcas" aria-label="Marcas que distribuimos">
+  <section class="marcas" id="marcas" aria-label="{t('marcas_distribuimos_aria')}">
     <div class="wrap marcas__fila">
       <p class="marcas__rotulo">{t('distribuidores_oficiales')}</p>
       <ul class="marcas__logos">{logos_marcas(base, 'marcas__logo')}</ul>
@@ -1724,7 +1776,7 @@ def home_page():
 
 # ──────────────────────────────────────────────────────────────────── blog ──
 def blog_page():
-    base = NIVEL[LANG]
+    base = nivel(LANG)
     out = [head(t('blog_titulo'), t('blog_desc'), base, 'blog.html'),
            header(base, 'blog', 'blog.html'), '<main id="contenido">']
     # portada como las del catálogo y aplicaciones, con el cuadrúpedo de fondo
@@ -1817,7 +1869,7 @@ def blog_page():
         <p class="kicker">{t('ultimos_articulos')}</p>
         <h2 class="ultimos__titulo">{t('recursos_presente')}</h2>
       </header>
-      <div class="filtros reveal" role="group" aria-label="Filtrar por categoría">{filtros}</div>
+      <div class="filtros reveal" role="group" aria-label="{t('filtrar_categoria_aria')}">{filtros}</div>
       <ul class="artgrid">{arts}</ul>
       <p class="blogbusca__vacio" hidden>{t('sin_resultados_busqueda')}</p>
     </div>
@@ -1858,7 +1910,7 @@ def blog_page():
 
 # ─────────────────────────────────────────────────────────────── artículo ──
 def articulo_page(post):
-    base = NIVEL[LANG] + '../'
+    base = nivel(LANG) + '../'
     ruta = f'blog/{post["slug"]}.html'
     out = [head(f'{post["titulo"]}{t("blog_articulo_sufijo")}', post.get('resumen', ''), base, ruta,
                 og_img=post.get('img')),
@@ -1893,7 +1945,7 @@ def articulo_page(post):
 
 
 def rh_bots_page():
-    base = NIVEL[LANG]
+    base = nivel(LANG)
     r = RHBOTS
     emails = {p['nombre']: p.get('email') for p in CONTACTO.get('personas', [])}
     personas_jsonld = [schema_person(nombre, cargo, emails.get(nombre))
@@ -1976,7 +2028,7 @@ def rh_bots_page():
         <h2 class="alianza__titulo">{e(al.get('titulo', ''))}</h2>
         <p class="alianza__texto">{e(al.get('texto', ''))}</p>
       </header>
-      <ul class="alianza__marcas reveal" aria-label="Marcas que distribuimos">{logos_marcas(base, 'alianza__marca')}</ul>
+      <ul class="alianza__marcas reveal" aria-label="{t('marcas_distribuimos_aria')}">{logos_marcas(base, 'alianza__marca')}</ul>
       <div class="alianza__cifras reveal">{celdas}</div>
     </div>
   </section>
@@ -2027,7 +2079,7 @@ def rh_bots_page():
 
 
 def legal_page():
-    base = NIVEL[LANG]
+    base = nivel(LANG)
     dominio = SEO['dominio'].rstrip('/')
     empresa = CONTACTO.get('empresa') or 'RH·BOTS'
     direccion = ', '.join(CONTACTO.get('direccion') or [])
@@ -2087,6 +2139,193 @@ def legal_page():
     </div>
   </section>
 ''')
+    elif LANG == 'pt':
+        out.append(f'''
+  <section class="chero">
+    <div class="wrap">
+      <h1 class="display display--left">Aviso legal, privacidade e cookies</h1>
+    </div>
+  </section>
+  <section class="section section--white">
+    <div class="wrap wrap--narrow art__cuerpo">
+      <p><em>Esta página em português é uma tradução de cortesia do nosso aviso legal
+      em espanhol. Em caso de discrepância, prevalece a versão em espanhol
+      (<a href="/legal.html">/legal.html</a>) e aplica-se a lei espanhola. Recomendamos
+      uma revisão jurídica profissional antes de utilizar esta tradução para fins de
+      conformidade.</em></p>
+
+      <h2 id="aviso-legal">Aviso legal</h2>
+      <p><strong>Titular do sítio web:</strong> {e(empresa)}.<br>
+      <strong>NIF:</strong> [a completar pelo titular].<br>
+      <strong>Morada:</strong> {e(direccion)}.<br>
+      {f'<strong>Contacto:</strong> {e(email)}' + (f' · {e(tel)}' if tel else '') + '.<br>' if email else ''}
+      <strong>Domínio:</strong> {e(dominio)}</p>
+      <p>O acesso e a utilização deste sítio web atribui a condição de utilizador e
+      implica a aceitação das condições aqui descritas. {e(empresa)} é distribuidor
+      oficial da AGIBOT e da PUDU em Espanha e Portugal.</p>
+
+      <h2 id="privacidad">Política de privacidade</h2>
+      <p><strong>Responsável pelo tratamento:</strong> {e(empresa)}{f', {e(email)}' if email else ''}.</p>
+      <p><strong>Finalidade:</strong> responder aos pedidos de informação, orçamento,
+      demonstração ou apoio que nos envie através do formulário de contacto, e gerir
+      a relação comercial caso se venha a formalizar.</p>
+      <p><strong>Fundamento:</strong> consentimento da pessoa interessada ao enviar
+      os seus dados, e execução de uma eventual relação contratual.</p>
+      <p><strong>Conservação:</strong> enquanto se mantiver a relação com o utilizador
+      ou durante os prazos legalmente exigíveis.</p>
+      <p><strong>Destinatários:</strong> não se cedem dados a terceiros, salvo
+      obrigação legal ou fornecedores necessários para prestar o serviço solicitado
+      (por exemplo, a Shopify para processar uma encomenda).</p>
+      <p><strong>Direitos:</strong> pode exercer os seus direitos de acesso,
+      retificação, apagamento, oposição, limitação e portabilidade escrevendo
+      para{f' {e(email)}' if email else ' o endereço de contacto da RH·BOTS'}.</p>
+
+      <h2 id="cookies">Política de cookies</h2>
+      <p>Este sítio usa apenas os cookies técnicos estritamente necessários para o
+      seu funcionamento. Se no futuro for ativado o Google Analytics ou outra
+      ferramenta de medição, será pedido o consentimento prévio do utilizador
+      antes de a carregar.</p>
+    </div>
+  </section>
+''')
+    elif LANG == 'fr':
+        out.append(f'''
+  <section class="chero">
+    <div class="wrap">
+      <h1 class="display display--left">Mentions légales, confidentialité et cookies</h1>
+    </div>
+  </section>
+  <section class="section section--white">
+    <div class="wrap wrap--narrow art__cuerpo">
+      <p><em>Cette page en français est une traduction de courtoisie de nos mentions
+      légales en espagnol. En cas de divergence, la version espagnole
+      (<a href="/legal.html">/legal.html</a>) prévaut et le droit espagnol s'applique.
+      Nous recommandons une relecture juridique professionnelle avant d'utiliser
+      cette traduction à des fins de conformité.</em></p>
+
+      <h2 id="aviso-legal">Mentions légales</h2>
+      <p><strong>Titulaire du site web :</strong> {e(empresa)}.<br>
+      <strong>Numéro fiscal (CIF/NIF) :</strong> [à compléter par le titulaire].<br>
+      <strong>Adresse :</strong> {e(direccion)}.<br>
+      {f'<strong>Contact :</strong> {e(email)}' + (f' · {e(tel)}' if tel else '') + '.<br>' if email else ''}
+      <strong>Domaine :</strong> {e(dominio)}</p>
+      <p>L'accès et l'utilisation de ce site web confèrent la qualité d'utilisateur
+      et impliquent l'acceptation des conditions énoncées ici. {e(empresa)} est
+      distributeur officiel d'AGIBOT et de PUDU en Espagne et au Portugal.</p>
+
+      <h2 id="privacidad">Politique de confidentialité</h2>
+      <p><strong>Responsable du traitement :</strong> {e(empresa)}{f', {e(email)}' if email else ''}.</p>
+      <p><strong>Finalité :</strong> répondre aux demandes d'information, de devis,
+      de démonstration ou d'assistance que vous nous envoyez via le formulaire de
+      contact, et gérer la relation commerciale si elle se concrétise.</p>
+      <p><strong>Base légale :</strong> le consentement de la personne concernée
+      lors de l'envoi de ses données, et l'exécution d'une éventuelle relation
+      contractuelle.</p>
+      <p><strong>Conservation :</strong> pendant toute la durée de la relation avec
+      l'utilisateur, ou pendant les délais légalement exigibles.</p>
+      <p><strong>Destinataires :</strong> les données ne sont pas cédées à des tiers,
+      sauf obligation légale ou prestataires nécessaires à la fourniture du service
+      demandé (par exemple, Shopify pour traiter une commande).</p>
+      <p><strong>Vos droits :</strong> vous pouvez exercer vos droits d'accès, de
+      rectification, d'effacement, d'opposition, de limitation et de portabilité en
+      écrivant à{f' {e(email)}' if email else " l'adresse de contact de RH·BOTS"}.</p>
+
+      <h2 id="cookies">Politique de cookies</h2>
+      <p>Ce site utilise uniquement les cookies techniques strictement nécessaires
+      à son fonctionnement. Si Google Analytics ou un autre outil de mesure est
+      activé à l'avenir, le consentement préalable de l'utilisateur sera demandé
+      avant son chargement.</p>
+    </div>
+  </section>
+''')
+    elif LANG == 'zh':
+        out.append(f'''
+  <section class="chero">
+    <div class="wrap">
+      <h1 class="display display--left">法律声明、隐私与Cookie政策</h1>
+    </div>
+  </section>
+  <section class="section section--white">
+    <div class="wrap wrap--narrow art__cuerpo">
+      <p><em>本中文页面是我们西班牙语法律声明的礼节性翻译。如有任何差异，以西班牙语版本
+      （<a href="/legal.html">/legal.html</a>）为准，并适用西班牙法律。在将本翻译用于合规目的之前，
+      建议先进行专业法律审查。</em></p>
+
+      <h2 id="aviso-legal">法律声明</h2>
+      <p><strong>网站所有者：</strong>{e(empresa)}。<br>
+      <strong>税号（CIF/NIF）：</strong>[待所有者补充]。<br>
+      <strong>注册地址：</strong>{e(direccion)}。<br>
+      {f'<strong>联系方式：</strong>{e(email)}' + (f' · {e(tel)}' if tel else '') + '。<br>' if email else ''}
+      <strong>域名：</strong>{e(dominio)}</p>
+      <p>访问和使用本网站即代表您成为用户，并表示您接受此处所列条款。{e(empresa)}是
+      AGIBOT和PUDU在西班牙和葡萄牙的官方经销商。</p>
+
+      <h2 id="privacidad">隐私政策</h2>
+      <p><strong>数据处理负责方：</strong>{e(empresa)}{f'，{e(email)}' if email else ''}。</p>
+      <p><strong>处理目的：</strong>处理您通过联系表单发送给我们的信息、报价、演示或
+      支持请求，并在业务关系达成后进行管理。</p>
+      <p><strong>法律依据：</strong>数据主体在提交其信息时给予的同意，以及可能产生的
+      合同关系的履行。</p>
+      <p><strong>保留期限：</strong>在与用户保持关系期间，或在法律规定的期限内。</p>
+      <p><strong>数据接收方：</strong>除法律要求外，我们不会将数据提供给第三方，除非
+      是提供所请求服务所必需的服务商（例如，Shopify用于处理订单）。</p>
+      <p><strong>您的权利：</strong>您可以通过{f'{e(email)}' if email else 'RH·BOTS的联系方式'}
+      行使访问、更正、删除、反对、限制处理和数据可携带等权利。</p>
+
+      <h2 id="cookies">Cookie政策</h2>
+      <p>本网站仅使用网站正常运行所必需的技术性Cookie。如果未来启用Google Analytics
+      或其他统计工具，将在加载前征求用户的事先同意。</p>
+    </div>
+  </section>
+''')
+    elif LANG == 'ca':
+        out.append(f'''
+  <section class="chero">
+    <div class="wrap">
+      <h1 class="display display--left">Avís legal, privacitat i galetes</h1>
+    </div>
+  </section>
+  <section class="section section--white">
+    <div class="wrap wrap--narrow art__cuerpo">
+      <p><em>Aquesta pàgina en català és una traducció de cortesia del nostre avís
+      legal en castellà. En cas de discrepància, preval la versió en castellà
+      (<a href="/legal.html">/legal.html</a>) i s'aplica la llei espanyola. Recomanem
+      una revisió jurídica professional abans d'utilitzar aquesta traducció amb
+      finalitats de compliment normatiu.</em></p>
+
+      <h2 id="aviso-legal">Avís legal</h2>
+      <p><strong>Titular del lloc web:</strong> {e(empresa)}.<br>
+      <strong>CIF/NIF:</strong> [pendent de completar pel titular].<br>
+      <strong>Domicili:</strong> {e(direccion)}.<br>
+      {f'<strong>Contacte:</strong> {e(email)}' + (f' · {e(tel)}' if tel else '') + '.<br>' if email else ''}
+      <strong>Domini:</strong> {e(dominio)}</p>
+      <p>L'accés i l'ús d'aquest lloc web atribueix la condició d'usuari i implica
+      l'acceptació de les condicions aquí recollides. {e(empresa)} és distribuïdor
+      oficial d'AGIBOT i PUDU a Espanya i Portugal.</p>
+
+      <h2 id="privacidad">Política de privacitat</h2>
+      <p><strong>Responsable del tractament:</strong> {e(empresa)}{f', {e(email)}' if email else ''}.</p>
+      <p><strong>Finalitat:</strong> atendre les sol·licituds d'informació, pressupost,
+      demostració o suport que ens enviïs a través del formulari de contacte, i
+      gestionar la relació comercial si arriba a formalitzar-se.</p>
+      <p><strong>Legitimació:</strong> consentiment de la persona interessada en
+      enviar les seves dades, i execució d'una eventual relació contractual.</p>
+      <p><strong>Conservació:</strong> mentre es mantingui la relació amb l'usuari
+      o durant els terminis legalment exigibles.</p>
+      <p><strong>Destinataris:</strong> no se cedeixen dades a tercers llevat
+      d'obligació legal o proveïdors necessaris per prestar el servei sol·licitat
+      (per exemple, Shopify per processar una comanda).</p>
+      <p><strong>Drets:</strong> pots exercir els teus drets d'accés, rectificació,
+      supressió, oposició, limitació i portabilitat escrivint a{f' {e(email)}' if email else " l'adreça de contacte de RH·BOTS"}.</p>
+
+      <h2 id="cookies">Política de galetes</h2>
+      <p>Aquest lloc utilitza únicament les galetes tècniques necessàries per al seu
+      funcionament. Si en el futur s'activa Google Analytics o una altra eina de
+      mesurament, se sol·licitarà el consentiment previ de l'usuari abans de
+      carregar-la.</p>
+    </div>
+  </section>
+''')
     else:
         out.append(f'''
   <section class="chero">
@@ -2137,7 +2376,7 @@ def legal_page():
 
 # ──────────────────────────────────────────────────────────────── contacto ──
 def contacto_page():
-    base = NIVEL[LANG]
+    base = nivel(LANG)
     c = CONTACTO
     email = c.get('email_directo') or (c['personas'][0]['email'] if c.get('personas') else '')
     out = [head(t('contacto_titulo'), c['intro'], base, 'contacto.html'),
@@ -2412,7 +2651,7 @@ def write(path, content):
 
 
 def pagina_404():
-    base = NIVEL[LANG]
+    base = nivel(LANG)
     out = [head(t('pagina_no_encontrada'), t('pagina_no_encontrada_desc'),
                 base, '404.html'),
            header(base, '', '404.html'), '<main id="contenido">']
@@ -2435,26 +2674,27 @@ def pagina_404():
 
 
 def sitemap():
-    """Un único sitemap con las dos versiones de cada página (es/en),
-    cada una apuntando a su alternativa con xhtml:link, como recomienda
-    Google para sitios multilingües."""
+    """Un único sitemap con las seis versiones de cada página (una por
+    idioma), cada una apuntando a sus alternativas con xhtml:link, como
+    recomienda Google para sitios multilingües."""
     d = SEO['dominio'].rstrip('/')
     rutas = [('', '1.0'), ('robots.html', '0.9'), ('aplicaciones.html', '0.8'), ('rh-bots.html', '0.6'),
              ('contacto.html', '0.7'), ('blog.html', '0.5'), ('legal.html', '0.2')]
     rutas += [(f'robots/{p["slug"]}.html', '0.8') for p in _PRODUCTOS_ES]
-    rutas += [(p['url'], '0.6') for p in _POSTS_ES if p.get('url')]
+    rutas += [(p['url'], '0.6') for p in _SITIO_ES['posts'] if p.get('url')]
 
     def loc(ruta, lang):
-        prefijo = 'en/' if lang == 'en' else ''
+        prefijo = f'{lang}/' if lang != 'es' else ''
         return f'{d}/{prefijo}{ruta}' if ruta else f'{d}/{prefijo}'
 
     urls = ''
     for ruta, pr in rutas:
-        for lang in ('es', 'en'):
+        enlaces = ''.join(
+            f'<xhtml:link rel="alternate" hreflang="{cod}" href="{loc(ruta, cod)}"/>' for cod in IDIOMAS)
+        for lang in IDIOMAS:
             urls += (f'  <url><loc>{loc(ruta, lang)}</loc><lastmod>{FECHA_BUILD}</lastmod>'
                      f'<priority>{pr}</priority>'
-                     f'<xhtml:link rel="alternate" hreflang="es" href="{loc(ruta, "es")}"/>'
-                     f'<xhtml:link rel="alternate" hreflang="en" href="{loc(ruta, "en")}"/>'
+                     f'{enlaces}'
                      f'</url>\n')
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
@@ -2467,19 +2707,53 @@ def llms_txt():
     entienda de un vistazo qué hay y a dónde ir, sin tener que rastrear
     todo el HTML."""
     d = SEO['dominio'].rstrip('/')
-    prefijo = f'{d}/en' if LANG == 'en' else d
-    if LANG == 'en':
-        out = ['# RH·BOTS\n',
-               '> Official distributor of AGIBOT and PUDU in Spain and Portugal. Autonomous cleaning, '
-               'humanoid and quadruped robots, intralogistics AMRs and accessories, with advice, installation, '
-               'training and maintenance. Based in Picassent (Valencia, Spain).\n']
-    else:
-        out = ['# RH·BOTS\n',
-               f'> Distribuidor oficial de AGIBOT y PUDU en España y Portugal. Robots de limpieza '
-               f'autónoma, humanoides, cuadrúpedos, AMR de intralogística y accesorios, con asesoramiento, instalación, '
-               f'formación y mantenimiento. Sede en Picassent (Valencia).\n']
+    prefijo = f'{d}/{LANG}' if LANG != 'es' else d
 
-    out.append('## Robots\n')
+    _INTRO = {
+        'es': 'Distribuidor oficial de AGIBOT y PUDU en España y Portugal. Robots de limpieza '
+              'autónoma, humanoides, cuadrúpedos, AMR de intralogística y accesorios, con asesoramiento, instalación, '
+              'formación y mantenimiento. Sede en Picassent (Valencia).',
+        'pt': 'Distribuidor oficial da AGIBOT e da PUDU em Espanha e Portugal. Robôs de limpeza '
+              'autónoma, humanoides, quadrúpedes, AMR de intralogística e acessórios, com aconselhamento, instalação, '
+              'formação e manutenção. Sede em Picassent (Valência, Espanha).',
+        'en': 'Official distributor of AGIBOT and PUDU in Spain and Portugal. Autonomous cleaning, '
+              'humanoid and quadruped robots, intralogistics AMRs and accessories, with advice, installation, '
+              'training and maintenance. Based in Picassent (Valencia, Spain).',
+        'fr': 'Distributeur officiel d\'AGIBOT et de PUDU en Espagne et au Portugal. Robots de nettoyage '
+              'autonome, humanoïdes, quadrupèdes, AMR d\'intralogistique et accessoires, avec conseil, installation, '
+              'formation et maintenance. Basé à Picassent (Valence, Espagne).',
+        'zh': 'AGIBOT和PUDU在西班牙和葡萄牙的官方经销商。自主清洁机器人、人形机器人、四足机器人、AMR移动机器人及配件，'
+              '提供咨询、安装、培训和维护服务。总部位于西班牙巴伦西亚皮卡森特（Picassent）。',
+        'ca': 'Distribuïdor oficial d\'AGIBOT i PUDU a Espanya i Portugal. Robots de neteja '
+              'autònoma, humanoides, quadrúpedes, AMR d\'intralogística i accessoris, amb assessorament, instal·lació, '
+              'formació i manteniment. Seu a Picassent (València).',
+    }
+    _ROBOTS_H2 = {'es': 'Robots', 'pt': 'Robôs', 'en': 'Robots', 'fr': 'Robots', 'zh': '机器人', 'ca': 'Robots'}
+    _EMPRESA_H2 = {'es': 'Empresa', 'pt': 'Empresa', 'en': 'Company', 'fr': 'Entreprise', 'zh': '公司', 'ca': 'Empresa'}
+    _CATALOGO = {'es': 'Catálogo completo', 'pt': 'Catálogo completo', 'en': 'Full catalog',
+                 'fr': 'Catalogue complet', 'zh': '完整产品目录', 'ca': 'Catàleg complet'}
+    _APLICACIONES = {'es': 'Aplicaciones por sector: qué robot encaja en cada uso',
+                      'pt': 'Aplicações por setor: que robô se adapta a cada uso',
+                      'en': 'Applications by sector: which robot fits which use',
+                      'fr': 'Applications par secteur : quel robot correspond à quel usage',
+                      'zh': '按行业分类的应用：哪种机器人适合哪种用途',
+                      'ca': 'Aplicacions per sector: quin robot encaixa en cada ús'}
+    _QUIENES = {'es': 'Quiénes somos: equipo e historia de RH·BOTS',
+                'pt': 'Quem somos: equipa e história da RH·BOTS',
+                'en': 'About us: the RH·BOTS team and story',
+                'fr': 'Qui sommes-nous : l\'équipe et l\'histoire de RH·BOTS',
+                'zh': '关于我们：RH·BOTS团队与历史',
+                'ca': 'Qui som: equip i història de RH·BOTS'}
+    _CONTACTO_L = {'es': 'Contacto', 'pt': 'Contacto', 'en': 'Contact', 'fr': 'Contact', 'zh': '联系我们', 'ca': 'Contacte'}
+    _OPCIONAL = {'es': 'Optional', 'pt': 'Optional', 'en': 'Optional', 'fr': 'Optional', 'zh': 'Optional', 'ca': 'Optional'}
+    _BLOG_L = {'es': 'Blog', 'pt': 'Blog', 'en': 'Blog', 'fr': 'Blog', 'zh': '博客', 'ca': 'Blog'}
+    _LEGAL_L = {'es': 'Aviso legal y privacidad', 'pt': 'Aviso legal e privacidade',
+                'en': 'Legal notice and privacy', 'fr': 'Mentions légales et confidentialité',
+                'zh': '法律声明与隐私', 'ca': 'Avís legal i privacitat'}
+
+    out = ['# RH·BOTS\n', f'> {_INTRO[LANG]}\n']
+
+    out.append(f'## {_ROBOTS_H2[LANG]}\n')
     for key, nombre, _ in FAMILIAS:
         modelos = [p for p in PRODUCTOS if p['family'] == key]
         if not modelos:
@@ -2487,24 +2761,15 @@ def llms_txt():
         out.append(f'\n### {nombre}\n')
         for p in modelos:
             out.append(f'- [{p["name"]}]({prefijo}/robots/{p["slug"]}.html): {p["claim"]}')
-    if LANG == 'en':
-        out.append('\n\n## Company\n')
-        out.append(f'- [Full catalog]({prefijo}/robots.html)')
-        out.append(f'- [Applications by sector]({prefijo}/aplicaciones.html): which robot fits which use')
-        out.append(f'- [About us]({prefijo}/rh-bots.html): the RH·BOTS team and story')
-        out.append(f'- [Contact]({prefijo}/contacto.html)')
-        out.append('\n\n## Optional\n')
-        out.append(f'- [Blog]({prefijo}/blog.html)')
-        out.append(f'- [Legal notice and privacy]({prefijo}/legal.html)')
-    else:
-        out.append(f'\n\n## Empresa\n')
-        out.append(f'- [Catálogo completo]({prefijo}/robots.html)')
-        out.append(f'- [Aplicaciones por sector]({prefijo}/aplicaciones.html): qué robot encaja en cada uso')
-        out.append(f'- [Quiénes somos]({prefijo}/rh-bots.html): equipo e historia de RH·BOTS')
-        out.append(f'- [Contacto]({prefijo}/contacto.html)')
-        out.append(f'\n\n## Optional\n')
-        out.append(f'- [Blog]({prefijo}/blog.html)')
-        out.append(f'- [Aviso legal y privacidad]({prefijo}/legal.html)')
+
+    out.append(f'\n\n## {_EMPRESA_H2[LANG]}\n')
+    out.append(f'- [{_CATALOGO[LANG]}]({prefijo}/robots.html)')
+    out.append(f'- [{_APLICACIONES[LANG]}]({prefijo}/aplicaciones.html)')
+    out.append(f'- [{_QUIENES[LANG]}]({prefijo}/rh-bots.html)')
+    out.append(f'- [{_CONTACTO_L[LANG]}]({prefijo}/contacto.html)')
+    out.append(f'\n\n## {_OPCIONAL[LANG]}\n')
+    out.append(f'- [{_BLOG_L[LANG]}]({prefijo}/blog.html)')
+    out.append(f'- [{_LEGAL_L[LANG]}]({prefijo}/legal.html)')
     return '\n'.join(out) + '\n'
 
 
@@ -2557,9 +2822,9 @@ def generar_paginas(carpeta):
 
 def main():
     total = 0
-    for lang in ('es', 'en'):
+    for lang in IDIOMAS:
         set_lang(lang)
-        carpeta = WEB if lang == 'es' else os.path.join(WEB, 'en')
+        carpeta = WEB if lang == 'es' else os.path.join(WEB, lang)
         total += generar_paginas(carpeta)
     set_lang('es')   # el resto del build (robots.txt, sitemap, avisos) es neutro/en la raíz
 
@@ -2579,7 +2844,7 @@ def main():
         print(f'     tienda desactivada · {len(enlazados)} productos enlazados, sin botón')
 
     ga = ANALITICA.get('ga4') or ANALITICA.get('gtm') or 'sin configurar'
-    print(f'OK — {total} páginas (es + en): home, catálogo, rh-bots, blog, contacto '
+    print(f'OK — {total} páginas ({"+".join(IDIOMAS)}): home, catálogo, rh-bots, blog, contacto '
           f'y {len(PRODUCTOS)} fichas, en cada idioma')
     print(f'     sitemap.xml y robots.txt · dominio {SEO["dominio"]} · analítica: {ga}')
 

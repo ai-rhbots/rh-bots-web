@@ -1,0 +1,6112 @@
+{
+  "rhx2": {
+    "claim": "Humanoide compacte per a atenció al públic i esdeveniments",
+    "tagline": "Interacció per veu, gestos i visió en un format d'1,31 m i 35 kg, fàcil de portar a recepcions, botigues i esdeveniments.",
+    "hero_alt": "Robot humanoide RHX2 dret, caminant amb un braç aixecat",
+    "gallery": [
+      [
+        "En posició de genolls",
+        "assets/robots/rhx2/de-rodillas.webp"
+      ],
+      [
+        "Assegut sobre un mur",
+        "assets/robots/rhx2/sentado.webp"
+      ]
+    ],
+    "intro": "El RHX2 és la versió base de la sèrie X2: un humanoide d'1,31 m i 35 kg amb càmera RGB d'interacció, pantalla d'expressions, altaveu i matriu de micròfons. Està pensat per a recepció, atenció al client, retail i esdeveniments, amb més de 20 accions integrades i control per comandament, aplicació o veu.",
+    "keyfacts": [
+      [
+        "Alçada",
+        "1,31 m"
+      ],
+      [
+        "Pes",
+        "35 kg"
+      ],
+      [
+        "Càrrega màxima",
+        "3 kg"
+      ],
+      [
+        "Autonomia",
+        "aprox. 2 h"
+      ]
+    ],
+    "highlights": [
+      [
+        "Interacció amb persones",
+        "Càmera RGB d'interacció, matriu de micròfons, altaveu i pantalla d'expressions per comunicar-se per veu, gestos i reconeixement visual."
+      ],
+      [
+        "Moviment humanoide",
+        "Articulacions amb 120 Nm de parell màxim; supera esglaons de 50 mm i pendents de ± 10°, i porta més de 20 accions integrades."
+      ],
+      [
+        "Llest per usar",
+        "Es controla amb comandament a distància, amb l'aplicació AGIBOT Go o per veu, i inclou aturada d'emergència sense fil."
+      ],
+      [
+        "Bateria intercanviable",
+        "Uns 500 Wh per a aprox. 2 h de marxa; càrrega completa en aprox. 1,5 h o canvi de bateria."
+      ]
+    ],
+    "specs": [
+      [
+        "Dimensions i estructura",
+        [
+          [
+            "Alçada",
+            "1,31 m"
+          ],
+          [
+            "Dimensions dempeus",
+            "1.310 × 460 × 210 mm (± 30 mm), alçada × amplada × fondària"
+          ],
+          [
+            "Dimensions de l'embalatge",
+            "945 × 705 × 475 mm"
+          ],
+          [
+            "Pes net",
+            "aprox. 35 kg, amb bateria i efector"
+          ],
+          [
+            "Pes amb embalatge",
+            "aprox. 63,5 kg"
+          ],
+          [
+            "Materials",
+            "aliatge d'alumini, aliatge de magnesi, plàstic tècnic d'alta resistència i escuma de PU"
+          ],
+          [
+            "Temperatura de funcionament",
+            "−10 a 40 °C (a −10 °C baixen el rendiment i l'autonomia)"
+          ]
+        ]
+      ],
+      [
+        "Articulacions",
+        [
+          [
+            "Graus de llibertat actius",
+            "25 segons la fitxa tècnica d'AGIBOT · 27 segons la fitxa RH·BOTS"
+          ],
+          [
+            "Braços",
+            "5 per braç"
+          ],
+          [
+            "Cintura",
+            "3"
+          ],
+          [
+            "Cames",
+            "6 per cama"
+          ],
+          [
+            "Parell màxim articular",
+            "120 Nm"
+          ]
+        ]
+      ],
+      [
+        "Mobilitat",
+        [
+          [
+            "Velocitat màxima",
+            "≤ 1,8 m/s corrent (fitxa tècnica d'AGIBOT) · 2 m/s (fitxa RH·BOTS)"
+          ],
+          [
+            "Velocitat d'ús diari",
+            "≤ 0,8 m/s"
+          ],
+          [
+            "Alçada màxima d'esglaó",
+            "50 mm"
+          ],
+          [
+            "Franqueig d'obstacles",
+            "50 mm"
+          ],
+          [
+            "Pendent",
+            "± 10°"
+          ],
+          [
+            "Amplada mínima de passadís per girar",
+            "900 mm"
+          ],
+          [
+            "Accions integrades",
+            "20 o més"
+          ]
+        ]
+      ],
+      [
+        "Braços i càrrega",
+        [
+          [
+            "Càrrega màxima",
+            "3 kg en postura específica, sense comptar l'efector"
+          ],
+          [
+            "Càrrega a tot l'espai de treball",
+            "≤ 1 kg, sense comptar l'efector"
+          ],
+          [
+            "Abast d'un braç sense efector",
+            "aprox. 437 mm"
+          ],
+          [
+            "Efector compatible",
+            "mà artificial"
+          ]
+        ]
+      ],
+      [
+        "Sensors i interacció",
+        [
+          [
+            "Visió",
+            "1 × càmera RGB d'interacció"
+          ],
+          [
+            "Sensor de moviment",
+            "1 × IMU de 6 eixos"
+          ],
+          [
+            "Tàctil",
+            "sensor al cap"
+          ],
+          [
+            "Àudio",
+            "altaveu i matriu de micròfons"
+          ],
+          [
+            "Pantalla",
+            "pantalla d'expressions"
+          ],
+          [
+            "Control",
+            "comandament a distància, aplicació AGIBOT Go i veu (prioritat en aquest ordre)"
+          ]
+        ]
+      ],
+      [
+        "Energia",
+        [
+          [
+            "Bateria",
+            "aprox. 500 Wh"
+          ],
+          [
+            "Autonomia",
+            "aprox. 2 h caminant a 0,5 m/s"
+          ],
+          [
+            "Temps de càrrega",
+            "aprox. 1,5 h, del 15 % al 100 %"
+          ],
+          [
+            "Consum típic",
+            "aprox. 240 W"
+          ],
+          [
+            "Recàrrega",
+            "càrrega directa i canvi de bateria"
+          ]
+        ]
+      ],
+      [
+        "Computació i connexions",
+        [
+          [
+            "Unitat de control",
+            "1 × RK3588S i 1 × RK3588"
+          ],
+          [
+            "Unitat de computació per a desenvolupament",
+            "no inclosa"
+          ],
+          [
+            "Desenvolupament secundari",
+            "no; l'SDK està disponible al RHX2 Ultra"
+          ],
+          [
+            "Ports de depuració",
+            "1 × USB-C · 1 × USB-A"
+          ],
+          [
+            "Sortides d'alimentació",
+            "1 × 12 V/3 A · 1 × 48 V/5 A"
+          ],
+          [
+            "Connectivitat",
+            "Wi-Fi · Bluetooth"
+          ]
+        ]
+      ],
+      [
+        "Subministrament i garantia",
+        [
+          [
+            "Inclou",
+            "robot, bateria i carregador, comandament a distància, aturada d'emergència sense fil, guia ràpida i certificat de conformitat"
+          ],
+          [
+            "Garantia",
+            "8 mesos"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Recepció i atenció al client",
+        null
+      ],
+      [
+        "Retail i espais comercials",
+        null
+      ],
+      [
+        "Esdeveniments tecnològics i demostracions",
+        null
+      ],
+      [
+        "Seguretat i patrullatge",
+        null
+      ],
+      [
+        "Assistència en entorns industrials lleugers",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "warn",
+        "La fitxa RH·BOTS i la fitxa d'AGIBOT no coincideixen",
+        "La fitxa RH·BOTS atribueix al RHX2 LiDAR i càmera RGB-D, mòdul NVIDIA Jetson Orin NX (157 TOPS) amb CPU Arm Cortex-A78AE de 8 nuclis, 27 graus de llibertat i 2 m/s. La fitxa tècnica d'AGIBOT (desembre de 2025) dona per a l'X2 base només una càmera RGB d'interacció, cap unitat de desenvolupament, 25 graus de llibertat i ≤ 1,8 m/s; el LiDAR, la RGB-D i l'Orin NX corresponen a l'X2 Ultra. Confirma la configuració abans d'oferir-lo."
+      ],
+      [
+        "info",
+        "Revisió anterior de l'X2",
+        "Les especificacions «Lingxi X2» (edició Interactive) indiquen 1,27 m, 33 kg, cap de 2 i cintura d'1 grau de llibertat, 1,5 m/s, obstacles ≤ 20 mm, pendent ≤ 12,5 %, bateria d'aprox. 10.000 mAh i sense ports d'usuari. S'ha pres com a referència la fitxa tècnica de desembre de 2025."
+      ],
+      [
+        "info",
+        "Sobre la denominació «X2 Lite»",
+        "No existeix un producte independent anomenat X2 Lite; la denominació sol usar-se per a l'X2 base, identificat en alguns mercats com a Youth Edition. Confirma l'SKU exacte amb el distribuïdor."
+      ]
+    ],
+    "videos": [
+      {
+        "src": "assets/video/x2.mp4",
+        "poster": "assets/video/x2.webp",
+        "titulo": "El RHX2 en acció"
+      }
+    ]
+  },
+  "rha3": {
+    "claim": "Humanoide de mida adulta per a escena i atenció al públic",
+    "tagline": "Espectacles, recepció, presentacions i entreteniment, amb interacció multimodal, jornades de fins a 10 hores i control coordinat de flotes.",
+    "hero_alt": "RHA3 de cos sencer, de front, sobre fons blanc",
+    "gallery": [
+      [
+        "El RHA3 caminant",
+        "assets/robots/rha3/caminando.webp"
+      ],
+      [
+        "Cap i tors del RHA3",
+        "assets/robots/rha3/cabeza-y-torso.webp"
+      ],
+      [
+        "Tres vistes del RHA3",
+        "assets/robots/rha3/tres-poses.webp"
+      ],
+      [
+        "En moviment sobre plataforma",
+        "assets/robots/rha3/en-pedestal.webp"
+      ]
+    ],
+    "intro": "El RHA3 és un humanoide bípede de mida adulta orientat a espectacles comercials, entreteniment interactiu, recepció, presentacions i exposicions. Amb 55 kg i 12 kW de potència instantània, executa moviments dinàmics d'escena, i la seva doble bateria intercanviable permet treballar durant períodes prolongats. Inclou de sèrie posicionament UWB per coordinar grups de més de 100 robots.",
+    "keyfacts": [
+      [
+        "Alçada",
+        "1,73 m"
+      ],
+      [
+        "Pes",
+        "55 kg"
+      ],
+      [
+        "Autonomia",
+        "fins a 10 h"
+      ],
+      [
+        "Potència instantània",
+        "12 kW"
+      ]
+    ],
+    "highlights": [
+      [
+        "Potència en 55 kg",
+        "12 kW de potència instantània i 150 A de corrent màxim, amb una relació potència/pes de 0,218 kW/kg. Estructura d'aliatge de magnesi, titani i TPU flexible."
+      ],
+      [
+        "Autonomia de jornada completa",
+        "Doble bateria redundant d'1.152 Wh amb fins a 10 hores d'ús i canvi en calent en uns 10 segons, per a funcionament continu les 24 hores."
+      ],
+      [
+        "Coordinació de flotes",
+        "Posicionament UWB de sèrie amb precisió inferior a ±10 cm per coordinar més de 100 unitats sense modificacions."
+      ],
+      [
+        "Interacció multimodal",
+        "Visió binocular, sensors tàctils a les espatlles, captació de veu de 360° amb diverses matrius de micròfons i pantalla frontal."
+      ]
+    ],
+    "specs": [
+      [
+        "Dimensions i estructura",
+        [
+          [
+            "Alçada",
+            "aprox. 1,73 m"
+          ],
+          [
+            "Dimensions",
+            "1.730 × 520 × 300 mm"
+          ],
+          [
+            "Pes",
+            "aprox. 55 kg"
+          ],
+          [
+            "Coll",
+            "2 graus de llibertat"
+          ],
+          [
+            "Cada braç",
+            "7 graus de llibertat"
+          ],
+          [
+            "Cintura",
+            "3 graus de llibertat"
+          ],
+          [
+            "Cada cama",
+            "6 graus de llibertat"
+          ],
+          [
+            "Mans hàbils",
+            "opcionals"
+          ],
+          [
+            "Graus de llibertat totals",
+            "51 amb mans Omnihand"
+          ],
+          [
+            "Materials",
+            "aliatge de magnesi, aliatge de titani i TPU flexible"
+          ],
+          [
+            "Personalització",
+            "des de vinils de color fins a carcassa completa"
+          ]
+        ]
+      ],
+      [
+        "Mobilitat",
+        [
+          [
+            "Velocitat màxima",
+            "1,2 m/s"
+          ],
+          [
+            "Pendent màxim (omnidireccional)",
+            "15°"
+          ],
+          [
+            "Alçada màxima d'obstacle",
+            "250 mm"
+          ],
+          [
+            "Amplada mínima frontal",
+            "aprox. 900 mm"
+          ],
+          [
+            "Amplada mínima lateral",
+            "aprox. 600 mm"
+          ],
+          [
+            "Navegació",
+            "autònoma amb evitació dinàmica d'obstacles"
+          ],
+          [
+            "Posicionament",
+            "visió i sistemes sense fil"
+          ],
+          [
+            "Potència instantània",
+            "12 kW"
+          ],
+          [
+            "Corrent màxim",
+            "150 A"
+          ],
+          [
+            "Relació potència/pes",
+            "0,218 kW/kg"
+          ],
+          [
+            "Moviments",
+            "tombarelles i marxa aèria"
+          ]
+        ]
+      ],
+      [
+        "Braços i manipulació",
+        [
+          [
+            "Càrrega nominal per braç",
+            "5 kg"
+          ],
+          [
+            "Velocitat de l'efector amb càrrega",
+            "fins a 1 m/s"
+          ],
+          [
+            "Velocitat sense càrrega",
+            "fins a 3 m/s"
+          ],
+          [
+            "Compatibilitat",
+            "mans hàbils i altres efectors finals"
+          ]
+        ]
+      ],
+      [
+        "Bateria i autonomia",
+        [
+          [
+            "Capacitat total",
+            "1.152 Wh"
+          ],
+          [
+            "Configuració",
+            "doble bateria intercanviable i redundant, cèl·lules de pestanya completa (full-tab)"
+          ],
+          [
+            "Autonomia",
+            "fins a 10 hores segons el patró d'ús"
+          ],
+          [
+            "Temps de càrrega",
+            "≤ 2 hores"
+          ],
+          [
+            "Canvi de bateria",
+            "aprox. 10 segons"
+          ],
+          [
+            "Funcionament prolongat",
+            "fins a 24 h contínues mitjançant canvi de bateria en calent"
+          ]
+        ]
+      ],
+      [
+        "Percepció",
+        [
+          [
+            "Visió",
+            "sistema binocular"
+          ],
+          [
+            "Resolució binocular",
+            "1.920 × 1.536 px a 30 fps"
+          ],
+          [
+            "Posicionament visual — posició",
+            "±10 cm"
+          ],
+          [
+            "Posicionament visual — orientació",
+            "±10°"
+          ],
+          [
+            "UWB",
+            "de sèrie, precisió inferior a ±10 cm"
+          ],
+          [
+            "Àudio",
+            "micròfons i altaveus per a interacció per veu"
+          ],
+          [
+            "Pantalla",
+            "frontal d'interacció"
+          ],
+          [
+            "Tàctil",
+            "sensors a les espatlles"
+          ],
+          [
+            "Captació de veu",
+            "360°, amb diverses matrius de micròfons"
+          ]
+        ]
+      ],
+      [
+        "Computació",
+        [
+          [
+            "Unitat principal MDU",
+            "Rockchip RK3588"
+          ],
+          [
+            "Memòria MDU",
+            "16 GB"
+          ],
+          [
+            "Emmagatzematge MDU",
+            "256 GB"
+          ],
+          [
+            "Unitat HDU",
+            "RK3588S2"
+          ],
+          [
+            "Memòria HDU",
+            "16 GB"
+          ],
+          [
+            "Emmagatzematge HDU",
+            "128 GB"
+          ]
+        ]
+      ],
+      [
+        "Comunicacions",
+        [
+          [
+            "Connectivitat",
+            "Wi-Fi · Bluetooth · 4G · 5G"
+          ],
+          [
+            "Mòbil",
+            "5G de doble mòdul amb doble SIM (eSIM i targeta SIM)"
+          ],
+          [
+            "Mòduls 5G",
+            "LGA per a la Xina i M.2 per a la resta de mercats"
+          ]
+        ]
+      ],
+      [
+        "Flota i desplegament",
+        [
+          [
+            "Control de flota",
+            "coordinació precisa de més de 100 unitats"
+          ],
+          [
+            "Posicionament de flota",
+            "UWB de sèrie, precisió per unitat inferior a ±10 cm"
+          ],
+          [
+            "Transport",
+            "transportable per una persona; embalatge plegable apte per a un tot terreny"
+          ],
+          [
+            "Embalatge",
+            "entrada i sortida autònoma de la caixa; desplegament per un sol operari"
+          ]
+        ]
+      ],
+      [
+        "Entorn operatiu",
+        [
+          [
+            "Temperatura de funcionament",
+            "−10 a 45 °C"
+          ],
+          [
+            "Temperatura d'emmagatzematge",
+            "−20 a 70 °C"
+          ],
+          [
+            "Humitat relativa",
+            "10 a 90 %"
+          ],
+          [
+            "Protecció dels mòduls articulars",
+            "IP5X"
+          ],
+          [
+            "Vida de disseny",
+            "3 anys"
+          ],
+          [
+            "Control de qualitat",
+            "92 proves de grau automoció abans del lliurament"
+          ]
+        ]
+      ],
+      [
+        "Programari i desenvolupament",
+        [
+          [
+            "Creació de moviments",
+            "LinkCraft, amb biblioteca de continguts per pujar i descarregar"
+          ],
+          [
+            "Disseny de personatges",
+            "LinkSoul"
+          ],
+          [
+            "Interfícies",
+            "obertes per a desenvolupament secundari"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Espectacles comercials i dansa",
+        null
+      ],
+      [
+        "Ambaixador de marca",
+        null
+      ],
+      [
+        "Entreteniment interactiu i retransmissions en directe",
+        null
+      ],
+      [
+        "Guia d'exposicions i parcs temàtics",
+        null
+      ],
+      [
+        "Recepció d'hotels i oficines",
+        null
+      ],
+      [
+        "Presentador de productes",
+        null
+      ],
+      [
+        "Atenció al client",
+        null
+      ],
+      [
+        "Recerca i educació en intel·ligència corporal",
+        null
+      ]
+    ],
+    "notes": []
+  },
+  "rhx2-edu": {
+    "claim": "Humanoide desmuntable per a ensenyament i recerca",
+    "tagline": "Es munta i desmunta completament i obre el control de moviment al desenvolupament, amb guies, vídeos i llista de consumibles per a l'aula.",
+    "hero_alt": "Plataforma humanoide RHX2 EDU en acabat negre, de front",
+    "gallery": [
+      [
+        "En una competició de robòtica",
+        "assets/robots/rhx2-edu/competicion.webp"
+      ],
+      [
+        "Taller de muntatge i posada a punt",
+        "assets/robots/rhx2-edu/taller-formacion.webp"
+      ],
+      [
+        "Classe de robòtica STEM",
+        "assets/robots/rhx2-edu/aula-stem.webp"
+      ]
+    ],
+    "intro": "El RHX2 EDU és la versió de la sèrie X2 per a recerca, docència i formació pràctica. Se centra en el muntatge i desmuntatge del robot i en el desenvolupament del control de moviment, i serveix per a pràctiques d'enginyeria, competicions i compra de kits de components.",
+    "keyfacts": [
+      [
+        "Alçada",
+        "1,30 m"
+      ],
+      [
+        "Pes",
+        "35 kg"
+      ],
+      [
+        "Graus de llibertat",
+        "29"
+      ],
+      [
+        "Bateria",
+        "500 Wh"
+      ]
+    ],
+    "highlights": [
+      [
+        "Muntatge complet",
+        "S'ensambla i desmunta de principi a fi, amb guies de disseny i muntatge, vídeos i una guia de muntatge en simulació."
+      ],
+      [
+        "Control de moviment obert",
+        "Permet desenvolupar el control d'articulacions, pinces i actuadors, a més de sistemes encastats i integració mecatrònica."
+      ],
+      [
+        "Integració flexible",
+        "Admet pinces, mans i punys simulats, sensors externs mitjançant interfícies d'alimentació i dades, i plaques de desenvolupament pròpies."
+      ],
+      [
+        "Suport docent",
+        "Llista de consumibles per simplificar compres i manteniment, i exterior personalitzable per a projectes i competicions."
+      ]
+    ],
+    "specs": [
+      [
+        "Dimensions i estructura",
+        [
+          [
+            "Alçada",
+            "1,30 m, amb cap simulat"
+          ],
+          [
+            "Pes",
+            "35 kg"
+          ],
+          [
+            "Graus de llibertat totals",
+            "29"
+          ],
+          [
+            "Graus de llibertat per braç",
+            "7"
+          ],
+          [
+            "Muntatge i desmuntatge complets",
+            "sí"
+          ],
+          [
+            "Exterior",
+            "personalitzable en disseny i estructura"
+          ]
+        ]
+      ],
+      [
+        "Rendiment",
+        [
+          [
+            "Velocitat màxima de marxa",
+            "1,8 m/s"
+          ],
+          [
+            "Càrrega màxima de l'efector",
+            "3 kg"
+          ],
+          [
+            "Efectors opcionals",
+            "pinces, mans simulades i punys simulats"
+          ]
+        ]
+      ],
+      [
+        "Energia",
+        [
+          [
+            "Bateria",
+            "500 Wh"
+          ],
+          [
+            "Autonomia",
+            "2 h"
+          ]
+        ]
+      ],
+      [
+        "Computació i ampliació",
+        [
+          [
+            "Mòdul de computació",
+            "1 × RK3588"
+          ],
+          [
+            "Ampliació de computació i sensors",
+            "sí; admet plaques de desenvolupament avançades de l'usuari"
+          ],
+          [
+            "Interfícies",
+            "alimentació i dades integrades per a dispositius externs"
+          ]
+        ]
+      ],
+      [
+        "Programari",
+        [
+          [
+            "Desenvolupament secundari",
+            "sí, de control de moviment"
+          ],
+          [
+            "Àmbits de desenvolupament",
+            "control d'articulacions, pinces i actuadors; desenvolupament encastat; integració de sistemes mecatrònics"
+          ]
+        ]
+      ],
+      [
+        "Recursos docents",
+        [
+          [
+            "Guies",
+            "disseny complet del producte i muntatge, amb vídeos"
+          ],
+          [
+            "Simulació",
+            "guia de muntatge en simulació"
+          ],
+          [
+            "Consumibles",
+            "llista de consumibles per a compra i manteniment"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Educació STEM en robòtica",
+        null
+      ],
+      [
+        "Competicions de robòtica",
+        null
+      ],
+      [
+        "Formació en muntatge, posada a punt i manteniment",
+        null
+      ],
+      [
+        "Pràctiques d'enginyeria",
+        null
+      ],
+      [
+        "Recerca en control de moviment",
+        null
+      ],
+      [
+        "Kits de components per a centres educatius",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Dades que el fullet no detalla",
+        "El fullet no indica quins sensors i connectivitat inclou de sèrie (només que admet afegir sensors i computació), ni el grau de protecció ni la garantia. Confirma-ho en oferir-lo."
+      ]
+    ]
+  },
+  "rhx2-ultra": {
+    "claim": "Humanoide programable amb percepció 3D i NVIDIA Orin NX",
+    "tagline": "LiDAR 3D, quatre càmeres i una unitat de computació per a desenvolupament en el format d'1,31 m de la sèrie X2, amb SDK per crear les teves pròpies aplicacions.",
+    "hero_alt": "Robot humanoide RHX2 Ultra dret, de front, amb la mà al front",
+    "gallery": [
+      [
+        "Sèrie X2 amb kit de components",
+        "assets/robots/rhx2-ultra/serie-x2.webp"
+      ],
+      [
+        "En moviment",
+        "assets/robots/rhx2-ultra/en-movimiento.webp"
+      ]
+    ],
+    "intro": "El RHX2 Ultra és la configuració superior de la sèrie X2. Afegeix braços de 7 graus de llibertat, LiDAR 3D, càmeres RGB-D, binocular i posterior, connectivitat 4G/5G i una unitat NVIDIA Orin NX de 16 GB per a desenvolupament secundari. Està pensat per a visites guiades, retail, actuacions i recerca.",
+    "keyfacts": [
+      [
+        "Alçada",
+        "1,31 m"
+      ],
+      [
+        "Pes",
+        "39 kg"
+      ],
+      [
+        "Graus de llibertat",
+        "30"
+      ],
+      [
+        "Computació",
+        "NVIDIA Orin NX 16 GB"
+      ]
+    ],
+    "highlights": [
+      [
+        "Percepció 3D",
+        "LiDAR 3D i càmeres RGB-D, binocular, d'interacció i posterior: cartografia en un sol recorregut i navegació que evita obstacles estàtics i dinàmics."
+      ],
+      [
+        "Braços de 7 graus de llibertat",
+        "Abast d'aprox. 570 mm i 3 kg de càrrega; admet mà artificial, pinça OmniPicker i mà hàbil OmniHand."
+      ],
+      [
+        "Atenció autònoma",
+        "Reconeixement facial i salutació proactiva, respostes a partir d'una base de coneixement i explicacions en diversos idiomes, amb més de 30 expressions facials."
+      ],
+      [
+        "Plataforma de desenvolupament",
+        "Unitat Orin NX de 16 GB, SDK de desenvolupament secundari i compatibilitat amb LinkCraft i LinkSoul; estació de càrrega i teleoperació opcionals."
+      ]
+    ],
+    "specs": [
+      [
+        "Dimensions i estructura",
+        [
+          [
+            "Alçada",
+            "1,31 m"
+          ],
+          [
+            "Dimensions dempeus",
+            "1.310 × 460 × 210 mm (± 30 mm), alçada × amplada × fondària"
+          ],
+          [
+            "Dimensions de l'embalatge",
+            "945 × 705 × 475 mm"
+          ],
+          [
+            "Pes net",
+            "aprox. 39 kg, amb bateria i efector"
+          ],
+          [
+            "Pes amb embalatge",
+            "aprox. 67,5 kg"
+          ],
+          [
+            "Materials",
+            "aliatge d'alumini, aliatge de magnesi, plàstic tècnic d'alta resistència i escuma de PU"
+          ],
+          [
+            "Temperatura de funcionament",
+            "−10 a 40 °C (a −10 °C baixen el rendiment i l'autonomia)"
+          ]
+        ]
+      ],
+      [
+        "Articulacions",
+        [
+          [
+            "Graus de llibertat actius",
+            "30"
+          ],
+          [
+            "Cap",
+            "1"
+          ],
+          [
+            "Braços",
+            "7 per braç"
+          ],
+          [
+            "Cintura",
+            "3 (gir, capcineig i guinyada)"
+          ],
+          [
+            "Cames",
+            "6 per cama"
+          ],
+          [
+            "Parell màxim articular",
+            "120 Nm"
+          ]
+        ]
+      ],
+      [
+        "Mobilitat i navegació",
+        [
+          [
+            "Velocitat màxima",
+            "≤ 1,8 m/s corrent (fitxa tècnica) · 2 m/s (fullet)"
+          ],
+          [
+            "Velocitat d'ús diari",
+            "≤ 0,8 m/s"
+          ],
+          [
+            "Alçada màxima d'esglaó",
+            "50 mm"
+          ],
+          [
+            "Franqueig d'obstacles",
+            "50 mm"
+          ],
+          [
+            "Pendent",
+            "± 10°"
+          ],
+          [
+            "Amplada mínima de passadís per girar",
+            "900 mm"
+          ],
+          [
+            "Amplada mínima de pas",
+            "600 mm"
+          ],
+          [
+            "Navegació",
+            "cartografia multidimensional, planificació de rutes autònoma i evitació d'obstacles estàtics i dinàmics"
+          ],
+          [
+            "Recàrrega autònoma",
+            "tornada a l'estació de càrrega opcional"
+          ],
+          [
+            "Accions integrades",
+            "20 o més"
+          ]
+        ]
+      ],
+      [
+        "Braços i manipulació",
+        [
+          [
+            "Abast d'un braç sense efector",
+            "aprox. 570 mm"
+          ],
+          [
+            "Càrrega màxima",
+            "3 kg en postura específica, sense comptar l'efector"
+          ],
+          [
+            "Càrrega a tot l'espai de treball",
+            "≤ 1 kg, sense comptar l'efector"
+          ],
+          [
+            "Efectors compatibles",
+            "mà artificial, pinça OmniPicker i mà hàbil OmniHand"
+          ]
+        ]
+      ],
+      [
+        "Percepció",
+        [
+          [
+            "Càmeres",
+            "1 × RGB d'interacció · 1 × RGB binocular · 1 × RGB-D · 1 × RGB posterior"
+          ],
+          [
+            "LiDAR",
+            "1 × LiDAR 3D"
+          ],
+          [
+            "Sensor de moviment",
+            "1 × IMU de 6 eixos"
+          ],
+          [
+            "Tàctil",
+            "sensor al cap"
+          ]
+        ]
+      ],
+      [
+        "Interacció",
+        [
+          [
+            "Àudio",
+            "altaveu i matriu de micròfons"
+          ],
+          [
+            "Pantalla",
+            "pantalla d'expressions, amb més de 30 expressions facials"
+          ],
+          [
+            "Funcions",
+            "reconeixement facial, salutació proactiva, preguntes i respostes sobre base de coneixement i explicació en diversos idiomes"
+          ],
+          [
+            "Presentacions",
+            "eina integrada per crear i editar explicacions, gestos, veu, recorreguts i seqüències de moviment"
+          ],
+          [
+            "Control",
+            "comandament a distància, aplicació AGIBOT Go i veu (prioritat en aquest ordre)"
+          ]
+        ]
+      ],
+      [
+        "Computació",
+        [
+          [
+            "Unitat de control",
+            "1 × RK3588S i 1 × RK3588"
+          ],
+          [
+            "Unitat de computació per a desenvolupament",
+            "NVIDIA Orin NX 16 GB"
+          ]
+        ]
+      ],
+      [
+        "Energia",
+        [
+          [
+            "Bateria",
+            "aprox. 500 Wh"
+          ],
+          [
+            "Autonomia",
+            "aprox. 2 h caminant a 0,5 m/s"
+          ],
+          [
+            "Temps de càrrega",
+            "aprox. 1,5 h, del 15 % al 100 %"
+          ],
+          [
+            "Consum típic",
+            "aprox. 240 W"
+          ],
+          [
+            "Recàrrega",
+            "càrrega directa, canvi de bateria i estació de càrrega autònoma opcional"
+          ]
+        ]
+      ],
+      [
+        "Comunicacions i ports",
+        [
+          [
+            "Connectivitat",
+            "Wi-Fi · Bluetooth · 4G/5G · GPS"
+          ],
+          [
+            "Ports de depuració",
+            "2 × USB-C · 2 × USB-A · 2 × RJ45"
+          ],
+          [
+            "Sortides d'alimentació",
+            "1 × 12 V/3 A · 1 × 48 V/5 A"
+          ]
+        ]
+      ],
+      [
+        "Desenvolupament i opcions",
+        [
+          [
+            "Desenvolupament secundari",
+            "sí, amb SDK"
+          ],
+          [
+            "LinkCraft",
+            "entrenament de moviments sense codi, imitació d'accions, narració per veu i actuacions coordinades en grup"
+          ],
+          [
+            "LinkSoul",
+            "personalitat del robot, paraules d'activació i tons de veu personalitzables"
+          ],
+          [
+            "Accessoris opcionals",
+            "mans hàbils i pinces, estació de càrrega automàtica, teleoperació més enllà de l'abast visual amb equip de realitat virtual i equip de computació de vora"
+          ]
+        ]
+      ],
+      [
+        "Subministrament i garantia",
+        [
+          [
+            "Inclou",
+            "robot, bateria i carregador, comandament a distància, aturada d'emergència sense fil, guia ràpida i certificat de conformitat"
+          ],
+          [
+            "Garantia",
+            "1,5 anys"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Recepció i orientació en botigues",
+        null
+      ],
+      [
+        "Captació i guiatge de clients",
+        null
+      ],
+      [
+        "Visites guiades en sales d'exposició",
+        null
+      ],
+      [
+        "Actuacions guiades",
+        null
+      ],
+      [
+        "Teleoperació i presència remota",
+        null
+      ],
+      [
+        "Recerca i educació",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Xifres diferents segons el document",
+        "Velocitat màxima: ≤ 1,8 m/s a la fitxa tècnica d'AGIBOT (desembre de 2025), 2 m/s al fullet i 1,5 m/s a les especificacions «Lingxi X2». Aquestes últimes, d'una revisió anterior, indiquen a més 1,30 m, 35 kg, cap de 2 graus de llibertat, obstacles ≤ 20 mm, pendent ≤ 12,5 %, bateria d'aprox. 10.000 mAh i 1 × USB-A, 1 × USB-C i 2 × RJ45. S'ha pres com a referència la fitxa tècnica de desembre de 2025."
+      ],
+      [
+        "info",
+        "Abast del braç",
+        "L'abast d'aprox. 570 mm només apareix a les especificacions «Lingxi X2»; la fitxa tècnica actual no ho indica."
+      ]
+    ]
+  },
+  "rha3-ultra": {
+    "claim": "Humanoide de servei per a operació autònoma 24/7",
+    "tagline": "La versió de més prestacions del RHA3: percepció LiDAR de 360°, 700 TOPS de càlcul, càrrega autònoma i un sistema de seguretat en quatre capes.",
+    "hero_alt": "RHA3 Ultra Rebonico corrent, retallat sobre fons transparent",
+    "gallery": [
+      [
+        "Cap i tors del RHA3 Ultra",
+        "assets/robots/rha3-ultra/retrato.webp"
+      ],
+      [
+        "El RHA3 Ultra saludant, de cos sencer",
+        "assets/robots/rha3-ultra/saludando.webp"
+      ],
+      [
+        "Gest amb la mà oberta, assegut",
+        "assets/robots/rha3-ultra/gesto-sentado.webp"
+      ]
+    ],
+    "intro": "El RHA3 Ultra és la versió de més prestacions del RHA3, un humanoide de mida adulta per a ús comercial. Hereta la mobilitat i la interacció del RHA3 i hi afegeix percepció LiDAR de 360°, càlcul de 700 TOPS, mans Omnihand de sèrie i posicionament UWB + RTK per treballar de manera autònoma en interior i exterior. Es va presentar oficialment el juliol de 2026.",
+    "keyfacts": [
+      [
+        "Alçada",
+        "1,74 m"
+      ],
+      [
+        "Graus de llibertat",
+        "51"
+      ],
+      [
+        "Càlcul",
+        "700 TOPS"
+      ],
+      [
+        "Autonomia",
+        "fins a 8 h"
+      ]
+    ],
+    "highlights": [
+      [
+        "Operació autònoma contínua",
+        "Fins a 8 hores de bateria, càrrega autònoma en estació, canvi de bateria en uns 10 segons i refrigeració per aire ADU per treballar les 24 hores."
+      ],
+      [
+        "Percepció i càlcul",
+        "LiDAR i diverses càmeres amb visió de 360°, 700 TOPS de càlcul i arquitectura heterogènia de tres nivells per planificar rutes i evitar obstacles sense teleoperació."
+      ],
+      [
+        "Manipulació amb tacte",
+        "Mans Omnihand de sèrie amb detecció tàctil omnidireccional, per a objectes des d'un full de paper fins a 5 kg."
+      ],
+      [
+        "Seguretat en quatre capes",
+        "Predicció de riscos a 3 m, aturada per contacte amb control de força, doble aturada d'emergència amb tall en mil·lisegons i protecció davant de caigudes."
+      ]
+    ],
+    "specs": [
+      [
+        "Dimensions i pes",
+        [
+          [
+            "Alçada",
+            "aprox. 1,74 m"
+          ],
+          [
+            "Dimensions",
+            "1.740 × 520 × 300 mm"
+          ],
+          [
+            "Pes",
+            "aprox. 60 kg"
+          ],
+          [
+            "Graus de llibertat actius",
+            "51"
+          ],
+          [
+            "Coll",
+            "2"
+          ],
+          [
+            "Braços",
+            "7 per braç"
+          ],
+          [
+            "Cintura",
+            "3"
+          ],
+          [
+            "Cames",
+            "6 per cama"
+          ],
+          [
+            "Mans hàbils",
+            "Omnihand de sèrie; 10 GDL per mà en la configuració de 51 GDL, amb configuracions de fins a 20 GDL"
+          ],
+          [
+            "Estructura",
+            "aliatge de magnesi i compost de niló amb fibra de carboni"
+          ]
+        ]
+      ],
+      [
+        "Mobilitat",
+        [
+          [
+            "Velocitat habitual màxima",
+            "1,8 m/s"
+          ],
+          [
+            "Velocitat normal recomanada",
+            "< 1,2 m/s"
+          ],
+          [
+            "Velocitat màxima en laboratori",
+            "2,5 m/s"
+          ],
+          [
+            "Velocitat màxima de cursa anunciada",
+            "5 m/s"
+          ],
+          [
+            "Parell màxim de genoll",
+            "320 Nm"
+          ],
+          [
+            "Capacitats",
+            "desplaçament dinàmic i recuperació de l'equilibri"
+          ],
+          [
+            "Terreny",
+            "escales i pendents"
+          ]
+        ]
+      ],
+      [
+        "Manipulació",
+        [
+          [
+            "Càrrega nominal per braç",
+            "5 kg"
+          ],
+          [
+            "Braços",
+            "7 graus de llibertat"
+          ],
+          [
+            "Mans hàbils",
+            "Omnihand de sèrie, amb detecció tàctil omnidireccional"
+          ],
+          [
+            "Rang d'objectes",
+            "des d'un full de paper fins a 5 kg"
+          ],
+          [
+            "Percepció",
+            "RGB-D específica per a manipulació"
+          ],
+          [
+            "Aprenentatge",
+            "adquisició d'habilitats a partir d'una sola demostració"
+          ],
+          [
+            "Orientació",
+            "manipulació d'objectes, interacció i serveis avançats"
+          ]
+        ]
+      ],
+      [
+        "Sensors",
+        [
+          [
+            "Sistema de percepció",
+            "LiDAR, càmeres perimetrals i doble càmera de profunditat, cobertura de 360°"
+          ],
+          [
+            "LiDAR",
+            "3D"
+          ],
+          [
+            "Càmeres RGB-D",
+            "manipulació i reconeixement del terreny"
+          ],
+          [
+            "Càmera binocular",
+            "RGB"
+          ],
+          [
+            "Visió perimetral",
+            "càmeres RGB"
+          ],
+          [
+            "Posicionament",
+            "GPS · RTK · UWB"
+          ],
+          [
+            "Precisió de posicionament",
+            "inferior a ±1 cm (UWB en interior i RTK en exterior)"
+          ],
+          [
+            "Tàctil",
+            "sensors a les espatlles"
+          ],
+          [
+            "Àudio",
+            "matrius de 8 micròfons davantera i posterior; altaveu"
+          ],
+          [
+            "Interfície",
+            "pantalla corba i indicadors lluminosos omnidireccionals"
+          ]
+        ]
+      ],
+      [
+        "Computació",
+        [
+          [
+            "Capacitat de càlcul",
+            "700 TOPS"
+          ],
+          [
+            "Processadors",
+            "2 × Rockchip RK3588"
+          ],
+          [
+            "Plataforma d'IA",
+            "NVIDIA Jetson Thor"
+          ],
+          [
+            "Arquitectura",
+            "heterogènia de tres nivells, amb execució local de percepció, planificació i intel·ligència corporal"
+          ],
+          [
+            "Funcions",
+            "descomposició autònoma de tasques, planificació de rutes i evitació dinàmica d'obstacles"
+          ],
+          [
+            "Mapes",
+            "construcció autònoma de mapes semàntics de l'entorn"
+          ]
+        ]
+      ],
+      [
+        "Bateria",
+        [
+          [
+            "Capacitat",
+            "1.152 Wh"
+          ],
+          [
+            "Autonomia",
+            "fins a 8 hores"
+          ],
+          [
+            "Patró de càlcul oficial",
+            "aprox. 50 % en moviment i 50 % aturat"
+          ],
+          [
+            "Temps de càrrega",
+            "≤ 2 hores"
+          ],
+          [
+            "Entrada",
+            "110–220 V"
+          ],
+          [
+            "Modes de recàrrega",
+            "càrrega autònoma en connectar-se a l'estació, càrrega directa i substitució de bateria"
+          ],
+          [
+            "Canvi de bateria",
+            "aprox. 10 segons"
+          ],
+          [
+            "Refrigeració",
+            "per aire, sistema ADU"
+          ]
+        ]
+      ],
+      [
+        "Seguretat i fiabilitat",
+        [
+          [
+            "Percepció activa",
+            "predicció de riscos a 3 m"
+          ],
+          [
+            "Control de força passiu",
+            "aturada en detectar contacte"
+          ],
+          [
+            "Aturada d'emergència",
+            "doble, amb tall de potència en mil·lisegons"
+          ],
+          [
+            "Caigudes",
+            "protecció intel·ligent del robot i de l'entorn"
+          ],
+          [
+            "Assajos",
+            "col·lisions, caigudes i temperatures extremes"
+          ],
+          [
+            "Inspecció",
+            "92 passos segons estàndards d'automoció"
+          ]
+        ]
+      ],
+      [
+        "Comunicacions i desenvolupament",
+        [
+          [
+            "Connectivitat",
+            "Wi-Fi · Bluetooth · 4G · 5G"
+          ],
+          [
+            "Xarxa mòbil",
+            "5G global de doble banda, doble eSIM i SIM física"
+          ],
+          [
+            "Control de flota",
+            "coordinació de centenars d'unitats, compatible amb LinkBots"
+          ],
+          [
+            "Plataformes",
+            "LinkCraft (coreografies) i LinkSoul (personatges)"
+          ],
+          [
+            "Desenvolupament",
+            "interfícies obertes per a desenvolupament secundari"
+          ],
+          [
+            "Interfícies",
+            "sensors, algorismes i aplicacions externes"
+          ]
+        ]
+      ],
+      [
+        "Desplegament i manteniment",
+        [
+          [
+            "Transport",
+            "entrada i sortida autònoma de la caixa, emmagatzematge plegable, apte per a un tot terreny"
+          ],
+          [
+            "Posada en marxa",
+            "per una sola persona"
+          ],
+          [
+            "Operació",
+            "sense supervisió, amb autodiagnòstic de fallades"
+          ],
+          [
+            "Manteniment",
+            "disseny modular"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Recepció i visites guiades",
+        null
+      ],
+      [
+        "Assistència en botigues i esdeveniments de marca",
+        null
+      ],
+      [
+        "Patrulla i inspecció d'instal·lacions",
+        null
+      ],
+      [
+        "Recerca i educació en intel·ligència corporal",
+        null
+      ],
+      [
+        "Recollida de dades per a entrenament",
+        null
+      ],
+      [
+        "Espectacles i esdeveniments",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Velocitats segons el context",
+        "La velocitat habitual màxima és d'1,8 m/s i la recomanada en ús normal és inferior a 1,2 m/s. Les xifres de 2,5 m/s (laboratori) i 5 m/s (cursa) corresponen a condicions d'assaig i no s'han d'interpretar com a velocitat de treball."
+      ],
+      [
+        "info",
+        "Graus de llibertat de les mans",
+        "La configuració de 51 graus de llibertat correspon a mans de 10 GDL. La fitxa de producte indica mans Omnihand de sèrie de fins a 20 GDL: convé confirmar la configuració de mans en oferir-lo."
+      ]
+    ],
+    "videos": [
+      {
+        "src": "assets/video/a3-ultra-1.mp4",
+        "poster": "assets/video/a3-ultra-1.webp",
+        "titulo": "El RHA3 Ultra en moviment"
+      },
+      {
+        "src": "assets/video/a3-ultra-2.mp4",
+        "poster": "assets/video/a3-ultra-2.webp",
+        "titulo": "Manipulació i interacció"
+      }
+    ]
+  },
+  "rhg2": {
+    "claim": "Humanoide industrial amb base mòbil i tors telescòpic",
+    "tagline": "Dos braços manipuladors sobre plataforma de rodes, per a fabricació, logística, muntatge, manipulació de materials i inspecció.",
+    "hero_alt": "Humanoide industrial RHG2",
+    "gallery": [
+      [
+        "Perfil",
+        "assets/robots/rhg2/perfil.webp"
+      ],
+      [
+        "Interacció",
+        "assets/robots/rhg2/saludando.webp"
+      ],
+      [
+        "Tors i pantalla",
+        "assets/robots/rhg2/display-frontal.webp"
+      ],
+      [
+        "Pantalla facial",
+        "assets/robots/rhg2/display.webp"
+      ]
+    ],
+    "intro": "El RHG2 és un humanoide industrial amb base mòbil, tors telescòpic i dos braços manipuladors. A diferència dels humanoides bípedes, utilitza una plataforma de rodes per guanyar estabilitat, autonomia i capacitat industrial, i està pensat per executar tasques completes amb supervisió mínima en producció, logística i inspecció.",
+    "keyfacts": [
+      [
+        "Alçada regulable",
+        "1.225 – 1.795 mm"
+      ],
+      [
+        "Pes",
+        "185 kg"
+      ],
+      [
+        "Càrrega màxima",
+        "10 kg (5 kg per braç)"
+      ],
+      [
+        "Autonomia",
+        "fins a 4 h"
+      ]
+    ],
+    "highlights": [
+      [
+        "Tors telescòpic",
+        "Alçada regulable entre 1.225 i 1.795 mm per treballar a diferents alçades d'estació sense reconfigurar la cèl·lula."
+      ],
+      [
+        "Manipulació de precisió",
+        "Braços de 7 GDL amb sensors de parell a les articulacions i control de força, amb operacions de precisió submil·limètrica anunciades pel fabricant."
+      ],
+      [
+        "Plataforma mòbil autònoma",
+        "Direcció Ackermann, desplaçament lateral, gir sobre el seu propi eix, percepció de 360° i estació de càrrega automàtica."
+      ],
+      [
+        "Computació d'altes prestacions",
+        "NVIDIA Jetson Thor T5000 amb 2.070 TFLOPS anunciats en precisió FP4, per a percepció i aprenentatge d'habilitats."
+      ]
+    ],
+    "specs": [
+      [
+        "Dimensions i pes",
+        [
+          [
+            "Alçada regulable",
+            "1.225 – 1.795 mm"
+          ],
+          [
+            "Amplada",
+            "640 mm"
+          ],
+          [
+            "Longitud",
+            "760 mm"
+          ],
+          [
+            "Pes",
+            "aprox. 185 kg"
+          ],
+          [
+            "Protecció del robot complet",
+            "IP42"
+          ],
+          [
+            "Graus de llibertat actius",
+            "26, sense comptar els efectors finals"
+          ],
+          [
+            "Coll",
+            "3"
+          ],
+          [
+            "Cada braç",
+            "7"
+          ],
+          [
+            "Cintura i cames (elevació)",
+            "5"
+          ],
+          [
+            "Rodes omnidireccionals",
+            "4"
+          ]
+        ]
+      ],
+      [
+        "Plataforma mòbil",
+        [
+          [
+            "Velocitat màxima",
+            "1,5 m/s"
+          ],
+          [
+            "Rodes",
+            "omnidireccionals"
+          ],
+          [
+            "Direcció",
+            "tipus Ackermann"
+          ],
+          [
+            "Moviments",
+            "desplaçament lateral i gir sobre el seu propi eix"
+          ],
+          [
+            "Navegació",
+            "autònoma"
+          ],
+          [
+            "Percepció",
+            "360°"
+          ],
+          [
+            "Càrrega",
+            "estació de càrrega automàtica"
+          ]
+        ]
+      ],
+      [
+        "Braços i manipulació",
+        [
+          [
+            "Càrrega nominal per braç",
+            "5 kg"
+          ],
+          [
+            "Càrrega màxima total",
+            "10 kg"
+          ],
+          [
+            "Braços",
+            "7 graus de llibertat"
+          ],
+          [
+            "Sensors",
+            "de parell a les articulacions"
+          ],
+          [
+            "Control",
+            "de força"
+          ],
+          [
+            "Mans hàbils",
+            "opcionals, de 19 graus de llibertat"
+          ],
+          [
+            "Precisió",
+            "operacions submil·limètriques anunciades pel fabricant"
+          ],
+          [
+            "Habilitats",
+            "aprenentatge i desplegament mitjançant aprenentatge per reforç"
+          ]
+        ]
+      ],
+      [
+        "Sensors",
+        [
+          [
+            "LiDAR 3D",
+            "2 unitats"
+          ],
+          [
+            "Càmera estèreo",
+            "1 unitat"
+          ],
+          [
+            "Càmeres d'ull de peix",
+            "3 unitats"
+          ],
+          [
+            "Càmera RGB-D al cap",
+            "1 unitat"
+          ],
+          [
+            "Càmeres RGB-D als canells",
+            "2 unitats"
+          ],
+          [
+            "Càmera interactiva",
+            "RGB"
+          ],
+          [
+            "Inercial",
+            "unitat IMU"
+          ],
+          [
+            "Força i parell",
+            "sensors dedicats"
+          ],
+          [
+            "Percepció perimetral",
+            "per a navegació i manipulació"
+          ]
+        ]
+      ],
+      [
+        "Interacció",
+        [
+          [
+            "Àudio",
+            "matriu de micròfons i altaveu"
+          ],
+          [
+            "Pantalla",
+            "facial"
+          ],
+          [
+            "Indicador",
+            "lluminós multicolor"
+          ],
+          [
+            "Identificació",
+            "NFC"
+          ]
+        ]
+      ],
+      [
+        "Computació",
+        [
+          [
+            "Plataforma",
+            "NVIDIA Jetson Thor T5000"
+          ],
+          [
+            "Potència anunciada",
+            "2.070 TFLOPS en precisió FP4"
+          ]
+        ]
+      ],
+      [
+        "Bateria",
+        [
+          [
+            "Configuració",
+            "doble bateria"
+          ],
+          [
+            "Capacitat total",
+            "aprox. 1.652 Wh"
+          ],
+          [
+            "Autonomia",
+            "fins a 4 hores d'operació contínua"
+          ],
+          [
+            "Temps de càrrega",
+            "≤ 2 hores"
+          ],
+          [
+            "Entrada",
+            "100–240 V"
+          ],
+          [
+            "Sortida del carregador",
+            "54,75 V · 15 A"
+          ],
+          [
+            "Modes de recàrrega",
+            "càrrega directa, substitució de bateria, canvi en calent i càrrega autònoma"
+          ]
+        ]
+      ],
+      [
+        "Comunicacions",
+        [
+          [
+            "Connectivitat",
+            "Wi-Fi · Bluetooth · 4G · 5G · NFC"
+          ]
+        ]
+      ],
+      [
+        "Desenvolupament i control",
+        [
+          [
+            "Desenvolupament secundari",
+            "suportat"
+          ],
+          [
+            "Programari",
+            "actualitzacions OTA"
+          ],
+          [
+            "Control",
+            "engegada remota i teleoperació"
+          ],
+          [
+            "Aprenentatge",
+            "per demostració"
+          ],
+          [
+            "Integració",
+            "aplicacions industrials"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Alimentació de màquines",
+        null
+      ],
+      [
+        "Manipulació de components",
+        null
+      ],
+      [
+        "Preparació de comandes",
+        null
+      ],
+      [
+        "Classificació logística",
+        null
+      ],
+      [
+        "Muntatge i control de qualitat",
+        null
+      ],
+      [
+        "Manteniment i inspecció",
+        null
+      ],
+      [
+        "Transport intern",
+        null
+      ],
+      [
+        "Recepció i assistència en entorns professionals",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Preu del paquet complet",
+        "El preu correspon a la solució completa: cos, equip de realitat virtual, comandament, OmniPicker i maletí. La tarifa inclou també el cos sol, a un preu menor."
+      ],
+      [
+        "info",
+        "Mòdul de computació",
+        "La fitxa tècnica de RH·BOTS indica «NVIDIA Jetson Thor T500»; el mòdul de la gamma Jetson Thor és el T5000, que és el que figura a la fitxa. Convé confirmar-ho amb el fabricant."
+      ],
+      [
+        "info",
+        "Direcció del xassís",
+        "La documentació descriu direcció tipus Ackermann amb desplaçament lateral i la fitxa tècnica parla de rodes omnidireccionals. Convé confirmar el tipus de xassís de la unitat oferida."
+      ]
+    ]
+  },
+  "d5w": {
+    "claim": "Quadrúpede industrial amb rodes per a inspecció i repartiment",
+    "tagline": "Combina potes i rodes per recórrer llargues distàncies en terres plans i superar esglaons i pendents, amb protecció IP67.",
+    "hero_alt": "Robot quadrúpede PUDU D5W de color blanc amb una roda al final de cada pota",
+    "gallery": [
+      [
+        "Circulant per un aparcament subterrani",
+        "assets/robots/d5w/en-aparcamiento.webp"
+      ],
+      [
+        "Superant un obstacle alt a l'exterior",
+        "assets/robots/d5w/superando-obstaculo.webp"
+      ],
+      [
+        "Avançant per un camí mullat",
+        "assets/robots/d5w/terreno-humedo.webp"
+      ],
+      [
+        "Repartiment amb la caixa de transport opcional",
+        "assets/robots/d5w/reparto-con-caja.webp"
+      ],
+      [
+        "Seguiment d'una persona en un centre comercial",
+        "assets/robots/d5w/en-centro-comercial.webp"
+      ]
+    ],
+    "intro": "El D5W és la versió amb rodes del quadrúpede industrial D5, pensada per treballar de manera autònoma en inspecció, repartiment i esdeveniments. Amb dos lidars de 192 línies i quatre càmeres ull de peix mapeja i navega per instal·lacions de fins a un milió de metres quadrats. Les rodes li permeten desplaçar-se ràpid i amb baix consum en terres plans sense perdre la capacitat de pujar esglaons.",
+    "keyfacts": [
+      [
+        "Velocitat màx.",
+        "5 m/s"
+      ],
+      [
+        "Càrrega útil",
+        "20-30 kg"
+      ],
+      [
+        "Autonomia",
+        "2-3 h"
+      ],
+      [
+        "Protecció",
+        "IP67"
+      ]
+    ],
+    "highlights": [
+      [
+        "Potes amb rodes",
+        "El sistema híbrid arriba als 5 m/s en terra pla i supera esglaons de 25 cm i pendents de 30°."
+      ],
+      [
+        "Percepció 360°",
+        "Dos lidars 3D de 192 línies i quatre càmeres ull de peix per a mapes amb precisió centimètrica i evitació d'obstacles."
+      ],
+      [
+        "Tot temps",
+        "Protecció IP67, treball entre −20 i 55 °C i arrencada en fred per sota de −10 °C."
+      ],
+      [
+        "Veu, gestos i seguiment",
+        "Micròfon de 6 canals amb reducció de soroll, ordres per gestos i seguiment autònom d'una persona."
+      ]
+    ],
+    "specs": [
+      [
+        "Dimensions i pes",
+        [
+          [
+            "Dimensions dret",
+            "900 × 543 × 572 mm"
+          ],
+          [
+            "Pes amb bateria",
+            "62 kg"
+          ]
+        ]
+      ],
+      [
+        "Mobilitat",
+        [
+          [
+            "Tipus de locomoció",
+            "potes amb rodes (4 pneumàtics d'alta durabilitat)"
+          ],
+          [
+            "Velocitat màxima",
+            "5 m/s"
+          ],
+          [
+            "Càrrega útil en marxa contínua",
+            "20-30 kg"
+          ],
+          [
+            "Alçada màxima d'esglaó",
+            "25 cm"
+          ],
+          [
+            "Capacitat d'escalada",
+            "fins a 80 cm"
+          ],
+          [
+            "Pendent",
+            "30° de pujada i 45° de baixada"
+          ],
+          [
+            "Abast per càrrega",
+            "fins a 14 km"
+          ]
+        ]
+      ],
+      [
+        "Actuadors",
+        [
+          [
+            "Motors",
+            "16"
+          ],
+          [
+            "Parell articular màxim",
+            "165 Nm"
+          ]
+        ]
+      ],
+      [
+        "Computació",
+        [
+          [
+            "Plataforma",
+            "NVIDIA Jetson AGX Orin 64 GB + RK3588"
+          ],
+          [
+            "Potència de càlcul",
+            "275 TOPS en total"
+          ],
+          [
+            "IA al dispositiu",
+            "admet models de llenguatge executats en local"
+          ]
+        ]
+      ],
+      [
+        "Percepció i navegació",
+        [
+          [
+            "Lidar",
+            "2 lidars 3D de 192 línies (davanter i posterior)"
+          ],
+          [
+            "Càmeres",
+            "4 càmeres ull de peix amb cobertura de 360°"
+          ],
+          [
+            "Navegació autònoma",
+            "sí, amb mapes 3D de precisió centimètrica"
+          ],
+          [
+            "Superfície cartografiable",
+            "fins a 1.000.000 m²"
+          ],
+          [
+            "Flux autònom",
+            "sortida, inspecció, gestió d'obstacles i retorn a la càrrega"
+          ]
+        ]
+      ],
+      [
+        "Interacció",
+        [
+          [
+            "Veu",
+            "matriu de 6 micròfons amb reducció de soroll per IA i localització de la font"
+          ],
+          [
+            "Altaveus",
+            "2"
+          ],
+          [
+            "Gestos",
+            "reconeixement d'ordres (arrencar, aturar, aixecar-se, seguir)"
+          ],
+          [
+            "Seguiment autònom",
+            "sí, amb evitació dinàmica d'obstacles"
+          ],
+          [
+            "Control remot",
+            "comandament amb sistema RCOS i vídeo panoràmic en directe"
+          ]
+        ]
+      ],
+      [
+        "Bateria",
+        [
+          [
+            "Capacitat",
+            "1.000 Wh"
+          ],
+          [
+            "Tipus",
+            "intercanviable"
+          ],
+          [
+            "Autonomia",
+            "2-3 h"
+          ]
+        ]
+      ],
+      [
+        "Entorn",
+        [
+          [
+            "Protecció",
+            "IP67 (motors, bateries i sensors segellats)"
+          ],
+          [
+            "Temperatura de treball",
+            "−20 a 55 °C"
+          ],
+          [
+            "Arrencada en fred",
+            "per sota de −10 °C"
+          ]
+        ]
+      ],
+      [
+        "Connectivitat i ampliació",
+        [
+          [
+            "Connexió",
+            "4G + wifi 6 + Bluetooth"
+          ],
+          [
+            "Ampliació",
+            "carril i ports d'expansió"
+          ],
+          [
+            "Altres",
+            "botó d'aturada d'emergència, indicador d'estat i refrigeració auxiliar"
+          ]
+        ]
+      ],
+      [
+        "Accessoris opcionals",
+        [
+          [
+            "Estació de càrrega",
+            "càrrega automàtica i de bateries de recanvi"
+          ],
+          [
+            "Caixa de repartiment",
+            "fins a 30 kg i objectes de fins a 50 × 29 × 40 cm, amb corretges ajustables"
+          ],
+          [
+            "Cardan d'inspecció bispectral",
+            "imatge infraroja i òptica, i imatge acústica per detectar esquerdes, fuites i anomalies elèctriques"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Inspecció de campus, fàbriques i centrals elèctriques",
+        null
+      ],
+      [
+        "Rondes de seguretat en centres logístics",
+        null
+      ],
+      [
+        "Repartiment en polígons, magatzems i obres",
+        null
+      ],
+      [
+        "Aeroports i xarxes de metro",
+        null
+      ],
+      [
+        "Esdeveniments, fires i centres comercials",
+        null
+      ],
+      [
+        "Recerca i docència en robòtica",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "warn",
+        "Mòdul de rodes",
+        "Segons el fabricant, els mòduls de peu puntual i de rodes són accessoris modulars que es venen per separat. Confirma en l'oferta que la configuració inclou el mòdul de rodes."
+      ],
+      [
+        "info",
+        "Dades de laboratori",
+        "El fabricant indica que les prestacions procedeixen d'assaigs de laboratori i poden variar segons l'entorn. La velocitat de 5 m/s i l'abast de 14 km figuren a la presentació, no a la taula d'especificacions."
+      ]
+    ]
+  },
+  "rhc5": {
+    "claim": "Neteja professional autònoma per a grans superfícies",
+    "tagline": "Fregat, aspiració, recollida de residus i mopa de pols en una sola passada, amb navegació autònoma i gestió remota de tasques.",
+    "hero_alt": "Robot de neteja autònom RHC5",
+    "gallery": [
+      [
+        "El RHC5 amb la seva estació de servei",
+        "assets/robots/rhc5/robot-estacion.webp"
+      ],
+      [
+        "Netejant un vessament en un hospital",
+        "assets/robots/rhc5/en-hospital.webp"
+      ],
+      [
+        "En una passarel·la coberta",
+        "assets/robots/rhc5/en-pasarela.webp"
+      ],
+      [
+        "Estació — frontal",
+        "assets/robots/rhc5/estacion-frontal.webp"
+      ],
+      [
+        "Estació — perspectiva",
+        "assets/robots/rhc5/estacion-perp.webp"
+      ]
+    ],
+    "intro": "El RHC5 és un robot autònom de neteja professional dissenyat per a instal·lacions comercials i industrials de mida mitjana i gran. Integra fregat, aspiració, recollida de residus, mopa de pols i navegació autònoma en una sola màquina.",
+    "keyfacts": [
+      [
+        "Rendiment",
+        "fins a 1.980 m²/h"
+      ],
+      [
+        "Autonomia",
+        "3 h fregant"
+      ],
+      [
+        "Dipòsits",
+        "45 + 45 L"
+      ],
+      [
+        "Amplada de fregat",
+        "550 mm"
+      ]
+    ],
+    "highlights": [
+      [
+        "Neteja en una sola passada",
+        "Escombrat, fregat i assecat combinats, amb raspall lateral per a vores i racons. Eliminació de residus superior al 95 %."
+      ],
+      [
+        "Navegació autònoma",
+        "Fusió de LiDAR, visió RGB de profunditat i IMU amb SLAM en temps real i mapes 2D/3D. Planifica rutes, evita obstacles i reprèn la tasca després d'una interrupció."
+      ],
+      [
+        "Doble dipòsit de 45 litres",
+        "90 litres de capacitat total de líquids amb tractament secundari de l'aigua bruta i autoneteja del dipòsit en 4 minuts."
+      ],
+      [
+        "Integració a l'edifici",
+        "Wi-Fi, 4G i LoRa, amb integració d'ascensors i control d'accessos per treballar entre plantes i àrees diferents."
+      ]
+    ],
+    "specs": [
+      [
+        "Característiques físiques",
+        [
+          [
+            "Dimensions",
+            "820 × 680 × 1.130 mm"
+          ],
+          [
+            "Pes brut",
+            "aprox. 215 kg"
+          ],
+          [
+            "Pes de la màquina (fitxa tècnica)",
+            "170 kg"
+          ],
+          [
+            "Amplada mínima de pas",
+            "800 mm"
+          ],
+          [
+            "Radi mínim de gir",
+            "1.720 mm"
+          ],
+          [
+            "Velocitat màxima",
+            "1,0 m/s"
+          ],
+          [
+            "Superació de desnivell vertical",
+            "15 mm"
+          ],
+          [
+            "Pendent màxim recomanat",
+            "2 %"
+          ],
+          [
+            "Nivell sonor",
+            "≤ 70 dB(A)"
+          ],
+          [
+            "Nivell sonor total (fitxa tècnica)",
+            "< 68 dB(A)"
+          ],
+          [
+            "Protecció",
+            "IPX3"
+          ],
+          [
+            "Ús recomanat",
+            "exclusivament en interiors, sobre superfícies fermes"
+          ],
+          [
+            "Tipus de terra",
+            "formigó, marbre, epoxi, PVC i paviment d'esmeril"
+          ]
+        ]
+      ],
+      [
+        "Sistema de neteja",
+        [
+          [
+            "Amplada total amb raspall lateral",
+            "840 mm"
+          ],
+          [
+            "Amplada de fregat",
+            "550 mm"
+          ],
+          [
+            "Amplada de la boca d'aspiració",
+            "730 mm"
+          ],
+          [
+            "Capacitat d'aigua neta",
+            "45 litres"
+          ],
+          [
+            "Capacitat d'aigua residual",
+            "45 litres"
+          ],
+          [
+            "Capacitat total de líquids",
+            "90 litres"
+          ],
+          [
+            "Dipòsit de residus sòlids",
+            "1,8 litres"
+          ],
+          [
+            "Motors de raspall",
+            "2 × 400 W"
+          ],
+          [
+            "Pressió de contacte",
+            "16 kPa"
+          ],
+          [
+            "Càrrega vertical de fregat",
+            "fins a 25 kg"
+          ],
+          [
+            "Cabal màxim d'aigua",
+            "800 ml/min"
+          ],
+          [
+            "Depressió d'aspiració",
+            "aprox. 18,18 kPa"
+          ],
+          [
+            "Eliminació de residus",
+            "superior al 95 %"
+          ],
+          [
+            "Raspalls",
+            "doble raspall principal i raspall lateral per a vores"
+          ],
+          [
+            "Tractament de l'aigua bruta",
+            "doble dipòsit amb tractament secundari"
+          ],
+          [
+            "Autoneteja del dipòsit d'aigua bruta",
+            "4 min"
+          ],
+          [
+            "Vida útil del ventilador",
+            "10.000 h"
+          ]
+        ]
+      ],
+      [
+        "Rendiment",
+        [
+          [
+            "Rendiment (manual tècnic)",
+            "fins a 1.920 m²/h"
+          ],
+          [
+            "Rendiment (documentació comercial)",
+            "fins a 1.980 m²/h"
+          ],
+          [
+            "Autonomia en mode fregat",
+            "aprox. 3 hores"
+          ],
+          [
+            "Autonomia en mode mopa de pols",
+            "aprox. 8 hores"
+          ]
+        ]
+      ],
+      [
+        "Bateria",
+        [
+          [
+            "Tipus",
+            "liti"
+          ],
+          [
+            "Tensió nominal",
+            "24 V"
+          ],
+          [
+            "Capacitat",
+            "80 Ah"
+          ],
+          [
+            "Temps de càrrega",
+            "aprox. 1,5 hores"
+          ]
+        ]
+      ],
+      [
+        "Navegació i seguretat",
+        [
+          [
+            "Navegació",
+            "fusió de LiDAR i visió RGB de profunditat"
+          ],
+          [
+            "Localització",
+            "SLAM en temps real amb mapes 2D/3D; precisió mil·limètrica segons el fabricant"
+          ],
+          [
+            "Càmeres",
+            "de profunditat i d'ull de peix"
+          ],
+          [
+            "Inercial",
+            "unitat IMU"
+          ],
+          [
+            "Sensors",
+            "anticaiguda, de vora i detecció d'obstacles"
+          ],
+          [
+            "Protecció",
+            "davant de col·lisions i moviments descontrolats"
+          ],
+          [
+            "Rutes",
+            "planificació autònoma i represa després d'interrupcions"
+          ],
+          [
+            "Cobertura",
+            "gestió de múltiples àrees i plantes"
+          ]
+        ]
+      ],
+      [
+        "Comunicacions i integració",
+        [
+          [
+            "Connectivitat",
+            "Wi-Fi · 4G · LoRa"
+          ],
+          [
+            "Edifici",
+            "integració amb ascensors i sistemes d'accés"
+          ],
+          [
+            "Gestió",
+            "remota de tasques i mapes"
+          ]
+        ]
+      ],
+      [
+        "Estació de servei",
+        [
+          [
+            "Tipus",
+            "opcional"
+          ],
+          [
+            "Funcions",
+            "càrrega, ompliment d'aigua, buidatge i autoneteja de dipòsits"
+          ],
+          [
+            "Dimensions",
+            "520 × 310 × 1.038 mm"
+          ],
+          [
+            "Dipòsit d'aigua",
+            "8 L"
+          ],
+          [
+            "Velocitat de buidatge de l'aigua bruta",
+            "10–15 L/min"
+          ],
+          [
+            "Velocitat d'ompliment",
+            "7–10 L/min"
+          ],
+          [
+            "Potència màxima",
+            "1.800 W"
+          ],
+          [
+            "Tensió nominal d'entrada",
+            "200–240 V"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Supermercats",
+        "assets/escenarios/supermercados.webp"
+      ],
+      [
+        "Edificis d'oficines",
+        "assets/escenarios/edificios-oficinas.webp"
+      ],
+      [
+        "Estacions i aeroports",
+        "assets/escenarios/estaciones-transporte.webp"
+      ],
+      [
+        "Fàbriques i magatzems",
+        "assets/escenarios/fabricas-almacenes.webp"
+      ],
+      [
+        "Complexos comercials",
+        "assets/escenarios/complejos-comerciales.webp"
+      ],
+      [
+        "Hospitals",
+        "assets/escenarios/hospitales.webp"
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Preu amb estació",
+        "El preu inclou el robot i la seva estació de servei."
+      ],
+      [
+        "info",
+        "Rendiment: 1.920 vs 1.980 m²/h",
+        "El manual tècnic indica fins a 1.920 m²/h i la documentació comercial més recent, fins a 1.980 m²/h. La diferència sembla correspondre a revisions diferents del producte o del mètode de càlcul. Convé confirmar la xifra aplicable a la revisió oferta."
+      ],
+      [
+        "info",
+        "Pes: 170 vs 215 kg",
+        "La fitxa tècnica de RH·BOTS indica 170 kg de pes de la màquina i la documentació anterior, aprox. 215 kg de pes brut. La diferència pot ser deguda a dipòsits plens o a l'embalatge; convé confirmar-ho en l'oferta."
+      ],
+      [
+        "info",
+        "Nivell sonor: < 68 vs ≤ 70 dB(A)",
+        "La fitxa tècnica de RH·BOTS indica un nivell de soroll total inferior a 68 dB(A) i la documentació anterior, ≤ 70 dB(A)."
+      ]
+    ]
+  },
+  "mt1": {
+    "claim": "Escombradora autònoma amb IA per a grans superfícies",
+    "tagline": "Escombra pols fina i residus voluminosos en una sola passada i treballa per torns sense supervisió, amb càrrega automàtica a la seva estació.",
+    "hero_alt": "Escombradora autònoma PUDU MT1 en vista de tres quarts, amb els seus dos raspalls laterals davanters",
+    "gallery": [
+      [
+        "Escombrant sorra i ampolles en una planta de producció",
+        "assets/robots/mt1/en-fabrica.webp"
+      ],
+      [
+        "Desplaçament manual amb el manillar extensible",
+        "assets/robots/mt1/uso-manual.webp"
+      ],
+      [
+        "Cubell de residus de 35 L extret del robot",
+        "assets/robots/mt1/cubo-de-residuos.webp"
+      ],
+      [
+        "Neteja puntual de residus detectats per la càmera en un magatzem",
+        "assets/robots/mt1/limpieza-puntual.webp"
+      ],
+      [
+        "Recorregut per un passadís de magatzem",
+        "assets/robots/mt1/en-almacen.webp"
+      ]
+    ],
+    "intro": "El MT1 és una escombradora robòtica per a neteja en sec d'interiors amplis: magatzems, fàbriques, centres comercials o estacions. Els seus raspalls de doble disc recullen des de pols fina fins a fulles i ampolles, i les seves càmeres amb IA localitzen les escombraries per netejar-les de manera puntual. Navega de manera autònoma amb SLAM lidar i VSLAM, i torna sola a carregar.",
+    "keyfacts": [
+      [
+        "Rendiment",
+        "fins a 1.800 m²/h"
+      ],
+      [
+        "Amplada de neteja",
+        "70 cm"
+      ],
+      [
+        "Cubell de residus",
+        "35 L"
+      ],
+      [
+        "Autonomia",
+        "4-8 h"
+      ]
+    ],
+    "highlights": [
+      [
+        "Residus grans i petits",
+        "Els raspalls de doble disc recullen fulles i ampolles i escombren alhora la pols i la brutícia fina."
+      ],
+      [
+        "Reconeixement d'escombraries amb IA",
+        "Les càmeres identifiquen diferents tipus de residus en temps real; en mode de neteja puntual cobreix fins a 6.000 m²/h."
+      ],
+      [
+        "Control actiu de la pols",
+        "Ventilació de pressió negativa d'alt cabal i filtre que retenen les partícules al cubell i eviten que tornin a l'ambient."
+      ],
+      [
+        "Funcionament continu",
+        "Fins a 8 h d'autonomia, càrrega en unes 3 h i acoblament automàtic a l'estació per treballar per torns."
+      ]
+    ],
+    "specs": [
+      [
+        "Dimensions i pes",
+        [
+          [
+            "Dimensions (Ll × Am × Al)",
+            "840 × 600 × 490 mm"
+          ],
+          [
+            "Pes",
+            "65 kg (presentació) / 74 kg (catàleg)"
+          ]
+        ]
+      ],
+      [
+        "Neteja",
+        [
+          [
+            "Mètode",
+            "escombrat en sec"
+          ],
+          [
+            "Rendiment en neteja completa",
+            "fins a 1.800 m²/h"
+          ],
+          [
+            "Rendiment en neteja puntual",
+            "fins a 6.000 m²/h"
+          ],
+          [
+            "Amplada de neteja",
+            "70 cm"
+          ],
+          [
+            "Raspalls",
+            "2 raspalls laterals de disc i raspall de rodet"
+          ],
+          [
+            "Capacitat del cubell de residus",
+            "35 L"
+          ],
+          [
+            "Bossa de pols",
+            "35 L, compartida amb el cubell de residus"
+          ],
+          [
+            "Control de la pols",
+            "ventilació de pressió negativa i filtre"
+          ],
+          [
+            "Neteja de vores",
+            "segueix parets i cantonades"
+          ],
+          [
+            "Superfície d'ús recomanada (catàleg)",
+            "interiors de 500 a 25.000 m²"
+          ],
+          [
+            "Superfície màxima de disseny",
+            "més de 100.000 m²"
+          ]
+        ]
+      ],
+      [
+        "Funcions d'IA",
+        [
+          [
+            "Reconeixement d'escombraries",
+            "càmeres amb IA i aprenentatge profund"
+          ],
+          [
+            "Modes d'IA (catàleg)",
+            "neteja màgica, neteja puntual, neteja adaptativa, recàrrega intel·ligent, mapa de calor i neteja guiada"
+          ]
+        ]
+      ],
+      [
+        "Mobilitat i navegació",
+        [
+          [
+            "Navegació",
+            "VSLAM + marcadors + SLAM lidar"
+          ],
+          [
+            "Velocitat de creuer",
+            "0,2 a 1,2 m/s (ajustable)"
+          ],
+          [
+            "Pas mínim",
+            "75 cm"
+          ],
+          [
+            "Alçada màxima d'obstacle",
+            "20 mm"
+          ],
+          [
+            "Escletxes salvables",
+            "35 mm"
+          ]
+        ]
+      ],
+      [
+        "Sensors",
+        [
+          [
+            "Lidar",
+            "1"
+          ],
+          [
+            "Càmera VSLAM",
+            "1"
+          ],
+          [
+            "Càmeres RGBD",
+            "3"
+          ],
+          [
+            "Càmeres RGB",
+            "2"
+          ],
+          [
+            "Làser de línia",
+            "2"
+          ],
+          [
+            "Altres",
+            "llum de reforç i sensor de parxocs"
+          ]
+        ]
+      ],
+      [
+        "Bateria i càrrega",
+        [
+          [
+            "Capacitat de la bateria",
+            "45 Ah"
+          ],
+          [
+            "Autonomia",
+            "4-8 h segons el nivell de neteja"
+          ],
+          [
+            "Temps de càrrega",
+            "< 3 h (catàleg: aprox. 3 h)"
+          ],
+          [
+            "Càrrega",
+            "acoblament automàtic a l'estació de càrrega"
+          ]
+        ]
+      ],
+      [
+        "Interfície i maneig",
+        [
+          [
+            "Pantalla",
+            "10 polzades"
+          ],
+          [
+            "Controls",
+            "botó d'engegada i botó d'aturada d'emergència"
+          ],
+          [
+            "Maneig manual",
+            "manillar de direcció extensible"
+          ],
+          [
+            "Manteniment",
+            "cubell i consumibles modulars d'alliberament ràpid"
+          ]
+        ]
+      ],
+      [
+        "Connectivitat",
+        [
+          [
+            "IoT",
+            "mòduls de control d'ascensor i de portes electròniques per treballar en diverses plantes"
+          ],
+          [
+            "Supervisió",
+            "app PUDU Link i interfície de PC amb informes de neteja i avís de cubell ple"
+          ]
+        ]
+      ],
+      [
+        "Accessoris i consumibles",
+        [
+          [
+            "Estació de càrrega",
+            "sí"
+          ],
+          [
+            "Consumibles",
+            "raspall lateral, raspall de rodet d'escombrat, raspall de rodet de goma i raspall de rodet desmuntable"
+          ],
+          [
+            "Filtre",
+            "alta eficiència H11/H13"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Magatzems i logística",
+        null
+      ],
+      [
+        "Plantes de fabricació",
+        null
+      ],
+      [
+        "Grans superfícies de bricolatge",
+        null
+      ],
+      [
+        "Centres comercials",
+        null
+      ],
+      [
+        "Transport públic i aeroports",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Pes segons la font",
+        "La presentació del producte indica 65 kg i la taula del catàleg de neteja, 74 kg. Convé confirmar-ho amb el fabricant."
+      ],
+      [
+        "info",
+        "MT1 i MT1 Max",
+        "El MT1 està pensat per a interiors. Per a aparcaments, patis i zones semiexteriors existeix el MT1 Max, amb lidar 3D, protecció IP54 i més autonomia."
+      ]
+    ]
+  },
+  "mt1-max": {
+    "claim": "Escombradora autònoma amb lidar 3D per a interior i semiexterior",
+    "tagline": "La versió del MT1 per a aparcaments, patis i zones semiexteriors: percepció 3D, protecció IP54 i senyalització per conviure amb vehicles.",
+    "hero_alt": "Escombradora autònoma PUDU MT1 Max amb lidar 3D a la part superior i pal amb llum d'advertència",
+    "gallery": [
+      [
+        "Escombrant fulles en un pati exterior",
+        "assets/robots/mt1-max/en-exterior.webp"
+      ],
+      [
+        "Aparcament subterrani amb la llum d'advertència elevada encesa",
+        "assets/robots/mt1-max/en-aparcamiento.webp"
+      ],
+      [
+        "Desplaçament manual amb la nansa retràctil",
+        "assets/robots/mt1-max/uso-manual.webp"
+      ],
+      [
+        "Acoblada a la seva estació de càrrega",
+        "assets/robots/mt1-max/estacion-de-carga.webp"
+      ]
+    ],
+    "intro": "El MT1 Max parteix del MT1 i l'adapta a entorns semiexteriors i amb trànsit, com aparcaments, patis residencials o places. Afegeix lidar 3D, doble processador, protecció IP54 i una llum d'advertència elevada, i puja pendents i reductors de velocitat. Escombra des de burilles i papers fins a ampolles grans amb una amplada de 70 cm.",
+    "keyfacts": [
+      [
+        "Rendiment",
+        "fins a 2.200 m²/h"
+      ],
+      [
+        "Autonomia",
+        "5-10 h"
+      ],
+      [
+        "Protecció",
+        "IP54"
+      ],
+      [
+        "Pendent màx.",
+        "8°"
+      ]
+    ],
+    "highlights": [
+      [
+        "Percepció 3D",
+        "Lidar 3D i fusió de sensors per mapejar amb sostres alts, cobertes de vidre, poca llum, pols o boira."
+      ],
+      [
+        "Conviu amb vehicles",
+        "S'atura, espera o es fa a un costat per cedir el pas, i reacciona a moviments sobtats de persones i animals."
+      ],
+      [
+        "Neteja adaptativa amb IA",
+        "Amb doble processador ajusta la força dels raspalls segons el residu i s'orienta per deixar-lo entre els raspalls laterals."
+      ],
+      [
+        "Preparada per a semiexterior",
+        "Segellat IP54, detecció de gotes d'aigua, treball entre −10 i 45 °C i pas de reductors de velocitat de 5 cm."
+      ]
+    ],
+    "specs": [
+      [
+        "Dimensions i pes",
+        [
+          [
+            "Dimensions (Ll × Am × Al)",
+            "840 × 600 × 675 mm"
+          ],
+          [
+            "Pes",
+            "85 kg (presentació) / 81 kg (catàleg)"
+          ]
+        ]
+      ],
+      [
+        "Neteja",
+        [
+          [
+            "Mètode",
+            "escombrat en sec"
+          ],
+          [
+            "Rendiment en neteja completa",
+            "fins a 2.200 m²/h"
+          ],
+          [
+            "Rendiment en neteja puntual",
+            "fins a 7.000 m²/h"
+          ],
+          [
+            "Amplada de neteja",
+            "70 cm amb raspall lateral"
+          ],
+          [
+            "Neteja de vores",
+            "0 cm"
+          ],
+          [
+            "Capacitat del contenidor de residus",
+            "35 L"
+          ],
+          [
+            "Bossa de pols",
+            "35 L, compartida amb el contenidor"
+          ],
+          [
+            "Filtre",
+            "neteja automàtica per vibració"
+          ],
+          [
+            "Superfície d'ús recomanada (catàleg)",
+            "garatges, exteriors i espais complexos de 500 a 25.000 m²"
+          ],
+          [
+            "Superfície màxima de disseny",
+            "més de 100.000 m²"
+          ]
+        ]
+      ],
+      [
+        "Funcions d'IA",
+        [
+          [
+            "Processament",
+            "arquitectura de doble SoC amb redundància"
+          ],
+          [
+            "Reconeixement d'escombraries",
+            "càmera amb IA i aprenentatge profund"
+          ],
+          [
+            "Neteja adaptativa",
+            "ajust del mode de raspallat i de la postura segons el residu"
+          ],
+          [
+            "Modes d'IA (catàleg)",
+            "neteja màgica, neteja puntual, neteja adaptativa, recàrrega intel·ligent, mapa de calor i neteja guiada"
+          ]
+        ]
+      ],
+      [
+        "Mobilitat i navegació",
+        [
+          [
+            "Navegació",
+            "VSLAM + marcadors + SLAM lidar 3D"
+          ],
+          [
+            "Velocitat de creuer",
+            "0,2 a 1,2 m/s (ajustable)"
+          ],
+          [
+            "Pendent màxim",
+            "8°"
+          ],
+          [
+            "Alçada màxima d'obstacle",
+            "50 mm (reductors de velocitat)"
+          ],
+          [
+            "Pas mínim",
+            "75 cm"
+          ],
+          [
+            "Evitació d'obstacles",
+            "cedeix el pas als vehicles i reacciona a persones i animals"
+          ]
+        ]
+      ],
+      [
+        "Sensors",
+        [
+          [
+            "Lidar 3D",
+            "1"
+          ],
+          [
+            "Càmera VSLAM",
+            "1"
+          ],
+          [
+            "Càmeres RGBD",
+            "3"
+          ],
+          [
+            "Càmeres RGB",
+            "2"
+          ],
+          [
+            "Làser de línia",
+            "2"
+          ],
+          [
+            "Altres",
+            "llum de reforç, sensor de parxocs, sensor de gotes d'aigua i sensor de temperatura"
+          ]
+        ]
+      ],
+      [
+        "Seguretat i entorn",
+        [
+          [
+            "Protecció",
+            "IP54"
+          ],
+          [
+            "Temperatura de treball",
+            "−10 a 45 °C"
+          ],
+          [
+            "Pluja",
+            "detecta gotes d'aigua i es dirigeix a una zona segura"
+          ],
+          [
+            "Senyalització",
+            "llum d'advertència d'1,2 m d'alçada, llum de projecció de seguretat i alarmes sonores i visuals"
+          ],
+          [
+            "Aturada",
+            "botó d'emergència"
+          ]
+        ]
+      ],
+      [
+        "Bateria i càrrega",
+        [
+          [
+            "Capacitat de la bateria",
+            "60 Ah"
+          ],
+          [
+            "Autonomia",
+            "5-10 h; 8 h en mode estàndard (catàleg: 6,5-10 h)"
+          ],
+          [
+            "Temps de càrrega",
+            "< 3,5 h"
+          ],
+          [
+            "Càrrega",
+            "estació de càrrega automàtica"
+          ]
+        ]
+      ],
+      [
+        "Interfície i maneig",
+        [
+          [
+            "Pantalla",
+            "10,1 polzades"
+          ],
+          [
+            "Maneig manual",
+            "nansa retràctil"
+          ]
+        ]
+      ],
+      [
+        "Connectivitat",
+        [
+          [
+            "IoT",
+            "mòduls de control d'ascensor i de portes electròniques per treballar en diverses plantes"
+          ],
+          [
+            "Supervisió",
+            "app PUDU Link i PC amb informes de neteja i alertes de contenidor ple"
+          ]
+        ]
+      ],
+      [
+        "Accessoris i consumibles",
+        [
+          [
+            "Estació de càrrega",
+            "sí"
+          ],
+          [
+            "Consumibles",
+            "raspall lateral, raspall de rodet d'escombrat, raspall de rodet de goma i raspall de rodet desmuntable"
+          ],
+          [
+            "Filtre",
+            "alta eficiència H11/H13"
+          ],
+          [
+            "Il·luminació",
+            "llum de seguretat tipus carretó elevador i llums d'advertència elevades"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Aparcaments subterranis i en superfície",
+        null
+      ],
+      [
+        "Patis i zones comunes residencials",
+        null
+      ],
+      [
+        "Polígons industrials i passadissos de fàbrica",
+        null
+      ],
+      [
+        "Centres comercials i els seus voltants",
+        null
+      ],
+      [
+        "Aeroports i estacions",
+        null
+      ],
+      [
+        "Places, voreres i passeigs de parcs",
+        null
+      ],
+      [
+        "Recintes esportius i d'esdeveniments",
+        null
+      ],
+      [
+        "Campus i edificis d'oficines",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Pes i autonomia segons la font",
+        "La presentació indica 85 kg i 5-10 h d'autonomia; la taula del catàleg de neteja, 81 kg i 6,5-10 h."
+      ],
+      [
+        "info",
+        "Diferències amb el MT1",
+        "Respecte al MT1 afegeix lidar 3D, doble SoC, IP54, llum d'advertència elevada, bateria de 60 Ah, més rendiment (2.200 m²/h) i pas de reductors de 5 cm; és més alt (675 mm) i pesat."
+      ],
+      [
+        "warn",
+        "Ús a l'exterior",
+        "El fabricant indica que no s'ha de netejar en condicions meteorològiques extremes; la protecció és IP54."
+      ]
+    ]
+  },
+  "d5w-estacion-carga": {
+    "claim": "Estació de recàrrega dedicada per al D5W",
+    "tagline": "Punt de recàrrega fix per deixar el D5W carregant entre torns, sense dependre que algú l'endolli a mà.",
+    "hero_alt": "",
+    "gallery": [],
+    "intro": "Estació de càrrega pensada per al quadrúpede D5W. Permet deixar el robot recarregant de manera autònoma entre torns, en el mateix punt on opera.",
+    "keyfacts": [
+      [
+        "Fabricant",
+        "PUDU"
+      ],
+      [
+        "Tipus",
+        "Estació de càrrega"
+      ],
+      [
+        "Compatible amb",
+        "D5W"
+      ]
+    ],
+    "highlights": [],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Fabricant",
+            "PUDU"
+          ],
+          [
+            "Tipus d'accessori",
+            "Estació de càrrega"
+          ],
+          [
+            "Compatible amb",
+            "D5W"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Recàrrega automàtica entre torns",
+        null
+      ],
+      [
+        "Base fixa d'operació per al D5W",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Documentació pendent",
+        "El fabricant no ha compartit fitxa tècnica d'aquest accessori: només es disposa del nom i el preu de la tarifa RH·BOTS (10 de setembre de 2026). Confirma potència, temps de càrrega i dimensions abans d'oferir-lo."
+      ],
+      [
+        "info",
+        "Marca «S/F» a la tarifa",
+        "La tarifa assenyala aquest accessori amb «S/F» al costat del preu. Confirma amb el proveïdor a què es refereix (possiblement que falta la foto, o que el preu està subjecte a disponibilitat) abans d'oferir-lo."
+      ]
+    ]
+  },
+  "d5w-bateria": {
+    "claim": "Bateria de recanvi per al quadrúpede D5W",
+    "tagline": "Bateria addicional per tenir el D5W operatiu mentre l'altra es recarrega, o per allargar la jornada de treball.",
+    "hero_alt": "",
+    "gallery": [],
+    "intro": "Bateria de recanvi per al D5W, pensada per al canvi ràpid entre torns i per ampliar l'autonomia disponible en jornades llargues.",
+    "keyfacts": [
+      [
+        "Fabricant",
+        "PUDU"
+      ],
+      [
+        "Tipus",
+        "Bateria de recanvi"
+      ],
+      [
+        "Compatible amb",
+        "D5W"
+      ]
+    ],
+    "highlights": [],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Fabricant",
+            "PUDU"
+          ],
+          [
+            "Tipus d'accessori",
+            "Bateria de recanvi"
+          ],
+          [
+            "Compatible amb",
+            "D5W"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Canvi ràpid de bateria entre torns",
+        null
+      ],
+      [
+        "Ampliació de l'autonomia en jornades llargues",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Documentació pendent",
+        "El fabricant no ha compartit fitxa tècnica d'aquest accessori: no es coneix la seva capacitat ni el temps de càrrega. Només consta el nom i el preu de la tarifa RH·BOTS (10 de setembre de 2026); confirma les dades abans d'oferir-lo."
+      ]
+    ]
+  },
+  "d5w-kit-inspeccion": {
+    "claim": "Kit de sensors per a tasques d'inspecció amb el D5W",
+    "tagline": "Amplia el D5W amb sensors addicionals per a inspecció industrial, més enllà del repartiment i el transport.",
+    "hero_alt": "",
+    "gallery": [],
+    "intro": "Kit de sensors per al D5W orientat a tasques d'inspecció industrial, com a complement al seu ús habitual de repartiment i transport de càrrega.",
+    "keyfacts": [
+      [
+        "Fabricant",
+        "PUDU"
+      ],
+      [
+        "Tipus",
+        "Kit d'inspecció"
+      ],
+      [
+        "Compatible amb",
+        "D5W"
+      ]
+    ],
+    "highlights": [],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Fabricant",
+            "PUDU"
+          ],
+          [
+            "Tipus d'accessori",
+            "Kit d'inspecció"
+          ],
+          [
+            "Compatible amb",
+            "D5W"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Inspecció industrial amb el D5W",
+        null
+      ],
+      [
+        "Captura de dades de sensors en planta",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Documentació pendent",
+        "El fabricant no ha compartit fitxa tècnica d'aquest kit: no es coneix quins sensors inclou ni les seves especificacions. Només consta el nom i el preu de la tarifa RH·BOTS (10 de setembre de 2026); confirma el contingut exacte abans d'oferir-lo."
+      ]
+    ]
+  },
+  "d5w-cajon-bateria": {
+    "claim": "Compartiment addicional per ampliar l'autonomia del D5W",
+    "tagline": "Calaix que allotja una bateria extra en el mateix D5W, per allargar la seva autonomia sense haver de fer aturades de càrrega.",
+    "hero_alt": "",
+    "gallery": [],
+    "intro": "Calaix d'extensió que allotja una bateria addicional en el mateix D5W, pensat per allargar la seva autonomia sense dependre d'una aturada de càrrega.",
+    "keyfacts": [
+      [
+        "Fabricant",
+        "PUDU"
+      ],
+      [
+        "Tipus",
+        "Calaix d'extensió de bateria"
+      ],
+      [
+        "Compatible amb",
+        "D5W"
+      ]
+    ],
+    "highlights": [],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Fabricant",
+            "PUDU"
+          ],
+          [
+            "Tipus d'accessori",
+            "Calaix d'extensió de bateria"
+          ],
+          [
+            "Compatible amb",
+            "D5W"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Ampliació de l'autonomia en ruta",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Documentació pendent",
+        "El fabricant no ha compartit fitxa tècnica d'aquest accessori: no es coneix la capacitat que afegeix ni les seves dimensions. Només consta el nom i el preu de la tarifa RH·BOTS (10 de setembre de 2026); confirma les dades abans d'oferir-lo."
+      ]
+    ]
+  },
+  "mt1-estacion-carga": {
+    "claim": "Estació de recàrrega per al MT1 i el MT1 Max",
+    "tagline": "Base de càrrega dedicada per deixar el MT1 o el MT1 Max recarregant entre torns de neteja.",
+    "hero_alt": "",
+    "gallery": [],
+    "intro": "Estació de càrrega RH·BOTS (referència MSBC01) compatible amb el MT1 i el MT1 Max, per deixar-los recarregant de manera autònoma entre torns de neteja.",
+    "keyfacts": [
+      [
+        "Fabricant",
+        "PUDU"
+      ],
+      [
+        "Referència",
+        "MSBC01"
+      ],
+      [
+        "Compatible amb",
+        "MT1 i MT1 Max"
+      ]
+    ],
+    "highlights": [],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Fabricant",
+            "PUDU"
+          ],
+          [
+            "Referència",
+            "MSBC01"
+          ],
+          [
+            "Compatible amb",
+            "MT1, MT1 Max"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Recàrrega automàtica entre torns de neteja",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Documentació pendent",
+        "El fabricant no ha compartit fitxa tècnica d'aquest accessori: només es disposa del nom, la referència i el preu de la tarifa RH·BOTS (10 de setembre de 2026). Confirma potència i temps de càrrega abans d'oferir-lo."
+      ]
+    ]
+  },
+  "t150": {
+    "claim": "Robot autònom de transport industrial per a 150 kg",
+    "tagline": "Mou material entre estacions de planta i magatzem sense obres ni servidor. Es posa en marxa en una hora i treballa en torns continus amb canvi ràpid de bateria.",
+    "hero_alt": "Robot T150 en versió estàndard, amb columna, pantalla tàctil i plataforma de càrrega plana",
+    "gallery": [
+      [
+        "T150 treballant en un magatzem de caixes",
+        "assets/robots/t150/en-almacen.webp"
+      ],
+      [
+        "Versió Lifting amb prestatgeria de rodes",
+        "assets/robots/t150/version-lifting.webp"
+      ],
+      [
+        "Vista lateral de la versió estàndard",
+        "assets/robots/t150/vista-lateral.webp"
+      ],
+      [
+        "Pantalla tàctil de 10,1 polzades per assignar tasques",
+        "assets/robots/t150/pantalla-tactil.webp"
+      ]
+    ],
+    "intro": "El T150 és un robot mòbil autònom per transportar càrregues de fins a 150 kg en plantes de fabricació i magatzems. Combina navegació VSLAM amb LiDAR, pantalla tàctil integrada i integració amb ascensors, portes i sistemes de gestió. S'ofereix en versió estàndard i Lifting, i està pensat per a logística interna d'articles petits i picking assistit.",
+    "keyfacts": [
+      [
+        "Càrrega màxima",
+        "150 kg"
+      ],
+      [
+        "Velocitat màxima",
+        "1,2 m/s"
+      ],
+      [
+        "Autonomia",
+        "12 h sense càrrega"
+      ],
+      [
+        "Amplada mínima de pas",
+        "600 mm"
+      ]
+    ],
+    "highlights": [
+      [
+        "Posada en marxa en una hora",
+        "No cal modificar les instal·lacions ni configurar un servidor: el mapatge i la configuració de tasques es fan en minuts."
+      ],
+      [
+        "Navegació VSLAM i LiDAR",
+        "Es localitza amb punts del sostre i dos LiDAR amb percepció de 360°, i actualitza el mapa quan canvia l'entorn."
+      ],
+      [
+        "Operació contínua",
+        "Admet càrrega automàtica en estació, càrrega per cable i intercanvi ràpid de bateria per treballar 24/7."
+      ],
+      [
+        "Integració oberta",
+        "Es controla des de la pantalla, Pager, l'app PUDU Link o API, i es connecta amb ascensors, portes, WMS, MES i ERP."
+      ]
+    ],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Configuracions",
+            "estàndard i Lifting"
+          ],
+          [
+            "Dimensions",
+            "835 × 500 × 1.350 mm"
+          ],
+          [
+            "Pes",
+            "65 kg (estàndard), 81 kg (Lifting)"
+          ],
+          [
+            "Alçada sobre el terra",
+            "30 mm"
+          ],
+          [
+            "Alçada del xassís",
+            "241 mm"
+          ],
+          [
+            "Pantalla",
+            "tàctil de 10,1 polzades"
+          ],
+          [
+            "Estructura",
+            "xassís d'una sola peça de fosa a pressió"
+          ],
+          [
+            "Temperatura de funcionament",
+            "0 ℃ a 40 ℃"
+          ]
+        ]
+      ],
+      [
+        "Càrrega",
+        [
+          [
+            "Càrrega màxima",
+            "150 kg"
+          ],
+          [
+            "Superfície màxima de càrrega",
+            "1.200 × 1.000 × 1.100 mm"
+          ],
+          [
+            "Alçada d'elevació",
+            "60 mm"
+          ]
+        ]
+      ],
+      [
+        "Moviment i navegació",
+        [
+          [
+            "Navegació",
+            "VSLAM + LiDAR SLAM"
+          ],
+          [
+            "Tracció",
+            "diferencial de doble roda"
+          ],
+          [
+            "Velocitat",
+            "0,2 a 1,2 m/s"
+          ],
+          [
+            "Precisió de posició",
+            "±10 mm"
+          ],
+          [
+            "Precisió angular",
+            "±1°"
+          ],
+          [
+            "Pendent màxim",
+            "5°"
+          ],
+          [
+            "Esglaó superable",
+            "20 mm"
+          ],
+          [
+            "Buit superable",
+            "35 mm"
+          ],
+          [
+            "Amplada mínima de pas",
+            "600 mm"
+          ]
+        ]
+      ],
+      [
+        "Bateria i càrrega",
+        [
+          [
+            "Bateria",
+            "fosfat de ferro i liti, 29,2 V CC, 30 Ah, intercanviable"
+          ],
+          [
+            "Autonomia",
+            "12 h sense càrrega, 6 h a plena càrrega"
+          ],
+          [
+            "Temps de càrrega",
+            "2 h (0 % a 90 %)"
+          ],
+          [
+            "Mètodes de càrrega",
+            "automàtica en estació, manual per cable i intercanvi ràpid de bateria"
+          ]
+        ]
+      ],
+      [
+        "Sensors i seguretat",
+        [
+          [
+            "LiDAR 2D",
+            "2 (davanter i posterior)"
+          ],
+          [
+            "Càmeres RGBD",
+            "2 (superior i inferior)"
+          ],
+          [
+            "Para-xocs anticol·lisió",
+            "sí"
+          ],
+          [
+            "Aturades d'emergència",
+            "3"
+          ],
+          [
+            "Indicadors",
+            "indicador d'estat d'alta lluminositat i intermitents"
+          ],
+          [
+            "Àudio",
+            "2 altaveus de 10 W estèreo"
+          ],
+          [
+            "Normativa",
+            "ISO 3691-4, marcatge CE"
+          ]
+        ]
+      ],
+      [
+        "Control i integració",
+        [
+          [
+            "Control",
+            "pantalla integrada, Pager, app PUDU Link i API"
+          ],
+          [
+            "IoT",
+            "ascensors, portes i comportes, trucada remota, altaveu Bluetooth"
+          ],
+          [
+            "Sistemes",
+            "API oberta; integració amb WMS, MES i ERP"
+          ],
+          [
+            "Maquinari",
+            "interfície perifèrica per a mòduls addicionals"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Logística interna en fabricació electrònica 3C",
+        null
+      ],
+      [
+        "Plantes de plàstics i emmotllament per injecció",
+        null
+      ],
+      [
+        "Fabricació de calçat i roba",
+        null
+      ],
+      [
+        "Béns de consum i cosmètica",
+        null
+      ],
+      [
+        "Picking assistit comanda-a-persona en magatzem",
+        null
+      ],
+      [
+        "Transport d'articles petits entre estacions",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Preu de la versió amb elevació",
+        "El preu de tarifa correspon al T150 amb elevació."
+      ],
+      [
+        "info",
+        "Pes segons versió",
+        "La presentació del producte dona 65 kg per a la versió estàndard i 81 kg per a la Lifting; el catàleg indica 81 kg sense distingir versió."
+      ],
+      [
+        "info",
+        "Alçada d'elevació",
+        "El catàleg indica 60 mm d'elevació sense precisar la versió; s'entén que correspon a la Lifting. Convé confirmar-ho en l'oferta."
+      ],
+      [
+        "warn",
+        "Vida útil de la bateria",
+        "El catàleg indica «cicle de vida < 1000, SOH 70 %», dada que sembla una errada. Cal confirmar-ho amb el fabricant abans de citar-ho."
+      ]
+    ]
+  },
+  "t300": {
+    "claim": "Robot autònom modular de transport per a 300 kg",
+    "tagline": "Una mateixa base per transportar, remolcar, elevar o transferir càrrega per corrons. S'adapta a cada flux de planta amb mòduls estàndard, sense desenvolupaments a mida.",
+    "hero_alt": "Robot T300 Conveyor amb transportador de corrons d'una capa sobre la base mòbil",
+    "gallery": [
+      [
+        "Variants de la sèrie T300 amb diferents mòduls",
+        "assets/robots/t300/variantes.webp"
+      ],
+      [
+        "T300 Conveyor rebent caixes d'una línia transportadora",
+        "assets/robots/t300/acoplamiento-linea.webp"
+      ],
+      [
+        "T300 Conveyor de dues capes",
+        "assets/robots/t300/conveyor-dos-capas.webp"
+      ],
+      [
+        "Dues unitats T300 en una nau industrial",
+        "assets/robots/t300/en-nave.webp"
+      ]
+    ],
+    "intro": "El T300 és un robot mòbil autònom per a càrregues de fins a 300 kg en fàbriques i magatzems. Es configura com a Standard, Lifting, Towing o Conveyor segons el mòdul muntat. La versió Conveyor incorpora corrons motoritzats per carregar i descarregar material directament en línies transportadores i altres equips.",
+    "keyfacts": [
+      [
+        "Càrrega màxima",
+        "300 kg"
+      ],
+      [
+        "Velocitat màxima",
+        "1,2 m/s"
+      ],
+      [
+        "Precisió d'acoblament",
+        "±10 mm, ±1°"
+      ],
+      [
+        "Càrrega per capa (Conveyor)",
+        "80 kg"
+      ]
+    ],
+    "highlights": [
+      [
+        "Quatre variants sobre una base",
+        "Standard, Lifting, Towing i Conveyor: mòduls de transport, remolc, elevació i prestatgeries multicapa sobre el mateix xassís."
+      ],
+      [
+        "Transferència automàtica per corrons",
+        "La versió Conveyor detecta la càrrega amb sensors de barrera i es comunica amb la línia per IoT, API o inducció automàtica."
+      ],
+      [
+        "Transportador ajustable",
+        "Alçada de treball de 305 a 1.100 mm, amplada de 120 a 540 mm i orientació configurable, amb una o dues capes."
+      ],
+      [
+        "Flota i torns continus",
+        "Programació distribuïda o centralitzada, càrrega automàtica i canvi ràpid de bateria per operar 24/7."
+      ]
+    ],
+    "specs": [
+      [
+        "General (sèrie T300)",
+        [
+          [
+            "Variants",
+            "Standard, Lifting, Towing i Conveyor"
+          ],
+          [
+            "Dimensions",
+            "835 × 500 × 1.350 mm"
+          ],
+          [
+            "Pes",
+            "81 kg"
+          ],
+          [
+            "Alçada sobre el terra",
+            "30 mm"
+          ],
+          [
+            "Alçada del xassís",
+            "241 mm"
+          ],
+          [
+            "Pantalla",
+            "10,1 polzades"
+          ]
+        ]
+      ],
+      [
+        "Càrrega",
+        [
+          [
+            "Càrrega màxima",
+            "300 kg"
+          ],
+          [
+            "Superfície màxima de càrrega",
+            "1.200 × 1.000 × 1.100 mm"
+          ],
+          [
+            "Alçada d'elevació",
+            "60 mm"
+          ],
+          [
+            "Mòduls",
+            "transportador, remolc, elevació i prestatgeries multicapa"
+          ]
+        ]
+      ],
+      [
+        "Moviment i navegació",
+        [
+          [
+            "Navegació",
+            "VSLAM + LiDAR SLAM"
+          ],
+          [
+            "Tracció",
+            "diferencial de doble roda"
+          ],
+          [
+            "Velocitat màxima",
+            "1,2 m/s"
+          ],
+          [
+            "Precisió de posició",
+            "±10 mm"
+          ],
+          [
+            "Precisió angular",
+            "±1°"
+          ],
+          [
+            "Pendent màxim",
+            "5°"
+          ],
+          [
+            "Esglaó superable",
+            "20 mm"
+          ],
+          [
+            "Buit superable",
+            "35 mm"
+          ],
+          [
+            "Amplada mínima de pas",
+            "600 mm"
+          ]
+        ]
+      ],
+      [
+        "Bateria i càrrega",
+        [
+          [
+            "Bateria",
+            "fosfat de ferro i liti, 29,2 V CC, 30 Ah"
+          ],
+          [
+            "Autonomia",
+            "12 h sense càrrega, 6 h a plena càrrega"
+          ],
+          [
+            "Temps de càrrega",
+            "2 h (0 % a 90 %)"
+          ],
+          [
+            "Mètodes de càrrega",
+            "automàtica, manual i intercanvi ràpid de bateria"
+          ]
+        ]
+      ],
+      [
+        "Sensors i seguretat",
+        [
+          [
+            "LiDAR 2D",
+            "2 (davanter i posterior)"
+          ],
+          [
+            "Càmeres RGBD",
+            "2 (superior i inferior)"
+          ],
+          [
+            "Càmera RGB",
+            "sí"
+          ],
+          [
+            "Para-xocs anticol·lisió",
+            "sí"
+          ],
+          [
+            "Aturades d'emergència",
+            "3"
+          ],
+          [
+            "Indicadors d'estat",
+            "sí"
+          ],
+          [
+            "Àudio",
+            "2 altaveus de 10 W estèreo"
+          ],
+          [
+            "Normativa",
+            "ISO 3691-4"
+          ]
+        ]
+      ],
+      [
+        "T300 Conveyor: base",
+        [
+          [
+            "Dimensions (transferència frontal/posterior)",
+            "835 × 665 × 1.350 mm"
+          ],
+          [
+            "Dimensions (transferència lateral)",
+            "835 × 650 × 1.350 mm"
+          ],
+          [
+            "Pes",
+            "120 kg (una capa), 180 kg (dues capes)"
+          ],
+          [
+            "Amplada de pas",
+            "750 mm"
+          ],
+          [
+            "Velocitat màxima",
+            "1,2 m/s"
+          ],
+          [
+            "Precisió d'acoblament",
+            "±10 mm, ±1°"
+          ],
+          [
+            "Autonomia sense càrrega",
+            "12 h (una capa), 10 h (dues capes)"
+          ],
+          [
+            "Autonomia a plena càrrega",
+            "10 h (una capa), 8 h (dues capes)"
+          ],
+          [
+            "Temps de càrrega",
+            "2 h (0 % a 90 %)"
+          ]
+        ]
+      ],
+      [
+        "T300 Conveyor: transportador",
+        [
+          [
+            "Nombre de capes",
+            "1 o 2"
+          ],
+          [
+            "Càrrega nominal per capa",
+            "80 kg"
+          ],
+          [
+            "Profunditat",
+            "650 mm"
+          ],
+          [
+            "Amplada",
+            "120 a 540 mm, ajustable"
+          ],
+          [
+            "Alçada de la superfície de treball",
+            "305 a 1.100 mm, ajustable"
+          ],
+          [
+            "Orientació",
+            "ajustable segons l'eix d'acoblament"
+          ],
+          [
+            "Elements",
+            "corrons amb recobriment de goma antilliscant, 3 sensors làser infraroigs de barrera, 3 topalls i barra de topall"
+          ],
+          [
+            "Comunicació amb la línia",
+            "IoT, API o inducció automàtica; integració amb PLC"
+          ]
+        ]
+      ],
+      [
+        "Control i integració",
+        [
+          [
+            "IoT",
+            "ascensors, control d'accessos, portes automàtiques, sistemes contra incendis i trucada per xarxa autoorganitzada"
+          ],
+          [
+            "Sistemes",
+            "API oberta; integració amb WMS, MES i ERP"
+          ],
+          [
+            "Gestió de flota",
+            "programació distribuïda i centralitzada; funciona també amb una sola unitat"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Fabricació electrònica 3C i de PCB",
+        null
+      ],
+      [
+        "Línies SMT i PCBA",
+        null
+      ],
+      [
+        "Processament de bateries de liti i panells fotovoltaics",
+        null
+      ],
+      [
+        "Fabricació de peces d'automòbil",
+        null
+      ],
+      [
+        "Transferència de material entre línies de producció",
+        null
+      ],
+      [
+        "Càrrega i descàrrega en magatzems automatitzats",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Preu de la versió amb elevació",
+        "El preu de tarifa correspon al T300 amb elevació."
+      ],
+      [
+        "warn",
+        "Dades generals per variant",
+        "El catàleg dona per al T300 el mateix pes (81 kg) i dimensions (835 × 500 × 1.350 mm) que el T150 i no detalla cada variant. La versió Conveyor pesa 120 o 180 kg i fa 835 × 665/650 × 1.350 mm. Cal confirmar les dades de Standard, Lifting i Towing en l'oferta."
+      ],
+      [
+        "info",
+        "Autonomia i amplada de pas",
+        "El catàleg indica 6 h a plena càrrega i 600 mm de pas per a la sèrie; la fitxa del Conveyor indica 10 h (una capa) o 8 h (dues capes) a plena càrrega i 750 mm de pas."
+      ],
+      [
+        "warn",
+        "Vida útil de la bateria",
+        "El catàleg indica «cicle de vida < 1000, SOH 70 %», dada que sembla una errada. Cal confirmar-ho amb el fabricant abans de citar-ho."
+      ]
+    ]
+  },
+  "t600": {
+    "claim": "Robot autònom d'elevació per a càrregues de 600 kg",
+    "tagline": "Aixeca i trasllada palets, prestatgeries i carros de fins a 600 kg entre magatzem i línia. La seva columna amb nanses permet moure'l a mà amb assistència elèctrica quan cal.",
+    "hero_alt": "Robot T600 d'elevació, amb columna central, pantalla, nanses laterals i plataforma elevadora plana",
+    "gallery": [
+      [
+        "T600 traslladant un palet amb bobines de cable",
+        "assets/robots/t600/bobinas-de-cable.webp"
+      ],
+      [
+        "T600 en una planta de fabricació metàl·lica",
+        "assets/robots/t600/planta-metalurgica.webp"
+      ],
+      [
+        "Maneig manual amb assistència elèctrica des de les nanses de la columna",
+        "assets/robots/t600/asistencia-manual.webp"
+      ],
+      [
+        "T600 elevant un bastidor amb rodes",
+        "assets/robots/t600/elevacion-de-carro.webp"
+      ]
+    ],
+    "intro": "El T600 és la versió d'elevació (Lifting) de la sèrie T600: un robot mòbil autònom que se situa sota palets, prestatgeries o carros, els aixeca 60 mm i els trasllada amb fins a 600 kg de càrrega. Navega amb VSLAM i LiDAR, porta pantalla de 10,1 polzades i està pensat per a logística interna de càrregues pesades en fabricació i magatzems.",
+    "keyfacts": [
+      [
+        "Càrrega màxima",
+        "600 kg"
+      ],
+      [
+        "Velocitat màxima",
+        "1,2 m/s"
+      ],
+      [
+        "Autonomia",
+        "6 h a plena càrrega, 12 h sense càrrega"
+      ],
+      [
+        "Amplada mínima de pas",
+        "700 mm"
+      ]
+    ],
+    "highlights": [
+      [
+        "600 kg per viatge",
+        "Mou palets i prestatgeries completes, cosa que redueix el nombre de viatges i les manipulacions intermèdies."
+      ],
+      [
+        "Columna amb nanses i assistència",
+        "La columna incorpora pantalla i nanses; el maneig manual compta amb assistència elèctrica controlada per velocitat."
+      ],
+      [
+        "Navegació VSLAM i LiDAR",
+        "Combina localització per sostre amb dos LiDAR i càmeres RGBD, i reconeix grups de prestatgeries per recollir i deixar la càrrega en la seva ubicació."
+      ],
+      [
+        "Flota i normativa",
+        "Compleix la ISO 3691-4, és compatible amb VDA5050 i treballa sol o en flota amb programació distribuïda o central."
+      ]
+    ],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Versió",
+            "Lifting (elevació, amb columna)"
+          ],
+          [
+            "Dimensions",
+            "960 × 500 × 1.350 mm"
+          ],
+          [
+            "Pes",
+            "112 kg"
+          ],
+          [
+            "Alçada sobre el terra",
+            "30 mm"
+          ],
+          [
+            "Alçada del xassís",
+            "255 mm"
+          ],
+          [
+            "Pantalla",
+            "10,1 polzades"
+          ],
+          [
+            "Temperatura de funcionament",
+            "0 ℃ a 40 ℃"
+          ]
+        ]
+      ],
+      [
+        "Càrrega",
+        [
+          [
+            "Càrrega màxima",
+            "600 kg"
+          ],
+          [
+            "Superfície màxima de càrrega",
+            "1.200 × 1.000 × 1.100 mm"
+          ],
+          [
+            "Alçada d'elevació",
+            "60 mm"
+          ],
+          [
+            "Accessoris compatibles",
+            "prestatge elevador, pals reflectors, caixa de control de trucada, mòdul de porta d'accés i porta automàtica, cercapersones"
+          ]
+        ]
+      ],
+      [
+        "Moviment i navegació",
+        [
+          [
+            "Navegació",
+            "VSLAM + LiDAR SLAM"
+          ],
+          [
+            "Tracció",
+            "diferencial de doble roda"
+          ],
+          [
+            "Velocitat",
+            "0,2 a 1,2 m/s"
+          ],
+          [
+            "Precisió de posició",
+            "±10 mm"
+          ],
+          [
+            "Precisió angular",
+            "±1°"
+          ],
+          [
+            "Pendent màxim",
+            "5°"
+          ],
+          [
+            "Esglaó superable",
+            "10 mm"
+          ],
+          [
+            "Buit superable",
+            "35 mm"
+          ],
+          [
+            "Amplada mínima de pas",
+            "700 mm"
+          ]
+        ]
+      ],
+      [
+        "Bateria i càrrega",
+        [
+          [
+            "Bateria",
+            "fosfat de ferro i liti, 29,2 V CC, 30 Ah, intercanviable"
+          ],
+          [
+            "Autonomia",
+            "6 h a plena càrrega, 12 h sense càrrega"
+          ],
+          [
+            "Temps de càrrega",
+            "2 h (0 % a 90 %)"
+          ],
+          [
+            "Mètodes de càrrega",
+            "automàtica en estació, manual i intercanvi ràpid de bateria"
+          ]
+        ]
+      ],
+      [
+        "Sensors i seguretat",
+        [
+          [
+            "LiDAR 2D",
+            "2 (davanter i posterior)"
+          ],
+          [
+            "Càmeres RGBD",
+            "2 (superior i inferior)"
+          ],
+          [
+            "Càmera RGB",
+            "sí"
+          ],
+          [
+            "Para-xocs anticol·lisió",
+            "sí"
+          ],
+          [
+            "Aturades d'emergència",
+            "3"
+          ],
+          [
+            "Indicadors d'estat",
+            "sí"
+          ],
+          [
+            "Àudio",
+            "2 altaveus de 10 W estèreo"
+          ],
+          [
+            "Normativa",
+            "ISO 3691-4"
+          ]
+        ]
+      ],
+      [
+        "Control i integració",
+        [
+          [
+            "Programació de flota",
+            "desplegament independent sense servidor, coordinació distribuïda o orquestració central"
+          ],
+          [
+            "Protocol",
+            "VDA5050, per coordinar-se amb altres robots i sistemes compatibles"
+          ],
+          [
+            "IoT",
+            "ascensors, control d'accés, portes automàtiques, activació per PLC, sistemes contra incendis i trucada amb cercapersones"
+          ],
+          [
+            "Sistemes",
+            "API oberta; integració amb WMS, MES i ERP"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Transport de palets en magatzem",
+        null
+      ],
+      [
+        "Subministrament a línia en plantes de components d'automoció",
+        null
+      ],
+      [
+        "Trasllats entre fosa, mecanitzat, tractament tèrmic i inspecció",
+        null
+      ],
+      [
+        "Transport de manats de cables i bobines pesades",
+        null
+      ],
+      [
+        "Moviment de prestatgeries i carros amb prestatge elevador",
+        null
+      ],
+      [
+        "Picking assistit amb lliurament de prestatgeries a estacions",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Nom en els documents",
+        "El catàleg anomena aquesta versió «PUDU T600 Lifting» en la presentació de la gamma i «PUDU T600» en la taula d'especificacions; la presentació del producte fa servir «PUDU T600»."
+      ],
+      [
+        "warn",
+        "Vida útil de la bateria",
+        "El catàleg indica «cicle de vida < 1000, SOH 70 %», dada que sembla una errada. Cal confirmar-ho amb el fabricant abans de citar-ho."
+      ]
+    ]
+  },
+  "t600-underride": {
+    "claim": "Robot autònom per sota de carros per a càrregues de 600 kg",
+    "tagline": "Xassís baix, sense columna, que s'introdueix sota prestatgeries i carros per aixecar-los i portar-los a la seva destinació. Admet càrregues de fins a 600 kg amb una base de fins a 1.200 × 1.200 mm.",
+    "hero_alt": "Robot T600 Underride, xassís baix i compacte amb plataforma elevadora plana i sense columna",
+    "gallery": [
+      [
+        "T600 Underride (esquerra) al costat del T600 d'elevació amb columna",
+        "assets/robots/t600-underride/junto-al-t600.webp"
+      ],
+      [
+        "Robots de la sèrie T600 recollint càrrega sota prestatgeries",
+        "assets/robots/t600-underride/bajo-estanterias.webp"
+      ],
+      [
+        "Trasllat de prestatgeries entre passadissos",
+        "assets/robots/t600-underride/flujo-de-estanterias.webp"
+      ],
+      [
+        "Flota de robots en una planta de fabricació",
+        "assets/robots/t600-underride/planta-en-flota.webp"
+      ]
+    ],
+    "intro": "El T600 Underride és la versió de xassís baix de la sèrie T600: fa 255 mm d'alçada, s'introdueix sota prestatgeries, carros o bastidors, els eleva i els transporta amb fins a 600 kg. Navega amb LiDAR SLAM i no porta columna ni pantalla, per la qual cosa admet càrregues de més superfície i alçada que la versió d'elevació.",
+    "keyfacts": [
+      [
+        "Càrrega màxima",
+        "600 kg"
+      ],
+      [
+        "Alçada",
+        "255 mm"
+      ],
+      [
+        "Superfície màxima de càrrega",
+        "1.200 × 1.200 × 1.600 mm"
+      ],
+      [
+        "Amplada mínima de pas",
+        "650 mm"
+      ]
+    ],
+    "highlights": [
+      [
+        "Perfil baix",
+        "Amb 255 mm d'alçada s'introdueix sota la càrrega i l'eleva 60 mm, sense columna que limiti la mida del que transporta."
+      ],
+      [
+        "Càrregues més grans",
+        "Admet bases de 1.200 × 1.200 mm i fins a 1.600 mm d'alçada de càrrega, amb 600 kg de pes."
+      ],
+      [
+        "Navegació LiDAR",
+        "Dos LiDAR 2D, dues càmeres RGBD inferiors i para-xocs; reconeix grups de prestatgeries per recollir i deixar la càrrega en la seva ubicació."
+      ],
+      [
+        "Flota i normativa",
+        "Compleix la ISO 3691-4, és compatible amb VDA5050 i treballa sol o en flota amb programació distribuïda o central."
+      ]
+    ],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Versió",
+            "Underride (s'introdueix sota la càrrega, sense columna)"
+          ],
+          [
+            "Dimensions",
+            "845 × 500 × 255 mm"
+          ],
+          [
+            "Pes",
+            "94 kg"
+          ],
+          [
+            "Alçada sobre el terra",
+            "30 mm"
+          ],
+          [
+            "Alçada del xassís",
+            "255 mm"
+          ],
+          [
+            "Pantalla",
+            "no"
+          ],
+          [
+            "Temperatura de funcionament",
+            "0 ℃ a 40 ℃"
+          ]
+        ]
+      ],
+      [
+        "Càrrega",
+        [
+          [
+            "Càrrega màxima",
+            "600 kg"
+          ],
+          [
+            "Superfície màxima de càrrega",
+            "1.200 × 1.200 × 1.600 mm"
+          ],
+          [
+            "Alçada d'elevació",
+            "60 mm"
+          ],
+          [
+            "Accessoris compatibles",
+            "prestatge elevador, pals reflectors, caixa de control de trucada, mòdul de porta d'accés i porta automàtica, cercapersones"
+          ]
+        ]
+      ],
+      [
+        "Moviment i navegació",
+        [
+          [
+            "Navegació",
+            "LiDAR SLAM"
+          ],
+          [
+            "Tracció",
+            "diferencial de doble roda"
+          ],
+          [
+            "Velocitat",
+            "0,2 a 1,2 m/s"
+          ],
+          [
+            "Precisió de posició",
+            "±10 mm"
+          ],
+          [
+            "Precisió angular",
+            "±1°"
+          ],
+          [
+            "Pendent màxim",
+            "5°"
+          ],
+          [
+            "Esglaó superable",
+            "10 mm"
+          ],
+          [
+            "Buit superable",
+            "35 mm"
+          ],
+          [
+            "Amplada mínima de pas",
+            "650 mm"
+          ]
+        ]
+      ],
+      [
+        "Bateria i càrrega",
+        [
+          [
+            "Bateria",
+            "fosfat de ferro i liti, 29,2 V CC, 30 Ah, intercanviable"
+          ],
+          [
+            "Autonomia",
+            "6 h a plena càrrega, 12 h sense càrrega"
+          ],
+          [
+            "Temps de càrrega",
+            "2 h (0 % a 90 %)"
+          ],
+          [
+            "Mètodes de càrrega",
+            "automàtica en estació, manual i intercanvi ràpid de bateria"
+          ]
+        ]
+      ],
+      [
+        "Sensors i seguretat",
+        [
+          [
+            "LiDAR 2D",
+            "2 (davanter i posterior)"
+          ],
+          [
+            "Càmeres RGBD",
+            "2 (inferiors)"
+          ],
+          [
+            "Càmera RGB",
+            "no"
+          ],
+          [
+            "Para-xocs anticol·lisió",
+            "sí"
+          ],
+          [
+            "Aturades d'emergència",
+            "2"
+          ],
+          [
+            "Indicadors d'estat",
+            "sí"
+          ],
+          [
+            "Àudio",
+            "2 altaveus de 10 W estèreo"
+          ],
+          [
+            "Normativa",
+            "ISO 3691-4"
+          ]
+        ]
+      ],
+      [
+        "Control i integració",
+        [
+          [
+            "Programació de flota",
+            "desplegament independent sense servidor, coordinació distribuïda o orquestració central"
+          ],
+          [
+            "Protocol",
+            "VDA5050, per coordinar-se amb altres robots i sistemes compatibles"
+          ],
+          [
+            "IoT",
+            "ascensors, control d'accés, portes automàtiques, activació per PLC, sistemes contra incendis i trucada amb cercapersones"
+          ],
+          [
+            "Sistemes",
+            "API oberta; integració amb WMS, MES i ERP"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Trasllat de prestatgeries i carros entre magatzem i línia",
+        null
+      ],
+      [
+        "Picking assistit amb lliurament de prestatgeries a estacions (order-to-person)",
+        null
+      ],
+      [
+        "Transport de càrregues voluminoses de fins a 1.600 mm d'alçada",
+        null
+      ],
+      [
+        "Moviment de bastidors i utillatges pesats en automoció i metall",
+        null
+      ],
+      [
+        "Trasllats entre plantes amb integració d'ascensors",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Dades compartides amb el T600",
+        "Bateria, autonomia, velocitat, precisió, pendent, buit superable i temperatura de funcionament apareixen amb els mateixos valors per a totes dues versions. Els trets de sèrie (VDA5050, ISO 3691-4, reconeixement de prestatgeries) es descriuen per a tota la sèrie T600."
+      ],
+      [
+        "warn",
+        "Vida útil de la bateria",
+        "El catàleg indica «cicle de vida < 1000, SOH 70 %», dada que sembla una errada. Cal confirmar-ho amb el fabricant abans de citar-ho."
+      ]
+    ]
+  },
+  "mp2000": {
+    "claim": "Transpal·let autònom per a palets de 2.000 kg",
+    "tagline": "Recull i deixa palets sense reflectors ni marques al terra, amb entrada de forquilles en uns 20 s. Treballa en passadissos d'apilament a 90° de 2,0 m i coordina diverses unitats sense xarxa ni servidor.",
+    "hero_alt": "Transpal·let autònom MP2000 vist de front, amb cos gris, màstil amb sensors, timó de control i forquilles",
+    "gallery": [
+      [
+        "Vista posterior amb les forquilles i el màstil",
+        "assets/robots/mp2000/vista-horquillas.webp"
+      ],
+      [
+        "MP2000 al costat d'un palet en un magatzem de prestatgeries",
+        "assets/robots/mp2000/almacen-con-pale.webp"
+      ],
+      [
+        "Subministrament de palets amb caixes en una planta de producció",
+        "assets/robots/mp2000/planta-de-produccion.webp"
+      ],
+      [
+        "Aproximació a un palet en zona d'emmagatzematge en terra",
+        "assets/robots/mp2000/entrada-en-pale.webp"
+      ]
+    ],
+    "intro": "El MP2000 és un transpal·let autònom (AMR de palets) per al transport horitzontal de palets de fins a 2.000 kg en molls, magatzems, zones vora línia i tallers. Navega amb SLAM 3D (LiDAR 3D i visió), detecta la posició del palet i l'ocupació de les ubicacions, i admet conducció automàtica o manual. Cobreix l'emmagatzematge en terra i el primer nivell de prestatgeria.",
+    "keyfacts": [
+      [
+        "Càrrega útil",
+        "2.000 kg"
+      ],
+      [
+        "Velocitat sense càrrega / amb càrrega",
+        "1,6 / 1,2 m/s"
+      ],
+      [
+        "Autonomia",
+        "fins a 12 h"
+      ],
+      [
+        "Passadís d'apilament a 90°",
+        "2,0 m"
+      ]
+    ],
+    "highlights": [
+      [
+        "Sense adaptar la instal·lació",
+        "Es localitza amb LiDAR 3D i visió, sense reflectors ni marques al terra; el mapatge i la posada en marxa es fan en minuts."
+      ],
+      [
+        "Tolerància amb el palet",
+        "Entra en palets desplaçats fins a 15 cm o girats fins a 15°, de tres patins o de base perimetral, en uns 20 s."
+      ],
+      [
+        "Ubicacions i flota autònomes",
+        "Detecta quines ubicacions estan ocupades, tria destinació i ruta, i coordina diverses unitats sense xarxa ni servidor."
+      ],
+      [
+        "Percepció de 360°",
+        "LiDAR 3D i 2D, càmeres, projector de contorn i LiDAR a la punta de les forquilles: s'atura davant d'objectes en moviment i envolta obstacles fixos."
+      ]
+    ],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Tipus",
+            "transpal·let autònom de forquilles"
+          ],
+          [
+            "Dimensions (llarg × ample × alt)",
+            "1.585 × 910 × 1.870 mm"
+          ],
+          [
+            "Pes amb bateria",
+            "420 kg"
+          ],
+          [
+            "Mode de conducció",
+            "automàtic o manual (timó de control)"
+          ],
+          [
+            "Pantalla",
+            "LCD"
+          ]
+        ]
+      ],
+      [
+        "Càrrega i forquilles",
+        [
+          [
+            "Càrrega útil nominal",
+            "2.000 kg"
+          ],
+          [
+            "Alçada de forquilles",
+            "80 a 200 mm (màx. 200 ± 5 mm)"
+          ],
+          [
+            "Dimensions de forquilles (llarg × ample × gruix)",
+            "1.130 × 160 × 60 mm"
+          ],
+          [
+            "Amplada exterior de forquilles",
+            "550 o 620 mm (dues versions)"
+          ],
+          [
+            "Temps d'entrada de forquilles",
+            "20 s"
+          ],
+          [
+            "Tipus de palet",
+            "de llarguers o de blocs; de tres patins i de base perimetral"
+          ],
+          [
+            "Tolerància de posició del palet",
+            "15 cm de desplaçament, 15° de desviació"
+          ],
+          [
+            "Cobertura",
+            "emmagatzematge en terra i primer nivell de prestatgeria"
+          ]
+        ]
+      ],
+      [
+        "Moviment i navegació",
+        [
+          [
+            "Navegació",
+            "SLAM amb LiDAR 3D + VSLAM"
+          ],
+          [
+            "Tracció",
+            "roda motriu direccional (avanç, retrocés i gir), amb roda auxiliar"
+          ],
+          [
+            "Velocitat nominal",
+            "1,6 m/s sense càrrega, 1,2 m/s amb càrrega"
+          ],
+          [
+            "Precisió de posicionament",
+            "±10 mm"
+          ],
+          [
+            "Radi mínim de gir",
+            "1.350 mm"
+          ],
+          [
+            "Amplada mínima de passadís recte sense càrrega",
+            "1,1 m"
+          ],
+          [
+            "Amplada mínima de passadís de gir sense càrrega",
+            "2.000 mm"
+          ],
+          [
+            "Passadís d'apilament a 90°, palet 1.000 × 1.200 mm",
+            "2.000 mm"
+          ],
+          [
+            "Passadís d'apilament a 90°, palet 800 × 1.200 mm",
+            "1.960 mm"
+          ],
+          [
+            "Esglaó superable",
+            "10 mm"
+          ],
+          [
+            "Buit superable",
+            "35 mm"
+          ],
+          [
+            "Pendent superable",
+            "3° amb càrrega, 8° sense càrrega"
+          ]
+        ]
+      ],
+      [
+        "Bateria i càrrega",
+        [
+          [
+            "Bateria",
+            "fosfat de ferro i liti, 51,2 V; 60 Ah nominal (54,9 Ah típica)"
+          ],
+          [
+            "Autonomia",
+            "12 h sense càrrega, 6 h amb càrrega"
+          ],
+          [
+            "Temps de recàrrega completa",
+            "2 h"
+          ],
+          [
+            "Mètodes de càrrega",
+            "automàtica en estació i manual"
+          ]
+        ]
+      ],
+      [
+        "Sensors i seguretat",
+        [
+          [
+            "LiDAR",
+            "3D i 2D"
+          ],
+          [
+            "Càmeres",
+            "superior, frontal i de profunditat"
+          ],
+          [
+            "Evitació d'obstacles",
+            "amb LiDAR i 3D; s'atura davant d'objectes mòbils i envolta obstacles estàtics"
+          ],
+          [
+            "Protecció de forquilles",
+            "LiDAR a la punta de les forquilles"
+          ],
+          [
+            "Detecció de palet en posició",
+            "sí"
+          ],
+          [
+            "Para-xocs anticol·lisió",
+            "sí"
+          ],
+          [
+            "Aturada d'emergència",
+            "sí"
+          ],
+          [
+            "Senyalització",
+            "llum d'advertència, llum indicadora, projector de contorn de seguretat i alarma sonora i visual"
+          ]
+        ]
+      ],
+      [
+        "Control i integració",
+        [
+          [
+            "Assignació de tasques",
+            "pantalla del robot, app PUDU Link, escaneig amb PDA, PUDU Pager i API oberta"
+          ],
+          [
+            "Flota",
+            "coordinació multirobot distribuïda, sense xarxa ni servidor, amb control de zones de trànsit"
+          ],
+          [
+            "IoT",
+            "estació de càrrega automàtica, control automàtic de portes i mòdul de control d'ascensors"
+          ],
+          [
+            "Configuració d'ubicacions",
+            "escaneig d'extrems amb generació automàtica de dades"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Recepció i expedició de palets en molls",
+        null
+      ],
+      [
+        "Emmagatzematge en terra i en primer nivell de prestatgeria",
+        null
+      ],
+      [
+        "Proveïment de línia des de zones de preparació",
+        null
+      ],
+      [
+        "Trasllat de producte acabat a magatzem i expedició",
+        null
+      ],
+      [
+        "Centres de distribució i transferència de càrrega urgent",
+        null
+      ],
+      [
+        "Reposició per a picking i consolidació en comerç electrònic",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Especificacions per confirmar",
+        "La presentació indica que les especificacions estan subjectes a la matriu de prestacions i a la fitxa de paràmetres que es confirmin amb el fabricant."
+      ],
+      [
+        "info",
+        "Amplada de forquilles",
+        "Hi ha dues versions, amb 550 mm o 620 mm d'amplada exterior de forquilles. Convé confirmar quina correspon segons els palets del client."
+      ],
+      [
+        "warn",
+        "Alçada de treball",
+        "És un transpal·let d'elevació baixa (fins a 200 mm): només cobreix l'emmagatzematge en terra i el primer nivell de prestatgeria, no prestatgeries en alçada."
+      ]
+    ]
+  },
+  "omnihand": {
+    "claim": "Mà robòtica destra de 16 graus de llibertat",
+    "tagline": "Efector final compacte i lleuger per a robots humanoides, manipuladors mòbils i recerca. Cobreix els gestos i agafades habituals amb 10 articulacions actives.",
+    "hero_alt": "Mà robòtica OmniHand blanca fent el gest d'OK amb el polze i l'índex",
+    "gallery": [
+      [
+        "Vista del palmell",
+        "assets/robots/omnihand/vista-palma.webp"
+      ],
+      [
+        "Vista del dors",
+        "assets/robots/omnihand/vista-dorso.webp"
+      ],
+      [
+        "Interacció amb persones en un entorn domèstic",
+        "assets/robots/omnihand/interaccion-personas.webp"
+      ],
+      [
+        "Robot humanoide manipulant objectes en una pràctica docent",
+        "assets/robots/omnihand/formacion.webp"
+      ],
+      [
+        "Agafada lleugera de peces en una safata",
+        "assets/robots/omnihand/robotica-servicio.webp"
+      ]
+    ],
+    "intro": "OmniHand és una mà robòtica de cinc dits que es munta com a efector final en robots humanoides, braços robòtics i manipuladors mòbils. Reuneix 16 graus de llibertat, 10 dels quals actius, en 180 × 85 × 38,5 mm i uns 550 g. Està pensada per a la interacció amb persones, la robòtica de servei, la docència i la recerca.",
+    "keyfacts": [
+      [
+        "Graus de llibertat",
+        "16 (10 actius)"
+      ],
+      [
+        "Pes",
+        "≤ 550 g"
+      ],
+      [
+        "Força d'agafada",
+        "50 N"
+      ],
+      [
+        "Precisió de repetició",
+        "0,3 mm"
+      ]
+    ],
+    "highlights": [
+      [
+        "Pensada per desplegar a escala",
+        "Format compacte i lleuger, dissenyat per integrar-se en robots humanoides i manipuladors mòbils d'ús habitual."
+      ],
+      [
+        "10 articulacions actives i 6 passives",
+        "Cobreix els gestos comuns i la majoria de tipus d'agafada, cosa que permet col·laborar amb persones més enllà d'agafar objectes."
+      ],
+      [
+        "Resposta ràpida",
+        "Obre i tanca en 0,5 s i repeteix la posició de la punta dels dits amb una precisió típica de 0,3 mm."
+      ],
+      [
+        "Integració oberta",
+        "Comunicació CAN-FD o RS485, compatibilitat amb Dex-UMI i ROS 2, SDK en Python i C++ i actualitzacions OTA."
+      ]
+    ],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Pes (sense tapa del canell ni cargols)",
+            "≤ 550 g"
+          ],
+          [
+            "Dimensions",
+            "180 × 85 × 38,5 mm"
+          ],
+          [
+            "Graus de llibertat",
+            "16"
+          ],
+          [
+            "Graus de llibertat actius",
+            "10"
+          ],
+          [
+            "Graus de llibertat passius",
+            "6"
+          ]
+        ]
+      ],
+      [
+        "Prestacions",
+        [
+          [
+            "Temps mínim d'obertura / tancament (típic)",
+            "0,5 s / 0,5 s"
+          ],
+          [
+            "Precisió de repetició a la punta dels dits (típica)",
+            "0,3 mm"
+          ],
+          [
+            "Força d'agafada amb cinc dits",
+            "50 N"
+          ],
+          [
+            "Càrrega útil (presentació comercial)",
+            "2 kg en agafada estable; 5 kg en elevació"
+          ]
+        ]
+      ],
+      [
+        "Electrònica i entorn",
+        [
+          [
+            "Tensió de treball",
+            "18–27 V"
+          ],
+          [
+            "Interfície de comunicació",
+            "CAN-FD / RS485"
+          ],
+          [
+            "Temperatura de treball",
+            "-10 a 45 °C"
+          ],
+          [
+            "Sensors tàctils",
+            "no inclosos (disponibles a OmniHand Tactile)"
+          ]
+        ]
+      ],
+      [
+        "Rang articular",
+        [
+          [
+            "Dits de l'índex al petit · DIP (flexió/extensió)",
+            "0° a 171°"
+          ],
+          [
+            "Dits de l'índex al petit · PIP (flexió/extensió)",
+            "0° a 80°"
+          ],
+          [
+            "Dits de l'índex al petit · ABAD (abducció/adducció)",
+            "0° a 10°"
+          ],
+          [
+            "Polze · DIP (flexió/extensió)",
+            "0° a 160°"
+          ],
+          [
+            "Polze · PIP (flexió/extensió)",
+            "0° a 106°"
+          ],
+          [
+            "Polze · MCP (flexió/extensió)",
+            "0° a 45°"
+          ],
+          [
+            "Polze · ABAD (abducció/adducció)",
+            "0° a 90°"
+          ],
+          [
+            "Polze · ROLL (rotació)",
+            "0° a 60°"
+          ]
+        ]
+      ],
+      [
+        "Compatibilitat i integració",
+        [
+          [
+            "Plataformes",
+            "robots humanoides i braços robòtics habituals"
+          ],
+          [
+            "Recollida de dades",
+            "Dex-UMI"
+          ],
+          [
+            "Programari",
+            "ROS 2, SDK en Python i C++"
+          ],
+          [
+            "Actualització",
+            "OTA (en remot)"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Interacció persona-robot: gestos, tasques de servei i col·laboració",
+        null
+      ],
+      [
+        "Formació i desenvolupament de continguts docents en manipulació",
+        null
+      ],
+      [
+        "Prototipatge en projectes de recerca acadèmica",
+        null
+      ],
+      [
+        "Robòtica mòbil i de servei: agafada lleugera en repartiment, hostaleria i assistència",
+        null
+      ],
+      [
+        "Efector final per a robots humanoides",
+        null
+      ],
+      [
+        "Efector final per a manipuladors mòbils",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Pes",
+        "La fitxa tècnica indica ≤ 550 g sense tapa del canell ni cargols; la presentació comercial indica 510 g."
+      ],
+      [
+        "info",
+        "Força d'agafada i càrrega útil",
+        "La fitxa tècnica dona 50 N de força d'agafada amb cinc dits, mesurada en mode de control híbrid de força; la presentació comercial parla de 2 kg en agafada estable i 5 kg en elevació. Són magnituds diferents: cal confirmar amb el fabricant quina s'aplica a cada cas."
+      ],
+      [
+        "info",
+        "Versió amb sensors tàctils",
+        "La presentació comercial descriu la detecció tàctil distribuïda de la família, però segons la fitxa tècnica només la inclou la versió OmniHand Tactile."
+      ]
+    ]
+  },
+  "omnihand-tactile": {
+    "claim": "Mà robòtica destra amb sensors tàctils",
+    "tagline": "Versió d'OmniHand amb detecció de força a les puntes dels dits, el palmell i el dors. Permet agafades més acurades i interacció per contacte amb persones.",
+    "hero_alt": "Mà robòtica OmniHand Tactile vista des del palmell, amb els dits estesos",
+    "gallery": [
+      [
+        "Vista del dors",
+        "assets/robots/omnihand-tactile/vista-dorso.webp"
+      ],
+      [
+        "Gest de precisió entre el polze i l'índex",
+        "assets/robots/omnihand-tactile/gesto-precision.webp"
+      ],
+      [
+        "Esquema d'articulacions dels dits i el polze",
+        "assets/robots/omnihand-tactile/esquema-articulaciones.webp"
+      ],
+      [
+        "Rang de moviment del polze",
+        "assets/robots/omnihand-tactile/rango-pulgar.webp"
+      ]
+    ],
+    "intro": "OmniHand Tactile és la versió amb sensors tàctils de la mà robòtica OmniHand. Manté els 16 graus de llibertat (10 actius) i afegeix detecció de força a les puntes dels dits, el palmell i el dors de la mà, amb una resolució de 0,1 N. Serveix com a efector final en robots humanoides i manipuladors mòbils que treballen a prop de persones o amb objectes delicats.",
+    "keyfacts": [
+      [
+        "Graus de llibertat",
+        "16 (10 actius)"
+      ],
+      [
+        "Resolució tàctil",
+        "0,1 N"
+      ],
+      [
+        "Rang de detecció",
+        "0–20 N"
+      ],
+      [
+        "Pes",
+        "≤ 570 g"
+      ]
+    ],
+    "highlights": [
+      [
+        "Detecció tàctil distribuïda",
+        "Més de 300 punts sensibles a la força repartits per les puntes dels dits, el palmell i el dors de la mà."
+      ],
+      [
+        "Contacte segur",
+        "Disseny antipinçament per interactuar amb suavitat amb persones i objectes."
+      ],
+      [
+        "Interacció pel dors",
+        "A més de gestos i agafades, reconeix el contacte al dors de la mà per a la col·laboració persona-robot."
+      ],
+      [
+        "Sensors robustos",
+        "Mesuren de 0 a 20 N i suporten fins a 200 N sense danys."
+      ]
+    ],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Pes (sense tapa del canell ni cargols)",
+            "≤ 570 g"
+          ],
+          [
+            "Dimensions",
+            "180 × 85 × 38,5 mm"
+          ],
+          [
+            "Graus de llibertat",
+            "16"
+          ],
+          [
+            "Graus de llibertat actius",
+            "10"
+          ],
+          [
+            "Graus de llibertat passius",
+            "6"
+          ]
+        ]
+      ],
+      [
+        "Prestacions",
+        [
+          [
+            "Temps mínim d'obertura / tancament (típic)",
+            "0,5 s / 0,5 s"
+          ],
+          [
+            "Precisió de repetició a la punta dels dits (típica)",
+            "0,3 mm"
+          ],
+          [
+            "Força d'agafada amb cinc dits",
+            "50 N"
+          ],
+          [
+            "Càrrega útil (presentació comercial)",
+            "2 kg en agafada estable; 5 kg en elevació"
+          ]
+        ]
+      ],
+      [
+        "Sensors tàctils",
+        [
+          [
+            "Detecció de força",
+            "unidimensional a les puntes dels dits, el palmell i el dors de la mà"
+          ],
+          [
+            "Punts sensibles (presentació comercial)",
+            "més de 300"
+          ],
+          [
+            "Resolució",
+            "0,1 N"
+          ],
+          [
+            "Rang de detecció",
+            "0–20 N"
+          ],
+          [
+            "Força màxima admissible sense danys",
+            "200 N"
+          ]
+        ]
+      ],
+      [
+        "Electrònica i entorn",
+        [
+          [
+            "Tensió de treball",
+            "18–27 V"
+          ],
+          [
+            "Interfície de comunicació",
+            "CAN-FD / RS485"
+          ],
+          [
+            "Temperatura de treball",
+            "-10 a 45 °C"
+          ]
+        ]
+      ],
+      [
+        "Rang articular",
+        [
+          [
+            "Dits de l'índex al petit · DIP (flexió/extensió)",
+            "0° a 171°"
+          ],
+          [
+            "Dits de l'índex al petit · PIP (flexió/extensió)",
+            "0° a 80°"
+          ],
+          [
+            "Dits de l'índex al petit · ABAD (abducció/adducció)",
+            "0° a 10°"
+          ],
+          [
+            "Polze · DIP (flexió/extensió)",
+            "0° a 160°"
+          ],
+          [
+            "Polze · PIP (flexió/extensió)",
+            "0° a 106°"
+          ],
+          [
+            "Polze · MCP (flexió/extensió)",
+            "0° a 45°"
+          ],
+          [
+            "Polze · ABAD (abducció/adducció)",
+            "0° a 90°"
+          ],
+          [
+            "Polze · ROLL (rotació)",
+            "0° a 60°"
+          ]
+        ]
+      ],
+      [
+        "Compatibilitat i integració",
+        [
+          [
+            "Plataformes",
+            "robots humanoides i braços robòtics habituals"
+          ],
+          [
+            "Recollida de dades",
+            "Dex-UMI"
+          ],
+          [
+            "Programari",
+            "ROS 2, SDK en Python i C++"
+          ],
+          [
+            "Actualització",
+            "OTA (en remot)"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Interacció persona-robot amb contacte: gestos, tasques de servei i col·laboració",
+        null
+      ],
+      [
+        "Manipulació d'objectes delicats amb control de força",
+        null
+      ],
+      [
+        "Robòtica mòbil i de servei: repartiment, hostaleria i assistència",
+        null
+      ],
+      [
+        "Formació i desenvolupament de continguts docents en manipulació",
+        null
+      ],
+      [
+        "Recerca acadèmica en manipulació i tacte",
+        null
+      ],
+      [
+        "Efector final per a robots humanoides i manipuladors mòbils",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Força d'agafada i càrrega útil",
+        "La fitxa tècnica dona 50 N de força d'agafada amb cinc dits, mesurada en mode de control híbrid de força; la presentació comercial parla de 2 kg en agafada estable i 5 kg en elevació. Són magnituds diferents: cal confirmar amb el fabricant quina s'aplica a cada cas."
+      ],
+      [
+        "info",
+        "Documentació compartida",
+        "La fitxa tècnica i la presentació comercial són comunes a OmniHand i OmniHand Tactile. Les xifres de sensors i el pes de ≤ 570 g corresponen a la versió tàctil; la presentació indica 510 g sense especificar versió."
+      ]
+    ]
+  },
+  "omnihand-pro-2025": {
+    "claim": "Mà robòtica destra de 19 graus de llibertat",
+    "tagline": "Efector final de cinc dits amb 12 articulacions actives i detecció de força tridimensional a les puntes dels dits, per a tasques de manipulació fina amb més càrrega.",
+    "hero_alt": "Mà robòtica OmniHand Pro 2025 vista de front",
+    "gallery": [
+      [
+        "L'OmniHand Pro 2025 fent un gest amb dos dits",
+        "assets/robots/omnihand-pro-2025/gesto-dos-dedos.webp"
+      ],
+      [
+        "Esquema cinemàtic dels dits i el polze",
+        "assets/robots/omnihand-pro-2025/esquema-articulaciones.webp"
+      ],
+      [
+        "Rang de flexió dels dits i el polze",
+        "assets/robots/omnihand-pro-2025/rango-articular.webp"
+      ]
+    ],
+    "intro": "OmniHand Pro 2025 és una mà robòtica de cinc dits amb 19 graus de llibertat, 12 dels quals actius, per muntar com a efector final en robots humanoides i braços robòtics. Integra sensors tàctils amb detecció de força tridimensional a les puntes dels dits i unidimensional al palmell, i ofereix una força d'agafada de 10 kg amb cinc dits.",
+    "keyfacts": [
+      [
+        "Graus de llibertat",
+        "19 (12 actius)"
+      ],
+      [
+        "Força d'agafada",
+        "10 kg"
+      ],
+      [
+        "Pes",
+        "≤ 810 g"
+      ],
+      [
+        "Resolució tàctil",
+        "0,1 N"
+      ]
+    ],
+    "highlights": [
+      [
+        "Més articulacions actives",
+        "12 graus de llibertat actius de 19; índex i cor amb abducció de fins a 14° i polze amb rotació de 42°."
+      ],
+      [
+        "Tacte tridimensional a les puntes dels dits",
+        "Mesura força en tres eixos a la punta dels dits i en un eix al palmell, amb 0,1 N de resolució i rang de 0 a 50 N."
+      ],
+      [
+        "Construcció robusta",
+        "Els sensors suporten fins a 1.000 N sense danys i la mà treballa entre -20 i 50 °C."
+      ],
+      [
+        "Integració senzilla",
+        "Alimentació de 12 a 24 V, comunicació CAN-FD i actualitzacions OTA."
+      ]
+    ],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Pes",
+            "≤ 810 g"
+          ],
+          [
+            "Dimensions",
+            "207 × 98 × 56 mm"
+          ],
+          [
+            "Graus de llibertat",
+            "19"
+          ],
+          [
+            "Graus de llibertat actius",
+            "12"
+          ]
+        ]
+      ],
+      [
+        "Prestacions",
+        [
+          [
+            "Temps mínim d'obertura / tancament (típic)",
+            "0,7 s"
+          ],
+          [
+            "Precisió de repetició a la punta dels dits (típica)",
+            "0,4 mm"
+          ],
+          [
+            "Força d'agafada amb cinc dits",
+            "10 kg"
+          ]
+        ]
+      ],
+      [
+        "Electrònica i entorn",
+        [
+          [
+            "Tensió de treball",
+            "12–24 V"
+          ],
+          [
+            "Interfície de comunicació",
+            "CAN-FD"
+          ],
+          [
+            "Temperatura de treball",
+            "-20 a 50 °C"
+          ],
+          [
+            "Actualització",
+            "OTA (en remot)"
+          ]
+        ]
+      ],
+      [
+        "Sensors tàctils",
+        [
+          [
+            "Detecció de força",
+            "tridimensional a les puntes dels dits; unidimensional al palmell"
+          ],
+          [
+            "Resolució",
+            "0,1 N"
+          ],
+          [
+            "Rang de detecció",
+            "0–50 N"
+          ],
+          [
+            "Força màxima admissible sense danys",
+            "1.000 N"
+          ]
+        ]
+      ],
+      [
+        "Rang articular: índex i cor",
+        [
+          [
+            "Índex · DIP (flexió/extensió)",
+            "0° a 226°"
+          ],
+          [
+            "Índex · PIP (flexió/extensió)",
+            "0° a 157°"
+          ],
+          [
+            "Índex · MCP (flexió/extensió)",
+            "0° a 76°"
+          ],
+          [
+            "Índex · ABAD (abducció/adducció)",
+            "0° a 14°"
+          ],
+          [
+            "Cor · DIP (flexió/extensió)",
+            "0° a 227°"
+          ],
+          [
+            "Cor · PIP (flexió/extensió)",
+            "0° a 159°"
+          ],
+          [
+            "Cor · MCP (flexió/extensió)",
+            "0° a 77°"
+          ],
+          [
+            "Cor · ABAD (abducció/adducció)",
+            "0° a 14°"
+          ]
+        ]
+      ],
+      [
+        "Rang articular: anular, petit i polze",
+        [
+          [
+            "Anular i petit · DIP (flexió/extensió)",
+            "0° a 228°"
+          ],
+          [
+            "Anular i petit · PIP (flexió/extensió)",
+            "0° a 159°"
+          ],
+          [
+            "Anular i petit · MCP (flexió/extensió)",
+            "0° a 85°"
+          ],
+          [
+            "Anular i petit · ABAD (abducció/adducció)",
+            "0° (sense abducció)"
+          ],
+          [
+            "Polze · DIP (flexió/extensió)",
+            "40° a 172°"
+          ],
+          [
+            "Polze · PIP (flexió/extensió)",
+            "40° a 112°"
+          ],
+          [
+            "Polze · MCP (flexió/extensió)",
+            "40° a 77°"
+          ],
+          [
+            "Polze · ABAD (abducció/adducció)",
+            "0° a 54°"
+          ],
+          [
+            "Polze · ROLL (rotació)",
+            "0° a 42°"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Efector final per a robots humanoides",
+        null
+      ],
+      [
+        "Manipulació fina amb control de força a les puntes dels dits",
+        null
+      ],
+      [
+        "Recerca en manipulació destra",
+        null
+      ],
+      [
+        "Integració en braços robòtics i manipuladors mòbils",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Aplicacions",
+        "La fitxa tècnica d'OmniHand Pro 2025 no detalla aplicacions; les indicades es basen en la documentació de la família OmniHand i convé confirmar-les amb el fabricant."
+      ],
+      [
+        "warn",
+        "Imatges",
+        "La documentació només inclou dibuixos tècnics, sense fotografies del producte. Convé substituir la imatge principal per una fotografia oficial."
+      ]
+    ]
+  },
+  "omnipicker": {
+    "claim": "Pinça industrial amb tacte per a IA encarnada",
+    "tagline": "Efector final de dos dits amb 140 N de força i sensors tàctils a les puntes, preparat per a la captura de dades de manipulació i el treball continu en producció.",
+    "hero_alt": "Pinça robòtica OmniPicker negra i blanca amb els dits oberts",
+    "gallery": [
+      [
+        "Pinça amb els dits tancats",
+        "assets/robots/omnipicker/pinza-cerrada.webp"
+      ],
+      [
+        "Classificació d'eines en una safata",
+        "assets/robots/omnipicker/clasificacion-industrial.webp"
+      ],
+      [
+        "Robot amb pinces manipulant tèxtils en un entorn d'operacions",
+        "assets/robots/omnipicker/despliegue-produccion.webp"
+      ]
+    ],
+    "intro": "OmniPicker és una pinça robòtica de dos dits per a braços robòtics i robots humanoides. Combina 140 N de força d'agafada, 120 mm de recorregut i detecció tàctil a les puntes amb resolució de 0,1 N. S'utilitza en classificació i logística, en la captura de dades per entrenar sistemes d'IA encarnada i en operacions de producció contínues.",
+    "keyfacts": [
+      [
+        "Força màxima",
+        "140 N"
+      ],
+      [
+        "Recorregut màxim",
+        "120 mm"
+      ],
+      [
+        "Càrrega útil màxima",
+        "5 kg"
+      ],
+      [
+        "Pes",
+        "600 g"
+      ]
+    ],
+    "highlights": [
+      [
+        "Fiabilitat industrial",
+        "La força d'agafada de 140 N està validada en un milió de cicles a plena càrrega."
+      ],
+      [
+        "Agafada adaptativa amb tacte",
+        "Sensors tàctils a la superfície d'agafada, amb 0,1 N de resolució, per manipular peces estàndard, formes irregulars i objectes delicats amb control de força."
+      ],
+      [
+        "Preparada per recollir dades",
+        "Compatible amb Dex-UMI i amb càmera de profunditat o ull de peix opcional, per capturar dades de manipulació i entrenar models."
+      ],
+      [
+        "Integració oberta",
+        "Comunicació CAN FD o RS485, ROS 2 i SDK en Python i C++."
+      ]
+    ],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Pes",
+            "600 g"
+          ],
+          [
+            "Càrrega útil màxima",
+            "5 kg"
+          ]
+        ]
+      ],
+      [
+        "Prestacions",
+        [
+          [
+            "Força màxima d'agafada",
+            "140 N"
+          ],
+          [
+            "Recorregut màxim",
+            "120 mm"
+          ],
+          [
+            "Precisió de repetició",
+            "±0,1 mm"
+          ],
+          [
+            "Vida útil validada",
+            "1 milió de cicles a plena càrrega"
+          ]
+        ]
+      ],
+      [
+        "Sensors tàctils",
+        [
+          [
+            "Ubicació",
+            "puntes dels dits, a la superfície d'agafada"
+          ],
+          [
+            "Resolució de força",
+            "0,1 N"
+          ]
+        ]
+      ],
+      [
+        "Comunicació i integració",
+        [
+          [
+            "Interfície de comunicació",
+            "CAN FD / RS485"
+          ],
+          [
+            "Plataformes",
+            "braços robòtics habituals"
+          ],
+          [
+            "Recollida de dades",
+            "UMI (Dex-UMI)"
+          ],
+          [
+            "Visió",
+            "càmera de profunditat o ull de peix opcional"
+          ],
+          [
+            "Programari",
+            "ROS 2, SDK en Python i C++"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Pick-and-place en classificació industrial",
+        null
+      ],
+      [
+        "Manipulació de paqueteria",
+        null
+      ],
+      [
+        "Automatització de magatzems",
+        null
+      ],
+      [
+        "Captura massiva de demostracions per a IA encarnada",
+        null
+      ],
+      [
+        "Recollida de dades de manipulació amb força",
+        null
+      ],
+      [
+        "Operacions contínues en retail i comerç electrònic",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Generació del producte",
+        "La presentació comercial correspon a l'OmniPicker 3. Cal confirmar la generació en l'oferta."
+      ],
+      [
+        "info",
+        "Documentació limitada",
+        "Només es disposa d'una presentació comercial de dues pàgines: no inclou dimensions, tensió d'alimentació ni temperatura de treball."
+      ]
+    ]
+  },
+  "amr-cargador": {
+    "claim": "Carregador per als AMR de la sèrie T i el MP2000",
+    "tagline": "Carregador comú per als robots de repartiment de la sèrie T (T150, T300, T600 i T600 Underride) i per al transpal·let MP2000.",
+    "hero_alt": "",
+    "gallery": [],
+    "intro": "Carregador compatible amb tota la sèrie T d'AMR de repartiment (T150, T300, T600 i T600 Underride) i amb el transpal·let autònom MP2000.",
+    "keyfacts": [
+      [
+        "Fabricant",
+        "PUDU"
+      ],
+      [
+        "Tipus",
+        "Carregador"
+      ],
+      [
+        "Compatible amb",
+        "Sèrie T i MP2000"
+      ]
+    ],
+    "highlights": [],
+    "specs": [
+      [
+        "General",
+        [
+          [
+            "Fabricant",
+            "PUDU"
+          ],
+          [
+            "Tipus d'accessori",
+            "Carregador"
+          ],
+          [
+            "Compatible amb",
+            "T150, T300, T600, T600 Underride, MP2000"
+          ]
+        ]
+      ]
+    ],
+    "applications": [
+      [
+        "Recàrrega dels AMR de repartiment i intralogística",
+        null
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "Documentació pendent",
+        "El fabricant no ha compartit fitxa tècnica d'aquest carregador: només es disposa del nom i el preu de la tarifa RH·BOTS (10 de setembre de 2026). Cal confirmar la potència i el temps de càrrega abans d'oferir-lo."
+      ]
+    ]
+  },
+  "estados": {
+    "disponible": [
+      "Disponible",
+      "ok"
+    ],
+    "parcial": [
+      "Dades parcials",
+      "warn"
+    ],
+    "provisional": [
+      "Fitxa provisional",
+      "alert"
+    ]
+  },
+  "familias": [
+    [
+      "humanoides",
+      "Humanoides",
+      "Robots humanoides per a atenció al públic, esdeveniments, formació, recerca i indústria."
+    ],
+    [
+      "cuadrupedos",
+      "Quadrúpedes",
+      "Plataformes de potes i rodes per a inspecció, patrullatge i terrenys complexos."
+    ],
+    [
+      "limpieza",
+      "Neteja autònoma",
+      "Robots de neteja professional per a superfícies interiors comercials i industrials."
+    ],
+    [
+      "amr",
+      "AMR intralogística",
+      "Robots mòbils autònoms per al transport intern de materials en fàbriques i magatzems."
+    ],
+    [
+      "accesorios",
+      "Accessoris",
+      "Mans destres i pinces per ampliar el que poden fer els nostres robots."
+    ]
+  ]
+}

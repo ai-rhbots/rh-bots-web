@@ -298,6 +298,13 @@
         "About the «X2 Lite» name",
         "There is no separate product called X2 Lite; the name is often used for the base X2, identified in some markets as the Youth Edition. Confirm the exact SKU with the distributor."
       ]
+    ],
+    "videos": [
+      {
+        "src": "assets/video/x2.mp4",
+        "poster": "assets/video/x2.webp",
+        "titulo": "The RHX2 in action"
+      }
     ]
   },
   "rha3": {
@@ -1646,6 +1653,18 @@
         "Hand degrees of freedom",
         "The 51-degree-of-freedom configuration corresponds to 10-DOF hands. The product sheet lists Omnihand hands as standard with up to 20 DOF: it is advisable to confirm the hand configuration when quoting."
       ]
+    ],
+    "videos": [
+      {
+        "src": "assets/video/a3-ultra-1.mp4",
+        "poster": "assets/video/a3-ultra-1.webp",
+        "titulo": "The RHA3 Ultra in motion"
+      },
+      {
+        "src": "assets/video/a3-ultra-2.mp4",
+        "poster": "assets/video/a3-ultra-2.webp",
+        "titulo": "Manipulation and interaction"
+      }
     ]
   },
   "rhg2": {

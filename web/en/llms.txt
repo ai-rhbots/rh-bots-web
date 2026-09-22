@@ -49,8 +49,8 @@
 ## Company
 
 - [Full catalog](https://www.rh-bots.com/en/robots.html)
-- [Applications by sector](https://www.rh-bots.com/en/aplicaciones.html): which robot fits which use
-- [About us](https://www.rh-bots.com/en/rh-bots.html): the RH·BOTS team and story
+- [Applications by sector: which robot fits which use](https://www.rh-bots.com/en/aplicaciones.html)
+- [About us: the RH·BOTS team and story](https://www.rh-bots.com/en/rh-bots.html)
 - [Contact](https://www.rh-bots.com/en/contacto.html)
 
 

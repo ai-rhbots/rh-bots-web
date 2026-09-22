@@ -1,0 +1,60 @@
+# RH·BOTS
+
+> Distributeur officiel d'AGIBOT et de PUDU en Espagne et au Portugal. Robots de nettoyage autonome, humanoïdes, quadrupèdes, AMR d'intralogistique et accessoires, avec conseil, installation, formation et maintenance. Basé à Picassent (Valence, Espagne).
+
+## Robots
+
+
+### Humanoïdes
+
+- [RHX2](https://www.rh-bots.com/fr/robots/rhx2.html): Humanoïde compact pour l'accueil du public et les événements
+- [RHA3](https://www.rh-bots.com/fr/robots/rha3.html): Humanoïde de taille adulte pour la scène et l'accueil du public
+- [RHX2 Ultra](https://www.rh-bots.com/fr/robots/rhx2-ultra.html): Humanoïde programmable avec perception 3D et NVIDIA Orin NX
+- [RHX2 EDU](https://www.rh-bots.com/fr/robots/rhx2-edu.html): Humanoïde démontable pour l'enseignement et la recherche
+- [RHA3 Ultra "Rebonico"](https://www.rh-bots.com/fr/robots/rha3-ultra.html): Humanoïde de service pour un fonctionnement autonome 24 h/24 et 7 j/7
+- [RHG2](https://www.rh-bots.com/fr/robots/rhg2.html): Humanoïde industriel à base mobile et torse télescopique
+
+### Quadrupèdes
+
+- [D5W](https://www.rh-bots.com/fr/robots/d5w.html): Quadrupède industriel à roues pour l'inspection et la livraison
+
+### Nettoyage autonome
+
+- [RHC5](https://www.rh-bots.com/fr/robots/rhc5.html): Nettoyage professionnel autonome pour grandes surfaces
+- [MT1](https://www.rh-bots.com/fr/robots/mt1.html): Balayeuse autonome à IA pour grandes surfaces
+- [MT1 Max](https://www.rh-bots.com/fr/robots/mt1-max.html): Balayeuse autonome à lidar 3D pour intérieur et semi-extérieur
+
+### AMR intralogistique
+
+- [T150](https://www.rh-bots.com/fr/robots/t150.html): Robot autonome de transport industriel pour charges de 150 kg
+- [T300](https://www.rh-bots.com/fr/robots/t300.html): Robot autonome modulaire de transport pour charges de 300 kg
+- [T600](https://www.rh-bots.com/fr/robots/t600.html): Robot autonome de levage pour charges de 600 kg
+- [T600 Underride](https://www.rh-bots.com/fr/robots/t600-underride.html): Robot autonome sous chariot pour charges de 600 kg
+- [MP2000](https://www.rh-bots.com/fr/robots/mp2000.html): Transpalette autonome pour palettes de 2 000 kg
+
+### Accessoires
+
+- [OmniHand](https://www.rh-bots.com/fr/robots/omnihand.html): Main robotique habile à 16 degrés de liberté
+- [OmniHand Tactile](https://www.rh-bots.com/fr/robots/omnihand-tactile.html): Main robotique habile à capteurs tactiles
+- [OmniHand Pro 2025](https://www.rh-bots.com/fr/robots/omnihand-pro-2025.html): Main robotique habile à 19 degrés de liberté
+- [OmniPicker](https://www.rh-bots.com/fr/robots/omnipicker.html): Pince industrielle à retour tactile pour l'IA incarnée
+- [Estación de carga D5W](https://www.rh-bots.com/fr/robots/d5w-estacion-carga.html): Station de recharge dédiée pour le D5W
+- [Batería extra D5W](https://www.rh-bots.com/fr/robots/d5w-bateria.html): Batterie de rechange pour le quadrupède D5W
+- [Kit de inspección D5W](https://www.rh-bots.com/fr/robots/d5w-kit-inspeccion.html): Kit de capteurs pour les tâches d'inspection avec le D5W
+- [Cajón de extensión de batería D5W](https://www.rh-bots.com/fr/robots/d5w-cajon-bateria.html): Compartiment supplémentaire pour étendre l'autonomie du D5W
+- [Estación de carga MT1 y MT1 Max](https://www.rh-bots.com/fr/robots/mt1-estacion-carga.html): Station de recharge pour le MT1 et le MT1 Max
+- [Cargador AMR serie T y MP](https://www.rh-bots.com/fr/robots/amr-cargador.html): Chargeur pour les AMR de la série T et le MP2000
+
+
+## Entreprise
+
+- [Catalogue complet](https://www.rh-bots.com/fr/robots.html)
+- [Applications par secteur : quel robot correspond à quel usage](https://www.rh-bots.com/fr/aplicaciones.html)
+- [Qui sommes-nous : l'équipe et l'histoire de RH·BOTS](https://www.rh-bots.com/fr/rh-bots.html)
+- [Contact](https://www.rh-bots.com/fr/contacto.html)
+
+
+## Optional
+
+- [Blog](https://www.rh-bots.com/fr/blog.html)
+- [Mentions légales et confidentialité](https://www.rh-bots.com/fr/legal.html)
