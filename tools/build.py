@@ -284,14 +284,12 @@ TEXTOS = {
     'requiere_accesorio_titulo': {'es': 'Accesorio necesario', 'pt': 'Acessório necessário',
                                    'en': 'Required accessory', 'fr': 'Accessoire nécessaire',
                                    'zh': '必需配件', 'ca': 'Accessori necessari'},
-    'requiere_accesorio_texto': {'es': 'Este robot necesita su {n}, que se vende por separado.',
-                                  'pt': 'Este robô precisa do seu {n}, vendido em separado.',
-                                  'en': 'This robot needs its {n}, sold separately.',
-                                  'fr': 'Ce robot a besoin de son {n}, vendu séparément.',
-                                  'zh': '该机器人需要配套的{n}，需单独购买。',
-                                  'ca': 'Aquest robot necessita el seu {n}, que es ven per separat.'},
-    'ver_accesorio': {'es': 'Ver accesorio', 'pt': 'Ver acessório', 'en': 'View accessory',
-                       'fr': "Voir l'accessoire", 'zh': '查看配件', 'ca': 'Veure accessori'},
+    'requiere_accesorio_texto': {'es': 'Necesario para el {n}. Se vende por separado.',
+                                  'pt': 'Necessário para o {n}. Vendido em separado.',
+                                  'en': 'Required for the {n}. Sold separately.',
+                                  'fr': 'Nécessaire pour le {n}. Vendu séparément.',
+                                  'zh': '{n}必需配件，需单独购买。',
+                                  'ca': 'Necessari per al {n}. Es ven per separat.'},
 }
 
 
@@ -745,7 +743,7 @@ def header(base, active='robots', ruta=''):
             familias, paneles = '', ''
             primera = True
             for k, n, _ in FAMILIAS:
-                modelos = [q for q in PRODUCTOS if q['family'] == k]
+                modelos = [q for q in PRODUCTOS if q['family'] == k and q.get('ficha', True)]
                 if not modelos:
                     continue
                 on = ' is-on' if primera else ''
@@ -1047,15 +1045,31 @@ REQUIERE_ACCESORIO = {
 
 
 def nota_accesorio_requerido(p, base):
+    """Cargador o estación de carga que el robot necesita para funcionar.
+
+    Estos accesorios no tienen ficha propia (ver «ficha: false» en
+    productos.json): se venden solo junto con su robot, así que se
+    muestran aquí mismo en vez de enlazar a una página que no existe.
+    """
     slug_acc = REQUIERE_ACCESORIO.get(p['slug'])
     acc = BY_SLUG.get(slug_acc) if slug_acc else None
     if not acc:
         return ''
-    return (f'<div class="nota nota--info phero__nota-accesorio">'
-            f'<p class="nota__titulo">{t("requiere_accesorio_titulo")}</p>'
-            f'<p>{t("requiere_accesorio_texto", n=e(acc["name"]))} '
-            f'<a href="{base}robots/{acc["slug"]}.html">{t("ver_accesorio")}</a></p>'
-            f'</div>')
+    if acc.get('hero'):
+        media = f'<img src="{base}{acc["hero"]}" alt="" loading="lazy">'
+    else:
+        media = placeholder(acc['family'], acc['name'])
+    pvp = formato_pvp(acc.get('precio'))
+    precio_html_acc = f'<p class="accnec__precio">{pvp}</p>' if pvp else ''
+    return (f'<div class="accnec">'
+            f'<p class="accnec__etiqueta">{t("requiere_accesorio_titulo")}</p>'
+            f'<div class="accnec__card">'
+            f'<div class="accnec__media">{media}</div>'
+            f'<div class="accnec__body">'
+            f'<h3>{e(acc["name"])}</h3>'
+            f'<p class="accnec__desc">{t("requiere_accesorio_texto", n=e(p["name"]))}</p>'
+            f'{precio_html_acc}'
+            f'</div></div></div>')
 
 
 def estado_compra(disponible, precio, moneda, variante, dominio, etiqueta, contacto,
@@ -1385,16 +1399,18 @@ def product_page(p):
     # (marcados con «compatible» en su ficha), si no, los accesorios genéricos
     # de mano en los humanoides, y si tampoco, otros modelos de la familia
     especificos = [q for q in PRODUCTOS
-                   if q['family'] == 'accesorios' and p['slug'] in (q.get('compatible') or [])]
+                   if q['family'] == 'accesorios' and q.get('ficha', True)
+                   and p['slug'] in (q.get('compatible') or [])]
     if especificos:
         others = especificos[:4]
         titulo_otros = t('accesorios_para', n=p['name'])
     elif fam == 'humanoides':
         others = [q for q in PRODUCTOS
-                  if q['family'] == 'accesorios' and not q.get('compatible')][:4]
+                  if q['family'] == 'accesorios' and q.get('ficha', True) and not q.get('compatible')][:4]
         titulo_otros = t('accesorios_para', n=p['name'])
     else:
-        others = [q for q in PRODUCTOS if q['family'] == fam and q['slug'] != p['slug']][:4]
+        others = [q for q in PRODUCTOS
+                  if q['family'] == fam and q['slug'] != p['slug'] and q.get('ficha', True)][:4]
         titulo_otros = t('otros_modelos_familia')
     if others:
         cards = ''
@@ -1532,7 +1548,7 @@ def index_page():
     <div class="wrap hero__copy">
       <p class="kicker hero__kicker">{t('catalogo_kicker')}</p>
       <h1 class="display display--hero">{t('catalogo_h1')}</h1>
-      <p class="lede lede--hero">{t('catalogo_lede', n=len(PRODUCTOS))}</p>
+      <p class="lede lede--hero">{t('catalogo_lede', n=len([p for p in PRODUCTOS if p.get('ficha', True)]))}</p>
       <div class="hero__cta">
         <a class="pill" href="contacto.html"><span>{t('solicitar_asesoramiento')}</span>{CHEVRON}</a>
       </div>
@@ -1542,7 +1558,7 @@ def index_page():
 
     # una sección por familia
     for i, (key, name, desc) in enumerate(FAMILIAS):
-        modelos = [p for p in PRODUCTOS if p['family'] == key]
+        modelos = [p for p in PRODUCTOS if p['family'] == key and p.get('ficha', True)]
         if not modelos:
             continue
         cards = ''
@@ -1696,7 +1712,7 @@ def home_page():
     if g:
         tarjetas = ''
         for p in PRODUCTOS:
-            if p['status'] != 'disponible':
+            if p['status'] != 'disponible' or not p.get('ficha', True):
                 continue
             if p.get('hero'):
                 media = (f'<img src="{base}{e(p["hero"])}" alt="{e(p["name"])} — {e(p["claim"])}" '
@@ -2053,8 +2069,8 @@ def rh_bots_page():
     # alianza: cifras con contador
     al = r.get('alianza')
     if al:
-        valores = {'modelos': len(PRODUCTOS),
-                   'familias': len({p['family'] for p in PRODUCTOS})}
+        valores = {'modelos': len([p for p in PRODUCTOS if p.get('ficha', True)]),
+                   'familias': len({p['family'] for p in PRODUCTOS if p.get('ficha', True)})}
         celdas = ''.join(
             f'<div class="alianza__cifra"><p class="alianza__valor" data-contar>{e(str(v).format(**valores))}</p>'
             f'<p class="alianza__etiqueta">{e(et)}</p></div>'
@@ -2452,7 +2468,7 @@ def contacto_page():
     # formulario: tarjeta con los datos y tarjeta con el formulario
     robots = f'<option value="">{t("selecciona_modelo")}</option>'
     for key, nombre, _ in FAMILIAS:
-        ps = [p for p in PRODUCTOS if p['family'] == key]
+        ps = [p for p in PRODUCTOS if p['family'] == key and p.get('ficha', True)]
         if ps:
             robots += (f'<optgroup label="{e(nombre)}">'
                        + ''.join(f'<option>{e(p["name"])}</option>' for p in ps) + '</optgroup>')
@@ -2717,7 +2733,7 @@ def sitemap():
     d = SEO['dominio'].rstrip('/')
     rutas = [('', '1.0'), ('robots.html', '0.9'), ('aplicaciones.html', '0.8'), ('rh-bots.html', '0.6'),
              ('contacto.html', '0.7'), ('blog.html', '0.5'), ('legal.html', '0.2')]
-    rutas += [(f'robots/{p["slug"]}.html', '0.8') for p in _PRODUCTOS_ES]
+    rutas += [(f'robots/{p["slug"]}.html', '0.8') for p in _PRODUCTOS_ES if p.get('ficha', True)]
     rutas += [(p['url'], '0.6') for p in _SITIO_ES['posts'] if p.get('url')]
 
     def loc(ruta, lang):
@@ -2792,7 +2808,7 @@ def llms_txt():
 
     out.append(f'## {_ROBOTS_H2[LANG]}\n')
     for key, nombre, _ in FAMILIAS:
-        modelos = [p for p in PRODUCTOS if p['family'] == key]
+        modelos = [p for p in PRODUCTOS if p['family'] == key and p.get('ficha', True)]
         if not modelos:
             continue
         out.append(f'\n### {nombre}\n')
@@ -2832,6 +2848,8 @@ def generar_paginas(carpeta):
 
     fichas_vivas = set()
     for p in PRODUCTOS:
+        if not p.get('ficha', True):
+            continue
         fichas_vivas.add(p['slug'] + '.html')
         write(os.path.join(carpeta, 'robots', p['slug'] + '.html'), product_page(p))
     carpeta_robots = os.path.join(carpeta, 'robots')
@@ -2854,7 +2872,7 @@ def generar_paginas(carpeta):
 
     write(os.path.join(carpeta, '404.html'), pagina_404())
     write(os.path.join(carpeta, 'llms.txt'), llms_txt())
-    return len(paginas) + len(PRODUCTOS) + len(slugs_vivos)
+    return len(paginas) + len(fichas_vivas) + len(slugs_vivos)
 
 
 def main():
@@ -2881,8 +2899,9 @@ def main():
         print(f'     tienda desactivada · {len(enlazados)} productos enlazados, sin botón')
 
     ga = ANALITICA.get('ga4') or ANALITICA.get('gtm') or 'sin configurar'
+    con_ficha = len([p for p in PRODUCTOS if p.get('ficha', True)])
     print(f'OK — {total} páginas ({"+".join(IDIOMAS)}): home, catálogo, rh-bots, blog, contacto '
-          f'y {len(PRODUCTOS)} fichas, en cada idioma')
+          f'y {con_ficha} fichas, en cada idioma')
     print(f'     sitemap.xml y robots.txt · dominio {SEO["dominio"]} · analítica: {ga}')
 
 

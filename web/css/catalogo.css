@@ -70,10 +70,30 @@
   box-shadow:0 14px 34px rgba(40,40,40,.08);
 }
 .phero__compra--solo{ justify-content:center; padding:16px 26px; }
-.phero__nota-accesorio{ width:min(100%, 460px); margin:0; padding:16px 20px; }
-.phero__nota-accesorio .nota__titulo{ font-size:11.5px; }
-.phero__nota-accesorio p:not(.nota__titulo){ font-size:13px; }
-.phero__nota-accesorio a{ color:var(--blue); font-weight:700; white-space:nowrap; }
+
+/* ---------- accesorio necesario (cargador/estación de carga sin ficha propia) ---------- */
+.accnec{ width:min(100%, 460px); }
+.accnec__etiqueta{
+  font-family:var(--font-subtitulo); font-weight:700; font-size:11px;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--blue);
+  margin:0 0 8px 4px;
+}
+.accnec__card{
+  display:flex; align-items:center; gap:14px;
+  padding:12px 16px; background:#fff; border-radius:16px;
+  box-shadow:0 10px 26px rgba(40,40,40,.08);
+}
+.accnec__media{
+  width:64px; height:64px; flex:none; border-radius:10px;
+  background:var(--light); display:grid; place-items:center; overflow:hidden;
+}
+.accnec__media img{ width:80%; height:80%; object-fit:contain; mix-blend-mode:multiply; }
+.accnec__media .ph{ border:0; background:transparent; height:100%; gap:2px; }
+.accnec__media .ph svg{ max-width:26px; }
+.accnec__media .ph span{ display:none; }
+.accnec__body h3{ font-size:14.5px; font-weight:700; color:var(--navy); line-height:1.3; }
+.accnec__desc{ margin-top:2px; font-size:12.5px; line-height:1.4; color:var(--ink-66); }
+.accnec__precio{ margin-top:4px; font-size:14px; font-weight:800; color:var(--blue); }
 .phero__compra .pvp{ margin:0; font-size:clamp(24px, 2.2vw, 30px); white-space:nowrap; }
 .phero__compra .compra{ flex:0 1 auto; flex-basis:auto; flex-wrap:nowrap; }
 .phero__compra .compra .pill{ min-width:0; }
