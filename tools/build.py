@@ -960,9 +960,17 @@ def product_page(p):
   </section>
 ''')
 
-    # ---- otros modelos (en los humanoides, los accesorios que pueden montar)
-    if fam == 'humanoides':
-        others = [q for q in PRODUCTOS if q['family'] == 'accesorios'][:4]
+    # ---- otros modelos: accesorios específicos del robot si los tiene
+    # (marcados con «compatible» en su ficha), si no, los accesorios genéricos
+    # de mano en los humanoides, y si tampoco, otros modelos de la familia
+    especificos = [q for q in PRODUCTOS
+                   if q['family'] == 'accesorios' and p['slug'] in (q.get('compatible') or [])]
+    if especificos:
+        others = especificos[:4]
+        titulo_otros = f'Accesorios para el {p["name"]}'
+    elif fam == 'humanoides':
+        others = [q for q in PRODUCTOS
+                  if q['family'] == 'accesorios' and not q.get('compatible')][:4]
         titulo_otros = f'Accesorios para el {p["name"]}'
     else:
         others = [q for q in PRODUCTOS if q['family'] == fam and q['slug'] != p['slug']][:4]

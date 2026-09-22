@@ -6079,6 +6079,424 @@
         "moneda": "EUR",
         "disponible": true
       }
+    },
+    {
+      "slug": "d5w-estacion-carga",
+      "name": "Estación de carga D5W",
+      "base": "PUDU D5W",
+      "family": "accesorios",
+      "status": "parcial",
+      "precio": "7000",
+      "claim": "Estación de recarga dedicada para el D5W",
+      "tagline": "Punto de recarga fijo para dejar el D5W cargando entre turnos, sin depender de que alguien lo enchufe a mano.",
+      "hero": "",
+      "hero_alt": "",
+      "frames": [],
+      "gallery": [],
+      "intro": "Estación de carga pensada para el cuadrúpedo D5W. Permite dejar el robot recargando de forma autónoma entre turnos, en el mismo punto donde opera.",
+      "keyfacts": [
+        [
+          "Fabricante",
+          "PUDU"
+        ],
+        [
+          "Tipo",
+          "Estación de carga"
+        ],
+        [
+          "Compatible con",
+          "D5W"
+        ]
+      ],
+      "highlights": [],
+      "specs": [
+        [
+          "General",
+          [
+            [
+              "Fabricante",
+              "PUDU"
+            ],
+            [
+              "Tipo de accesorio",
+              "Estación de carga"
+            ],
+            [
+              "Compatible con",
+              "D5W"
+            ]
+          ]
+        ]
+      ],
+      "applications": [
+        [
+          "Recarga automática entre turnos",
+          null
+        ],
+        [
+          "Base fija de operación para el D5W",
+          null
+        ]
+      ],
+      "notes": [
+        [
+          "info",
+          "Documentación pendiente",
+          "El fabricante no ha compartido ficha técnica de este accesorio: solo se dispone del nombre y el precio de la tarifa RH·BOTS (10 de septiembre de 2026). Confirma potencia, tiempo de carga y dimensiones antes de ofertarlo."
+        ],
+        [
+          "info",
+          "Marca «S/F» en la tarifa",
+          "La tarifa señala este accesorio con «S/F» junto al precio. Confirma con el proveedor a qué se refiere (posiblemente que falta la foto, o que el precio está sujeto a disponibilidad) antes de ofertarlo."
+        ]
+      ],
+      "shopify": null,
+      "compatible": [
+        "d5w"
+      ]
+    },
+    {
+      "slug": "d5w-bateria",
+      "name": "Batería extra D5W",
+      "base": "PUDU D5W",
+      "family": "accesorios",
+      "status": "parcial",
+      "precio": "2000",
+      "claim": "Batería de repuesto para el cuadrúpedo D5W",
+      "tagline": "Batería adicional para tener el D5W operativo mientras la otra se recarga, o para alargar la jornada de trabajo.",
+      "hero": "",
+      "hero_alt": "",
+      "frames": [],
+      "gallery": [],
+      "intro": "Batería de repuesto para el D5W, pensada para el cambio rápido entre turnos y para ampliar la autonomía disponible en jornadas largas.",
+      "keyfacts": [
+        [
+          "Fabricante",
+          "PUDU"
+        ],
+        [
+          "Tipo",
+          "Batería de repuesto"
+        ],
+        [
+          "Compatible con",
+          "D5W"
+        ]
+      ],
+      "highlights": [],
+      "specs": [
+        [
+          "General",
+          [
+            [
+              "Fabricante",
+              "PUDU"
+            ],
+            [
+              "Tipo de accesorio",
+              "Batería de repuesto"
+            ],
+            [
+              "Compatible con",
+              "D5W"
+            ]
+          ]
+        ]
+      ],
+      "applications": [
+        [
+          "Cambio rápido de batería entre turnos",
+          null
+        ],
+        [
+          "Ampliación de la autonomía en jornadas largas",
+          null
+        ]
+      ],
+      "notes": [
+        [
+          "info",
+          "Documentación pendiente",
+          "El fabricante no ha compartido ficha técnica de este accesorio: no se conoce su capacidad ni el tiempo de carga. Solo consta el nombre y el precio de la tarifa RH·BOTS (10 de septiembre de 2026); confirma los datos antes de ofertarlo."
+        ]
+      ],
+      "shopify": null,
+      "compatible": [
+        "d5w"
+      ]
+    },
+    {
+      "slug": "d5w-kit-inspeccion",
+      "name": "Kit de inspección D5W",
+      "base": "PUDU D5W",
+      "family": "accesorios",
+      "status": "parcial",
+      "precio": "35000",
+      "claim": "Kit de sensores para tareas de inspección con el D5W",
+      "tagline": "Amplía el D5W con sensores adicionales para inspección industrial, más allá del reparto y el transporte.",
+      "hero": "",
+      "hero_alt": "",
+      "frames": [],
+      "gallery": [],
+      "intro": "Kit de sensores para el D5W orientado a tareas de inspección industrial, como complemento a su uso habitual de reparto y transporte de carga.",
+      "keyfacts": [
+        [
+          "Fabricante",
+          "PUDU"
+        ],
+        [
+          "Tipo",
+          "Kit de inspección"
+        ],
+        [
+          "Compatible con",
+          "D5W"
+        ]
+      ],
+      "highlights": [],
+      "specs": [
+        [
+          "General",
+          [
+            [
+              "Fabricante",
+              "PUDU"
+            ],
+            [
+              "Tipo de accesorio",
+              "Kit de inspección"
+            ],
+            [
+              "Compatible con",
+              "D5W"
+            ]
+          ]
+        ]
+      ],
+      "applications": [
+        [
+          "Inspección industrial con el D5W",
+          null
+        ],
+        [
+          "Captura de datos de sensores en planta",
+          null
+        ]
+      ],
+      "notes": [
+        [
+          "info",
+          "Documentación pendiente",
+          "El fabricante no ha compartido ficha técnica de este kit: no se conoce qué sensores incluye ni sus especificaciones. Solo consta el nombre y el precio de la tarifa RH·BOTS (10 de septiembre de 2026); confirma el contenido exacto antes de ofertarlo."
+        ]
+      ],
+      "shopify": null,
+      "compatible": [
+        "d5w"
+      ]
+    },
+    {
+      "slug": "d5w-cajon-bateria",
+      "name": "Cajón de extensión de batería D5W",
+      "base": "PUDU D5W",
+      "family": "accesorios",
+      "status": "parcial",
+      "precio": "3500",
+      "claim": "Compartimento adicional para ampliar la autonomía del D5W",
+      "tagline": "Cajón que aloja una batería extra en el propio D5W, para alargar su autonomía sin tener que hacer paradas de carga.",
+      "hero": "",
+      "hero_alt": "",
+      "frames": [],
+      "gallery": [],
+      "intro": "Cajón de extensión que aloja una batería adicional en el propio D5W, pensado para alargar su autonomía sin depender de una parada de carga.",
+      "keyfacts": [
+        [
+          "Fabricante",
+          "PUDU"
+        ],
+        [
+          "Tipo",
+          "Cajón de extensión de batería"
+        ],
+        [
+          "Compatible con",
+          "D5W"
+        ]
+      ],
+      "highlights": [],
+      "specs": [
+        [
+          "General",
+          [
+            [
+              "Fabricante",
+              "PUDU"
+            ],
+            [
+              "Tipo de accesorio",
+              "Cajón de extensión de batería"
+            ],
+            [
+              "Compatible con",
+              "D5W"
+            ]
+          ]
+        ]
+      ],
+      "applications": [
+        [
+          "Ampliación de la autonomía en ruta",
+          null
+        ]
+      ],
+      "notes": [
+        [
+          "info",
+          "Documentación pendiente",
+          "El fabricante no ha compartido ficha técnica de este accesorio: no se conoce la capacidad que añade ni sus dimensiones. Solo consta el nombre y el precio de la tarifa RH·BOTS (10 de septiembre de 2026); confirma los datos antes de ofertarlo."
+        ]
+      ],
+      "shopify": null,
+      "compatible": [
+        "d5w"
+      ]
+    },
+    {
+      "slug": "mt1-estacion-carga",
+      "name": "Estación de carga MT1 y MT1 Max",
+      "base": "PUDU MT1",
+      "family": "accesorios",
+      "status": "parcial",
+      "precio": "600",
+      "claim": "Estación de recarga para el MT1 y el MT1 Max",
+      "tagline": "Base de carga dedicada para dejar el MT1 o el MT1 Max recargando entre turnos de limpieza.",
+      "hero": "",
+      "hero_alt": "",
+      "frames": [],
+      "gallery": [],
+      "intro": "Estación de carga RH·BOTS (referencia MSBC01) compatible con el MT1 y el MT1 Max, para dejarlos recargando de forma autónoma entre turnos de limpieza.",
+      "keyfacts": [
+        [
+          "Fabricante",
+          "PUDU"
+        ],
+        [
+          "Referencia",
+          "MSBC01"
+        ],
+        [
+          "Compatible con",
+          "MT1 y MT1 Max"
+        ]
+      ],
+      "highlights": [],
+      "specs": [
+        [
+          "General",
+          [
+            [
+              "Fabricante",
+              "PUDU"
+            ],
+            [
+              "Referencia",
+              "MSBC01"
+            ],
+            [
+              "Compatible con",
+              "MT1, MT1 Max"
+            ]
+          ]
+        ]
+      ],
+      "applications": [
+        [
+          "Recarga automática entre turnos de limpieza",
+          null
+        ]
+      ],
+      "notes": [
+        [
+          "info",
+          "Documentación pendiente",
+          "El fabricante no ha compartido ficha técnica de este accesorio: solo se dispone del nombre, la referencia y el precio de la tarifa RH·BOTS (10 de septiembre de 2026). Confirma potencia y tiempo de carga antes de ofertarlo."
+        ]
+      ],
+      "shopify": null,
+      "compatible": [
+        "mt1",
+        "mt1-max"
+      ]
+    },
+    {
+      "slug": "amr-cargador",
+      "name": "Cargador AMR serie T y MP",
+      "base": "PUDU AMR",
+      "family": "accesorios",
+      "status": "parcial",
+      "precio": "432",
+      "claim": "Cargador para los AMR de la serie T y el MP2000",
+      "tagline": "Cargador común para los robots de reparto de la serie T (T150, T300, T600 y T600 Underride) y para la transpaleta MP2000.",
+      "hero": "",
+      "hero_alt": "",
+      "frames": [],
+      "gallery": [],
+      "intro": "Cargador compatible con toda la serie T de AMR de reparto (T150, T300, T600 y T600 Underride) y con la transpaleta autónoma MP2000.",
+      "keyfacts": [
+        [
+          "Fabricante",
+          "PUDU"
+        ],
+        [
+          "Tipo",
+          "Cargador"
+        ],
+        [
+          "Compatible con",
+          "Serie T y MP2000"
+        ]
+      ],
+      "highlights": [],
+      "specs": [
+        [
+          "General",
+          [
+            [
+              "Fabricante",
+              "PUDU"
+            ],
+            [
+              "Tipo de accesorio",
+              "Cargador"
+            ],
+            [
+              "Compatible con",
+              "T150, T300, T600, T600 Underride, MP2000"
+            ]
+          ]
+        ]
+      ],
+      "applications": [
+        [
+          "Recarga de los AMR de reparto e intralogística",
+          null
+        ]
+      ],
+      "notes": [
+        [
+          "info",
+          "Documentación pendiente",
+          "El fabricante no ha compartido ficha técnica de este cargador: solo se dispone del nombre y el precio de la tarifa RH·BOTS (10 de septiembre de 2026). Confirma potencia y tiempo de carga antes de ofertarlo."
+        ]
+      ],
+      "shopify": null,
+      "compatible": [
+        "t150",
+        "t300",
+        "t600",
+        "t600-underride",
+        "mp2000"
+      ]
     }
   ]
 }
