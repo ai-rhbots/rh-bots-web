@@ -6089,8 +6089,8 @@
       "precio": "7000",
       "claim": "Estación de recarga dedicada para el D5W",
       "tagline": "Punto de recarga fijo para dejar el D5W cargando entre turnos, sin depender de que alguien lo enchufe a mano.",
-      "hero": "",
-      "hero_alt": "",
+      "hero": "assets/robots/d5w-estacion-carga/hero.webp",
+      "hero_alt": "Estación de carga D5W",
       "frames": [],
       "gallery": [],
       "intro": "Estación de carga pensada para el cuadrúpedo D5W. Permite dejar el robot recargando de forma autónoma entre turnos, en el mismo punto donde opera.",
@@ -6234,8 +6234,8 @@
       "precio": "35000",
       "claim": "Kit de sensores para tareas de inspección con el D5W",
       "tagline": "Amplía el D5W con sensores adicionales para inspección industrial, más allá del reparto y el transporte.",
-      "hero": "",
-      "hero_alt": "",
+      "hero": "assets/robots/d5w-kit-inspeccion/hero.webp",
+      "hero_alt": "Kit de inspección D5W",
       "frames": [],
       "gallery": [],
       "intro": "Kit de sensores para el D5W orientado a tareas de inspección industrial, como complemento a su uso habitual de reparto y transporte de carga.",
@@ -6304,8 +6304,8 @@
       "precio": "3500",
       "claim": "Compartimento adicional para ampliar la autonomía del D5W",
       "tagline": "Cajón que aloja una batería extra en el propio D5W, para alargar su autonomía sin tener que hacer paradas de carga.",
-      "hero": "",
-      "hero_alt": "",
+      "hero": "assets/robots/d5w-cajon-bateria/hero.webp",
+      "hero_alt": "Cajón de extensión de batería D5W",
       "frames": [],
       "gallery": [],
       "intro": "Cajón de extensión que aloja una batería adicional en el propio D5W, pensado para alargar su autonomía sin depender de una parada de carga.",
@@ -6370,8 +6370,8 @@
       "precio": "600",
       "claim": "Estación de recarga para el MT1 y el MT1 Max",
       "tagline": "Base de carga dedicada para dejar el MT1 o el MT1 Max recargando entre turnos de limpieza.",
-      "hero": "",
-      "hero_alt": "",
+      "hero": "assets/robots/mt1-estacion-carga/hero.webp",
+      "hero_alt": "Estación de carga MT1 y MT1 Max",
       "frames": [],
       "gallery": [],
       "intro": "Estación de carga RH·BOTS (referencia MSBC01) compatible con el MT1 y el MT1 Max, para dejarlos recargando de forma autónoma entre turnos de limpieza.",
@@ -6430,18 +6430,18 @@
     },
     {
       "slug": "amr-cargador",
-      "name": "Cargador AMR serie T y MP",
+      "name": "Cargador AMR serie T",
       "base": "PUDU AMR",
       "family": "accesorios",
       "status": "parcial",
       "precio": "432",
-      "claim": "Cargador para los AMR de la serie T y el MP2000",
-      "tagline": "Cargador común para los robots de reparto de la serie T (T150, T300, T600 y T600 Underride) y para la transpaleta MP2000.",
-      "hero": "",
-      "hero_alt": "",
+      "claim": "Cargador para los AMR de la serie T",
+      "tagline": "Cargador para los robots de reparto de la serie T (T150, T300, T600 y T600 Underride).",
+      "hero": "assets/robots/amr-cargador/hero.webp",
+      "hero_alt": "Cargador AMR serie T",
       "frames": [],
       "gallery": [],
-      "intro": "Cargador compatible con toda la serie T de AMR de reparto (T150, T300, T600 y T600 Underride) y con la transpaleta autónoma MP2000.",
+      "intro": "Cargador compatible con toda la serie T de AMR de reparto (T150, T300, T600 y T600 Underride).",
       "keyfacts": [
         [
           "Fabricante",
@@ -6453,7 +6453,7 @@
         ],
         [
           "Compatible con",
-          "Serie T y MP2000"
+          "Serie T"
         ]
       ],
       "highlights": [],
@@ -6471,14 +6471,14 @@
             ],
             [
               "Compatible con",
-              "T150, T300, T600, T600 Underride, MP2000"
+              "T150, T300, T600, T600 Underride"
             ]
           ]
         ]
       ],
       "applications": [
         [
-          "Recarga de los AMR de reparto e intralogística",
+          "Recarga de los AMR de reparto de la serie T",
           null
         ]
       ],
@@ -6494,8 +6494,7 @@
         "t150",
         "t300",
         "t600",
-        "t600-underride",
-        "mp2000"
+        "t600-underride"
       ]
     }
   ]

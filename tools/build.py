@@ -281,6 +281,17 @@ TEXTOS = {
                                   'zh': '我们经销的品牌', 'ca': 'Marques que distribuïm'},
     'filtrar_categoria_aria': {'es': 'Filtrar por categoría', 'pt': 'Filtrar por categoria', 'en': 'Filter by category',
                                 'fr': 'Filtrer par catégorie', 'zh': '按类别筛选', 'ca': 'Filtrar per categoria'},
+    'requiere_accesorio_titulo': {'es': 'Accesorio necesario', 'pt': 'Acessório necessário',
+                                   'en': 'Required accessory', 'fr': 'Accessoire nécessaire',
+                                   'zh': '必需配件', 'ca': 'Accessori necessari'},
+    'requiere_accesorio_texto': {'es': 'Este robot necesita su {n}, que se vende por separado.',
+                                  'pt': 'Este robô precisa do seu {n}, vendido em separado.',
+                                  'en': 'This robot needs its {n}, sold separately.',
+                                  'fr': 'Ce robot a besoin de son {n}, vendu séparément.',
+                                  'zh': '该机器人需要配套的{n}，需单独购买。',
+                                  'ca': 'Aquest robot necessita el seu {n}, que es ven per separat.'},
+    'ver_accesorio': {'es': 'Ver accesorio', 'pt': 'Ver acessório', 'en': 'View accessory',
+                       'fr': "Voir l'accessoire", 'zh': '查看配件', 'ca': 'Veure accessori'},
 }
 
 
@@ -1022,6 +1033,31 @@ def tarjeta_compra(p, base):
     return f'<div class="phero__compra{solo}">{precio}{boton}</div>'
 
 
+# robot → accesorio (cargador/estación de carga) que necesita sí o sí para
+# funcionar, aunque se venda como línea aparte en la tarifa
+REQUIERE_ACCESORIO = {
+    'd5w': 'd5w-estacion-carga',
+    'mt1': 'mt1-estacion-carga',
+    'mt1-max': 'mt1-estacion-carga',
+    't150': 'amr-cargador',
+    't300': 'amr-cargador',
+    't600': 'amr-cargador',
+    't600-underride': 'amr-cargador',
+}
+
+
+def nota_accesorio_requerido(p, base):
+    slug_acc = REQUIERE_ACCESORIO.get(p['slug'])
+    acc = BY_SLUG.get(slug_acc) if slug_acc else None
+    if not acc:
+        return ''
+    return (f'<div class="nota nota--info phero__nota-accesorio">'
+            f'<p class="nota__titulo">{t("requiere_accesorio_titulo")}</p>'
+            f'<p>{t("requiere_accesorio_texto", n=e(acc["name"]))} '
+            f'<a href="{base}robots/{acc["slug"]}.html">{t("ver_accesorio")}</a></p>'
+            f'</div>')
+
+
 def estado_compra(disponible, precio, moneda, variante, dominio, etiqueta, contacto,
                   mostrar_precio=True):
     """Los tres estados posibles del bloque de compra."""
@@ -1239,6 +1275,7 @@ def product_page(p):
       <div class="phero__lado">
         <figure class="phero__media">{media}</figure>
         {tarjeta_compra(p, base)}
+        {nota_accesorio_requerido(p, base)}
       </div>
     </div>
   </section>
@@ -1370,8 +1407,8 @@ def product_page(p):
                 '<li class="pcard reveal"><a href="%s.html">'
                 '<div class="pcard__media">%s</div>'
                 '<div class="pcard__body"><div class="badges">%s</div>'
-                '<h3>%s</h3><p>%s</p></div></a></li>\n'
-                % (q['slug'], media, badges(q), e(q['name']), e(q['claim'])))
+                '<h3>%s</h3><p>%s</p>%s</div></a></li>\n'
+                % (q['slug'], media, badges(q), e(q['name']), e(q['claim']), precio_html(q, 'pcard__precio')))
         out.append(f'''  <section class="section section--white" id="relacionados">
     <div class="wrap">
       <header class="section-head reveal"><h2 class="h-section">{e(titulo_otros)}</h2></header>

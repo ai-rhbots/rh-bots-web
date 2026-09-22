@@ -6015,11 +6015,11 @@
     ]
   },
   "amr-cargador": {
-    "claim": "Carregador para os AMR da série T e o MP2000",
-    "tagline": "Carregador comum para os robôs de transporte da série T (T150, T300, T600 e T600 Underride) e para o porta-paletes MP2000.",
+    "claim": "Carregador para os AMR da série T",
+    "tagline": "Carregador para os robôs de entrega da série T (T150, T300, T600 e T600 Underride).",
     "hero_alt": "",
     "gallery": [],
-    "intro": "Carregador compatível com toda a série T de AMR de transporte (T150, T300, T600 e T600 Underride) e com o porta-paletes autónomo MP2000.",
+    "intro": "Carregador compatível com toda a série T de AMR de entrega (T150, T300, T600 e T600 Underride).",
     "keyfacts": [
       [
         "Fabricante",
@@ -6031,7 +6031,7 @@
       ],
       [
         "Compatível com",
-        "Série T e MP2000"
+        "Série T"
       ]
     ],
     "highlights": [],
@@ -6049,14 +6049,14 @@
           ],
           [
             "Compatível com",
-            "T150, T300, T600, T600 Underride, MP2000"
+            "T150, T300, T600, T600 Underride"
           ]
         ]
       ]
     ],
     "applications": [
       [
-        "Carregamento dos AMR de transporte e intralogística",
+        "Carregamento dos AMR de entrega da série T",
         null
       ]
     ],

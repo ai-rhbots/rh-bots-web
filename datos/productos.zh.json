@@ -6015,11 +6015,11 @@
     ]
   },
   "amr-cargador": {
-    "claim": "T系列AMR和MP2000通用充电器",
-    "tagline": "适用于T系列配送机器人（T150、T300、T600和T600 Underride）以及MP2000搬运车的通用充电器。",
+    "claim": "T系列AMR充电器",
+    "tagline": "适用于T系列配送机器人（T150、T300、T600和T600 Underride）的充电器。",
     "hero_alt": "",
     "gallery": [],
-    "intro": "充电器兼容整个T系列配送AMR（T150、T300、T600和T600 Underride）以及MP2000自主搬运车。",
+    "intro": "兼容整个T系列配送AMR（T150、T300、T600和T600 Underride）的充电器。",
     "keyfacts": [
       [
         "制造商",
@@ -6031,7 +6031,7 @@
       ],
       [
         "兼容型号",
-        "T系列和MP2000"
+        "T系列"
       ]
     ],
     "highlights": [],
@@ -6049,14 +6049,14 @@
           ],
           [
             "兼容型号",
-            "T150、T300、T600、T600 Underride、MP2000"
+            "T150、T300、T600、T600 Underride"
           ]
         ]
       ]
     ],
     "applications": [
       [
-        "配送与内部物流AMR的充电",
+        "T系列配送AMR充电",
         null
       ]
     ],

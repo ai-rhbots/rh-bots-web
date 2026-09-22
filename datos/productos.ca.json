@@ -6015,11 +6015,11 @@
     ]
   },
   "amr-cargador": {
-    "claim": "Carregador per als AMR de la sèrie T i el MP2000",
-    "tagline": "Carregador comú per als robots de repartiment de la sèrie T (T150, T300, T600 i T600 Underride) i per al transpal·let MP2000.",
+    "claim": "Carregador per als AMR de la sèrie T",
+    "tagline": "Carregador per als robots de repartiment de la sèrie T (T150, T300, T600 i T600 Underride).",
     "hero_alt": "",
     "gallery": [],
-    "intro": "Carregador compatible amb tota la sèrie T d'AMR de repartiment (T150, T300, T600 i T600 Underride) i amb el transpal·let autònom MP2000.",
+    "intro": "Carregador compatible amb tota la sèrie T d’AMR de repartiment (T150, T300, T600 i T600 Underride).",
     "keyfacts": [
       [
         "Fabricant",
@@ -6031,7 +6031,7 @@
       ],
       [
         "Compatible amb",
-        "Sèrie T i MP2000"
+        "Sèrie T"
       ]
     ],
     "highlights": [],
@@ -6049,14 +6049,14 @@
           ],
           [
             "Compatible amb",
-            "T150, T300, T600, T600 Underride, MP2000"
+            "T150, T300, T600, T600 Underride"
           ]
         ]
       ]
     ],
     "applications": [
       [
-        "Recàrrega dels AMR de repartiment i intralogística",
+        "Recàrrega dels AMR de repartiment de la sèrie T",
         null
       ]
     ],

@@ -6015,11 +6015,11 @@
     ]
   },
   "amr-cargador": {
-    "claim": "Chargeur pour les AMR de la série T et le MP2000",
-    "tagline": "Chargeur commun aux robots de livraison de la série T (T150, T300, T600 et T600 Underride) et au transpalette MP2000.",
+    "claim": "Chargeur pour les AMR de la série T",
+    "tagline": "Chargeur pour les robots de livraison de la série T (T150, T300, T600 et T600 Underride).",
     "hero_alt": "",
     "gallery": [],
-    "intro": "Chargeur compatible avec toute la série T d'AMR de livraison (T150, T300, T600 et T600 Underride) et avec le transpalette autonome MP2000.",
+    "intro": "Chargeur compatible avec toute la série T d’AMR de livraison (T150, T300, T600 et T600 Underride).",
     "keyfacts": [
       [
         "Fabricant",
@@ -6031,7 +6031,7 @@
       ],
       [
         "Compatible avec",
-        "Série T et MP2000"
+        "Série T"
       ]
     ],
     "highlights": [],
@@ -6049,14 +6049,14 @@
           ],
           [
             "Compatible avec",
-            "T150, T300, T600, T600 Underride, MP2000"
+            "T150, T300, T600, T600 Underride"
           ]
         ]
       ]
     ],
     "applications": [
       [
-        "Recharge des AMR de livraison et d'intralogistique",
+        "Recharge des AMR de livraison de la série T",
         null
       ]
     ],

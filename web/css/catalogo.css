@@ -70,6 +70,10 @@
   box-shadow:0 14px 34px rgba(40,40,40,.08);
 }
 .phero__compra--solo{ justify-content:center; padding:16px 26px; }
+.phero__nota-accesorio{ width:min(100%, 460px); margin:0; padding:16px 20px; }
+.phero__nota-accesorio .nota__titulo{ font-size:11.5px; }
+.phero__nota-accesorio p:not(.nota__titulo){ font-size:13px; }
+.phero__nota-accesorio a{ color:var(--blue); font-weight:700; white-space:nowrap; }
 .phero__compra .pvp{ margin:0; font-size:clamp(24px, 2.2vw, 30px); white-space:nowrap; }
 .phero__compra .compra{ flex:0 1 auto; flex-basis:auto; flex-wrap:nowrap; }
 .phero__compra .compra .pill{ min-width:0; }

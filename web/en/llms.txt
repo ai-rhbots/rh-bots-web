@@ -43,7 +43,7 @@
 - [Kit de inspección D5W](https://www.rh-bots.com/en/robots/d5w-kit-inspeccion.html): Sensor kit for inspection tasks with the D5W
 - [Cajón de extensión de batería D5W](https://www.rh-bots.com/en/robots/d5w-cajon-bateria.html): Additional compartment to extend the D5W's runtime
 - [Estación de carga MT1 y MT1 Max](https://www.rh-bots.com/en/robots/mt1-estacion-carga.html): Charging station for the MT1 and MT1 Max
-- [Cargador AMR serie T y MP](https://www.rh-bots.com/en/robots/amr-cargador.html): Charger for the T-series AMRs and the MP2000
+- [Cargador AMR serie T](https://www.rh-bots.com/en/robots/amr-cargador.html): Charger for the T-series AMRs
 
 
 ## Company
