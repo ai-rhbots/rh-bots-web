@@ -10,6 +10,7 @@
   var LOCALES = { es: 'es-ES', pt: 'pt-PT', en: 'en-GB', fr: 'fr-FR', zh: 'zh-CN', ca: 'ca-ES' };
   var TXT = {
     es: {
+      ivaNoIncluido: 'IVA no incluido',
       abrirMenu: 'Abrir menú', cerrarMenu: 'Cerrar menú',
       sinStock: 'Sin stock — consúltanos la disponibilidad',
       avisame: 'Avísame cuando esté',
@@ -30,6 +31,7 @@
       consentimientoCorreo: '\n\n---\nAcepto la política de privacidad y el tratamiento de mis datos para recibir información comercial de RH·BOTS.'
     },
     pt: {
+      ivaNoIncluido: 'IVA não incluído',
       abrirMenu: 'Abrir menu', cerrarMenu: 'Fechar menu',
       sinStock: 'Sem stock — consulte-nos a disponibilidade',
       avisame: 'Avisem-me quando estiver disponível',
@@ -50,6 +52,7 @@
       consentimientoCorreo: '\n\n---\nAceito a política de privacidade e o tratamento dos meus dados para receber informação comercial da RH·BOTS.'
     },
     en: {
+      ivaNoIncluido: 'VAT not included',
       abrirMenu: 'Open menu', cerrarMenu: 'Close menu',
       sinStock: 'Out of stock — ask us about availability',
       avisame: 'Notify me when available',
@@ -70,6 +73,7 @@
       consentimientoCorreo: '\n\n---\nI accept the privacy policy and the processing of my data to receive commercial information from RH·BOTS.'
     },
     fr: {
+      ivaNoIncluido: 'TVA non incluse',
       abrirMenu: 'Ouvrir le menu', cerrarMenu: 'Fermer le menu',
       sinStock: 'Rupture de stock — demandez-nous la disponibilité',
       avisame: 'M\'avertir quand disponible',
@@ -90,6 +94,7 @@
       consentimientoCorreo: '\n\n---\nJ\'accepte la politique de confidentialité et le traitement de mes données pour recevoir des informations commerciales de RH·BOTS.'
     },
     zh: {
+      ivaNoIncluido: '不含增值税',
       abrirMenu: '打开菜单', cerrarMenu: '关闭菜单',
       sinStock: '无现货 — 请咨询我们了解供货情况',
       avisame: '到货时通知我',
@@ -110,6 +115,7 @@
       consentimientoCorreo: '\n\n---\n我接受隐私政策，并同意处理我的数据以接收RH·BOTS的商业信息。'
     },
     ca: {
+      ivaNoIncluido: 'IVA no inclòs',
       abrirMenu: 'Obre el menú', cerrarMenu: 'Tanca el menú',
       sinStock: 'Sense estoc — consulta\'ns la disponibilitat',
       avisame: 'Avisa\'m quan hi sigui',
@@ -452,7 +458,8 @@
         }
         var precio = d.precio === '1'
           ? '<p class="precio">' + importe(v.price) +
-            ' <span>' + esc(simbolo(moneda)) + '</span></p>'
+            ' <span>' + esc(simbolo(moneda)) + '</span>' +
+            '<span class="precio__iva">' + esc(TXT.ivaNoIncluido) + '</span></p>'
           : '';
         var carro = '<i class="pill__ico pill__ico--carro" aria-hidden="true">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" ' +

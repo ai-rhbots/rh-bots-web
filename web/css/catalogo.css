@@ -1908,3 +1908,19 @@ html body :is(h3, h4, .kicker, .phero__claim, .que__destacado,
 .pgrid--duo{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
 .pgrid--duo .pcard__media{ height:clamp(200px, 22vw, 280px); }
 @media (max-width:720px){ .pgrid--duo{ grid-template-columns:1fr; } }
+
+/* ---------- aviso de IVA junto a cada precio ---------- */
+.pvp__iva,
+.pcard .pcard__precio__iva,
+.precio__iva,
+.carrito__iva{
+  display:block; margin-top:3px;
+  font-family:var(--font-texto); font-weight:500; font-size:11.5px;
+  letter-spacing:0; text-transform:none; white-space:normal; color:var(--muted);
+}
+.pcard .pcard__precio__iva{ font-size:11px; }
+.alq__desde-iva{ display:block; margin-top:2px; font-family:var(--font-texto);
+  font-weight:500; font-size:11.5px; letter-spacing:0; color:var(--muted); }
+/* el total es flex sin wrap: el aviso necesita línea propia */
+.carrito__total{ flex-wrap:wrap; }
+.carrito__iva{ flex-basis:100%; text-align:right; margin-top:2px; }

@@ -286,6 +286,9 @@ TEXTOS = {
     'requiere_accesorio_titulo': {'es': 'Accesorio necesario', 'pt': 'Acessório necessário',
                                    'en': 'Required accessory', 'fr': 'Accessoire nécessaire',
                                    'zh': '必需配件', 'ca': 'Accessori necessari'},
+    'iva_no_incluido': {'es': 'IVA no incluido', 'pt': 'IVA não incluído',
+                         'en': 'VAT not included', 'fr': 'TVA non incluse',
+                         'zh': '不含增值税', 'ca': 'IVA no inclòs'},
     'nav_ver_alquiler_aria': {'es': 'Ver opciones de alquiler', 'pt': 'Ver opções de aluguer',
                                'en': 'View rental options', 'fr': 'Voir les options de location',
                                'zh': '查看租赁方案', 'ca': 'Veure opcions de lloguer'},
@@ -738,7 +741,8 @@ def panel_carrito(base):
     </header>
     <div class="carrito__cuerpo" data-carrito-lista></div>
     <footer class="carrito__pie" data-carrito-pie hidden>
-      <p class="carrito__total"><span>{t('carrito_total')}</span><strong data-carrito-total></strong></p>
+      <p class="carrito__total"><span>{t('carrito_total')}</span><strong data-carrito-total></strong>
+        <span class="carrito__iva">{t('iva_no_incluido')}</span></p>
       <p class="carrito__nota">{t('carrito_nota_envio')}</p>
       <a class="pill carrito__pagar" data-carrito-pagar rel="nofollow noopener" href="#"><span>{t('carrito_finalizar')}</span>{CHEVRON}</a>
       <a class="carrito__consulta" href="{base}contacto.html">{t('carrito_asesor')}</a>
@@ -1049,7 +1053,8 @@ def precio_html(p, clase='pvp'):
     pvp = formato_pvp(p.get('precio'))
     if not pvp:
         return ''
-    return f'<p class="{clase}"><span class="{clase}__etiqueta">{t("pvp")}</span> {pvp}</p>'
+    return (f'<p class="{clase}"><span class="{clase}__etiqueta">{t("pvp")}</span> {pvp}'
+            f'<span class="{clase}__iva">{t("iva_no_incluido")}</span></p>')
 
 
 def formato_moneda(codigo):
@@ -1177,7 +1182,8 @@ def estado_compra(disponible, precio, moneda, variante, dominio, etiqueta, conta
     precio_html = ''
     if mostrar_precio and TIENDA.get('mostrar_precio'):
         precio_html = (f'<p class="precio">{e(formato_precio(precio))} '
-                       f'<span>{e(formato_moneda(moneda))}</span></p>')
+                       f'<span>{e(formato_moneda(moneda))}</span>'
+                       f'<span class="precio__iva">{t("iva_no_incluido")}</span></p>')
     anadir = (f'<button class="pill pill--anadir" type="button" data-anadir '
               f'data-variante="{e(str(variante))}" data-precio-num="{precio:.2f}">'
               f'<span>{t("anadir_carrito")}</span>'
@@ -2512,6 +2518,11 @@ def legal_page():
 # ──────────────────────────────────────────────────────────────── contacto ──
 
 # ──────────────────────────────────────────────────────────────── alquiler ──
+def _sin_punto_final(txt):
+    """Quita el punto final para encadenar la nota con « · »."""
+    return txt.rstrip().rstrip('.。')
+
+
 def _cuota(valor):
     """Cuota mensual con el formato de número del idioma activo."""
     return f'{formato_precio(float(valor))} €'
@@ -2587,6 +2598,9 @@ def alquiler_limpieza_page():
     """Fregadoras y barredoras en alquiler, con las cuotas de la tarifa."""
     base = nivel(LANG)
     a = ALQUILER.get('limpieza', {})
+    # el botón del hero baja al primer modelo de esta misma página
+    modelos = a.get('modelos', [])
+    primer = modelos[0].get('slug', '') if modelos else ''
     out = [head(t('alquiler_limpieza_titulo'), a.get('lede', ''), base, 'alquiler-limpieza.html'),
            header(base, 'alquiler', 'alquiler-limpieza.html'), '<main id="contenido">']
 
@@ -2601,7 +2615,7 @@ def alquiler_limpieza_page():
       <p class="lede lede--hero">{e(a.get('lede', ''))}</p>
       <div class="hero__cta">
         <a class="pill" href="{base}contacto.html"><span>{t('pedir_presupuesto')}</span>{CHEVRON}</a>
-        <a class="pill pill--line" href="{base}robots.html"><span>{t('ver_robots')}</span>{CHEVRON}</a>
+        <a class="pill pill--line" href="#{e(primer)}"><span>{t('ver_robots')}</span>{CHEVRON}</a>
       </div>
     </div>
   </section>
@@ -2629,11 +2643,12 @@ def alquiler_limpieza_page():
         <p class="kicker">{e(m.get('etiqueta', ''))}</p>
         <h2 class="sector__titulo">{e(nombre)}</h2>
         <p class="sector__lede">{e(m.get('claim', ''))}</p>
-        <p class="alq__desde">{t('tarifa_desde', n=e(desde))}</p>
+        <p class="alq__desde">{t('tarifa_desde', n=e(desde))}
+          <span class="alq__desde-iva">{t('iva_no_incluido')}</span></p>
         <p class="alq__texto">{e(m.get('texto', ''))}</p>
         <ul class="sector__tareas">{chips}</ul>
         {_tarifa_tabla(m)}
-        <p class="alq__nota">{e(a.get('cuota_nota', ''))}</p>
+        <p class="alq__nota">{e(_sin_punto_final(a.get('cuota_nota', '')))} · {t('iva_no_incluido')}</p>
         <div class="alq__cta">
           <a class="pill" href="{base}contacto.html"><span>{t('alquiler_solicitar')}</span>{CHEVRON}</a>
           {ficha}
