@@ -18,7 +18,7 @@ sys.path.insert(0, HERE)
 from PIL import Image  # noqa: E402
 from productos import PRODUCTOS, FAMILIAS, ESTADOS, BY_SLUG  # noqa: E402
 from sitio import (NAV, HOME, CONTACTO, POSTS, SEO, ANALITICA, CTA, PREFOOTER, APLICACIONES,  # noqa: E402
-                   TIENDA, RHBOTS)
+                   TIENDA, RHBOTS, ALQUILER)
 from limpiar_html import limpiar as limpiar_cuerpo  # noqa: E402
 
 e = html.escape
@@ -66,7 +66,8 @@ def _carga_json(nombre):
 
 _SITIO_ES = {'nav': NAV, 'home': HOME, 'contacto': CONTACTO, 'cta': CTA,
              'prefooter': PREFOOTER, 'posts': POSTS, 'rhbots': RHBOTS,
-             'aplicaciones': APLICACIONES}
+             'aplicaciones': APLICACIONES,
+             'alquiler': ALQUILER}
 _PRODUCTOS_ES, _FAMILIAS_ES, _ESTADOS_ES = PRODUCTOS, FAMILIAS, ESTADOS
 
 
@@ -118,13 +119,14 @@ def set_lang(lang):
     """Intercambia todo el contenido module-level por el del idioma pedido.
     Los f-strings del resto del archivo leen estos nombres en tiempo de
     llamada, así que basta con reasignarlos antes de generar cada página."""
-    global LANG, NAV, HOME, CONTACTO, CTA, PREFOOTER, POSTS, RHBOTS, APLICACIONES
+    global LANG, NAV, HOME, CONTACTO, CTA, PREFOOTER, POSTS, RHBOTS, APLICACIONES, ALQUILER
     global FAMILIAS, ESTADOS, PRODUCTOS, BY_SLUG, FAM_NAME
     LANG = lang
     d = _SITIO_POR_LANG[lang]
     NAV, HOME, CONTACTO = d['nav'], d['home'], d['contacto']
     CTA, PREFOOTER, POSTS = d['cta'], d['prefooter'], d['posts']
     RHBOTS, APLICACIONES = d['rhbots'], d['aplicaciones']
+    ALQUILER = d['alquiler']
     FAMILIAS, ESTADOS, PRODUCTOS = _FAMILIAS_POR_LANG[lang], _ESTADOS_POR_LANG[lang], _PRODUCTOS_POR_LANG[lang]
     BY_SLUG = {p['slug']: p for p in PRODUCTOS}
     FAM_NAME = {k: n for k, n, _ in FAMILIAS}
@@ -284,6 +286,76 @@ TEXTOS = {
     'requiere_accesorio_titulo': {'es': 'Accesorio necesario', 'pt': 'Acessório necessário',
                                    'en': 'Required accessory', 'fr': 'Accessoire nécessaire',
                                    'zh': '必需配件', 'ca': 'Accessori necessari'},
+    'nav_ver_alquiler_aria': {'es': 'Ver opciones de alquiler', 'pt': 'Ver opções de aluguer',
+                               'en': 'View rental options', 'fr': 'Voir les options de location',
+                               'zh': '查看租赁方案', 'ca': 'Veure opcions de lloguer'},
+    'alquiler_limpieza_nav': {'es': 'Robots de limpieza industrial', 'pt': 'Robôs de limpeza industrial',
+                               'en': 'Industrial cleaning robots', 'fr': 'Robots de nettoyage industriel',
+                               'zh': '工业清洁机器人', 'ca': 'Robots de neteja industrial'},
+    'alquiler_humanoides_nav': {'es': 'Humanoides para eventos', 'pt': 'Humanoides para eventos',
+                                 'en': 'Humanoids for events', 'fr': 'Humanoïdes pour événements',
+                                 'zh': '活动用人形机器人', 'ca': 'Humanoides per a esdeveniments'},
+    'alquiler_titulo': {'es': 'Alquiler de robots | RH·BOTS', 'pt': 'Aluguer de robôs | RH·BOTS',
+                         'en': 'Robot rental | RH·BOTS', 'fr': 'Location de robots | RH·BOTS',
+                         'zh': '机器人租赁 | RH·BOTS', 'ca': 'Lloguer de robots | RH·BOTS'},
+    'alquiler_limpieza_titulo': {'es': 'Alquiler de robots de limpieza industrial | RH·BOTS',
+                                  'pt': 'Aluguer de robôs de limpeza industrial | RH·BOTS',
+                                  'en': 'Industrial cleaning robot rental | RH·BOTS',
+                                  'fr': 'Location de robots de nettoyage industriel | RH·BOTS',
+                                  'zh': '工业清洁机器人租赁 | RH·BOTS',
+                                  'ca': 'Lloguer de robots de neteja industrial | RH·BOTS'},
+    'alquiler_humanoides_titulo': {'es': 'Alquiler de humanoides para eventos | RH·BOTS',
+                                    'pt': 'Aluguer de humanoides para eventos | RH·BOTS',
+                                    'en': 'Humanoid rental for events | RH·BOTS',
+                                    'fr': "Location d'humanoïdes pour événements | RH·BOTS",
+                                    'zh': '活动人形机器人租赁 | RH·BOTS',
+                                    'ca': "Lloguer d'humanoides per a esdeveniments | RH·BOTS"},
+    'tarifa_titulo': {'es': 'Cuotas de alquiler', 'pt': 'Mensalidades de aluguer',
+                       'en': 'Rental rates', 'fr': 'Loyers mensuels',
+                       'zh': '租赁月费', 'ca': 'Quotes de lloguer'},
+    'tarifa_plazo': {'es': 'Plazo', 'pt': 'Prazo', 'en': 'Term', 'fr': 'Durée du contrat',
+                      'zh': '租期', 'ca': 'Termini'},
+    'tarifa_duracion': {'es': 'Duración', 'pt': 'Duração', 'en': 'Length', 'fr': 'Durée',
+                         'zh': '时长', 'ca': 'Durada'},
+    'tarifa_cuota': {'es': 'Cuota mensual', 'pt': 'Mensalidade', 'en': 'Monthly rate',
+                      'fr': 'Loyer mensuel', 'zh': '月费', 'ca': 'Quota mensual'},
+    'tarifa_desde': {'es': 'Desde {n}/mes', 'pt': 'Desde {n}/mês', 'en': 'From {n}/month',
+                      'fr': 'À partir de {n}/mois', 'zh': '每月{n}起', 'ca': 'Des de {n}/mes'},
+    'alquiler_incluye': {'es': 'Qué incluye la cuota', 'pt': 'O que inclui a mensalidade',
+                          'en': "What's included in the rate", 'fr': 'Ce que comprend le loyer',
+                          'zh': '月费包含内容', 'ca': 'Què inclou la quota'},
+    'alquiler_incluye_si': {'es': 'Incluido', 'pt': 'Incluído', 'en': 'Included',
+                             'fr': 'Inclus', 'zh': '包含', 'ca': 'Inclòs'},
+    'alquiler_incluye_no': {'es': 'No incluido', 'pt': 'Não incluído', 'en': 'Not included',
+                             'fr': 'Non inclus', 'zh': '不包含', 'ca': 'No inclòs'},
+    'alquiler_cta_titulo': {'es': '¿Te encaja el alquiler?', 'pt': 'O aluguer encaixa consigo?',
+                             'en': 'Does renting fit your case?', 'fr': 'La location vous convient ?',
+                             'zh': '租赁方案适合您吗？', 'ca': 'T\'encaixa el lloguer?'},
+    'alquiler_cta_texto': {'es': 'Cuéntanos qué superficie tienes que limpiar o qué evento organizas y te '
+                                  'preparamos una propuesta con el modelo y el plazo que mejor encajen.',
+                            'pt': 'Diga-nos que superfície tem de limpar ou que evento organiza e preparamos '
+                                  'uma proposta com o modelo e o prazo que melhor se adequem.',
+                            'en': 'Tell us the area you need to clean or the event you are organising and '
+                                  "we'll put together a proposal with the right model and term.",
+                            'fr': 'Dites-nous quelle surface vous devez nettoyer ou quel événement vous '
+                                  'organisez et nous préparons une proposition avec le modèle et la durée adaptés.',
+                            'zh': '告诉我们您需要清洁的面积或举办的活动，我们会为您准备合适机型与租期的方案。',
+                            'ca': "Explica'ns quina superfície has de netejar o quin esdeveniment organitzes i "
+                                  'et preparem una proposta amb el model i el termini que millor encaixin.'},
+    'alquiler_cta_eventos': {'es': 'Cuéntanos qué evento organizas, cuántos días y qué quieres que haga el '
+                                   'robot, y te preparamos una propuesta cerrada.',
+                              'pt': 'Diga-nos que evento organiza, quantos dias e o que quer que o robô faça, e '
+                                    'preparamos uma proposta fechada.',
+                              'en': 'Tell us what event you are organising, how many days and what you want the '
+                                    'robot to do, and we will put together a firm proposal.',
+                              'fr': 'Dites-nous quel événement vous organisez, combien de jours et ce que vous '
+                                    'attendez du robot, et nous préparons une proposition ferme.',
+                              'zh': '告诉我们您举办什么活动、租期几天、希望机器人做什么，我们会为您准备一份确定的方案。',
+                              'ca': "Explica'ns quin esdeveniment organitzes, quants dies i què vols que faci el "
+                                    'robot, i et preparem una proposta tancada.'},
+    'alquiler_solicitar': {'es': 'Solicitar este robot', 'pt': 'Solicitar este robô',
+                            'en': 'Request this robot', 'fr': 'Demander ce robot',
+                            'zh': '咨询此机型', 'ca': 'Sol·licitar aquest robot'},
     'requiere_accesorio_texto': {'es': 'Necesario para el {n}. Se vende por separado.',
                                   'pt': 'Necessário para o {n}. Vendido em separado.',
                                   'en': 'Required for the {n}. Sold separately.',
@@ -774,6 +846,16 @@ def header(base, active='robots', ruta=''):
                       f'<p class="nav__todos"><a href="{base}robots.html">'
                       f'{t("ver_todo_catalogo")}{FLECHA}</a></p></div>'
                       f'</div></div>')
+        elif it['key'] == 'alquiler':
+            # desplegable simple: las dos modalidades de alquiler
+            opciones = (
+                f'<a href="{base}alquiler-limpieza.html">{t("alquiler_limpieza_nav")}</a>'
+                f'<a href="{base}alquiler-humanoides.html">{t("alquiler_humanoides_nav")}</a>')
+            enlace = (f'<div class="nav__grupo nav__grupo--simple">{enlace}'
+                      f'<button type="button" class="nav__abrir" aria-expanded="false" '
+                      f'aria-controls="sub-alquiler" aria-label="{t("nav_ver_alquiler_aria")}">'
+                      f'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>'
+                      f'<div class="nav__sub" id="sub-alquiler">{opciones}</div></div>')
         parts.append(enlace)
     links = '\n      '.join(parts)
     return f'''
@@ -2428,6 +2510,219 @@ def legal_page():
 
 
 # ──────────────────────────────────────────────────────────────── contacto ──
+
+# ──────────────────────────────────────────────────────────────── alquiler ──
+def _cuota(valor):
+    """Cuota mensual con el formato de número del idioma activo."""
+    return f'{formato_precio(float(valor))} €'
+
+
+def _tarifa_tabla(modelo):
+    """Tabla de cuotas de un modelo, tal cual viene de la tarifa RH·BOTS."""
+    filas = ''
+    for plazo, duracion, cuota in modelo.get('tarifas', []):
+        filas += (f'<tr><td>{e(plazo)}</td><td>{e(duracion)}</td>'
+                  f'<td class="tarifa__cuota">{e(_cuota(cuota))}</td></tr>')
+    if not filas:
+        return ''
+    return (f'<table class="tarifa"><caption class="tarifa__titulo">{t("tarifa_titulo")}</caption>'
+            f'<thead><tr><th scope="col">{t("tarifa_plazo")}</th>'
+            f'<th scope="col">{t("tarifa_duracion")}</th>'
+            f'<th scope="col">{t("tarifa_cuota")}</th></tr></thead>'
+            f'<tbody>{filas}</tbody></table>')
+
+
+def _cuota_mas_baja(modelo):
+    """La cuota del plazo más largo, para el «desde X/mes» de la cabecera."""
+    tarifas = modelo.get('tarifas') or []
+    return _cuota(tarifas[-1][2]) if tarifas else ''
+
+
+def alquiler_page():
+    """Portada de la sección: las dos modalidades de alquiler."""
+    base = nivel(LANG)
+    a = ALQUILER
+    out = [head(t('alquiler_titulo'), a.get('lede', ''), base, 'alquiler.html'),
+           header(base, 'alquiler', 'alquiler.html'), '<main id="contenido">']
+
+    out.append(f'''
+  <section class="hero hero--catalogo" id="inicio">
+    <img class="hero__foto" src="{base}{e(a.get('imagen', ''))}" alt="" aria-hidden="true" fetchpriority="high">
+    <div class="hero__velo" aria-hidden="true"></div>
+    <div class="hero__diagonal" aria-hidden="true"></div>
+    <div class="wrap hero__copy">
+      <p class="kicker hero__kicker">{e(a.get('kicker', ''))}</p>
+      <h1 class="display display--hero">{e(a.get('h1', ''))}</h1>
+      <p class="lede lede--hero">{e(a.get('lede', ''))}</p>
+      <div class="hero__cta">
+        <a class="pill" href="{base}contacto.html"><span>{t('pedir_presupuesto')}</span>{CHEVRON}</a>
+      </div>
+    </div>
+  </section>
+''')
+
+    tarjetas = ''
+    for op in a.get('opciones', []):
+        tarjetas += (
+            f'<li class="pcard reveal"><a href="{base}{e(op["href"])}">'
+            f'<div class="pcard__media pcard__media--escena">'
+            f'<img src="{base}{e(op.get("imagen", ""))}" alt="{e(op["titulo"])}" loading="lazy"></div>'
+            f'<div class="pcard__body"><h3>{e(op["titulo"])}</h3>'
+            f'<p>{e(op.get("texto", ""))}</p>'
+            f'<span class="pcard__more">{t("leer_mas")}</span></div></a></li>')
+    out.append(f'''  <section class="section section--white">
+    <div class="wrap">
+      <ul class="pgrid pgrid--duo">{tarjetas}</ul>
+    </div>
+  </section>
+''')
+
+    out.append(bloque_elegir(base, t('alquiler_cta_titulo'), t('alquiler_cta_texto')))
+    out.append('</main>')
+    out.append(footer(base))
+    return ''.join(out)
+
+
+def alquiler_limpieza_page():
+    """Fregadoras y barredoras en alquiler, con las cuotas de la tarifa."""
+    base = nivel(LANG)
+    a = ALQUILER.get('limpieza', {})
+    out = [head(t('alquiler_limpieza_titulo'), a.get('lede', ''), base, 'alquiler-limpieza.html'),
+           header(base, 'alquiler', 'alquiler-limpieza.html'), '<main id="contenido">']
+
+    out.append(f'''
+  <section class="hero hero--catalogo" id="inicio">
+    <img class="hero__foto" src="{base}{e(a.get('imagen', ''))}" alt="" aria-hidden="true" fetchpriority="high">
+    <div class="hero__velo" aria-hidden="true"></div>
+    <div class="hero__diagonal" aria-hidden="true"></div>
+    <div class="wrap hero__copy">
+      <p class="kicker hero__kicker">{e(a.get('kicker', ''))}</p>
+      <h1 class="display display--hero">{e(a.get('h1', ''))}</h1>
+      <p class="lede lede--hero">{e(a.get('lede', ''))}</p>
+      <div class="hero__cta">
+        <a class="pill" href="{base}contacto.html"><span>{t('pedir_presupuesto')}</span>{CHEVRON}</a>
+        <a class="pill pill--line" href="{base}robots.html"><span>{t('ver_robots')}</span>{CHEVRON}</a>
+      </div>
+    </div>
+  </section>
+''')
+
+    for i, m in enumerate(a.get('modelos', [])):
+        prod = BY_SLUG.get(m.get('slug'))
+        nombre = prod['name'] if prod else m.get('slug', '')
+        if prod and prod.get('hero'):
+            foto = (f'<img src="{base}{e(prod["hero"])}" alt="{e(nombre)}" loading="lazy">')
+        else:
+            foto = placeholder('limpieza', nombre)
+        chips = ''.join(f'<li>{e(x)}</li>' for x in m.get('destacados', []))
+        desde = _cuota_mas_baja(m)
+        ficha = ''
+        if prod and prod.get('ficha', True):
+            ficha = (f'<a class="pill pill--line" href="{base}robots/{prod["slug"]}.html">'
+                     f'<span>{t("ver_ficha_tecnica")}</span>{CHEVRON}</a>')
+        fondo = 'section--white' if i % 2 == 0 else 'section--light'
+        lado = ' sector--invertido' if i % 2 else ''
+        out.append(f'''  <section class="section {fondo} sector{lado}" id="{e(m.get("slug", ""))}">
+    <div class="wrap sector__grid">
+      <figure class="sector__foto sector__foto--producto reveal">{foto}</figure>
+      <div class="sector__texto reveal">
+        <p class="kicker">{e(m.get('etiqueta', ''))}</p>
+        <h2 class="sector__titulo">{e(nombre)}</h2>
+        <p class="sector__lede">{e(m.get('claim', ''))}</p>
+        <p class="alq__desde">{t('tarifa_desde', n=e(desde))}</p>
+        <p class="alq__texto">{e(m.get('texto', ''))}</p>
+        <ul class="sector__tareas">{chips}</ul>
+        {_tarifa_tabla(m)}
+        <p class="alq__nota">{e(a.get('cuota_nota', ''))}</p>
+        <div class="alq__cta">
+          <a class="pill" href="{base}contacto.html"><span>{t('alquiler_solicitar')}</span>{CHEVRON}</a>
+          {ficha}
+        </div>
+      </div>
+    </div>
+  </section>
+''')
+
+    incluye = ''.join(f'<li>{e(x)}</li>' for x in a.get('incluye', []))
+    no_incluye = ''.join(f'<li>{e(x)}</li>' for x in a.get('no_incluye', []))
+    if incluye or no_incluye:
+        out.append(f'''  <section class="section section--light" id="condiciones">
+    <div class="wrap">
+      <header class="section-head reveal"><h2 class="h-section">{t('alquiler_incluye')}</h2></header>
+      <div class="incluye reveal">
+        <div class="incluye__col incluye__col--si">
+          <h3 class="incluye__titulo">{t('alquiler_incluye_si')}</h3>
+          <ul class="incluye__lista">{incluye}</ul>
+        </div>
+        <div class="incluye__col incluye__col--no">
+          <h3 class="incluye__titulo">{t('alquiler_incluye_no')}</h3>
+          <ul class="incluye__lista">{no_incluye}</ul>
+        </div>
+      </div>
+      <p class="incluye__aviso reveal">{e(a.get('aviso', ''))}</p>
+    </div>
+  </section>
+''')
+
+    out.append(bloque_elegir(base, t('alquiler_cta_titulo'), t('alquiler_cta_texto')))
+    out.append('</main>')
+    out.append(footer(base))
+    return ''.join(out)
+
+
+def alquiler_humanoides_page():
+    """Humanoides para eventos: sin tarifa cerrada, presupuesto a medida."""
+    base = nivel(LANG)
+    a = ALQUILER.get('humanoides', {})
+    out = [head(t('alquiler_humanoides_titulo'), a.get('lede', ''), base, 'alquiler-humanoides.html'),
+           header(base, 'alquiler', 'alquiler-humanoides.html'), '<main id="contenido">']
+
+    out.append(f'''
+  <section class="hero hero--catalogo" id="inicio">
+    <img class="hero__foto" src="{base}{e(a.get('imagen', ''))}" alt="" aria-hidden="true" fetchpriority="high">
+    <div class="hero__velo" aria-hidden="true"></div>
+    <div class="hero__diagonal" aria-hidden="true"></div>
+    <div class="wrap hero__copy">
+      <p class="kicker hero__kicker">{e(a.get('kicker', ''))}</p>
+      <h1 class="display display--hero">{e(a.get('h1', ''))}</h1>
+      <p class="lede lede--hero">{e(a.get('lede', ''))}</p>
+      <div class="hero__cta">
+        <a class="pill" href="{base}contacto.html"><span>{t('pedir_presupuesto')}</span>{CHEVRON}</a>
+      </div>
+    </div>
+  </section>
+''')
+
+    tarjetas = ''
+    for slug in a.get('modelos', []):
+        prod = BY_SLUG.get(slug)
+        if not prod:
+            continue
+        media = (f'<img src="{base}{e(prod["hero"])}" alt="{e(prod["name"])}" loading="lazy">'
+                 if prod.get('hero') else placeholder(prod['family'], prod['name']))
+        tarjetas += (
+            f'<li class="pcard reveal"><a href="{base}robots/{prod["slug"]}.html">'
+            f'<div class="pcard__media">{media}</div>'
+            f'<div class="pcard__body"><div class="badges">{badges(prod)}</div>'
+            f'<h3>{e(prod["name"])}</h3><p>{e(prod["claim"])}</p>'
+            f'<p class="pcard__precio">{t("precio_consulta")}</p>'
+            f'<span class="pcard__more">{t("ver_ficha_tecnica")}</span></div></a></li>')
+    if tarjetas:
+        out.append(f'''  <section class="section section--white">
+    <div class="wrap">
+      <header class="section-head reveal"><h2 class="h-section">{t('modelos_disponibles')}</h2>
+        <p class="sub">{e(a.get('texto', ''))}</p></header>
+      <ul class="pgrid">{tarjetas}</ul>
+    </div>
+  </section>
+''')
+
+    out.append(bloque_elegir(base, t('alquiler_cta_titulo'), t('alquiler_cta_eventos')))
+    out.append('</main>')
+    out.append(footer(base))
+    return ''.join(out)
+
+
 def contacto_page():
     base = nivel(LANG)
     c = CONTACTO
@@ -2732,6 +3027,8 @@ def sitemap():
     recomienda Google para sitios multilingües."""
     d = SEO['dominio'].rstrip('/')
     rutas = [('', '1.0'), ('robots.html', '0.9'), ('aplicaciones.html', '0.8'), ('rh-bots.html', '0.6'),
+             ('alquiler.html', '0.8'), ('alquiler-limpieza.html', '0.8'),
+             ('alquiler-humanoides.html', '0.7'),
              ('contacto.html', '0.7'), ('blog.html', '0.5'), ('legal.html', '0.2')]
     rutas += [(f'robots/{p["slug"]}.html', '0.8') for p in _PRODUCTOS_ES if p.get('ficha', True)]
     rutas += [(p['url'], '0.6') for p in _SITIO_ES['posts'] if p.get('url')]
@@ -2838,6 +3135,9 @@ def generar_paginas(carpeta):
         ('index.html',    home_page()),
         ('robots.html',   index_page()),
         ('aplicaciones.html', aplicaciones_page()),
+        ('alquiler.html',  alquiler_page()),
+        ('alquiler-limpieza.html', alquiler_limpieza_page()),
+        ('alquiler-humanoides.html', alquiler_humanoides_page()),
         ('rh-bots.html',  rh_bots_page()),
         ('blog.html',     blog_page()),
         ('contacto.html', contacto_page()),

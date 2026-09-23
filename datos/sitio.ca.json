@@ -16,6 +16,11 @@
       "key": "aplicaciones"
     },
     {
+      "label": "Lloguer",
+      "href": "alquiler.html",
+      "key": "alquiler"
+    },
+    {
       "label": "Accessoris",
       "href": "index.html",
       "key": "",
@@ -400,6 +405,171 @@
       "titulo": "Un contacte més directe, clar i humà",
       "texto": "Omple el formulari i un especialista de RH·BOTS es posarà en contacte amb tu com més aviat millor. També pots escriure'ns directament si ho prefereixes.",
       "especialidad": "Robòtica per a empreses i esdeveniments"
+    }
+  },
+  "alquiler": {
+    "kicker": "Lloguer RH·BOTS",
+    "h1": "Robots de lloguer, sense immobilitzar capital",
+    "lede": "Incorpora un robot a la teva operativa amb una quota mensual en lloc d'una compra. Tria la modalitat que encaixa amb el teu cas: neteja industrial en rènting a llarg termini, o humanoides per a un esdeveniment puntual.",
+    "imagen": "assets/robots-portada.webp",
+    "opciones": [
+      {
+        "id": "limpieza",
+        "href": "alquiler-limpieza.html",
+        "titulo": "Lloguer de robots de neteja industrial",
+        "texto": "Fregadores i escombradores autònomes amb quota mensual des de 12 fins a 60 mesos, amb manteniment i consumibles inclosos.",
+        "imagen": "assets/escenarios/fabricas-almacenes.webp"
+      },
+      {
+        "id": "humanoides",
+        "href": "alquiler-humanoides.html",
+        "titulo": "Lloguer d'humanoides per a esdeveniments",
+        "texto": "Humanoides per a fires, congressos, inauguracions i activacions de marca, amb acompanyament del nostre equip.",
+        "imagen": "assets/escenarios/complejos-comerciales.webp"
+      }
+    ],
+    "limpieza": {
+      "kicker": "Lloguer · Neteja industrial",
+      "h1": "Robots de neteja industrial en lloguer",
+      "lede": "Fregadores i escombradores autònomes amb quota mensual, manteniment i consumibles inclosos i lliurament immediat. Com més llarg és el termini, més baixa és la quota.",
+      "imagen": "assets/escenarios/fabricas-almacenes.webp",
+      "modelos": [
+        {
+          "slug": "rhc5",
+          "etiqueta": "Robot fregadora",
+          "claim": "Escombrat, fregat i assecat en una sola passada.",
+          "texto": "Solució autònoma de neteja industrial que integra escombrat, fregat i assecat en una sola passada, amb navegació intel·ligent mitjançant LiDAR i SLAM, alta pressió de fregat i gestió automatitzada de l'aigua per reduir la intervenció manual.",
+          "destacados": [
+            "Navegació LiDAR i SLAM",
+            "Gestió automàtica de l'aigua"
+          ],
+          "tarifas": [
+            [
+              "Demo",
+              "1 mes",
+              990.0
+            ],
+            [
+              "1 any",
+              "12 mesos",
+              990.0
+            ],
+            [
+              "3 anys",
+              "36 mesos",
+              895.29
+            ],
+            [
+              "4 anys",
+              "48 mesos",
+              736.48
+            ],
+            [
+              "5 anys",
+              "60 mesos",
+              641.49
+            ]
+          ]
+        },
+        {
+          "slug": "mt1",
+          "etiqueta": "Robot escombradora",
+          "claim": "Escombradora robòtica amb IA: reconeixement visual i neteja autònoma 24/7.",
+          "texto": "Escombradora robòtica amb intel·ligència artificial per a la neteja autònoma de grans superfícies. El seu reconeixement visual per IA i la fusió multisensor li donen un rendiment comparable al d'una escombradora de conducció, treballant 24/7 sense intervenció manual.",
+          "destacados": [
+            "Reconeixement visual per IA",
+            "Operació contínua 24/7"
+          ],
+          "tarifas": [
+            [
+              "Demo",
+              "1 mes",
+              690.0
+            ],
+            [
+              "1 any",
+              "12 mesos",
+              690.0
+            ],
+            [
+              "3 anys",
+              "36 mesos",
+              597.23
+            ],
+            [
+              "4 anys",
+              "48 mesos",
+              495.27
+            ],
+            [
+              "5 anys",
+              "60 mesos",
+              434.29
+            ]
+          ]
+        },
+        {
+          "slug": "mt1-max",
+          "etiqueta": "Robot escombradora",
+          "claim": "Escombradora autònoma de grans superfícies: percepció 3D i neteja en temps real.",
+          "texto": "Robot escombrador autònom per a grans superfícies. Amb intel·ligència artificial i navegació LiDAR 3D detecta residus i obstacles en temps real i adapta la neteja sobre la marxa. Pensat per a magatzems, fàbriques, aparcaments i centres comercials.",
+          "destacados": [
+            "Navegació LiDAR 3D",
+            "Operació contínua 24/7"
+          ],
+          "tarifas": [
+            [
+              "Demo",
+              "1 mes",
+              840.0
+            ],
+            [
+              "1 any",
+              "12 mesos",
+              840.0
+            ],
+            [
+              "3 anys",
+              "36 mesos",
+              753.63
+            ],
+            [
+              "4 anys",
+              "48 mesos",
+              617.21
+            ],
+            [
+              "5 anys",
+              "60 mesos",
+              535.62
+            ]
+          ]
+        }
+      ],
+      "cuota_nota": "Quota amb manteniment i consumibles inclosos · lliurament immediat.",
+      "incluye": [
+        "Manteniment i reparació de fallades de funcionament.",
+        "Consumibles de la màquina.",
+        "Assegurança de danys propis de la màquina, amb una franquícia de 200 €.",
+        "Lliurament immediat."
+      ],
+      "no_incluye": [
+        "Avaries i danys ocasionats per un mal ús de la màquina.",
+        "Assegurances de responsabilitat civil de circulació i d'explotació: les contracta el client, i qualsevol sanció derivada de no tenir-les va a càrrec seu."
+      ],
+      "aviso": "Quotes aproximades. Operació pendent d'aprovació per part de l'entitat financera."
+    },
+    "humanoides": {
+      "kicker": "Lloguer · Esdeveniments",
+      "h1": "Humanoides per a esdeveniments",
+      "lede": "Porta un robot humanoide a la teva fira, congrés, inauguració o activació de marca. Ens encarreguem del trasllat, la posada en marxa i l'acompanyament durant l'esdeveniment.",
+      "imagen": "assets/escenarios/complejos-comerciales.webp",
+      "modelos": [
+        "rhx2",
+        "rha3",
+        "rha3-ultra"
+      ],
+      "texto": "Cada esdeveniment és diferent: el model, els dies de lloguer i el tipus d'interacció marquen el pressupost. Explica'ns què tens al cap i et preparem una proposta tancada."
     }
   }
 }

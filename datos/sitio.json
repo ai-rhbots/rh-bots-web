@@ -28,6 +28,11 @@
       "key": "aplicaciones"
     },
     {
+      "label": "Alquiler",
+      "href": "alquiler.html",
+      "key": "alquiler"
+    },
+    {
       "label": "Accesorios",
       "href": "index.html",
       "key": "",
@@ -467,5 +472,170 @@
         "imagen": "assets/robots/d5w/en-aparcamiento.webp"
       }
     ]
+  },
+  "alquiler": {
+    "kicker": "Alquiler RH·BOTS",
+    "h1": "Robots en alquiler, sin inmovilizar capital",
+    "lede": "Incorpora un robot a tu operativa con una cuota mensual en lugar de una compra. Elige la modalidad que encaja con tu caso: limpieza industrial en renting a largo plazo, o humanoides para un evento puntual.",
+    "imagen": "assets/robots-portada.webp",
+    "opciones": [
+      {
+        "id": "limpieza",
+        "href": "alquiler-limpieza.html",
+        "titulo": "Alquiler de robots de limpieza industrial",
+        "texto": "Fregadoras y barredoras autónomas con cuota mensual desde 12 hasta 60 meses, con mantenimiento y consumibles incluidos.",
+        "imagen": "assets/escenarios/fabricas-almacenes.webp"
+      },
+      {
+        "id": "humanoides",
+        "href": "alquiler-humanoides.html",
+        "titulo": "Alquiler de humanoides para eventos",
+        "texto": "Humanoides para ferias, congresos, inauguraciones y activaciones de marca, con acompañamiento de nuestro equipo.",
+        "imagen": "assets/escenarios/complejos-comerciales.webp"
+      }
+    ],
+    "limpieza": {
+      "kicker": "Alquiler · Limpieza industrial",
+      "h1": "Robots de limpieza industrial en alquiler",
+      "lede": "Fregadoras y barredoras autónomas con cuota mensual, mantenimiento y consumibles incluidos y entrega inmediata. Cuanto más largo es el plazo, más baja es la cuota.",
+      "imagen": "assets/escenarios/fabricas-almacenes.webp",
+      "modelos": [
+        {
+          "slug": "rhc5",
+          "etiqueta": "Robot fregadora",
+          "claim": "Barrido, fregado y secado en una sola pasada.",
+          "texto": "Solución autónoma de limpieza industrial que integra barrido, fregado y secado en una sola pasada, con navegación inteligente mediante LiDAR y SLAM, alta presión de fregado y gestión automatizada del agua para reducir la intervención manual.",
+          "destacados": [
+            "Navegación LiDAR y SLAM",
+            "Gestión automática de agua"
+          ],
+          "tarifas": [
+            [
+              "Demo",
+              "1 mes",
+              990.0
+            ],
+            [
+              "1 año",
+              "12 meses",
+              990.0
+            ],
+            [
+              "3 años",
+              "36 meses",
+              895.29
+            ],
+            [
+              "4 años",
+              "48 meses",
+              736.48
+            ],
+            [
+              "5 años",
+              "60 meses",
+              641.49
+            ]
+          ]
+        },
+        {
+          "slug": "mt1",
+          "etiqueta": "Robot barredora",
+          "claim": "Barredora robótica con IA: reconocimiento visual y limpieza autónoma 24/7.",
+          "texto": "Barredora robótica con inteligencia artificial para la limpieza autónoma de grandes superficies. Su reconocimiento visual por IA y la fusión multisensor le dan un rendimiento comparable al de una barredora de conducción, trabajando 24/7 sin intervención manual.",
+          "destacados": [
+            "Reconocimiento visual por IA",
+            "Operación continua 24/7"
+          ],
+          "tarifas": [
+            [
+              "Demo",
+              "1 mes",
+              690.0
+            ],
+            [
+              "1 año",
+              "12 meses",
+              690.0
+            ],
+            [
+              "3 años",
+              "36 meses",
+              597.23
+            ],
+            [
+              "4 años",
+              "48 meses",
+              495.27
+            ],
+            [
+              "5 años",
+              "60 meses",
+              434.29
+            ]
+          ]
+        },
+        {
+          "slug": "mt1-max",
+          "etiqueta": "Robot barredora",
+          "claim": "Barredora autónoma de grandes superficies: percepción 3D y limpieza en tiempo real.",
+          "texto": "Robot barredor autónomo para grandes superficies. Con inteligencia artificial y navegación LiDAR 3D detecta residuos y obstáculos en tiempo real y adapta la limpieza sobre la marcha. Pensado para almacenes, fábricas, parkings y centros comerciales.",
+          "destacados": [
+            "Navegación LiDAR 3D",
+            "Operación continua 24/7"
+          ],
+          "tarifas": [
+            [
+              "Demo",
+              "1 mes",
+              840.0
+            ],
+            [
+              "1 año",
+              "12 meses",
+              840.0
+            ],
+            [
+              "3 años",
+              "36 meses",
+              753.63
+            ],
+            [
+              "4 años",
+              "48 meses",
+              617.21
+            ],
+            [
+              "5 años",
+              "60 meses",
+              535.62
+            ]
+          ]
+        }
+      ],
+      "cuota_nota": "Cuota con mantenimiento y consumibles incluidos · entrega inmediata.",
+      "incluye": [
+        "Mantenimiento y reparación de fallos de funcionamiento.",
+        "Consumibles de la máquina.",
+        "Seguro de daños propios de la máquina, con una franquicia de 200 €.",
+        "Entrega inmediata."
+      ],
+      "no_incluye": [
+        "Averías y daños ocasionados por un mal uso de la máquina.",
+        "Seguro de responsabilidad civil de circulación y de explotación: los contrata el cliente, y cualquier sanción derivada de no tenerlos corre por su cuenta."
+      ],
+      "aviso": "Cuotas aproximadas. Operación pendiente de aprobación por la entidad financiera."
+    },
+    "humanoides": {
+      "kicker": "Alquiler · Eventos",
+      "h1": "Humanoides para eventos",
+      "lede": "Lleva un robot humanoide a tu feria, congreso, inauguración o activación de marca. Nos encargamos del traslado, la puesta en marcha y el acompañamiento durante el evento.",
+      "imagen": "assets/escenarios/complejos-comerciales.webp",
+      "modelos": [
+        "rhx2",
+        "rha3",
+        "rha3-ultra"
+      ],
+      "texto": "Cada evento es distinto: el modelo, los días de alquiler y el tipo de interacción marcan el presupuesto. Cuéntanos qué tienes en mente y te preparamos una propuesta cerrada."
+    }
   }
 }

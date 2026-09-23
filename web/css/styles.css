@@ -202,9 +202,11 @@ html body .nav .nav__todos a{
 }
 html body .nav .nav__todos a:hover .flecha{ transform:translateX(4px); }
 @media (min-width:861px){
-  /* el panel se centra respecto a la cabecera, no al enlace */
+  /* el megamenú se centra respecto a la cabecera, no al enlace; el
+     desplegable simple sí cuelga de su propio enlace */
   .site-header{ position:relative; }
   .nav__grupo{ position:static; }
+  .nav__grupo--simple{ position:relative; }
 }
 @media (max-width:1100px){
   .nav__sub--mega{ grid-template-columns:200px minmax(0, 1fr); }

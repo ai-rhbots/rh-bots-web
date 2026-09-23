@@ -25,6 +25,7 @@ CTA       = _d.get('cta', {
 })
 POSTS     = _d['posts']
 APLICACIONES = _d.get('aplicaciones', {})
+ALQUILER  = _d.get('alquiler', {})
 PREFOOTER = _d.get('prefooter', {'titulo': '', 'texto': ''})
 TIENDA    = _d.get('tienda', {'activa': False})
 RHBOTS    = _d.get('rhbots', {

@@ -16,6 +16,11 @@
       "key": "aplicaciones"
     },
     {
+      "label": "Aluguer",
+      "href": "alquiler.html",
+      "key": "alquiler"
+    },
+    {
       "label": "Acessórios",
       "href": "index.html",
       "key": "",
@@ -401,5 +406,170 @@
         "imagen": "assets/robots/d5w/en-aparcamiento.webp"
       }
     ]
+  },
+  "alquiler": {
+    "kicker": "Aluguer RH·BOTS",
+    "h1": "Robôs em aluguer, sem imobilizar capital",
+    "lede": "Integre um robô na sua operação com uma mensalidade em vez de uma compra. Escolha a modalidade que se adequa ao seu caso: limpeza industrial em aluguer de longa duração, ou humanoides para um evento pontual.",
+    "imagen": "assets/robots-portada.webp",
+    "opciones": [
+      {
+        "id": "limpieza",
+        "href": "alquiler-limpieza.html",
+        "titulo": "Aluguer de robôs de limpeza industrial",
+        "texto": "Lavadoras e varredoras autónomas com mensalidade de 12 até 60 meses, com manutenção e consumíveis incluídos.",
+        "imagen": "assets/escenarios/fabricas-almacenes.webp"
+      },
+      {
+        "id": "humanoides",
+        "href": "alquiler-humanoides.html",
+        "titulo": "Aluguer de humanoides para eventos",
+        "texto": "Humanoides para feiras, congressos, inaugurações e ativações de marca, com acompanhamento da nossa equipa.",
+        "imagen": "assets/escenarios/complejos-comerciales.webp"
+      }
+    ],
+    "limpieza": {
+      "kicker": "Aluguer · Limpeza industrial",
+      "h1": "Robôs de limpeza industrial em aluguer",
+      "lede": "Lavadoras e varredoras autónomas com mensalidade, manutenção e consumíveis incluídos e entrega imediata. Quanto mais longo é o prazo, mais baixa é a mensalidade.",
+      "imagen": "assets/escenarios/fabricas-almacenes.webp",
+      "modelos": [
+        {
+          "slug": "rhc5",
+          "etiqueta": "Robô lavadora",
+          "claim": "Varredura, lavagem e secagem numa só passagem.",
+          "texto": "Solução autónoma de limpeza industrial que integra varredura, lavagem e secagem numa só passagem, com navegação inteligente através de LiDAR e SLAM, alta pressão de lavagem e gestão automatizada da água para reduzir a intervenção manual.",
+          "destacados": [
+            "Navegação LiDAR e SLAM",
+            "Gestão automática de água"
+          ],
+          "tarifas": [
+            [
+              "Demo",
+              "1 mês",
+              990.0
+            ],
+            [
+              "1 ano",
+              "12 meses",
+              990.0
+            ],
+            [
+              "3 anos",
+              "36 meses",
+              895.29
+            ],
+            [
+              "4 anos",
+              "48 meses",
+              736.48
+            ],
+            [
+              "5 anos",
+              "60 meses",
+              641.49
+            ]
+          ]
+        },
+        {
+          "slug": "mt1",
+          "etiqueta": "Robô varredora",
+          "claim": "Varredora robótica com IA: reconhecimento visual e limpeza autónoma 24/7.",
+          "texto": "Varredora robótica com inteligência artificial para a limpeza autónoma de grandes superfícies. O seu reconhecimento visual por IA e a fusão multissensor dão-lhe um desempenho comparável ao de uma varredora de condução, trabalhando 24/7 sem intervenção manual.",
+          "destacados": [
+            "Reconhecimento visual por IA",
+            "Operação contínua 24/7"
+          ],
+          "tarifas": [
+            [
+              "Demo",
+              "1 mês",
+              690.0
+            ],
+            [
+              "1 ano",
+              "12 meses",
+              690.0
+            ],
+            [
+              "3 anos",
+              "36 meses",
+              597.23
+            ],
+            [
+              "4 anos",
+              "48 meses",
+              495.27
+            ],
+            [
+              "5 anos",
+              "60 meses",
+              434.29
+            ]
+          ]
+        },
+        {
+          "slug": "mt1-max",
+          "etiqueta": "Robô varredora",
+          "claim": "Varredora autónoma de grandes superfícies: perceção 3D e limpeza em tempo real.",
+          "texto": "Robô varredor autónomo para grandes superfícies. Com inteligência artificial e navegação LiDAR 3D deteta resíduos e obstáculos em tempo real e adapta a limpeza durante o percurso. Pensado para armazéns, fábricas, parques de estacionamento e centros comerciais.",
+          "destacados": [
+            "Navegação LiDAR 3D",
+            "Operação contínua 24/7"
+          ],
+          "tarifas": [
+            [
+              "Demo",
+              "1 mês",
+              840.0
+            ],
+            [
+              "1 ano",
+              "12 meses",
+              840.0
+            ],
+            [
+              "3 anos",
+              "36 meses",
+              753.63
+            ],
+            [
+              "4 anos",
+              "48 meses",
+              617.21
+            ],
+            [
+              "5 anos",
+              "60 meses",
+              535.62
+            ]
+          ]
+        }
+      ],
+      "cuota_nota": "Mensalidade com manutenção e consumíveis incluídos · entrega imediata.",
+      "incluye": [
+        "Manutenção e reparação de falhas de funcionamento.",
+        "Consumíveis da máquina.",
+        "Seguro de danos próprios da máquina, com uma franquia de 200 €.",
+        "Entrega imediata."
+      ],
+      "no_incluye": [
+        "Avarias e danos causados por uma má utilização da máquina.",
+        "Seguro de responsabilidade civil de circulação e de exploração: são contratados pelo cliente, e qualquer sanção decorrente de não os ter fica por sua conta."
+      ],
+      "aviso": "Mensalidades aproximadas. Operação pendente de aprovação pela entidade financeira."
+    },
+    "humanoides": {
+      "kicker": "Aluguer · Eventos",
+      "h1": "Humanoides para eventos",
+      "lede": "Leve um robô humanoide à sua feira, congresso, inauguração ou ativação de marca. Tratamos do transporte, da colocação em funcionamento e do acompanhamento durante o evento.",
+      "imagen": "assets/escenarios/complejos-comerciales.webp",
+      "modelos": [
+        "rhx2",
+        "rha3",
+        "rha3-ultra"
+      ],
+      "texto": "Cada evento é diferente: o modelo, os dias de aluguer e o tipo de interação determinam o orçamento. Conte-nos o que tem em mente e preparamos-lhe uma proposta fechada."
+    }
   }
 }

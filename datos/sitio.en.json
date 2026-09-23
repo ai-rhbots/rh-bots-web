@@ -16,6 +16,11 @@
       "key": "aplicaciones"
     },
     {
+      "label": "Rental",
+      "href": "alquiler.html",
+      "key": "alquiler"
+    },
+    {
       "label": "Accessories",
       "href": "index.html",
       "key": "",
@@ -403,5 +408,170 @@
     },
     "intro": "Tell us what you need and we'll help you find the best robotic solution for your business, event or project.",
     "empresa": "RH·BOTS — Humanoid Resources"
+  },
+  "alquiler": {
+    "kicker": "RH·BOTS Rental",
+    "h1": "Robots on rental, without tying up capital",
+    "lede": "Bring a robot into your operation for a monthly fee rather than an outright purchase. Choose the option that fits your case: industrial cleaning on a long-term rental, or humanoids for a one-off event.",
+    "imagen": "assets/robots-portada.webp",
+    "opciones": [
+      {
+        "id": "limpieza",
+        "href": "alquiler-limpieza.html",
+        "titulo": "Industrial cleaning robot rental",
+        "texto": "Autonomous scrubbers and sweepers for a monthly fee, from 12 to 60 months, with maintenance and consumables included.",
+        "imagen": "assets/escenarios/fabricas-almacenes.webp"
+      },
+      {
+        "id": "humanoides",
+        "href": "alquiler-humanoides.html",
+        "titulo": "Humanoid rental for events",
+        "texto": "Humanoids for trade fairs, conferences, openings and brand activations, with our team on hand throughout.",
+        "imagen": "assets/escenarios/complejos-comerciales.webp"
+      }
+    ],
+    "limpieza": {
+      "kicker": "Rental · Industrial cleaning",
+      "h1": "Industrial cleaning robots for rental",
+      "lede": "Autonomous scrubbers and sweepers for a monthly fee, with maintenance and consumables included and immediate delivery. The longer the term, the lower the fee.",
+      "imagen": "assets/escenarios/fabricas-almacenes.webp",
+      "modelos": [
+        {
+          "slug": "rhc5",
+          "etiqueta": "Scrubber robot",
+          "claim": "Sweeping, scrubbing and drying in a single pass.",
+          "texto": "An autonomous industrial cleaning solution that combines sweeping, scrubbing and drying in a single pass, with intelligent navigation based on LiDAR and SLAM, high scrubbing pressure and automated water management to reduce manual intervention.",
+          "destacados": [
+            "LiDAR and SLAM navigation",
+            "Automatic water management"
+          ],
+          "tarifas": [
+            [
+              "Demo",
+              "1 month",
+              990.0
+            ],
+            [
+              "1 year",
+              "12 months",
+              990.0
+            ],
+            [
+              "3 years",
+              "36 months",
+              895.29
+            ],
+            [
+              "4 years",
+              "48 months",
+              736.48
+            ],
+            [
+              "5 years",
+              "60 months",
+              641.49
+            ]
+          ]
+        },
+        {
+          "slug": "mt1",
+          "etiqueta": "Sweeper robot",
+          "claim": "Robotic sweeper with AI: visual recognition and autonomous cleaning 24/7.",
+          "texto": "Robotic sweeper with artificial intelligence for the autonomous cleaning of large areas. AI visual recognition and multi-sensor fusion give it performance comparable to a ride-on sweeper, working 24/7 with no manual intervention.",
+          "destacados": [
+            "AI visual recognition",
+            "Continuous 24/7 operation"
+          ],
+          "tarifas": [
+            [
+              "Demo",
+              "1 month",
+              690.0
+            ],
+            [
+              "1 year",
+              "12 months",
+              690.0
+            ],
+            [
+              "3 years",
+              "36 months",
+              597.23
+            ],
+            [
+              "4 years",
+              "48 months",
+              495.27
+            ],
+            [
+              "5 years",
+              "60 months",
+              434.29
+            ]
+          ]
+        },
+        {
+          "slug": "mt1-max",
+          "etiqueta": "Sweeper robot",
+          "claim": "Autonomous sweeper for large areas: 3D perception and cleaning in real time.",
+          "texto": "Autonomous sweeping robot for large areas. Using artificial intelligence and 3D LiDAR navigation, it detects debris and obstacles in real time and adapts its cleaning as it goes. Designed for warehouses, factories, car parks and shopping centres.",
+          "destacados": [
+            "3D LiDAR navigation",
+            "Continuous 24/7 operation"
+          ],
+          "tarifas": [
+            [
+              "Demo",
+              "1 month",
+              840.0
+            ],
+            [
+              "1 year",
+              "12 months",
+              840.0
+            ],
+            [
+              "3 years",
+              "36 months",
+              753.63
+            ],
+            [
+              "4 years",
+              "48 months",
+              617.21
+            ],
+            [
+              "5 years",
+              "60 months",
+              535.62
+            ]
+          ]
+        }
+      ],
+      "cuota_nota": "Fee includes maintenance and consumables · immediate delivery.",
+      "incluye": [
+        "Maintenance and repair of operating faults.",
+        "Consumables for the machine.",
+        "Own-damage insurance for the machine, with an excess of 200 €.",
+        "Immediate delivery."
+      ],
+      "no_incluye": [
+        "Breakdowns and damage caused by misuse of the machine.",
+        "Third-party motor liability and operating liability insurance: these are taken out by the customer, and any penalty arising from not holding them is at the customer's expense."
+      ],
+      "aviso": "Fees are approximate. The agreement is subject to approval by the finance company."
+    },
+    "humanoides": {
+      "kicker": "Rental · Events",
+      "h1": "Humanoids for events",
+      "lede": "Bring a humanoid robot to your trade fair, conference, opening or brand activation. We handle transport, set-up and support throughout the event.",
+      "imagen": "assets/escenarios/complejos-comerciales.webp",
+      "modelos": [
+        "rhx2",
+        "rha3",
+        "rha3-ultra"
+      ],
+      "texto": "Every event is different: the model, the number of rental days and the type of interaction all shape the budget. Tell us what you have in mind and we will put together a fixed-price proposal."
+    }
   }
 }

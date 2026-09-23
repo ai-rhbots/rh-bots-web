@@ -333,6 +333,11 @@
       "key": "aplicaciones"
     },
     {
+      "label": "Location",
+      "href": "alquiler.html",
+      "key": "alquiler"
+    },
+    {
       "label": "Accessoires",
       "href": "index.html",
       "key": "",
@@ -400,6 +405,171 @@
       "titulo": "Un contact plus direct, clair et humain",
       "texto": "Remplissez le formulaire et un spécialiste de RH·BOTS vous contactera dans les meilleurs délais. Vous pouvez aussi nous écrire directement si vous préférez.",
       "especialidad": "Robotique pour entreprises et événements"
+    }
+  },
+  "alquiler": {
+    "kicker": "Location RH·BOTS",
+    "h1": "Des robots en location, sans immobiliser de capital",
+    "lede": "Intégrez un robot à votre exploitation avec un loyer mensuel plutôt qu'un achat. Choisissez la formule adaptée à votre cas : nettoyage industriel en location longue durée, ou humanoïdes pour un événement ponctuel.",
+    "imagen": "assets/robots-portada.webp",
+    "opciones": [
+      {
+        "id": "limpieza",
+        "href": "alquiler-limpieza.html",
+        "titulo": "Location de robots de nettoyage industriel",
+        "texto": "Autolaveuses et balayeuses autonomes avec un loyer mensuel de 12 à 60 mois, maintenance et consommables inclus.",
+        "imagen": "assets/escenarios/fabricas-almacenes.webp"
+      },
+      {
+        "id": "humanoides",
+        "href": "alquiler-humanoides.html",
+        "titulo": "Location d'humanoïdes pour événements",
+        "texto": "Des humanoïdes pour salons, congrès, inaugurations et activations de marque, avec l'accompagnement de notre équipe.",
+        "imagen": "assets/escenarios/complejos-comerciales.webp"
+      }
+    ],
+    "limpieza": {
+      "kicker": "Location · Nettoyage industriel",
+      "h1": "Robots de nettoyage industriel en location",
+      "lede": "Autolaveuses et balayeuses autonomes avec loyer mensuel, maintenance et consommables inclus et livraison immédiate. Plus la durée d'engagement est longue, plus le loyer est bas.",
+      "imagen": "assets/escenarios/fabricas-almacenes.webp",
+      "modelos": [
+        {
+          "slug": "rhc5",
+          "etiqueta": "Robot autolaveuse",
+          "claim": "Balayage, lavage et séchage en un seul passage.",
+          "texto": "Solution autonome de nettoyage industriel qui intègre le balayage, le lavage et le séchage en un seul passage, avec une navigation intelligente par LiDAR et SLAM, une forte pression de lavage et une gestion automatisée de l'eau pour réduire l'intervention manuelle.",
+          "destacados": [
+            "Navigation LiDAR et SLAM",
+            "Gestion automatique de l'eau"
+          ],
+          "tarifas": [
+            [
+              "Démo",
+              "1 mois",
+              990.0
+            ],
+            [
+              "1 an",
+              "12 mois",
+              990.0
+            ],
+            [
+              "3 ans",
+              "36 mois",
+              895.29
+            ],
+            [
+              "4 ans",
+              "48 mois",
+              736.48
+            ],
+            [
+              "5 ans",
+              "60 mois",
+              641.49
+            ]
+          ]
+        },
+        {
+          "slug": "mt1",
+          "etiqueta": "Robot balayeuse",
+          "claim": "Balayeuse robotisée dotée d'IA : reconnaissance visuelle et nettoyage autonome 24/7.",
+          "texto": "Balayeuse robotisée à intelligence artificielle pour le nettoyage autonome de grandes surfaces. Sa reconnaissance visuelle par IA et sa fusion multicapteur lui donnent des performances comparables à celles d'une balayeuse autoportée, en travaillant 24/7 sans intervention manuelle.",
+          "destacados": [
+            "Reconnaissance visuelle par IA",
+            "Fonctionnement continu 24/7"
+          ],
+          "tarifas": [
+            [
+              "Démo",
+              "1 mois",
+              690.0
+            ],
+            [
+              "1 an",
+              "12 mois",
+              690.0
+            ],
+            [
+              "3 ans",
+              "36 mois",
+              597.23
+            ],
+            [
+              "4 ans",
+              "48 mois",
+              495.27
+            ],
+            [
+              "5 ans",
+              "60 mois",
+              434.29
+            ]
+          ]
+        },
+        {
+          "slug": "mt1-max",
+          "etiqueta": "Robot balayeuse",
+          "claim": "Balayeuse autonome pour grandes surfaces : perception 3D et nettoyage en temps réel.",
+          "texto": "Robot balayeur autonome pour grandes surfaces. Grâce à l'intelligence artificielle et à la navigation LiDAR 3D, il détecte les déchets et les obstacles en temps réel et adapte le nettoyage au fur et à mesure. Conçu pour les entrepôts, les usines, les parkings et les centres commerciaux.",
+          "destacados": [
+            "Navigation LiDAR 3D",
+            "Fonctionnement continu 24/7"
+          ],
+          "tarifas": [
+            [
+              "Démo",
+              "1 mois",
+              840.0
+            ],
+            [
+              "1 an",
+              "12 mois",
+              840.0
+            ],
+            [
+              "3 ans",
+              "36 mois",
+              753.63
+            ],
+            [
+              "4 ans",
+              "48 mois",
+              617.21
+            ],
+            [
+              "5 ans",
+              "60 mois",
+              535.62
+            ]
+          ]
+        }
+      ],
+      "cuota_nota": "Loyer avec maintenance et consommables inclus · livraison immédiate.",
+      "incluye": [
+        "Maintenance et réparation des défauts de fonctionnement.",
+        "Consommables de la machine.",
+        "Assurance dommages propres à la machine, avec une franchise de 200 €.",
+        "Livraison immédiate."
+      ],
+      "no_incluye": [
+        "Pannes et dommages causés par un mauvais usage de la machine.",
+        "Assurances de responsabilité civile circulation et exploitation : elles sont souscrites par le client, et toute sanction découlant de leur absence est à sa charge."
+      ],
+      "aviso": "Loyers approximatifs. Opération sous réserve d'acceptation par l'organisme financier."
+    },
+    "humanoides": {
+      "kicker": "Location · Événements",
+      "h1": "Humanoïdes pour événements",
+      "lede": "Amenez un robot humanoïde sur votre salon, votre congrès, votre inauguration ou votre activation de marque. Nous nous chargeons du transport, de la mise en service et de l'accompagnement pendant l'événement.",
+      "imagen": "assets/escenarios/complejos-comerciales.webp",
+      "modelos": [
+        "rhx2",
+        "rha3",
+        "rha3-ultra"
+      ],
+      "texto": "Chaque événement est différent : le modèle, le nombre de jours de location et le type d'interaction déterminent le budget. Dites-nous ce que vous avez en tête et nous vous préparons une proposition ferme."
     }
   }
 }
