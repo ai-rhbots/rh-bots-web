@@ -2622,7 +2622,7 @@ def alquiler_limpieza_page():
                      f'<span>{t("ver_ficha_tecnica")}</span>{CHEVRON}</a>')
         fondo = 'section--white' if i % 2 == 0 else 'section--light'
         lado = ' sector--invertido' if i % 2 else ''
-        out.append(f'''  <section class="section {fondo} sector{lado}" id="{e(m.get("slug", ""))}">
+        out.append(f'''  <section class="section {fondo} sector sector--alq{lado}" id="{e(m.get("slug", ""))}">
     <div class="wrap sector__grid">
       <figure class="sector__foto sector__foto--producto reveal">{foto}</figure>
       <div class="sector__texto reveal">

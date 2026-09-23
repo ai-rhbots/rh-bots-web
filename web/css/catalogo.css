@@ -1820,6 +1820,15 @@ html body :is(h3, h4, .kicker, .phero__claim, .que__destacado,
 .punto--acento{ color:var(--blue); }
 
 /* ---------- alquiler: tarifas, condiciones y fotos de producto ---------- */
+/* En las filas invertidas el texto cae en la columna estrecha (.9fr) y los
+   botones no caben en una línea. En alquiler se intercambian para que las
+   tres fichas tengan el mismo ancho de texto. */
+@media (min-width:861px){
+  .sector--alq.sector--invertido .sector__grid{
+    grid-template-columns:minmax(0, 1.1fr) minmax(0, .9fr);
+  }
+}
+
 /* El tope de altura va en la misma medida que el contenedor, no en %: dentro
    de un grid la fila crece con el contenido, así que un max-height:100% no
    llegaba a atar la foto vertical y se salía del recuadro. */
@@ -1844,6 +1853,9 @@ html body :is(h3, h4, .kicker, .phero__claim, .que__destacado,
 .alq__texto{ margin-top:14px; font-size:15px; line-height:1.7; color:var(--ink-66); }
 .alq__nota{ margin-top:12px; font-size:12.5px; line-height:1.5; color:var(--muted); }
 .alq__cta{ display:flex; flex-wrap:wrap; gap:12px; margin-top:clamp(20px, 2.2vw, 28px); }
+/* sin el mínimo de 264px los dos botones caben en una línea; en móvil
+   siguen apilándose porque no entran */
+.alq__cta .pill{ min-width:0; }
 
 .tarifa{
   width:100%; border-collapse:collapse; margin-top:clamp(22px, 2.4vw, 30px);
