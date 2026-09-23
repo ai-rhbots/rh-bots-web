@@ -2659,7 +2659,6 @@ def alquiler_limpieza_page():
           <ul class="incluye__lista">{no_incluye}</ul>
         </div>
       </div>
-      <p class="incluye__aviso reveal">{e(a.get('aviso', ''))}</p>
     </div>
   </section>
 ''')
