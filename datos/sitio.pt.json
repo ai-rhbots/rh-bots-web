@@ -565,7 +565,7 @@
       "imagen": "assets/robots-portada.webp",
       "precio_desde": "1.200 €",
       "precio_unidad": "/ dia",
-      "precio_nota": "Personalização, deslocação, alojamento e ajudas de custo são orçamentados consoante as características do evento.",
+      "precio_nota": "Deslocamo-nos a eventos em qualquer parte do mundo. A personalização, a deslocação, o alojamento e as ajudas de custo são orçamentados de acordo com as características do evento.",
       "atrae": {
         "kicker": "Uma experiência que atrai olhares",
         "titulo": "Se param diante do seu stand, já tem meia conversa ganha",
@@ -629,7 +629,7 @@
         "titulo": "Alugue o robô para o seu próximo evento",
         "incluye_titulo": "A jornada inclui",
         "incluye": [
-          "Robô humanoide",
+          "Robô humanoide RHX2 Ultra",
           "Operador e técnico",
           "Colocação em funcionamento",
           "Supervisão",
@@ -676,10 +676,6 @@
           ]
         ]
       },
-      "desplazamiento": {
-        "titulo": "O seu evento é fora da nossa zona?",
-        "texto": "Também nos deslocamos a feiras e eventos noutras cidades. A deslocação, o alojamento e as ajudas de custo são orçamentados à parte consoante a localização e a duração do evento."
-      },
       "galeria": {
         "kicker": "Em movimento",
         "titulo": "Veja-o antes de o imaginar no seu evento",
@@ -717,6 +713,10 @@
       },
       "faq": [
         [
+          "Que robô é exatamente?",
+          "O humanoide que levamos aos eventos é o RHX2 Ultra: 1,31 m de altura, perceção 3D e 30 graus de liberdade. Pode consultar a ficha técnica completa no catálogo."
+        ],
+        [
           "Quanto custa alugar o robô humanoide?",
           "O serviço está disponível desde 1.200 € + IVA por dia. O preço final depende da duração, da localização e das necessidades de personalização."
         ],
@@ -734,7 +734,7 @@
         ],
         [
           "O preço inclui a deslocação?",
-          "A deslocação, o alojamento e as ajudas de custo são orçamentados à parte quando forem necessários."
+          "Deslocamo-nos a eventos em qualquer parte do mundo. A deslocação, o alojamento e as ajudas de custo são orçamentados à parte consoante a localização e a duração do evento."
         ],
         [
           "Há um operador durante o evento?",

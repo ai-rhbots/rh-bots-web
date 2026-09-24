@@ -565,7 +565,7 @@
       "imagen": "assets/robots-portada.webp",
       "precio_desde": "1.200 €",
       "precio_unidad": "/ dia",
-      "precio_nota": "La personalització, el desplaçament, l'allotjament i les dietes es pressuposten segons les característiques de l'esdeveniment.",
+      "precio_nota": "Ens desplacem a esdeveniments a qualsevol lloc del món. La personalització, el desplaçament, l'allotjament i les dietes es pressuposten segons les característiques de l'esdeveniment.",
       "atrae": {
         "kicker": "Una experiència que atrau mirades",
         "titulo": "Que s'aturin davant del teu estand ja és mitja conversa",
@@ -629,7 +629,7 @@
         "titulo": "Lloga el robot per al teu pròxim esdeveniment",
         "incluye_titulo": "La jornada inclou",
         "incluye": [
-          "Robot humanoide",
+          "Robot humanoide RHX2 Ultra",
           "Operador i tècnic",
           "Posada en funcionament",
           "Supervisió",
@@ -676,10 +676,6 @@
           ]
         ]
       },
-      "desplazamiento": {
-        "titulo": "El teu esdeveniment és fora de la nostra zona?",
-        "texto": "També ens desplacem a fires i esdeveniments d'altres ciutats. El desplaçament, l'allotjament i les dietes es pressuposten a part segons la ubicació i la durada de l'esdeveniment."
-      },
       "galeria": {
         "kicker": "En moviment",
         "titulo": "Mira'l abans d'imaginar-lo al teu esdeveniment",
@@ -717,6 +713,10 @@
       },
       "faq": [
         [
+          "Quin robot és exactament?",
+          "L'humanoide que portem als esdeveniments és el RHX2 Ultra: 1,31 m d'alçada, percepció 3D i 30 graus de llibertat. Pots consultar-ne la fitxa tècnica completa al catàleg."
+        ],
+        [
           "Quant costa llogar el robot humanoide?",
           "El servei està disponible des de 1.200 € + IVA per dia. El preu final depèn de la durada, la ubicació i les necessitats de personalització."
         ],
@@ -734,7 +734,7 @@
         ],
         [
           "El preu inclou el desplaçament?",
-          "El desplaçament, l'allotjament i les dietes es pressuposten a part quan calguin."
+          "Ens desplacem a esdeveniments a qualsevol lloc del món. El desplaçament, l'allotjament i les dietes es pressuposten a part segons la ubicació i la durada de l'esdeveniment."
         ],
         [
           "Hi ha un operador durant l'esdeveniment?",

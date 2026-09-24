@@ -2035,24 +2035,19 @@ html body :is(h3, h4, .kicker, .phero__claim, .que__destacado,
 }
 .evgal__item:hover img{ transform:scale(1.05); }
 
-/* cierre: formulario sobre fondo índigo */
-.section--oscura{ background:var(--navy); color:#fff; }
-.evcierre__grid{
-  display:grid; grid-template-columns:minmax(0, .85fr) minmax(0, 1.15fr);
-  gap:clamp(30px, 4vw, 64px); align-items:center;
+/* el modelo que va a los eventos, bajo el titular del hero */
+.evmodelo{
+  margin-top:clamp(14px, 1.6vw, 18px);
+  font-family:var(--font-subtitulo); font-weight:700; font-size:13px;
+  letter-spacing:.04em; color:rgba(255,255,255,.88);
 }
-.evcierre__titulo{
-  font-family:var(--font-titulo); font-weight:700; letter-spacing:-.02em;
-  font-size:clamp(28px, 3.4vw, 46px); line-height:1.1; color:#fff;
-}
-.evcierre__lede{
-  margin-top:clamp(14px, 1.6vw, 20px); font-size:clamp(15px, 1.4vw, 17px);
-  line-height:1.7; color:rgba(255,255,255,.78);
-}
-.evcierre .ctoform__caja{ background:#fff; }
-@media (max-width:860px){
-  .evcierre__grid{ grid-template-columns:1fr; }
-}
+.evmodelo a{ margin-left:10px; color:var(--blue); border-bottom:1px solid rgba(0,158,227,.5); }
+.evmodelo a:hover{ color:#fff; border-color:#fff; }
+
+/* formulario de evento: más contenido que el de contacto, mismos bloques */
+.evform .form__row{ margin-top:12px; }
+.evform .ctoform__caja{ padding:clamp(22px, 2.4vw, 32px); }
+.evform .ctoform__titulo{ font-size:clamp(20px, 2vw, 26px); }
 
 /* eventos: los cuatro pasos caben en una fila, en tarjetas más pequeñas */
 .ctopasos--ev{ grid-template-columns:repeat(4, minmax(0, 1fr)); gap:clamp(12px, 1.2vw, 18px); }

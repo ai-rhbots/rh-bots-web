@@ -565,7 +565,7 @@
       "imagen": "assets/robots-portada.webp",
       "precio_desde": "1 200 €",
       "precio_unidad": "/ jour",
-      "precio_nota": "La personnalisation, le déplacement, l'hébergement et les repas sont devisés selon les caractéristiques de l'événement.",
+      "precio_nota": "Nous nous déplaçons pour des événements partout dans le monde. La personnalisation, le déplacement, l'hébergement et les frais de repas sont devisés selon les caractéristiques de l'événement.",
       "atrae": {
         "kicker": "Une expérience qui attire les regards",
         "titulo": "Qu'on s'arrête devant votre stand, c'est déjà la moitié de la conversation",
@@ -629,7 +629,7 @@
         "titulo": "Louez le robot pour votre prochain événement",
         "incluye_titulo": "La journée comprend",
         "incluye": [
-          "Robot humanoïde",
+          "Robot humanoïde RHX2 Ultra",
           "Opérateur et technicien",
           "Mise en service",
           "Supervision",
@@ -676,10 +676,6 @@
           ]
         ]
       },
-      "desplazamiento": {
-        "titulo": "Votre événement a lieu hors de notre zone ?",
-        "texto": "Nous nous déplaçons aussi sur des salons et des événements dans d'autres villes. Le déplacement, l'hébergement et les repas sont devisés à part selon le lieu et la durée de l'événement."
-      },
       "galeria": {
         "kicker": "En mouvement",
         "titulo": "Voyez-le avant de l'imaginer à votre événement",
@@ -717,6 +713,10 @@
       },
       "faq": [
         [
+          "De quel robot s'agit-il exactement ?",
+          "L'humanoïde que nous emmenons aux événements est le RHX2 Ultra : 1,31 m de haut, perception 3D et 30 degrés de liberté. Sa fiche technique complète est disponible dans le catalogue."
+        ],
+        [
           "Combien coûte la location du robot humanoïde ?",
           "Le service est disponible à partir de 1 200 € + TVA par jour. Le prix final dépend de la durée, du lieu et des besoins de personnalisation."
         ],
@@ -734,7 +734,7 @@
         ],
         [
           "Le prix inclut-il le déplacement ?",
-          "Le déplacement, l'hébergement et les repas sont devisés à part lorsqu'ils sont nécessaires."
+          "Nous nous déplaçons pour des événements partout dans le monde. Le déplacement, l'hébergement et les frais de repas sont devisés séparément selon le lieu et la durée de l'événement."
         ],
         [
           "Y a-t-il un opérateur pendant l'événement ?",

@@ -288,6 +288,9 @@ TEXTOS = {
                                    'zh': '必需配件', 'ca': 'Accessori necessari'},
     'iva_corto': {'es': '+ IVA', 'pt': '+ IVA', 'en': '+ VAT', 'fr': '+ TVA',
                    'zh': '+ 增值税', 'ca': '+ IVA'},
+    'ev_modelo': {'es': 'El humanoide RHX2 Ultra', 'pt': 'O humanoide RHX2 Ultra',
+                   'en': 'The RHX2 Ultra humanoid', 'fr': "L'humanoïde RHX2 Ultra",
+                   'zh': 'RHX2 Ultra 人形机器人', 'ca': "L'humanoide RHX2 Ultra"},
     'ev_solicitar': {'es': 'Solicitar presupuesto', 'pt': 'Pedir orçamento', 'en': 'Request a quote',
                       'fr': 'Demander un devis', 'zh': '索取报价', 'ca': 'Sol·licitar pressupost'},
     'ev_como_funciona': {'es': 'Ver cómo funciona', 'pt': 'Ver como funciona', 'en': 'See how it works',
@@ -2769,6 +2772,8 @@ def alquiler_humanoides_page():
       <p class="kicker hero__kicker">{e(a.get('kicker', ''))}</p>
       <h1 class="display display--hero">{e(a.get('h1', ''))}</h1>
       <p class="lede lede--hero">{e(a.get('lede', ''))}</p>
+      <p class="evmodelo">{t('ev_modelo')}
+        <a href="{base}robots/rhx2-ultra.html">{t('ver_ficha_tecnica')}</a></p>
       <p class="evprecio evprecio--hero">
         <span class="evprecio__etq">{t('ev_desde')}</span>
         <strong class="evprecio__num">{e(a.get('precio_desde', ''))}</strong>
@@ -2923,19 +2928,6 @@ def alquiler_humanoides_page():
   </section>
 ''')
 
-    # ---- 8 · desplazamientos
-    dz = a.get('desplazamiento')
-    if dz:
-        out.append(f'''  <section class="section section--light" id="desplazamientos">
-    <div class="wrap wrap--narrow">
-      <div class="nota nota--info reveal">
-        <p class="nota__titulo">{e(dz.get('titulo', ''))}</p>
-        <p>{e(dz.get('texto', ''))}</p>
-      </div>
-    </div>
-  </section>
-''')
-
     # ---- 10 · preguntas frecuentes
     if a.get('faq'):
         out.append(bloque_faq(a['faq']))
@@ -2949,18 +2941,24 @@ def alquiler_humanoides_page():
 
 
 def formulario_evento(base, cierre):
-    """Cierre de la página de eventos: sin distracciones, solo el formulario."""
+    """Cierre de la página de eventos, con la misma estructura que contacto:
+    columna de texto a la izquierda y tarjeta con el formulario a la derecha."""
     principal = CONTACTO['personas'][0] if CONTACTO.get('personas') else {}
     email = CONTACTO.get('email_directo') or principal.get('email', 'info@rh-bots.com')
-    return f'''  <section class="section section--oscura evcierre" id="presupuesto">
-    <div class="wrap evcierre__grid">
-      <div class="evcierre__texto reveal">
-        <h2 class="evcierre__titulo">{e(cierre.get('titulo', ''))}</h2>
-        <p class="evcierre__lede">{e(cierre.get('texto', ''))}</p>
-      </div>
+    return f'''  <section class="section section--light ctoform evform" id="presupuesto">
+    <div class="wrap ctoform__grid">
+      <aside class="ctoform__lado reveal">
+        <p class="kicker">{t('ev_solicitar')}</p>
+        <h2 class="ctoform__ladotitulo">{e(cierre.get('titulo', ''))}</h2>
+        <p class="ctoform__ladotexto">{e(cierre.get('texto', ''))}</p>
+      </aside>
+
       <div class="ctoform__caja reveal">
         <div class="ctoform__cab">
-          <h3 class="ctoform__titulo">{t('ev_form_titulo')}</h3>
+          <div>
+            <p class="kicker">{t('formulario')}</p>
+            <h2 class="ctoform__titulo">{t('ev_form_titulo')}</h2>
+          </div>
           <p class="ctoform__sello">{t('ev_form_sello')}</p>
         </div>
         <form class="form" id="eventoForm" data-email="{e(email)}" novalidate>
@@ -3006,11 +3004,11 @@ def formulario_evento(base, cierre):
           </div>
           <div class="form__row">
             <label for="ev-haria">{t('ev_que_haga')}</label>
-            <textarea id="ev-haria" name="haria" rows="3" placeholder="{t('ev_que_haga_ph')}"></textarea>
+            <textarea id="ev-haria" name="haria" rows="2" placeholder="{t('ev_que_haga_ph')}"></textarea>
           </div>
           <div class="form__row">
             <label for="ev-mensaje">{t('ev_mensaje')}</label>
-            <textarea id="ev-mensaje" name="mensaje" rows="4" placeholder="{t('ev_mensaje_ph')}" required></textarea>
+            <textarea id="ev-mensaje" name="mensaje" rows="3" placeholder="{t('ev_mensaje_ph')}" required></textarea>
           </div>
           <div class="form__consent">
             <input id="ev-privacidad" name="privacidad" type="checkbox" required>
@@ -3024,7 +3022,6 @@ def formulario_evento(base, cierre):
     </div>
   </section>
 '''
-
 
 
 def contacto_page():

@@ -631,7 +631,7 @@
       "imagen": "assets/robots-portada.webp",
       "precio_desde": "1.200 €",
       "precio_unidad": "/ día",
-      "precio_nota": "Personalización, desplazamiento, alojamiento y dietas se presupuestan según las características del evento.",
+      "precio_nota": "Nos desplazamos a eventos en cualquier parte del mundo. La personalización, el desplazamiento, el alojamiento y las dietas se presupuestan según las características del evento.",
       "atrae": {
         "kicker": "Una experiencia que atrae miradas",
         "titulo": "Que se paren delante de tu stand ya es media conversación",
@@ -695,7 +695,7 @@
         "titulo": "Alquila el robot para tu próximo evento",
         "incluye_titulo": "La jornada incluye",
         "incluye": [
-          "Robot humanoide",
+          "Robot humanoide RHX2 Ultra",
           "Operador y técnico",
           "Puesta en funcionamiento",
           "Supervisión",
@@ -742,10 +742,6 @@
           ]
         ]
       },
-      "desplazamiento": {
-        "titulo": "¿Tu evento está fuera de nuestra zona?",
-        "texto": "También nos desplazamos a ferias y eventos en otras ciudades. El desplazamiento, el alojamiento y las dietas se presupuestan aparte según la ubicación y la duración del evento."
-      },
       "galeria": {
         "kicker": "En movimiento",
         "titulo": "Míralo antes de imaginarlo en tu evento",
@@ -783,6 +779,10 @@
       },
       "faq": [
         [
+          "¿Qué robot es exactamente?",
+          "El humanoide que llevamos a los eventos es el RHX2 Ultra: 1,31 m de altura, percepción 3D y 30 grados de libertad. Puedes consultar su ficha técnica completa en el catálogo."
+        ],
+        [
           "¿Cuánto cuesta alquilar el robot humanoide?",
           "El servicio está disponible desde 1.200 € + IVA por día. El precio final depende de la duración, la ubicación y las necesidades de personalización."
         ],
@@ -800,7 +800,7 @@
         ],
         [
           "¿El precio incluye desplazamiento?",
-          "El desplazamiento, el alojamiento y las dietas se presupuestan aparte cuando sean necesarios."
+          "Nos desplazamos a eventos en cualquier parte del mundo. El desplazamiento, el alojamiento y las dietas se presupuestan aparte según la ubicación y la duración del evento."
         ],
         [
           "¿Hay un operador durante el evento?",

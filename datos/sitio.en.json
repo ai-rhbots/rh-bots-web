@@ -567,7 +567,7 @@
       "imagen": "assets/robots-portada.webp",
       "precio_desde": "1,200 €",
       "precio_unidad": "/ day",
-      "precio_nota": "Customisation, travel, accommodation and subsistence are quoted according to the specifics of the event.",
+      "precio_nota": "We travel to events anywhere in the world. Customisation, travel, accommodation and subsistence are quoted according to the specifics of the event.",
       "atrae": {
         "kicker": "An experience that turns heads",
         "titulo": "Getting people to stop at your stand is half the conversation",
@@ -631,7 +631,7 @@
         "titulo": "Hire the robot for your next event",
         "incluye_titulo": "The day includes",
         "incluye": [
-          "Humanoid robot",
+          "RHX2 Ultra humanoid robot",
           "Operator and technician",
           "Getting it up and running",
           "Supervision",
@@ -678,10 +678,6 @@
           ]
         ]
       },
-      "desplazamiento": {
-        "titulo": "Is your event outside our area?",
-        "texto": "We also travel to trade fairs and events in other cities. Travel, accommodation and subsistence are quoted separately depending on the location and the duration of the event."
-      },
       "galeria": {
         "kicker": "In motion",
         "titulo": "See it before you picture it at your event",
@@ -719,6 +715,10 @@
       },
       "faq": [
         [
+          "Which robot is it exactly?",
+          "The humanoid we take to events is the RHX2 Ultra: 1.31 m tall, 3D perception and 30 degrees of freedom. You can see its full technical sheet in the catalogue."
+        ],
+        [
           "How much does it cost to hire the humanoid robot?",
           "The service is available from 1,200 € + VAT per day. The final price depends on the duration, the location and the customisation required."
         ],
@@ -736,7 +736,7 @@
         ],
         [
           "Does the price include travel?",
-          "Travel, accommodation and subsistence are quoted separately whenever they are needed."
+          "We travel to events anywhere in the world. Travel, accommodation and subsistence are quoted separately depending on the location and the duration of the event."
         ],
         [
           "Is there an operator during the event?",
