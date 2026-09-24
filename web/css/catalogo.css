@@ -1940,14 +1940,10 @@ html body :is(h3, h4, .kicker, .phero__claim, .que__destacado,
 }
 .evprecio__num--sm{ font-size:clamp(24px, 2.4vw, 32px); }
 .evprecio__unidad{ font-size:clamp(14px, 1.3vw, 17px); font-weight:700; color:var(--ink-66); }
-.evprecio--hero{ margin-top:clamp(20px, 2.4vw, 30px); }
-.evprecio--hero .evprecio__etq{ color:rgba(255,255,255,.62); }
-.evprecio--hero .evprecio__num{ color:#fff; }
-.evprecio--hero .evprecio__unidad{ color:rgba(255,255,255,.82); }
 .evprecio--linea{ margin-top:clamp(18px, 2vw, 24px); }
 .evprecio__nota{
-  margin-top:14px; max-width:46ch;
-  font-size:12.5px; line-height:1.6; color:rgba(255,255,255,.62);
+  margin-top:12px; max-width:52ch;
+  font-size:12.5px; line-height:1.6; color:var(--muted);
 }
 .hero--evento .hero__cta{ margin-top:clamp(18px, 2vw, 24px); }
 
@@ -2037,12 +2033,16 @@ html body :is(h3, h4, .kicker, .phero__claim, .que__destacado,
 
 /* el modelo que va a los eventos, bajo el titular del hero */
 .evmodelo{
-  margin-top:clamp(14px, 1.6vw, 18px);
-  font-family:var(--font-subtitulo); font-weight:700; font-size:13px;
-  letter-spacing:.04em; color:rgba(255,255,255,.88);
+  margin-top:clamp(20px, 2.2vw, 28px);
+  padding-top:clamp(18px, 2vw, 24px); border-top:1px solid rgba(40,40,40,.10);
+  font-family:var(--font-subtitulo); font-weight:700; font-size:13.5px;
+  letter-spacing:.04em; color:var(--navy);
 }
-.evmodelo a{ margin-left:10px; color:var(--blue); border-bottom:1px solid rgba(0,158,227,.5); }
-.evmodelo a:hover{ color:#fff; border-color:#fff; }
+.evmodelo a{ margin-left:10px; color:var(--blue); border-bottom:1px solid rgba(0,158,227,.45); }
+.evmodelo a:hover{ color:var(--blue-deep); border-color:var(--blue-deep); }
+/* el precio del segundo bloque, algo más contenido que el de tarifas */
+.sector__texto .evprecio{ margin-top:10px; }
+.sector__texto .evprecio__num{ font-size:clamp(28px, 3vw, 40px); }
 
 /* formulario de evento: más contenido que el de contacto, mismos bloques */
 .evform .form__row{ margin-top:12px; }

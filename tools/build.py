@@ -2772,18 +2772,10 @@ def alquiler_humanoides_page():
       <p class="kicker hero__kicker">{e(a.get('kicker', ''))}</p>
       <h1 class="display display--hero">{e(a.get('h1', ''))}</h1>
       <p class="lede lede--hero">{e(a.get('lede', ''))}</p>
-      <p class="evmodelo">{t('ev_modelo')}
-        <a href="{base}robots/rhx2-ultra.html">{t('ver_ficha_tecnica')}</a></p>
-      <p class="evprecio evprecio--hero">
-        <span class="evprecio__etq">{t('ev_desde')}</span>
-        <strong class="evprecio__num">{e(a.get('precio_desde', ''))}</strong>
-        <span class="evprecio__unidad">{e(a.get('precio_unidad', ''))} {t('iva_corto')}</span>
-      </p>
       <div class="hero__cta">
         <a class="pill" href="#presupuesto"><span>{t('ev_solicitar')}</span>{CHEVRON}</a>
         <a class="pill pill--line" href="#como-funciona"><span>{t('ev_como_funciona')}</span>{CHEVRON}</a>
       </div>
-      <p class="evprecio__nota">{e(a.get('precio_nota', ''))}</p>
     </div>
   </section>
 ''')
@@ -2801,6 +2793,14 @@ def alquiler_humanoides_page():
         <p class="kicker">{e(at.get('kicker', ''))}</p>
         <h2 class="sector__titulo">{e(at.get('titulo', ''))}</h2>
         {parrafos}
+        <p class="evmodelo">{t('ev_modelo')}
+          <a href="{base}robots/rhx2-ultra.html">{t('ver_ficha_tecnica')}</a></p>
+        <p class="evprecio">
+          <span class="evprecio__etq">{t('ev_desde')}</span>
+          <strong class="evprecio__num">{e(a.get('precio_desde', ''))}</strong>
+          <span class="evprecio__unidad">{e(a.get('precio_unidad', ''))} {t('iva_corto')}</span>
+        </p>
+        <p class="evprecio__nota">{e(a.get('precio_nota', ''))}</p>
         <div class="alq__cta">
           <a class="pill" href="#presupuesto"><span>{t('ev_solicitar')}</span>{CHEVRON}</a>
         </div>
