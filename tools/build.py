@@ -2816,10 +2816,10 @@ def alquiler_humanoides_page():
             f'<li class="evcard reveal"><span class="evcard__num" aria-hidden="true">{i:02d}</span>'
             f'<h3>{e(tit)}</h3><p>{e(txt)}</p></li>'
             for i, (tit, txt) in enumerate(cap.get('items', []), 1))
-        out.append(f'''  <section class="section section--light" id="capacidades">
+        out.append(f'''  <section class="section section--navy" id="capacidades">
     <div class="wrap">
       <header class="section-head reveal"><p class="kicker">{e(cap.get('kicker', ''))}</p>
-        <h2 class="h-section">{e(cap.get('titulo', ''))}</h2></header>
+        <h2 class="h-section h-section--onblue onblue">{e(cap.get('titulo', ''))}</h2></header>
       <ul class="evcards">{tarjetas}</ul>
     </div>
   </section>
@@ -2856,10 +2856,10 @@ def alquiler_humanoides_page():
     tf = a.get('tarifa')
     if tf:
         incluye = ''.join(f'<li>{e(x)}</li>' for x in tf.get('incluye', []))
-        out.append(f'''  <section class="section section--light" id="tarifas">
+        out.append(f'''  <section class="section section--navy" id="tarifas">
     <div class="wrap wrap--narrow">
       <header class="section-head reveal"><p class="kicker">{e(tf.get('kicker', ''))}</p>
-        <h2 class="h-section">{e(tf.get('titulo', ''))}</h2></header>
+        <h2 class="h-section h-section--onblue onblue">{e(tf.get('titulo', ''))}</h2></header>
       <div class="evtarifa reveal">
         <p class="evprecio evprecio--grande">
           <span class="evprecio__etq">{t('ev_desde')}</span>

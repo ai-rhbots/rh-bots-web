@@ -409,7 +409,7 @@
   },
   "alquiler": {
     "kicker": "Lloguer RH·BOTS",
-    "h1": "Robots de lloguer, sense immobilitzar capital",
+    "h1": "Lloga un robot per un dia o per cinc anys",
     "lede": "Incorpora un robot a la teva operativa amb una quota mensual en lloc d'una compra. Tria la modalitat que encaixa amb el teu cas: neteja industrial en rènting a llarg termini, o humanoides per a un esdeveniment puntual.",
     "imagen": "assets/escenarios/edificios-oficinas.webp",
     "opciones": [

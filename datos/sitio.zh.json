@@ -409,7 +409,7 @@
   },
   "alquiler": {
     "kicker": "RH·BOTS 租赁",
-    "h1": "机器人租赁，无需占用资金",
+    "h1": "租用机器人，一天或五年都可以",
     "lede": "以月租方式将机器人引入日常作业，无需一次性购置。可按实际情况选择方案：工业清洁机器人长期租赁，或活动场合的人形机器人短期租赁。",
     "imagen": "assets/escenarios/edificios-oficinas.webp",
     "opciones": [
