@@ -411,7 +411,7 @@
     "kicker": "Location RH·BOTS",
     "h1": "Des robots en location, sans immobiliser de capital",
     "lede": "Intégrez un robot à votre exploitation avec un loyer mensuel plutôt qu'un achat. Choisissez la formule adaptée à votre cas : nettoyage industriel en location longue durée, ou humanoïdes pour un événement ponctuel.",
-    "imagen": "assets/robots-portada.webp",
+    "imagen": "assets/escenarios/edificios-oficinas.webp",
     "opciones": [
       {
         "id": "limpieza",
@@ -562,7 +562,7 @@
       "kicker": "Location · Événements",
       "h1": "Humanoïdes pour événements",
       "lede": "Amenez un robot humanoïde sur votre salon, votre congrès, votre inauguration ou votre activation de marque. Nous nous chargeons du transport, de la mise en service et de l'accompagnement pendant l'événement.",
-      "imagen": "assets/escenarios/complejos-comerciales.webp",
+      "imagen": "assets/robots-portada.webp",
       "modelos": [
         "rhx2",
         "rha3",

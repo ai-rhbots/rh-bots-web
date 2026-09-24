@@ -411,7 +411,7 @@
     "kicker": "Lloguer RH·BOTS",
     "h1": "Robots de lloguer, sense immobilitzar capital",
     "lede": "Incorpora un robot a la teva operativa amb una quota mensual en lloc d'una compra. Tria la modalitat que encaixa amb el teu cas: neteja industrial en rènting a llarg termini, o humanoides per a un esdeveniment puntual.",
-    "imagen": "assets/robots-portada.webp",
+    "imagen": "assets/escenarios/edificios-oficinas.webp",
     "opciones": [
       {
         "id": "limpieza",
@@ -562,7 +562,7 @@
       "kicker": "Lloguer · Esdeveniments",
       "h1": "Humanoides per a esdeveniments",
       "lede": "Porta un robot humanoide a la teva fira, congrés, inauguració o activació de marca. Ens encarreguem del trasllat, la posada en marxa i l'acompanyament durant l'esdeveniment.",
-      "imagen": "assets/escenarios/complejos-comerciales.webp",
+      "imagen": "assets/robots-portada.webp",
       "modelos": [
         "rhx2",
         "rha3",

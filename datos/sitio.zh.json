@@ -411,7 +411,7 @@
     "kicker": "RH·BOTS 租赁",
     "h1": "机器人租赁，无需占用资金",
     "lede": "以月租方式将机器人引入日常作业，无需一次性购置。可按实际情况选择方案：工业清洁机器人长期租赁，或活动场合的人形机器人短期租赁。",
-    "imagen": "assets/robots-portada.webp",
+    "imagen": "assets/escenarios/edificios-oficinas.webp",
     "opciones": [
       {
         "id": "limpieza",
@@ -562,7 +562,7 @@
       "kicker": "租赁 · 活动",
       "h1": "活动用人形机器人",
       "lede": "把人形机器人带到您的展会、论坛、开业典礼或品牌活动现场。运输、现场部署以及活动期间的全程协助均由我们负责。",
-      "imagen": "assets/escenarios/complejos-comerciales.webp",
+      "imagen": "assets/robots-portada.webp",
       "modelos": [
         "rhx2",
         "rha3",

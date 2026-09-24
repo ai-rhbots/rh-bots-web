@@ -413,7 +413,7 @@
     "kicker": "RH·BOTS Rental",
     "h1": "Robots on rental, without tying up capital",
     "lede": "Bring a robot into your operation for a monthly fee rather than an outright purchase. Choose the option that fits your case: industrial cleaning on a long-term rental, or humanoids for a one-off event.",
-    "imagen": "assets/robots-portada.webp",
+    "imagen": "assets/escenarios/edificios-oficinas.webp",
     "opciones": [
       {
         "id": "limpieza",
@@ -564,7 +564,7 @@
       "kicker": "Rental · Events",
       "h1": "Humanoids for events",
       "lede": "Bring a humanoid robot to your trade fair, conference, opening or brand activation. We handle transport, set-up and support throughout the event.",
-      "imagen": "assets/escenarios/complejos-comerciales.webp",
+      "imagen": "assets/robots-portada.webp",
       "modelos": [
         "rhx2",
         "rha3",

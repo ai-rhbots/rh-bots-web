@@ -411,7 +411,7 @@
     "kicker": "Aluguer RH·BOTS",
     "h1": "Robôs em aluguer, sem imobilizar capital",
     "lede": "Integre um robô na sua operação com uma mensalidade em vez de uma compra. Escolha a modalidade que se adequa ao seu caso: limpeza industrial em aluguer de longa duração, ou humanoides para um evento pontual.",
-    "imagen": "assets/robots-portada.webp",
+    "imagen": "assets/escenarios/edificios-oficinas.webp",
     "opciones": [
       {
         "id": "limpieza",
@@ -562,7 +562,7 @@
       "kicker": "Aluguer · Eventos",
       "h1": "Humanoides para eventos",
       "lede": "Leve um robô humanoide à sua feira, congresso, inauguração ou ativação de marca. Tratamos do transporte, da colocação em funcionamento e do acompanhamento durante o evento.",
-      "imagen": "assets/escenarios/complejos-comerciales.webp",
+      "imagen": "assets/robots-portada.webp",
       "modelos": [
         "rhx2",
         "rha3",
