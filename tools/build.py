@@ -286,6 +286,55 @@ TEXTOS = {
     'requiere_accesorio_titulo': {'es': 'Accesorio necesario', 'pt': 'Acessório necessário',
                                    'en': 'Required accessory', 'fr': 'Accessoire nécessaire',
                                    'zh': '必需配件', 'ca': 'Accessori necessari'},
+    'iva_corto': {'es': '+ IVA', 'pt': '+ IVA', 'en': '+ VAT', 'fr': '+ TVA',
+                   'zh': '+ 增值税', 'ca': '+ IVA'},
+    'ev_solicitar': {'es': 'Solicitar presupuesto', 'pt': 'Pedir orçamento', 'en': 'Request a quote',
+                      'fr': 'Demander un devis', 'zh': '索取报价', 'ca': 'Sol·licitar pressupost'},
+    'ev_como_funciona': {'es': 'Ver cómo funciona', 'pt': 'Ver como funciona', 'en': 'See how it works',
+                          'fr': 'Voir comment ça marche', 'zh': '了解服务流程', 'ca': 'Veure com funciona'},
+    'ev_desde': {'es': 'Desde', 'pt': 'Desde', 'en': 'From', 'fr': 'À partir de', 'zh': '起价', 'ca': 'Des de'},
+    'ev_dia': {'es': '/ día', 'pt': '/ dia', 'en': '/ day', 'fr': '/ jour', 'zh': '/ 天', 'ca': '/ dia'},
+    'ev_personalizar': {'es': 'Quiero personalizar el robot', 'pt': 'Quero personalizar o robô',
+                         'en': 'I want to customise the robot', 'fr': 'Je veux personnaliser le robot',
+                         'zh': '我想定制机器人', 'ca': 'Vull personalitzar el robot'},
+    'ev_personalizacion_desde': {'es': 'Personalización desde', 'pt': 'Personalização desde',
+                                  'en': 'Customisation from', 'fr': 'Personnalisation à partir de',
+                                  'zh': '定制起价', 'ca': 'Personalització des de'},
+    'ev_form_titulo': {'es': 'Cuéntanos tu evento', 'pt': 'Fale-nos do seu evento', 'en': 'Tell us about your event',
+                        'fr': 'Parlez-nous de votre événement', 'zh': '介绍您的活动', 'ca': "Explica'ns el teu esdeveniment"},
+    'ev_form_sello': {'es': 'Respuesta en 24-48 h laborables', 'pt': 'Resposta em 24-48 h úteis',
+                       'en': 'Reply within 24-48 working hours', 'fr': 'Réponse sous 24-48 h ouvrées',
+                       'zh': '24-48个工作小时内回复', 'ca': 'Resposta en 24-48 h laborables'},
+    'ev_fecha': {'es': 'Fecha del evento', 'pt': 'Data do evento', 'en': 'Event date',
+                  'fr': "Date de l'événement", 'zh': '活动日期', 'ca': 'Data de l\'esdeveniment'},
+    'ev_ciudad': {'es': 'Ciudad', 'pt': 'Cidade', 'en': 'City', 'fr': 'Ville', 'zh': '城市', 'ca': 'Ciutat'},
+    'ev_ciudad_ph': {'es': 'Valencia, Madrid, Lisboa…', 'pt': 'Lisboa, Porto, Madrid…',
+                      'en': 'Valencia, Madrid, Lisbon…', 'fr': 'Valence, Madrid, Lisbonne…',
+                      'zh': '瓦伦西亚、马德里、里斯本……', 'ca': 'València, Madrid, Lisboa…'},
+    'ev_dias': {'es': 'Número de días', 'pt': 'Número de dias', 'en': 'Number of days',
+                 'fr': 'Nombre de jours', 'zh': '天数', 'ca': 'Nombre de dies'},
+    'ev_tipo': {'es': 'Tipo de evento', 'pt': 'Tipo de evento', 'en': 'Type of event',
+                 'fr': "Type d'événement", 'zh': '活动类型', 'ca': "Tipus d'esdeveniment"},
+    'ev_tipo_ph': {'es': 'Feria, congreso, lanzamiento…', 'pt': 'Feira, congresso, lançamento…',
+                    'en': 'Trade fair, congress, product launch…', 'fr': 'Salon, congrès, lancement…',
+                    'zh': '展会、大会、新品发布……', 'ca': 'Fira, congrés, llançament…'},
+    'ev_que_haga': {'es': '¿Qué te gustaría que hiciera el robot?', 'pt': 'O que gostaria que o robô fizesse?',
+                     'en': 'What would you like the robot to do?', 'fr': 'Que souhaitez-vous que le robot fasse ?',
+                     'zh': '您希望机器人做什么？', 'ca': 'Què t\'agradaria que fes el robot?'},
+    'ev_que_haga_ph': {'es': 'Bailar, recibir visitantes, presentar un producto…',
+                        'pt': 'Dançar, receber visitantes, apresentar um produto…',
+                        'en': 'Dance, greet visitors, present a product…',
+                        'fr': 'Danser, accueillir les visiteurs, présenter un produit…',
+                        'zh': '跳舞、迎宾、介绍产品……',
+                        'ca': 'Ballar, rebre visitants, presentar un producte…'},
+    'ev_mensaje': {'es': 'Mensaje', 'pt': 'Mensagem', 'en': 'Message', 'fr': 'Message',
+                    'zh': '留言', 'ca': 'Missatge'},
+    'ev_mensaje_ph': {'es': 'Cualquier detalle que nos ayude a preparar la propuesta.',
+                       'pt': 'Qualquer detalhe que nos ajude a preparar a proposta.',
+                       'en': 'Anything else that helps us prepare the proposal.',
+                       'fr': 'Tout détail qui nous aide à préparer la proposition.',
+                       'zh': '任何有助于我们准备方案的细节。',
+                       'ca': 'Qualsevol detall que ens ajudi a preparar la proposta.'},
     'iva_no_incluido': {'es': 'IVA no incluido', 'pt': 'IVA não incluído',
                          'en': 'VAT not included', 'fr': 'TVA non incluse',
                          'zh': '不含增值税', 'ca': 'IVA no inclòs'},
@@ -307,12 +356,29 @@ TEXTOS = {
                                   'fr': 'Location de robots de nettoyage industriel | RH·BOTS',
                                   'zh': '工业清洁机器人租赁 | RH·BOTS',
                                   'ca': 'Lloguer de robots de neteja industrial | RH·BOTS'},
-    'alquiler_humanoides_titulo': {'es': 'Alquiler de humanoides para eventos | RH·BOTS',
-                                    'pt': 'Aluguer de humanoides para eventos | RH·BOTS',
-                                    'en': 'Humanoid rental for events | RH·BOTS',
-                                    'fr': "Location d'humanoïdes pour événements | RH·BOTS",
-                                    'zh': '活动人形机器人租赁 | RH·BOTS',
-                                    'ca': "Lloguer d'humanoides per a esdeveniments | RH·BOTS"},
+    'alquiler_humanoides_titulo': {'es': 'Alquiler de robot humanoide para eventos y ferias | RH·BOTS',
+                                    'pt': 'Aluguer de robô humanoide para eventos e feiras | RH·BOTS',
+                                    'en': 'Humanoid robot hire for events and trade fairs | RH·BOTS',
+                                    'fr': "Location de robot humanoïde pour événements | RH·BOTS",
+                                    'zh': '活动与展会人形机器人租赁 | RH·BOTS',
+                                    'ca': "Lloguer de robot humanoide per a esdeveniments | RH·BOTS"},
+    'alquiler_humanoides_desc': {'es': 'Alquila un robot humanoide para ferias, congresos, stands y eventos '
+                                        'corporativos. Baila, interactúa y atrae visitantes a tu marca. '
+                                        'Desde 1.200 €/día + IVA.',
+                                  'pt': 'Alugue um robô humanoide para feiras, congressos, stands e eventos '
+                                        'corporativos. Dança, interage e atrai visitantes à sua marca. '
+                                        'Desde 1.200 €/dia + IVA.',
+                                  'en': 'Hire a humanoid robot for trade fairs, conferences, stands and '
+                                        'corporate events. It dances, interacts and draws visitors to your '
+                                        'brand. From 1,200 €/day + VAT.',
+                                  'fr': 'Louez un robot humanoïde pour salons, congrès, stands et événements '
+                                        "d'entreprise. Il danse, interagit et attire les visiteurs vers votre "
+                                        'marque. À partir de 1 200 €/jour + TVA.',
+                                  'zh': '为展会、大会、展台和企业活动租赁人形机器人。它会跳舞、与观众互动，'
+                                        '为您的品牌吸引人流。每天1,200 €起（不含增值税）。',
+                                  'ca': "Lloga un robot humanoide per a fires, congressos, estands i "
+                                        'esdeveniments corporatius. Balla, interactua i atrau visitants a la '
+                                        'teva marca. Des de 1.200 €/dia + IVA.'},
     'tarifa_titulo': {'es': 'Cuotas de alquiler', 'pt': 'Mensalidades de aluguer',
                        'en': 'Rental rates', 'fr': 'Loyers mensuels',
                        'zh': '租赁月费', 'ca': 'Quotes de lloguer'},
@@ -2685,14 +2751,17 @@ def alquiler_limpieza_page():
 
 
 def alquiler_humanoides_page():
-    """Humanoides para eventos: sin tarifa cerrada, presupuesto a medida."""
+    """Alquiler de humanoides para eventos: una experiencia, no una máquina."""
     base = nivel(LANG)
     a = ALQUILER.get('humanoides', {})
-    out = [head(t('alquiler_humanoides_titulo'), a.get('lede', ''), base, 'alquiler-humanoides.html'),
+    precio = f"{t('ev_desde')} {a.get('precio_desde', '')} {a.get('precio_unidad', '')} + IVA"
+    out = [head(t('alquiler_humanoides_titulo'), t('alquiler_humanoides_desc'), base, 'alquiler-humanoides.html',
+                og_img=a.get('imagen'), extra_jsonld=[schema_faqpage(a.get("faq", []))]),
            header(base, 'alquiler', 'alquiler-humanoides.html'), '<main id="contenido">']
 
+    # ---- 1 · hero
     out.append(f'''
-  <section class="hero hero--catalogo" id="inicio">
+  <section class="hero hero--catalogo hero--evento" id="inicio">
     <img class="hero__foto" src="{base}{e(a.get('imagen', ''))}" alt="" aria-hidden="true" fetchpriority="high">
     <div class="hero__velo" aria-hidden="true"></div>
     <div class="hero__diagonal" aria-hidden="true"></div>
@@ -2700,41 +2769,262 @@ def alquiler_humanoides_page():
       <p class="kicker hero__kicker">{e(a.get('kicker', ''))}</p>
       <h1 class="display display--hero">{e(a.get('h1', ''))}</h1>
       <p class="lede lede--hero">{e(a.get('lede', ''))}</p>
+      <p class="evprecio evprecio--hero">
+        <span class="evprecio__etq">{t('ev_desde')}</span>
+        <strong class="evprecio__num">{e(a.get('precio_desde', ''))}</strong>
+        <span class="evprecio__unidad">{e(a.get('precio_unidad', ''))} {t('iva_corto')}</span>
+      </p>
       <div class="hero__cta">
-        <a class="pill" href="{base}contacto.html"><span>{t('pedir_presupuesto')}</span>{CHEVRON}</a>
+        <a class="pill" href="#presupuesto"><span>{t('ev_solicitar')}</span>{CHEVRON}</a>
+        <a class="pill pill--line" href="#como-funciona"><span>{t('ev_como_funciona')}</span>{CHEVRON}</a>
+      </div>
+      <p class="evprecio__nota">{e(a.get('precio_nota', ''))}</p>
+    </div>
+  </section>
+''')
+
+    # ---- 2 · una experiencia que atrae miradas
+    at = a.get('atrae')
+    if at:
+        parrafos = ''.join(f'<p class="sector__lede">{e(x)}</p>' for x in at.get('parrafos', []))
+        out.append(f'''  <section class="section section--white sector" id="atraccion">
+    <div class="wrap sector__grid">
+      <figure class="sector__foto sector__foto--producto reveal">
+        <img src="{base}{e(at.get('imagen', ''))}" alt="{e(at.get('titulo', ''))}" loading="lazy">
+      </figure>
+      <div class="sector__texto reveal">
+        <p class="kicker">{e(at.get('kicker', ''))}</p>
+        <h2 class="sector__titulo">{e(at.get('titulo', ''))}</h2>
+        {parrafos}
+        <div class="alq__cta">
+          <a class="pill" href="#presupuesto"><span>{t('ev_solicitar')}</span>{CHEVRON}</a>
+        </div>
       </div>
     </div>
   </section>
 ''')
 
-    tarjetas = ''
-    for slug in a.get('modelos', []):
-        prod = BY_SLUG.get(slug)
-        if not prod:
-            continue
-        media = (f'<img src="{base}{e(prod["hero"])}" alt="{e(prod["name"])}" loading="lazy">'
-                 if prod.get('hero') else placeholder(prod['family'], prod['name']))
-        tarjetas += (
-            f'<li class="pcard reveal"><a href="{base}robots/{prod["slug"]}.html">'
-            f'<div class="pcard__media">{media}</div>'
-            f'<div class="pcard__body"><div class="badges">{badges(prod)}</div>'
-            f'<h3>{e(prod["name"])}</h3><p>{e(prod["claim"])}</p>'
-            f'<p class="pcard__precio">{t("precio_consulta")}</p>'
-            f'<span class="pcard__more">{t("ver_ficha_tecnica")}</span></div></a></li>')
-    if tarjetas:
-        out.append(f'''  <section class="section section--white">
+    # ---- 3 · qué puede hacer
+    cap = a.get('capacidades')
+    if cap:
+        tarjetas = ''.join(
+            f'<li class="evcard reveal"><span class="evcard__num" aria-hidden="true">{i:02d}</span>'
+            f'<h3>{e(tit)}</h3><p>{e(txt)}</p></li>'
+            for i, (tit, txt) in enumerate(cap.get('items', []), 1))
+        out.append(f'''  <section class="section section--light" id="capacidades">
     <div class="wrap">
-      <header class="section-head reveal"><h2 class="h-section">{t('modelos_disponibles')}</h2>
-        <p class="sub">{e(a.get('texto', ''))}</p></header>
-      <ul class="pgrid">{tarjetas}</ul>
+      <header class="section-head reveal"><p class="kicker">{e(cap.get('kicker', ''))}</p>
+        <h2 class="h-section">{e(cap.get('titulo', ''))}</h2></header>
+      <ul class="evcards">{tarjetas}</ul>
     </div>
   </section>
 ''')
 
-    out.append(bloque_elegir(base, t('alquiler_cta_titulo'), t('alquiler_cta_eventos')))
+    # ---- 4 · personalización
+    pz = a.get('personaliza')
+    if pz:
+        chips = ''.join(f'<li>{e(x)}</li>' for x in pz.get('opciones', []))
+        out.append(f'''  <section class="section section--white sector sector--invertido" id="personalizar">
+    <div class="wrap sector__grid">
+      <figure class="sector__foto sector__foto--producto reveal">
+        <img src="{base}{e(pz.get('imagen', ''))}" alt="{e(pz.get('titulo', ''))}" loading="lazy">
+      </figure>
+      <div class="sector__texto reveal">
+        <p class="kicker">{e(pz.get('kicker', ''))}</p>
+        <h2 class="sector__titulo">{e(pz.get('titulo', ''))}</h2>
+        <p class="sector__lede">{e(pz.get('texto', ''))}</p>
+        <ul class="evchips">{chips}</ul>
+        <p class="evprecio evprecio--linea">
+          <span class="evprecio__etq">{t('ev_personalizacion_desde')}</span>
+          <strong class="evprecio__num evprecio__num--sm">{e(pz.get('precio_desde', ''))}</strong>
+        </p>
+        <p class="alq__nota">{e(pz.get('precio_nota', ''))}</p>
+        <div class="alq__cta">
+          <a class="pill" href="#presupuesto"><span>{t('ev_personalizar')}</span>{CHEVRON}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+''')
+
+    # ---- 5 · tarifa
+    tf = a.get('tarifa')
+    if tf:
+        incluye = ''.join(f'<li>{e(x)}</li>' for x in tf.get('incluye', []))
+        out.append(f'''  <section class="section section--light" id="tarifas">
+    <div class="wrap wrap--narrow">
+      <header class="section-head reveal"><p class="kicker">{e(tf.get('kicker', ''))}</p>
+        <h2 class="h-section">{e(tf.get('titulo', ''))}</h2></header>
+      <div class="evtarifa reveal">
+        <p class="evprecio evprecio--grande">
+          <span class="evprecio__etq">{t('ev_desde')}</span>
+          <strong class="evprecio__num">{e(a.get('precio_desde', ''))}</strong>
+          <span class="evprecio__unidad">{e(a.get('precio_unidad', ''))} {t('iva_corto')}</span>
+        </p>
+        <p class="evtarifa__titulo">{e(tf.get('incluye_titulo', ''))}</p>
+        <ul class="evtarifa__lista">{incluye}</ul>
+        <p class="evtarifa__nota">{e(tf.get('nota', ''))}</p>
+        <a class="pill pill--ancho" href="#presupuesto"><span>{t('ev_solicitar')}</span>{CHEVRON}</a>
+      </div>
+    </div>
+  </section>
+''')
+
+    # ---- 6 · ideal para
+    idl = a.get('ideal')
+    if idl:
+        items = ''.join(f'<li class="reveal">{e(x)}</li>' for x in idl.get('items', []))
+        out.append(f'''  <section class="section section--white" id="ideal">
+    <div class="wrap">
+      <header class="section-head reveal"><p class="kicker">{e(idl.get('kicker', ''))}</p>
+        <h2 class="h-section">{e(idl.get('titulo', ''))}</h2></header>
+      <ul class="evideal">{items}</ul>
+    </div>
+  </section>
+''')
+
+    # ---- 7 · cómo funciona
+    pr = a.get('proceso')
+    if pr:
+        pasos = ''.join(
+            f'<li class="ctopaso reveal"><p class="ctopaso__num">{i:02d}</p>'
+            f'<h3 class="ctopaso__titulo">{e(tit)}</h3><p class="ctopaso__texto">{e(txt)}</p></li>'
+            for i, (tit, txt) in enumerate(pr.get('pasos', []), 1))
+        out.append(f'''  <section class="section section--light" id="como-funciona">
+    <div class="wrap">
+      <header class="section-head reveal"><p class="kicker">{e(pr.get('kicker', ''))}</p>
+        <h2 class="h-section">{e(pr.get('titulo', ''))}</h2></header>
+      <ul class="ctopasos">{pasos}</ul>
+    </div>
+  </section>
+''')
+
+    # ---- 9 · galería y vídeo (8 · desplazamiento va después, con menos peso)
+    gal = a.get('galeria')
+    if gal:
+        fotos = ''.join(
+            f'<li class="evgal__item reveal"><img src="{base}{e(img)}" alt="{e(tit)}" loading="lazy"></li>'
+            for tit, img in gal.get('fotos', []))
+        piezas = ''
+        for v in gal.get('videos', []):
+            pie = f'<figcaption>{e(v["titulo"])}</figcaption>' if v.get('titulo') else ''
+            piezas += (f'<li class="vid__item reveal"><figure>'
+                       f'<video controls preload="none" playsinline poster="{base}{e(v["poster"])}">'
+                       f'<source src="{base}{e(v["src"])}" type="video/mp4">'
+                       f'{t("navegador_sin_video")}</video>{pie}</figure></li>')
+        videos = f'<ul class="vid vid--2 evgal__videos">{piezas}</ul>' if piezas else ''
+        out.append(f'''  <section class="section section--white" id="galeria">
+    <div class="wrap">
+      <header class="section-head reveal"><p class="kicker">{e(gal.get('kicker', ''))}</p>
+        <h2 class="h-section">{e(gal.get('titulo', ''))}</h2></header>
+      {videos}
+      <ul class="evgal">{fotos}</ul>
+    </div>
+  </section>
+''')
+
+    # ---- 8 · desplazamientos
+    dz = a.get('desplazamiento')
+    if dz:
+        out.append(f'''  <section class="section section--light" id="desplazamientos">
+    <div class="wrap wrap--narrow">
+      <div class="nota nota--info reveal">
+        <p class="nota__titulo">{e(dz.get('titulo', ''))}</p>
+        <p>{e(dz.get('texto', ''))}</p>
+      </div>
+    </div>
+  </section>
+''')
+
+    # ---- 10 · preguntas frecuentes
+    if a.get('faq'):
+        out.append(bloque_faq(a['faq']))
+
+    # ---- 11 · cierre con formulario
+    out.append(formulario_evento(base, a.get('cierre', {})))
+
     out.append('</main>')
     out.append(footer(base))
     return ''.join(out)
+
+
+def formulario_evento(base, cierre):
+    """Cierre de la página de eventos: sin distracciones, solo el formulario."""
+    principal = CONTACTO['personas'][0] if CONTACTO.get('personas') else {}
+    email = CONTACTO.get('email_directo') or principal.get('email', 'info@rh-bots.com')
+    return f'''  <section class="section section--oscura evcierre" id="presupuesto">
+    <div class="wrap evcierre__grid">
+      <div class="evcierre__texto reveal">
+        <h2 class="evcierre__titulo">{e(cierre.get('titulo', ''))}</h2>
+        <p class="evcierre__lede">{e(cierre.get('texto', ''))}</p>
+      </div>
+      <div class="ctoform__caja reveal">
+        <div class="ctoform__cab">
+          <h3 class="ctoform__titulo">{t('ev_form_titulo')}</h3>
+          <p class="ctoform__sello">{t('ev_form_sello')}</p>
+        </div>
+        <form class="form" id="eventoForm" data-email="{e(email)}" novalidate>
+          <div class="form__two">
+            <div class="form__row">
+              <label for="ev-nombre">{t('nombre')}</label>
+              <input id="ev-nombre" name="nombre" type="text" autocomplete="name" placeholder="{t('tu_nombre')}" required>
+            </div>
+            <div class="form__row">
+              <label for="ev-empresa">{t('empresa_campo')}</label>
+              <input id="ev-empresa" name="empresa" type="text" autocomplete="organization" placeholder="{t('nombre_empresa_placeholder')}">
+            </div>
+          </div>
+          <div class="form__two">
+            <div class="form__row">
+              <label for="ev-email">{t('email')}</label>
+              <input id="ev-email" name="email" type="email" autocomplete="email" placeholder="tu@empresa.com" required>
+            </div>
+            <div class="form__row">
+              <label for="ev-tel">{t('telefono')}</label>
+              <input id="ev-tel" name="tel" type="tel" autocomplete="tel" placeholder="+34 600 000 000">
+            </div>
+          </div>
+          <div class="form__two">
+            <div class="form__row">
+              <label for="ev-fecha">{t('ev_fecha')}</label>
+              <input id="ev-fecha" name="fecha" type="date">
+            </div>
+            <div class="form__row">
+              <label for="ev-ciudad">{t('ev_ciudad')}</label>
+              <input id="ev-ciudad" name="ciudad" type="text" placeholder="{t('ev_ciudad_ph')}">
+            </div>
+          </div>
+          <div class="form__two">
+            <div class="form__row">
+              <label for="ev-dias">{t('ev_dias')}</label>
+              <input id="ev-dias" name="dias" type="number" min="1" step="1" placeholder="1">
+            </div>
+            <div class="form__row">
+              <label for="ev-tipo">{t('ev_tipo')}</label>
+              <input id="ev-tipo" name="tipo" type="text" placeholder="{t('ev_tipo_ph')}">
+            </div>
+          </div>
+          <div class="form__row">
+            <label for="ev-haria">{t('ev_que_haga')}</label>
+            <textarea id="ev-haria" name="haria" rows="3" placeholder="{t('ev_que_haga_ph')}"></textarea>
+          </div>
+          <div class="form__row">
+            <label for="ev-mensaje">{t('ev_mensaje')}</label>
+            <textarea id="ev-mensaje" name="mensaje" rows="4" placeholder="{t('ev_mensaje_ph')}" required></textarea>
+          </div>
+          <div class="form__consent">
+            <input id="ev-privacidad" name="privacidad" type="checkbox" required>
+            <label for="ev-privacidad">{t('consiento_privacidad')}
+              <a href="{base}legal.html#privacidad">{t('politica_privacidad_link')}</a>{t('consiento_privacidad_fin')}</label>
+          </div>
+          <button class="pill pill--ancho" type="submit"><span>{t('ev_solicitar')}</span>{CHEVRON}</button>
+          <p class="form__nota" id="eventoNota" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+'''
+
 
 
 def contacto_page():

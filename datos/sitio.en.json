@@ -561,16 +561,196 @@
       ]
     },
     "humanoides": {
-      "kicker": "Rental · Events",
-      "h1": "Humanoids for events",
-      "lede": "Bring a humanoid robot to your trade fair, conference, opening or brand activation. We handle transport, set-up and support throughout the event.",
+      "kicker": "Hire · Events",
+      "h1": "The robot that turns your stand into the centre of attention",
+      "lede": "Hire a humanoid robot for trade fairs, events and brand activations. It dances, it interacts and it surprises your visitors with a technology experience they won't see anywhere else.",
       "imagen": "assets/robots-portada.webp",
-      "modelos": [
-        "rhx2",
-        "rha3",
-        "rha3-ultra"
+      "precio_desde": "1,200 €",
+      "precio_unidad": "/ day",
+      "precio_nota": "Customisation, travel, accommodation and subsistence are quoted according to the specifics of the event.",
+      "atrae": {
+        "kicker": "An experience that turns heads",
+        "titulo": "Getting people to stop at your stand is half the conversation",
+        "parrafos": [
+          "At a trade fair, getting someone to stop in front of your stand is the first step towards starting a conversation.",
+          "Our humanoid robot turns heads, sparks curiosity and creates a point of interaction around your brand. A different kind of experience, one that visitors remember and share."
+        ],
+        "imagen": "assets/robots/rhx2-ultra/en-movimiento.webp"
+      },
+      "capacidades": {
+        "kicker": "What can it do?",
+        "titulo": "A robot that does far more than simply stand there",
+        "items": [
+          [
+            "Dance",
+            "Choreographies and routines designed to surprise the audience."
+          ],
+          [
+            "Interact",
+            "Conversations and direct interaction with visitors."
+          ],
+          [
+            "Present",
+            "It can convey information about a company, a product or a service."
+          ],
+          [
+            "Attract",
+            "Generates curiosity and footfall around the stand."
+          ],
+          [
+            "Entertain",
+            "Ideal for creating eye-catching moments and content for social media."
+          ],
+          [
+            "Represent your brand",
+            "The experience can be adapted to the identity and objectives of the event."
+          ]
+        ]
+      },
+      "personaliza": {
+        "kicker": "Customise the robot",
+        "titulo": "Make the robot speak your brand's language",
+        "texto": "The robot doesn't turn up with a generic script. We build the experience around what you want to say at the event: what it says, how it says it and what it does in front of your audience.",
+        "opciones": [
+          "Personality",
+          "Way of speaking",
+          "Dialogue",
+          "Product information",
+          "Brand messages",
+          "Questions and answers",
+          "Choreographies",
+          "Behaviours",
+          "Special actions for the event"
+        ],
+        "precio_desde": "300 €",
+        "precio_nota": "The price depends on how complex the customisation is.",
+        "imagen": "assets/robots/rhx2/sentado.webp"
+      },
+      "tarifa": {
+        "kicker": "Rates",
+        "titulo": "Hire the robot for your next event",
+        "incluye_titulo": "The day includes",
+        "incluye": [
+          "Humanoid robot",
+          "Operator and technician",
+          "Getting it up and running",
+          "Supervision",
+          "Set-up and take-down",
+          "Interactions and routines available as standard"
+        ],
+        "nota": "The final price depends on the duration, the location and the customisation the event calls for."
+      },
+      "ideal": {
+        "kicker": "Ideal for",
+        "titulo": "Where a humanoid fits in",
+        "items": [
+          "Trade fairs",
+          "Conferences",
+          "Stands",
+          "Corporate events",
+          "Product launches",
+          "Presentations",
+          "Shopping centres",
+          "Technology events",
+          "Promotional campaigns",
+          "Private events"
+        ]
+      },
+      "proceso": {
+        "kicker": "How it works",
+        "titulo": "From the idea to the day of the event",
+        "pasos": [
+          [
+            "Tell us about your event",
+            "Date, location, duration and objective."
+          ],
+          [
+            "We design the experience",
+            "We define how the robot will take part and what level of customisation you need."
+          ],
+          [
+            "We prepare the robot",
+            "We configure and test the experience before the event."
+          ],
+          [
+            "The robot arrives at your event",
+            "We take care of setting it up, supervising it and keeping it running."
+          ]
+        ]
+      },
+      "desplazamiento": {
+        "titulo": "Is your event outside our area?",
+        "texto": "We also travel to trade fairs and events in other cities. Travel, accommodation and subsistence are quoted separately depending on the location and the duration of the event."
+      },
+      "galeria": {
+        "kicker": "In motion",
+        "titulo": "See it before you picture it at your event",
+        "videos": [
+          {
+            "src": "assets/video/x2.mp4",
+            "poster": "assets/video/x2.webp",
+            "titulo": "The humanoid in motion"
+          },
+          {
+            "src": "assets/video/a3-ultra-1.mp4",
+            "poster": "assets/video/a3-ultra-1.webp",
+            "titulo": "Movement and presence"
+          },
+          {
+            "src": "assets/video/a3-ultra-2.mp4",
+            "poster": "assets/video/a3-ultra-2.webp",
+            "titulo": "Handling and interaction"
+          }
+        ],
+        "fotos": [
+          [
+            "A wave hello",
+            "assets/robots/rhx2-ultra/hero.webp"
+          ],
+          [
+            "Close-up interaction",
+            "assets/robots/rhx2/de-rodillas.webp"
+          ],
+          [
+            "Presence on stage",
+            "assets/robots/rha3-ultra/saludando.webp"
+          ]
+        ]
+      },
+      "faq": [
+        [
+          "How much does it cost to hire the humanoid robot?",
+          "The service is available from 1,200 € + VAT per day. The final price depends on the duration, the location and the customisation required."
+        ],
+        [
+          "Can the robot dance?",
+          "Yes. The robot can perform different dances and choreographies. We can also look into bespoke choreographies."
+        ],
+        [
+          "Can it talk to visitors?",
+          "Yes. It can interact with visitors and hold conversations, depending on the capabilities and configuration you book."
+        ],
+        [
+          "Can we customise its personality?",
+          "Yes. We can adapt certain aspects of its personality, dialogue, behaviour and content to your brand or your event."
+        ],
+        [
+          "Does the price include travel?",
+          "Travel, accommodation and subsistence are quoted separately whenever they are needed."
+        ],
+        [
+          "Is there an operator during the event?",
+          "Yes. The service includes supervision and technical assistance throughout the event."
+        ],
+        [
+          "Can we hire it for several days?",
+          "Yes. For trade fairs and multi-day events we can put together a specific proposal."
+        ]
       ],
-      "texto": "Every event is different: the model, the number of rental days and the type of interaction all shape the budget. Tell us what you have in mind and we will put together a fixed-price proposal."
+      "cierre": {
+        "titulo": "Ready to bring a humanoid to your next event?",
+        "texto": "Tell us what you have in mind and we'll design an experience to suit your event, your brand and your audience."
+      }
     }
   }
 }

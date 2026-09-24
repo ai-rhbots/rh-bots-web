@@ -10,6 +10,7 @@
   var LOCALES = { es: 'es-ES', pt: 'pt-PT', en: 'en-GB', fr: 'fr-FR', zh: 'zh-CN', ca: 'ca-ES' };
   var TXT = {
     es: {
+      asuntoEvento: 'Alquiler de humanoide para evento',
       ivaNoIncluido: 'IVA no incluido',
       abrirMenu: 'Abrir menú', cerrarMenu: 'Cerrar menú',
       sinStock: 'Sin stock — consúltanos la disponibilidad',
@@ -31,6 +32,7 @@
       consentimientoCorreo: '\n\n---\nAcepto la política de privacidad y el tratamiento de mis datos para recibir información comercial de RH·BOTS.'
     },
     pt: {
+      asuntoEvento: 'Aluguer de humanoide para evento',
       ivaNoIncluido: 'IVA não incluído',
       abrirMenu: 'Abrir menu', cerrarMenu: 'Fechar menu',
       sinStock: 'Sem stock — consulte-nos a disponibilidade',
@@ -52,6 +54,7 @@
       consentimientoCorreo: '\n\n---\nAceito a política de privacidade e o tratamento dos meus dados para receber informação comercial da RH·BOTS.'
     },
     en: {
+      asuntoEvento: 'Humanoid rental for an event',
       ivaNoIncluido: 'VAT not included',
       abrirMenu: 'Open menu', cerrarMenu: 'Close menu',
       sinStock: 'Out of stock — ask us about availability',
@@ -73,6 +76,7 @@
       consentimientoCorreo: '\n\n---\nI accept the privacy policy and the processing of my data to receive commercial information from RH·BOTS.'
     },
     fr: {
+      asuntoEvento: "Location d'humanoïde pour un événement",
       ivaNoIncluido: 'TVA non incluse',
       abrirMenu: 'Ouvrir le menu', cerrarMenu: 'Fermer le menu',
       sinStock: 'Rupture de stock — demandez-nous la disponibilité',
@@ -94,6 +98,7 @@
       consentimientoCorreo: '\n\n---\nJ\'accepte la politique de confidentialité et le traitement de mes données pour recevoir des informations commerciales de RH·BOTS.'
     },
     zh: {
+      asuntoEvento: '活动人形机器人租赁',
       ivaNoIncluido: '不含增值税',
       abrirMenu: '打开菜单', cerrarMenu: '关闭菜单',
       sinStock: '无现货 — 请咨询我们了解供货情况',
@@ -115,6 +120,7 @@
       consentimientoCorreo: '\n\n---\n我接受隐私政策，并同意处理我的数据以接收RH·BOTS的商业信息。'
     },
     ca: {
+      asuntoEvento: "Lloguer d'humanoide per a esdeveniment",
       ivaNoIncluido: 'IVA no inclòs',
       abrirMenu: 'Obre el menú', cerrarMenu: 'Tanca el menú',
       sinStock: 'Sense estoc — consulta\'ns la disponibilitat',
@@ -778,6 +784,44 @@
       location.href = 'mailto:' + (form.getAttribute('data-email') || 'info@rh-bots.com')
         + '?subject=' + encodeURIComponent(TXT.asuntoWeb + (robot ? TXT.asuntoConsulta + robot : TXT.asuntoSolicitud))
         + '&body=' + encodeURIComponent(cuerpo + TXT.consentimientoCorreo);
+    });
+  }
+
+  /* ---------- formulario de eventos ----------
+     Mismo envío por correo que el de contacto, pero con campos propios: el
+     cuerpo se arma leyendo la etiqueta visible de cada campo, así no hay que
+     duplicar las traducciones aquí. */
+  var formEvento = document.getElementById('eventoForm');
+  if (formEvento) {
+    var notaEvento = document.getElementById('eventoNota');
+
+    formEvento.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+
+      if (!formEvento.checkValidity()) {
+        var privacidad = formEvento.querySelector('#ev-privacidad');
+        notaEvento.className = 'form__nota is-err';
+        notaEvento.textContent = (privacidad && !privacidad.checked &&
+                                  formEvento.querySelector(':invalid') === privacidad)
+          ? TXT.formSinPrivacidad
+          : TXT.formIncompleto;
+        formEvento.reportValidity();
+        return;
+      }
+
+      var lineas = [];
+      Array.prototype.forEach.call(formEvento.querySelectorAll('input[name], textarea[name]'), function (campo) {
+        if (campo.type === 'checkbox' || !campo.value.trim()) return;
+        var etiqueta = formEvento.querySelector('label[for="' + campo.id + '"]');
+        lineas.push((etiqueta ? etiqueta.textContent.trim() : campo.name) + ': ' + campo.value.trim());
+      });
+
+      notaEvento.className = 'form__nota is-ok';
+      notaEvento.textContent = TXT.abriendoCorreo;
+
+      location.href = 'mailto:' + (formEvento.getAttribute('data-email') || 'info@rh-bots.com')
+        + '?subject=' + encodeURIComponent(TXT.asuntoWeb + TXT.asuntoEvento)
+        + '&body=' + encodeURIComponent(lineas.join('\n') + TXT.consentimientoCorreo);
     });
   }
 

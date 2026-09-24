@@ -560,15 +560,195 @@
     },
     "humanoides": {
       "kicker": "Lloguer · Esdeveniments",
-      "h1": "Humanoides per a esdeveniments",
-      "lede": "Porta un robot humanoide a la teva fira, congrés, inauguració o activació de marca. Ens encarreguem del trasllat, la posada en marxa i l'acompanyament durant l'esdeveniment.",
+      "h1": "El robot que converteix el teu estand en el centre d'atenció",
+      "lede": "Lloga un robot humanoide per a fires, esdeveniments i accions de marca. Balla, interactua i sorprèn els teus visitants amb una experiència tecnològica única.",
       "imagen": "assets/robots-portada.webp",
-      "modelos": [
-        "rhx2",
-        "rha3",
-        "rha3-ultra"
+      "precio_desde": "1.200 €",
+      "precio_unidad": "/ dia",
+      "precio_nota": "La personalització, el desplaçament, l'allotjament i les dietes es pressuposten segons les característiques de l'esdeveniment.",
+      "atrae": {
+        "kicker": "Una experiència que atrau mirades",
+        "titulo": "Que s'aturin davant del teu estand ja és mitja conversa",
+        "parrafos": [
+          "En una fira, aconseguir que algú s'aturi davant del teu estand és el primer pas per iniciar una conversa.",
+          "El nostre robot humanoide atrau mirades, genera curiositat i crea un punt d'interacció al voltant de la teva marca. Una experiència diferent que els visitants recorden i comparteixen."
+        ],
+        "imagen": "assets/robots/rhx2-ultra/en-movimiento.webp"
+      },
+      "capacidades": {
+        "kicker": "Què pot fer?",
+        "titulo": "Un robot que fa molt més que ser-hi",
+        "items": [
+          [
+            "Ballar",
+            "Coreografies i rutines dissenyades per sorprendre el públic."
+          ],
+          [
+            "Interactuar",
+            "Converses i interacció directa amb els visitants."
+          ],
+          [
+            "Presentar",
+            "Pot transmetre informació sobre una empresa, un producte o un servei."
+          ],
+          [
+            "Atraure",
+            "Genera curiositat i trànsit al voltant de l'estand."
+          ],
+          [
+            "Entretenir",
+            "Ideal per crear moments cridaners i contingut per a les xarxes socials."
+          ],
+          [
+            "Representar la teva marca",
+            "L'experiència es pot adaptar a la identitat i als objectius de l'esdeveniment."
+          ]
+        ]
+      },
+      "personaliza": {
+        "kicker": "Personalitza el robot",
+        "titulo": "Fes que el robot parli l'idioma de la teva marca",
+        "texto": "El robot no arriba amb un guió genèric. Preparem l'experiència a partir del que vols explicar a l'esdeveniment: què diu, com ho diu i què fa davant del teu públic.",
+        "opciones": [
+          "Personalitat",
+          "Manera de parlar",
+          "Diàlegs",
+          "Informació sobre productes",
+          "Missatges de marca",
+          "Preguntes i respostes",
+          "Coreografies",
+          "Comportaments",
+          "Accions especials per a l'esdeveniment"
+        ],
+        "precio_desde": "300 €",
+        "precio_nota": "El preu depèn de la complexitat de la personalització.",
+        "imagen": "assets/robots/rhx2/sentado.webp"
+      },
+      "tarifa": {
+        "kicker": "Tarifes",
+        "titulo": "Lloga el robot per al teu pròxim esdeveniment",
+        "incluye_titulo": "La jornada inclou",
+        "incluye": [
+          "Robot humanoide",
+          "Operador i tècnic",
+          "Posada en funcionament",
+          "Supervisió",
+          "Muntatge i desmuntatge",
+          "Interaccions i rutines disponibles de sèrie"
+        ],
+        "nota": "El preu final depèn de la durada, la ubicació i les necessitats de personalització de l'esdeveniment."
+      },
+      "ideal": {
+        "kicker": "Ideal per a",
+        "titulo": "On encaixa un humanoide",
+        "items": [
+          "Fires",
+          "Congressos",
+          "Estands",
+          "Esdeveniments corporatius",
+          "Llançaments de producte",
+          "Presentacions",
+          "Centres comercials",
+          "Esdeveniments tecnològics",
+          "Accions promocionals",
+          "Esdeveniments privats"
+        ]
+      },
+      "proceso": {
+        "kicker": "Com funciona",
+        "titulo": "De la idea al dia de l'esdeveniment",
+        "pasos": [
+          [
+            "Explica'ns el teu esdeveniment",
+            "Data, ubicació, durada i objectiu."
+          ],
+          [
+            "Dissenyem l'experiència",
+            "Definim com hi participarà el robot i quin nivell de personalització necessites."
+          ],
+          [
+            "Preparem el robot",
+            "Configurem i provem l'experiència abans de l'esdeveniment."
+          ],
+          [
+            "El robot arriba al teu esdeveniment",
+            "Ens encarreguem de la posada en marxa, la supervisió i el funcionament."
+          ]
+        ]
+      },
+      "desplazamiento": {
+        "titulo": "El teu esdeveniment és fora de la nostra zona?",
+        "texto": "També ens desplacem a fires i esdeveniments d'altres ciutats. El desplaçament, l'allotjament i les dietes es pressuposten a part segons la ubicació i la durada de l'esdeveniment."
+      },
+      "galeria": {
+        "kicker": "En moviment",
+        "titulo": "Mira'l abans d'imaginar-lo al teu esdeveniment",
+        "videos": [
+          {
+            "src": "assets/video/x2.mp4",
+            "poster": "assets/video/x2.webp",
+            "titulo": "L'humanoide en moviment"
+          },
+          {
+            "src": "assets/video/a3-ultra-1.mp4",
+            "poster": "assets/video/a3-ultra-1.webp",
+            "titulo": "Desplaçament i presència"
+          },
+          {
+            "src": "assets/video/a3-ultra-2.mp4",
+            "poster": "assets/video/a3-ultra-2.webp",
+            "titulo": "Manipulació i interacció"
+          }
+        ],
+        "fotos": [
+          [
+            "Gest de salutació",
+            "assets/robots/rhx2-ultra/hero.webp"
+          ],
+          [
+            "Interacció propera",
+            "assets/robots/rhx2/de-rodillas.webp"
+          ],
+          [
+            "Presència en escena",
+            "assets/robots/rha3-ultra/saludando.webp"
+          ]
+        ]
+      },
+      "faq": [
+        [
+          "Quant costa llogar el robot humanoide?",
+          "El servei està disponible des de 1.200 € + IVA per dia. El preu final depèn de la durada, la ubicació i les necessitats de personalització."
+        ],
+        [
+          "El robot pot ballar?",
+          "Sí. El robot pot fer diferents balls i coreografies. També podem estudiar coreografies personalitzades."
+        ],
+        [
+          "Pot parlar amb els visitants?",
+          "Sí. Pot interactuar amb els visitants i mantenir converses segons les capacitats i la configuració contractades."
+        ],
+        [
+          "En podem personalitzar la personalitat?",
+          "Sí. Podem adaptar determinats aspectes de la seva personalitat, els diàlegs, el comportament i els continguts a la marca o a l'esdeveniment."
+        ],
+        [
+          "El preu inclou el desplaçament?",
+          "El desplaçament, l'allotjament i les dietes es pressuposten a part quan calguin."
+        ],
+        [
+          "Hi ha un operador durant l'esdeveniment?",
+          "Sí. El servei inclou supervisió i assistència tècnica durant l'esdeveniment."
+        ],
+        [
+          "El podem contractar durant diversos dies?",
+          "Sí. Per a fires i esdeveniments de diversos dies podem preparar una proposta específica."
+        ]
       ],
-      "texto": "Cada esdeveniment és diferent: el model, els dies de lloguer i el tipus d'interacció marquen el pressupost. Explica'ns què tens al cap i et preparem una proposta tancada."
+      "cierre": {
+        "titulo": "Preparat per portar un humanoide al teu pròxim esdeveniment?",
+        "texto": "Explica'ns què tens al cap i dissenyarem una experiència adaptada al teu esdeveniment, la teva marca i el teu públic."
+      }
     }
   }
 }

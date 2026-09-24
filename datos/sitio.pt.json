@@ -560,15 +560,195 @@
     },
     "humanoides": {
       "kicker": "Aluguer · Eventos",
-      "h1": "Humanoides para eventos",
-      "lede": "Leve um robô humanoide à sua feira, congresso, inauguração ou ativação de marca. Tratamos do transporte, da colocação em funcionamento e do acompanhamento durante o evento.",
+      "h1": "O robô que transforma o seu stand no centro das atenções",
+      "lede": "Alugue um robô humanoide para feiras, eventos e ações de marca. Dança, interage e surpreende os seus visitantes com uma experiência tecnológica única.",
       "imagen": "assets/robots-portada.webp",
-      "modelos": [
-        "rhx2",
-        "rha3",
-        "rha3-ultra"
+      "precio_desde": "1.200 €",
+      "precio_unidad": "/ dia",
+      "precio_nota": "Personalização, deslocação, alojamento e ajudas de custo são orçamentados consoante as características do evento.",
+      "atrae": {
+        "kicker": "Uma experiência que atrai olhares",
+        "titulo": "Se param diante do seu stand, já tem meia conversa ganha",
+        "parrafos": [
+          "Numa feira, conseguir que alguém pare diante do seu stand é o primeiro passo para iniciar uma conversa.",
+          "O nosso robô humanoide atrai olhares, desperta curiosidade e cria um ponto de interação à volta da sua marca. Uma experiência diferente, que os visitantes recordam e partilham."
+        ],
+        "imagen": "assets/robots/rhx2-ultra/en-movimiento.webp"
+      },
+      "capacidades": {
+        "kicker": "O que pode fazer?",
+        "titulo": "Um robô que faz muito mais do que estar ali",
+        "items": [
+          [
+            "Dançar",
+            "Coreografias e rotinas pensadas para surpreender o público."
+          ],
+          [
+            "Interagir",
+            "Conversas e interação direta com os visitantes."
+          ],
+          [
+            "Apresentar",
+            "Pode transmitir informação sobre uma empresa, produto ou serviço."
+          ],
+          [
+            "Atrair",
+            "Gera curiosidade e movimento à volta do stand."
+          ],
+          [
+            "Entreter",
+            "Ideal para criar momentos marcantes e conteúdo para as redes sociais."
+          ],
+          [
+            "Representar a sua marca",
+            "A experiência pode adaptar-se à identidade e aos objetivos do evento."
+          ]
+        ]
+      },
+      "personaliza": {
+        "kicker": "Personalize o robô",
+        "titulo": "Faça o robô falar a língua da sua marca",
+        "texto": "O robô não chega com um guião genérico. Preparamos a experiência a partir daquilo que quer contar no evento: o que diz, como o diz e o que faz diante do seu público.",
+        "opciones": [
+          "Personalidade",
+          "Forma de falar",
+          "Diálogos",
+          "Informação sobre produtos",
+          "Mensagens de marca",
+          "Perguntas e respostas",
+          "Coreografias",
+          "Comportamentos",
+          "Ações especiais para o evento"
+        ],
+        "precio_desde": "300 €",
+        "precio_nota": "O preço depende da complexidade da personalização.",
+        "imagen": "assets/robots/rhx2/sentado.webp"
+      },
+      "tarifa": {
+        "kicker": "Tarifas",
+        "titulo": "Alugue o robô para o seu próximo evento",
+        "incluye_titulo": "A jornada inclui",
+        "incluye": [
+          "Robô humanoide",
+          "Operador e técnico",
+          "Colocação em funcionamento",
+          "Supervisão",
+          "Montagem e desmontagem",
+          "Interações e rotinas disponíveis de série"
+        ],
+        "nota": "O preço final depende da duração, da localização e das necessidades de personalização do evento."
+      },
+      "ideal": {
+        "kicker": "Ideal para",
+        "titulo": "Onde encaixa um humanoide",
+        "items": [
+          "Feiras",
+          "Congressos",
+          "Stands",
+          "Eventos corporativos",
+          "Lançamentos de produto",
+          "Apresentações",
+          "Centros comerciais",
+          "Eventos tecnológicos",
+          "Ações promocionais",
+          "Eventos privados"
+        ]
+      },
+      "proceso": {
+        "kicker": "Como funciona",
+        "titulo": "Da ideia ao dia do evento",
+        "pasos": [
+          [
+            "Conte-nos o seu evento",
+            "Data, localização, duração e objetivo."
+          ],
+          [
+            "Desenhamos a experiência",
+            "Definimos como o robô vai participar e que nível de personalização precisa."
+          ],
+          [
+            "Preparamos o robô",
+            "Configuramos e testamos a experiência antes do evento."
+          ],
+          [
+            "O robô chega ao seu evento",
+            "Tratamos da colocação em funcionamento, da supervisão e da operação."
+          ]
+        ]
+      },
+      "desplazamiento": {
+        "titulo": "O seu evento é fora da nossa zona?",
+        "texto": "Também nos deslocamos a feiras e eventos noutras cidades. A deslocação, o alojamento e as ajudas de custo são orçamentados à parte consoante a localização e a duração do evento."
+      },
+      "galeria": {
+        "kicker": "Em movimento",
+        "titulo": "Veja-o antes de o imaginar no seu evento",
+        "videos": [
+          {
+            "src": "assets/video/x2.mp4",
+            "poster": "assets/video/x2.webp",
+            "titulo": "O humanoide em movimento"
+          },
+          {
+            "src": "assets/video/a3-ultra-1.mp4",
+            "poster": "assets/video/a3-ultra-1.webp",
+            "titulo": "Deslocação e presença"
+          },
+          {
+            "src": "assets/video/a3-ultra-2.mp4",
+            "poster": "assets/video/a3-ultra-2.webp",
+            "titulo": "Manipulação e interação"
+          }
+        ],
+        "fotos": [
+          [
+            "Gesto de saudação",
+            "assets/robots/rhx2-ultra/hero.webp"
+          ],
+          [
+            "Interação próxima",
+            "assets/robots/rhx2/de-rodillas.webp"
+          ],
+          [
+            "Presença em palco",
+            "assets/robots/rha3-ultra/saludando.webp"
+          ]
+        ]
+      },
+      "faq": [
+        [
+          "Quanto custa alugar o robô humanoide?",
+          "O serviço está disponível desde 1.200 € + IVA por dia. O preço final depende da duração, da localização e das necessidades de personalização."
+        ],
+        [
+          "O robô pode dançar?",
+          "Sim. O robô pode executar diferentes danças e coreografias. Também podemos estudar coreografias personalizadas."
+        ],
+        [
+          "Pode falar com os visitantes?",
+          "Sim. Pode interagir com os visitantes e manter conversas consoante as capacidades e a configuração contratadas."
+        ],
+        [
+          "Podemos personalizar a sua personalidade?",
+          "Sim. Podemos adaptar determinados aspetos da sua personalidade, diálogos, comportamento e conteúdos à marca ou ao evento."
+        ],
+        [
+          "O preço inclui a deslocação?",
+          "A deslocação, o alojamento e as ajudas de custo são orçamentados à parte quando forem necessários."
+        ],
+        [
+          "Há um operador durante o evento?",
+          "Sim. O serviço inclui supervisão e assistência técnica durante o evento."
+        ],
+        [
+          "Podemos contratá-lo durante vários dias?",
+          "Sim. Para feiras e eventos de vários dias podemos preparar uma proposta específica."
+        ]
       ],
-      "texto": "Cada evento é diferente: o modelo, os dias de aluguer e o tipo de interação determinam o orçamento. Conte-nos o que tem em mente e preparamos-lhe uma proposta fechada."
+      "cierre": {
+        "titulo": "Pronto para levar um humanoide ao seu próximo evento?",
+        "texto": "Conte-nos o que tem em mente e desenhamos uma experiência à medida do seu evento, da sua marca e do seu público."
+      }
     }
   }
 }

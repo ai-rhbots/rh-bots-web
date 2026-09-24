@@ -560,15 +560,195 @@
     },
     "humanoides": {
       "kicker": "Location · Événements",
-      "h1": "Humanoïdes pour événements",
-      "lede": "Amenez un robot humanoïde sur votre salon, votre congrès, votre inauguration ou votre activation de marque. Nous nous chargeons du transport, de la mise en service et de l'accompagnement pendant l'événement.",
+      "h1": "Le robot qui fait de votre stand le centre de l'attention",
+      "lede": "Louez un robot humanoïde pour vos salons, vos événements et vos actions de marque. Il danse, il interagit et il surprend vos visiteurs avec une expérience technologique unique.",
       "imagen": "assets/robots-portada.webp",
-      "modelos": [
-        "rhx2",
-        "rha3",
-        "rha3-ultra"
+      "precio_desde": "1 200 €",
+      "precio_unidad": "/ jour",
+      "precio_nota": "La personnalisation, le déplacement, l'hébergement et les repas sont devisés selon les caractéristiques de l'événement.",
+      "atrae": {
+        "kicker": "Une expérience qui attire les regards",
+        "titulo": "Qu'on s'arrête devant votre stand, c'est déjà la moitié de la conversation",
+        "parrafos": [
+          "Dans un salon, amener quelqu'un à s'arrêter devant votre stand est le premier pas pour engager une conversation.",
+          "Notre robot humanoïde attire les regards, suscite la curiosité et crée un point d'interaction autour de votre marque. Une expérience différente, que les visiteurs retiennent et partagent."
+        ],
+        "imagen": "assets/robots/rhx2-ultra/en-movimiento.webp"
+      },
+      "capacidades": {
+        "kicker": "Que peut-il faire ?",
+        "titulo": "Un robot qui fait bien plus qu'être là",
+        "items": [
+          [
+            "Danser",
+            "Des chorégraphies et des routines conçues pour surprendre le public."
+          ],
+          [
+            "Interagir",
+            "Des conversations et une interaction directe avec les visiteurs."
+          ],
+          [
+            "Présenter",
+            "Il peut transmettre des informations sur une entreprise, un produit ou un service."
+          ],
+          [
+            "Attirer",
+            "Il suscite la curiosité et génère du trafic autour du stand."
+          ],
+          [
+            "Divertir",
+            "Idéal pour créer des moments marquants et du contenu pour les réseaux sociaux."
+          ],
+          [
+            "Représenter votre marque",
+            "L'expérience peut s'adapter à l'identité et aux objectifs de l'événement."
+          ]
+        ]
+      },
+      "personaliza": {
+        "kicker": "Personnalisez le robot",
+        "titulo": "Faites-lui parler le langage de votre marque",
+        "texto": "Le robot n'arrive pas avec un script générique. Nous préparons l'expérience à partir de ce que vous voulez raconter lors de l'événement : ce qu'il dit, comment il le dit et ce qu'il fait devant votre public.",
+        "opciones": [
+          "Personnalité",
+          "Façon de parler",
+          "Dialogues",
+          "Informations sur les produits",
+          "Messages de marque",
+          "Questions et réponses",
+          "Chorégraphies",
+          "Comportements",
+          "Actions spéciales pour l'événement"
+        ],
+        "precio_desde": "300 €",
+        "precio_nota": "Le prix dépend de la complexité de la personnalisation.",
+        "imagen": "assets/robots/rhx2/sentado.webp"
+      },
+      "tarifa": {
+        "kicker": "Tarifs",
+        "titulo": "Louez le robot pour votre prochain événement",
+        "incluye_titulo": "La journée comprend",
+        "incluye": [
+          "Robot humanoïde",
+          "Opérateur et technicien",
+          "Mise en service",
+          "Supervision",
+          "Montage et démontage",
+          "Interactions et routines disponibles de série"
+        ],
+        "nota": "Le prix final dépend de la durée, du lieu et des besoins de personnalisation de l'événement."
+      },
+      "ideal": {
+        "kicker": "Idéal pour",
+        "titulo": "Où un humanoïde trouve sa place",
+        "items": [
+          "Salons",
+          "Congrès",
+          "Stands",
+          "Événements d'entreprise",
+          "Lancements de produit",
+          "Présentations",
+          "Centres commerciaux",
+          "Événements technologiques",
+          "Actions promotionnelles",
+          "Événements privés"
+        ]
+      },
+      "proceso": {
+        "kicker": "Comment ça marche",
+        "titulo": "De l'idée au jour de l'événement",
+        "pasos": [
+          [
+            "Parlez-nous de votre événement",
+            "Date, lieu, durée et objectif."
+          ],
+          [
+            "Nous concevons l'expérience",
+            "Nous définissons comment le robot interviendra et le niveau de personnalisation dont vous avez besoin."
+          ],
+          [
+            "Nous préparons le robot",
+            "Nous configurons et testons l'expérience avant l'événement."
+          ],
+          [
+            "Le robot arrive à votre événement",
+            "Nous nous occupons de la mise en marche, de la supervision et du fonctionnement."
+          ]
+        ]
+      },
+      "desplazamiento": {
+        "titulo": "Votre événement a lieu hors de notre zone ?",
+        "texto": "Nous nous déplaçons aussi sur des salons et des événements dans d'autres villes. Le déplacement, l'hébergement et les repas sont devisés à part selon le lieu et la durée de l'événement."
+      },
+      "galeria": {
+        "kicker": "En mouvement",
+        "titulo": "Voyez-le avant de l'imaginer à votre événement",
+        "videos": [
+          {
+            "src": "assets/video/x2.mp4",
+            "poster": "assets/video/x2.webp",
+            "titulo": "L'humanoïde en mouvement"
+          },
+          {
+            "src": "assets/video/a3-ultra-1.mp4",
+            "poster": "assets/video/a3-ultra-1.webp",
+            "titulo": "Déplacement et présence"
+          },
+          {
+            "src": "assets/video/a3-ultra-2.mp4",
+            "poster": "assets/video/a3-ultra-2.webp",
+            "titulo": "Manipulation et interaction"
+          }
+        ],
+        "fotos": [
+          [
+            "Geste de salut",
+            "assets/robots/rhx2-ultra/hero.webp"
+          ],
+          [
+            "Interaction de proximité",
+            "assets/robots/rhx2/de-rodillas.webp"
+          ],
+          [
+            "Présence en scène",
+            "assets/robots/rha3-ultra/saludando.webp"
+          ]
+        ]
+      },
+      "faq": [
+        [
+          "Combien coûte la location du robot humanoïde ?",
+          "Le service est disponible à partir de 1 200 € + TVA par jour. Le prix final dépend de la durée, du lieu et des besoins de personnalisation."
+        ],
+        [
+          "Le robot peut-il danser ?",
+          "Oui. Le robot peut exécuter différentes danses et chorégraphies. Nous pouvons aussi étudier des chorégraphies personnalisées."
+        ],
+        [
+          "Peut-il parler avec les visiteurs ?",
+          "Oui. Il peut interagir avec les visiteurs et tenir des conversations selon les capacités et la configuration souscrites."
+        ],
+        [
+          "Pouvons-nous personnaliser sa personnalité ?",
+          "Oui. Nous pouvons adapter certains aspects de sa personnalité, de ses dialogues, de son comportement et de ses contenus à la marque ou à l'événement."
+        ],
+        [
+          "Le prix inclut-il le déplacement ?",
+          "Le déplacement, l'hébergement et les repas sont devisés à part lorsqu'ils sont nécessaires."
+        ],
+        [
+          "Y a-t-il un opérateur pendant l'événement ?",
+          "Oui. Le service comprend la supervision et l'assistance technique pendant l'événement."
+        ],
+        [
+          "Pouvons-nous le réserver sur plusieurs jours ?",
+          "Oui. Pour les salons et les événements de plusieurs jours, nous pouvons préparer une proposition spécifique."
+        ]
       ],
-      "texto": "Chaque événement est différent : le modèle, le nombre de jours de location et le type d'interaction déterminent le budget. Dites-nous ce que vous avez en tête et nous vous préparons une proposition ferme."
+      "cierre": {
+        "titulo": "Prêt à emmener un humanoïde à votre prochain événement ?",
+        "texto": "Dites-nous ce que vous avez en tête et nous concevrons une expérience adaptée à votre événement, à votre marque et à votre public."
+      }
     }
   }
 }
