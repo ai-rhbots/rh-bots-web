@@ -426,7 +426,7 @@
         "id": "humanoides",
         "href": "alquiler-humanoides.html",
         "titulo": "Humanoid rental for events",
-        "texto": "Humanoids for trade fairs, conferences, openings and brand activations, with our team on hand throughout.",
+        "texto": "Bonico, our humanoid, for trade fairs, conferences, openings and brand activations, with our team on hand throughout.",
         "imagen": "assets/escenarios/complejos-comerciales.webp"
       }
     ],
@@ -562,8 +562,8 @@
     },
     "humanoides": {
       "kicker": "Hire · Events",
-      "h1": "The robot that turns your stand into the centre of attention",
-      "lede": "Hire a humanoid robot for trade fairs, events and brand activations. It dances, it interacts and it surprises your visitors with a technology experience they won't see anywhere else.",
+      "h1": "Bonico, the robot that turns your stand into the centre of attention",
+      "lede": "Hire Bonico, our humanoid robot, for trade fairs, events and brand activations. It dances, it interacts and it surprises your visitors with a technology experience they won't see anywhere else.",
       "imagen": "assets/robots-portada.webp",
       "precio_desde": "1,200 €",
       "precio_unidad": "/ day",
@@ -573,13 +573,13 @@
         "titulo": "Getting people to stop at your stand is half the conversation",
         "parrafos": [
           "At a trade fair, getting someone to stop in front of your stand is the first step towards starting a conversation.",
-          "Our humanoid robot turns heads, sparks curiosity and creates a point of interaction around your brand. A different kind of experience, one that visitors remember and share."
+          "Bonico turns heads, sparks curiosity and creates a point of interaction around your brand. A different kind of experience, one that visitors remember and share."
         ],
         "imagen": "assets/robots/rhx2-ultra/en-movimiento.webp"
       },
       "capacidades": {
         "kicker": "What can it do?",
-        "titulo": "A robot that does far more than simply stand there",
+        "titulo": "Bonico does far more than simply stand there",
         "items": [
           [
             "Dance",
@@ -608,9 +608,9 @@
         ]
       },
       "personaliza": {
-        "kicker": "Customise the robot",
-        "titulo": "Make the robot speak your brand's language",
-        "texto": "The robot doesn't turn up with a generic script. We build the experience around what you want to say at the event: what it says, how it says it and what it does in front of your audience.",
+        "kicker": "Customise Bonico",
+        "titulo": "Make Bonico speak your brand's language",
+        "texto": "Bonico doesn't turn up with a generic script. We build the experience around what you want to say at the event: what it says, how it says it and what it does in front of your audience.",
         "opciones": [
           "Personality",
           "Way of speaking",
@@ -624,14 +624,14 @@
         ],
         "precio_desde": "300 €",
         "precio_nota": "The price depends on how complex the customisation is.",
-        "imagen": "assets/robots/rhx2/sentado.webp"
+        "imagen": "assets/robots/rhx2-ultra/bonico-entrevista.webp"
       },
       "tarifa": {
         "kicker": "Rates",
-        "titulo": "Hire the robot for your next event",
+        "titulo": "Hire Bonico for your next event",
         "incluye_titulo": "The day includes",
         "incluye": [
-          "RHX2 Ultra humanoid robot",
+          "Bonico, the RHX2 Ultra humanoid robot",
           "Operator and technician",
           "Getting it up and running",
           "Supervision",
@@ -642,7 +642,7 @@
       },
       "ideal": {
         "kicker": "Ideal for",
-        "titulo": "Where a humanoid fits in",
+        "titulo": "Where Bonico fits in",
         "items": [
           "Trade fairs",
           "Conferences",
@@ -666,73 +666,49 @@
           ],
           [
             "We design the experience",
-            "We define how the robot will take part and what level of customisation you need."
+            "We define how Bonico will take part and what level of customisation you need."
           ],
           [
-            "We prepare the robot",
+            "We prepare Bonico",
             "We configure and test the experience before the event."
           ],
           [
-            "The robot arrives at your event",
+            "Bonico arrives at your event",
             "We take care of setting it up, supervising it and keeping it running."
           ]
         ]
       },
       "galeria": {
         "kicker": "In motion",
-        "titulo": "See it before you picture it at your event",
+        "titulo": "See Bonico before you picture it at your event",
         "videos": [
           {
-            "src": "assets/video/x2.mp4",
-            "poster": "assets/video/x2.webp",
-            "titulo": "The humanoid in motion"
-          },
-          {
-            "src": "assets/video/a3-ultra-1.mp4",
-            "poster": "assets/video/a3-ultra-1.webp",
-            "titulo": "Movement and presence"
-          },
-          {
-            "src": "assets/video/a3-ultra-2.mp4",
-            "poster": "assets/video/a3-ultra-2.webp",
-            "titulo": "Handling and interaction"
+            "src": "assets/video/bonico-bailando.mp4",
+            "poster": "assets/video/bonico-bailando.webp",
+            "titulo": "Bonico dancing at Fira València"
           }
-        ],
-        "fotos": [
-          [
-            "A wave hello",
-            "assets/robots/rhx2-ultra/hero.webp"
-          ],
-          [
-            "Close-up interaction",
-            "assets/robots/rhx2/de-rodillas.webp"
-          ],
-          [
-            "Presence on stage",
-            "assets/robots/rha3-ultra/saludando.webp"
-          ]
         ]
       },
       "faq": [
         [
-          "Which robot is it exactly?",
-          "The humanoid we take to events is the RHX2 Ultra: 1.31 m tall, 3D perception and 30 degrees of freedom. You can see its full technical sheet in the catalogue."
+          "Who is Bonico?",
+          "Bonico is our RHX2 Ultra: 1.31 m tall, 3D perception and 30 degrees of freedom. You can see its full technical sheet in the catalogue."
         ],
         [
-          "How much does it cost to hire the humanoid robot?",
+          "How much does it cost to hire Bonico?",
           "The service is available from 1,200 € + VAT per day. The final price depends on the duration, the location and the customisation required."
         ],
         [
-          "Can the robot dance?",
-          "Yes. The robot can perform different dances and choreographies. We can also look into bespoke choreographies."
+          "Can Bonico dance?",
+          "Yes. Bonico can perform different dances and choreographies. We can also look into bespoke choreographies."
         ],
         [
           "Can it talk to visitors?",
-          "Yes. It can interact with visitors and hold conversations, depending on the capabilities and configuration you book."
+          "Yes. Bonico can interact with visitors and hold conversations depending on the capabilities and set-up you book."
         ],
         [
           "Can we customise its personality?",
-          "Yes. We can adapt certain aspects of its personality, dialogue, behaviour and content to your brand or your event."
+          "Yes. We can adapt certain aspects of Bonico's personality, dialogue, behaviour and content to your brand or your event."
         ],
         [
           "Does the price include travel?",
@@ -748,7 +724,7 @@
         ]
       ],
       "cierre": {
-        "titulo": "Ready to bring a humanoid to your next event?",
+        "titulo": "Ready to bring Bonico to your next event?",
         "texto": "Tell us what you have in mind and we'll design an experience to suit your event, your brand and your audience."
       }
     }

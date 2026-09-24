@@ -288,18 +288,24 @@ TEXTOS = {
                                    'zh': '必需配件', 'ca': 'Accessori necessari'},
     'iva_corto': {'es': '+ IVA', 'pt': '+ IVA', 'en': '+ VAT', 'fr': '+ TVA',
                    'zh': '+ 增值税', 'ca': '+ IVA'},
-    'ev_modelo': {'es': 'El humanoide RHX2 Ultra', 'pt': 'O humanoide RHX2 Ultra',
-                   'en': 'The RHX2 Ultra humanoid', 'fr': "L'humanoïde RHX2 Ultra",
-                   'zh': 'RHX2 Ultra 人形机器人', 'ca': "L'humanoide RHX2 Ultra"},
+    'ev_modelo': {'es': 'Bonico es nuestro RHX2 Ultra', 'pt': 'O Bonico é o nosso RHX2 Ultra',
+                   'en': 'Bonico is our RHX2 Ultra', 'fr': 'Bonico est notre RHX2 Ultra',
+                   'zh': 'Bonico 就是我们的 RHX2 Ultra', 'ca': 'En Bonico és el nostre RHX2 Ultra'},
+    'ev_foto_alt': {'es': 'Bonico, nuestro robot humanoide, atendiendo a un medio de comunicación',
+                     'pt': 'O Bonico, o nosso robô humanoide, a atender um meio de comunicação',
+                     'en': 'Bonico, our humanoid robot, being interviewed by a news outlet',
+                     'fr': 'Bonico, notre robot humanoïde, interviewé par un média',
+                     'zh': '我们的人形机器人 Bonico 正在接受媒体采访',
+                     'ca': "En Bonico, el nostre robot humanoide, atenent un mitjà de comunicació"},
     'ev_solicitar': {'es': 'Solicitar presupuesto', 'pt': 'Pedir orçamento', 'en': 'Request a quote',
                       'fr': 'Demander un devis', 'zh': '索取报价', 'ca': 'Sol·licitar pressupost'},
     'ev_como_funciona': {'es': 'Ver cómo funciona', 'pt': 'Ver como funciona', 'en': 'See how it works',
                           'fr': 'Voir comment ça marche', 'zh': '了解服务流程', 'ca': 'Veure com funciona'},
     'ev_desde': {'es': 'Desde', 'pt': 'Desde', 'en': 'From', 'fr': 'À partir de', 'zh': '起价', 'ca': 'Des de'},
     'ev_dia': {'es': '/ día', 'pt': '/ dia', 'en': '/ day', 'fr': '/ jour', 'zh': '/ 天', 'ca': '/ dia'},
-    'ev_personalizar': {'es': 'Quiero personalizar el robot', 'pt': 'Quero personalizar o robô',
-                         'en': 'I want to customise the robot', 'fr': 'Je veux personnaliser le robot',
-                         'zh': '我想定制机器人', 'ca': 'Vull personalitzar el robot'},
+    'ev_personalizar': {'es': 'Quiero personalizar a Bonico', 'pt': 'Quero personalizar o Bonico',
+                         'en': 'I want to customise Bonico', 'fr': 'Je veux personnaliser Bonico',
+                         'zh': '我想定制 Bonico', 'ca': 'Vull personalitzar en Bonico'},
     'ev_personalizacion_desde': {'es': 'Personalización desde', 'pt': 'Personalização desde',
                                   'en': 'Customisation from', 'fr': 'Personnalisation à partir de',
                                   'zh': '定制起价', 'ca': 'Personalització des de'},
@@ -359,29 +365,29 @@ TEXTOS = {
                                   'fr': 'Location de robots de nettoyage industriel | RH·BOTS',
                                   'zh': '工业清洁机器人租赁 | RH·BOTS',
                                   'ca': 'Lloguer de robots de neteja industrial | RH·BOTS'},
-    'alquiler_humanoides_titulo': {'es': 'Alquiler de robot humanoide para eventos y ferias | RH·BOTS',
-                                    'pt': 'Aluguer de robô humanoide para eventos e feiras | RH·BOTS',
-                                    'en': 'Humanoid robot hire for events and trade fairs | RH·BOTS',
-                                    'fr': "Location de robot humanoïde pour événements | RH·BOTS",
-                                    'zh': '活动与展会人形机器人租赁 | RH·BOTS',
-                                    'ca': "Lloguer de robot humanoide per a esdeveniments | RH·BOTS"},
-    'alquiler_humanoides_desc': {'es': 'Alquila un robot humanoide para ferias, congresos, stands y eventos '
-                                        'corporativos. Baila, interactúa y atrae visitantes a tu marca. '
-                                        'Desde 1.200 €/día + IVA.',
-                                  'pt': 'Alugue um robô humanoide para feiras, congressos, stands e eventos '
-                                        'corporativos. Dança, interage e atrai visitantes à sua marca. '
-                                        'Desde 1.200 €/dia + IVA.',
-                                  'en': 'Hire a humanoid robot for trade fairs, conferences, stands and '
-                                        'corporate events. It dances, interacts and draws visitors to your '
+    'alquiler_humanoides_titulo': {'es': 'Bonico: alquiler de robot humanoide para eventos | RH·BOTS',
+                                    'pt': 'Bonico: aluguer de robô humanoide para eventos | RH·BOTS',
+                                    'en': 'Bonico: humanoid robot hire for events | RH·BOTS',
+                                    'fr': "Bonico : location de robot humanoïde pour événements | RH·BOTS",
+                                    'zh': 'Bonico：活动与展会人形机器人租赁 | RH·BOTS',
+                                    'ca': "Bonico: lloguer de robot humanoide per a esdeveniments | RH·BOTS"},
+    'alquiler_humanoides_desc': {'es': 'Alquila a Bonico, nuestro robot humanoide, para ferias, congresos, '
+                                        'stands y eventos corporativos. Baila, interactúa y atrae visitantes '
+                                        'a tu marca. Desde 1.200 €/día + IVA.',
+                                  'pt': 'Alugue o Bonico, o nosso robô humanoide, para feiras, congressos, '
+                                        'stands e eventos corporativos. Dança, interage e atrai visitantes à '
+                                        'sua marca. Desde 1.200 €/dia + IVA.',
+                                  'en': 'Hire Bonico, our humanoid robot, for trade fairs, conferences, stands '
+                                        'and corporate events. It dances, interacts and draws visitors to your '
                                         'brand. From 1,200 €/day + VAT.',
-                                  'fr': 'Louez un robot humanoïde pour salons, congrès, stands et événements '
-                                        "d'entreprise. Il danse, interagit et attire les visiteurs vers votre "
-                                        'marque. À partir de 1 200 €/jour + TVA.',
-                                  'zh': '为展会、大会、展台和企业活动租赁人形机器人。它会跳舞、与观众互动，'
-                                        '为您的品牌吸引人流。每天1,200 €起（不含增值税）。',
-                                  'ca': "Lloga un robot humanoide per a fires, congressos, estands i "
-                                        'esdeveniments corporatius. Balla, interactua i atrau visitants a la '
-                                        'teva marca. Des de 1.200 €/dia + IVA.'},
+                                  'fr': 'Louez Bonico, notre robot humanoïde, pour salons, congrès, stands et '
+                                        "événements d'entreprise. Il danse, interagit et attire les visiteurs "
+                                        'vers votre marque. À partir de 1 200 €/jour + TVA.',
+                                  'zh': '租赁我们的人形机器人 Bonico，用于展会、大会、展台和企业活动。它会跳舞、'
+                                        '与观众互动，为您的品牌吸引人流。每天1,200 €起（不含增值税）。',
+                                  'ca': "Lloga en Bonico, el nostre robot humanoide, per a fires, congressos, "
+                                        'estands i esdeveniments corporatius. Balla, interactua i atrau '
+                                        'visitants a la teva marca. Des de 1.200 €/dia + IVA.'},
     'tarifa_titulo': {'es': 'Cuotas de alquiler', 'pt': 'Mensalidades de aluguer',
                        'en': 'Rental rates', 'fr': 'Loyers mensuels',
                        'zh': '租赁月费', 'ca': 'Quotes de lloguer'},
@@ -2831,8 +2837,8 @@ def alquiler_humanoides_page():
         chips = ''.join(f'<li>{e(x)}</li>' for x in pz.get('opciones', []))
         out.append(f'''  <section class="section section--white sector sector--invertido" id="personalizar">
     <div class="wrap sector__grid">
-      <figure class="sector__foto sector__foto--producto reveal">
-        <img src="{base}{e(pz.get('imagen', ''))}" alt="{e(pz.get('titulo', ''))}" loading="lazy">
+      <figure class="sector__foto reveal">
+        <img src="{base}{e(pz.get('imagen', ''))}" alt="{t('ev_foto_alt')}" loading="lazy">
       </figure>
       <div class="sector__texto reveal">
         <p class="kicker">{e(pz.get('kicker', ''))}</p>
@@ -2910,24 +2916,20 @@ def alquiler_humanoides_page():
 
     # ---- 9 · galería y vídeo (8 · desplazamiento va después, con menos peso)
     gal = a.get('galeria')
-    if gal:
-        fotos = ''.join(
-            f'<li class="evgal__item reveal"><img src="{base}{e(img)}" alt="{e(tit)}" loading="lazy"></li>'
-            for tit, img in gal.get('fotos', []))
+    if gal and gal.get('videos'):
         piezas = ''
-        for v in gal.get('videos', []):
+        for v in gal['videos']:
             pie = f'<figcaption>{e(v["titulo"])}</figcaption>' if v.get('titulo') else ''
             piezas += (f'<li class="vid__item reveal"><figure>'
                        f'<video controls preload="none" playsinline poster="{base}{e(v["poster"])}">'
                        f'<source src="{base}{e(v["src"])}" type="video/mp4">'
                        f'{t("navegador_sin_video")}</video>{pie}</figure></li>')
-        videos = f'<ul class="vid vid--2 evgal__videos">{piezas}</ul>' if piezas else ''
+        rejilla = 'vid--2' if len(gal['videos']) > 1 else 'vid--solo'
         out.append(f'''  <section class="section section--white" id="galeria">
     <div class="wrap">
       <header class="section-head reveal"><p class="kicker">{e(gal.get('kicker', ''))}</p>
         <h2 class="h-section">{e(gal.get('titulo', ''))}</h2></header>
-      {videos}
-      <ul class="evgal">{fotos}</ul>
+      <ul class="vid {rejilla} evgal__videos">{piezas}</ul>
     </div>
   </section>
 ''')

@@ -424,7 +424,7 @@
         "id": "humanoides",
         "href": "alquiler-humanoides.html",
         "titulo": "Lloguer d'humanoides per a esdeveniments",
-        "texto": "Humanoides per a fires, congressos, inauguracions i activacions de marca, amb acompanyament del nostre equip.",
+        "texto": "En Bonico, el nostre humanoide, per a fires, congressos, inauguracions i activacions de marca, amb acompanyament del nostre equip.",
         "imagen": "assets/escenarios/complejos-comerciales.webp"
       }
     ],
@@ -560,8 +560,8 @@
     },
     "humanoides": {
       "kicker": "Lloguer · Esdeveniments",
-      "h1": "El robot que converteix el teu estand en el centre d'atenció",
-      "lede": "Lloga un robot humanoide per a fires, esdeveniments i accions de marca. Balla, interactua i sorprèn els teus visitants amb una experiència tecnològica única.",
+      "h1": "Bonico, el robot que converteix el teu estand en el centre d'atenció",
+      "lede": "Lloga en Bonico, el nostre robot humanoide, per a fires, esdeveniments i accions de marca. Balla, interactua i sorprèn els teus visitants amb una experiència tecnològica única.",
       "imagen": "assets/robots-portada.webp",
       "precio_desde": "1.200 €",
       "precio_unidad": "/ dia",
@@ -571,13 +571,13 @@
         "titulo": "Que s'aturin davant del teu estand ja és mitja conversa",
         "parrafos": [
           "En una fira, aconseguir que algú s'aturi davant del teu estand és el primer pas per iniciar una conversa.",
-          "El nostre robot humanoide atrau mirades, genera curiositat i crea un punt d'interacció al voltant de la teva marca. Una experiència diferent que els visitants recorden i comparteixen."
+          "En Bonico atrau mirades, genera curiositat i crea un punt d'interacció al voltant de la teva marca. Una experiència diferent que els visitants recorden i comparteixen."
         ],
         "imagen": "assets/robots/rhx2-ultra/en-movimiento.webp"
       },
       "capacidades": {
         "kicker": "Què pot fer?",
-        "titulo": "Un robot que fa molt més que ser-hi",
+        "titulo": "En Bonico fa molt més que ser-hi",
         "items": [
           [
             "Ballar",
@@ -606,9 +606,9 @@
         ]
       },
       "personaliza": {
-        "kicker": "Personalitza el robot",
-        "titulo": "Fes que el robot parli l'idioma de la teva marca",
-        "texto": "El robot no arriba amb un guió genèric. Preparem l'experiència a partir del que vols explicar a l'esdeveniment: què diu, com ho diu i què fa davant del teu públic.",
+        "kicker": "Personalitza en Bonico",
+        "titulo": "Fes que en Bonico parli l'idioma de la teva marca",
+        "texto": "En Bonico no arriba amb un guió genèric. Preparem l'experiència a partir del que vols explicar a l'esdeveniment: què diu, com ho diu i què fa davant del teu públic.",
         "opciones": [
           "Personalitat",
           "Manera de parlar",
@@ -622,14 +622,14 @@
         ],
         "precio_desde": "300 €",
         "precio_nota": "El preu depèn de la complexitat de la personalització.",
-        "imagen": "assets/robots/rhx2/sentado.webp"
+        "imagen": "assets/robots/rhx2-ultra/bonico-entrevista.webp"
       },
       "tarifa": {
         "kicker": "Tarifes",
-        "titulo": "Lloga el robot per al teu pròxim esdeveniment",
+        "titulo": "Lloga en Bonico per al teu pròxim esdeveniment",
         "incluye_titulo": "La jornada inclou",
         "incluye": [
-          "Robot humanoide RHX2 Ultra",
+          "Bonico, robot humanoide RHX2 Ultra",
           "Operador i tècnic",
           "Posada en funcionament",
           "Supervisió",
@@ -640,7 +640,7 @@
       },
       "ideal": {
         "kicker": "Ideal per a",
-        "titulo": "On encaixa un humanoide",
+        "titulo": "On encaixa en Bonico",
         "items": [
           "Fires",
           "Congressos",
@@ -664,73 +664,49 @@
           ],
           [
             "Dissenyem l'experiència",
-            "Definim com hi participarà el robot i quin nivell de personalització necessites."
+            "Definim com hi participarà en Bonico i quin nivell de personalització necessites."
           ],
           [
-            "Preparem el robot",
+            "Preparem en Bonico",
             "Configurem i provem l'experiència abans de l'esdeveniment."
           ],
           [
-            "El robot arriba al teu esdeveniment",
+            "En Bonico arriba al teu esdeveniment",
             "Ens encarreguem de la posada en marxa, la supervisió i el funcionament."
           ]
         ]
       },
       "galeria": {
         "kicker": "En moviment",
-        "titulo": "Mira'l abans d'imaginar-lo al teu esdeveniment",
+        "titulo": "Mira en Bonico abans d'imaginar-lo al teu esdeveniment",
         "videos": [
           {
-            "src": "assets/video/x2.mp4",
-            "poster": "assets/video/x2.webp",
-            "titulo": "L'humanoide en moviment"
-          },
-          {
-            "src": "assets/video/a3-ultra-1.mp4",
-            "poster": "assets/video/a3-ultra-1.webp",
-            "titulo": "Desplaçament i presència"
-          },
-          {
-            "src": "assets/video/a3-ultra-2.mp4",
-            "poster": "assets/video/a3-ultra-2.webp",
-            "titulo": "Manipulació i interacció"
+            "src": "assets/video/bonico-bailando.mp4",
+            "poster": "assets/video/bonico-bailando.webp",
+            "titulo": "En Bonico ballant a Fira València"
           }
-        ],
-        "fotos": [
-          [
-            "Gest de salutació",
-            "assets/robots/rhx2-ultra/hero.webp"
-          ],
-          [
-            "Interacció propera",
-            "assets/robots/rhx2/de-rodillas.webp"
-          ],
-          [
-            "Presència en escena",
-            "assets/robots/rha3-ultra/saludando.webp"
-          ]
         ]
       },
       "faq": [
         [
-          "Quin robot és exactament?",
-          "L'humanoide que portem als esdeveniments és el RHX2 Ultra: 1,31 m d'alçada, percepció 3D i 30 graus de llibertat. Pots consultar-ne la fitxa tècnica completa al catàleg."
+          "Qui és en Bonico?",
+          "En Bonico és el nostre RHX2 Ultra: 1,31 m d'alçada, percepció 3D i 30 graus de llibertat. Pots consultar-ne la fitxa tècnica completa al catàleg."
         ],
         [
-          "Quant costa llogar el robot humanoide?",
+          "Quant costa llogar en Bonico?",
           "El servei està disponible des de 1.200 € + IVA per dia. El preu final depèn de la durada, la ubicació i les necessitats de personalització."
         ],
         [
-          "El robot pot ballar?",
-          "Sí. El robot pot fer diferents balls i coreografies. També podem estudiar coreografies personalitzades."
+          "En Bonico pot ballar?",
+          "Sí. En Bonico pot fer diferents balls i coreografies. També podem estudiar coreografies personalitzades."
         ],
         [
           "Pot parlar amb els visitants?",
-          "Sí. Pot interactuar amb els visitants i mantenir converses segons les capacitats i la configuració contractades."
+          "Sí. En Bonico pot interactuar amb els visitants i mantenir converses segons les capacitats i la configuració contractades."
         ],
         [
           "En podem personalitzar la personalitat?",
-          "Sí. Podem adaptar determinats aspectes de la seva personalitat, els diàlegs, el comportament i els continguts a la marca o a l'esdeveniment."
+          "Sí. Podem adaptar determinats aspectes de la personalitat d'en Bonico, els seus diàlegs, el seu comportament i els seus continguts a la marca o a l'esdeveniment."
         ],
         [
           "El preu inclou el desplaçament?",
@@ -746,7 +722,7 @@
         ]
       ],
       "cierre": {
-        "titulo": "Preparat per portar un humanoide al teu pròxim esdeveniment?",
+        "titulo": "Preparat per portar en Bonico al teu pròxim esdeveniment?",
         "texto": "Explica'ns què tens al cap i dissenyarem una experiència adaptada al teu esdeveniment, la teva marca i el teu públic."
       }
     }

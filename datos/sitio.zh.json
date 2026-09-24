@@ -424,7 +424,7 @@
         "id": "humanoides",
         "href": "alquiler-humanoides.html",
         "titulo": "活动用人形机器人租赁",
-        "texto": "面向展会、论坛、开业典礼与品牌活动的人形机器人，并由我们的团队全程协助。",
+        "texto": "Bonico 是我们的人形机器人，适用于展会、论坛、开业典礼与品牌活动，并由我们的团队全程协助。",
         "imagen": "assets/escenarios/complejos-comerciales.webp"
       }
     ],
@@ -560,8 +560,8 @@
     },
     "humanoides": {
       "kicker": "租赁 · 活动展会",
-      "h1": "让您的展台成为全场焦点的机器人",
-      "lede": "租赁人形机器人，用于展会、活动与品牌营销。它能跳舞、能互动，为每一位来访者带来独一无二的科技体验。",
+      "h1": "Bonico，让您的展台成为全场焦点的机器人",
+      "lede": "租赁我们的人形机器人 Bonico，用于展会、活动与品牌营销。它能跳舞、能互动，为每一位来访者带来独一无二的科技体验。",
       "imagen": "assets/robots-portada.webp",
       "precio_desde": "1,200 €",
       "precio_unidad": "/ 天",
@@ -571,13 +571,13 @@
         "titulo": "让人在展台前停下脚步，对话就成功了一半",
         "parrafos": [
           "在展会现场，让人在您的展台前停下脚步，是开启一场对话的第一步。",
-          "我们的人形机器人吸引目光、激发好奇，在您的品牌周围形成一个互动焦点。这是一种与众不同的体验，来访者会记住它，也愿意分享它。"
+          "Bonico 吸引目光、激发好奇，在您的品牌周围形成一个互动焦点。这是一种与众不同的体验，来访者会记住它，也愿意分享它。"
         ],
         "imagen": "assets/robots/rhx2-ultra/en-movimiento.webp"
       },
       "capacidades": {
         "kicker": "它能做什么？",
-        "titulo": "它远不只是站在那里的机器人",
+        "titulo": "Bonico 远不只是站在那里",
         "items": [
           [
             "跳舞",
@@ -606,9 +606,9 @@
         ]
       },
       "personaliza": {
-        "kicker": "定制机器人",
-        "titulo": "让机器人说出您的品牌语言",
-        "texto": "机器人不会带着一套通用脚本上场。我们会根据您想在活动中传达的内容来准备整场体验：它说什么、怎么说，以及在您的观众面前做什么。",
+        "kicker": "定制 Bonico",
+        "titulo": "让 Bonico 说出您的品牌语言",
+        "texto": "Bonico 不会带着一套通用脚本上场。我们会根据您想在活动中传达的内容来准备整场体验：它说什么、怎么说，以及在您的观众面前做什么。",
         "opciones": [
           "性格设定",
           "说话方式",
@@ -622,14 +622,14 @@
         ],
         "precio_desde": "300 €",
         "precio_nota": "价格取决于定制的复杂程度。",
-        "imagen": "assets/robots/rhx2/sentado.webp"
+        "imagen": "assets/robots/rhx2-ultra/bonico-entrevista.webp"
       },
       "tarifa": {
         "kicker": "价格",
-        "titulo": "为您的下一场活动租赁机器人",
+        "titulo": "为您的下一场活动租赁 Bonico",
         "incluye_titulo": "单日服务包含",
         "incluye": [
-          "RHX2 Ultra 人形机器人",
+          "Bonico（RHX2 Ultra 人形机器人）",
           "操作员与技术人员",
           "开机调试",
           "现场监控",
@@ -640,7 +640,7 @@
       },
       "ideal": {
         "kicker": "适用场景",
-        "titulo": "人形机器人的用武之地",
+        "titulo": "Bonico 的用武之地",
         "items": [
           "展览会",
           "大会论坛",
@@ -664,73 +664,49 @@
           ],
           [
             "共同设计体验",
-            "确定机器人的参与方式，以及您需要的定制程度。"
+            "确定 Bonico 的参与方式，以及您需要的定制程度。"
           ],
           [
-            "准备机器人",
+            "准备 Bonico",
             "活动前完成配置，并对整场体验进行测试。"
           ],
           [
-            "机器人抵达活动现场",
+            "Bonico 抵达活动现场",
             "开机启动、现场监控与全程运行都由我们负责。"
           ]
         ]
       },
       "galeria": {
         "kicker": "动态展示",
-        "titulo": "先看它的表现，再想象它出现在您的活动上",
+        "titulo": "先看看 Bonico 的表现，再想象它出现在您的活动上",
         "videos": [
           {
-            "src": "assets/video/x2.mp4",
-            "poster": "assets/video/x2.webp",
-            "titulo": "运动中的人形机器人"
-          },
-          {
-            "src": "assets/video/a3-ultra-1.mp4",
-            "poster": "assets/video/a3-ultra-1.webp",
-            "titulo": "行走与现场表现"
-          },
-          {
-            "src": "assets/video/a3-ultra-2.mp4",
-            "poster": "assets/video/a3-ultra-2.webp",
-            "titulo": "抓取与互动"
+            "src": "assets/video/bonico-bailando.mp4",
+            "poster": "assets/video/bonico-bailando.webp",
+            "titulo": "Bonico 在 Fira València 跳舞"
           }
-        ],
-        "fotos": [
-          [
-            "挥手致意",
-            "assets/robots/rhx2-ultra/hero.webp"
-          ],
-          [
-            "近距离互动",
-            "assets/robots/rhx2/de-rodillas.webp"
-          ],
-          [
-            "舞台上的存在感",
-            "assets/robots/rha3-ultra/saludando.webp"
-          ]
         ]
       },
       "faq": [
         [
-          "具体是哪款机器人？",
-          "我们带到活动现场的人形机器人是 RHX2 Ultra：身高1.31米，具备三维感知和30个自由度。您可以在产品目录中查看完整技术资料。"
+          "Bonico 是什么机器人？",
+          "Bonico 就是我们的 RHX2 Ultra：身高1.31米，具备三维感知和30个自由度。您可以在产品目录中查看完整技术资料。"
         ],
         [
-          "租赁人形机器人的费用是多少？",
+          "租赁 Bonico 的费用是多少？",
           "该服务每天 1,200 € + 增值税起。最终价格取决于活动时长、地点以及定制需求。"
         ],
         [
-          "机器人会跳舞吗？",
-          "可以。机器人能表演多种舞蹈与编排。我们也可以为您研究定制的舞蹈编排。"
+          "Bonico 会跳舞吗？",
+          "可以。Bonico 能表演多种舞蹈与编排。我们也可以为您研究定制的舞蹈编排。"
         ],
         [
           "它可以和来访者交谈吗？",
-          "可以。它能够与来访者互动并进行对话，具体取决于所签约的功能与配置。"
+          "可以。Bonico 能与来访者互动，并根据所选的功能与配置进行交谈。"
         ],
         [
           "我们可以定制它的性格吗？",
-          "可以。我们能够根据品牌或活动，调整它在性格、对话、行为与内容方面的某些设定。"
+          "可以。我们能够根据品牌或活动的需求，调整 Bonico 的性格、对话、行为与内容。"
         ],
         [
           "价格包含交通费用吗？",
@@ -746,7 +722,7 @@
         ]
       ],
       "cierre": {
-        "titulo": "准备好让人形机器人亮相您的下一场活动了吗？",
+        "titulo": "准备好让 Bonico 亮相您的下一场活动了吗？",
         "texto": "告诉我们您的想法，我们将为您的活动、品牌与受众量身设计一场体验。"
       }
     }

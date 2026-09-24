@@ -424,7 +424,7 @@
         "id": "humanoides",
         "href": "alquiler-humanoides.html",
         "titulo": "Location d'humanoïdes pour événements",
-        "texto": "Des humanoïdes pour salons, congrès, inaugurations et activations de marque, avec l'accompagnement de notre équipe.",
+        "texto": "Bonico, notre humanoïde, pour salons, congrès, inaugurations et activations de marque, avec l'accompagnement de notre équipe.",
         "imagen": "assets/escenarios/complejos-comerciales.webp"
       }
     ],
@@ -560,8 +560,8 @@
     },
     "humanoides": {
       "kicker": "Location · Événements",
-      "h1": "Le robot qui fait de votre stand le centre de l'attention",
-      "lede": "Louez un robot humanoïde pour vos salons, vos événements et vos actions de marque. Il danse, il interagit et il surprend vos visiteurs avec une expérience technologique unique.",
+      "h1": "Bonico, le robot qui fait de votre stand le centre de l'attention",
+      "lede": "Louez Bonico, notre robot humanoïde, pour vos salons, vos événements et vos actions de marque. Il danse, il interagit et il surprend vos visiteurs avec une expérience technologique unique.",
       "imagen": "assets/robots-portada.webp",
       "precio_desde": "1 200 €",
       "precio_unidad": "/ jour",
@@ -571,13 +571,13 @@
         "titulo": "Qu'on s'arrête devant votre stand, c'est déjà la moitié de la conversation",
         "parrafos": [
           "Dans un salon, amener quelqu'un à s'arrêter devant votre stand est le premier pas pour engager une conversation.",
-          "Notre robot humanoïde attire les regards, suscite la curiosité et crée un point d'interaction autour de votre marque. Une expérience différente, que les visiteurs retiennent et partagent."
+          "Bonico attire les regards, suscite la curiosité et crée un point d'interaction autour de votre marque. Une expérience différente, que les visiteurs retiennent et partagent."
         ],
         "imagen": "assets/robots/rhx2-ultra/en-movimiento.webp"
       },
       "capacidades": {
         "kicker": "Que peut-il faire ?",
-        "titulo": "Un robot qui fait bien plus qu'être là",
+        "titulo": "Bonico fait bien plus qu'être là",
         "items": [
           [
             "Danser",
@@ -606,9 +606,9 @@
         ]
       },
       "personaliza": {
-        "kicker": "Personnalisez le robot",
-        "titulo": "Faites-lui parler le langage de votre marque",
-        "texto": "Le robot n'arrive pas avec un script générique. Nous préparons l'expérience à partir de ce que vous voulez raconter lors de l'événement : ce qu'il dit, comment il le dit et ce qu'il fait devant votre public.",
+        "kicker": "Personnalisez Bonico",
+        "titulo": "Que Bonico parle le langage de votre marque",
+        "texto": "Bonico n'arrive pas avec un script générique. Nous préparons l'expérience à partir de ce que vous voulez raconter lors de l'événement : ce qu'il dit, comment il le dit et ce qu'il fait devant votre public.",
         "opciones": [
           "Personnalité",
           "Façon de parler",
@@ -622,14 +622,14 @@
         ],
         "precio_desde": "300 €",
         "precio_nota": "Le prix dépend de la complexité de la personnalisation.",
-        "imagen": "assets/robots/rhx2/sentado.webp"
+        "imagen": "assets/robots/rhx2-ultra/bonico-entrevista.webp"
       },
       "tarifa": {
         "kicker": "Tarifs",
-        "titulo": "Louez le robot pour votre prochain événement",
+        "titulo": "Louez Bonico pour votre prochain événement",
         "incluye_titulo": "La journée comprend",
         "incluye": [
-          "Robot humanoïde RHX2 Ultra",
+          "Bonico, robot humanoïde RHX2 Ultra",
           "Opérateur et technicien",
           "Mise en service",
           "Supervision",
@@ -640,7 +640,7 @@
       },
       "ideal": {
         "kicker": "Idéal pour",
-        "titulo": "Où un humanoïde trouve sa place",
+        "titulo": "Où Bonico trouve sa place",
         "items": [
           "Salons",
           "Congrès",
@@ -664,73 +664,49 @@
           ],
           [
             "Nous concevons l'expérience",
-            "Nous définissons comment le robot interviendra et le niveau de personnalisation dont vous avez besoin."
+            "Nous définissons comment Bonico interviendra et le niveau de personnalisation dont vous avez besoin."
           ],
           [
-            "Nous préparons le robot",
+            "Nous préparons Bonico",
             "Nous configurons et testons l'expérience avant l'événement."
           ],
           [
-            "Le robot arrive à votre événement",
+            "Bonico arrive à votre événement",
             "Nous nous occupons de la mise en marche, de la supervision et du fonctionnement."
           ]
         ]
       },
       "galeria": {
         "kicker": "En mouvement",
-        "titulo": "Voyez-le avant de l'imaginer à votre événement",
+        "titulo": "Voyez Bonico avant de l'imaginer à votre événement",
         "videos": [
           {
-            "src": "assets/video/x2.mp4",
-            "poster": "assets/video/x2.webp",
-            "titulo": "L'humanoïde en mouvement"
-          },
-          {
-            "src": "assets/video/a3-ultra-1.mp4",
-            "poster": "assets/video/a3-ultra-1.webp",
-            "titulo": "Déplacement et présence"
-          },
-          {
-            "src": "assets/video/a3-ultra-2.mp4",
-            "poster": "assets/video/a3-ultra-2.webp",
-            "titulo": "Manipulation et interaction"
+            "src": "assets/video/bonico-bailando.mp4",
+            "poster": "assets/video/bonico-bailando.webp",
+            "titulo": "Bonico en train de danser à Fira València"
           }
-        ],
-        "fotos": [
-          [
-            "Geste de salut",
-            "assets/robots/rhx2-ultra/hero.webp"
-          ],
-          [
-            "Interaction de proximité",
-            "assets/robots/rhx2/de-rodillas.webp"
-          ],
-          [
-            "Présence en scène",
-            "assets/robots/rha3-ultra/saludando.webp"
-          ]
         ]
       },
       "faq": [
         [
-          "De quel robot s'agit-il exactement ?",
-          "L'humanoïde que nous emmenons aux événements est le RHX2 Ultra : 1,31 m de haut, perception 3D et 30 degrés de liberté. Sa fiche technique complète est disponible dans le catalogue."
+          "Qui est Bonico ?",
+          "Bonico est notre RHX2 Ultra : 1,31 m de haut, perception 3D et 30 degrés de liberté. Sa fiche technique complète est disponible dans le catalogue."
         ],
         [
-          "Combien coûte la location du robot humanoïde ?",
+          "Combien coûte la location de Bonico ?",
           "Le service est disponible à partir de 1 200 € + TVA par jour. Le prix final dépend de la durée, du lieu et des besoins de personnalisation."
         ],
         [
-          "Le robot peut-il danser ?",
-          "Oui. Le robot peut exécuter différentes danses et chorégraphies. Nous pouvons aussi étudier des chorégraphies personnalisées."
+          "Bonico peut-il danser ?",
+          "Oui. Bonico peut exécuter différentes danses et chorégraphies. Nous pouvons aussi étudier des chorégraphies personnalisées."
         ],
         [
           "Peut-il parler avec les visiteurs ?",
-          "Oui. Il peut interagir avec les visiteurs et tenir des conversations selon les capacités et la configuration souscrites."
+          "Oui. Bonico peut interagir avec les visiteurs et tenir des conversations selon les capacités et la configuration retenues."
         ],
         [
           "Pouvons-nous personnaliser sa personnalité ?",
-          "Oui. Nous pouvons adapter certains aspects de sa personnalité, de ses dialogues, de son comportement et de ses contenus à la marque ou à l'événement."
+          "Oui. Nous pouvons adapter certains aspects de la personnalité de Bonico, de ses dialogues, de son comportement et de ses contenus à la marque ou à l'événement."
         ],
         [
           "Le prix inclut-il le déplacement ?",
@@ -746,7 +722,7 @@
         ]
       ],
       "cierre": {
-        "titulo": "Prêt à emmener un humanoïde à votre prochain événement ?",
+        "titulo": "Prêt à emmener Bonico à votre prochain événement ?",
         "texto": "Dites-nous ce que vous avez en tête et nous concevrons une expérience adaptée à votre événement, à votre marque et à votre public."
       }
     }
