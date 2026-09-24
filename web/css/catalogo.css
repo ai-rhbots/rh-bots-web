@@ -2053,3 +2053,12 @@ html body :is(h3, h4, .kicker, .phero__claim, .que__destacado,
 @media (max-width:860px){
   .evcierre__grid{ grid-template-columns:1fr; }
 }
+
+/* eventos: los cuatro pasos caben en una fila, en tarjetas más pequeñas */
+.ctopasos--ev{ grid-template-columns:repeat(4, minmax(0, 1fr)); gap:clamp(12px, 1.2vw, 18px); }
+.ctopasos--ev .ctopaso{ padding:clamp(18px, 1.8vw, 24px); border-radius:16px; }
+.ctopasos--ev .ctopaso__num{ font-size:13px; }
+.ctopasos--ev .ctopaso__titulo{ margin-top:10px; font-size:clamp(16px, 1.3vw, 18px); line-height:1.25; }
+.ctopasos--ev .ctopaso__texto{ margin-top:8px; font-size:13.5px; line-height:1.6; }
+@media (max-width:1000px){ .ctopasos--ev{ grid-template-columns:repeat(2, minmax(0, 1fr)); } }
+@media (max-width:560px){ .ctopasos--ev{ grid-template-columns:1fr; } }

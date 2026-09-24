@@ -2894,7 +2894,7 @@ def alquiler_humanoides_page():
     <div class="wrap">
       <header class="section-head reveal"><p class="kicker">{e(pr.get('kicker', ''))}</p>
         <h2 class="h-section">{e(pr.get('titulo', ''))}</h2></header>
-      <ul class="ctopasos">{pasos}</ul>
+      <ul class="ctopasos ctopasos--ev">{pasos}</ul>
     </div>
   </section>
 ''')
