@@ -2856,20 +2856,24 @@ def alquiler_humanoides_page():
     tf = a.get('tarifa')
     if tf:
         incluye = ''.join(f'<li>{e(x)}</li>' for x in tf.get('incluye', []))
-        out.append(f'''  <section class="section section--navy" id="tarifas">
+        out.append(f'''  <section class="section section--navy section--compacta" id="tarifas">
     <div class="wrap wrap--narrow">
-      <header class="section-head reveal"><p class="kicker">{e(tf.get('kicker', ''))}</p>
+      <header class="section-head section-head--compacta reveal"><p class="kicker">{e(tf.get('kicker', ''))}</p>
         <h2 class="h-section h-section--onblue onblue">{e(tf.get('titulo', ''))}</h2></header>
       <div class="evtarifa reveal">
-        <p class="evprecio evprecio--grande">
-          <span class="evprecio__etq">{t('ev_desde')}</span>
-          <strong class="evprecio__num">{e(a.get('precio_desde', ''))}</strong>
-          <span class="evprecio__unidad">{e(a.get('precio_unidad', ''))} {t('iva_corto')}</span>
-        </p>
-        <p class="evtarifa__titulo">{e(tf.get('incluye_titulo', ''))}</p>
-        <ul class="evtarifa__lista">{incluye}</ul>
-        <p class="evtarifa__nota">{e(tf.get('nota', ''))}</p>
-        <a class="pill pill--ancho" href="#presupuesto"><span>{t('ev_solicitar')}</span>{CHEVRON}</a>
+        <div class="evtarifa__col">
+          <p class="evprecio evprecio--grande">
+            <span class="evprecio__etq">{t('ev_desde')}</span>
+            <strong class="evprecio__num">{e(a.get('precio_desde', ''))}</strong>
+            <span class="evprecio__unidad">{e(a.get('precio_unidad', ''))} {t('iva_corto')}</span>
+          </p>
+          <p class="evtarifa__nota">{e(tf.get('nota', ''))}</p>
+          <a class="pill" href="#presupuesto"><span>{t('ev_solicitar')}</span>{CHEVRON}</a>
+        </div>
+        <div class="evtarifa__col">
+          <p class="evtarifa__titulo">{e(tf.get('incluye_titulo', ''))}</p>
+          <ul class="evtarifa__lista">{incluye}</ul>
+        </div>
       </div>
     </div>
   </section>

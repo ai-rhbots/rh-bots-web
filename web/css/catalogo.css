@@ -1979,29 +1979,38 @@ html body :is(h3, h4, .kicker, .phero__claim, .que__destacado,
   font-size:13px; color:var(--ink);
 }
 
-/* tarifa: una sola tarjeta, sin tabla */
+/* tarifa: una tarjeta en dos columnas, precio a un lado y qué incluye al otro */
+.section--compacta{ padding-block:clamp(44px, 5vw, 70px); }
+.section-head--compacta{ margin-bottom:clamp(24px, 2.6vw, 34px); }
 .evtarifa{
-  margin-top:clamp(26px, 3vw, 38px); padding:clamp(28px, 3.2vw, 46px);
-  background:#fff; border-radius:24px; box-shadow:0 20px 50px rgba(11,22,38,.09);
+  display:grid; grid-template-columns:minmax(0, .95fr) minmax(0, 1fr);
+  gap:clamp(24px, 3vw, 44px); align-items:center;
+  padding:clamp(24px, 2.6vw, 34px);
+  background:#fff; border-radius:22px; box-shadow:0 20px 50px rgba(11,22,38,.09);
 }
+.evtarifa__col{ min-width:0; }
+.evtarifa .evprecio__num{ font-size:clamp(30px, 3.4vw, 44px); }
 .evtarifa__titulo{
-  margin-top:clamp(22px, 2.4vw, 30px);
   font-family:var(--font-subtitulo); font-weight:700; font-size:12px;
   letter-spacing:.12em; text-transform:uppercase; color:var(--muted);
 }
-.evtarifa__lista{ display:grid; gap:11px; margin-top:16px; }
+.evtarifa__lista{ display:grid; gap:8px; margin-top:12px; }
 .evtarifa__lista li{
-  position:relative; padding-left:26px; font-size:15px; line-height:1.55; color:var(--ink);
+  position:relative; padding-left:24px; font-size:14px; line-height:1.5; color:var(--ink);
 }
 .evtarifa__lista li::before{
-  content:''; position:absolute; left:0; top:7px; width:11px; height:6px;
+  content:''; position:absolute; left:0; top:6px; width:10px; height:5px;
   border-left:2px solid var(--blue); border-bottom:2px solid var(--blue);
   transform:rotate(-45deg);
 }
 .evtarifa__nota{
-  margin-top:clamp(20px, 2.2vw, 26px); font-size:13px; line-height:1.6; color:var(--muted);
+  margin-top:12px; font-size:12.5px; line-height:1.55; color:var(--muted);
 }
-.evtarifa .pill--ancho{ margin-top:clamp(20px, 2.2vw, 26px); }
+.evtarifa .pill{ margin-top:clamp(16px, 1.8vw, 22px); }
+
+@media (max-width:760px){
+  .evtarifa{ grid-template-columns:1fr; gap:22px; }
+}
 
 /* ideal para: rejilla de escenarios */
 .evideal{
