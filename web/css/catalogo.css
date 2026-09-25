@@ -2106,10 +2106,3 @@ html body :is(h3, h4, .kicker, .phero__claim, .que__destacado,
 @media (max-width:860px){
   .section--navy::before{ background:radial-gradient(74% 54% at 70% 22%, rgba(0,158,227,.26) 0%, rgba(0,158,227,0) 68%); }
 }
-
-/* ---------- portada: bloque de alquiler ---------- */
-.alqhome__lede{
-  margin:clamp(14px, 1.6vw, 20px) auto 0; max-width:60ch;
-  font-size:clamp(15px, 1.15vw, 17px); line-height:1.75; color:var(--ink-66);
-}
-.alqhome__mas{ margin-top:clamp(26px, 3vw, 38px); display:flex; justify-content:center; }
