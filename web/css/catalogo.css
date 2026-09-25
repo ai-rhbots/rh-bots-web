@@ -2106,3 +2106,14 @@ html body :is(h3, h4, .kicker, .phero__claim, .que__destacado,
 @media (max-width:860px){
   .section--navy::before{ background:radial-gradient(74% 54% at 70% 22%, rgba(0,158,227,.26) 0%, rgba(0,158,227,0) 68%); }
 }
+
+/* ---------- importe con IVA junto al precio sin IVA ---------- */
+.evprecio__coniva{
+  margin-top:6px;
+  font-family:var(--font-subtitulo); font-weight:700; font-size:13px;
+  letter-spacing:.02em; color:var(--ink-66);
+}
+.section--navy .evprecio__coniva{ color:rgba(255,255,255,.78); }
+.evtarifa .evprecio__coniva{ color:var(--ink-66); }
+/* la columna con IVA pesa menos que la de la cuota neta */
+.tarifa__cuota--iva{ color:var(--ink-66); font-weight:600; }

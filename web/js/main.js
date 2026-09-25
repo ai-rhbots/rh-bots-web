@@ -9,10 +9,13 @@
   var LANG = IDIOMAS.indexOf(document.documentElement.lang) > -1 ? document.documentElement.lang : 'es';
   var LOCALES = { es: 'es-ES', pt: 'pt-PT', en: 'en-GB', fr: 'fr-FR',
                   de: 'de-DE', zh: 'zh-CN', ar: 'ar-AE', ca: 'ca-ES' };
+  /* IVA español: la empresa factura desde España */
+  var IVA = 0.21;
   var TXT = {
     es: {
       asuntoEvento: 'Alquiler de humanoide para evento',
       ivaNoIncluido: 'IVA no incluido',
+      conIva: 'Con IVA (21 %): {n}',
       abrirMenu: 'Abrir menú', cerrarMenu: 'Cerrar menú',
       sinStock: 'Sin stock — consúltanos la disponibilidad',
       avisame: 'Avísame cuando esté',
@@ -35,6 +38,7 @@
     pt: {
       asuntoEvento: 'Aluguer de humanoide para evento',
       ivaNoIncluido: 'IVA não incluído',
+      conIva: 'Com IVA (21 %): {n}',
       abrirMenu: 'Abrir menu', cerrarMenu: 'Fechar menu',
       sinStock: 'Sem stock — consulte-nos a disponibilidade',
       avisame: 'Avisem-me quando estiver disponível',
@@ -57,6 +61,7 @@
     en: {
       asuntoEvento: 'Humanoid rental for an event',
       ivaNoIncluido: 'VAT not included',
+      conIva: 'With VAT (21%): {n}',
       abrirMenu: 'Open menu', cerrarMenu: 'Close menu',
       sinStock: 'Out of stock — ask us about availability',
       avisame: 'Notify me when available',
@@ -79,6 +84,7 @@
     fr: {
       asuntoEvento: "Location d'humanoïde pour un événement",
       ivaNoIncluido: 'TVA non incluse',
+      conIva: 'TVA comprise (21 %) : {n}',
       abrirMenu: 'Ouvrir le menu', cerrarMenu: 'Fermer le menu',
       sinStock: 'Rupture de stock — demandez-nous la disponibilité',
       avisame: 'M\'avertir quand disponible',
@@ -101,6 +107,7 @@
     de: {
       asuntoEvento: 'Miete eines Humanoiden für eine Veranstaltung',
       ivaNoIncluido: 'zzgl. MwSt.',
+      conIva: 'Mit MwSt. (21 %): {n}',
       abrirMenu: 'Menü öffnen', cerrarMenu: 'Menü schließen',
       sinStock: 'Nicht auf Lager — fragen Sie uns nach der Verfügbarkeit',
       avisame: 'Benachrichtigt mich, sobald verfügbar',
@@ -123,6 +130,7 @@
     zh: {
       asuntoEvento: '活动人形机器人租赁',
       ivaNoIncluido: '不含增值税',
+      conIva: '含增值税（21%）：{n}',
       abrirMenu: '打开菜单', cerrarMenu: '关闭菜单',
       sinStock: '无现货 — 请咨询我们了解供货情况',
       avisame: '到货时通知我',
@@ -145,6 +153,7 @@
     ar: {
       asuntoEvento: 'تأجير روبوت بشري لفعالية',
       ivaNoIncluido: 'غير شامل ضريبة القيمة المضافة',
+      conIva: 'شامل ضريبة القيمة المضافة (21%): {n}',
       abrirMenu: 'فتح القائمة', cerrarMenu: 'إغلاق القائمة',
       sinStock: 'غير متوفر — تواصل معنا لمعرفة موعد التوفر',
       avisame: 'أبلغوني عند التوفر',
@@ -167,6 +176,7 @@
     ca: {
       asuntoEvento: "Lloguer d'humanoide per a esdeveniment",
       ivaNoIncluido: 'IVA no inclòs',
+      conIva: 'Amb IVA (21 %): {n}',
       abrirMenu: 'Obre el menú', cerrarMenu: 'Tanca el menú',
       sinStock: 'Sense estoc — consulta\'ns la disponibilitat',
       avisame: 'Avisa\'m quan hi sigui',
@@ -500,6 +510,14 @@
                '"><span>' + cta + '</span>' + chevron + '</a>';
       }
 
+      function textoIva(neto, moneda) {
+        /* el precio sin IVA sigue mandando; al lado, el mismo importe con IVA */
+        if (!neto || neto <= 0) return esc(TXT.ivaNoIncluido);
+        return esc(TXT.ivaNoIncluido) + ' · ' +
+               esc(TXT.conIva.replace('{n}', importe(Math.round(neto * (1 + IVA) * 100))
+                                                + ' ' + simbolo(moneda)));
+      }
+
       function pinta(v, moneda) {
         if (!v || !v.available) {
           return aviso(TXT.sinStock, TXT.avisame);
@@ -510,7 +528,7 @@
         var precio = d.precio === '1'
           ? '<p class="precio">' + importe(v.price) +
             ' <span>' + esc(simbolo(moneda)) + '</span>' +
-            '<span class="precio__iva">' + esc(TXT.ivaNoIncluido) + '</span></p>'
+            '<span class="precio__iva">' + textoIva(v.price / 100, moneda) + '</span></p>'
           : '';
         var carro = '<i class="pill__ico pill__ico--carro" aria-hidden="true">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" ' +
@@ -620,6 +638,11 @@
             '</div></article>';
         }).join('');
         totalEl.textContent = dinero(total, moneda);
+        var avisoIva = cajaCarrito.querySelector('.carrito__iva');
+        if (avisoIva) {
+          avisoIva.textContent = TXT.ivaNoIncluido + ' · ' +
+            TXT.conIva.replace('{n}', dinero(total * (1 + IVA), moneda));
+        }
         pagar.href = 'https://' + dominio + '/cart/' + items.map(function (i) {
           return i.id + ':' + i.uds;
         }).join(',');

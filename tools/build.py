@@ -357,6 +357,9 @@ TEXTOS = {
                        'fr': 'Tout détail qui nous aide à préparer la proposition.',
                        'zh': '任何有助于我们准备方案的细节。',
                        'ca': 'Qualsevol detall que ens ajudi a preparar la proposta.'},
+    'con_iva': {'es': 'Con IVA (21 %): {n}', 'pt': 'Com IVA (21 %): {n}',
+                 'en': 'With VAT (21%): {n}', 'fr': 'TVA comprise (21 %) : {n}',
+                 'zh': '含增值税（21%）：{n}', 'ca': 'Amb IVA (21 %): {n}'},
     'iva_no_incluido': {'es': 'IVA no incluido', 'pt': 'IVA não incluído',
                          'en': 'VAT not included', 'fr': 'TVA non incluse',
                          'zh': '不含增值税', 'ca': 'IVA no inclòs'},
@@ -412,6 +415,16 @@ TEXTOS = {
                       'fr': 'Loyer mensuel', 'zh': '月费', 'ca': 'Quota mensual'},
     'tarifa_desde': {'es': 'Desde {n}/mes', 'pt': 'Desde {n}/mês', 'en': 'From {n}/month',
                       'fr': 'À partir de {n}/mois', 'zh': '每月{n}起', 'ca': 'Des de {n}/mes'},
+    'tarifa_cuota_sin': {'es': 'Cuota sin IVA', 'pt': 'Mensalidade sem IVA', 'en': 'Monthly rate excl. VAT',
+                          'fr': 'Loyer HT', 'zh': '月费（不含税）', 'ca': 'Quota sense IVA'},
+    'tarifa_cuota_con': {'es': 'Cuota con IVA', 'pt': 'Mensalidade com IVA', 'en': 'Monthly rate incl. VAT',
+                          'fr': 'Loyer TTC', 'zh': '月费（含税）', 'ca': 'Quota amb IVA'},
+    'con_iva_generico': {'es': 'los importes con IVA incluyen el 21 % español',
+                          'pt': 'os valores com IVA incluem os 21 % espanhóis',
+                          'en': 'prices with VAT include the 21% Spanish rate',
+                          'fr': 'les montants TTC incluent la TVA espagnole de 21 %',
+                          'zh': '含税金额按西班牙 21% 的税率计算',
+                          'ca': 'els imports amb IVA inclouen el 21 % espanyol'},
     'alquiler_incluye': {'es': 'Qué incluye la cuota', 'pt': 'O que inclui a mensalidade',
                           'en': "What's included in the rate", 'fr': 'Ce que comprend le loyer',
                           'zh': '月费包含内容', 'ca': 'Què inclou la quota'},
@@ -629,6 +642,7 @@ TEXTOS_DE = {
     'ev_que_haga_ph': 'Tanzen, Besucher empfangen, ein Produkt vorstellen…',
     'ev_mensaje': 'Nachricht',
     'ev_mensaje_ph': 'Alles, was uns hilft, das Angebot vorzubereiten.',
+    'con_iva': 'Mit MwSt. (21 %): {n}',
     'iva_no_incluido': 'zzgl. MwSt.',
     'nav_ver_alquiler_aria': 'Mietoptionen ansehen',
     'alquiler_limpieza_nav': 'Industrielle Reinigungsroboter',
@@ -641,6 +655,9 @@ TEXTOS_DE = {
     'tarifa_plazo': 'Laufzeit',
     'tarifa_duracion': 'Dauer',
     'tarifa_cuota': 'Monatsrate',
+    'tarifa_cuota_sin': 'Monatsrate ohne MwSt.',
+    'tarifa_cuota_con': 'Monatsrate mit MwSt.',
+    'con_iva_generico': 'die Beträge mit MwSt. enthalten die spanischen 21 %',
     'tarifa_desde': 'Ab {n}/Monat',
     'alquiler_incluye': 'Was die Rate umfasst',
     'alquiler_incluye_si': 'Inbegriffen',
@@ -818,6 +835,7 @@ TEXTOS_AR = {
     'ev_que_haga_ph': 'الرقص، استقبال الزوار، تقديم منتج…',
     'ev_mensaje': 'الرسالة',
     'ev_mensaje_ph': 'أي تفاصيل تساعدنا على إعداد العرض.',
+    'con_iva': 'شامل ضريبة القيمة المضافة (21%): {n}',
     'iva_no_incluido': 'غير شامل ضريبة القيمة المضافة',
     'nav_ver_alquiler_aria': 'عرض خيارات التأجير',
     'alquiler_limpieza_nav': 'روبوتات التنظيف الصناعي',
@@ -830,6 +848,9 @@ TEXTOS_AR = {
     'tarifa_plazo': 'المدة التعاقدية',
     'tarifa_duracion': 'المدة',
     'tarifa_cuota': 'القسط الشهري',
+    'tarifa_cuota_sin': 'القسط دون ضريبة',
+    'tarifa_cuota_con': 'القسط شامل الضريبة',
+    'con_iva_generico': 'المبالغ الشاملة للضريبة تحتسب ضريبة إسبانيا البالغة 21%',
     'tarifa_desde': 'ابتداءً من {n} شهرياً',
     'alquiler_incluye': 'ما يشمله القسط',
     'alquiler_incluye_si': 'مشمول',
@@ -1541,6 +1562,43 @@ def formato_precio(valor):
     return entero.replace(',', '.') + ',' + dec
 
 
+# IVA español: la empresa factura desde España, así que los importes con
+# impuestos que mostramos son los de aquí
+IVA = 0.21
+
+
+def con_iva(valor):
+    """Importe con el IVA incluido, ya formateado. Cadena vacía si no hay precio."""
+    try:
+        v = float(valor)
+    except (TypeError, ValueError):
+        return ''
+    return formato_pvp(v * (1 + IVA)) if v > 0 else ''
+
+
+def importe_de_texto(txt):
+    """«1.200 €» o «1,200 €» → 1200.0. Devuelve 0 si no hay número."""
+    limpio = re.sub(r'[^\d.,]', '', txt or '')
+    if not limpio:
+        return 0.0
+    # el último separador seguido de exactamente dos cifras son los decimales
+    m = re.search(r'[.,](\d{2})$', limpio)
+    dec = m.group(1) if m else ''
+    entero = limpio[:m.start()] if m else limpio
+    entero = re.sub(r'[.,]', '', entero)
+    try:
+        return float(entero + ('.' + dec if dec else ''))
+    except ValueError:
+        return 0.0
+
+
+def nota_iva(valor, clase):
+    """«IVA no incluido · Con IVA (21 %): X»: se ven los dos importes."""
+    bruto = con_iva(valor)
+    texto = t('iva_no_incluido') if not bruto else f"{t('iva_no_incluido')} · {t('con_iva', n=bruto)}"
+    return f'<span class="{clase}">{texto}</span>'
+
+
 def formato_pvp(valor):
     """'19900' → «19.900 €»; conserva los céntimos solo si los hay."""
     try:
@@ -1550,7 +1608,8 @@ def formato_pvp(valor):
     if v <= 0:
         return ''
     txt = formato_precio(v)
-    if txt.endswith(',00'):
+    # los céntimos a cero sobran, tanto con coma decimal como con punto
+    if txt.endswith(',00') or txt.endswith('.00'):
         txt = txt[:-3]
     return f'{txt} €'
 
@@ -1561,7 +1620,7 @@ def precio_html(p, clase='pvp'):
     if not pvp:
         return ''
     return (f'<p class="{clase}"><span class="{clase}__etiqueta">{t("pvp")}</span> {pvp}'
-            f'<span class="{clase}__iva">{t("iva_no_incluido")}</span></p>')
+            f'{nota_iva(p.get("precio"), f"{clase}__iva")}</p>')
 
 
 def formato_moneda(codigo):
@@ -1690,7 +1749,7 @@ def estado_compra(disponible, precio, moneda, variante, dominio, etiqueta, conta
     if mostrar_precio and TIENDA.get('mostrar_precio'):
         precio_html = (f'<p class="precio">{e(formato_precio(precio))} '
                        f'<span>{e(formato_moneda(moneda))}</span>'
-                       f'<span class="precio__iva">{t("iva_no_incluido")}</span></p>')
+                       f'{nota_iva(precio, "precio__iva")}</p>')
     anadir = (f'<button class="pill pill--anadir" type="button" data-anadir '
               f'data-variante="{e(str(variante))}" data-precio-num="{precio:.2f}">'
               f'<span>{t("anadir_carrito")}</span>'
@@ -3062,18 +3121,26 @@ def _cuota(valor):
 
 
 def _tarifa_tabla(modelo):
-    """Tabla de cuotas de un modelo, tal cual viene de la tarifa RH·BOTS."""
+    """Tabla de cuotas de un modelo, con la cuota sin IVA y con IVA."""
     filas = ''
     for plazo, duracion, cuota in modelo.get('tarifas', []):
         filas += (f'<tr><td>{e(plazo)}</td><td>{e(duracion)}</td>'
-                  f'<td class="tarifa__cuota">{e(_cuota(cuota))}</td></tr>')
+                  f'<td class="tarifa__cuota">{e(_cuota(cuota))}</td>'
+                  f'<td class="tarifa__cuota tarifa__cuota--iva">{e(con_iva(cuota))}</td></tr>')
     if not filas:
         return ''
     return (f'<table class="tarifa"><caption class="tarifa__titulo">{t("tarifa_titulo")}</caption>'
             f'<thead><tr><th scope="col">{t("tarifa_plazo")}</th>'
             f'<th scope="col">{t("tarifa_duracion")}</th>'
-            f'<th scope="col">{t("tarifa_cuota")}</th></tr></thead>'
+            f'<th scope="col">{t("tarifa_cuota_sin")}</th>'
+            f'<th scope="col">{t("tarifa_cuota_con")}</th></tr></thead>'
             f'<tbody>{filas}</tbody></table>')
+
+
+def _cuota_mas_baja_num(modelo):
+    """El importe (sin formatear) de la cuota del plazo más largo."""
+    tarifas = modelo.get('tarifas') or []
+    return tarifas[-1][2] if tarifas else 0
 
 
 def _cuota_mas_baja(modelo):
@@ -3177,11 +3244,11 @@ def alquiler_limpieza_page():
         <h2 class="sector__titulo">{e(nombre)}</h2>
         <p class="sector__lede">{e(m.get('claim', ''))}</p>
         <p class="alq__desde">{t('tarifa_desde', n=e(desde))}
-          <span class="alq__desde-iva">{t('iva_no_incluido')}</span></p>
+          {nota_iva(_cuota_mas_baja_num(m), 'alq__desde-iva')}</p>
         <p class="alq__texto">{e(m.get('texto', ''))}</p>
         <ul class="sector__tareas">{chips}</ul>
         {_tarifa_tabla(m)}
-        <p class="alq__nota">{e(_sin_punto_final(a.get('cuota_nota', '')))} · {t('iva_no_incluido')}</p>
+        <p class="alq__nota">{e(_sin_punto_final(a.get('cuota_nota', '')))} · {t('iva_no_incluido')}; {t('con_iva_generico')}</p>
         <div class="alq__cta">
           <a class="pill" href="{base}contacto.html"><span>{t('alquiler_solicitar')}</span>{CHEVRON}</a>
           {ficha}
@@ -3264,6 +3331,7 @@ def alquiler_humanoides_page():
           <strong class="evprecio__num">{e(a.get('precio_desde', ''))}</strong>
           <span class="evprecio__unidad">{e(a.get('precio_unidad', ''))} {t('iva_corto')}</span>
         </p>
+        <p class="evprecio__coniva">{t('con_iva', n=con_iva(importe_de_texto(a.get('precio_desde', ''))))} {e(a.get('precio_unidad', ''))}</p>
         <p class="evprecio__nota">{e(a.get('precio_nota', ''))}</p>
         <div class="alq__cta">
           <a class="pill" href="#presupuesto"><span>{t('ev_solicitar')}</span>{CHEVRON}</a>
@@ -3306,7 +3374,9 @@ def alquiler_humanoides_page():
         <p class="evprecio evprecio--linea">
           <span class="evprecio__etq">{t('ev_personalizacion_desde')}</span>
           <strong class="evprecio__num evprecio__num--sm">{e(pz.get('precio_desde', ''))}</strong>
+          <span class="evprecio__unidad">{t('iva_corto')}</span>
         </p>
+        <p class="evprecio__coniva">{t('con_iva', n=con_iva(importe_de_texto(pz.get('precio_desde', ''))))}</p>
         <p class="alq__nota">{e(pz.get('precio_nota', ''))}</p>
         <div class="alq__cta">
           <a class="pill" href="#presupuesto"><span>{t('ev_personalizar')}</span>{CHEVRON}</a>
@@ -3331,6 +3401,7 @@ def alquiler_humanoides_page():
             <strong class="evprecio__num">{e(a.get('precio_desde', ''))}</strong>
             <span class="evprecio__unidad">{e(a.get('precio_unidad', ''))} {t('iva_corto')}</span>
           </p>
+          <p class="evprecio__coniva">{t('con_iva', n=con_iva(importe_de_texto(a.get('precio_desde', ''))))} {e(a.get('precio_unidad', ''))}</p>
           <p class="evtarifa__nota">{e(tf.get('nota', ''))}</p>
           <a class="pill" href="#presupuesto"><span>{t('ev_solicitar')}</span>{CHEVRON}</a>
         </div>
