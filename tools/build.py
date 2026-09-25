@@ -327,9 +327,9 @@ TEXTOS = {
     'ev_tipo_ph': {'es': 'Feria, congreso, lanzamiento…', 'pt': 'Feira, congresso, lançamento…',
                     'en': 'Trade fair, congress, product launch…', 'fr': 'Salon, congrès, lancement…',
                     'zh': '展会、大会、新品发布……', 'ca': 'Fira, congrés, llançament…'},
-    'ev_que_haga': {'es': '¿Qué te gustaría que hiciera el robot?', 'pt': 'O que gostaria que o robô fizesse?',
-                     'en': 'What would you like the robot to do?', 'fr': 'Que souhaitez-vous que le robot fasse ?',
-                     'zh': '您希望机器人做什么？', 'ca': 'Què t\'agradaria que fes el robot?'},
+    'ev_que_haga': {'es': '¿Qué te gustaría que hiciera Bonico?', 'pt': 'O que gostaria que o Bonico fizesse?',
+                     'en': 'What would you like Bonico to do?', 'fr': 'Que souhaitez-vous que Bonico fasse ?',
+                     'zh': '您希望 Bonico 做什么？', 'ca': "Què t'agradaria que fes en Bonico?"},
     'ev_que_haga_ph': {'es': 'Bailar, recibir visitantes, presentar un producto…',
                         'pt': 'Dançar, receber visitantes, apresentar um produto…',
                         'en': 'Dance, greet visitors, present a product…',
@@ -2898,38 +2898,27 @@ def alquiler_humanoides_page():
   </section>
 ''')
 
-    # ---- 7 · cómo funciona
+    # ---- 7 · cómo funciona, con el vídeo debajo de los pasos (sin titular propio)
     pr = a.get('proceso')
     if pr:
         pasos = ''.join(
             f'<li class="ctopaso reveal"><p class="ctopaso__num">{i:02d}</p>'
             f'<h3 class="ctopaso__titulo">{e(tit)}</h3><p class="ctopaso__texto">{e(txt)}</p></li>'
             for i, (tit, txt) in enumerate(pr.get('pasos', []), 1))
+        videos = (a.get('galeria') or {}).get('videos') or []
+        v = videos[0] if videos else None
+        video = '' if not v else (
+            f'<div class="evvideo reveal">'
+            f'<video controls preload="none" playsinline aria-label="{e(v.get("titulo", ""))}" '
+            f'poster="{base}{e(v["poster"])}">'
+            f'<source src="{base}{e(v["src"])}" type="video/mp4">'
+            f'{t("navegador_sin_video")}</video></div>')
         out.append(f'''  <section class="section section--light" id="como-funciona">
     <div class="wrap">
       <header class="section-head reveal"><p class="kicker">{e(pr.get('kicker', ''))}</p>
         <h2 class="h-section">{e(pr.get('titulo', ''))}</h2></header>
       <ul class="ctopasos ctopasos--ev">{pasos}</ul>
-    </div>
-  </section>
-''')
-
-    # ---- 9 · galería y vídeo (8 · desplazamiento va después, con menos peso)
-    gal = a.get('galeria')
-    if gal and gal.get('videos'):
-        piezas = ''
-        for v in gal['videos']:
-            pie = f'<figcaption>{e(v["titulo"])}</figcaption>' if v.get('titulo') else ''
-            piezas += (f'<li class="vid__item reveal"><figure>'
-                       f'<video controls preload="none" playsinline poster="{base}{e(v["poster"])}">'
-                       f'<source src="{base}{e(v["src"])}" type="video/mp4">'
-                       f'{t("navegador_sin_video")}</video>{pie}</figure></li>')
-        rejilla = 'vid--2' if len(gal['videos']) > 1 else 'vid--solo'
-        out.append(f'''  <section class="section section--white" id="galeria">
-    <div class="wrap">
-      <header class="section-head reveal"><p class="kicker">{e(gal.get('kicker', ''))}</p>
-        <h2 class="h-section">{e(gal.get('titulo', ''))}</h2></header>
-      <ul class="vid {rejilla} evgal__videos">{piezas}</ul>
+      {video}
     </div>
   </section>
 ''')
@@ -2951,7 +2940,7 @@ def formulario_evento(base, cierre):
     columna de texto a la izquierda y tarjeta con el formulario a la derecha."""
     principal = CONTACTO['personas'][0] if CONTACTO.get('personas') else {}
     email = CONTACTO.get('email_directo') or principal.get('email', 'info@rh-bots.com')
-    return f'''  <section class="section section--light ctoform evform" id="presupuesto">
+    return f'''  <section class="section section--navy section--compacta ctoform evform" id="presupuesto">
     <div class="wrap ctoform__grid">
       <aside class="ctoform__lado reveal">
         <p class="kicker">{t('ev_solicitar')}</p>

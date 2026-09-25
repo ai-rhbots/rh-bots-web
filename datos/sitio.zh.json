@@ -677,8 +677,6 @@
         ]
       },
       "galeria": {
-        "kicker": "动态展示",
-        "titulo": "先看看 Bonico 的表现，再想象它出现在您的活动上",
         "videos": [
           {
             "src": "assets/video/bonico-bailando.mp4",
