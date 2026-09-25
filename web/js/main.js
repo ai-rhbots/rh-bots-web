@@ -513,9 +513,9 @@
       function textoIva(neto, moneda) {
         /* el precio sin IVA sigue mandando; al lado, el mismo importe con IVA */
         if (!neto || neto <= 0) return esc(TXT.ivaNoIncluido);
-        return esc(TXT.ivaNoIncluido) + ' · ' +
+        return esc(TXT.ivaNoIncluido) + ' · <strong class="coniva">' +
                esc(TXT.conIva.replace('{n}', importe(Math.round(neto * (1 + IVA) * 100))
-                                                + ' ' + simbolo(moneda)));
+                                                + ' ' + simbolo(moneda))) + '</strong>';
       }
 
       function pinta(v, moneda) {
@@ -640,8 +640,8 @@
         totalEl.textContent = dinero(total, moneda);
         var avisoIva = cajaCarrito.querySelector('.carrito__iva');
         if (avisoIva) {
-          avisoIva.textContent = TXT.ivaNoIncluido + ' · ' +
-            TXT.conIva.replace('{n}', dinero(total * (1 + IVA), moneda));
+          avisoIva.innerHTML = esc(TXT.ivaNoIncluido) + ' · <strong class="coniva">' +
+            esc(TXT.conIva.replace('{n}', dinero(total * (1 + IVA), moneda))) + '</strong>';
         }
         pagar.href = 'https://' + dominio + '/cart/' + items.map(function (i) {
           return i.id + ':' + i.uds;

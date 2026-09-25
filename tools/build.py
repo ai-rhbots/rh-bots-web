@@ -1593,10 +1593,15 @@ def importe_de_texto(txt):
 
 
 def nota_iva(valor, clase):
-    """«IVA no incluido · Con IVA (21 %): X»: se ven los dos importes."""
+    """«IVA no incluido · Con IVA (21 %): X»: se ven los dos importes.
+
+    El importe con IVA va en su propia etiqueta para poder darle algo más
+    de cuerpo que el aviso que lo acompaña."""
     bruto = con_iva(valor)
-    texto = t('iva_no_incluido') if not bruto else f"{t('iva_no_incluido')} · {t('con_iva', n=bruto)}"
-    return f'<span class="{clase}">{texto}</span>'
+    if not bruto:
+        return f'<span class="{clase}">{t("iva_no_incluido")}</span>'
+    return (f'<span class="{clase}">{t("iva_no_incluido")} · '
+            f'<strong class="coniva">{t("con_iva", n=bruto)}</strong></span>')
 
 
 def formato_pvp(valor):

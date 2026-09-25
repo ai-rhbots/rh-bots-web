@@ -2108,12 +2108,20 @@ html body :is(h3, h4, .kicker, .phero__claim, .que__destacado,
 }
 
 /* ---------- importe con IVA junto al precio sin IVA ---------- */
-.evprecio__coniva{
-  margin-top:6px;
-  font-family:var(--font-subtitulo); font-weight:700; font-size:13px;
-  letter-spacing:.02em; color:var(--ink-66);
+/* el aviso «IVA no incluido» se queda pequeño; la cifra con IVA, algo mayor */
+.coniva{
+  font-family:var(--font-subtitulo); font-weight:700; font-size:14px;
+  letter-spacing:.01em; color:var(--ink); white-space:nowrap;
 }
-.section--navy .evprecio__coniva{ color:rgba(255,255,255,.78); }
-.evtarifa .evprecio__coniva{ color:var(--ink-66); }
-/* la columna con IVA pesa menos que la de la cuota neta */
-.tarifa__cuota--iva{ color:var(--ink-66); font-weight:600; }
+.pcard .pcard__precio__iva .coniva{ font-size:13px; }
+.carrito__iva .coniva,
+.section--navy .coniva{ color:inherit; }
+.evprecio__coniva{
+  margin-top:7px;
+  font-family:var(--font-subtitulo); font-weight:700; font-size:15.5px;
+  letter-spacing:.01em; color:var(--ink);
+}
+.section--navy .evprecio__coniva{ color:#fff; }
+.evtarifa .evprecio__coniva{ color:var(--ink); }
+/* la columna con IVA, con el mismo cuerpo que la de la cuota neta */
+.tarifa__cuota--iva{ color:var(--ink); font-weight:700; }
