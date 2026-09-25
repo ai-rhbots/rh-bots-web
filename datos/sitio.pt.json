@@ -409,8 +409,8 @@
   },
   "alquiler": {
     "kicker": "Aluguer RH·BOTS",
-    "h1": "Alugue um robô por um dia ou por cinco anos",
-    "lede": "Integre um robô na sua operação com uma mensalidade em vez de uma compra. Escolha a modalidade que se adequa ao seu caso: limpeza industrial em aluguer de longa duração, ou humanoides para um evento pontual.",
+    "h1": "O robô de que precisa, sem o comprar",
+    "lede": "Integre um robô na sua operação pagando uma mensalidade, não um equipamento. Escolha a modalidade que se adequa ao seu caso: limpeza industrial em aluguer de longa duração, ou humanoides para um evento pontual.",
     "imagen": "assets/escenarios/edificios-oficinas.webp",
     "opciones": [
       {
@@ -418,14 +418,14 @@
         "href": "alquiler-limpieza.html",
         "titulo": "Aluguer de robôs de limpeza industrial",
         "texto": "Lavadoras e varredoras autónomas com mensalidade de 12 até 60 meses, com manutenção e consumíveis incluídos.",
-        "imagen": "assets/escenarios/fabricas-almacenes.webp"
+        "imagen": "assets/robots/mt1/en-fabrica.webp"
       },
       {
         "id": "humanoides",
         "href": "alquiler-humanoides.html",
         "titulo": "Aluguer de humanoides para eventos",
         "texto": "O Bonico, o nosso humanoide, para feiras, congressos, inaugurações e ativações de marca, com acompanhamento da nossa equipa.",
-        "imagen": "assets/escenarios/complejos-comerciales.webp"
+        "imagen": "assets/robots/rhx2-ultra/bonico-corazon.webp"
       }
     ],
     "limpieza": {

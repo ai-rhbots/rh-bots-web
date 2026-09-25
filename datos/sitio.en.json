@@ -411,8 +411,8 @@
   },
   "alquiler": {
     "kicker": "RH·BOTS Rental",
-    "h1": "Hire a robot for a day or for five years",
-    "lede": "Bring a robot into your operation for a monthly fee rather than an outright purchase. Choose the option that fits your case: industrial cleaning on a long-term rental, or humanoids for a one-off event.",
+    "h1": "The robot you need, without buying it",
+    "lede": "Bring a robot into your operation by paying a fee, not for a machine. Choose the option that fits your case: industrial cleaning on a long-term rental, or humanoids for a one-off event.",
     "imagen": "assets/escenarios/edificios-oficinas.webp",
     "opciones": [
       {
@@ -420,14 +420,14 @@
         "href": "alquiler-limpieza.html",
         "titulo": "Industrial cleaning robot rental",
         "texto": "Autonomous scrubbers and sweepers for a monthly fee, from 12 to 60 months, with maintenance and consumables included.",
-        "imagen": "assets/escenarios/fabricas-almacenes.webp"
+        "imagen": "assets/robots/mt1/en-fabrica.webp"
       },
       {
         "id": "humanoides",
         "href": "alquiler-humanoides.html",
         "titulo": "Humanoid rental for events",
         "texto": "Bonico, our humanoid, for trade fairs, conferences, openings and brand activations, with our team on hand throughout.",
-        "imagen": "assets/escenarios/complejos-comerciales.webp"
+        "imagen": "assets/robots/rhx2-ultra/bonico-corazon.webp"
       }
     ],
     "limpieza": {

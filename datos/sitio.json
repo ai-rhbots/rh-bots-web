@@ -475,8 +475,8 @@
   },
   "alquiler": {
     "kicker": "Alquiler RH·BOTS",
-    "h1": "Alquila un robot por un día o por cinco años",
-    "lede": "Incorpora un robot a tu operativa con una cuota mensual en lugar de una compra. Elige la modalidad que encaja con tu caso: limpieza industrial en renting a largo plazo, o humanoides para un evento puntual.",
+    "h1": "El robot que necesitas, sin comprarlo",
+    "lede": "Incorpora un robot a tu operativa pagando una cuota, no un equipo. Elige la modalidad que encaja con tu caso: limpieza industrial en renting a largo plazo, o humanoides para un evento puntual.",
     "imagen": "assets/escenarios/edificios-oficinas.webp",
     "opciones": [
       {
@@ -484,14 +484,14 @@
         "href": "alquiler-limpieza.html",
         "titulo": "Alquiler de robots de limpieza industrial",
         "texto": "Fregadoras y barredoras autónomas con cuota mensual desde 12 hasta 60 meses, con mantenimiento y consumibles incluidos.",
-        "imagen": "assets/escenarios/fabricas-almacenes.webp"
+        "imagen": "assets/robots/mt1/en-fabrica.webp"
       },
       {
         "id": "humanoides",
         "href": "alquiler-humanoides.html",
         "titulo": "Alquiler de humanoides para eventos",
         "texto": "Bonico, nuestro humanoide, para ferias, congresos, inauguraciones y activaciones de marca, con acompañamiento de nuestro equipo.",
-        "imagen": "assets/escenarios/complejos-comerciales.webp"
+        "imagen": "assets/robots/rhx2-ultra/bonico-corazon.webp"
       }
     ],
     "limpieza": {

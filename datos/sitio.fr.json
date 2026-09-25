@@ -409,8 +409,8 @@
   },
   "alquiler": {
     "kicker": "Location RH·BOTS",
-    "h1": "Louez un robot pour un jour ou pour cinq ans",
-    "lede": "Intégrez un robot à votre exploitation avec un loyer mensuel plutôt qu'un achat. Choisissez la formule adaptée à votre cas : nettoyage industriel en location longue durée, ou humanoïdes pour un événement ponctuel.",
+    "h1": "Le robot dont vous avez besoin, sans l'acheter",
+    "lede": "Intégrez un robot à votre exploitation en payant un loyer, pas une machine. Choisissez la formule adaptée à votre cas : nettoyage industriel en location longue durée, ou humanoïdes pour un événement ponctuel.",
     "imagen": "assets/escenarios/edificios-oficinas.webp",
     "opciones": [
       {
@@ -418,14 +418,14 @@
         "href": "alquiler-limpieza.html",
         "titulo": "Location de robots de nettoyage industriel",
         "texto": "Autolaveuses et balayeuses autonomes avec un loyer mensuel de 12 à 60 mois, maintenance et consommables inclus.",
-        "imagen": "assets/escenarios/fabricas-almacenes.webp"
+        "imagen": "assets/robots/mt1/en-fabrica.webp"
       },
       {
         "id": "humanoides",
         "href": "alquiler-humanoides.html",
         "titulo": "Location d'humanoïdes pour événements",
         "texto": "Bonico, notre humanoïde, pour salons, congrès, inaugurations et activations de marque, avec l'accompagnement de notre équipe.",
-        "imagen": "assets/escenarios/complejos-comerciales.webp"
+        "imagen": "assets/robots/rhx2-ultra/bonico-corazon.webp"
       }
     ],
     "limpieza": {

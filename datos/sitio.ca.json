@@ -409,8 +409,8 @@
   },
   "alquiler": {
     "kicker": "Lloguer RH·BOTS",
-    "h1": "Lloga un robot per un dia o per cinc anys",
-    "lede": "Incorpora un robot a la teva operativa amb una quota mensual en lloc d'una compra. Tria la modalitat que encaixa amb el teu cas: neteja industrial en rènting a llarg termini, o humanoides per a un esdeveniment puntual.",
+    "h1": "El robot que necessites, sense comprar-lo",
+    "lede": "Incorpora un robot a la teva operativa pagant una quota, no un equip. Tria la modalitat que encaixa amb el teu cas: neteja industrial en rènting a llarg termini, o humanoides per a un esdeveniment puntual.",
     "imagen": "assets/escenarios/edificios-oficinas.webp",
     "opciones": [
       {
@@ -418,14 +418,14 @@
         "href": "alquiler-limpieza.html",
         "titulo": "Lloguer de robots de neteja industrial",
         "texto": "Fregadores i escombradores autònomes amb quota mensual des de 12 fins a 60 mesos, amb manteniment i consumibles inclosos.",
-        "imagen": "assets/escenarios/fabricas-almacenes.webp"
+        "imagen": "assets/robots/mt1/en-fabrica.webp"
       },
       {
         "id": "humanoides",
         "href": "alquiler-humanoides.html",
         "titulo": "Lloguer d'humanoides per a esdeveniments",
         "texto": "En Bonico, el nostre humanoide, per a fires, congressos, inauguracions i activacions de marca, amb acompanyament del nostre equip.",
-        "imagen": "assets/escenarios/complejos-comerciales.webp"
+        "imagen": "assets/robots/rhx2-ultra/bonico-corazon.webp"
       }
     ],
     "limpieza": {

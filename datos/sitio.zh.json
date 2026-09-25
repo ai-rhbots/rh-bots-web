@@ -409,8 +409,8 @@
   },
   "alquiler": {
     "kicker": "RH·BOTS 租赁",
-    "h1": "租用机器人，一天或五年都可以",
-    "lede": "以月租方式将机器人引入日常作业，无需一次性购置。可按实际情况选择方案：工业清洁机器人长期租赁，或活动场合的人形机器人短期租赁。",
+    "h1": "你需要的机器人，无需购买",
+    "lede": "以租金的方式将机器人引入日常作业，而不是买下一台设备。可按实际情况选择方案：工业清洁机器人长期租赁，或活动场合的人形机器人短期租赁。",
     "imagen": "assets/escenarios/edificios-oficinas.webp",
     "opciones": [
       {
@@ -418,14 +418,14 @@
         "href": "alquiler-limpieza.html",
         "titulo": "工业清洁机器人租赁",
         "texto": "自主洗地机与扫地机，租期 12 至 60 个月，月租含维护与耗材。",
-        "imagen": "assets/escenarios/fabricas-almacenes.webp"
+        "imagen": "assets/robots/mt1/en-fabrica.webp"
       },
       {
         "id": "humanoides",
         "href": "alquiler-humanoides.html",
         "titulo": "活动用人形机器人租赁",
         "texto": "Bonico 是我们的人形机器人，适用于展会、论坛、开业典礼与品牌活动，并由我们的团队全程协助。",
-        "imagen": "assets/escenarios/complejos-comerciales.webp"
+        "imagen": "assets/robots/rhx2-ultra/bonico-corazon.webp"
       }
     ],
     "limpieza": {
