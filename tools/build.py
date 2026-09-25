@@ -879,6 +879,9 @@ def t(clave, **kw):
 
 FAM_NAME = {k: n for k, n, _ in FAMILIAS}
 FECHA_BUILD = time.strftime('%Y-%m-%d')
+# todos los formularios del sitio escriben aquí, pase lo que pase con los
+# datos de contacto: nunca al correo personal de nadie
+EMAIL_FORMULARIOS = 'info@rh-bots.com'
 LINKEDIN_EMPRESA = 'https://www.linkedin.com/company/rh-bots'
 INSTAGRAM_EMPRESA = 'https://www.instagram.com/rhbots/'
 
@@ -3472,8 +3475,7 @@ def alquiler_humanoides_page():
 def formulario_evento(base, cierre):
     """Cierre de la página de eventos, con la misma estructura que contacto:
     columna de texto a la izquierda y tarjeta con el formulario a la derecha."""
-    principal = CONTACTO['personas'][0] if CONTACTO.get('personas') else {}
-    email = CONTACTO.get('email_directo') or principal.get('email', 'info@rh-bots.com')
+    email = EMAIL_FORMULARIOS
     return f'''  <section class="section section--navy section--compacta ctoform evform" id="presupuesto">
     <div class="wrap ctoform__grid">
       <aside class="ctoform__lado reveal">
@@ -3556,6 +3558,7 @@ def formulario_evento(base, cierre):
 def contacto_page():
     base = nivel(LANG)
     c = CONTACTO
+    # el que se enseña en la página sale de los datos; el del formulario, fijo
     email = c.get('email_directo') or (c['personas'][0]['email'] if c.get('personas') else '')
     out = [head(t('contacto_titulo'), c['intro'], base, 'contacto.html'),
            header(base, 'contacto', 'contacto.html'), '<main id="contenido">']
@@ -3643,7 +3646,7 @@ def contacto_page():
           </div>
           <p class="ctoform__sello">{t('respuesta_personalizada')}</p>
         </div>
-        <form class="form" id="contactoForm" data-email="{e(email)}" novalidate>
+        <form class="form" id="contactoForm" data-email="{EMAIL_FORMULARIOS}" novalidate>
           <div class="form__two">
             <div class="form__row">
               <label for="f-nombre">{t('nombre')}</label>
