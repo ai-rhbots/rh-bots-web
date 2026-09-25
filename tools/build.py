@@ -408,6 +408,29 @@ TEXTOS = {
                              'fr': 'Inclus', 'zh': '包含', 'ca': 'Inclòs'},
     'alquiler_incluye_no': {'es': 'No incluido', 'pt': 'Não incluído', 'en': 'Not included',
                              'fr': 'Non inclus', 'zh': '不包含', 'ca': 'No inclòs'},
+    'home_alquiler_kicker': {'es': 'Alquiler', 'pt': 'Aluguer', 'en': 'Rental',
+                              'fr': 'Location', 'zh': '租赁', 'ca': 'Lloguer'},
+    'home_alquiler_titulo': {'es': 'También puedes alquilar el robot',
+                              'pt': 'Também pode alugar o robô',
+                              'en': 'You can also rent the robot',
+                              'fr': 'Vous pouvez aussi louer le robot',
+                              'zh': '机器人也可以租',
+                              'ca': 'També pots llogar el robot'},
+    'home_alquiler_texto': {'es': 'No hace falta comprarlo. Alquila una fregadora o una barredora con una '
+                                   'cuota mensual, o a Bonico, nuestro humanoide, para tu próximo evento.',
+                             'pt': 'Não tem de o comprar. Alugue uma lavadora ou uma varredora com uma '
+                                   'mensalidade, ou o Bonico, o nosso humanoide, para o seu próximo evento.',
+                             'en': "You don't have to buy it. Rent a scrubber or a sweeper for a monthly fee, "
+                                   'or Bonico, our humanoid, for your next event.',
+                             'fr': "Pas besoin de l'acheter. Louez une autolaveuse ou une balayeuse avec un "
+                                   'loyer mensuel, ou Bonico, notre humanoïde, pour votre prochain événement.',
+                             'zh': '不必买下来。洗地机与扫地机可按月租用，我们的人形机器人 Bonico 也能出现在'
+                                   '您的下一场活动。',
+                             'ca': "No cal comprar-lo. Lloga una fregadora o una escombradora amb una quota "
+                                   'mensual, o en Bonico, el nostre humanoide, per al teu pròxim esdeveniment.'},
+    'home_alquiler_boton': {'es': 'Ver opciones de alquiler', 'pt': 'Ver opções de aluguer',
+                             'en': 'See rental options', 'fr': 'Voir les options de location',
+                             'zh': '查看租赁方案', 'ca': 'Veure opcions de lloguer'},
     'alquiler_cta_titulo': {'es': '¿Te encaja el alquiler?', 'pt': 'O aluguer encaixa consigo?',
                              'en': 'Does renting fit your case?', 'fr': 'La location vous convient ?',
                              'zh': '租赁方案适合您吗？', 'ca': 'T\'encaixa el lloguer?'},
@@ -1908,6 +1931,31 @@ def home_page():
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       </div>
       <p class="loop__mas reveal"><a class="pill" href="robots.html"><span>{t('ver_todos_modelos')}</span>{CHEVRON}</a></p>
+    </div>
+  </section>
+''')
+
+    # alquiler: las dos modalidades, con sus fotos y su llamada a la acción
+    if ALQUILER.get('opciones'):
+        tarjetas = ''
+        for op in ALQUILER['opciones']:
+            tarjetas += (
+                f'<li class="pcard reveal"><a href="{e(op["href"])}">'
+                f'<div class="pcard__media pcard__media--escena">'
+                f'<img src="{base}{e(op.get("imagen", ""))}" alt="{e(op["titulo"])}" loading="lazy"></div>'
+                f'<div class="pcard__body"><h3>{e(op["titulo"])}</h3>'
+                f'<p>{e(op.get("texto", ""))}</p>'
+                f'<span class="pcard__more">{t("mas_informacion")}</span></div></a></li>')
+        out.append(f'''  <section class="section section--white alqhome" id="alquiler">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="kicker">{t('home_alquiler_kicker')}</p>
+        <h2 class="h-section">{t('home_alquiler_titulo')}</h2>
+        <p class="alqhome__lede">{t('home_alquiler_texto')}</p>
+      </header>
+      <ul class="pgrid pgrid--duo">{tarjetas}</ul>
+      <p class="alqhome__mas reveal">
+        <a class="pill" href="alquiler.html"><span>{t('home_alquiler_boton')}</span>{CHEVRON}</a></p>
     </div>
   </section>
 ''')
