@@ -627,7 +627,7 @@
         "imagen": "assets/robots/rhx2-ultra/bonico-entrevista.webp"
       },
       "tarifa": {
-        "kicker": "Rates",
+        "kicker": "Rate",
         "titulo": "Hire Bonico for your next event",
         "incluye_titulo": "The day includes",
         "incluye": [

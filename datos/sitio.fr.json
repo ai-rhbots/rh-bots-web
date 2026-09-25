@@ -625,7 +625,7 @@
         "imagen": "assets/robots/rhx2-ultra/bonico-entrevista.webp"
       },
       "tarifa": {
-        "kicker": "Tarifs",
+        "kicker": "Tarif",
         "titulo": "Louez Bonico pour votre prochain événement",
         "incluye_titulo": "La journée comprend",
         "incluye": [

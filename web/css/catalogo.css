@@ -2051,28 +2051,28 @@ html body :is(h3, h4, .kicker, .phero__claim, .que__destacado,
 .evform .ctoform__lado{
   background:none; border:0; box-shadow:none; padding:0;
 }
-.evform .ctoform__ladotitulo{ margin-top:10px; font-size:clamp(24px, 2.4vw, 34px); color:#fff; }
+.evform .ctoform__ladotitulo{ margin-top:12px; font-size:clamp(30px, 3.2vw, 44px); color:#fff; }
 .evform .ctoform__ladotexto{
-  margin-top:14px; max-width:44ch; font-size:15px; line-height:1.7;
-  color:rgba(255,255,255,.76);
+  margin-top:18px; max-width:40ch; font-size:clamp(16px, 1.25vw, 18px); line-height:1.75;
+  color:rgba(255,255,255,.78);
 }
 .evform .ctoform__caja{ padding:clamp(18px, 2vw, 25px); border-color:transparent; }
 /* dentro de la tarjeta blanca el kicker vuelve a ser azul, no blanco */
 .evform .ctoform__caja .kicker{ color:var(--blue); }
 .evform .ctoform__cab{ align-items:center; gap:12px; }
-.evform .ctoform__titulo{ margin-top:6px; font-size:clamp(19px, 1.8vw, 23px); }
+.evform .ctoform__titulo{ margin-top:8px; font-size:clamp(24px, 2.4vw, 32px); }
 .evform .ctoform__sello{ padding:8px 15px; font-size:12.5px; }
 .evform .form{ margin-top:clamp(14px, 1.6vw, 20px); gap:10px; }
 .evform .form__two{ gap:10px; }
 .evform .form__row{ gap:6px; }
-.evform .form label{ font-size:11px; letter-spacing:.12em; }
+.evform .form label{ font-size:12px; letter-spacing:.13em; }
 .evform .form input,
-.evform .form textarea{ font-size:15px; padding:10px 14px; border-radius:11px; }
+.evform .form textarea{ font-size:15.5px; padding:11px 15px; border-radius:12px; }
 .evform .form textarea{ min-height:0; }
 .evform .form__consent{ gap:11px; margin-top:2px; }
 .evform html body .form__consent input,
 .evform .form__consent input{ width:18px; height:18px; }
-.evform .form .form__consent label{ font-size:12.5px; line-height:1.5; }
+.evform .form .form__consent label{ font-size:13px; line-height:1.55; }
 .evform .pill--ancho{ padding:13px 14px 13px 24px; }
 .evform .form__nota{ font-size:12.5px; min-height:0; }
 
@@ -2094,16 +2094,15 @@ html body :is(h3, h4, .kicker, .phero__claim, .que__destacado,
   position:relative; overflow:hidden; isolation:isolate;
   background:var(--navy); color:#fff;
 }
+/* azul plano con un resplandor suave a la derecha, como el cierre de portada */
 .section--navy::before{
   content:''; position:absolute; inset:0; z-index:0;
-  background:linear-gradient(140deg, var(--blue-deep) 0%, #1f6fc9 60%, var(--blue) 100%);
-  clip-path:polygon(76% 0, 100% 0, 100% 100%, 58% 100%);
-  opacity:.9;
+  background:radial-gradient(58% 92% at 79% 34%, rgba(0,158,227,.30) 0%, rgba(0,158,227,0) 64%);
 }
 .section--navy > .wrap{ position:relative; z-index:1; }
 .section--navy .kicker{ color:rgba(255,255,255,.72); }
 .section--navy .evcard{ border-color:rgba(255,255,255,.14); }
 .section--navy .evcard:hover{ border-color:rgba(255,255,255,.4); box-shadow:0 20px 44px rgba(5,10,30,.28); }
 @media (max-width:860px){
-  .section--navy::before{ clip-path:polygon(64% 0, 100% 0, 100% 100%, 40% 100%); opacity:.75; }
+  .section--navy::before{ background:radial-gradient(74% 54% at 70% 22%, rgba(0,158,227,.26) 0%, rgba(0,158,227,0) 68%); }
 }
