@@ -205,6 +205,8 @@ TEXTOS = {
     'min_lectura': {'es': 'min de lectura', 'pt': 'min de leitura', 'en': 'min read', 'fr': 'min de lecture', 'zh': '分钟阅读', 'ca': 'min de lectura'},
     'leer_articulo': {'es': 'Leer artículo', 'pt': 'Ler artigo', 'en': 'Read article', 'fr': "Lire l'article", 'zh': '阅读文章', 'ca': 'Llegir article'},
     'leer_mas': {'es': 'Leer más', 'pt': 'Ler mais', 'en': 'Read more', 'fr': 'Lire la suite', 'zh': '阅读更多', 'ca': 'Llegir més'},
+    'mas_informacion': {'es': 'Más información', 'pt': 'Mais informações', 'en': 'More information',
+                         'fr': "Plus d'informations", 'zh': '了解更多', 'ca': 'Més informació'},
     'conocimiento_aplicado': {'es': 'Conocimiento aplicado', 'pt': 'Conhecimento aplicado', 'en': 'Applied knowledge', 'fr': 'Connaissances appliquées', 'zh': '实用知识', 'ca': 'Coneixement aplicat'},
     'ideas_claras': {'es': 'Ideas claras para tomar mejores decisiones', 'pt': 'Ideias claras para tomar melhores decisões', 'en': 'Clear ideas for better decisions', 'fr': 'Des idées claires pour mieux décider', 'zh': '清晰的思路，助您做出更好的决策', 'ca': 'Idees clares per prendre millors decisions'},
     'buscar_articulos': {'es': 'Buscar artículos', 'pt': 'Pesquisar artigos', 'en': 'Search articles', 'fr': 'Rechercher des articles', 'zh': '搜索文章', 'ca': 'Cercar articles'},
@@ -2655,7 +2657,7 @@ def alquiler_page():
             f'<img src="{base}{e(op.get("imagen", ""))}" alt="{e(op["titulo"])}" loading="lazy"></div>'
             f'<div class="pcard__body"><h3>{e(op["titulo"])}</h3>'
             f'<p>{e(op.get("texto", ""))}</p>'
-            f'<span class="pcard__more">{t("leer_mas")}</span></div></a></li>')
+            f'<span class="pcard__more">{t("mas_informacion")}</span></div></a></li>')
     out.append(f'''  <section class="section section--white">
     <div class="wrap">
       <ul class="pgrid pgrid--duo">{tarjetas}</ul>
