@@ -1,0 +1,730 @@
+{
+  "nav": [
+    {
+      "label": "Start",
+      "href": "index.html",
+      "key": "home"
+    },
+    {
+      "label": "Roboter",
+      "href": "robots.html",
+      "key": "robots"
+    },
+    {
+      "label": "Anwendungen",
+      "href": "aplicaciones.html",
+      "key": "aplicaciones"
+    },
+    {
+      "label": "Miete",
+      "href": "alquiler.html",
+      "key": "alquiler"
+    },
+    {
+      "label": "Zubehör",
+      "href": "index.html",
+      "key": "",
+      "oculto": true
+    },
+    {
+      "label": "Blog",
+      "href": "blog.html",
+      "key": "blog"
+    },
+    {
+      "label": "Über uns",
+      "href": "rh-bots.html",
+      "key": "rhbots"
+    },
+    {
+      "label": "Kontakt",
+      "href": "contacto.html",
+      "key": "contacto"
+    }
+  ],
+  "home": {
+    "kicker": "RH·BOTS — Humanoide Ressourcen",
+    "h1": "Die Zukunft der<br>Robotik<br>ist <span class=\"acento\">jetzt</span>",
+    "lede": "Humanoide Roboter der neuesten Generation, bereit für den Einsatz in realen Umgebungen, mit professioneller Beratung, Installation und Support.",
+    "que_hacemos": {
+      "kicker": "Was wir tun",
+      "titulo": "Humanoide Roboter für Unternehmen, die <span class=\"acento\">vorankommen</span> wollen",
+      "texto": "RH·BOTS bringt humanoide Robotik zu Organisationen, die Prozesse, Kundenservice, Logistik, Schulung oder interaktive Erlebnisse verbessern wollen.",
+      "destacado": "Wir verkaufen nicht nur Technik: Wir entwickeln gemeinsam mit Ihnen eine realistische, nützliche und wachstumsfähige Lösung.",
+      "detalle": "Schon im ersten Gespräch analysieren wir Ihre Ziele, die Umgebung, in der der Roboter arbeiten wird, und den nötigen Integrationsgrad, damit sich die Investition lohnt."
+    },
+    "robots_grid": {
+      "kicker": "Unsere Roboter",
+      "titulo": "Eine Reihe für <span class=\"acento\">reale Umgebungen</span>"
+    },
+    "sectores_bloque": {
+      "kicker": "Anwendungen",
+      "titulo": "Humanoide Robotik für verschiedene Branchen",
+      "texto": "Jedes Projekt hat ein Ziel. Deshalb passen wir die Lösung an die Umgebung, das Team und die Art der Interaktion an, die Ihr Unternehmen braucht.",
+      "boton": "Anwendungen ansehen",
+      "tarjetas": [
+        [
+          "Handel und Kundenservice",
+          "Empfang, Information, Begleitung und Markenerlebnisse."
+        ],
+        [
+          "Industrie und Logistik",
+          "Unterstützung bei Prozessen, Inspektion, Mobilität und technischen Vorführungen."
+        ],
+        [
+          "Bildung und Events",
+          "Schulung, Innovation, Messen, Präsentationen und Aktivierungen."
+        ],
+        [
+          "Gesundheit und Betreuung",
+          "Geführte Interaktion, informative Unterstützung und nicht-klinische Begleitung."
+        ]
+      ]
+    },
+    "metodo": {
+      "kicker": "Wie wir arbeiten",
+      "titulo": "Ein klarer Prozess für eine <span class=\"acento\">reibungslose</span> Einführung",
+      "boton": "Sprechen Sie mit uns",
+      "pasos": [
+        [
+          "Wir hören zu",
+          "Wir verstehen Ihr Geschäft, Ihre Ziele und den Einsatzkontext."
+        ],
+        [
+          "Wir definieren",
+          "Wir wählen den Roboter aus und schlagen eine umsetzbare Lösung vor."
+        ],
+        [
+          "Wir führen ein",
+          "Konfiguration, Inbetriebnahme und Schulung des Teams."
+        ],
+        [
+          "Wir begleiten",
+          "Technischer Support, Wartung und kontinuierliche Verbesserung."
+        ]
+      ]
+    },
+    "actualidad": {
+      "kicker": "Aktuelles",
+      "titulo": "Neueste Nachrichten aus der Robotik",
+      "enlace": "Zum Blog"
+    },
+    "faq": [
+      [
+        "Welchen Roboter brauche ich?",
+        "Das hängt von der Aufgabe, der Umgebung und dem Volumen ab. Die Reinigung großer Flächen übernehmen der RHC5, der MT1 oder der MT1 Max; den Kundenkontakt die Reihen RHA3 und RHX2; die industrielle Handhabung der RHG2; den internen Materialtransport die AMR T150, T300, T600 und MP2000; und die Inspektion im Außenbereich oder auf schwierigem Gelände der vierbeinige D5W. Wir begleiten Sie bei der Auswahl mit einer vorherigen Beratung."
+      ],
+      [
+        "Muss der Roboter programmiert werden?",
+        "Für den Standardeinsatz nicht: Die Modelle kommen mit einem fertigen Fähigkeitenpaket, das von Anfang an zahlreiche Funktionen ausführt. Wenn Sie eigene Anwendungen entwickeln möchten, gibt es offene Versionen (RHX2 Ultra und RHX2 EDU) mit SDK, Simulatoren und dokumentierten Schnittstellen."
+      ],
+      [
+        "Lässt er sich an mein Unternehmen anpassen?",
+        "Ja. Wir beginnen mit einer Beratung, um Ihren Anwendungsfall zu verstehen, und konfigurieren den Roboter, seine Abläufe und sein Verhalten passend zu Ihrem Betrieb. Installation, Inbetriebnahme und Schulung Ihres Teams sind inbegriffen."
+      ],
+      [
+        "Welche Wartung benötigen sie?",
+        "Regelmäßige vorbeugende Wartung von Gelenken, Batterien und Sensoren sowie Software-Updates. Wir bieten einen laufenden Wartungs- und Supportservice, damit das Gerät verfügbar bleibt."
+      ],
+      [
+        "Kann man ihn mieten statt kaufen?",
+        "Sprechen Sie uns an. Je nach Modell und Projektdauer können wir Kauf oder Miete anbieten, einschließlich Inbetriebnahme und Support."
+      ]
+    ]
+  },
+  "aplicaciones": {
+    "kicker": "Anwendungen",
+    "h1": "Roboter, die bereits in realen Umgebungen arbeiten",
+    "lede": "Kundenservice, Intralogistik, Reinigung, Schulung, Gesundheit und Inspektion. Wir helfen Ihnen, den richtigen Roboter für jede Aufgabe zu wählen, und nehmen ihn bei Ihnen vor Ort in Betrieb.",
+    "sectores": [
+      {
+        "id": "retail",
+        "titulo": "Handel und Kundenservice",
+        "texto": "Humanoide, die Kunden und Besucher empfangen, informieren und begleiten und einen Verkaufsraum in ein Markenerlebnis verwandeln.",
+        "tareas": [
+          "Empfang und Information in Geschäften, Hotels und Büros",
+          "Aktionen und Aktivierungen am Verkaufsort",
+          "Besucherbegleitung und Führungen in Showrooms",
+          "Häufige Fragen und Weiterleitung an das Personal"
+        ],
+        "robots": [
+          "rhx2",
+          "rha3",
+          "rhx2-ultra",
+          "rha3-ultra"
+        ],
+        "imagen": "assets/escenarios/complejos-comerciales.webp"
+      },
+      {
+        "id": "intralogistica",
+        "titulo": "Industrie und Intralogistik",
+        "texto": "Mobile Roboter, die Material zwischen Lager und Linie bewegen, und Humanoide, die Teile in der Fertigung handhaben — ohne Umbauten oder Änderungen an der Anlage.",
+        "tareas": [
+          "Materialtransport zwischen Stationen und Lager",
+          "Bewegen von Wagen und Regalen",
+          "Palettenbewegung am Boden und auf erster Ebene",
+          "Teilehandhabung und Maschinenbeschickung"
+        ],
+        "robots": [
+          "t150",
+          "t300",
+          "t600",
+          "t600-underride",
+          "mp2000",
+          "rhg2",
+          "omnipicker"
+        ],
+        "imagen": "assets/escenarios/fabricas-almacenes.webp"
+      },
+      {
+        "id": "limpieza",
+        "titulo": "Reinigung großer Flächen",
+        "texto": "Autonomes Schrubben, Saugen und Kehren für große Flächen, mit programmierten Routen und Einsatz außerhalb der Publikumszeiten.",
+        "tareas": [
+          "Supermärkte und Einkaufszentren",
+          "Bahnhöfe, Flughäfen und Bürogebäude",
+          "Industriehallen und Lager",
+          "Parkhäuser und halboffene Bereiche"
+        ],
+        "robots": [
+          "rhc5",
+          "mt1",
+          "mt1-max"
+        ],
+        "imagen": "assets/escenarios/supermercados.webp"
+      },
+      {
+        "id": "educacion",
+        "titulo": "Bildung, Forschung und Events",
+        "texto": "Offene Plattformen, um Robotik und künstliche Intelligenz zu lehren, eigene Anwendungen zu entwickeln und auf Messen und Präsentationen zu glänzen.",
+        "tareas": [
+          "Universitäre Lehre und Berufsausbildung",
+          "Forschung zu humanoider Robotik und Manipulation",
+          "Anwendungsentwicklung mit SDK und Simulation",
+          "Messen, Präsentationen und Auftritte"
+        ],
+        "robots": [
+          "rhx2-edu",
+          "rhx2-ultra",
+          "rha3-ultra",
+          "omnihand",
+          "omnihand-tactile",
+          "omnihand-pro-2025"
+        ],
+        "imagen": "assets/robots/rhx2-edu/aula-stem.webp"
+      },
+      {
+        "id": "salud",
+        "titulo": "Gesundheit und Betreuung",
+        "texto": "Geführte Interaktion und informative Unterstützung in Gesundheitszentren und Pflegeheimen sowie autonome Reinigung von Fluren und Gemeinschaftsbereichen.",
+        "tareas": [
+          "Empfang und Orientierung für Patienten und Besucher",
+          "Informative Unterstützung und nicht-klinische Begleitung",
+          "Reinigung von Fluren und Gemeinschaftsbereichen"
+        ],
+        "robots": [
+          "rha3",
+          "rhx2",
+          "rhc5"
+        ],
+        "imagen": "assets/escenarios/hospitales.webp"
+      },
+      {
+        "id": "inspeccion",
+        "titulo": "Inspektion und Sicherheit",
+        "texto": "Ein vierbeiniger Roboter mit Rädern, der Außenbereiche, Rampen und Treppen abfährt, um Anlagen zu inspizieren und Kontrollgänge durchzuführen.",
+        "tareas": [
+          "Inspektionsrundgänge in Werken und Parkhäusern",
+          "Überwachung von Perimetern und Außenbereichen",
+          "Wege über unebenes Gelände und Treppen",
+          "Zustellung auf dem Gelände und auf der letzten Meile"
+        ],
+        "robots": [
+          "d5w"
+        ],
+        "imagen": "assets/robots/d5w/en-aparcamiento.webp"
+      }
+    ]
+  },
+  "rhbots": {
+    "kicker": "Wer wir sind",
+    "h1": "Das Team hinter RH·BOTS",
+    "lede": "Offizieller Vertriebspartner von AGIBOT und PUDU in Spanien und Portugal, mit Sitz in Picassent (Valencia). Wir begleiten jeden Kunden von der Auswahl des Roboters bis zur täglichen Wartung.",
+    "mision": {
+      "kicker": "Unsere Mission",
+      "titulo": "Humanoide Robotik <span class=\"acento\">zugänglich, zuverlässig und rentabel</span> machen",
+      "parrafos": [
+        "Jedes Projekt beginnt mit Zuhören. Wir analysieren Bedürfnisse, erkennen Chancen und empfehlen das Robotermodell, das am besten zum Geschäftsziel passt.",
+        "Unser Team verbindet technisches Wissen, Produktverständnis und praktische Integration, damit die Einführung klar und messbar verläuft."
+      ],
+      "puntos": [
+        "Vorherige Beratung und Auswahl des richtigen Roboters.",
+        "Installation, Inbetriebnahme und Schulung.",
+        "Support, damit der Roboter weiterhin Wert schafft."
+      ]
+    },
+    "alianza": {
+      "titulo": "Eine Partnerschaft, die mitwächst",
+      "texto": "Wir arbeiten mit AGIBOT und PUDU zusammen, um Robotiklösungen nach Spanien und Portugal zu bringen, die sich in realen Umgebungen bereits bewährt haben.",
+      "cifras": [
+        [
+          "+145.000",
+          "weltweit gefertigte und ausgelieferte Roboter von AGIBOT und PUDU"
+        ],
+        [
+          "2",
+          "Länder mit offiziellem AGIBOT- und PUDU-Vertrieb: Spanien und Portugal"
+        ],
+        [
+          "{modelos}",
+          "verfügbare Modelle für verschiedene Branchen"
+        ],
+        [
+          "{familias}",
+          "Roboterfamilien: Humanoide, Vierbeiner, Reinigung, AMR und Zubehör"
+        ]
+      ]
+    },
+    "proyecto": {
+      "titulo": "Sprechen wir über Ihr Projekt?",
+      "texto": "Sagen Sie uns, was Sie brauchen, und wir helfen Ihnen einzuschätzen, welche Robotiklösung am besten zu Ihrem Unternehmen passt.",
+      "boton": "Sprechen Sie mit uns",
+      "foto": "assets/robots/rhx2-ultra/serie-x2.webp"
+    },
+    "proceso": {
+      "kicker": "Wie wir arbeiten",
+      "titulo": "Ein klarer Prozess für gute Entscheidungen",
+      "texto": "Wir vereinfachen die Einführung humanoider Roboter mit einer geordneten Methodik: verstehen, vorschlagen, umsetzen und begleiten. So verringern wir Unsicherheit und beschleunigen Ergebnisse.",
+      "pasos": [
+        [
+          "Diagnose",
+          "Wir hören uns Ihre Anforderungen an und analysieren, wo ein humanoider Roboter den größten Nutzen bringt."
+        ],
+        [
+          "Vorschlag",
+          "Wir wählen das Modell aus und schlagen eine realistische, auf Ihre Ziele abgestimmte Lösung vor."
+        ],
+        [
+          "Umsetzung",
+          "Wir koordinieren Lieferung, Installation, Konfiguration und Schulung der beteiligten Teams."
+        ],
+        [
+          "Support",
+          "Wir begleiten die Entwicklung des Projekts, um Kontinuität und Verbesserung zu sichern."
+        ]
+      ]
+    },
+    "historia_subtitulo": "Unsere Geschichte",
+    "historia_cuerpo": "<p>RH·BOTS ist entstanden, um humanoide Robotik zu Unternehmen zu bringen, die echte Ergebnisse brauchen, keine Vorführungen. Als offizieller Vertriebspartner von AGIBOT und PUDU in Spanien und Portugal wählen wir für jeden Betrieb den passenden Roboter aus und begleiten unsere Kunden durch den gesamten Prozess: Beratung, Installation, Teamschulung und laufende Wartung.</p><p>Wir arbeiten von Picassent (Valencia) aus, mit Kunden in Branchen von der industriellen Reinigung über den Kundenservice bis zur Fabrikautomatisierung.</p>"
+  },
+  "posts": [
+    {
+      "titulo": "So bereiten Sie Ihr Unternehmen auf humanoide Robotik vor",
+      "categoria": "Leitfaden",
+      "resumen": "Wichtige Punkte, um Prozesse, Räume und Ziele vor der Investition zu bewerten.",
+      "cuerpo": "<p>Die Einführung eines humanoiden Roboters beginnt nicht beim Roboter, sondern bei dem Prozess, den man lösen will. Bevor Sie ein Angebot anfordern, sollte klar sein, welche Aufgabe abgedeckt werden soll, wie viele Stunden am Tag und mit welchem erwarteten Ergebnis.</p><h2>Definieren Sie die Aufgabe, nicht das Modell</h2><p>Derselbe Raum kann einen Reinigungsroboter brauchen, einen für den Kundenkontakt oder keinen von beiden. Beschreiben Sie die Aufgabe mit Zahlen: Fläche, Zeitfenster, Anzahl der Personen oder Teile und was heute passiert, wenn Personal fehlt.</p><h2>Prüfen Sie die Umgebung</h2><p>Gangbreiten, Rampen, Aufzüge, Automatiktüren, WLAN-Abdeckung und Ladepunkte bestimmen, welche Modelle passen. Ein vorheriger Besuch vermeidet Überraschungen bei der Inbetriebnahme.</p><h2>Denken Sie daran, wer ihn bedienen wird</h2><p>Das Team, das mit dem Roboter arbeitet, braucht Schulung und einen klaren Ablauf für den Alltag: Start, Störungen, Reinigung und einfache Wartung.</p><h2>Berechnen Sie die Rendite mit eigenen Daten</h2><p>Vergleichen Sie die Kosten des Roboters und seiner Wartung mit den frei werdenden Stunden und den heutigen Kosten der Aufgabe. Ein gut dimensioniertes Projekt trägt sich mit Zahlen, nicht mit Erwartungen.</p>",
+      "fecha": "2026-09-10",
+      "slug": "como-preparar-tu-empresa-para-la-robotica-humanoide",
+      "url": "blog/como-preparar-tu-empresa-para-la-robotica-humanoide.html",
+      "img": "assets/robots/rhg2/hero.webp"
+    },
+    {
+      "titulo": "Reale Anwendungen humanoider Roboter",
+      "categoria": "Anwendungsfälle",
+      "resumen": "Handel, Industrie, Bildung und Events setzen diese Technologie bereits ein.",
+      "cuerpo": "<p>Humanoide und Servicerobotik arbeiten bereits in realen Umgebungen. Das sind die Einsätze, nach denen uns Unternehmen am häufigsten fragen.</p><h2>Handel und Kundenservice</h2><p>Besucherempfang, einfache Auskünfte, Begleitung im Geschäft und Markenaktivierungen. Der Roboter ersetzt das Team nicht: Er nimmt wiederkehrende Fragen ab und schafft Zeit für den Verkauf.</p><h2>Industrie und Logistik</h2><p>Transport von leichtem Material zwischen Arbeitsplätzen, Anlageninspektion und Unterstützung bei wiederkehrenden Aufgaben an der Linie. Hier zählen Laufzeit, Nutzlast und die Integration in bestehende Systeme.</p><h2>Professionelle Reinigung</h2><p>Große Innenflächen mit festen Routen: Supermärkte, Bahnhöfe, Hallen und Einkaufszentren. Das ist der ausgereifteste Anwendungsfall und der, der sich am schnellsten amortisiert.</p><h2>Bildung und Forschung</h2><p>Universitäten und Bildungszentren nutzen offene Plattformen, um eigene Anwendungen zu entwickeln und zu testen, mit SDK und Simulatoren.</p>",
+      "fecha": "2026-09-03",
+      "slug": "aplicaciones-reales-de-robots-humanoides",
+      "url": "blog/aplicaciones-reales-de-robots-humanoides.html",
+      "img": "assets/robots/rha3/hero.webp"
+    },
+    {
+      "titulo": "Fünf Fragen, bevor Sie einen Reinigungsroboter anschaffen",
+      "categoria": "Leitfaden",
+      "resumen": "Fläche, Boden, Wasser, Tagesroutine und Support: Was man vor der Entscheidung messen sollte.",
+      "cuerpo": "<p>Ein autonomer Reinigungsroboter leistet dann etwas, wenn Raum und Betrieb dazu passen. Vor der Entscheidung sollten Sie diese fünf Fragen beantworten.</p><h2>1. Wie viele Quadratmeter sind zu reinigen, und in welcher Zeit?</h2><p>Die Leistung misst sich in Quadratmetern pro Stunde unter realen Bedingungen, einschließlich Wenden, Hindernissen und Ladepausen.</p><h2>2. Wie ist der Boden beschaffen?</h2><p>Ein fugenloser Belag ist etwas anderes als einer mit Fugen, Gittern oder Höhenunterschieden. Der Bodentyp bestimmt das Schrubbsystem und den Wasserverbrauch.</p><h2>3. Wo wird befüllt und entleert?</h2><p>Sie brauchen einen zugänglichen Wasseranschluss und Abfluss in der Nähe des Arbeitsbereichs und des Ladepunkts.</p><h2>4. Wer startet ihn jeden Tag?</h2><p>Legen Sie eine verantwortliche Person und eine kurze Start- und Kontrollroutine fest. Die meisten Störungen lassen sich mit zwei Minuten Prüfung vermeiden.</p><h2>5. Was passiert, wenn er stehen bleibt?</h2><p>Fragen Sie nach der Reaktionszeit des Supports, dem Ersatzteilbestand und danach, was die Wartung genau abdeckt.</p>",
+      "fecha": "2026-08-27",
+      "slug": "cinco-preguntas-antes-de-incorporar-un-robot-de-limpieza",
+      "url": "blog/cinco-preguntas-antes-de-incorporar-un-robot-de-limpieza.html",
+      "img": "assets/robots/rhc5/vista-0.webp"
+    }
+  ],
+  "prefooter": {
+    "titulo": "Sprechen wir über die Zukunft",
+    "texto": "Interessiert daran, AGIBOT- oder PUDU-Roboter in Ihr Unternehmen oder Forschungszentrum zu integrieren? Kontaktieren Sie uns für eine unverbindliche Beratung.",
+    "siguenos": "Folgen Sie uns"
+  },
+  "cta": {
+    "kicker": "Sprechen wir?",
+    "titulo": "Bringen Sie humanoide Robotik in Ihr Unternehmen",
+    "texto": "Erzählen Sie uns von Ihrem Projekt und wir beraten Sie unverbindlich. Wir helfen Ihnen, die passende Lösung für Ihren Fall zu finden.",
+    "boton": "Informationen anfordern",
+    "imagen": "assets/robot-cta.webp"
+  },
+  "contacto": {
+    "kicker": "RH·BOTS Kontakt",
+    "h1": "Sprechen wir über Ihren nächsten Roboter",
+    "asesoria": {
+      "titulo": "Wir beraten Sie unverbindlich",
+      "texto": "Wir beantworten Ihre Fragen, prüfen Ihren Fall und beraten Sie zu Modellen, Einsätzen und Möglichkeiten.",
+      "pasos": [
+        [
+          "Erzählen Sie uns Ihre Idee",
+          "Einsatz, Raum, Branche oder Aufgabe, die Sie automatisieren möchten."
+        ],
+        [
+          "Wir prüfen die beste Option",
+          "Humanoide, vierbeinige, Reinigungs- oder AMR-Roboter oder Zubehör."
+        ],
+        [
+          "Sie erhalten ein klares Angebot",
+          "Ohne Fachjargon und auf Ihre Ziele abgestimmt."
+        ]
+      ]
+    },
+    "proceso": {
+      "kicker": "Wie wir arbeiten",
+      "titulo": "Von der Anfrage zur Lösung, Schritt für Schritt",
+      "pasos": [
+        [
+          "Wir hören zu",
+          "Wir verstehen Ihr Ziel, die Einsatzumgebung und den tatsächlichen Bedarf des Projekts."
+        ],
+        [
+          "Wir empfehlen",
+          "Wir beraten Sie mit einem einfachen, klaren und auf Ihren Fall zugeschnittenen Vorschlag."
+        ],
+        [
+          "Wir begleiten",
+          "Wir klären Fragen und helfen Ihnen, die Wahl sicher voranzubringen."
+        ]
+      ]
+    },
+    "lado": {
+      "kicker": "Sprechen wir",
+      "titulo": "Ein direkterer, klarerer und menschlicherer Kontakt",
+      "texto": "Füllen Sie das Formular aus und ein Spezialist von RH·BOTS meldet sich schnellstmöglich bei Ihnen. Sie können uns auch direkt schreiben, wenn Ihnen das lieber ist.",
+      "especialidad": "Robotik für Unternehmen und Veranstaltungen"
+    },
+    "intro": "Sagen Sie uns, was Sie brauchen, und wir helfen Ihnen, die passende Robotiklösung für Ihr Unternehmen, Ihre Veranstaltung oder Ihr Projekt zu finden.",
+    "empresa": "RH·BOTS — Humanoide Ressourcen"
+  },
+  "alquiler": {
+    "kicker": "RH·BOTS Miete",
+    "h1": "Der Roboter, den Sie brauchen, ohne ihn zu kaufen",
+    "lede": "Holen Sie einen Roboter in Ihren Betrieb und zahlen Sie eine Rate statt eine Maschine. Wählen Sie die Variante, die zu Ihnen passt: industrielle Reinigung als langfristige Miete oder Humanoide für eine einzelne Veranstaltung.",
+    "imagen": "assets/escenarios/edificios-oficinas.webp",
+    "opciones": [
+      {
+        "id": "limpieza",
+        "href": "alquiler-limpieza.html",
+        "titulo": "Miete von industriellen Reinigungsrobotern",
+        "texto": "Autonome Scheuersaugmaschinen und Kehrmaschinen zur Monatsrate, von 12 bis 60 Monaten, inklusive Wartung und Verbrauchsmaterial.",
+        "imagen": "assets/robots/mt1/en-fabrica.webp"
+      },
+      {
+        "id": "humanoides",
+        "href": "alquiler-humanoides.html",
+        "titulo": "Humanoide für Veranstaltungen mieten",
+        "texto": "Bonico, unser Humanoider, für Messen, Kongresse, Eröffnungen und Markenaktivierungen, begleitet von unserem Team.",
+        "imagen": "assets/robots/rhx2-ultra/bonico-corazon.webp"
+      }
+    ],
+    "limpieza": {
+      "kicker": "Miete · Industrielle Reinigung",
+      "h1": "Industrielle Reinigungsroboter zur Miete",
+      "lede": "Autonome Scheuersaug- und Kehrmaschinen zur Monatsrate, inklusive Wartung und Verbrauchsmaterial und mit sofortiger Lieferung. Je länger die Laufzeit, desto niedriger die Rate.",
+      "imagen": "assets/escenarios/fabricas-almacenes.webp",
+      "modelos": [
+        {
+          "slug": "rhc5",
+          "etiqueta": "Scheuersaugroboter",
+          "claim": "Kehren, Schrubben und Trocknen in einem Arbeitsgang.",
+          "texto": "Autonome Lösung für die industrielle Reinigung, die Kehren, Schrubben und Trocknen in einem Arbeitsgang vereint, mit intelligenter Navigation über LiDAR und SLAM, hohem Schrubbdruck und automatisiertem Wassermanagement, um manuelle Eingriffe zu verringern.",
+          "destacados": [
+            "LiDAR- und SLAM-Navigation",
+            "Automatisches Wassermanagement"
+          ],
+          "tarifas": [
+            [
+              "Demo",
+              "1 Monat",
+              990.0
+            ],
+            [
+              "1 Jahr",
+              "12 Monate",
+              990.0
+            ],
+            [
+              "3 Jahre",
+              "36 Monate",
+              895.29
+            ],
+            [
+              "4 Jahre",
+              "48 Monate",
+              736.48
+            ],
+            [
+              "5 Jahre",
+              "60 Monate",
+              641.49
+            ]
+          ]
+        },
+        {
+          "slug": "mt1",
+          "etiqueta": "Kehrroboter",
+          "claim": "Kehrroboter mit KI: visuelle Erkennung und autonome Reinigung rund um die Uhr.",
+          "texto": "Kehrroboter mit künstlicher Intelligenz für die autonome Reinigung großer Flächen. Visuelle KI-Erkennung und Multisensorfusion verleihen ihm eine Leistung, die mit der einer Aufsitzkehrmaschine vergleichbar ist, und das rund um die Uhr ohne manuellen Eingriff.",
+          "destacados": [
+            "Visuelle KI-Erkennung",
+            "Dauerbetrieb rund um die Uhr"
+          ],
+          "tarifas": [
+            [
+              "Demo",
+              "1 Monat",
+              690.0
+            ],
+            [
+              "1 Jahr",
+              "12 Monate",
+              690.0
+            ],
+            [
+              "3 Jahre",
+              "36 Monate",
+              597.23
+            ],
+            [
+              "4 Jahre",
+              "48 Monate",
+              495.27
+            ],
+            [
+              "5 Jahre",
+              "60 Monate",
+              434.29
+            ]
+          ]
+        },
+        {
+          "slug": "mt1-max",
+          "etiqueta": "Kehrroboter",
+          "claim": "Autonome Kehrmaschine für große Flächen: 3D-Wahrnehmung und Reinigung in Echtzeit.",
+          "texto": "Autonomer Kehrroboter für große Flächen. Mit künstlicher Intelligenz und 3D-LiDAR-Navigation erkennt er Schmutz und Hindernisse in Echtzeit und passt die Reinigung im Betrieb an. Gedacht für Lager, Fabriken, Parkhäuser und Einkaufszentren.",
+          "destacados": [
+            "3D-LiDAR-Navigation",
+            "Dauerbetrieb rund um die Uhr"
+          ],
+          "tarifas": [
+            [
+              "Demo",
+              "1 Monat",
+              840.0
+            ],
+            [
+              "1 Jahr",
+              "12 Monate",
+              840.0
+            ],
+            [
+              "3 Jahre",
+              "36 Monate",
+              753.63
+            ],
+            [
+              "4 Jahre",
+              "48 Monate",
+              617.21
+            ],
+            [
+              "5 Jahre",
+              "60 Monate",
+              535.62
+            ]
+          ]
+        }
+      ],
+      "cuota_nota": "Rate inklusive Wartung und Verbrauchsmaterial · sofortige Lieferung.",
+      "incluye": [
+        "Wartung und Behebung von Funktionsstörungen.",
+        "Verbrauchsmaterial der Maschine.",
+        "Eigenschadenversicherung für die Maschine, mit einer Selbstbeteiligung von 200 €.",
+        "Sofortige Lieferung."
+      ],
+      "no_incluye": [
+        "Störungen und Schäden durch unsachgemäßen Gebrauch der Maschine.",
+        "Kfz-Haftpflicht- und Betriebshaftpflichtversicherung: Diese schließt der Kunde ab, und jede Strafe, die sich aus ihrem Fehlen ergibt, geht zu seinen Lasten."
+      ]
+    },
+    "humanoides": {
+      "kicker": "Miete · Veranstaltungen",
+      "h1": "Bonico, der Roboter, der Ihren Stand zum Mittelpunkt macht",
+      "lede": "Mieten Sie Bonico, unseren humanoiden Roboter, für Messen, Veranstaltungen und Markenaktionen. Er tanzt, interagiert und überrascht Ihre Besucher mit einem einzigartigen Technologieerlebnis.",
+      "imagen": "assets/robots-portada.webp",
+      "precio_desde": "1.200 €",
+      "precio_unidad": "/ Tag",
+      "precio_nota": "Wir reisen zu Veranstaltungen überall auf der Welt. Anpassung, Anreise, Unterkunft und Spesen werden je nach Art der Veranstaltung kalkuliert.",
+      "atrae": {
+        "kicker": "Ein Erlebnis, das Blicke anzieht",
+        "titulo": "Wer vor Ihrem Stand stehen bleibt, ist schon halb im Gespräch",
+        "parrafos": [
+          "Auf einer Messe ist es der erste Schritt zu einem Gespräch, jemanden vor Ihrem Stand zum Stehenbleiben zu bringen.",
+          "Bonico zieht Blicke an, weckt Neugier und schafft einen Interaktionspunkt rund um Ihre Marke. Ein anderes Erlebnis, das Besucher im Gedächtnis behalten und teilen."
+        ],
+        "imagen": "assets/robots/rhx2-ultra/en-movimiento.webp"
+      },
+      "capacidades": {
+        "kicker": "Was kann er?",
+        "titulo": "Bonico tut weit mehr, als nur dazustehen",
+        "items": [
+          [
+            "Tanzen",
+            "Choreografien und Abläufe, die das Publikum überraschen sollen."
+          ],
+          [
+            "Interagieren",
+            "Gespräche und direkte Interaktion mit den Besuchern."
+          ],
+          [
+            "Präsentieren",
+            "Er kann Informationen über ein Unternehmen, ein Produkt oder eine Dienstleistung vermitteln."
+          ],
+          [
+            "Anziehen",
+            "Erzeugt Neugier und Besucherströme rund um den Stand."
+          ],
+          [
+            "Unterhalten",
+            "Ideal, um auffällige Momente und Inhalte für soziale Medien zu schaffen."
+          ],
+          [
+            "Ihre Marke vertreten",
+            "Das Erlebnis lässt sich an die Identität und die Ziele der Veranstaltung anpassen."
+          ]
+        ]
+      },
+      "personaliza": {
+        "kicker": "Bonico anpassen",
+        "titulo": "Lassen Sie Bonico die Sprache Ihrer Marke sprechen",
+        "texto": "Bonico kommt nicht mit einem Standardskript. Wir bauen das Erlebnis um das herum auf, was Sie auf der Veranstaltung erzählen wollen: was er sagt, wie er es sagt und was er vor Ihrem Publikum tut.",
+        "opciones": [
+          "Persönlichkeit",
+          "Sprechweise",
+          "Dialoge",
+          "Produktinformationen",
+          "Markenbotschaften",
+          "Fragen und Antworten",
+          "Choreografien",
+          "Verhaltensweisen",
+          "Besondere Aktionen für die Veranstaltung"
+        ],
+        "precio_desde": "300 €",
+        "precio_nota": "Der Preis hängt davon ab, wie aufwendig die Anpassung ist.",
+        "imagen": "assets/robots/rhx2-ultra/bonico-entrevista.webp"
+      },
+      "tarifa": {
+        "kicker": "Tarif",
+        "titulo": "Mieten Sie Bonico für Ihre nächste Veranstaltung",
+        "incluye_titulo": "Der Tag umfasst",
+        "incluye": [
+          "Bonico, humanoider Roboter RHX2 Ultra",
+          "Bediener und Techniker",
+          "Inbetriebnahme",
+          "Betreuung vor Ort",
+          "Auf- und Abbau",
+          "Serienmäßig verfügbare Interaktionen und Abläufe"
+        ],
+        "nota": "Der Endpreis hängt von der Dauer, dem Ort und dem Anpassungsbedarf der Veranstaltung ab."
+      },
+      "ideal": {
+        "kicker": "Ideal für",
+        "titulo": "Wo Bonico hineinpasst",
+        "items": [
+          "Messen",
+          "Kongresse",
+          "Stands",
+          "Firmenveranstaltungen",
+          "Produkteinführungen",
+          "Präsentationen",
+          "Einkaufszentren",
+          "Technologieveranstaltungen",
+          "Promotionaktionen",
+          "Private Veranstaltungen"
+        ]
+      },
+      "proceso": {
+        "kicker": "So funktioniert es",
+        "titulo": "Von der Idee bis zum Tag der Veranstaltung",
+        "pasos": [
+          [
+            "Erzählen Sie uns von Ihrer Veranstaltung",
+            "Datum, Ort, Dauer und Ziel."
+          ],
+          [
+            "Wir gestalten das Erlebnis",
+            "Wir legen fest, wie Bonico mitwirkt und welchen Grad an Anpassung Sie brauchen."
+          ],
+          [
+            "Wir bereiten Bonico vor",
+            "Wir konfigurieren und testen das Erlebnis vor der Veranstaltung."
+          ],
+          [
+            "Bonico trifft bei Ihrer Veranstaltung ein",
+            "Wir kümmern uns um Inbetriebnahme, Betreuung und Betrieb."
+          ]
+        ]
+      },
+      "galeria": {
+        "videos": [
+          {
+            "src": "assets/video/bonico-bailando.mp4",
+            "poster": "assets/video/bonico-bailando.webp",
+            "titulo": "Bonico auf der Fira València, in den Nachrichten von TVE"
+          }
+        ]
+      },
+      "faq": [
+        [
+          "Wer ist Bonico?",
+          "Bonico ist unser RHX2 Ultra: 1,31 m groß, 3D-Wahrnehmung und 30 Freiheitsgrade. Das vollständige Datenblatt finden Sie im Katalog."
+        ],
+        [
+          "Was kostet die Miete von Bonico?",
+          "Der Service ist ab 1.200 € zzgl. MwSt. pro Tag verfügbar. Der Endpreis hängt von der Dauer, dem Ort und dem Anpassungsbedarf ab."
+        ],
+        [
+          "Kann Bonico tanzen?",
+          "Ja. Bonico kann verschiedene Tänze und Choreografien aufführen. Auch maßgeschneiderte Choreografien lassen sich prüfen."
+        ],
+        [
+          "Kann er mit den Besuchern sprechen?",
+          "Ja. Bonico kann mit den Besuchern interagieren und Gespräche führen, je nach den gebuchten Fähigkeiten und der gebuchten Konfiguration."
+        ],
+        [
+          "Können wir seine Persönlichkeit anpassen?",
+          "Ja. Wir können bestimmte Aspekte von Bonicos Persönlichkeit, seine Dialoge, sein Verhalten und seine Inhalte an die Marke oder die Veranstaltung anpassen."
+        ],
+        [
+          "Ist die Anreise im Preis enthalten?",
+          "Wir reisen zu Veranstaltungen überall auf der Welt. Anreise, Unterkunft und Spesen werden je nach Ort und Dauer der Veranstaltung gesondert kalkuliert."
+        ],
+        [
+          "Ist während der Veranstaltung ein Bediener dabei?",
+          "Ja. Der Service umfasst Betreuung und technische Unterstützung während der Veranstaltung."
+        ],
+        [
+          "Können wir ihn für mehrere Tage buchen?",
+          "Ja. Für Messen und mehrtägige Veranstaltungen erstellen wir ein individuelles Angebot."
+        ]
+      ],
+      "cierre": {
+        "titulo": "Bereit, Bonico zu Ihrer nächsten Veranstaltung zu holen?",
+        "texto": "Sagen Sie uns, was Ihnen vorschwebt, und wir gestalten ein Erlebnis passend zu Ihrer Veranstaltung, Ihrer Marke und Ihrem Publikum."
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+# RH·BOTS
+
+> Offizieller Vertriebspartner von AGIBOT und PUDU in Spanien und Portugal. Autonome Reinigungsroboter, Humanoide, Vierbeiner, AMR für die Intralogistik und Zubehör, mit Beratung, Installation, Schulung und Wartung. Sitz in Picassent (Valencia).
+
+## Roboter
+
+
+### Humanoide Roboter
+
+- [RHX2](https://www.rh-bots.com/de/robots/rhx2.html): Kompakter Humanoider für Kundenkontakt und Veranstaltungen
+- [RHA3](https://www.rh-bots.com/de/robots/rha3.html): Humanoider in Erwachsenengröße für Bühne und Kundenkontakt
+- [RHX2 Ultra](https://www.rh-bots.com/de/robots/rhx2-ultra.html): Programmierbarer Humanoider mit 3D-Wahrnehmung und NVIDIA Orin NX
+- [RHX2 EDU](https://www.rh-bots.com/de/robots/rhx2-edu.html): Zerlegbarer Humanoider für Lehre und Forschung
+- [RHA3 Ultra "Rebonico"](https://www.rh-bots.com/de/robots/rha3-ultra.html): Service-Humanoider für autonomen Betrieb rund um die Uhr
+- [RHG2](https://www.rh-bots.com/de/robots/rhg2.html): Industrieller Humanoider mit mobiler Basis und Teleskoprumpf
+
+### Vierbeiner
+
+- [D5W](https://www.rh-bots.com/de/robots/d5w.html): Industrieller Vierbeiner mit Rädern für Inspektion und Zustellung
+
+### Autonome Reinigung
+
+- [RHC5](https://www.rh-bots.com/de/robots/rhc5.html): Autonome professionelle Reinigung großer Flächen
+- [MT1](https://www.rh-bots.com/de/robots/mt1.html): Autonome KI-Kehrmaschine für große Flächen
+- [MT1 Max](https://www.rh-bots.com/de/robots/mt1-max.html): Autonome Kehrmaschine mit 3D-Lidar für innen und halboffene Bereiche
+
+### AMR Intralogistik
+
+- [T150](https://www.rh-bots.com/de/robots/t150.html): Autonomer industrieller Transportroboter für 150 kg
+- [T300](https://www.rh-bots.com/de/robots/t300.html): Modularer autonomer Transportroboter für 300 kg
+- [T600](https://www.rh-bots.com/de/robots/t600.html): Autonomer Hubroboter für Lasten bis 600 kg
+- [T600 Underride](https://www.rh-bots.com/de/robots/t600-underride.html): Autonomer Unterfahr-Roboter für Lasten bis 600 kg
+- [MP2000](https://www.rh-bots.com/de/robots/mp2000.html): Autonomer Hubwagen für Paletten bis 2.000 kg
+
+### Zubehör
+
+- [OmniHand](https://www.rh-bots.com/de/robots/omnihand.html): Geschickte Roboterhand mit 16 Freiheitsgraden
+- [OmniHand Tactile](https://www.rh-bots.com/de/robots/omnihand-tactile.html): Geschickte Roboterhand mit Tastsensoren
+- [OmniHand Pro 2025](https://www.rh-bots.com/de/robots/omnihand-pro-2025.html): Geschickte Roboterhand mit 19 Freiheitsgraden
+- [OmniPicker](https://www.rh-bots.com/de/robots/omnipicker.html): Industriegreifer mit Tastsinn für verkörperte KI
+- [Batería extra D5W](https://www.rh-bots.com/de/robots/d5w-bateria.html): Ersatzakku für den Vierbeiner D5W
+- [Kit de inspección D5W](https://www.rh-bots.com/de/robots/d5w-kit-inspeccion.html): Sensorkit für Inspektionsaufgaben mit dem D5W
+- [Cajón de extensión de batería D5W](https://www.rh-bots.com/de/robots/d5w-cajon-bateria.html): Zusätzliches Fach zur Verlängerung der Laufzeit des D5W
+
+
+## Unternehmen
+
+- [Vollständiger Katalog](https://www.rh-bots.com/de/robots.html)
+- [Anwendungen nach Branche: welcher Roboter zu welchem Einsatz passt](https://www.rh-bots.com/de/aplicaciones.html)
+- [Über uns: Team und Geschichte von RH·BOTS](https://www.rh-bots.com/de/rh-bots.html)
+- [Kontakt](https://www.rh-bots.com/de/contacto.html)
+
+
+## Optional
+
+- [Blog](https://www.rh-bots.com/de/blog.html)
+- [Impressum und Datenschutz](https://www.rh-bots.com/de/legal.html)

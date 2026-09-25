@@ -1,0 +1,83 @@
+/* ==========================================================================
+   RH·BOTS — ajustes para los idiomas que se leen de derecha a izquierda
+   El grueso del giro lo hace el dir="rtl" del <html>: rejillas, flex y los
+   márgenes lógicos se dan la vuelta solos. Aquí van solo las piezas que no
+   entienden de dirección: diagonales recortadas, posiciones absolutas,
+   desplazamientos y las flechas.
+   ========================================================================== */
+
+/* ---------- flechas y chevrones: apuntan al otro lado ---------- */
+[dir="rtl"] .pill svg,
+[dir="rtl"] .pcard__more svg,
+[dir="rtl"] .ncard__mas svg,
+[dir="rtl"] .artcard__mas svg,
+[dir="rtl"] .actualidad__enlace svg,
+[dir="rtl"] .nav__todos svg,
+[dir="rtl"] .nav__famchev svg,
+[dir="rtl"] .evmodelo svg,
+[dir="rtl"] .breadcrumb svg{ transform:scaleX(-1); }
+/* el chevrón del selector de idioma y los acordeones apuntan abajo: no se tocan */
+[dir="rtl"] .lang-switch__chev,
+[dir="rtl"] .nav__abrir svg,
+[dir="rtl"] .faq__item svg{ transform:none; }
+
+/* ---------- diagonales decorativas: se reflejan ---------- */
+[dir="rtl"] .hero__diagonal,
+[dir="rtl"] .ctafinal__diagonal,
+[dir="rtl"] .secbloque__diagonal,
+[dir="rtl"] .section--navy::before,
+[dir="rtl"] .prefoot::before,
+[dir="rtl"] .cinta::before{ transform:scaleX(-1); }
+
+/* ---------- carrusel: los botones cambian de lado y de sentido ---------- */
+[dir="rtl"] .carrusel__btn svg{ transform:scaleX(-1); }
+[dir="rtl"] .carrusel__btn--prev{ left:auto; right:-6px; }
+[dir="rtl"] .carrusel__btn--next{ right:auto; left:-6px; }
+
+/* ---------- listas con marca propia: la marca pasa a la derecha ---------- */
+[dir="rtl"] .evtarifa__lista li,
+[dir="rtl"] .incluye li,
+[dir="rtl"] .tarifa__lista li{ padding-left:0; padding-right:24px; }
+[dir="rtl"] .evtarifa__lista li::before,
+[dir="rtl"] .incluye li::before,
+[dir="rtl"] .tarifa__lista li::before{ left:auto; right:0; transform:rotate(45deg); }
+
+/* ---------- el robot del cierre de portada, al otro extremo ---------- */
+[dir="rtl"] .ctafinal__robot{
+  right:auto; left:clamp(-190px, -9vw, -30px);
+  transform:translateY(48%) scaleX(-1);
+}
+
+/* ---------- desplegables anclados a un borde ---------- */
+[dir="rtl"] .lang-menu{ right:auto; left:0; }
+/* el desplegable simple cuelga del otro lado; el megamenú va centrado con
+   left:50% + translateX(-50%) y funciona igual en los dos sentidos */
+[dir="rtl"] .nav__grupo--simple .nav__sub{ left:auto; right:-16px; }
+[dir="rtl"] .carrito__panel{ right:auto; left:0; box-shadow:20px 0 60px rgba(11,22,38,.25); }
+@keyframes entra-carrito-rtl{ from{ transform:translateX(-24px); opacity:.6; } to{ transform:none; opacity:1; } }
+[dir="rtl"] .carrito__panel{ animation-name:entra-carrito-rtl; }
+
+/* ---------- el selector de familias del <select> ---------- */
+[dir="rtl"] .form select{
+  padding-right:18px; padding-left:48px;
+  background-position:left 20px center;
+}
+
+/* ---------- números, códigos y precios siempre en sentido occidental ---------- */
+[dir="rtl"] .evprecio__num,
+[dir="rtl"] .pvp,
+[dir="rtl"] .precio,
+[dir="rtl"] .tabla td,
+[dir="rtl"] .ctopaso__num,
+[dir="rtl"] .metodo__num,
+[dir="rtl"] .evcard__num{ direction:ltr; unicode-bidi:isolate; }
+
+/* ---------- tipografía: las fuentes latinas no traen árabe ---------- */
+[dir="rtl"] body,
+[dir="rtl"] .display,
+[dir="rtl"] .h-section,
+[dir="rtl"] .kicker,
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3{
+  font-family:'Noto Kufi Arabic', 'Segoe UI', Tahoma, sans-serif;
+  letter-spacing:normal;
+}

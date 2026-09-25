@@ -62,11 +62,14 @@ svg{
 svg .fill{ fill:currentColor; }
 svg .nostroke{ stroke:none; }
 
+/* fuera de pantalla por arriba, no por el lado: así no crea desbordamiento
+   horizontal en los idiomas que se leen de derecha a izquierda */
 .skip-link{
-  position:absolute; left:-9999px; top:0; z-index:200;
+  position:absolute; inset-inline-start:0; top:0; z-index:200;
+  transform:translateY(-200%);
   background:var(--navy); color:#fff; padding:.75rem 1.25rem;
 }
-.skip-link:focus{ left:0; }
+.skip-link:focus{ transform:none; }
 
 /* oculto a la vista pero presente para buscadores y lectores de pantalla */
 .sr-only{

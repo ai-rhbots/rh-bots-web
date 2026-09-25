@@ -32,11 +32,22 @@ e = html.escape
 # datos/productos.en.json) — lo que falte en esa capa cae al español, así
 # que una traducción a medias no rompe nunca la build.
 LANG = 'es'
-IDIOMAS = ['es', 'pt', 'en', 'fr', 'zh', 'ca']   # orden en el desplegable del menú
+IDIOMAS = ['es', 'pt', 'en', 'fr', 'de', 'zh', 'ar', 'ca']  # orden en el desplegable
 NOMBRE_IDIOMA = {
-    'es': 'Español', 'pt': 'Português', 'en': 'English',
-    'fr': 'Français', 'zh': '中文', 'ca': 'Català',
+    'es': 'Español', 'pt': 'Português', 'en': 'English', 'fr': 'Français',
+    'de': 'Deutsch', 'zh': '中文', 'ar': 'العربية', 'ca': 'Català',
 }
+# idiomas que se escriben de derecha a izquierda
+RTL = {'ar'}
+# og:locale de cada idioma (el sitio.json solo trae el español)
+LOCALE_OG = {
+    'es': 'es_ES', 'pt': 'pt_PT', 'en': 'en_GB', 'fr': 'fr_FR',
+    'de': 'de_DE', 'zh': 'zh_CN', 'ar': 'ar_AE', 'ca': 'ca_ES',
+}
+
+
+def dir_html(lang=None):
+    return 'rtl' if (lang or LANG) in RTL else 'ltr'
 
 
 def nivel(lang):
@@ -453,6 +464,393 @@ TEXTOS = {
 }
 
 
+# ── alemán y árabe: se añaden sobre TEXTOS para no tocar el bloque original ──
+TEXTOS_DE = {
+    'saltar_contenido': 'Zum Inhalt springen',
+    'ver_todo_catalogo': 'Gesamten Katalog ansehen',
+    'nav_inicio': 'Start',
+    'nav_robots': 'Roboter',
+    'carrito_titulo': 'Ihr Warenkorb',
+    'carrito_total': 'Gesamt',
+    'carrito_nota_envio': 'Versandkosten und Steuern werden beim Bezahlvorgang berechnet.',
+    'carrito_finalizar': 'Zur Kasse',
+    'carrito_asesor': 'Lieber vorher beraten lassen? Schreiben Sie uns',
+    'carrito_vacio': 'Sie haben noch keinen Roboter hinzugefügt.',
+    'carrito_ver_catalogo': 'Zum Katalog',
+    'aviso_legal': 'Impressum',
+    'politica_privacidad': 'Datenschutzerklärung',
+    'politica_cookies': 'Cookie-Richtlinie',
+    'recursos_humanoides': 'Humanoide Ressourcen',
+    'pide_info': 'Weitere Informationen anfordern',
+    'ver_especificaciones': 'Technische Daten ansehen',
+    'que_es_pregunta': 'Was ist der {n}?',
+    'aplicaciones_de': 'Anwendungen des {n}',
+    'escenarios_encaja': 'Szenarien, in die der {n} passt.',
+    'specs_tecnicas_de': 'Technische Daten des {n}',
+    'ver_ficha_completa': 'Vollständiges Datenblatt ansehen',
+    'galeria_de': 'Galerie des {n}',
+    'fotos_anteriores': 'Vorherige Fotos',
+    'fotos_siguientes': 'Nächste Fotos',
+    'antes_de_ofertar': 'Bevor Sie dieses Modell anbieten',
+    'doc_a_solicitar': 'Beim Hersteller anzufordernde Unterlagen.',
+    'accesorios_para': 'Zubehör für den {n}',
+    'otros_modelos_familia': 'Weitere Modelle der Reihe',
+    'giralo': 'Drehen',
+    'vista_giratoria': '{n} — 360°-Ansicht. Mit den Pfeiltasten drehen.',
+    'navegador_sin_video': 'Ihr Browser kann dieses Video nicht abspielen.',
+    'en_video': 'Der {n} im Video',
+    'sin_stock': 'Nicht auf Lager — fragen Sie uns nach der Verfügbarkeit',
+    'avisame': 'Benachrichtigt mich, sobald verfügbar',
+    'precio_consulta': 'Preis auf Anfrage',
+    'pedir_presupuesto': 'Angebot anfordern',
+    'anadir_carrito': 'In den Warenkorb',
+    'comprar_ahora': 'Jetzt kaufen',
+    'pvp': 'UVP',
+    'preguntas_frecuentes': 'Häufige Fragen',
+    'distribuidores_oficiales': 'Offizieller Vertriebspartner in Spanien und Portugal',
+    'ver_robots': 'Roboter ansehen',
+    'habla_nosotros': 'Sprechen Sie mit uns',
+    'ver_todos_modelos': 'Alle Modelle ansehen',
+    'modelos_disponibles': 'Verfügbare Modelle',
+    'modelos_anteriores': 'Vorherige Modelle',
+    'modelos_siguientes': 'Nächste Modelle',
+    'ver_modelo': 'Modell ansehen',
+    'no_sabes_robot_titulo': 'Sie wissen nicht, welcher Roboter am besten passt?',
+    'no_sabes_robot_texto': 'Erzählen Sie uns von Ihrem Projekt und wir helfen Ihnen, die passende Reihe, das passende Modell und die passende Konfiguration für Ihr Unternehmen oder Ihre Einrichtung zu finden.',
+    'hablar_rhbots': 'Mit RH·BOTS sprechen',
+    'catalogo_kicker': 'RH·BOTS Katalog',
+    'catalogo_h1': 'Roboter für Unternehmen, die einen Schritt voraus sein wollen',
+    'catalogo_lede': 'Humanoide, vierbeinige Roboter, Reinigungsroboter, AMR für die Intralogistik und Zubehör, um Aufgaben zu automatisieren, Prozesse zu verbessern und fortschrittliche Robotik in reale Umgebungen zu bringen. {n} Modelle mit vollständigem Datenblatt und Begleitung von Anfang bis Ende.',
+    'solicitar_asesoramiento': 'Beratung anfordern',
+    'ver_ficha_tecnica': 'Datenblatt ansehen',
+    'robots_para_uso': 'Roboter für diesen Einsatz',
+    'cuentanos_tu_caso': 'Erzählen Sie uns Ihren Fall',
+    'tienes_tarea_titulo': 'Haben Sie eine Aufgabe, die Sie automatisieren möchten?',
+    'tienes_tarea_texto': 'Erzählen Sie uns Ihren Fall und wir beraten Sie, welche Robotikanwendung am besten zu Ihrem Unternehmen passt.',
+    'blog_kicker': 'RH·BOTS — Blog',
+    'blog_h1': 'Neues aus der <span class="acento">humanoiden Robotik</span>',
+    'blog_lede': 'Nachrichten, Anwendungsfälle und Ressourcen, um zu verstehen, wie sich humanoide Roboter sicher, nützlich und messbar in reale Unternehmen integrieren lassen.',
+    'ver_articulos': 'Beiträge ansehen',
+    'hablar_experto': 'Mit einem Experten sprechen',
+    'destacado': 'Empfohlen',
+    'min_lectura': 'Min. Lesezeit',
+    'leer_articulo': 'Beitrag lesen',
+    'leer_mas': 'Weiterlesen',
+    'mas_informacion': 'Mehr Informationen',
+    'conocimiento_aplicado': 'Angewandtes Wissen',
+    'ideas_claras': 'Klare Ideen für bessere Entscheidungen',
+    'buscar_articulos': 'Beiträge suchen',
+    'buscar_articulos_placeholder': 'Beiträge suchen…',
+    'buscar': 'Suchen',
+    'ultimos_articulos': 'Neueste Beiträge',
+    'recursos_presente': 'Ressourcen, um die Robotik von heute zu verstehen',
+    'todos': 'Alle',
+    'sin_resultados_busqueda': 'Keine Beiträge passen zu Ihrer Suche.',
+    'preparando_articulos': 'Wir bereiten unsere ersten Beiträge vor',
+    'preparando_articulos_texto': 'Hier veröffentlichen wir Produktneuheiten, Anwendungsfälle unserer Kunden und technische Hinweise zu den Modellen des Katalogs. In der Zwischenzeit können Sie die Datenblätter ansehen oder uns direkt schreiben.',
+    'escribenos': 'Schreiben Sie uns',
+    'necesitas_orientacion': 'Brauchen Sie Orientierung?',
+    'orienta_titulo': 'Wir helfen Ihnen zu verstehen, welcher Roboter <span class="acento">zu Ihrem Unternehmen passt</span>',
+    'orienta_texto': 'Erzählen Sie uns Ihren Fall und unser Team berät Sie zu Modellen, Anwendungen und nächsten Schritten.',
+    'solicitar_informacion': 'Informationen anfordern',
+    'volver_blog': '← Zurück zum Blog',
+    'pagina_404_titulo': 'Diese Seite gibt es nicht',
+    'pagina_404_texto': 'Vielleicht ist der Link falsch geschrieben oder wir haben den Inhalt verschoben. Von hier aus kommen Sie überall hin:',
+    'ir_inicio': 'Zur Startseite',
+    'formulario': 'Formular',
+    'solicita_info': 'Informationen anfordern',
+    'respuesta_personalizada': 'Persönliche Antwort',
+    'nombre': 'Vorname',
+    'apellidos': 'Nachname',
+    'tu_nombre': 'Ihr Vorname',
+    'tus_apellidos': 'Ihr Nachname',
+    'email': 'E-Mail',
+    'telefono': 'Telefon',
+    'empresa_campo': 'Unternehmen',
+    'nombre_empresa_placeholder': 'Name Ihres Unternehmens',
+    'que_robot_interesa': 'Für welchen Roboter interessieren Sie sich?',
+    'selecciona_modelo': 'Modell auswählen',
+    'aun_no_lo_se': 'Weiß ich noch nicht',
+    'como_ayudarte': 'Wie können wir Ihnen helfen?',
+    'mensaje_placeholder': 'Beschreiben Sie kurz Ihr Projekt, Ihren Bedarf oder Ihre Veranstaltung…',
+    'consiento_privacidad': 'Ich habe die',
+    'politica_privacidad_link': 'Datenschutzerklärung',
+    'consiento_privacidad_fin': ' gelesen und akzeptiere sie. Ich willige in die Verarbeitung meiner Daten ein, um Informationen von RH·BOTS zu erhalten.',
+    'enviar_mensaje': 'Nachricht senden',
+    'solicitar_asesoramiento_cta': 'Beratung anfordern',
+    'escribir_email': 'Per E-Mail schreiben',
+    'email_directo_etq': 'Direkte E-Mail',
+    'especialistas_en': 'Spezialisten für',
+    'donde_estamos': 'Wo Sie uns finden',
+    'llamanos_al': 'Sie können uns auch anrufen unter',
+    'escribenos_directamente': 'Sie können uns auch direkt schreiben an',
+    'aviso_legal_titulo': 'Impressum, Datenschutz und Cookies',
+    'pagina_no_encontrada': 'Seite nicht gefunden | RH·BOTS',
+    'pagina_no_encontrada_desc': 'Die gesuchte Seite gibt es nicht oder sie wurde verschoben.',
+    'contacto_titulo': 'Kontakt | RH·BOTS',
+    'blog_titulo': 'Blog | RH·BOTS',
+    'blog_desc': 'Neuigkeiten, Anwendungsfälle und technische Hinweise zu Service- und Industrierobotik.',
+    'aplicaciones_titulo': 'Anwendungen der RH·BOTS Roboter nach Branche | RH·BOTS',
+    'robots_catalogo_titulo': 'RH·BOTS Roboter — kompletter Katalog | RH·BOTS',
+    'robots_catalogo_desc': 'RH·BOTS Katalog: humanoide, vierbeinige und Reinigungsroboter, AMR für die Intralogistik und Zubehör, mit vollständigen Datenblättern.',
+    'inicio_titulo': 'RH·BOTS — Humanoide Ressourcen für Ihr Unternehmen',
+    'inicio_desc': 'Humanoide, vierbeinige, Reinigungs- und Intralogistikroboter. Beratung, Installation, Schulung und Support aus Valencia, Spanien.',
+    'legal_meta_titulo': 'Impressum, Datenschutz und Cookies | RH·BOTS',
+    'legal_meta_desc': 'Impressum, Datenschutzerklärung und Cookie-Richtlinie von RH·BOTS.',
+    'blog_articulo_sufijo': ' | RH·BOTS Blog',
+    'lang_switch_boton': 'Sprache wechseln',
+    'carrito_abrir_boton': 'Warenkorb öffnen',
+    'carrito_cerrar_boton': 'Warenkorb schließen',
+    'nav_ver_familias_aria': 'Roboterreihen und Modelle ansehen',
+    'nav_principal_aria': 'Hauptnavigation',
+    'nav_abrir_menu': 'Menü öffnen',
+    'nav_cerrar_menu': 'Menü schließen',
+    'marcas_distribuimos_aria': 'Marken, die wir vertreiben',
+    'filtrar_categoria_aria': 'Nach Kategorie filtern',
+    'requiere_accesorio_titulo': 'Erforderliches Zubehör',
+    'iva_corto': '+ MwSt.',
+    'ev_modelo': 'Bonico ist unser RHX2 Ultra',
+    'ev_foto_alt': 'Bonico, unser humanoider Roboter, im Interview mit einem Medienvertreter',
+    'ev_solicitar': 'Angebot anfordern',
+    'ev_como_funciona': 'So funktioniert es',
+    'ev_desde': 'Ab',
+    'ev_dia': '/ Tag',
+    'ev_personalizar': 'Ich möchte Bonico anpassen',
+    'ev_personalizacion_desde': 'Anpassung ab',
+    'ev_form_titulo': 'Erzählen Sie uns von Ihrer Veranstaltung',
+    'ev_form_sello': 'Antwort innerhalb von 24-48 Werkstunden',
+    'ev_fecha': 'Datum der Veranstaltung',
+    'ev_ciudad': 'Stadt',
+    'ev_ciudad_ph': 'Valencia, Madrid, Berlin…',
+    'ev_dias': 'Anzahl der Tage',
+    'ev_tipo': 'Art der Veranstaltung',
+    'ev_tipo_ph': 'Messe, Kongress, Produkteinführung…',
+    'ev_que_haga': 'Was soll Bonico tun?',
+    'ev_que_haga_ph': 'Tanzen, Besucher empfangen, ein Produkt vorstellen…',
+    'ev_mensaje': 'Nachricht',
+    'ev_mensaje_ph': 'Alles, was uns hilft, das Angebot vorzubereiten.',
+    'iva_no_incluido': 'zzgl. MwSt.',
+    'nav_ver_alquiler_aria': 'Mietoptionen ansehen',
+    'alquiler_limpieza_nav': 'Industrielle Reinigungsroboter',
+    'alquiler_humanoides_nav': 'Humanoide für Veranstaltungen',
+    'alquiler_titulo': 'Robotermiete | RH·BOTS',
+    'alquiler_limpieza_titulo': 'Miete von industriellen Reinigungsrobotern | RH·BOTS',
+    'alquiler_humanoides_titulo': 'Bonico: humanoider Roboter für Events mieten | RH·BOTS',
+    'alquiler_humanoides_desc': 'Mieten Sie Bonico, unseren humanoiden Roboter, für Messen, Kongresse, Stände und Firmenevents. Er tanzt, interagiert und zieht Besucher zu Ihrer Marke. Ab 1.200 €/Tag zzgl. MwSt.',
+    'tarifa_titulo': 'Mietraten',
+    'tarifa_plazo': 'Laufzeit',
+    'tarifa_duracion': 'Dauer',
+    'tarifa_cuota': 'Monatsrate',
+    'tarifa_desde': 'Ab {n}/Monat',
+    'alquiler_incluye': 'Was die Rate umfasst',
+    'alquiler_incluye_si': 'Inbegriffen',
+    'alquiler_incluye_no': 'Nicht inbegriffen',
+    'home_alquiler_kicker': 'Miete',
+    'home_alquiler_titulo': 'Sie können den Roboter auch mieten',
+    'alquiler_cta_titulo': 'Passt Mieten zu Ihnen?',
+    'alquiler_cta_texto': 'Sagen Sie uns, welche Fläche Sie reinigen müssen oder welche Veranstaltung Sie organisieren, und wir erstellen Ihnen ein Angebot mit dem passenden Modell und der passenden Laufzeit.',
+    'alquiler_cta_eventos': 'Sagen Sie uns, welche Veranstaltung Sie organisieren, für wie viele Tage und was der Roboter tun soll, und wir erstellen Ihnen ein verbindliches Angebot.',
+    'alquiler_solicitar': 'Diesen Roboter anfragen',
+    'requiere_accesorio_texto': 'Erforderlich für den {n}. Wird separat verkauft.',
+}
+
+TEXTOS_AR = {
+    'saltar_contenido': 'تخطَّ إلى المحتوى',
+    'ver_todo_catalogo': 'تصفّح الكتالوج كاملاً',
+    'nav_inicio': 'الرئيسية',
+    'nav_robots': 'الروبوتات',
+    'carrito_titulo': 'سلّتك',
+    'carrito_total': 'الإجمالي',
+    'carrito_nota_envio': 'تُحتسب رسوم الشحن والضرائب عند إتمام الشراء.',
+    'carrito_finalizar': 'إتمام الشراء',
+    'carrito_asesor': 'تفضّل استشارتنا أولاً؟ راسِلنا',
+    'carrito_vacio': 'لم تُضف أي روبوت بعد.',
+    'carrito_ver_catalogo': 'تصفّح الكتالوج',
+    'aviso_legal': 'إشعار قانوني',
+    'politica_privacidad': 'سياسة الخصوصية',
+    'politica_cookies': 'سياسة ملفات تعريف الارتباط',
+    'recursos_humanoides': 'موارد بشرية آلية',
+    'pide_info': 'اطلب مزيداً من المعلومات',
+    'ver_especificaciones': 'عرض المواصفات',
+    'que_es_pregunta': 'ما هو {n}؟',
+    'aplicaciones_de': 'تطبيقات {n}',
+    'escenarios_encaja': 'المجالات التي يناسبها {n}.',
+    'specs_tecnicas_de': 'المواصفات التقنية لـ {n}',
+    'ver_ficha_completa': 'عرض البطاقة التقنية كاملة',
+    'galeria_de': 'معرض صور {n}',
+    'fotos_anteriores': 'الصور السابقة',
+    'fotos_siguientes': 'الصور التالية',
+    'antes_de_ofertar': 'قبل عرض هذا الطراز',
+    'doc_a_solicitar': 'الوثائق المطلوب طلبها من الشركة المصنّعة.',
+    'accesorios_para': 'ملحقات {n}',
+    'otros_modelos_familia': 'طرازات أخرى من الفئة',
+    'giralo': 'أدِرْه',
+    'vista_giratoria': '{n} — عرض بزاوية 360 درجة. استخدم مفاتيح الأسهم لإدارته.',
+    'navegador_sin_video': 'متصفحك لا يستطيع تشغيل هذا الفيديو.',
+    'en_video': '{n} في الفيديو',
+    'sin_stock': 'غير متوفر — تواصل معنا لمعرفة موعد التوفر',
+    'avisame': 'أبلغوني عند التوفر',
+    'precio_consulta': 'السعر عند الطلب',
+    'pedir_presupuesto': 'طلب عرض سعر',
+    'anadir_carrito': 'أضف إلى السلة',
+    'comprar_ahora': 'اشترِ الآن',
+    'pvp': 'السعر',
+    'preguntas_frecuentes': 'الأسئلة الشائعة',
+    'distribuidores_oficiales': 'موزّعون معتمدون في إسبانيا والبرتغال',
+    'ver_robots': 'عرض الروبوتات',
+    'habla_nosotros': 'تحدّث إلينا',
+    'ver_todos_modelos': 'عرض جميع الطرازات',
+    'modelos_disponibles': 'الطرازات المتاحة',
+    'modelos_anteriores': 'الطرازات السابقة',
+    'modelos_siguientes': 'الطرازات التالية',
+    'ver_modelo': 'عرض الطراز',
+    'no_sabes_robot_titulo': 'لا تعرف أي روبوت يناسبك أكثر؟',
+    'no_sabes_robot_texto': 'أخبرنا عن مشروعك وسنساعدك في اختيار الفئة والطراز والتهيئة الأنسب لشركتك أو لمركزك.',
+    'hablar_rhbots': 'تحدّث مع RH·BOTS',
+    'catalogo_kicker': 'كتالوج RH·BOTS',
+    'catalogo_h1': 'روبوتات للشركات التي تريد أن تسبق غيرها بخطوة',
+    'catalogo_lede': 'روبوتات بشرية ورباعية الأرجل وروبوتات تنظيف وروبوتات AMR للخدمات اللوجستية الداخلية وملحقات، لأتمتة المهام وتحسين العمليات ونقل الروبوتات المتقدمة إلى بيئات العمل الحقيقية. {n} طرازاً ببطاقة تقنية كاملة ومرافقة من البداية إلى النهاية.',
+    'solicitar_asesoramiento': 'اطلب استشارة',
+    'ver_ficha_tecnica': 'عرض البطاقة التقنية',
+    'robots_para_uso': 'روبوتات لهذا الاستخدام',
+    'cuentanos_tu_caso': 'أخبرنا عن حالتك',
+    'tienes_tarea_titulo': 'هل لديك مهمة تريد أتمتتها؟',
+    'tienes_tarea_texto': 'أخبرنا عن حالتك وسنرشدك إلى التطبيق الروبوتي الأنسب لشركتك.',
+    'blog_kicker': 'RH·BOTS — المدوّنة',
+    'blog_h1': 'أخبار <span class="acento">الروبوتات البشرية</span>',
+    'blog_lede': 'أخبار وحالات استخدام وموارد لفهم كيف يمكن دمج الروبوتات البشرية في شركات حقيقية بشكل آمن ومفيد وقابل للقياس.',
+    'ver_articulos': 'عرض المقالات',
+    'hablar_experto': 'تحدّث مع خبير',
+    'destacado': 'مميّز',
+    'min_lectura': 'دقيقة قراءة',
+    'leer_articulo': 'قراءة المقال',
+    'leer_mas': 'اقرأ المزيد',
+    'mas_informacion': 'مزيد من المعلومات',
+    'conocimiento_aplicado': 'معرفة تطبيقية',
+    'ideas_claras': 'أفكار واضحة لاتخاذ قرارات أفضل',
+    'buscar_articulos': 'البحث في المقالات',
+    'buscar_articulos_placeholder': 'ابحث في المقالات…',
+    'buscar': 'بحث',
+    'ultimos_articulos': 'أحدث المقالات',
+    'recursos_presente': 'موارد لفهم حاضر الروبوتات',
+    'todos': 'الكل',
+    'sin_resultados_busqueda': 'لا توجد مقالات تطابق بحثك.',
+    'preparando_articulos': 'نحن نُعدّ أولى المقالات',
+    'preparando_articulos_texto': 'سننشر هنا مستجدات المنتجات وحالات استخدام عملائنا وملاحظات تقنية عن طرازات الكتالوج. في هذه الأثناء يمكنك الاطلاع على البطاقات التقنية أو مراسلتنا مباشرة.',
+    'escribenos': 'راسِلنا',
+    'necesitas_orientacion': 'هل تحتاج إلى إرشاد؟',
+    'orienta_titulo': 'نساعدك على معرفة الروبوت <span class="acento">الذي يناسب شركتك</span>',
+    'orienta_texto': 'أخبرنا عن حالتك وسيرشدك فريقنا إلى الطرازات والتطبيقات والخطوات التالية.',
+    'solicitar_informacion': 'اطلب معلومات',
+    'volver_blog': '← العودة إلى المدوّنة',
+    'pagina_404_titulo': 'هذه الصفحة غير موجودة',
+    'pagina_404_texto': 'ربما يكون الرابط مكتوباً بشكل خاطئ أو نقلنا المحتوى. من هنا تصل إلى كل شيء:',
+    'ir_inicio': 'الذهاب إلى الصفحة الرئيسية',
+    'formulario': 'نموذج',
+    'solicita_info': 'اطلب معلومات',
+    'respuesta_personalizada': 'ردّ مخصّص',
+    'nombre': 'الاسم',
+    'apellidos': 'اسم العائلة',
+    'tu_nombre': 'اسمك',
+    'tus_apellidos': 'اسم عائلتك',
+    'email': 'البريد الإلكتروني',
+    'telefono': 'الهاتف',
+    'empresa_campo': 'الشركة',
+    'nombre_empresa_placeholder': 'اسم شركتك',
+    'que_robot_interesa': 'ما الروبوت الذي يهمّك؟',
+    'selecciona_modelo': 'اختر طرازاً',
+    'aun_no_lo_se': 'لا أعرف بعد',
+    'como_ayudarte': 'كيف يمكننا مساعدتك؟',
+    'mensaje_placeholder': 'أخبرنا باختصار عن مشروعك أو احتياجك أو نوع الفعالية…',
+    'consiento_privacidad': 'لقد قرأت وأوافق على',
+    'politica_privacidad_link': 'سياسة الخصوصية',
+    'consiento_privacidad_fin': '. أوافق على معالجة بياناتي لتلقي معلومات تجارية من RH·BOTS.',
+    'enviar_mensaje': 'إرسال الرسالة',
+    'solicitar_asesoramiento_cta': 'اطلب استشارة',
+    'escribir_email': 'المراسلة بالبريد الإلكتروني',
+    'email_directo_etq': 'بريد مباشر',
+    'especialistas_en': 'متخصصون في',
+    'donde_estamos': 'أين نحن',
+    'llamanos_al': 'يمكنك أيضاً الاتصال بنا على',
+    'escribenos_directamente': 'يمكنك أيضاً مراسلتنا مباشرة على',
+    'aviso_legal_titulo': 'إشعار قانوني والخصوصية وملفات تعريف الارتباط',
+    'pagina_no_encontrada': 'الصفحة غير موجودة | RH·BOTS',
+    'pagina_no_encontrada_desc': 'الصفحة التي تبحث عنها غير موجودة أو تم نقلها.',
+    'contacto_titulo': 'اتصل بنا | RH·BOTS',
+    'blog_titulo': 'المدوّنة | RH·BOTS',
+    'blog_desc': 'أخبار وحالات استخدام وملاحظات تقنية عن روبوتات الخدمة والروبوتات الصناعية.',
+    'aplicaciones_titulo': 'تطبيقات روبوتات RH·BOTS حسب القطاع | RH·BOTS',
+    'robots_catalogo_titulo': 'روبوتات RH·BOTS — الكتالوج الكامل | RH·BOTS',
+    'robots_catalogo_desc': 'كتالوج RH·BOTS: روبوتات بشرية ورباعية الأرجل وروبوتات تنظيف وروبوتات AMR للخدمات اللوجستية الداخلية وملحقات، ببطاقات تقنية كاملة.',
+    'inicio_titulo': 'RH·BOTS — موارد بشرية آلية لشركتك',
+    'inicio_desc': 'روبوتات بشرية ورباعية الأرجل وروبوتات تنظيف وروبوتات لوجستية. استشارة وتركيب وتدريب ودعم من فالنسيا، إسبانيا.',
+    'legal_meta_titulo': 'إشعار قانوني والخصوصية وملفات تعريف الارتباط | RH·BOTS',
+    'legal_meta_desc': 'الإشعار القانوني وسياسة الخصوصية وسياسة ملفات تعريف الارتباط لدى RH·BOTS.',
+    'blog_articulo_sufijo': ' | مدوّنة RH·BOTS',
+    'lang_switch_boton': 'تغيير اللغة',
+    'carrito_abrir_boton': 'فتح السلة',
+    'carrito_cerrar_boton': 'إغلاق السلة',
+    'nav_ver_familias_aria': 'عرض فئات الروبوتات وطرازاتها',
+    'nav_principal_aria': 'التنقل الرئيسي',
+    'nav_abrir_menu': 'فتح القائمة',
+    'nav_cerrar_menu': 'إغلاق القائمة',
+    'marcas_distribuimos_aria': 'العلامات التجارية التي نوزّعها',
+    'filtrar_categoria_aria': 'التصفية حسب الفئة',
+    'requiere_accesorio_titulo': 'ملحق ضروري',
+    'iva_corto': '+ ضريبة القيمة المضافة',
+    'ev_modelo': 'Bonico هو طراز RHX2 Ultra لدينا',
+    'ev_foto_alt': 'Bonico، روبوتنا البشري، أثناء مقابلة مع إحدى وسائل الإعلام',
+    'ev_solicitar': 'طلب عرض سعر',
+    'ev_como_funciona': 'شاهد كيف يعمل',
+    'ev_desde': 'ابتداءً من',
+    'ev_dia': '/ اليوم',
+    'ev_personalizar': 'أريد تخصيص Bonico',
+    'ev_personalizacion_desde': 'التخصيص ابتداءً من',
+    'ev_form_titulo': 'أخبرنا عن فعاليتك',
+    'ev_form_sello': 'الرد خلال 24-48 ساعة عمل',
+    'ev_fecha': 'تاريخ الفعالية',
+    'ev_ciudad': 'المدينة',
+    'ev_ciudad_ph': 'دبي، الرياض، فالنسيا…',
+    'ev_dias': 'عدد الأيام',
+    'ev_tipo': 'نوع الفعالية',
+    'ev_tipo_ph': 'معرض، مؤتمر، إطلاق منتج…',
+    'ev_que_haga': 'ما الذي تودّ أن يفعله Bonico؟',
+    'ev_que_haga_ph': 'الرقص، استقبال الزوار، تقديم منتج…',
+    'ev_mensaje': 'الرسالة',
+    'ev_mensaje_ph': 'أي تفاصيل تساعدنا على إعداد العرض.',
+    'iva_no_incluido': 'غير شامل ضريبة القيمة المضافة',
+    'nav_ver_alquiler_aria': 'عرض خيارات التأجير',
+    'alquiler_limpieza_nav': 'روبوتات التنظيف الصناعي',
+    'alquiler_humanoides_nav': 'روبوتات بشرية للفعاليات',
+    'alquiler_titulo': 'تأجير الروبوتات | RH·BOTS',
+    'alquiler_limpieza_titulo': 'تأجير روبوتات التنظيف الصناعي | RH·BOTS',
+    'alquiler_humanoides_titulo': 'Bonico: تأجير روبوت بشري للفعاليات | RH·BOTS',
+    'alquiler_humanoides_desc': 'استأجر Bonico، روبوتنا البشري، للمعارض والمؤتمرات والأجنحة وفعاليات الشركات. يرقص ويتفاعل ويجذب الزوار إلى علامتك التجارية. ابتداءً من 1,200 € في اليوم، غير شامل ضريبة القيمة المضافة.',
+    'tarifa_titulo': 'أقساط التأجير',
+    'tarifa_plazo': 'المدة التعاقدية',
+    'tarifa_duracion': 'المدة',
+    'tarifa_cuota': 'القسط الشهري',
+    'tarifa_desde': 'ابتداءً من {n} شهرياً',
+    'alquiler_incluye': 'ما يشمله القسط',
+    'alquiler_incluye_si': 'مشمول',
+    'alquiler_incluye_no': 'غير مشمول',
+    'home_alquiler_kicker': 'التأجير',
+    'home_alquiler_titulo': 'يمكنك أيضاً استئجار الروبوت',
+    'alquiler_cta_titulo': 'هل يناسبك التأجير؟',
+    'alquiler_cta_texto': 'أخبرنا بالمساحة التي تحتاج إلى تنظيفها أو بالفعالية التي تنظّمها، وسنعدّ لك عرضاً بالطراز والمدة الأنسب.',
+    'alquiler_cta_eventos': 'أخبرنا بالفعالية التي تنظّمها وعدد الأيام وما تريد أن يفعله الروبوت، وسنعدّ لك عرضاً نهائياً.',
+    'alquiler_solicitar': 'اطلب هذا الروبوت',
+    'requiere_accesorio_texto': 'ضروري لـ {n}. يُباع بشكل منفصل.',
+}
+
+for _lang, _pares in (('de', TEXTOS_DE), ('ar', TEXTOS_AR)):
+    _faltan = [k for k in TEXTOS if k not in _pares]
+    if _faltan:
+        raise SystemExit(f'Faltan textos en {_lang}: {_faltan[:5]}')
+    for _k, _v in _pares.items():
+        TEXTOS[_k][_lang] = _v
+
+
 def t(clave, **kw):
     txt = TEXTOS[clave][LANG]
     return txt.format(**kw) if kw else txt
@@ -554,6 +952,12 @@ def schema_organization():
             'ca': 'Distribuïdor oficial d\'AGIBOT i PUDU a Espanya i Portugal: robots de neteja '
                   'autònoma, humanoides, quadrúpedes, AMR d\'intralogística i accessoris, amb assessorament, instal·lació, '
                   'formació i manteniment.',
+            'de': 'Offizieller Vertriebspartner von AGIBOT und PUDU in Spanien und Portugal: autonome '
+                  'Reinigungsroboter, Humanoide, Vierbeiner, AMR für die Intralogistik und Zubehör, mit Beratung, '
+                  'Installation, Schulung und Wartung.',
+            'ar': 'موزّع معتمد لشركتي AGIBOT وPUDU في إسبانيا والبرتغال: روبوتات تنظيف ذاتية وروبوتات بشرية '
+                  'ورباعية الأرجل وروبوتات AMR للخدمات اللوجستية الداخلية وملحقات، مع الاستشارة والتركيب '
+                  'والتدريب والصيانة.',
         }[LANG],
         'inLanguage': LANG,
         'areaServed': ['ES', 'PT'],
@@ -753,7 +1157,7 @@ def head(title, desc, base, ruta='', extra_css=True, og_img=None, extra_jsonld=N
     tw = (f'<meta name="twitter:site" content="{e(SEO["twitter"])}">\n'
           if SEO.get('twitter') else '')
     return f'''<!DOCTYPE html>
-<html lang="{LANG}">
+<html lang="{LANG}" dir="{dir_html()}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -765,7 +1169,7 @@ def head(title, desc, base, ruta='', extra_css=True, og_img=None, extra_jsonld=N
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{e(SEO['nombre'])}">
-<meta property="og:locale" content="{e(SEO['locale'])}">
+<meta property="og:locale" content="{e(LOCALE_OG.get(LANG, SEO['locale']))}">
 <meta property="og:title" content="{e(title)}">
 <meta property="og:description" content="{e(desc)}">
 <meta property="og:url" content="{e(canonical)}">
@@ -778,9 +1182,11 @@ def head(title, desc, base, ruta='', extra_css=True, og_img=None, extra_jsonld=N
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700&family=Saira:wght@600;700&display=swap" rel="stylesheet">
+{'<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700&display=swap" rel="stylesheet">' if LANG in RTL else ''}
 <script>document.documentElement.classList.add('js')</script>
 <link rel="stylesheet" href="{base}css/styles.css">
 {'<link rel="stylesheet" href="%scss/catalogo.css">' % base if extra_css else ''}
+{'<link rel="stylesheet" href="%scss/rtl.css">' % base if LANG in RTL else ''}
 {jsonld(extra_jsonld)}</head>
 <body>
 <a class="skip-link" href="#contenido">{t('saltar_contenido')}</a>
@@ -859,6 +1265,14 @@ BANDERAS = {
            '<polygon points="1.82,0.84 1.76,0.81 1.72,0.86 1.72,0.80 1.66,0.77 1.72,0.76 1.73,0.69 1.76,0.75 1.83,0.73 1.78,0.78"/>'
            '<polygon points="1.58,1.08 1.54,1.03 1.48,1.06 1.52,1.00 1.48,0.95 1.54,0.97 1.57,0.91 1.58,0.98 1.64,1.00 1.58,1.02"/>'
            '</g></svg>'),
+    'de': ('<svg viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#000"/>'
+           '<rect y=".667" width="3" height=".667" fill="#dd0000"/>'
+           '<rect y="1.333" width="3" height=".667" fill="#ffce00"/></svg>'),
+    # árabe: bandera de los Emiratos, el mercado árabe de referencia para eventos
+    'ar': ('<svg viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/>'
+           '<rect width="3" height=".667" fill="#00732f"/>'
+           '<rect y="1.333" width="3" height=".667" fill="#000"/>'
+           '<rect width=".75" height="2" fill="#ff0000"/></svg>'),
     'ca': ('<svg viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fcdd09"/>'
            '<g fill="#da121a">'
            '<rect y=".222" width="3" height=".222"/><rect y=".667" width="3" height=".222"/>'
@@ -1078,6 +1492,14 @@ _ETIQUETA_FAMILIA = {
         'limpieza': 'Neteja autònoma', 'humanoides': 'Robot humanoide',
         'cuadrupedos': 'Robot quadrúpede', 'amr': 'AMR intralogística', 'accesorios': 'Accessori',
     },
+    'de': {
+        'limpieza': 'Reinigungsroboter', 'humanoides': 'Humanoider Roboter',
+        'cuadrupedos': 'Vierbeiniger Roboter', 'amr': 'AMR Intralogistik', 'accesorios': 'Zubehör',
+    },
+    'ar': {
+        'limpieza': 'روبوت تنظيف', 'humanoides': 'روبوت بشري',
+        'cuadrupedos': 'روبوت رباعي الأرجل', 'amr': 'روبوت AMR', 'accesorios': 'ملحق',
+    },
 }
 
 
@@ -1114,7 +1536,7 @@ def formato_precio(valor):
     """100000.0 → «100.000,00» en español (miles con punto, decimales con coma)
     o «100,000.00» en inglés (al revés), según el idioma activo."""
     entero, _, dec = f'{valor:,.2f}'.partition('.')
-    if LANG in ('en', 'zh'):
+    if LANG in ('en', 'zh', 'ar'):
         return entero + '.' + dec
     return entero.replace(',', '.') + ',' + dec
 
@@ -1822,6 +2244,10 @@ _MESES = {
     'zh': ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
     'ca': ['gener', 'febrer', 'març', 'abril', 'maig', 'juny', 'juliol',
            'agost', 'setembre', 'octubre', 'novembre', 'desembre'],
+    'de': ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli',
+           'August', 'September', 'Oktober', 'November', 'Dezember'],
+    'ar': ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو',
+           'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'],
 }
 
 
@@ -3405,29 +3831,46 @@ def llms_txt():
         'ca': 'Distribuïdor oficial d\'AGIBOT i PUDU a Espanya i Portugal. Robots de neteja '
               'autònoma, humanoides, quadrúpedes, AMR d\'intralogística i accessoris, amb assessorament, instal·lació, '
               'formació i manteniment. Seu a Picassent (València).',
+        'de': 'Offizieller Vertriebspartner von AGIBOT und PUDU in Spanien und Portugal. Autonome '
+              'Reinigungsroboter, Humanoide, Vierbeiner, AMR für die Intralogistik und Zubehör, mit Beratung, '
+              'Installation, Schulung und Wartung. Sitz in Picassent (Valencia).',
+        'ar': 'موزّع معتمد لشركتي AGIBOT وPUDU في إسبانيا والبرتغال. روبوتات تنظيف ذاتية وروبوتات بشرية '
+              'ورباعية الأرجل وروبوتات AMR للخدمات اللوجستية الداخلية وملحقات، مع الاستشارة والتركيب والتدريب '
+              'والصيانة. المقر في بيكاسنت (فالنسيا).',
     }
-    _ROBOTS_H2 = {'es': 'Robots', 'pt': 'Robôs', 'en': 'Robots', 'fr': 'Robots', 'zh': '机器人', 'ca': 'Robots'}
-    _EMPRESA_H2 = {'es': 'Empresa', 'pt': 'Empresa', 'en': 'Company', 'fr': 'Entreprise', 'zh': '公司', 'ca': 'Empresa'}
+    _ROBOTS_H2 = {'es': 'Robots', 'pt': 'Robôs', 'en': 'Robots', 'fr': 'Robots', 'zh': '机器人', 'ca': 'Robots',
+                  'de': 'Roboter', 'ar': 'الروبوتات'}
+    _EMPRESA_H2 = {'es': 'Empresa', 'pt': 'Empresa', 'en': 'Company', 'fr': 'Entreprise', 'zh': '公司', 'ca': 'Empresa',
+                   'de': 'Unternehmen', 'ar': 'الشركة'}
     _CATALOGO = {'es': 'Catálogo completo', 'pt': 'Catálogo completo', 'en': 'Full catalog',
-                 'fr': 'Catalogue complet', 'zh': '完整产品目录', 'ca': 'Catàleg complet'}
+                 'fr': 'Catalogue complet', 'zh': '完整产品目录', 'ca': 'Catàleg complet',
+                 'de': 'Vollständiger Katalog', 'ar': 'الكتالوج الكامل'}
     _APLICACIONES = {'es': 'Aplicaciones por sector: qué robot encaja en cada uso',
                       'pt': 'Aplicações por setor: que robô se adapta a cada uso',
                       'en': 'Applications by sector: which robot fits which use',
                       'fr': 'Applications par secteur : quel robot correspond à quel usage',
                       'zh': '按行业分类的应用：哪种机器人适合哪种用途',
-                      'ca': 'Aplicacions per sector: quin robot encaixa en cada ús'}
+                      'ca': 'Aplicacions per sector: quin robot encaixa en cada ús',
+                      'de': 'Anwendungen nach Branche: welcher Roboter zu welchem Einsatz passt',
+                      'ar': 'التطبيقات حسب القطاع: أي روبوت يناسب كل استخدام'}
     _QUIENES = {'es': 'Quiénes somos: equipo e historia de RH·BOTS',
                 'pt': 'Quem somos: equipa e história da RH·BOTS',
                 'en': 'About us: the RH·BOTS team and story',
                 'fr': 'Qui sommes-nous : l\'équipe et l\'histoire de RH·BOTS',
                 'zh': '关于我们：RH·BOTS团队与历史',
-                'ca': 'Qui som: equip i història de RH·BOTS'}
-    _CONTACTO_L = {'es': 'Contacto', 'pt': 'Contacto', 'en': 'Contact', 'fr': 'Contact', 'zh': '联系我们', 'ca': 'Contacte'}
-    _OPCIONAL = {'es': 'Optional', 'pt': 'Optional', 'en': 'Optional', 'fr': 'Optional', 'zh': 'Optional', 'ca': 'Optional'}
-    _BLOG_L = {'es': 'Blog', 'pt': 'Blog', 'en': 'Blog', 'fr': 'Blog', 'zh': '博客', 'ca': 'Blog'}
+                'ca': 'Qui som: equip i història de RH·BOTS',
+                'de': 'Über uns: Team und Geschichte von RH·BOTS',
+                'ar': 'من نحن: فريق RH·BOTS وقصتها'}
+    _CONTACTO_L = {'es': 'Contacto', 'pt': 'Contacto', 'en': 'Contact', 'fr': 'Contact', 'zh': '联系我们', 'ca': 'Contacte',
+                   'de': 'Kontakt', 'ar': 'اتصل بنا'}
+    _OPCIONAL = {'es': 'Optional', 'pt': 'Optional', 'en': 'Optional', 'fr': 'Optional', 'zh': 'Optional', 'ca': 'Optional',
+                 'de': 'Optional', 'ar': 'Optional'}
+    _BLOG_L = {'es': 'Blog', 'pt': 'Blog', 'en': 'Blog', 'fr': 'Blog', 'zh': '博客', 'ca': 'Blog',
+               'de': 'Blog', 'ar': 'المدوّنة'}
     _LEGAL_L = {'es': 'Aviso legal y privacidad', 'pt': 'Aviso legal e privacidade',
                 'en': 'Legal notice and privacy', 'fr': 'Mentions légales et confidentialité',
-                'zh': '法律声明与隐私', 'ca': 'Avís legal i privacitat'}
+                'zh': '法律声明与隐私', 'ca': 'Avís legal i privacitat',
+                'de': 'Impressum und Datenschutz', 'ar': 'إشعار قانوني وخصوصية'}
 
     out = ['# RH·BOTS\n', f'> {_INTRO[LANG]}\n']
 

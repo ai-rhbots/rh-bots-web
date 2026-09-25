@@ -3,11 +3,12 @@
   'use strict';
 
   /* ---------- idioma: las cadenas que genera el propio JS (el resto ya
-     viene traducido desde el HTML) leen el <html lang="es|pt|en|fr|zh|ca">
+     viene traducido desde el HTML) leen el <html lang="es|pt|en|fr|de|zh|ar|ca">
      de la página */
-  var IDIOMAS = ['es', 'pt', 'en', 'fr', 'zh', 'ca'];
+  var IDIOMAS = ['es', 'pt', 'en', 'fr', 'de', 'zh', 'ar', 'ca'];
   var LANG = IDIOMAS.indexOf(document.documentElement.lang) > -1 ? document.documentElement.lang : 'es';
-  var LOCALES = { es: 'es-ES', pt: 'pt-PT', en: 'en-GB', fr: 'fr-FR', zh: 'zh-CN', ca: 'ca-ES' };
+  var LOCALES = { es: 'es-ES', pt: 'pt-PT', en: 'en-GB', fr: 'fr-FR',
+                  de: 'de-DE', zh: 'zh-CN', ar: 'ar-AE', ca: 'ca-ES' };
   var TXT = {
     es: {
       asuntoEvento: 'Alquiler de humanoide para evento',
@@ -97,6 +98,28 @@
       asuntoWeb: 'Site RH·BOTS — ', asuntoConsulta: 'Question sur ', asuntoSolicitud: "Demande d'information",
       consentimientoCorreo: '\n\n---\nJ\'accepte la politique de confidentialité et le traitement de mes données pour recevoir des informations commerciales de RH·BOTS.'
     },
+    de: {
+      asuntoEvento: 'Miete eines Humanoiden für eine Veranstaltung',
+      ivaNoIncluido: 'zzgl. MwSt.',
+      abrirMenu: 'Menü öffnen', cerrarMenu: 'Menü schließen',
+      sinStock: 'Nicht auf Lager — fragen Sie uns nach der Verfügbarkeit',
+      avisame: 'Benachrichtigt mich, sobald verfügbar',
+      precioConsulta: 'Preis auf Anfrage',
+      pedirPresupuesto: 'Angebot anfordern',
+      anadirCarrito: 'In den Warenkorb',
+      carritoVacio: 'Sie haben noch keinen Roboter hinzugefügt.',
+      verCatalogo: 'Zum Katalog',
+      quitarUnidad: 'Eine Einheit entfernen',
+      anadirUnidad: 'Eine Einheit hinzufügen',
+      quitar: 'Entfernen',
+      formIncompleto: 'Bitte prüfen Sie die Pflichtfelder: Name, E-Mail, Nachricht und die Datenschutzerklärung.',
+      formSinPrivacidad: 'Um die Nachricht zu senden, müssen Sie die Datenschutzerklärung akzeptieren.',
+      abriendoCorreo: 'Ihr E-Mail-Programm wird mit der fertigen Nachricht geöffnet…',
+      campoNombre: 'Name: ', campoEmpresa: 'Unternehmen: ', campoEmail: 'E-Mail: ',
+      campoTelefono: 'Telefon: ', campoRobot: 'Roboter von Interesse: ', sinIndicar: 'keine Angabe',
+      asuntoWeb: 'RH·BOTS Website — ', asuntoConsulta: 'Anfrage zu ', asuntoSolicitud: 'Informationsanfrage',
+      consentimientoCorreo: '\n\n---\nIch akzeptiere die Datenschutzerklärung und die Verarbeitung meiner Daten, um Informationen von RH·BOTS zu erhalten.'
+    },
     zh: {
       asuntoEvento: '活动人形机器人租赁',
       ivaNoIncluido: '不含增值税',
@@ -118,6 +141,28 @@
       campoTelefono: '电话：', campoRobot: '感兴趣的机器人：', sinIndicar: '未指定',
       asuntoWeb: 'RH·BOTS网站 — ', asuntoConsulta: '咨询关于 ', asuntoSolicitud: '信息申请',
       consentimientoCorreo: '\n\n---\n我接受隐私政策，并同意处理我的数据以接收RH·BOTS的商业信息。'
+    },
+    ar: {
+      asuntoEvento: 'تأجير روبوت بشري لفعالية',
+      ivaNoIncluido: 'غير شامل ضريبة القيمة المضافة',
+      abrirMenu: 'فتح القائمة', cerrarMenu: 'إغلاق القائمة',
+      sinStock: 'غير متوفر — تواصل معنا لمعرفة موعد التوفر',
+      avisame: 'أبلغوني عند التوفر',
+      precioConsulta: 'السعر عند الطلب',
+      pedirPresupuesto: 'طلب عرض سعر',
+      anadirCarrito: 'أضف إلى السلة',
+      carritoVacio: 'لم تُضف أي روبوت بعد.',
+      verCatalogo: 'تصفّح الكتالوج',
+      quitarUnidad: 'إنقاص وحدة',
+      anadirUnidad: 'إضافة وحدة',
+      quitar: 'إزالة',
+      formIncompleto: 'يرجى مراجعة الحقول الإلزامية: الاسم والبريد الإلكتروني والرسالة وسياسة الخصوصية.',
+      formSinPrivacidad: 'لإرسال الرسالة عليك قبول سياسة الخصوصية.',
+      abriendoCorreo: 'يجري فتح برنامج البريد لديك والرسالة جاهزة…',
+      campoNombre: 'الاسم: ', campoEmpresa: 'الشركة: ', campoEmail: 'البريد الإلكتروني: ',
+      campoTelefono: 'الهاتف: ', campoRobot: 'الروبوت محل الاهتمام: ', sinIndicar: 'غير محدد',
+      asuntoWeb: 'موقع RH·BOTS — ', asuntoConsulta: 'استفسار عن ', asuntoSolicitud: 'طلب معلومات',
+      consentimientoCorreo: '\n\n---\nأوافق على سياسة الخصوصية وعلى معالجة بياناتي لتلقي معلومات تجارية من RH·BOTS.'
     },
     ca: {
       asuntoEvento: "Lloguer d'humanoide per a esdeveniment",

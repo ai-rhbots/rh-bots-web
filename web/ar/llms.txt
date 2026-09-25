@@ -1,0 +1,57 @@
+# RH·BOTS
+
+> موزّع معتمد لشركتي AGIBOT وPUDU في إسبانيا والبرتغال. روبوتات تنظيف ذاتية وروبوتات بشرية ورباعية الأرجل وروبوتات AMR للخدمات اللوجستية الداخلية وملحقات، مع الاستشارة والتركيب والتدريب والصيانة. المقر في بيكاسنت (فالنسيا).
+
+## الروبوتات
+
+
+### روبوتات بشرية
+
+- [RHX2](https://www.rh-bots.com/ar/robots/rhx2.html): روبوت بشري مدمج لخدمة الجمهور والفعاليات
+- [RHA3](https://www.rh-bots.com/ar/robots/rha3.html): روبوت بشري بحجم شخص بالغ للعروض وخدمة الجمهور
+- [RHX2 Ultra](https://www.rh-bots.com/ar/robots/rhx2-ultra.html): روبوت بشري قابل للبرمجة بإدراك ثلاثي الأبعاد ووحدة NVIDIA Orin NX
+- [RHX2 EDU](https://www.rh-bots.com/ar/robots/rhx2-edu.html): روبوت بشري قابل للفك للتعليم والبحث
+- [RHA3 Ultra "Rebonico"](https://www.rh-bots.com/ar/robots/rha3-ultra.html): روبوت بشري للخدمة بتشغيل ذاتي على مدار الساعة
+- [RHG2](https://www.rh-bots.com/ar/robots/rhg2.html): روبوت بشري صناعي بقاعدة متنقلة وجذع تلسكوبي
+
+### روبوتات رباعية الأرجل
+
+- [D5W](https://www.rh-bots.com/ar/robots/d5w.html): روبوت رباعي الأرجل صناعي بعجلات للتفتيش والتوصيل
+
+### تنظيف ذاتي
+
+- [RHC5](https://www.rh-bots.com/ar/robots/rhc5.html): تنظيف احترافي ذاتي للمساحات الكبيرة
+- [MT1](https://www.rh-bots.com/ar/robots/mt1.html): مكنسة ذاتية بالذكاء الاصطناعي للمساحات الكبيرة
+- [MT1 Max](https://www.rh-bots.com/ar/robots/mt1-max.html): مكنسة ذاتية بليدار ثلاثي الأبعاد للأماكن الداخلية وشبه المكشوفة
+
+### AMR للخدمات اللوجستية الداخلية
+
+- [T150](https://www.rh-bots.com/ar/robots/t150.html): روبوت نقل صناعي ذاتي لحمولة 150 كغ
+- [T300](https://www.rh-bots.com/ar/robots/t300.html): روبوت نقل ذاتي معياري لحمولة 300 كغ
+- [T600](https://www.rh-bots.com/ar/robots/t600.html): روبوت رفع ذاتي لحمولات 600 كغ
+- [T600 Underride](https://www.rh-bots.com/ar/robots/t600-underride.html): روبوت ذاتي يعمل تحت العربات لحمولات 600 كغ
+- [MP2000](https://www.rh-bots.com/ar/robots/mp2000.html): رافعة منصات ذاتية لمنصات بوزن 2.000 كغ
+
+### الملحقات
+
+- [OmniHand](https://www.rh-bots.com/ar/robots/omnihand.html): يد روبوتية بارعة بـ 16 درجة حرية
+- [OmniHand Tactile](https://www.rh-bots.com/ar/robots/omnihand-tactile.html): يد روبوتية بارعة بمستشعرات لمسية
+- [OmniHand Pro 2025](https://www.rh-bots.com/ar/robots/omnihand-pro-2025.html): يد روبوتية بارعة بـ 19 درجة حرية
+- [OmniPicker](https://www.rh-bots.com/ar/robots/omnipicker.html): كمّاشة صناعية باللمس للذكاء الاصطناعي المجسّد
+- [Batería extra D5W](https://www.rh-bots.com/ar/robots/d5w-bateria.html): بطارية احتياطية للروبوت رباعي الأرجل D5W
+- [Kit de inspección D5W](https://www.rh-bots.com/ar/robots/d5w-kit-inspeccion.html): طقم مستشعرات لمهام التفتيش مع D5W
+- [Cajón de extensión de batería D5W](https://www.rh-bots.com/ar/robots/d5w-cajon-bateria.html): حيّز إضافي لإطالة مدة تشغيل D5W
+
+
+## الشركة
+
+- [الكتالوج الكامل](https://www.rh-bots.com/ar/robots.html)
+- [التطبيقات حسب القطاع: أي روبوت يناسب كل استخدام](https://www.rh-bots.com/ar/aplicaciones.html)
+- [من نحن: فريق RH·BOTS وقصتها](https://www.rh-bots.com/ar/rh-bots.html)
+- [اتصل بنا](https://www.rh-bots.com/ar/contacto.html)
+
+
+## Optional
+
+- [المدوّنة](https://www.rh-bots.com/ar/blog.html)
+- [إشعار قانوني وخصوصية](https://www.rh-bots.com/ar/legal.html)
