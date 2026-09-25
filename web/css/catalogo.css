@@ -1914,13 +1914,10 @@ html body :is(h3, h4, .kicker, .phero__claim, .que__destacado,
 .pcard .pcard__precio__iva,
 .precio__iva,
 .carrito__iva{
-  display:block; margin-top:3px;
-  font-family:var(--font-texto); font-weight:500; font-size:11.5px;
-  letter-spacing:0; text-transform:none; white-space:normal; color:var(--muted);
+  display:block; margin-top:5px;
+  letter-spacing:0; text-transform:none; white-space:normal;
 }
-.pcard .pcard__precio__iva{ font-size:11px; }
-.alq__desde-iva{ display:block; margin-top:2px; font-family:var(--font-texto);
-  font-weight:500; font-size:11.5px; letter-spacing:0; color:var(--muted); }
+.alq__desde-iva{ display:block; margin-top:4px; letter-spacing:0; }
 /* el total es flex sin wrap: el aviso necesita línea propia */
 .carrito__total{ flex-wrap:wrap; }
 .carrito__iva{ flex-basis:100%; text-align:right; margin-top:2px; }
@@ -2107,14 +2104,21 @@ html body :is(h3, h4, .kicker, .phero__claim, .que__destacado,
   .section--navy::before{ background:radial-gradient(74% 54% at 70% 22%, rgba(0,158,227,.26) 0%, rgba(0,158,227,0) 68%); }
 }
 
-/* ---------- importe con IVA junto al precio sin IVA ---------- */
-/* el aviso «IVA no incluido» se queda pequeño; la cifra con IVA, algo mayor */
+/* ---------- los dos importes ---------- */
+/* «IVA no incluido» va en la misma línea que el precio sin impuestos */
+.sin-iva{
+  display:inline; margin-inline-start:8px;
+  font-family:var(--font-texto); font-weight:500; font-size:11.5px;
+  letter-spacing:0; text-transform:none; white-space:nowrap; color:var(--muted);
+}
+/* y el importe con IVA baja a su propia línea, con más cuerpo */
 .coniva{
-  font-family:var(--font-subtitulo); font-weight:700; font-size:14px;
+  font-family:var(--font-subtitulo); font-weight:700; font-size:15.5px;
   letter-spacing:.01em; color:var(--ink); white-space:nowrap;
 }
-.pcard .pcard__precio__iva .coniva{ font-size:13px; }
-.carrito__iva .coniva,
+.pcard .pcard__precio__iva .coniva{ font-size:14px; }
+/* en el carrito el total ya es grande: la cifra con IVA no compite con él */
+.carrito__total .carrito__iva .coniva{ font-size:17px; color:var(--ink); }
 .section--navy .coniva{ color:inherit; }
 .evprecio__coniva{
   margin-top:7px;

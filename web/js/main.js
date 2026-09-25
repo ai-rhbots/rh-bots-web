@@ -511,11 +511,12 @@
       }
 
       function textoIva(neto, moneda) {
-        /* el precio sin IVA sigue mandando; al lado, el mismo importe con IVA */
-        if (!neto || neto <= 0) return esc(TXT.ivaNoIncluido);
-        return esc(TXT.ivaNoIncluido) + ' · <strong class="coniva">' +
+        /* «IVA no incluido» junto al precio; el importe con IVA, debajo */
+        var sin = '<span class="sin-iva">' + esc(TXT.ivaNoIncluido) + '</span>';
+        if (!neto || neto <= 0) return sin;
+        return sin + '<span class="precio__iva"><strong class="coniva">' +
                esc(TXT.conIva.replace('{n}', importe(Math.round(neto * (1 + IVA) * 100))
-                                                + ' ' + simbolo(moneda))) + '</strong>';
+                                                + ' ' + simbolo(moneda))) + '</strong></span>';
       }
 
       function pinta(v, moneda) {
@@ -528,7 +529,7 @@
         var precio = d.precio === '1'
           ? '<p class="precio">' + importe(v.price) +
             ' <span>' + esc(simbolo(moneda)) + '</span>' +
-            '<span class="precio__iva">' + textoIva(v.price / 100, moneda) + '</span></p>'
+            textoIva(v.price / 100, moneda) + '</p>'
           : '';
         var carro = '<i class="pill__ico pill__ico--carro" aria-hidden="true">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" ' +
@@ -638,9 +639,9 @@
             '</div></article>';
         }).join('');
         totalEl.textContent = dinero(total, moneda);
-        var avisoIva = cajaCarrito.querySelector('.carrito__iva');
+        var avisoIva = cajaCarrito.querySelector('[data-carrito-iva]');
         if (avisoIva) {
-          avisoIva.innerHTML = esc(TXT.ivaNoIncluido) + ' · <strong class="coniva">' +
+          avisoIva.innerHTML = '<strong class="coniva">' +
             esc(TXT.conIva.replace('{n}', dinero(total * (1 + IVA), moneda))) + '</strong>';
         }
         pagar.href = 'https://' + dominio + '/cart/' + items.map(function (i) {

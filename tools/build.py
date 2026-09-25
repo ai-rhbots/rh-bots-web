@@ -1254,7 +1254,8 @@ def panel_carrito(base):
     <div class="carrito__cuerpo" data-carrito-lista></div>
     <footer class="carrito__pie" data-carrito-pie hidden>
       <p class="carrito__total"><span>{t('carrito_total')}</span><strong data-carrito-total></strong>
-        <span class="carrito__iva">{t('iva_no_incluido')}</span></p>
+        <span class="sin-iva">{t('iva_no_incluido')}</span>
+        <span class="carrito__iva" data-carrito-iva></span></p>
       <p class="carrito__nota">{t('carrito_nota_envio')}</p>
       <a class="pill carrito__pagar" data-carrito-pagar rel="nofollow noopener" href="#"><span>{t('carrito_finalizar')}</span>{CHEVRON}</a>
       <a class="carrito__consulta" href="{base}contacto.html">{t('carrito_asesor')}</a>
@@ -1593,14 +1594,13 @@ def importe_de_texto(txt):
 
 
 def nota_iva(valor, clase):
-    """«IVA no incluido · Con IVA (21 %): X»: se ven los dos importes.
-
-    El importe con IVA va en su propia etiqueta para poder darle algo más
-    de cuerpo que el aviso que lo acompaña."""
+    """Los dos importes: «IVA no incluido» pegado al precio sin impuestos
+    y, debajo y con algo más de cuerpo, el mismo importe con IVA."""
     bruto = con_iva(valor)
+    sin = f'<span class="sin-iva">{t("iva_no_incluido")}</span>'
     if not bruto:
-        return f'<span class="{clase}">{t("iva_no_incluido")}</span>'
-    return (f'<span class="{clase}">{t("iva_no_incluido")} · '
+        return sin
+    return (f'{sin}<span class="{clase}">'
             f'<strong class="coniva">{t("con_iva", n=bruto)}</strong></span>')
 
 
