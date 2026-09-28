@@ -885,6 +885,10 @@ EMAIL_FORMULARIOS = FORMULARIOS.get('destino') or 'info@rh-bots.com'
 # clave del servicio que recoge los formularios; vacía = se sigue abriendo
 # el gestor de correo del visitante, como hasta ahora
 CLAVE_FORMULARIOS = FORMULARIOS.get('clave', '')
+# Web3Forms da una clave por formulario. Con una sola basta —el asunto ya
+# distingue contacto de eventos—, pero si se crean dos en el panel, aquí va
+# la del formulario de eventos.
+CLAVE_EVENTOS = FORMULARIOS.get('clave_eventos') or CLAVE_FORMULARIOS
 LINKEDIN_EMPRESA = 'https://www.linkedin.com/company/rh-bots'
 INSTAGRAM_EMPRESA = 'https://www.instagram.com/rhbots/'
 
@@ -3495,7 +3499,7 @@ def formulario_evento(base, cierre):
           </div>
           <p class="ctoform__sello">{t('ev_form_sello')}</p>
         </div>
-        <form class="form" id="eventoForm" data-email="{e(email)}" data-clave="{CLAVE_FORMULARIOS}" novalidate>
+        <form class="form" id="eventoForm" data-email="{e(email)}" data-clave="{CLAVE_EVENTOS}" novalidate>
           <input type="checkbox" name="botcheck" class="cebo" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="form__two">
             <div class="form__row">

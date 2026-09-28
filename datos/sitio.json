@@ -224,6 +224,7 @@
   "formularios": {
     "servicio": "web3forms",
     "clave": "",
+    "clave_eventos": "",
     "destino": "info@rh-bots.com"
   },
   "cta": {
