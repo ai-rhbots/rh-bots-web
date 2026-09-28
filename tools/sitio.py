@@ -19,6 +19,9 @@ ANALITICA = _d['analitica']
 NAV       = _d['nav']
 HOME      = _d['home']
 CONTACTO  = _d['contacto']
+# servicio que recoge los formularios; sin clave, siguen abriendo el correo
+FORMULARIOS = _d.get('formularios', {'servicio': 'web3forms', 'clave': '',
+                                     'destino': 'info@rh-bots.com'})
 CTA       = _d.get('cta', {
     'kicker': '¿Hablamos?', 'titulo': 'Lleva la robótica humanoide a tu empresa',
     'texto': '', 'boton': 'Solicitar información', 'imagen': 'assets/robot-frontal.png',

@@ -30,6 +30,9 @@
       formIncompleto: 'Revisa los campos obligatorios: nombre, email, mensaje y la política de privacidad.',
       formSinPrivacidad: 'Para enviar el mensaje tienes que aceptar la política de privacidad.',
       abriendoCorreo: 'Abriendo tu gestor de correo con el mensaje redactado…',
+      enviando: "Enviando…",
+      enviado: "Mensaje enviado. Te responderemos en 24-48 h laborables.",
+      errorEnvio: "No hemos podido enviar el mensaje. Abrimos tu correo para que nos lo mandes tú.",
       campoNombre: 'Nombre: ', campoEmpresa: 'Empresa: ', campoEmail: 'Email: ',
       campoTelefono: 'Teléfono: ', campoRobot: 'Robot de interés: ', sinIndicar: 'sin indicar',
       asuntoWeb: 'Web RH·BOTS — ', asuntoConsulta: 'Consulta sobre ', asuntoSolicitud: 'Solicitud de información',
@@ -53,6 +56,9 @@
       formIncompleto: 'Reveja os campos obrigatórios: nome, email, mensagem e a política de privacidade.',
       formSinPrivacidad: 'Para enviar a mensagem tem de aceitar a política de privacidade.',
       abriendoCorreo: 'A abrir o seu gestor de email com a mensagem redigida…',
+      enviando: "A enviar…",
+      enviado: "Mensagem enviada. Respondemos em 24-48 h úteis.",
+      errorEnvio: "Não conseguimos enviar a mensagem. Abrimos o seu e-mail para que a envie você.",
       campoNombre: 'Nome: ', campoEmpresa: 'Empresa: ', campoEmail: 'Email: ',
       campoTelefono: 'Telefone: ', campoRobot: 'Robô de interesse: ', sinIndicar: 'não indicado',
       asuntoWeb: 'Site RH·BOTS — ', asuntoConsulta: 'Consulta sobre ', asuntoSolicitud: 'Pedido de informação',
@@ -76,6 +82,9 @@
       formIncompleto: 'Please check the required fields: name, email, message and the privacy policy.',
       formSinPrivacidad: 'You need to accept the privacy policy to send the message.',
       abriendoCorreo: 'Opening your email client with the drafted message…',
+      enviando: "Sending…",
+      enviado: "Message sent. We'll reply within 24-48 working hours.",
+      errorEnvio: "We couldn't send the message. We're opening your email so you can send it yourself.",
       campoNombre: 'Name: ', campoEmpresa: 'Company: ', campoEmail: 'Email: ',
       campoTelefono: 'Phone: ', campoRobot: 'Robot of interest: ', sinIndicar: 'not specified',
       asuntoWeb: 'RH·BOTS website — ', asuntoConsulta: 'Enquiry about ', asuntoSolicitud: 'Information request',
@@ -99,6 +108,9 @@
       formIncompleto: 'Vérifiez les champs obligatoires : nom, email, message et la politique de confidentialité.',
       formSinPrivacidad: 'Pour envoyer le message, vous devez accepter la politique de confidentialité.',
       abriendoCorreo: 'Ouverture de votre messagerie avec le message rédigé…',
+      enviando: "Envoi en cours…",
+      enviado: "Message envoyé. Nous répondons sous 24-48 h ouvrées.",
+      errorEnvio: "Nous n'avons pas pu envoyer le message. Nous ouvrons votre messagerie pour que vous l'envoyiez.",
       campoNombre: 'Nom : ', campoEmpresa: 'Entreprise : ', campoEmail: 'Email : ',
       campoTelefono: 'Téléphone : ', campoRobot: 'Robot qui vous intéresse : ', sinIndicar: 'non précisé',
       asuntoWeb: 'Site RH·BOTS — ', asuntoConsulta: 'Question sur ', asuntoSolicitud: "Demande d'information",
@@ -122,6 +134,9 @@
       formIncompleto: 'Bitte prüfen Sie die Pflichtfelder: Name, E-Mail, Nachricht und die Datenschutzerklärung.',
       formSinPrivacidad: 'Um die Nachricht zu senden, müssen Sie die Datenschutzerklärung akzeptieren.',
       abriendoCorreo: 'Ihr E-Mail-Programm wird mit der fertigen Nachricht geöffnet…',
+      enviando: "Wird gesendet…",
+      enviado: "Nachricht gesendet. Wir antworten innerhalb von 24-48 Werkstunden.",
+      errorEnvio: "Die Nachricht konnte nicht gesendet werden. Wir öffnen Ihr E-Mail-Programm, damit Sie sie selbst senden.",
       campoNombre: 'Name: ', campoEmpresa: 'Unternehmen: ', campoEmail: 'E-Mail: ',
       campoTelefono: 'Telefon: ', campoRobot: 'Roboter von Interesse: ', sinIndicar: 'keine Angabe',
       asuntoWeb: 'RH·BOTS Website — ', asuntoConsulta: 'Anfrage zu ', asuntoSolicitud: 'Informationsanfrage',
@@ -145,6 +160,9 @@
       formIncompleto: '请检查必填项：姓名、邮箱、留言以及隐私政策同意选项。',
       formSinPrivacidad: '发送留言前需要接受隐私政策。',
       abriendoCorreo: '正在打开您的邮件客户端，留言内容已自动填写…',
+      enviando: "正在发送…",
+      enviado: "留言已发送。我们将在24-48个工作小时内回复。",
+      errorEnvio: "留言发送失败。我们已为您打开邮件客户端，请手动发送。",
       campoNombre: '姓名：', campoEmpresa: '公司：', campoEmail: '邮箱：',
       campoTelefono: '电话：', campoRobot: '感兴趣的机器人：', sinIndicar: '未指定',
       asuntoWeb: 'RH·BOTS网站 — ', asuntoConsulta: '咨询关于 ', asuntoSolicitud: '信息申请',
@@ -168,6 +186,9 @@
       formIncompleto: 'يرجى مراجعة الحقول الإلزامية: الاسم والبريد الإلكتروني والرسالة وسياسة الخصوصية.',
       formSinPrivacidad: 'لإرسال الرسالة عليك قبول سياسة الخصوصية.',
       abriendoCorreo: 'يجري فتح برنامج البريد لديك والرسالة جاهزة…',
+      enviando: "جارٍ الإرسال…",
+      enviado: "تم إرسال الرسالة. سنرد خلال 24-48 ساعة عمل.",
+      errorEnvio: "تعذّر إرسال الرسالة. سنفتح بريدك لترسلها بنفسك.",
       campoNombre: 'الاسم: ', campoEmpresa: 'الشركة: ', campoEmail: 'البريد الإلكتروني: ',
       campoTelefono: 'الهاتف: ', campoRobot: 'الروبوت محل الاهتمام: ', sinIndicar: 'غير محدد',
       asuntoWeb: 'موقع RH·BOTS — ', asuntoConsulta: 'استفسار عن ', asuntoSolicitud: 'طلب معلومات',
@@ -191,6 +212,9 @@
       formIncompleto: 'Revisa els camps obligatoris: nom, email, missatge i la política de privacitat.',
       formSinPrivacidad: 'Per enviar el missatge cal acceptar la política de privacitat.',
       abriendoCorreo: 'S\'està obrint el teu gestor de correu amb el missatge redactat…',
+      enviando: "Enviant…",
+      enviado: "Missatge enviat. Et respondrem en 24-48 h laborables.",
+      errorEnvio: "No hem pogut enviar el missatge. T'obrim el correu perquè ens l'enviïs tu.",
       campoNombre: 'Nom: ', campoEmpresa: 'Empresa: ', campoEmail: 'Email: ',
       campoTelefono: 'Telèfon: ', campoRobot: 'Robot d\'interès: ', sinIndicar: 'sense indicar',
       asuntoWeb: 'Web RH·BOTS — ', asuntoConsulta: 'Consulta sobre ', asuntoSolicitud: 'Sol·licitud d\'informació',
@@ -817,6 +841,58 @@
     viewer.addEventListener('blur', volverAlInicio);
   }
 
+  /* ---------- envío de formularios ----------
+     Con clave de servicio se manda por HTTPS y el visitante no sale de la
+     página. Sin clave —o si la petición falla— se recurre al gestor de
+     correo, que es lo que había antes: así nunca se pierde un mensaje. */
+  function abrirCorreo(form, asunto, cuerpo) {
+    location.href = 'mailto:' + (form.getAttribute('data-email') || 'info@rh-bots.com') +
+      '?subject=' + encodeURIComponent(asunto) +
+      '&body=' + encodeURIComponent(cuerpo + TXT.consentimientoCorreo);
+  }
+
+  function enviarFormulario(form, nota, asunto, cuerpo, remitente, correo) {
+    var clave = form.getAttribute('data-clave') || '';
+    if (!clave) {
+      nota.className = 'form__nota is-ok';
+      nota.textContent = TXT.abriendoCorreo;
+      abrirCorreo(form, asunto, cuerpo);
+      return;
+    }
+    var boton = form.querySelector('button[type="submit"]');
+    if (boton) boton.disabled = true;
+    nota.className = 'form__nota';
+    nota.textContent = TXT.enviando;
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        access_key: clave,
+        subject: asunto,
+        from_name: remitente || 'RH·BOTS',
+        replyto: correo || '',
+        botcheck: form.querySelector('[name="botcheck"]') &&
+                  form.querySelector('[name="botcheck"]').checked,
+        message: cuerpo
+      })
+    }).then(function (r) { return r.json(); }).then(function (r) {
+      if (boton) boton.disabled = false;
+      if (r && r.success) {
+        nota.className = 'form__nota is-ok';
+        nota.textContent = TXT.enviado;
+        form.reset();
+      } else {
+        throw new Error((r && r.message) || 'error');
+      }
+    }).catch(function () {
+      if (boton) boton.disabled = false;
+      nota.className = 'form__nota is-err';
+      nota.textContent = TXT.errorEnvio;
+      abrirCorreo(form, asunto, cuerpo);
+    });
+  }
+
   /* ---------- contacto: envío ---------- */
   var form = document.getElementById('contactoForm');
   if (form) {
@@ -835,7 +911,6 @@
         return;
       }
 
-      // Sin backend todavía: se abre el correo con los datos ya redactados.
       var d = new FormData(form);
       var robot = d.get('robot') || '';
       var cuerpo = [
@@ -847,12 +922,12 @@
         '', d.get('mensaje') || ''
       ].join('\n');
 
-      nota.className = 'form__nota is-ok';
-      nota.textContent = TXT.abriendoCorreo;
-
-      location.href = 'mailto:' + (form.getAttribute('data-email') || 'info@rh-bots.com')
-        + '?subject=' + encodeURIComponent(TXT.asuntoWeb + (robot ? TXT.asuntoConsulta + robot : TXT.asuntoSolicitud))
-        + '&body=' + encodeURIComponent(cuerpo + TXT.consentimientoCorreo);
+      enviarFormulario(
+        form, nota,
+        TXT.asuntoWeb + (robot ? TXT.asuntoConsulta + robot : TXT.asuntoSolicitud),
+        cuerpo,
+        [d.get('nombre'), d.get('apellidos')].filter(Boolean).join(' '),
+        d.get('email') || '');
     });
   }
 
@@ -884,13 +959,14 @@
         var etiqueta = formEvento.querySelector('label[for="' + campo.id + '"]');
         lineas.push((etiqueta ? etiqueta.textContent.trim() : campo.name) + ': ' + campo.value.trim());
       });
+      var datosEv = new FormData(formEvento);
 
-      notaEvento.className = 'form__nota is-ok';
-      notaEvento.textContent = TXT.abriendoCorreo;
-
-      location.href = 'mailto:' + (formEvento.getAttribute('data-email') || 'info@rh-bots.com')
-        + '?subject=' + encodeURIComponent(TXT.asuntoWeb + TXT.asuntoEvento)
-        + '&body=' + encodeURIComponent(lineas.join('\n') + TXT.consentimientoCorreo);
+      enviarFormulario(
+        formEvento, notaEvento,
+        TXT.asuntoWeb + TXT.asuntoEvento,
+        lineas.join('\n'),
+        datosEv.get('nombre') || '',
+        datosEv.get('email') || '');
     });
   }
 

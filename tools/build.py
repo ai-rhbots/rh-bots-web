@@ -18,7 +18,7 @@ sys.path.insert(0, HERE)
 from PIL import Image  # noqa: E402
 from productos import PRODUCTOS, FAMILIAS, ESTADOS, BY_SLUG  # noqa: E402
 from sitio import (NAV, HOME, CONTACTO, POSTS, SEO, ANALITICA, CTA, PREFOOTER, APLICACIONES,  # noqa: E402
-                   TIENDA, RHBOTS, ALQUILER)
+                   TIENDA, RHBOTS, ALQUILER, FORMULARIOS)
 from limpiar_html import limpiar as limpiar_cuerpo  # noqa: E402
 
 e = html.escape
@@ -881,7 +881,10 @@ FAM_NAME = {k: n for k, n, _ in FAMILIAS}
 FECHA_BUILD = time.strftime('%Y-%m-%d')
 # todos los formularios del sitio escriben aquí, pase lo que pase con los
 # datos de contacto: nunca al correo personal de nadie
-EMAIL_FORMULARIOS = 'info@rh-bots.com'
+EMAIL_FORMULARIOS = FORMULARIOS.get('destino') or 'info@rh-bots.com'
+# clave del servicio que recoge los formularios; vacía = se sigue abriendo
+# el gestor de correo del visitante, como hasta ahora
+CLAVE_FORMULARIOS = FORMULARIOS.get('clave', '')
 LINKEDIN_EMPRESA = 'https://www.linkedin.com/company/rh-bots'
 INSTAGRAM_EMPRESA = 'https://www.instagram.com/rhbots/'
 
@@ -3492,7 +3495,8 @@ def formulario_evento(base, cierre):
           </div>
           <p class="ctoform__sello">{t('ev_form_sello')}</p>
         </div>
-        <form class="form" id="eventoForm" data-email="{e(email)}" novalidate>
+        <form class="form" id="eventoForm" data-email="{e(email)}" data-clave="{CLAVE_FORMULARIOS}" novalidate>
+          <input type="checkbox" name="botcheck" class="cebo" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="form__two">
             <div class="form__row">
               <label for="ev-nombre">{t('nombre')}</label>
@@ -3646,7 +3650,8 @@ def contacto_page():
           </div>
           <p class="ctoform__sello">{t('respuesta_personalizada')}</p>
         </div>
-        <form class="form" id="contactoForm" data-email="{EMAIL_FORMULARIOS}" novalidate>
+        <form class="form" id="contactoForm" data-email="{EMAIL_FORMULARIOS}" data-clave="{CLAVE_FORMULARIOS}" novalidate>
+          <input type="checkbox" name="botcheck" class="cebo" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="form__two">
             <div class="form__row">
               <label for="f-nombre">{t('nombre')}</label>

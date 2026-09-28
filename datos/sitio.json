@@ -221,6 +221,11 @@
       "Otro"
     ]
   },
+  "formularios": {
+    "servicio": "web3forms",
+    "clave": "",
+    "destino": "info@rh-bots.com"
+  },
   "cta": {
     "kicker": "¿Hablamos?",
     "titulo": "Lleva la robótica humanoide a tu empresa",
