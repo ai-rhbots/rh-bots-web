@@ -2875,7 +2875,11 @@ def legal_page():
       user is maintained, or for the legally required periods.</p>
       <p><strong>Recipients:</strong> data is not shared with third parties
       except where legally required, or with providers necessary to deliver
-      the requested service (for example, Shopify to process an order).</p>
+      the requested service. We currently use <strong>Web3Forms</strong>
+      (Nexinvent Technologies LLP) to deliver the website forms to our inbox:
+      the data you enter is transmitted over HTTPS and stored by that provider
+      for a limited retention period; and <strong>Shopify</strong> to process
+      an order, if you place one. Both act as data processors on our behalf.</p>
       <p><strong>Your rights:</strong> you can exercise your rights of access,
       rectification, erasure, objection, restriction and portability by
       writing to{f' {e(email)}' if email else " RH·BOTS's contact address"}.</p>
@@ -2922,8 +2926,12 @@ def legal_page():
       <p><strong>Conservação:</strong> enquanto se mantiver a relação com o utilizador
       ou durante os prazos legalmente exigíveis.</p>
       <p><strong>Destinatários:</strong> não se cedem dados a terceiros, salvo
-      obrigação legal ou fornecedores necessários para prestar o serviço solicitado
-      (por exemplo, a Shopify para processar uma encomenda).</p>
+      obrigação legal ou fornecedores necessários para prestar o serviço solicitado.
+      Atualmente recorremos à <strong>Web3Forms</strong> (Nexinvent Technologies LLP)
+      para fazer chegar os formulários do site à nossa caixa de correio: os dados que
+      introduzir são transmitidos por HTTPS e guardados por esse fornecedor durante um
+      período limitado; e à <strong>Shopify</strong> para processar uma encomenda, caso
+      a faça. Ambos atuam como subcontratantes por nossa conta.</p>
       <p><strong>Direitos:</strong> pode exercer os seus direitos de acesso,
       retificação, apagamento, oposição, limitação e portabilidade escrevendo
       para{f' {e(email)}' if email else ' o endereço de contacto da RH·BOTS'}.</p>
@@ -2973,7 +2981,12 @@ def legal_page():
       l'utilisateur, ou pendant les délais légalement exigibles.</p>
       <p><strong>Destinataires :</strong> les données ne sont pas cédées à des tiers,
       sauf obligation légale ou prestataires nécessaires à la fourniture du service
-      demandé (par exemple, Shopify pour traiter une commande).</p>
+      demandé. Nous faisons appel à <strong>Web3Forms</strong> (Nexinvent Technologies
+      LLP) pour acheminer les formulaires du site vers notre boîte de réception : les
+      données que vous saisissez sont transmises en HTTPS et conservées par ce
+      prestataire pendant une durée limitée ; et à <strong>Shopify</strong> pour traiter
+      une commande, le cas échéant. Tous deux agissent en qualité de sous-traitants
+      pour notre compte.</p>
       <p><strong>Vos droits :</strong> vous pouvez exercer vos droits d'accès, de
       rectification, d'effacement, d'opposition, de limitation et de portabilité en
       écrivant à{f' {e(email)}' if email else " l'adresse de contact de RH·BOTS"}.</p>
@@ -3016,13 +3029,120 @@ def legal_page():
       合同关系的履行。</p>
       <p><strong>保留期限：</strong>在与用户保持关系期间，或在法律规定的期限内。</p>
       <p><strong>数据接收方：</strong>除法律要求外，我们不会将数据提供给第三方，除非
-      是提供所请求服务所必需的服务商（例如，Shopify用于处理订单）。</p>
+      是提供所请求服务所必需的服务商。目前我们使用 <strong>Web3Forms</strong>
+      （Nexinvent Technologies LLP）将网站表单送达我们的邮箱：您填写的数据经 HTTPS
+      传输，并由该服务商保存一段有限的期限；以及 <strong>Shopify</strong> 用于处理订单。
+      两者均作为受托处理方代表我们处理数据。</p>
       <p><strong>您的权利：</strong>您可以通过{f'{e(email)}' if email else 'RH·BOTS的联系方式'}
       行使访问、更正、删除、反对、限制处理和数据可携带等权利。</p>
 
       <h2 id="cookies">Cookie政策</h2>
       <p>本网站仅使用网站正常运行所必需的技术性Cookie。如果未来启用Google Analytics
       或其他统计工具，将在加载前征求用户的事先同意。</p>
+    </div>
+  </section>
+''')
+    elif LANG == 'de':
+        out.append(f'''
+  <section class="chero">
+    <div class="wrap">
+      <h1 class="display display--left">Impressum, Datenschutz und Cookies</h1>
+    </div>
+  </section>
+  <section class="section section--white">
+    <div class="wrap wrap--narrow art__cuerpo">
+      <p><em>Diese deutsche Fassung ist eine Übersetzung unseres spanischen
+      Impressums, die wir als Service anbieten. Bei Abweichungen gilt die
+      spanische Fassung (<a href="/legal.html">/legal.html</a>) und spanisches
+      Recht. Wir empfehlen eine juristische Prüfung, bevor Sie sich für
+      Compliance-Zwecke auf diese Übersetzung stützen.</em></p>
+
+      <h2 id="aviso-legal">Impressum</h2>
+      <p><strong>Betreiber der Website:</strong> {e(empresa)}.<br>
+      <strong>Steuernummer (CIF/NIF):</strong> [vom Betreiber zu ergänzen].<br>
+      <strong>Anschrift:</strong> {e(direccion)}.<br>
+      {f'<strong>Kontakt:</strong> {e(email)}' + (f' · {e(tel)}' if tel else '') + '.<br>' if email else ''}
+      <strong>Domain:</strong> {e(dominio)}</p>
+      <p>Der Zugriff auf diese Website und ihre Nutzung begründen die Stellung als
+      Nutzer und setzen die Annahme der hier aufgeführten Bedingungen voraus.
+      {e(empresa)} ist offizieller Vertriebspartner von AGIBOT und PUDU in Spanien
+      und Portugal.</p>
+
+      <h2 id="privacidad">Datenschutzerklärung</h2>
+      <p><strong>Verantwortlicher:</strong> {e(empresa)}{f', {e(email)}' if email else ''}.</p>
+      <p><strong>Zweck:</strong> Bearbeitung von Anfragen zu Informationen,
+      Angeboten, Vorführungen oder Support, die Sie uns über das Kontaktformular
+      senden, sowie Abwicklung der Geschäftsbeziehung, falls eine zustande kommt.</p>
+      <p><strong>Rechtsgrundlage:</strong> Einwilligung der betroffenen Person mit
+      dem Absenden ihrer Daten sowie die Durchführung eines etwaigen
+      Vertragsverhältnisses.</p>
+      <p><strong>Speicherdauer:</strong> solange die Beziehung zum Nutzer besteht
+      oder solange gesetzliche Fristen es verlangen.</p>
+      <p><strong>Empfänger:</strong> Daten werden nicht an Dritte weitergegeben,
+      außer bei gesetzlicher Verpflichtung oder an Dienstleister, die für die
+      angeforderte Leistung erforderlich sind. Derzeit nutzen wir
+      <strong>Web3Forms</strong> (Nexinvent Technologies LLP), um die Formulare der
+      Website in unser Postfach zuzustellen: Die von Ihnen eingegebenen Daten werden
+      über HTTPS übertragen und von diesem Anbieter für einen begrenzten Zeitraum
+      gespeichert; und <strong>Shopify</strong>, um eine Bestellung abzuwickeln,
+      falls Sie eine aufgeben. Beide handeln als Auftragsverarbeiter in unserem
+      Auftrag.</p>
+      <p><strong>Ihre Rechte:</strong> Sie können Ihre Rechte auf Auskunft,
+      Berichtigung, Löschung, Widerspruch, Einschränkung und Datenübertragbarkeit
+      ausüben, indem Sie an{f' {e(email)}' if email else ' die Kontaktadresse von RH·BOTS'} schreiben.</p>
+
+      <h2 id="cookies">Cookie-Richtlinie</h2>
+      <p>Diese Website verwendet ausschließlich die technisch notwendigen Cookies.
+      Sollte künftig Google Analytics oder ein anderes Messwerkzeug aktiviert werden,
+      wird vor dem Laden die vorherige Einwilligung des Nutzers eingeholt.</p>
+    </div>
+  </section>
+''')
+    elif LANG == 'ar':
+        out.append(f'''
+  <section class="chero">
+    <div class="wrap">
+      <h1 class="display display--left">إشعار قانوني والخصوصية وملفات تعريف الارتباط</h1>
+    </div>
+  </section>
+  <section class="section section--white">
+    <div class="wrap wrap--narrow art__cuerpo">
+      <p><em>هذه الصفحة بالعربية ترجمة مجاملة لإشعارنا القانوني بالإسبانية. وفي حال
+      وجود أي اختلاف، تسود النسخة الإسبانية (<a href="/legal.html">/legal.html</a>)
+      ويُطبَّق القانون الإسباني. ونوصي بمراجعة قانونية متخصصة قبل الاعتماد على هذه
+      الترجمة لأغراض الامتثال.</em></p>
+
+      <h2 id="aviso-legal">إشعار قانوني</h2>
+      <p><strong>مالك الموقع:</strong> {e(empresa)}.<br>
+      <strong>الرقم الضريبي (CIF/NIF):</strong> [بانتظار أن يستكمله المالك].<br>
+      <strong>العنوان:</strong> {e(direccion)}.<br>
+      {f'<strong>التواصل:</strong> {e(email)}' + (f' · {e(tel)}' if tel else '') + '.<br>' if email else ''}
+      <strong>النطاق:</strong> {e(dominio)}</p>
+      <p>يمنح الدخول إلى هذا الموقع واستخدامه صفة المستخدم ويعني قبول الشروط الواردة
+      هنا. {e(empresa)} موزّع معتمد لشركتي AGIBOT وPUDU في إسبانيا والبرتغال.</p>
+
+      <h2 id="privacidad">سياسة الخصوصية</h2>
+      <p><strong>المسؤول عن المعالجة:</strong> {e(empresa)}{f'، {e(email)}' if email else ''}.</p>
+      <p><strong>الغرض:</strong> الرد على طلبات المعلومات أو عروض الأسعار أو العروض
+      التوضيحية أو الدعم التي ترسلها إلينا عبر نموذج التواصل، وإدارة العلاقة التجارية
+      إذا جرى إبرامها.</p>
+      <p><strong>الأساس القانوني:</strong> موافقة صاحب البيانات عند إرسالها، وتنفيذ
+      علاقة تعاقدية محتملة.</p>
+      <p><strong>مدة الاحتفاظ:</strong> طوال استمرار العلاقة مع المستخدم أو خلال المدد
+      المطلوبة قانوناً.</p>
+      <p><strong>الجهات المستقبِلة:</strong> لا تُنقل البيانات إلى أطراف ثالثة إلا
+      بموجب التزام قانوني أو إلى مزوّدين لازمين لتقديم الخدمة المطلوبة. ونستخدم حالياً
+      <strong>Web3Forms</strong> (Nexinvent Technologies LLP) لإيصال نماذج الموقع إلى
+      بريدنا: تُنقل البيانات التي تكتبها عبر HTTPS ويحتفظ بها هذا المزوّد لمدة محدودة؛
+      و<strong>Shopify</strong> لمعالجة الطلب، إن قمت بطلب. ويعمل كلاهما بصفته معالجاً
+      للبيانات نيابة عنا.</p>
+      <p><strong>حقوقك:</strong> يمكنك ممارسة حقوقك في الوصول والتصحيح والحذف
+      والاعتراض وتقييد المعالجة ونقل البيانات بمراسلة{f' {e(email)}' if email else ' عنوان التواصل الخاص بـ RH·BOTS'}.</p>
+
+      <h2 id="cookies">سياسة ملفات تعريف الارتباط</h2>
+      <p>يستخدم هذا الموقع ملفات تعريف الارتباط التقنية اللازمة لعمله فقط. وإذا جرى
+      مستقبلاً تفعيل Google Analytics أو أي أداة قياس أخرى، فسيُطلب من المستخدم موافقته
+      المسبقة قبل تحميلها.</p>
     </div>
   </section>
 ''')
@@ -3061,8 +3181,12 @@ def legal_page():
       <p><strong>Conservació:</strong> mentre es mantingui la relació amb l'usuari
       o durant els terminis legalment exigibles.</p>
       <p><strong>Destinataris:</strong> no se cedeixen dades a tercers llevat
-      d'obligació legal o proveïdors necessaris per prestar el servei sol·licitat
-      (per exemple, Shopify per processar una comanda).</p>
+      d'obligació legal o proveïdors necessaris per prestar el servei sol·licitat.
+      Actualment fem servir <strong>Web3Forms</strong> (Nexinvent Technologies LLP)
+      per fer arribar els formularis del web a la nostra bústia: les dades que
+      introdueixis es transmeten per HTTPS i les desa aquest proveïdor durant un
+      període limitat; i <strong>Shopify</strong> per processar una comanda, si en
+      fas cap. Tots dos actuen com a encarregats del tractament per compte nostre.</p>
       <p><strong>Drets:</strong> pots exercir els teus drets d'accés, rectificació,
       supressió, oposició, limitació i portabilitat escrivint a{f' {e(email)}' if email else " l'adreça de contacte de RH·BOTS"}.</p>
 
@@ -3104,7 +3228,12 @@ def legal_page():
       usuario o durante los plazos legalmente exigibles.</p>
       <p><strong>Destinatarios:</strong> no se ceden datos a terceros salvo
       obligación legal o proveedores necesarios para prestar el servicio
-      solicitado (por ejemplo, Shopify para procesar un pedido).</p>
+      solicitado. Actualmente utilizamos <strong>Web3Forms</strong>
+      (Nexinvent Technologies LLP) para hacer llegar los formularios de la web a
+      nuestro buzón: los datos que escribas se transmiten por HTTPS y quedan
+      guardados por ese proveedor durante un periodo limitado; y
+      <strong>Shopify</strong> para procesar un pedido, si lo haces. Ambos actúan
+      como encargados del tratamiento por cuenta nuestra.</p>
       <p><strong>Derechos:</strong> puedes ejercer tus derechos de acceso,
       rectificación, supresión, oposición, limitación y portabilidad
       escribiendo a{f' {e(email)}' if email else ' la dirección de contacto de RH·BOTS'}.</p>
