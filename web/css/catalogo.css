@@ -91,7 +91,7 @@
 .accnec__media .ph{ border:0; background:transparent; height:100%; gap:2px; }
 .accnec__media .ph svg{ max-width:26px; }
 .accnec__media .ph span{ display:none; }
-.accnec__body h3{ font-size:14.5px; font-weight:700; color:var(--navy); line-height:1.3; }
+.accnec__body .accnec__nombre{ font-size:14.5px; font-weight:700; color:var(--navy); line-height:1.3; }
 .accnec__desc{ margin-top:2px; font-size:12.5px; line-height:1.4; color:var(--ink-66); }
 .accnec__precio{ margin-top:4px; font-size:14px; font-weight:800; color:var(--blue); }
 .phero__compra .pvp{ margin:0; font-size:clamp(24px, 2.2vw, 30px); white-space:nowrap; }
@@ -110,7 +110,7 @@
 
 /* datos rápidos */
 .keyfacts{
-  display:grid; grid-template-columns:repeat(auto-fit, minmax(120px, 1fr));
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(min(120px, 100%), 1fr));
   gap:14px; margin-top:26px;
 }
 .keyfacts li{
@@ -210,7 +210,7 @@
   display:grid; gap:clamp(18px, 2.6vw, 30px);
   grid-template-columns:1fr;
 }
-.vid--2{ grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); }
+.vid--2{ grid-template-columns:repeat(auto-fit, minmax(min(320px, 100%), 1fr)); }
 .vid__item figure{ margin:0; }
 .vid__item video{
   width:100%; height:auto; display:block;
@@ -322,7 +322,7 @@
 
 /* ---------- puntos clave ---------- */
 .hl{
-  display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(min(240px, 100%), 1fr));
   gap:clamp(20px, 3vw, 38px);
 }
 .hl__item{ border-top:3px solid var(--blue); padding-top:18px; }
@@ -336,14 +336,14 @@
 
 /* ---------- aplicaciones ---------- */
 .apx{
-  display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(min(240px, 100%), 1fr));
   gap:clamp(16px, 2.4vw, 28px);
 }
 .section-head--solo{ margin-bottom:0; }
 
 /* aplicaciones sin fotografía */
 .applist{
-  display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(min(260px, 100%), 1fr));
   gap:12px 26px; max-width:900px; margin-inline:auto;
 }
 .applist li{
@@ -374,7 +374,7 @@
 
 /* ---------- especificaciones ---------- */
 .specgrid{
-  display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(min(320px, 100%), 1fr));
   gap:clamp(22px, 3vw, 40px);
   align-items:start;
 }
@@ -382,7 +382,11 @@
   font-weight:700; font-size:12.5px; letter-spacing:.07em; text-transform:uppercase;
   color:var(--blue-deep); padding-bottom:10px; border-bottom:2px solid var(--blue);
 }
-.spectable{ width:100%; border-collapse:collapse; }
+.specgrp{ min-width:0; }
+.spectable{ width:100%; border-collapse:collapse; table-layout:fixed; }
+/* los compuestos largos del alemán no caben en 320 px: que partan */
+.spectable th, .spectable td,
+.datos-tec li, .datos-tec dt, .datos-tec dd{ overflow-wrap:anywhere; }
 .spectable th,
 .spectable td{
   text-align:left; vertical-align:top;
@@ -450,10 +454,10 @@
 
 /* ---------- rejilla de producto ---------- */
 .pgrid{
-  display:grid; grid-template-columns:repeat(auto-fill, minmax(250px, 1fr));
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(min(250px, 100%), 1fr));
   gap:clamp(18px, 2.4vw, 30px);
 }
-.pgrid--big{ grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); }
+.pgrid--big{ grid-template-columns:repeat(auto-fill, minmax(min(280px, 100%), 1fr)); }
 /* home: los 4 destacados en una sola fila, sin huérfanos */
 
 /* home: 6 sectores en 3 + 3 */
@@ -488,7 +492,8 @@
 .pcard__media .ph span{ font-size:11px; }
 .pcard__body{ padding:20px 22px 24px; display:flex; flex-direction:column; flex:1; }
 .pcard__body .badges{ margin-bottom:12px; }
-.pcard__body h3{
+.pcard__body h3,
+.pcard__body h2{
   font-weight:400; font-size:22px; line-height:1.15; color:var(--navy);
 }
 .pcard__body > p{
@@ -1362,7 +1367,7 @@ html body .form .form__consent label{
 }
 .sector__robots{
   margin-top:14px;
-  display:grid; grid-template-columns:repeat(auto-fill, minmax(190px, 1fr)); gap:12px;
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(min(190px, 100%), 1fr)); gap:12px;
 }
 .minirobot{
   display:flex; align-items:center; gap:12px; height:100%;
@@ -1716,7 +1721,7 @@ html body .form .form__consent label{
 
 /* ---------- cifras ---------- */
 .cifras{
-  display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(min(140px, 100%), 1fr));
   gap:clamp(22px, 4vw, 40px);
   text-align:center;
 }
@@ -1877,7 +1882,7 @@ html body :is(h3, h4, .kicker, .phero__claim, .que__destacado,
 .tarifa__cuota{ font-weight:800; color:var(--blue); white-space:nowrap; }
 
 .incluye{
-  display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap:clamp(18px, 2.4vw, 30px); margin-top:clamp(24px, 3vw, 38px);
 }
 .incluye__col{ background:#fff; border-radius:16px; padding:clamp(22px, 2.4vw, 30px); }
@@ -1946,7 +1951,7 @@ html body :is(h3, h4, .kicker, .phero__claim, .que__destacado,
 
 /* qué puede hacer: tarjetas numeradas */
 .evcards{
-  display:grid; grid-template-columns:repeat(auto-fit, minmax(270px, 1fr));
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(min(270px, 100%), 1fr));
   gap:clamp(16px, 2vw, 26px); margin-top:clamp(28px, 3.4vw, 44px);
 }
 .evcard{
@@ -2011,7 +2016,7 @@ html body :is(h3, h4, .kicker, .phero__claim, .que__destacado,
 
 /* ideal para: rejilla de escenarios */
 .evideal{
-  display:grid; grid-template-columns:repeat(auto-fit, minmax(190px, 1fr));
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(min(190px, 100%), 1fr));
   gap:10px; margin-top:clamp(26px, 3vw, 38px);
 }
 .evideal li{
@@ -2109,12 +2114,12 @@ html body :is(h3, h4, .kicker, .phero__claim, .que__destacado,
 .sin-iva{
   display:inline; margin-inline-start:8px;
   font-family:var(--font-texto); font-weight:500; font-size:11.5px;
-  letter-spacing:0; text-transform:none; white-space:nowrap; color:var(--muted);
+  letter-spacing:0; text-transform:none; color:var(--muted);
 }
 /* y el importe con IVA baja a su propia línea, con más cuerpo */
 .coniva{
   font-family:var(--font-subtitulo); font-weight:700; font-size:15.5px;
-  letter-spacing:.01em; color:var(--ink); white-space:nowrap;
+  letter-spacing:.01em; color:var(--ink);
 }
 .pcard .pcard__precio__iva .coniva{ font-size:14px; }
 /* en el carrito el total ya es grande: la cifra con IVA no compite con él */
@@ -2129,10 +2134,14 @@ html body :is(h3, h4, .kicker, .phero__claim, .que__destacado,
 .evtarifa .evprecio__coniva{ color:var(--ink); }
 /* la columna con IVA, con el mismo cuerpo que la de la cuota neta */
 .tarifa__cuota--iva{ color:var(--ink); font-weight:700; }
+/* cuatro columnas no caben en 320 px: que ruede la tabla, no la página */
+.tarifa__scroll{ max-width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+.tarifa__scroll .tarifa{ min-width:300px; }
+.sector__texto{ min-width:0; }
 
-/* cebo antispam: invisible para las personas, a la vista de los robots */
-.cebo{
-  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
-  overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; opacity:0;
-  pointer-events:none;
+/* cebo antispam: invisible para las personas, a la vista de los robots.
+   Va con la especificidad de «.form input», que si no lo estiraba a todo
+   el ancho y desbordaba la página. */
+html body .form .cebo{
+  display:none;
 }

@@ -64,6 +64,10 @@ svg .nostroke{ stroke:none; }
 
 /* fuera de pantalla por arriba, no por el lado: así no crea desbordamiento
    horizontal en los idiomas que se leen de derecha a izquierda */
+/* palabras muy largas (los compuestos del alemán, sobre todo) rompen la
+   línea antes que desbordar la página */
+body{ overflow-wrap:break-word; }
+
 .skip-link{
   position:absolute; inset-inline-start:0; top:0; z-index:200;
   transform:translateY(-200%);

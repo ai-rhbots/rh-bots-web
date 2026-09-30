@@ -1739,7 +1739,7 @@ def nota_accesorio_requerido(p, base):
             f'<div class="accnec__card">'
             f'<div class="accnec__media">{media}</div>'
             f'<div class="accnec__body">'
-            f'<h3>{e(acc["name"])}</h3>'
+            f'<p class="accnec__nombre">{e(acc["name"])}</p>'
             f'<p class="accnec__desc">{t("requiere_accesorio_texto", n=e(p["name"]))}</p>'
             f'{precio_html_acc}'
             f'</div></div></div>')
@@ -3279,12 +3279,13 @@ def _tarifa_tabla(modelo):
                   f'<td class="tarifa__cuota tarifa__cuota--iva">{e(con_iva(cuota))}</td></tr>')
     if not filas:
         return ''
-    return (f'<table class="tarifa"><caption class="tarifa__titulo">{t("tarifa_titulo")}</caption>'
+    return (f'<div class="tarifa__scroll">'
+            f'<table class="tarifa"><caption class="tarifa__titulo">{t("tarifa_titulo")}</caption>'
             f'<thead><tr><th scope="col">{t("tarifa_plazo")}</th>'
             f'<th scope="col">{t("tarifa_duracion")}</th>'
             f'<th scope="col">{t("tarifa_cuota_sin")}</th>'
             f'<th scope="col">{t("tarifa_cuota_con")}</th></tr></thead>'
-            f'<tbody>{filas}</tbody></table>')
+            f'<tbody>{filas}</tbody></table></div>')
 
 
 def _cuota_mas_baja_num(modelo):
@@ -3328,7 +3329,7 @@ def alquiler_page():
             f'<li class="pcard reveal"><a href="{base}{e(op["href"])}">'
             f'<div class="pcard__media pcard__media--escena">'
             f'<img src="{base}{e(op.get("imagen", ""))}" alt="{e(op["titulo"])}" loading="lazy"></div>'
-            f'<div class="pcard__body"><h3>{e(op["titulo"])}</h3>'
+            f'<div class="pcard__body"><h2>{e(op["titulo"])}</h2>'
             f'<p>{e(op.get("texto", ""))}</p>'
             f'<span class="pcard__more">{t("mas_informacion")}</span></div></a></li>')
     out.append(f'''  <section class="section section--white">
