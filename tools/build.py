@@ -2834,6 +2834,7 @@ def legal_page():
     principal = CONTACTO['personas'][0] if CONTACTO.get('personas') else {}
     email = principal.get('email', '')
     tel = principal.get('tel', '')
+    cif = CONTACTO.get('cif', '')
 
     out = [head(t('legal_meta_titulo'), t('legal_meta_desc'),
                 base, 'legal.html'),
@@ -2855,7 +2856,7 @@ def legal_page():
 
       <h2 id="aviso-legal">Legal notice</h2>
       <p><strong>Website owner:</strong> {e(empresa)}.<br>
-      <strong>Tax ID (CIF/NIF):</strong> [to be completed by the owner].<br>
+      <strong>Tax ID (CIF/NIF):</strong> {e(cif) if cif else '[to be completed by the owner]'}.<br>
       <strong>Registered address:</strong> {e(direccion)}.<br>
       {f'<strong>Contact:</strong> {e(email)}' + (f' · {e(tel)}' if tel else '') + '.<br>' if email else ''}
       <strong>Domain:</strong> {e(dominio)}</p>
@@ -2908,7 +2909,7 @@ def legal_page():
 
       <h2 id="aviso-legal">Aviso legal</h2>
       <p><strong>Titular do sítio web:</strong> {e(empresa)}.<br>
-      <strong>NIF:</strong> [a completar pelo titular].<br>
+      <strong>NIF:</strong> {e(cif) if cif else '[a completar pelo titular]'}.<br>
       <strong>Morada:</strong> {e(direccion)}.<br>
       {f'<strong>Contacto:</strong> {e(email)}' + (f' · {e(tel)}' if tel else '') + '.<br>' if email else ''}
       <strong>Domínio:</strong> {e(dominio)}</p>
@@ -2961,7 +2962,7 @@ def legal_page():
 
       <h2 id="aviso-legal">Mentions légales</h2>
       <p><strong>Titulaire du site web :</strong> {e(empresa)}.<br>
-      <strong>Numéro fiscal (CIF/NIF) :</strong> [à compléter par le titulaire].<br>
+      <strong>Numéro fiscal (CIF/NIF) :</strong> {e(cif) if cif else '[à compléter par le titulaire]'}.<br>
       <strong>Adresse :</strong> {e(direccion)}.<br>
       {f'<strong>Contact :</strong> {e(email)}' + (f' · {e(tel)}' if tel else '') + '.<br>' if email else ''}
       <strong>Domaine :</strong> {e(dominio)}</p>
@@ -3014,7 +3015,7 @@ def legal_page():
 
       <h2 id="aviso-legal">法律声明</h2>
       <p><strong>网站所有者：</strong>{e(empresa)}。<br>
-      <strong>税号（CIF/NIF）：</strong>[待所有者补充]。<br>
+      <strong>税号（CIF/NIF）：</strong>{e(cif) if cif else '[待所有者补充]'}。<br>
       <strong>注册地址：</strong>{e(direccion)}。<br>
       {f'<strong>联系方式：</strong>{e(email)}' + (f' · {e(tel)}' if tel else '') + '。<br>' if email else ''}
       <strong>域名：</strong>{e(dominio)}</p>
@@ -3059,7 +3060,7 @@ def legal_page():
 
       <h2 id="aviso-legal">Impressum</h2>
       <p><strong>Betreiber der Website:</strong> {e(empresa)}.<br>
-      <strong>Steuernummer (CIF/NIF):</strong> [vom Betreiber zu ergänzen].<br>
+      <strong>Steuernummer (CIF/NIF):</strong> {e(cif) if cif else '[vom Betreiber zu ergänzen]'}.<br>
       <strong>Anschrift:</strong> {e(direccion)}.<br>
       {f'<strong>Kontakt:</strong> {e(email)}' + (f' · {e(tel)}' if tel else '') + '.<br>' if email else ''}
       <strong>Domain:</strong> {e(dominio)}</p>
@@ -3114,7 +3115,7 @@ def legal_page():
 
       <h2 id="aviso-legal">إشعار قانوني</h2>
       <p><strong>مالك الموقع:</strong> {e(empresa)}.<br>
-      <strong>الرقم الضريبي (CIF/NIF):</strong> [بانتظار أن يستكمله المالك].<br>
+      <strong>الرقم الضريبي (CIF/NIF):</strong> {e(cif) if cif else '[بانتظار أن يستكمله المالك]'}.<br>
       <strong>العنوان:</strong> {e(direccion)}.<br>
       {f'<strong>التواصل:</strong> {e(email)}' + (f' · {e(tel)}' if tel else '') + '.<br>' if email else ''}
       <strong>النطاق:</strong> {e(dominio)}</p>
@@ -3163,7 +3164,7 @@ def legal_page():
 
       <h2 id="aviso-legal">Avís legal</h2>
       <p><strong>Titular del lloc web:</strong> {e(empresa)}.<br>
-      <strong>CIF/NIF:</strong> [pendent de completar pel titular].<br>
+      <strong>CIF/NIF:</strong> {e(cif) if cif else '[pendent de completar pel titular]'}.<br>
       <strong>Domicili:</strong> {e(direccion)}.<br>
       {f'<strong>Contacte:</strong> {e(email)}' + (f' · {e(tel)}' if tel else '') + '.<br>' if email else ''}
       <strong>Domini:</strong> {e(dominio)}</p>
@@ -3209,7 +3210,7 @@ def legal_page():
     <div class="wrap wrap--narrow art__cuerpo">
       <h2 id="aviso-legal">Aviso legal</h2>
       <p><strong>Titular del sitio web:</strong> {e(empresa)}.<br>
-      <strong>CIF/NIF:</strong> [pendiente de completar por el titular].<br>
+      <strong>CIF/NIF:</strong> {e(cif) if cif else '[pendiente de completar por el titular]'}.<br>
       <strong>Domicilio:</strong> {e(direccion)}.<br>
       {f'<strong>Contacto:</strong> {e(email)}' + (f' · {e(tel)}' if tel else '') + '.<br>' if email else ''}
       <strong>Dominio:</strong> {e(dominio)}</p>
