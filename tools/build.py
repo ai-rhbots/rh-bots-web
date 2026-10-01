@@ -8,12 +8,34 @@ Lee tools/productos.py y escribe:
     web/robots.html            índice del catálogo
     web/robots/<slug>.html     una ficha por producto
 """
-import io, os, re, sys, html, json, time
+import io, os, re, sys, html, json, time, hashlib
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 WEB  = os.path.join(ROOT, 'web')
 sys.path.insert(0, HERE)
+
+# ─────────────────────────────────────────── versión de la hoja de estilos ──
+# El CSS y el JS se piden con «?v=<hash del contenido>». Sirve para dos cosas:
+# que al publicar una versión nueva nadie se quede con la antigua en caché, y
+# —el motivo de que esto exista— que el navegador de quien ya visitó la web
+# anterior no reutilice su CSS cacheado para estas páginas, porque la URL ya
+# no es la misma. Con la misma ruta de siempre, «/css/styles.css», el caché
+# viejo ganaba y la página salía sin estilos.
+_VERSIONES = {}
+
+
+def v(ruta):
+    """«?v=ab12cd34» a partir del contenido de web/<ruta>; '' si no existe."""
+    if ruta not in _VERSIONES:
+        f = os.path.join(WEB, ruta)
+        try:
+            with open(f, 'rb') as fh:
+                _VERSIONES[ruta] = '?v=' + hashlib.sha1(fh.read()).hexdigest()[:8]
+        except OSError:
+            _VERSIONES[ruta] = ''
+    return _VERSIONES[ruta]
+
 
 from PIL import Image  # noqa: E402
 from productos import PRODUCTOS, FAMILIAS, ESTADOS, BY_SLUG  # noqa: E402
@@ -1233,9 +1255,9 @@ def head(title, desc, base, ruta='', extra_css=True, og_img=None, extra_jsonld=N
 <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script>document.documentElement.classList.add('js')</script>
-<link rel="stylesheet" href="{base}css/styles.css">
-{'<link rel="stylesheet" href="%scss/catalogo.css">' % base if extra_css else ''}
-{'<link rel="stylesheet" href="%scss/rtl.css">' % base if LANG in RTL else ''}
+<link rel="stylesheet" href="{base}css/styles.css{v('css/styles.css')}">
+{'<link rel="stylesheet" href="%scss/catalogo.css%s">' % (base, v('css/catalogo.css')) if extra_css else ''}
+{'<link rel="stylesheet" href="%scss/rtl.css%s">' % (base, v('css/rtl.css')) if LANG in RTL else ''}
 {jsonld(extra_jsonld)}</head>
 <body>
 <a class="skip-link" href="#contenido">{t('saltar_contenido')}</a>
@@ -1502,7 +1524,7 @@ def footer(base):
     </p>
   </div>
 </footer>
-<script src="{base}js/main.js"></script>
+<script src="{base}js/main.js{v('js/main.js')}"></script>
 </body>
 </html>
 '''
