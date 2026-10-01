@@ -47,7 +47,12 @@ def referencias():
             for r in encontrados:
                 if r.startswith(('http', 'mailto:', 'tel:', 'data:', '//')):
                     continue
-                destino = os.path.normpath(os.path.join(base, r))
+                # las rutas que empiezan por «/» cuelgan de la raíz del sitio,
+                # no de la carpeta del archivo que las menciona
+                if r.startswith('/'):
+                    destino = os.path.normpath(os.path.join(WEB, r.lstrip('/')))
+                else:
+                    destino = os.path.normpath(os.path.join(base, r))
                 if not os.path.isfile(destino):
                     continue
                 rel = os.path.relpath(destino, WEB).replace('\\', '/')

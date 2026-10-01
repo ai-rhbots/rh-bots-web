@@ -1,164 +1,129 @@
-# Subir la web a BanaHosting
+# Publicar la web en BanaHosting
 
 Panel: <https://sc-europe80.banahosting.com:2083/>
 
 La web es **HTML estático**: no necesita PHP, ni base de datos, ni Node. Se
-copian los archivos y funciona. Es el caso más sencillo que existe en cPanel.
+copian los archivos y funciona.
+
+Hoy `rh-bots.com` apunta a BanaHosting (IP 75.102.57.42) y sirve la web
+anterior. Para que sirva esta hay que sustituir el contenido de
+`public_html`. No hay que tocar el DNS ni el dominio.
 
 ---
 
-## 1. Generar el paquete
+## Cómo se reparte el trabajo
 
-```bash
-python tools/sincronizar.py    # trae precios y stock de Shopify
-python tools/build.py          # regenera las 19 páginas
-python tools/empaquetar.py     # crea los .zip en publicar/
-```
+1. Se piden los cambios y se hacen sobre el proyecto.
+2. Se regenera el sitio y se crea el paquete:
 
-Deja tres archivos en `publicar/`:
+   ```bash
+   python tools/build.py        # regenera las 288 páginas
+   python tools/empaquetar.py   # crea los .zip en publicar/
+   ```
+
+3. El informático sube el `.zip` por el gestor de archivos del panel y lo
+   descomprime en `public_html`.
+
+Los `.zip` se quedan fuera del repositorio: hay que pasarlos aparte.
+
+---
+
+## Qué genera el empaquetador
 
 | Archivo | Contenido | Peso |
 |---|---|---|
-| `rh-bots-sitio.zip` | Todo menos los vídeos | 2,9 MB |
-| `rh-bots-video.zip` | Sólo los 4 vídeos | 69,4 MB |
-| `rh-bots-web.zip` | Todo junto | 72,2 MB |
+| `rh-bots-sitio.zip` | Todo menos los vídeos | ~8,5 MB |
+| `rh-bots-video.zip` | Sólo los 8 vídeos | ~19 MB |
+| `rh-bots-web.zip` | Todo junto | ~27,6 MB |
 
-**Sube primero el pequeño y luego el de vídeo.** El gestor de archivos de
-cPanel suele tener un límite de subida y con 72 MB de una vez es fácil que
-falle a medias.
+**Sube primero el pequeño y después el de vídeo.** El gestor de cPanel tiene
+límite de subida y con el paquete entero es fácil que falle a medias.
 
-El empaquetador incluye **sólo lo que la web referencia de verdad**: recorre el
-HTML, el CSS y el JS y mete lo que encuentra. Los 1,5 GB de originales (los PNG
-de 20 MB y los MP4 de hasta 958 MB) se quedan fuera solos.
+El empaquetador recorre el HTML, el CSS y el JS y mete **sólo lo que la web
+referencia de verdad**. Los originales de imagen y vídeo (1,4 GB) se quedan
+fuera solos.
 
 ---
 
-## 2. Subir por el gestor de archivos
+## La primera vez
 
-1. Entra en el panel y abre **File Manager**.
-2. Ve a `public_html`.
-   - Si hay un `index.html` o `default.html` de bienvenida de BanaHosting,
-     bórralo o te tapará la web.
-3. **Upload** → sube `rh-bots-sitio.zip`.
-4. Vuelve a `public_html`, clic derecho en el zip → **Extract**.
-5. Repite con `rh-bots-video.zip`.
-6. Borra los dos `.zip` cuando termines.
+### 1. Copia de seguridad de lo que hay
+
+Antes de tocar nada, en el panel: **Herramientas → Copia de seguridad →
+Descargar una copia del directorio raíz** (o comprime `public_html` desde el
+gestor de archivos y descarga el zip). Al subir la web nueva se reemplaza la
+anterior, y sin copia no hay vuelta atrás.
+
+Las cuentas de correo, las bases de datos y los subdominios **no** viven en
+`public_html`: no se ven afectados.
+
+### 2. Vaciar `public_html`
+
+Borra el contenido de la web antigua. Deja en su sitio, si existen:
+
+- `cgi-bin/`
+- `.well-known/` (certificados y verificaciones de dominio)
+- cualquier carpeta de otra aplicación que siga en uso
+
+### 3. Subir y descomprimir
+
+1. **Upload** → `rh-bots-sitio.zip` en `public_html`.
+2. Clic derecho en el zip → **Extract**.
+3. Repite con `rh-bots-video.zip`.
+4. Borra los dos `.zip`.
 
 Debe quedar así:
 
 ```
 public_html/
-├── index.html
-├── robots.html · blog.html · contacto.html · 404.html
-├── robots/        (las 14 fichas)
+├── index.html · robots.html · aplicaciones.html · alquiler.html
+├── alquiler-limpieza.html · alquiler-humanoides.html
+├── rh-bots.html · blog.html · contacto.html · legal.html · 404.html
+├── robots/     (las 22 fichas)
+├── blog/       (los 3 artículos)
+├── pt/ en/ fr/ de/ zh/ ar/ ca/   (lo mismo en cada idioma)
 ├── css/  js/  assets/
 ├── .htaccess
-├── sitemap.xml  robots.txt
+├── favicon.ico · favicon-32.png · favicon-192.png · favicon-512.png
+├── apple-touch-icon.png
+└── sitemap.xml  robots.txt
 ```
 
 > **Si no ves el `.htaccess`**, activa *Settings → Show Hidden Files* en el
-> gestor. Sin él pierdes HTTPS forzado, compresión y caché.
+> gestor. Sin él se pierden el HTTPS forzado, las URL limpias, la compresión
+> y la caché.
 
-### Por FTP (alternativa)
+### 4. Comprobar
 
-Si prefieres FTP, en cPanel → **FTP Accounts** tienes los datos. Con FileZilla:
-subes el contenido de `web/` a `public_html/`. Más cómodo si vas a actualizar
-a menudo, y no tiene el límite de tamaño del gestor web.
+- `https://www.rh-bots.com` carga la web nueva.
+- `https://rh-bots.com` redirige a `www` (lo hace el `.htaccess`).
+- `https://www.rh-bots.com/de/` sale en alemán y el menú se queda en alemán.
+- `https://www.rh-bots.com/favicon.ico` responde.
+- El formulario de contacto envía y llega a info@rh-bots.com.
 
----
+### 5. Después de publicar
 
-## 3. Conectar el dominio
-
-Depende de dónde esté registrado:
-
-### Si el dominio ya está en BanaHosting
-
-Suele estar listo. Comprueba en cPanel → **Domains** que `rh-bots.com` apunta a
-`public_html`. Si aparece como *Addon Domain*, su carpeta será
-`public_html/rh-bots.com` y ahí es donde hay que subir los archivos.
-
-### Si está registrado en otro sitio
-
-En el panel del registrador, cambia los **nameservers** a los de BanaHosting.
-Los tienes en cPanel, arriba a la derecha, en *General Information → Name
-Servers* (algo como `ns1.banahosting.com` / `ns2.banahosting.com`).
-
-La propagación tarda de unos minutos a 24 horas.
-
-### Comprobar que resuelve
-
-```bash
-nslookup rh-bots.com
-```
+- En **Web3Forms**, añadir `rh-bots.com` en los ajustes del formulario.
+- En **Google Search Console**, enviar `https://www.rh-bots.com/sitemap.xml`.
 
 ---
 
-## 4. Activar el HTTPS
+## Las siguientes veces
 
-cPanel → **SSL/TLS Status** → selecciona el dominio → **Run AutoSSL**.
+Ya no hay que vaciar nada: se sube el zip y se descomprime encima,
+sobrescribiendo. Si una página deja de existir, hay que borrarla a mano del
+servidor, porque descomprimir no elimina lo que sobra.
 
-Emite un certificado Let's Encrypt gratis en unos minutos. Hasta que no esté,
-**no** funcionará bien: el `.htaccess` fuerza HTTPS y sin certificado el
-navegador dará aviso de sitio no seguro.
-
-Una vez emitido, entra en `https://rh-bots.com` y comprueba el candado.
-
----
-
-## 5. Ajustar el dominio en la web
-
-El sitio está generado con `https://www.rh-bots.com` como dominio. Sirve para
-las URL canónicas, el sitemap y las tarjetas al compartir en redes.
-
-Si el dominio final es otro (o prefieres sin `www`):
-
-1. Panel de administración → **SEO y analítica** → campo *Dominio*.
-2. **Publicar cambios**.
-3. Vuelve a empaquetar y subir.
-
-Y en `web/.htaccess`, la redirección de `www`: por defecto manda todo a
-`www.rh-bots.com`. Si lo quieres al revés, están las dos reglas escritas —
-comenta un par de líneas y descomenta las otras.
+Si sólo han cambiado textos o precios, basta con `rh-bots-sitio.zip`: los
+vídeos pesan 19 MB y casi nunca cambian.
 
 ---
 
-## 6. Comprobaciones
+## Lo que configura el `.htaccess`
 
-- [ ] `https://rh-bots.com` carga con candado
-- [ ] El menú lleva a Robots, Blog y Contacto
-- [ ] Una ficha de robot muestra precio y **Comprar ahora**
-- [ ] Ese botón lleva al checkout de Shopify
-- [ ] Los vídeos se reproducen (home y fichas del RHX2 y RHA3 Ultra)
-- [ ] El visualizador del RHC5 gira al pasar el ratón
-- [ ] Una URL inventada (`/loquesea`) muestra el 404 con el diseño del sitio
-- [ ] `https://rh-bots.com/sitemap.xml` responde
-
----
-
-## El panel de administración: déjalo en local
-
-El panel es una aplicación **Flask**, no HTML estático. Para publicarlo haría
-falta cPanel → *Setup Python App*, definir las variables de entorno y servirlo
-con Passenger. Se puede, pero **no hace falta y no lo recomiendo**:
-
-- súbelo y expones un punto de entrada más a internet;
-- el flujo actual funciona igual de bien: editas en local, pulsas *Publicar*,
-  vuelves a empaquetar y subes.
-
-Si algún día lo quieres accesible desde fuera, está preparado: contraseña con
-hash, CSRF, límite de intentos y configuración por variables de entorno. Sólo
-hay que definir `RHBOTS_SECRET`, `RHBOTS_PASSWORD_HASH` y `RHBOTS_HTTPS=1`.
-
----
-
-## Para actualizar más adelante
-
-```bash
-python tools/sincronizar.py && python tools/build.py && python tools/empaquetar.py
-```
-
-Y sube `rh-bots-sitio.zip` otra vez (los vídeos sólo si los has cambiado).
-
-Recuerda que **los precios ya se leen en vivo de Shopify**: si sólo cambias un
-precio, la web lo refleja sola y no hace falta volver a subir nada. Regenerar
-sirve para que el HTML que ve Google también esté al día.
+- Fuerza HTTPS y redirige `rh-bots.com` → `www.rh-bots.com`, que es el dominio
+  canónico declarado en todas las páginas. Para invertirlo, están las dos
+  líneas comentadas al principio del archivo.
+- URL limpias: `/robots/rhc5` sirve `robots/rhc5.html`.
+- Compresión, caché larga para imágenes y vídeo, corta para el HTML.
+- Cabeceras de seguridad y página 404 propia.
