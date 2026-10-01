@@ -52,8 +52,21 @@ def dir_html(lang=None):
 
 def nivel(lang):
     """Tramos «../» extra para bajar de /{lang}/ a la raíz. El español vive
-    en la raíz (sin prefijo); el resto, cada uno en su propia subcarpeta."""
+    en la raíz (sin prefijo); el resto, cada uno en su propia subcarpeta.
+
+    Sirve para las rutas de los ficheros compartidos —imágenes, CSS, JS—,
+    que viven en la raíz. Para enlazar a otra página hay que usar raiz(),
+    o se sale del idioma."""
     return '' if lang == 'es' else '../'
+
+
+def raiz(lang=None):
+    """Raíz absoluta del idioma: '/' en español y '/pt/', '/de/'… en el resto.
+
+    Los enlaces del menú y del pie la usan para que, una vez elegido un
+    idioma, se siga navegando dentro de él desde cualquier profundidad."""
+    lang = lang or LANG
+    return '/' if lang == 'es' else f'/{lang}/'
 
 
 def _fusiona(es, capa):
@@ -1257,7 +1270,7 @@ def panel_carrito(base):
         return ''
     dominio = TIENDA['dominio'].strip('/')
     return f'''
-<div class="carrito" id="carrito" data-carrito data-dominio="{e(dominio)}" data-robots="{base}robots.html" hidden>
+<div class="carrito" id="carrito" data-carrito data-dominio="{e(dominio)}" data-robots="{raiz()}robots.html" hidden>
   <div class="carrito__fondo" data-carrito-cerrar></div>
   <aside class="carrito__panel" role="dialog" aria-modal="true" aria-label="{t('carrito_titulo')}">
     <header class="carrito__cab">
@@ -1349,7 +1362,8 @@ def header(base, active='robots', ruta=''):
         if it.get('oculto'):
             continue
         cls = ' class="is-active"' if it['key'] and it['key'] == active else ''
-        enlace = '<a href="%s%s"%s>%s</a>' % (base, it['href'], cls, e(it['label']))
+        destino = raiz() if it['href'] == 'index.html' else raiz() + it['href']
+        enlace = '<a href="%s"%s>%s</a>' % (destino, cls, e(it['label']))
         if it['key'] == 'robots':
             # submenú: familias a la izquierda y fichas de los modelos a la derecha
             familias, paneles = '', ''
@@ -1359,21 +1373,21 @@ def header(base, active='robots', ruta=''):
                 if not modelos:
                     continue
                 on = ' is-on' if primera else ''
-                familias += (f'<li><a class="nav__fam{on}" href="{base}robots.html#{k}" '
+                familias += (f'<li><a class="nav__fam{on}" href="{raiz()}robots.html#{k}" '
                              f'data-fam="{k}">{e(n)}<span class="nav__famchev" aria-hidden="true">'
                              f'<svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span></a></li>')
                 tarjetas = ''
                 for q in modelos:
                     foto = (f'<img src="{base}{q["hero"]}" alt="" loading="lazy">' if q.get('hero')
                             else '')
-                    tarjetas += (f'<li><a class="mcard" href="{base}robots/{q["slug"]}.html">'
+                    tarjetas += (f'<li><a class="mcard" href="{raiz()}robots/{q["slug"]}.html">'
                                  f'<span class="mcard__foto">{foto}</span>'
                                  f'<span class="mcard__nombre">{e(q["name"])}</span>'
                                  f'<span class="mcard__claim">{e(q["claim"])}</span></a></li>')
                 # el título solo se ve en el menú del móvil, donde no hay columna de familias
                 paneles += (f'<ul class="nav__modelos{on}" data-fam="{k}" '
                             f'aria-label="Modelos de {e(n)}">'
-                            f'<li class="nav__modtit"><a href="{base}robots.html#{k}">{e(n)}</a></li>'
+                            f'<li class="nav__modtit"><a href="{raiz()}robots.html#{k}">{e(n)}</a></li>'
                             f'{tarjetas}</ul>')
                 primera = False
             enlace = (f'<div class="nav__grupo">{enlace}'
@@ -1383,14 +1397,14 @@ def header(base, active='robots', ruta=''):
                       f'<div class="nav__sub nav__sub--mega" id="sub-robots" data-menurobots>'
                       f'<ul class="nav__fams">{familias}</ul>'
                       f'<div class="nav__paneles">{paneles}'
-                      f'<p class="nav__todos"><a href="{base}robots.html">'
+                      f'<p class="nav__todos"><a href="{raiz()}robots.html">'
                       f'{t("ver_todo_catalogo")}{FLECHA}</a></p></div>'
                       f'</div></div>')
         elif it['key'] == 'alquiler':
             # desplegable simple: las dos modalidades de alquiler
             opciones = (
-                f'<a href="{base}alquiler-limpieza.html">{t("alquiler_limpieza_nav")}</a>'
-                f'<a href="{base}alquiler-humanoides.html">{t("alquiler_humanoides_nav")}</a>')
+                f'<a href="{raiz()}alquiler-limpieza.html">{t("alquiler_limpieza_nav")}</a>'
+                f'<a href="{raiz()}alquiler-humanoides.html">{t("alquiler_humanoides_nav")}</a>')
             enlace = (f'<div class="nav__grupo nav__grupo--simple">{enlace}'
                       f'<button type="button" class="nav__abrir" aria-expanded="false" '
                       f'aria-controls="sub-alquiler" aria-label="{t("nav_ver_alquiler_aria")}">'
@@ -1401,7 +1415,7 @@ def header(base, active='robots', ruta=''):
     return f'''
 <header class="site-header" id="header">
   <div class="wrap header-inner">
-    <a class="logo" href="{base}index.html" aria-label="RH·BOTS — inicio">
+    <a class="logo" href="{raiz()}" aria-label="RH·BOTS — inicio">
       <img src="{base}assets/logo-rhbots.png" alt="RH·BOTS" width="348" height="72">
     </a>
     <nav class="nav" id="nav" aria-label="{t('nav_principal_aria')}">
@@ -1482,9 +1496,9 @@ def footer(base):
   <div class="wrap footer-inner">
     <p class="footer-marca">© {time.strftime('%Y')} RH-BOTS<br>{t('recursos_humanoides')}.</p>
     <p class="footer-legal">
-      <a href="{base}legal.html">{t('aviso_legal')}</a> ·
-      <a href="{base}legal.html#privacidad">{t('politica_privacidad')}</a> ·
-      <a href="{base}legal.html#cookies">{t('politica_cookies')}</a>
+      <a href="{raiz()}legal.html">{t('aviso_legal')}</a> ·
+      <a href="{raiz()}legal.html#privacidad">{t('politica_privacidad')}</a> ·
+      <a href="{raiz()}legal.html#cookies">{t('politica_cookies')}</a>
     </p>
   </div>
 </footer>
