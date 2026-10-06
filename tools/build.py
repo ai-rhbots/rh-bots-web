@@ -1684,7 +1684,7 @@ def formato_moneda(codigo):
     return SIMBOLOS.get((codigo or '').upper(), codigo or '')
 
 
-def boton_compra(p, base):
+def boton_compra(p, base, url=None):
     """Botón de compra enlazado con la pasarela de Shopify.
 
     El enlace es un «cart permalink»: añade la variante y cae directamente en
@@ -1724,7 +1724,7 @@ def boton_compra(p, base):
             f'data-texto="{e(etiqueta)}" '
             f'data-nombre="{e(p["name"])}" '
             f'data-foto="{e(base + p["hero"]) if p.get("hero") else ""}" '
-            f'data-url="{e(base + "robots/" + p["slug"] + ".html")}" '
+            f'data-url="{e(url or base + "robots/" + p["slug"] + ".html")}" '
             f'data-moneda="{e(sh.get("moneda", TIENDA.get("moneda", "EUR")))}" '
             f'data-precio="{"1" if mostrar else "0"}">'
             f'{interior}</div>')
@@ -1769,7 +1769,12 @@ def nota_accesorio_requerido(p, base):
     else:
         media = placeholder(acc['family'], acc['name'])
     pvp = formato_pvp(acc.get('precio'))
-    precio_html_acc = f'<p class="accnec__precio">{pvp}</p>' if pvp else ''
+    importe = importe_de_texto(acc.get('precio'))
+    iva = nota_iva(importe, 'accnec__iva') if importe else ''
+    precio_html_acc = f'<p class="accnec__precio">{pvp}{iva}</p>' if pvp else ''
+    # El accesorio no tiene ficha, así que su línea del carrito apunta a la
+    # página del robot que lo necesita, que es desde donde se ha añadido.
+    compra = boton_compra(acc, base, url=f'{base}robots/{p["slug"]}.html')
     return (f'<div class="accnec">'
             f'<p class="accnec__etiqueta">{t("requiere_accesorio_titulo")}</p>'
             f'<div class="accnec__card">'
@@ -1778,6 +1783,7 @@ def nota_accesorio_requerido(p, base):
             f'<p class="accnec__nombre">{e(acc["name"])}</p>'
             f'<p class="accnec__desc">{t("requiere_accesorio_texto", n=e(p["name"]))}</p>'
             f'{precio_html_acc}'
+            f'{compra}'
             f'</div></div></div>')
 
 

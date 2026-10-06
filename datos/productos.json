@@ -6150,7 +6150,14 @@
           "La tarifa señala este accesorio con «S/F» junto al precio. Confirma con el proveedor a qué se refiere (posiblemente que falta la foto, o que el precio está sujeto a disponibilidad) antes de ofertarlo."
         ]
       ],
-      "shopify": null,
+      "shopify": {
+        "handle": "pudu-d5w-estacion-carga",
+        "variante": "67660656967917",
+        "sku": "PUDU-D5W-ESTACION-CARGA",
+        "precio": "7000.00",
+        "moneda": "EUR",
+        "disponible": true
+      },
       "compatible": [
         "d5w"
       ],
@@ -6221,7 +6228,14 @@
           "El fabricante no ha compartido ficha técnica de este accesorio: no se conoce su capacidad ni el tiempo de carga. Solo consta el nombre y el precio de la tarifa RH·BOTS (23 de septiembre de 2026); confirma los datos antes de ofertarlo."
         ]
       ],
-      "shopify": null,
+      "shopify": {
+        "handle": "pudu-d5w-bateria",
+        "variante": "67660657000685",
+        "sku": "PUDU-D5W-BATERIA",
+        "precio": "2000.00",
+        "moneda": "EUR",
+        "disponible": true
+      },
       "compatible": [
         "d5w"
       ]
@@ -6291,7 +6305,14 @@
           "El fabricante no ha compartido ficha técnica de este kit: no se conoce qué sensores incluye ni sus especificaciones. Solo consta el nombre y el precio de la tarifa RH·BOTS (23 de septiembre de 2026); confirma el contenido exacto antes de ofertarlo."
         ]
       ],
-      "shopify": null,
+      "shopify": {
+        "handle": "pudu-d5w-kit-inspeccion",
+        "variante": "67660657066221",
+        "sku": "PUDU-D5W-KIT-INSPECCION",
+        "precio": "35000.00",
+        "moneda": "EUR",
+        "disponible": true
+      },
       "compatible": [
         "d5w"
       ]
@@ -6357,7 +6378,14 @@
           "El fabricante no ha compartido ficha técnica de este accesorio: no se conoce la capacidad que añade ni sus dimensiones. Solo consta el nombre y el precio de la tarifa RH·BOTS (23 de septiembre de 2026); confirma los datos antes de ofertarlo."
         ]
       ],
-      "shopify": null,
+      "shopify": {
+        "handle": "pudu-d5w-cajon-bateria",
+        "variante": "67660657098989",
+        "sku": "PUDU-D5W-CAJON-BATERIA",
+        "precio": "3500.00",
+        "moneda": "EUR",
+        "disponible": true
+      },
       "compatible": [
         "d5w"
       ]
@@ -6423,7 +6451,14 @@
           "El fabricante no ha compartido ficha técnica de este accesorio: solo se dispone del nombre, la referencia y el precio de la tarifa RH·BOTS (23 de septiembre de 2026). Confirma potencia y tiempo de carga antes de ofertarlo."
         ]
       ],
-      "shopify": null,
+      "shopify": {
+        "handle": "pudu-mt1-estacion-carga",
+        "variante": "67660657197293",
+        "sku": "PUDU-MT1-ESTACION-CARGA",
+        "precio": "600.00",
+        "moneda": "EUR",
+        "disponible": true
+      },
       "compatible": [
         "mt1",
         "mt1-max"
@@ -6491,7 +6526,14 @@
           "El fabricante no ha compartido ficha técnica de este cargador: solo se dispone del nombre y el precio de la tarifa RH·BOTS (23 de septiembre de 2026). Confirma potencia y tiempo de carga antes de ofertarlo."
         ]
       ],
-      "shopify": null,
+      "shopify": {
+        "handle": "pudu-amr-cargador",
+        "variante": "67660657230061",
+        "sku": "PUDU-AMR-CARGADOR",
+        "precio": "432.00",
+        "moneda": "EUR",
+        "disponible": true
+      },
       "compatible": [
         "t150",
         "t300",
