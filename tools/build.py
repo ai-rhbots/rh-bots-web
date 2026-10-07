@@ -1222,7 +1222,11 @@ def head(title, desc, base, ruta='', extra_css=True, og_img=None, extra_jsonld=N
             alterno_es = alterno
         hreflang += f'<link rel="alternate" hreflang="{cod}" href="{e(alterno)}">\n'
     hreflang += f'<link rel="alternate" hreflang="x-default" href="{e(alterno_es)}">\n'
-    imagen = f'{dominio}/{og_img or SEO["og_imagen"]}'
+    ruta_og = tarjeta_og(og_img or SEO['og_imagen'])
+    imagen = f'{dominio}/{ruta_og}'
+    # Medidas reales del archivo: declararlas mal es peor que no declararlas,
+    # porque WhatsApp y Facebook reservan el hueco con lo que digamos aquí.
+    tipo_og, ancho_og, alto_og = medidas_og(ruta_og)
     tw = (f'<meta name="twitter:site" content="{e(SEO["twitter"])}">\n'
           if SEO.get('twitter') else '')
     return f'''<!DOCTYPE html>
@@ -1243,6 +1247,9 @@ def head(title, desc, base, ruta='', extra_css=True, og_img=None, extra_jsonld=N
 <meta property="og:description" content="{e(desc)}">
 <meta property="og:url" content="{e(canonical)}">
 <meta property="og:image" content="{e(imagen)}">
+{f'<meta property="og:image:type" content="{e(tipo_og)}">' if tipo_og else ''}
+{f'<meta property="og:image:width" content="{ancho_og}"><meta property="og:image:height" content="{alto_og}">' if ancho_og else ''}
+<meta property="og:image:alt" content="{e(SEO['nombre'])}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{e(title)}">
 <meta name="twitter:description" content="{e(desc)}">
@@ -1354,6 +1361,78 @@ BANDERAS = {
            '<rect y="1.111" width="3" height=".222"/><rect y="1.556" width="3" height=".222"/>'
            '</g></svg>'),
 }
+
+
+OG_DIR = 'assets/og'
+_TARJETAS_OG = {}
+
+
+def _fondo_og(w, h):
+    """El mismo degradado claro que la tarjeta del logo."""
+    img = Image.new('RGB', (w, h), (255, 255, 255))
+    px = img.load()
+    for y in range(h):
+        t = y / (h - 1)
+        v = int(255 - 14 * t)
+        for x in range(w):
+            px[x, y] = (v, v, int(v + 3 * t))
+    return img
+
+
+def tarjeta_og(ruta):
+    """Versión JPEG de 1200x630 de la imagen de vista previa.
+
+    WhatsApp no pinta de forma fiable las imágenes WebP de og:image, y todas
+    las fotos del sitio son WebP: al compartir una ficha se quedaba sin foto.
+    Esto deja una tarjeta JPEG del tamaño que esperan WhatsApp, Facebook y
+    LinkedIn, con la foto centrada y sin recortar.
+    """
+    if ruta.lower().endswith(('.jpg', '.jpeg')):
+        return ruta
+    if ruta in _TARJETAS_OG:
+        return _TARJETAS_OG[ruta]
+
+    # El nombre sale de la ruta entera, no del archivo: todas las fichas
+    # tienen su foto en «hero.webp» y si no, las tarjetas se pisarían.
+    plano = re.sub(r'[^a-z0-9]+', '-', os.path.splitext(ruta)[0].lower()).strip('-')
+    plano = re.sub(r'^assets-(robots|blog)-', '', plano)
+    salida = f'{OG_DIR}/{plano}.jpg'
+    destino = os.path.join(WEB, salida)
+    origen = os.path.join(WEB, ruta)
+    try:
+        if not os.path.isfile(destino) or os.path.getmtime(destino) < os.path.getmtime(origen):
+            os.makedirs(os.path.dirname(destino), exist_ok=True)
+            with Image.open(origen) as im:
+                foto = im.convert('RGBA')
+                W, H = 1200, 630
+                escala = min((W - 120) / foto.width, (H - 80) / foto.height)
+                if escala < 1 or foto.height < H - 80:
+                    foto = foto.resize((max(1, round(foto.width * escala)),
+                                        max(1, round(foto.height * escala))), Image.LANCZOS)
+                lienzo = _fondo_og(W, H)
+                lienzo.paste(foto, ((W - foto.width) // 2, (H - foto.height) // 2), foto)
+                lienzo.save(destino, quality=88, optimize=True, progressive=True)
+    except (OSError, ValueError):
+        return ruta          # si algo falla, mejor la original que nada
+    _TARJETAS_OG[ruta] = salida
+    return salida
+
+
+_MEDIDAS_OG = {}
+_TIPO_POR_EXT = {'.jpg': 'image/jpeg', '.jpeg': 'image/jpeg',
+                 '.png': 'image/png', '.webp': 'image/webp'}
+
+
+def medidas_og(ruta):
+    """(tipo MIME, ancho, alto) de la imagen de vista previa, leídos del archivo."""
+    if ruta not in _MEDIDAS_OG:
+        ext = os.path.splitext(ruta)[1].lower()
+        try:
+            with Image.open(os.path.join(WEB, ruta)) as im:
+                _MEDIDAS_OG[ruta] = (_TIPO_POR_EXT.get(ext, ''), im.width, im.height)
+        except (OSError, ValueError):
+            _MEDIDAS_OG[ruta] = (_TIPO_POR_EXT.get(ext, ''), 0, 0)
+    return _MEDIDAS_OG[ruta]
 
 
 def selector_idioma(ruta):
