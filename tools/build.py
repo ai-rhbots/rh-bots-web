@@ -220,6 +220,7 @@ TEXTOS = {
     'pedir_presupuesto': {'es': 'Pedir presupuesto', 'pt': 'Pedir orçamento', 'en': 'Request a quote', 'fr': 'Demander un devis', 'zh': '索取报价', 'ca': 'Demanar pressupost'},
     'anadir_carrito': {'es': 'Añadir al carrito', 'pt': 'Adicionar ao carrinho', 'en': 'Add to cart', 'fr': 'Ajouter au panier', 'zh': '加入购物车', 'ca': 'Afegir al carret'},
     'comprar_ahora': {'es': 'Comprar ahora', 'pt': 'Comprar agora', 'en': 'Buy now', 'fr': 'Acheter maintenant', 'zh': '立即购买', 'ca': 'Comprar ara'},
+    'ventana_nueva': {'es': 'se abre en una ventana nueva', 'pt': 'abre numa nova janela', 'en': 'opens in a new window', 'fr': 's’ouvre dans une nouvelle fenêtre', 'zh': '在新窗口中打开', 'ca': 's’obre en una finestra nova'},
     'pvp': {'es': 'PVP', 'pt': 'PVP', 'en': 'RRP', 'fr': 'Prix public', 'zh': '建议零售价', 'ca': 'PVP'},
     'preguntas_frecuentes': {'es': 'Preguntas frecuentes', 'pt': 'Perguntas frequentes', 'en': 'Frequently asked questions', 'fr': 'Questions fréquentes', 'zh': '常见问题', 'ca': 'Preguntes freqüents'},
     'distribuidores_oficiales': {'es': 'Distribuidores oficiales en España y Portugal', 'pt': 'Distribuidores oficiais em Espanha e Portugal', 'en': 'Official distributors in Spain and Portugal', 'fr': 'Distributeurs officiels en Espagne et au Portugal', 'zh': '西班牙和葡萄牙官方经销商', 'ca': 'Distribuïdors oficials a Espanya i Portugal'},
@@ -553,6 +554,7 @@ TEXTOS_DE = {
     'pedir_presupuesto': 'Angebot anfordern',
     'anadir_carrito': 'In den Warenkorb',
     'comprar_ahora': 'Jetzt kaufen',
+    'ventana_nueva': 'wird in einem neuen Fenster geöffnet',
     'pvp': 'UVP',
     'preguntas_frecuentes': 'Häufige Fragen',
     'distribuidores_oficiales': 'Offizieller Vertriebspartner in Spanien und Portugal',
@@ -746,6 +748,7 @@ TEXTOS_AR = {
     'pedir_presupuesto': 'طلب عرض سعر',
     'anadir_carrito': 'أضف إلى السلة',
     'comprar_ahora': 'اشترِ الآن',
+    'ventana_nueva': 'يُفتح في نافذة جديدة',
     'pvp': 'السعر',
     'preguntas_frecuentes': 'الأسئلة الشائعة',
     'distribuidores_oficiales': 'موزّعون معتمدون في إسبانيا والبرتغال',
@@ -1307,7 +1310,7 @@ def panel_carrito(base):
         <span class="sin-iva">{t('iva_no_incluido')}</span>
         <span class="carrito__iva" data-carrito-iva></span></p>
       <p class="carrito__nota">{t('carrito_nota_envio')}</p>
-      <a class="pill carrito__pagar" data-carrito-pagar rel="nofollow noopener" href="#"><span>{t('carrito_finalizar')}</span>{CHEVRON}</a>
+      <a class="pill carrito__pagar" data-carrito-pagar target="_blank" rel="nofollow noopener" href="#"><span>{t('carrito_finalizar')}</span><span class="sr-only"> ({t('ventana_nueva')})</span>{CHEVRON}</a>
       <a class="carrito__consulta" href="{base}contacto.html">{t('carrito_asesor')}</a>
     </footer>
   </aside>
@@ -1816,8 +1819,11 @@ def estado_compra(disponible, precio, moneda, variante, dominio, etiqueta, conta
               f'data-variante="{e(str(variante))}" data-precio-num="{precio:.2f}">'
               f'<span>{t("anadir_carrito")}</span>'
               f'<i class="pill__ico pill__ico--carro" aria-hidden="true">{ICONO_CARRITO}</i></button>')
+    # El checkout se abre en pestaña nueva: así quien compra no pierde la
+    # ficha que estaba mirando, y el carrito de la web sigue donde estaba.
     return (f'{precio_html}<a class="pill pill--comprar" href="{e(url)}" '
-            f'rel="nofollow noopener"><span>{e(etiqueta)}</span>{CHEVRON}</a>{anadir}')
+            f'target="_blank" rel="nofollow noopener"><span>{e(etiqueta)}</span>'
+            f'<span class="sr-only"> ({t("ventana_nueva")})</span>{CHEVRON}</a>{anadir}')
 
 
 def fondo_video(nombre, base, clase=''):

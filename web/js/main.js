@@ -22,6 +22,7 @@
       precioConsulta: 'Precio bajo consulta',
       pedirPresupuesto: 'Pedir presupuesto',
       anadirCarrito: 'Añadir al carrito',
+      ventanaNueva: 'se abre en una ventana nueva',
       carritoVacio: 'Todavía no has añadido ningún robot.',
       verCatalogo: 'Ver el catálogo',
       quitarUnidad: 'Quitar una unidad',
@@ -48,6 +49,7 @@
       precioConsulta: 'Preço sob consulta',
       pedirPresupuesto: 'Pedir orçamento',
       anadirCarrito: 'Adicionar ao carrinho',
+      ventanaNueva: 'abre numa nova janela',
       carritoVacio: 'Ainda não adicionou nenhum robô.',
       verCatalogo: 'Ver o catálogo',
       quitarUnidad: 'Remover uma unidade',
@@ -74,6 +76,7 @@
       precioConsulta: 'Price on request',
       pedirPresupuesto: 'Request a quote',
       anadirCarrito: 'Add to cart',
+      ventanaNueva: 'opens in a new window',
       carritoVacio: "You haven't added any robots yet.",
       verCatalogo: 'View the catalog',
       quitarUnidad: 'Remove one unit',
@@ -100,6 +103,7 @@
       precioConsulta: 'Prix sur demande',
       pedirPresupuesto: 'Demander un devis',
       anadirCarrito: 'Ajouter au panier',
+      ventanaNueva: 's’ouvre dans une nouvelle fenêtre',
       carritoVacio: "Vous n'avez encore ajouté aucun robot.",
       verCatalogo: 'Voir le catalogue',
       quitarUnidad: 'Retirer une unité',
@@ -126,6 +130,7 @@
       precioConsulta: 'Preis auf Anfrage',
       pedirPresupuesto: 'Angebot anfordern',
       anadirCarrito: 'In den Warenkorb',
+      ventanaNueva: 'wird in einem neuen Fenster geöffnet',
       carritoVacio: 'Sie haben noch keinen Roboter hinzugefügt.',
       verCatalogo: 'Zum Katalog',
       quitarUnidad: 'Eine Einheit entfernen',
@@ -152,6 +157,7 @@
       precioConsulta: '价格面议',
       pedirPresupuesto: '索取报价',
       anadirCarrito: '加入购物车',
+      ventanaNueva: 'å¨æ°çªå£ä¸­æå¼',
       carritoVacio: '您还没有添加任何机器人。',
       verCatalogo: '查看产品目录',
       quitarUnidad: '减少一件',
@@ -178,6 +184,7 @@
       precioConsulta: 'السعر عند الطلب',
       pedirPresupuesto: 'طلب عرض سعر',
       anadirCarrito: 'أضف إلى السلة',
+      ventanaNueva: 'ÙÙÙØªØ­ ÙÙ ÙØ§ÙØ°Ø© Ø¬Ø¯ÙØ¯Ø©',
       carritoVacio: 'لم تُضف أي روبوت بعد.',
       verCatalogo: 'تصفّح الكتالوج',
       quitarUnidad: 'إنقاص وحدة',
@@ -204,6 +211,7 @@
       precioConsulta: 'Preu sota consulta',
       pedirPresupuesto: 'Demanar pressupost',
       anadirCarrito: 'Afegeix al carret',
+      ventanaNueva: 's’obre en una finestra nova',
       carritoVacio: 'Encara no has afegit cap robot.',
       verCatalogo: 'Veure el catàleg',
       quitarUnidad: 'Treu una unitat',
@@ -561,9 +569,10 @@
           '<path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.4a2 2 0 0 0 2-1.5L20.5 8H6"/>' +
           '<circle cx="10" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/></svg></i>';
         return precio +
-          '<a class="pill pill--comprar" rel="nofollow noopener" href="' +
+          '<a class="pill pill--comprar" target="_blank" rel="nofollow noopener" href="' +
           esc(base + '/cart/' + v.id + ':1') + '"><span>' +
-          esc(d.texto) + '</span>' + chevron + '</a>' +
+          esc(d.texto) + '</span><span class="sr-only"> (' +
+          esc(TXT.ventanaNueva) + ')</span>' + chevron + '</a>' +
           '<button class="pill pill--anadir" type="button" data-anadir data-variante="' +
           esc(v.id) + '" data-precio-num="' + (v.price / 100) + '">' +
           '<span>' + esc(TXT.anadirCarrito) + '</span>' + carro + '</button>';
