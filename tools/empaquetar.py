@@ -30,6 +30,22 @@ SIEMPRE = ('sitemap.xml', 'robots.txt', 'favicon.ico', '.htaccess')
 
 PATRON = re.compile(r'(?:href|src|poster)\s*=\s*["\']([^"\'#?]+)', re.I)
 PATRON_CSS = re.compile(r'url\(\s*["\']?([^"\')]+)', re.I)
+# og:image y compañía van en «content», y además con la URL absoluta del
+# dominio. Sin esto las imágenes de vista previa se quedaban fuera del zip y
+# WhatsApp no encontraba ninguna al compartir un enlace.
+PATRON_META = re.compile(r'content\s*=\s*["\']([^"\'#?]+)', re.I)
+
+
+def _dominio():
+    try:
+        with io.open(os.path.join(ROOT, 'datos', 'sitio.json'), encoding='utf-8') as f:
+            import json
+            return (json.load(f)['seo']['dominio'] or '').rstrip('/')
+    except Exception:
+        return ''
+
+
+DOMINIO = _dominio()
 
 
 def referencias():
@@ -43,8 +59,12 @@ def referencias():
             vistos.add(os.path.relpath(ruta, WEB).replace('\\', '/'))
             texto = io.open(ruta, encoding='utf-8', errors='ignore').read()
 
-            encontrados = PATRON.findall(texto) + PATRON_CSS.findall(texto)
+            encontrados = (PATRON.findall(texto) + PATRON_CSS.findall(texto)
+                           + PATRON_META.findall(texto))
             for r in encontrados:
+                # las etiquetas meta citan el archivo con el dominio delante
+                if DOMINIO and r.startswith(DOMINIO):
+                    r = r[len(DOMINIO):] or '/'
                 if r.startswith(('http', 'mailto:', 'tel:', 'data:', '//')):
                     continue
                 # las rutas que empiezan por «/» cuelgan de la raíz del sitio,
